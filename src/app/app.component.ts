@@ -1,10 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { RebirthConfig } from './exports/rebirth-ui.config';
 
 @Component({
-  selector: 'app-root',
+  selector: 're-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(private rebirthConfig: RebirthConfig, private viewContainerRef: ViewContainerRef) {
+    this.rebirthConfig.rootContainer = this.viewContainerRef;
+  }
+
+
 }

@@ -1,0 +1,85 @@
+import { Component, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import { ModalService } from '../../exports/modal/modal.service';
+import { Modal } from '../../exports/modal/modal.model';
+
+@Component({
+  selector: 're-modal-demo',
+  templateUrl: 'modal-demo.component.html'
+})
+export class ModalDemoComponent {
+
+  constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
+  }
+
+  openModal() {
+    this.modalService.show<string>({
+      component: ModalTestComponent,
+      componentFactoryResolver: this.componentFactoryResolver,
+      resolve: {
+        text: 'I am from resolve data!'
+      }
+    })
+      .subscribe(data => {
+        console.log('Rebirth Modal -> Get ok with result:', data);
+      }, error => {
+        console.error('Rebirth Modal -> Get cancel with result:', error);
+      });
+  }
+}
+
+@Component({
+  selector: 're-modal-test',
+  template: `
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">I'm a rebirth modal!</h4>
+  </div>
+  <div class="modal-body">
+     <form class="form-horizontal">
+      <div class="form-group">
+        <label for="textInput" class="col-sm-2 control-label">Text:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="textInput" name="text" [(ngModel)]="context.text" />
+        </div>
+      </div>
+    </form>
+    <hr>
+    <strong>Modal context:</strong> <pre>{{context | json}}</pre>
+    <button (click)="show()">show</button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="ok()">Ok</button>
+    <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+  </div>`
+})
+export class ModalTestComponent implements Modal {
+  context: { text: string };
+  dismiss: EventEmitter<string>;
+
+  constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
+  }
+
+  show() {
+    this.modalService.show<string>({
+      component: ModalTestComponent,
+      componentFactoryResolver: this.componentFactoryResolver,
+      resolve: {
+        text: 'inner modal'
+      }
+    })
+      .subscribe(data => {
+        console.log('Rebirth Modal -> Get ok with result:', data);
+      }, error => {
+        console.error('Rebirth Modal -> Get cancel with result:', error);
+      });
+  }
+
+  ok() {
+    this.dismiss.emit(this.context.text);
+  }
+
+  cancel() {
+    this.dismiss.error(this.context.text);
+  }
+}
