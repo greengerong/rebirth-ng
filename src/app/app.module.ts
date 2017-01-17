@@ -5,6 +5,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModalDemoModule, DialogDemoModule } from './demo';
 import { RebirthUIModule } from './exports';
+import { PagerDemoModule } from './demo/pager/pager-demo.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RebirthUIModule } from './exports';
     SharedModule,
     RebirthUIModule.forRoot(),
     ModalDemoModule,
-    DialogDemoModule
+    DialogDemoModule,
+    PagerDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
