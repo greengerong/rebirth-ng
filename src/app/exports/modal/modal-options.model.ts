@@ -8,6 +8,7 @@ export interface ModalOptions {
   backdrop?: boolean;
   backdropClass?: string;
   keyboard?: boolean;
+  modal?: boolean;
   modalClass?: string;
   size?: 'sm' | 'lg';
   rootContainer?: ViewContainerRef;

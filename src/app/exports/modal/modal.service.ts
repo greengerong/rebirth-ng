@@ -9,37 +9,42 @@ import { Observable } from 'rxjs/observable';
 
 @Injectable()
 export class ModalService {
-  private instanceCount = 0;
+  private instances = [];
 
   constructor(private rebirthConfig: RebirthConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 
 
-  show<T>(options: ModalOptions): Observable<T> {
+  open<T>(options: ModalOptions): Observable<T> {
     const rootContainer = options.rootContainer || this.rebirthConfig.rootContainer;
     if (!rootContainer) {
       throw new Error('Should setup ViewContainerRef on modal options or rebirth config service!');
     }
-    this.instanceCount++;
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector = options.injector || this.injector;
     const modalRef = rootContainer.createComponent(componentFactory, rootContainer.length, injector);
+    this.instances.push(modalRef);
     const instance: ModalComponent = modalRef.instance;
-    instance.instanceCount = this.instanceCount;
-    const result = instance.addContent(options)
-      .do(() => this.hide(modalRef))
+    const dismissResult = instance.addContent(options, this.instances.length)
+      .do(() => this.close(modalRef))
       .catch((error) => {
-        this.hide(modalRef);
+        this.close(modalRef);
         return _throw(error);
       });
     instance.open();
-    return result;
+    return dismissResult;
   }
 
-  private hide(modalRef: ComponentRef<ModalComponent>): void {
+  closeAll(): void {
+    this.instances.forEach(modalRef => this.close(modalRef));
+  }
+
+  private close(modalRef: ComponentRef<ModalComponent>): void {
     modalRef.instance.close();
     modalRef.destroy();
-    this.instanceCount--;
+    this.instances.splice(this.instances.indexOf(modalRef), 1);
   }
+
+
 }

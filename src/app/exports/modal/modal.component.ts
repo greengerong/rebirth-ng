@@ -1,10 +1,17 @@
 import {
-  Component, OnInit, Input, ViewChild, OnDestroy, HostListener, EventEmitter, Output,
-  ChangeDetectionStrategy, ElementRef,
+  Component,
+  OnInit,
+  Input,
+  ViewChild,
+  OnDestroy,
+  HostListener,
+  EventEmitter,
+  Output,
+  ChangeDetectionStrategy,
+  ElementRef
 } from '@angular/core';
-import { ModalContentComponent } from './modal-content.component';
 import { ModalOptions } from './modal-options.model';
-import { ModalDismissReasons } from './modal-dismiss-reasons';
+import { ModalWindowComponent } from './modal-window.component';
 
 @Component({
   selector: 're-modal',
@@ -13,10 +20,9 @@ import { ModalDismissReasons } from './modal-dismiss-reasons';
 })
 export class ModalComponent implements OnInit, OnDestroy {
   @Input() isOpen: boolean = false;
-  @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
   @Output() dismiss = new EventEmitter<any>();
   @Input() modalOptions: ModalOptions;
-  @ViewChild('modalBackdrop') modalBackdrop: ElementRef;
+  @ViewChild(ModalWindowComponent) modalWindowComponent: ModalWindowComponent;
   instanceCount = 0;
 
   constructor(private elementRef: ElementRef) {
@@ -25,32 +31,17 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   open() {
     this.isOpen = true;
+    this.modalWindowComponent.isOpen = true;
   }
 
   close() {
     this.isOpen = false;
   }
 
-  // @HostListener('click', ['$event'])
-  // onBackdropClick($event: Event) {
-  //   console.log(this.modalBackdrop.nativeElement === $event.target, $event.target, this.modalBackdrop.nativeElement);
-  //   if (this.modalOptions.backdrop !== false && this.modalBackdrop.nativeElement === $event.target) {
-  //     $event.stopPropagation();
-  //     this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
-  //   }
-  // }
-
-  @HostListener('keyup.esc', ['$event'])
-  onEscKeyUp($event: KeyboardEvent) {
-    if (this.modalOptions.keyboard !== false) {
-      $event.stopPropagation();
-      this.dismiss.error(ModalDismissReasons.ESC_KEY);
-    }
-  }
-
-  addContent<T>(options: ModalOptions): EventEmitter<T> {
+  addContent<T>(options: ModalOptions, instanceCount: number): EventEmitter<T> {
     this.modalOptions = options;
-    this.modalContent.addContent(options, this.dismiss);
+    this.instanceCount = instanceCount;
+    this.modalWindowComponent.addContent(options, this.dismiss);
     return this.dismiss;
   }
 

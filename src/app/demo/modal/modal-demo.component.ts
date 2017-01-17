@@ -12,12 +12,13 @@ export class ModalDemoComponent {
   }
 
   openModal() {
-    this.modalService.show<string>({
+    this.modalService.open<string>({
       component: ModalTestComponent,
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: {
         text: 'I am from resolve data!'
-      }
+      },
+      modal: true
     })
       .subscribe(data => {
         console.log('Rebirth Modal -> Get ok with result:', data);
@@ -61,7 +62,7 @@ export class ModalTestComponent implements Modal {
   }
 
   show() {
-    this.modalService.show<string>({
+    this.modalService.open<string>({
       component: ModalTestComponent,
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: {

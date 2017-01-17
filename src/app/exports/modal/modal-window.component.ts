@@ -7,49 +7,39 @@ import { ModalOptions } from './modal-options.model';
 import { ModalDismissReasons } from './modal-dismiss-reasons';
 
 @Component({
-  selector: 're-modal',
+  selector: 're-modal-window',
   templateUrl: './modal-window.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalWindowComponent implements OnInit, OnDestroy {
   @Input() isOpen: boolean = false;
+  @Input() instanceCount = 0;
   @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
-  @Output() dismiss = new EventEmitter<any>();
-  @Input() modalOptions: ModalOptions;
-  @ViewChild('modalBackdrop') modalBackdrop: ElementRef;
-  instanceCount = 0;
+  dismiss: EventEmitter<any>;
+  modalOptions: ModalOptions;
 
   constructor(private elementRef: ElementRef) {
 
   }
 
-  open() {
-    this.isOpen = true;
-  }
 
-  close() {
-    this.isOpen = false;
+  @HostListener('click', ['$event'])
+  onBackdropClick($event: Event) {
+    if (this.modalOptions.backdrop !== false && !this.modalOptions.modal && this.elementRef.nativeElement === $event.target) {
+      this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
+    }
   }
-
-  // @HostListener('click', ['$event'])
-  // onBackdropClick($event: Event) {
-  //   console.log(this.modalBackdrop.nativeElement === $event.target, $event.target, this.modalBackdrop.nativeElement);
-  //   if (this.modalOptions.backdrop !== false && this.modalBackdrop.nativeElement === $event.target) {
-  //     $event.stopPropagation();
-  //     this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
-  //   }
-  // }
 
   @HostListener('keyup.esc', ['$event'])
   onEscKeyUp($event: KeyboardEvent) {
     if (this.modalOptions.keyboard !== false) {
-      $event.stopPropagation();
-      this.dismiss.error(ModalDismissReasons.ESC_KEY);
+      this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
     }
   }
 
-  addContent<T>(options: ModalOptions): EventEmitter<T> {
+  addContent<T>(options: ModalOptions, dismiss: EventEmitter<T>): EventEmitter<T> {
     this.modalOptions = options;
+    this.dismiss = dismiss;
     this.modalContent.addContent(options, this.dismiss);
     return this.dismiss;
   }
@@ -59,5 +49,6 @@ export class ModalWindowComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.dismiss.complete();
   }
 }

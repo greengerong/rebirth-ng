@@ -1,6 +1,12 @@
 import {
-  Component, OnInit, ComponentRef, ViewContainerRef, Injector, OnDestroy, EventEmitter,
-  ChangeDetectionStrategy, HostListener
+  Component,
+  OnInit,
+  ComponentRef,
+  ViewContainerRef,
+  Injector,
+  OnDestroy,
+  EventEmitter,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { Modal } from './modal.model';
@@ -19,18 +25,12 @@ export class ModalContentComponent implements OnInit, OnDestroy {
 
   }
 
-  @HostListener('click', ['$event'])
-  onContentClick($event: Event) {
-    console.log("onContentClick============");
-    $event.stopPropagation();
-  }
-
-  addContent<T>(options: ModalOptions, resolveEventEmitter: EventEmitter<any>) {
+  addContent<T>(options: ModalOptions, dismiss: EventEmitter<any>) {
     const componentFactory = options.componentFactoryResolver.resolveComponentFactory(options.component);
     this.modalContentRef = this.modalContentContainer
       .createComponent(componentFactory, this.modalContentContainer.length, options.injector || this.injector);
     const instance: Modal = this.modalContentRef.instance;
-    instance.dismiss = resolveEventEmitter;
+    instance.dismiss = dismiss;
     this.handleResolve(options, instance);
   }
 
