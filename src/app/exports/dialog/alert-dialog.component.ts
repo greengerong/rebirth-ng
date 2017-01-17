@@ -1,12 +1,11 @@
-import { Component, OnInit, EventEmitter } from '@angular/core';
-import { Modal } from '../modal';
-import { ModalDismissReasons } from '../modal/modal-dismiss-reasons.model';
+import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions } from './dialog-options.model';
 
 @Component({
-  moduleId: module.id,
   selector: 're-alert-dialog',
-  templateUrl: './alert-dialog.component.html'
+  templateUrl: './alert-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlertDialogComponent implements Modal {
   context: DialogOptions;

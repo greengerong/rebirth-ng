@@ -1,11 +1,11 @@
-import { Component, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions } from './dialog-options.model';
 
 @Component({
-  moduleId: module.id,
   selector: 're-confirm-dialog',
-  templateUrl: './confirm-dialog.component.html'
+  templateUrl: './confirm-dialog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConfirmDialogComponent implements Modal {
   context: DialogOptions;

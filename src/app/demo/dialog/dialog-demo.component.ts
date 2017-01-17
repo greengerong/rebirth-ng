@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DialogService } from '../../exports/dialog/dialog.service';
 
 @Component({
   selector: 're-dialog-demo',
-  templateUrl: './dialog-demo.component.html'
+  templateUrl: './dialog-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogDemoComponent {
 

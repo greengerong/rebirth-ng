@@ -1,10 +1,11 @@
-import { Component, EventEmitter, ComponentFactoryResolver } from '@angular/core';
+import { Component, EventEmitter, ComponentFactoryResolver, ChangeDetectionStrategy } from '@angular/core';
 import { ModalService } from '../../exports/modal/modal.service';
 import { Modal } from '../../exports/modal/modal.model';
 
 @Component({
   selector: 're-modal-demo',
-  templateUrl: 'modal-demo.component.html'
+  templateUrl: 'modal-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalDemoComponent {
 
