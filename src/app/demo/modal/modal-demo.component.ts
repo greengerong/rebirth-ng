@@ -18,8 +18,7 @@ export class ModalDemoComponent {
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: {
         text: 'I am from resolve data!'
-      },
-      modal: true
+      }
     })
       .subscribe(data => {
         console.log('Rebirth Modal -> Get ok with result:', data);
