@@ -27,7 +27,7 @@ export class ModalComponent implements OnInit, OnDestroy {
 
   constructor(private elementRef: ElementRef) {
 
-  }
+}
 
   open() {
     this.isOpen = true;

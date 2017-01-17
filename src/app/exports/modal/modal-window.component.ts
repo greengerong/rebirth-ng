@@ -49,6 +49,6 @@ export class ModalWindowComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.dismiss.complete();
+
   }
 }
