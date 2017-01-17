@@ -6,7 +6,7 @@
 
 - [ ] Accordion
 - [x] Modal
-- [ ] Alert/Confirm
+- [x] Alert/Confirm
 - [ ] Pager
 - [ ] Pagination
 - [ ] Collapse

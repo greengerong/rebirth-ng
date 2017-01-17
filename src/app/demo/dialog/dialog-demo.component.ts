@@ -23,4 +23,18 @@ export class DialogDemoComponent {
         error => console.error('Rebirth alert get no result:', error)
       );
   }
+
+  confirm() {
+    this.dialogService.confirm({
+      title: 'I\'m a rebirth confirm!',
+      content: 'This is <strong>rebirth confirm</strong> content.',
+      yes: '确定',
+      no: '取消',
+      html: true
+    })
+      .subscribe(
+        data => console.log('Rebirth confirm get yes result:', data),
+        error => console.error('Rebirth confirm get no result:', error)
+      );
+  }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { AlertDialogComponent } from './alert-dialog.component';
 import { CommonModule } from '@angular/common';
+import { ConfirmDialogComponent } from './confirm-dialog.component';
 
 
 @NgModule({
@@ -9,11 +10,13 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [],
   declarations: [
-    AlertDialogComponent
+    AlertDialogComponent,
+    ConfirmDialogComponent
   ],
   providers: [],
   entryComponents: [
-    AlertDialogComponent
+    AlertDialogComponent,
+    ConfirmDialogComponent
   ]
 })
 export class DialogModule {
