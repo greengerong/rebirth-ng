@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { RebirthConfig } from './exports/rebirth-ui.config';
+import { RebirthUIConfig } from './exports/rebirth-ui.config';
 
 @Component({
   selector: 're-app',
@@ -7,7 +7,7 @@ import { RebirthConfig } from './exports/rebirth-ui.config';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private rebirthConfig: RebirthConfig, private viewContainerRef: ViewContainerRef) {
+  constructor(private rebirthConfig: RebirthUIConfig, private viewContainerRef: ViewContainerRef) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
   }
 

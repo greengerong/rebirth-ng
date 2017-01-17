@@ -1,6 +1,11 @@
 import {
-  Component, OnInit, Input, ViewChild, OnDestroy, HostListener, EventEmitter, Output,
-  ChangeDetectionStrategy, ElementRef,
+  Component,
+  Input,
+  ViewChild,
+  HostListener,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  ElementRef
 } from '@angular/core';
 import { ModalContentComponent } from './modal-content.component';
 import { ModalOptions } from './modal-options.model';

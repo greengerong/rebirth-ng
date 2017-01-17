@@ -19,9 +19,7 @@ import { ModalWindowComponent } from './modal-window.component';
   ],
   entryComponents: [
     ModalContentComponent,
-    ModalComponent,
-    ModalBackdropComponent,
-    ModalWindowComponent
+    ModalComponent
   ]
 })
 export class ModalModule {
