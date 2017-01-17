@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/observable';
 
 @Injectable()
 export class ModalService {
+
   private instances = [];
 
   constructor(private rebirthConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,

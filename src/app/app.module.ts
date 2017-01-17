@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { ModalDemoModule } from './demo';
+import { ModalDemoModule, DialogDemoModule } from './demo';
 import { RebirthUIModule } from './exports';
 
 @NgModule({
@@ -14,7 +14,8 @@ import { RebirthUIModule } from './exports';
     BrowserModule,
     SharedModule,
     RebirthUIModule.forRoot(),
-    ModalDemoModule
+    ModalDemoModule,
+    DialogDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

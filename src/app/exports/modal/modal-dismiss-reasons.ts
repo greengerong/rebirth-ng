@@ -3,5 +3,5 @@ export enum ModalDismissReasons {
   BACKDROP_CLICK,
   ESC_KEY,
   YES,
-  CANCEL
+  NO
 }

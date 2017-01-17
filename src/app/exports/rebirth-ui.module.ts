@@ -1,14 +1,17 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ModalService, ModalModule } from './modal';
+import { DialogService, DialogModule } from './dialog';
 import { RebirthUIConfig } from './rebirth-ui.config';
 
 
 @NgModule({
   imports: [
-    ModalModule
+    ModalModule,
+    DialogModule
   ],
   exports: [
-    ModalModule
+    ModalModule,
+    DialogModule
   ],
   declarations: [],
   providers: [],
@@ -21,7 +24,8 @@ export class RebirthUIModule {
       ngModule: RebirthUIModule,
       providers: [
         RebirthUIConfig,
-        ModalService
+        ModalService,
+        DialogService
       ]
     };
   }

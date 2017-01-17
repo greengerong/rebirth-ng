@@ -5,7 +5,7 @@
 ## Tasks
 
 - [ ] Accordion
-- [ ] Modal
+- [x] Modal
 - [ ] Alert/Confirm
 - [ ] Pager
 - [ ] Pagination
