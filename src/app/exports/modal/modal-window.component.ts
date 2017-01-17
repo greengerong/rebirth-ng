@@ -38,7 +38,7 @@ export class ModalWindowComponent {
   @HostListener('keyup.esc', ['$event'])
   onEscKeyUp($event: KeyboardEvent) {
     if (this.modalOptions.keyboard !== false) {
-      this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
+      this.dismiss.error(ModalDismissReasons.ESC_KEY);
     }
   }
 
