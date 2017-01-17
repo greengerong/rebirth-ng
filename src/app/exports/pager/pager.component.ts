@@ -9,7 +9,7 @@ export class PagerComponent implements OnChanges {
   @Input() total = 0;
   @Input() pageSize = 10;
   @Input() pageIndex = 1;
-  @Output() pageIndexChange = new EventEmitter();
+  @Output() pageIndexChange = new EventEmitter<number>();
   @Input() previousText = '« Previous';
   @Input() nextText = 'Next »';
 

@@ -15,5 +15,4 @@
 - [ ] Rating
 - [ ] Popover
 - [ ] Tooltip
-- [ ] Tooltip
 - [ ] Tabs
