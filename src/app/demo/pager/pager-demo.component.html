@@ -1,3 +1,8 @@
 <div class="pager-demo">
-  <re-pager></re-pager>
+  <re-pager [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
+            (pageIndexChange)="pageChange($event)" previousText="&larr; Older" nextText="Newer &rarr;"></re-pager>
+
+  <div>
+    <pre>{{pager | json}}</pre>
+  </div>
 </div>

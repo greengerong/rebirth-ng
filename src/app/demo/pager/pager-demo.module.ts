@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 import { PagerDemoComponent } from './pager-demo.component';
 import { PagerModule } from '../../exports/pager';
 
 @NgModule({
   imports: [
+    CommonModule,
     PagerModule
   ],
   declarations: [

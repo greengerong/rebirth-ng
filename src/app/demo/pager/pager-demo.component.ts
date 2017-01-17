@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 're-pager-demo',
-  templateUrl: './pager-demo.component.html'
+  templateUrl: './pager-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PagerDemoComponent implements OnInit {
+export class PagerDemoComponent {
+  pager = {
+    total: 100,
+    pageIndex: 5,
+    pageSize: 10
+  };
 
-  constructor() {
-  }
-
-  ngOnInit() {
+  pageChange(pageIndex) {
+    console.log(`Rebirth pager change to: ${pageIndex}`, this.pager);
   }
 
 }

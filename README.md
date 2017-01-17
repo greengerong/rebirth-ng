@@ -7,7 +7,7 @@
 - [ ] Accordion
 - [x] Modal
 - [x] Alert/Confirm
-- [ ] Pager
+- [x] Pager
 - [ ] Pagination
 - [ ] Collapse
 - [ ] DatePicker

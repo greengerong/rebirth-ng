@@ -1,3 +1,6 @@
-<div>
-  pagwer setup
-</div>
+<nav aria-label="pager">
+  <ul class="pager">
+    <li class="previous" *ngIf="hasPrev()"><a (click)="prev()">{{ previousText}}</a></li>
+    <li class="next" *ngIf="hasNext()"><a (click)="next()">{{ nextText}}</a></li>
+  </ul>
+</nav>
