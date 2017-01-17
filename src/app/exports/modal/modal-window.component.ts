@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { ModalContentComponent } from './modal-content.component';
 import { ModalOptions } from './modal-options.model';
-import { ModalDismissReasons } from './modal-dismiss-reasons';
+import { ModalDismissReasons } from './modal-dismiss-reasons.model';
 
 @Component({
   selector: 're-modal-window',

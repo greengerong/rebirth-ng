@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Modal } from '../modal';
-import { ModalDismissReasons } from '../modal/modal-dismiss-reasons';
+import { ModalDismissReasons } from '../modal/modal-dismiss-reasons.model';
 import { DialogOptions } from './dialog-options.model';
 
 @Component({

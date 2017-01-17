@@ -5,7 +5,7 @@ import {
   Injector,
   OnDestroy,
   EventEmitter,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy, ComponentFactoryResolver
 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { Modal } from './modal.model';
@@ -20,12 +20,14 @@ export class ModalContentComponent implements OnDestroy {
 
   modalContentRef: ComponentRef<Modal>;
 
-  constructor(private modalContentContainer: ViewContainerRef, private  injector: Injector) {
+  constructor(private modalContentContainer: ViewContainerRef, private  injector: Injector,
+              private componentFactoryResolver: ComponentFactoryResolver) {
 
   }
 
   addContent<T>(options: ModalOptions, dismiss: EventEmitter<any>) {
-    const componentFactory = options.componentFactoryResolver.resolveComponentFactory(options.component);
+    const componentFactoryResolver = options.componentFactoryResolver || this.componentFactoryResolver;
+    const componentFactory = componentFactoryResolver.resolveComponentFactory(options.component);
     this.modalContentRef = this.modalContentContainer
       .createComponent(componentFactory, this.modalContentContainer.length, options.injector || this.injector);
     const instance: Modal = this.modalContentRef.instance;

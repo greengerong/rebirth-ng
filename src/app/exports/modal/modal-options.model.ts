@@ -2,7 +2,7 @@ import { Type, ComponentFactoryResolver, Injector, ViewContainerRef } from '@ang
 
 export interface ModalOptions {
   component: Type<any>;
-  componentFactoryResolver: ComponentFactoryResolver;
+  componentFactoryResolver?: ComponentFactoryResolver;
   injector?: Injector;
   resolve?: any;
   backdrop?: boolean;
