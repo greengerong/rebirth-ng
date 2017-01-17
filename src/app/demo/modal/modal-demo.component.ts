@@ -47,7 +47,8 @@ export class ModalDemoComponent {
     </form>
     <hr>
     <strong>Modal context:</strong> <pre>{{context | json}}</pre>
-    <button (click)="show()">show</button>
+    <hr>
+    <button class="btn btn-default" (click)="show()">Open inner modal!</button>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" (click)="ok()">Ok</button>
@@ -67,7 +68,8 @@ export class ModalTestComponent implements Modal {
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: {
         text: 'inner modal'
-      }
+      },
+      size: 'sm'
     })
       .subscribe(data => {
         console.log('Rebirth Modal -> Get ok with result:', data);

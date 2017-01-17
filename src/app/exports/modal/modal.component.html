@@ -1,5 +1,5 @@
 <re-modal-window [instanceCount]="instanceCount" [isOpen]="isOpen" role="dialog"
-                 class="modal fade {{(modalOptions.size ? ' modal-' + modalOptions.size : '')}} {{modalOptions.modalClass? modalOptions.modalClass : ''}}"
+                 class="modal fade {{modalOptions.modalClass? modalOptions.modalClass : ''}}"
                  [ngClass]="{'in': isOpen}"
                  [ngStyle]="{'display': isOpen ? 'block': 'none','z-index': 1050 + instanceCount *10}" tabindex="-1">
 
