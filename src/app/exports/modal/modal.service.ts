@@ -28,7 +28,7 @@ export class ModalService {
     const instance: ModalComponent = modalRef.instance;
     const dismissResult = instance.addContent(options, this.instances.length)
       .do(() => this.close(modalRef))
-      .catch((error) => {
+      .catch(error => {
         this.close(modalRef);
         return _throw(error);
       });

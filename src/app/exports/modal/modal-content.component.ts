@@ -17,7 +17,7 @@ import { Modal } from './modal.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'modalContent'
 })
-export class ModalContentComponent implements OnInit, OnDestroy {
+export class ModalContentComponent implements OnDestroy {
 
   modalContentRef: ComponentRef<Modal>;
 
@@ -32,10 +32,6 @@ export class ModalContentComponent implements OnInit, OnDestroy {
     const instance: Modal = this.modalContentRef.instance;
     instance.dismiss = dismiss;
     this.handleResolve(options, instance);
-  }
-
-  ngOnInit(): void {
-
   }
 
   ngOnDestroy(): void {

@@ -18,16 +18,12 @@ import { ModalWindowComponent } from './modal-window.component';
   templateUrl: './modal.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ModalComponent implements OnInit, OnDestroy {
+export class ModalComponent {
   @Input() isOpen: boolean = false;
   @Output() dismiss = new EventEmitter<any>();
   @Input() modalOptions: ModalOptions;
   @ViewChild(ModalWindowComponent) modalWindowComponent: ModalWindowComponent;
   instanceCount = 0;
-
-  constructor(private elementRef: ElementRef) {
-
-}
 
   open() {
     this.isOpen = true;
@@ -45,10 +41,4 @@ export class ModalComponent implements OnInit, OnDestroy {
     return this.dismiss;
   }
 
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-  }
 }

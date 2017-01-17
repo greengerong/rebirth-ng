@@ -11,7 +11,7 @@ import { ModalDismissReasons } from './modal-dismiss-reasons';
   templateUrl: './modal-window.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ModalWindowComponent implements OnInit, OnDestroy {
+export class ModalWindowComponent {
   @Input() isOpen: boolean = false;
   @Input() instanceCount = 0;
   @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
@@ -42,13 +42,5 @@ export class ModalWindowComponent implements OnInit, OnDestroy {
     this.dismiss = dismiss;
     this.modalContent.addContent(options, this.dismiss);
     return this.dismiss;
-  }
-
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-
   }
 }
