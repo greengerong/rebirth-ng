@@ -26,6 +26,9 @@ export class ModalComponent {
 
   close() {
     this.isOpen = false;
+  }
+
+  cleanup() {
     this.renderer.setElementClass(document.body, 'modal-open', false);
   }
 
