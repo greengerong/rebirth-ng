@@ -45,7 +45,7 @@ export class ModalService {
     modalRef.instance.close();
     modalRef.destroy();
     this.instances.splice(this.instances.indexOf(modalRef), 1);
-    if(!this.instances.length){
+    if (!this.instances.length) {
       modalRef.instance.cleanup();
     }
   }

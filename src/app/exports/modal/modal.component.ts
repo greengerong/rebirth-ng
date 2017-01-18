@@ -21,7 +21,7 @@ export class ModalComponent {
   open() {
     this.isOpen = true;
     this.modalWindowComponent.isOpen = true;
-    this.renderer.setElementClass(document.body, 'modal-open', true);
+    this.toggleBodyClass(true);
   }
 
   close() {
@@ -29,7 +29,7 @@ export class ModalComponent {
   }
 
   cleanup() {
-    this.renderer.setElementClass(document.body, 'modal-open', false);
+    this.toggleBodyClass(false);
   }
 
   addContent<T>(options: ModalOptions, instanceCount: number): EventEmitter<T> {
@@ -37,6 +37,10 @@ export class ModalComponent {
     this.instanceCount = instanceCount;
     this.modalWindowComponent.addContent(options, this.dismiss);
     return this.dismiss;
+  }
+
+  private toggleBodyClass(isAdd: boolean): void {
+    this.renderer.setElementClass(document.body, 'modal-open', isAdd);
   }
 
 }
