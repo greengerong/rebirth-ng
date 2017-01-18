@@ -42,12 +42,12 @@ export class ModalService {
   }
 
   private close(modalRef: ComponentRef<ModalComponent>): void {
-    modalRef.instance.close();
-    modalRef.destroy();
     this.instances.splice(this.instances.indexOf(modalRef), 1);
-    if(!this.instances.length){
+    modalRef.instance.close();
+    if (!this.instances.length) {
       modalRef.instance.cleanup();
     }
+    modalRef.destroy();
   }
 
 
