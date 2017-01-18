@@ -4,6 +4,7 @@ import { DialogService, DialogModule } from './dialog';
 import { PagerModule } from './pager';
 import { RebirthUIConfig } from './rebirth-ui.config';
 import { PaginationModule } from './pagination';
+import { COMMON_SERVICES } from './window-ref';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ export class RebirthUIModule {
     return {
       ngModule: RebirthUIModule,
       providers: [
+        ...COMMON_SERVICES,
         RebirthUIConfig,
         ModalService,
         DialogService
