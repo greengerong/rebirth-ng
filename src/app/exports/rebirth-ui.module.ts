@@ -3,18 +3,21 @@ import { ModalService, ModalModule } from './modal';
 import { DialogService, DialogModule } from './dialog';
 import { PagerModule } from './pager';
 import { RebirthUIConfig } from './rebirth-ui.config';
+import { PaginationModule } from './pagination';
 
 
 @NgModule({
   imports: [
     ModalModule,
     DialogModule,
-    PagerModule
+    PagerModule,
+    PaginationModule
   ],
   exports: [
     ModalModule,
     DialogModule,
-    PagerModule
+    PagerModule,
+    PaginationModule
   ],
   declarations: [],
   providers: [],

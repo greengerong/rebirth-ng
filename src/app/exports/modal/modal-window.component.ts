@@ -30,7 +30,7 @@ export class ModalWindowComponent {
 
   @HostListener('click', ['$event'])
   onBackdropClick($event: Event) {
-    if (this.modalOptions.backdrop !== false && !this.modalOptions.modal && this.elementRef.nativeElement === $event.target) {
+    if (!this.modalOptions.modal && this.elementRef.nativeElement === $event.target) {
       this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
     }
   }

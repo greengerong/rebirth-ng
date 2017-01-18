@@ -1,6 +1,8 @@
 <nav aria-label="pager">
   <ul class="pager">
-    <li class="previous" *ngIf="hasPrev()"><a (click)="prev()">{{ previousText}}</a></li>
-    <li class="next" *ngIf="hasNext()"><a (click)="next()">{{ nextText}}</a></li>
+    <li [ngClass]="{'previous': aligned, 'disabled': disable && !hasPrev()}" *ngIf="disable || hasPrev()">
+      <a (click)="prev()">{{ previousText}}</a></li>
+    <li [ngClass]="{'next': aligned, 'disabled': disable && !hasNext()}" *ngIf="disable || hasNext()">
+      <a (click)="next()">{{ nextText}}</a></li>
   </ul>
 </nav>
