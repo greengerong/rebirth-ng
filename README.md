@@ -6,10 +6,12 @@
 
 - [ ] Accordion
 - [x] Alert Box
+- [x] Badge
 - [x] Modal
 - [x] Alert/Confirm
 - [x] Pager
 - [x] Pagination
+- [x] Panel
 - [ ] Collapse
 - [ ] DatePicker
 - [ ] Dropdown

@@ -1,0 +1,11 @@
+<div class="panel panel-{{type}}">
+  <div class="panel-heading">
+    <button type="button" class="close" *ngIf="canClose" aria-label="Close" (click)="onClose()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <ng-content select=".re-panel-header,[re-panel-header]"></ng-content>
+  </div>
+  <div class="panel-body">
+    <ng-content select=".re-panel-body,[re-panel-body]"></ng-content>
+  </div>
+</div>

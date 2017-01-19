@@ -1,5 +1,5 @@
 <nav aria-label="Pagination">
-  <ul class="pagination">
+  <ul class="pagination {{size? 'pagination-' + size: ''}}">
     <li *ngIf="boundary" [ngClass]="{disabled: pageIndex == 1}">
       <a [attr.aria-label]="firstLink" (click)="first()"><span aria-hidden="true">{{firstLink}}</span></a>
     </li>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 're-alert-box-demo',
   templateUrl: './alert-box-demo.component.html'
 })

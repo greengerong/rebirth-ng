@@ -1,7 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 're-alert-box',
   templateUrl: 'alert-box.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
