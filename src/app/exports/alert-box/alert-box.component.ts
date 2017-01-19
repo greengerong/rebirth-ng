@@ -12,9 +12,9 @@ export class AlertBoxComponent {
   @Output() close = new EventEmitter<any>();
 
   @Input()
-  set dismissTime(dismissTime) {
-    if (dismissTime) {
-      setTimeout(() => this.onCloseBox(), dismissTime);
+  set disappearTime(time) {
+    if (time) {
+      setTimeout(() => this.onCloseBox(), time);
     }
   }
 

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertBoxDemoComponent implements OnInit {
   closed = false;
-  autoDismiss = false;
+  autoDisappear = false;
 
   constructor() {
   }

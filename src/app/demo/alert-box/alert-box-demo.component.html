@@ -30,9 +30,14 @@
   </section>
 
   <section>
-    <h4>Auto dismiss:</h4>
-    <input type="checkbox" [(ngModel)]="autoDismiss" (ngModelChange)="closed = false"/>auto Auto dismiss?
-    <re-alert-box type="danger" (close)="close()" *ngIf="!closed" [dismissTime]="autoDismiss? 2*1000: 0">
+    <h4>Auto disappear:</h4>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="autoDisappear" (ngModelChange)="closed = false"/>Auto disappear after 2s?
+      </label>
+    </div>
+
+    <re-alert-box type="danger" (close)="close()" *ngIf="!closed" [disappearTime]="autoDisappear? 2*1000: 0">
       <strong>Oh snap!</strong> Change a few things up and try submitting again.
     </re-alert-box>
   </section>
