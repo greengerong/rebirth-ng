@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class PaginationDemoComponent {
 
   pager = {
-    total: 106,
-    pageIndex: 1,
+    total: 306,
+    pageIndex: 5,
     pageSize: 10
   };
 

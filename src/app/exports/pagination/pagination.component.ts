@@ -9,16 +9,16 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PaginationComponent implements OnChanges {
+  static EFFECT_PAGE_RANGE_KEYS = ['total', 'pageSize', 'pageIndex', 'maxItems'];
+
   @Input() boundary = true;
   @Input() total = 0;
   @Input() pageSize = 10;
   @Input() pageIndex = 1;
   @Output() pageIndexChange = new EventEmitter<number>();
-  @Input() disable = false;
-  @Input() maxItems = 6;
-  minShowPage = 0;
-  maxShowPage = 0;
+  @Input() maxItems = 5;
   showPages = [];
+  totalPage = 0;
 
   constructor() {
   }
@@ -30,7 +30,7 @@ export class PaginationComponent implements OnChanges {
   }
 
   last() {
-    const last = Math.max(this.totalPage(), 1);
+    const last = Math.max(this.totalPage, 1);
     if (this.pageIndex !== last) {
       this.onPageIndexChange(last);
     }
@@ -38,18 +38,30 @@ export class PaginationComponent implements OnChanges {
 
   prev(): void {
     if (this.hasPrev()) {
-      this.onPageIndexChange(--this.pageIndex);
+      this.onPageIndexChange(this.pageIndex - 1);
     }
   }
 
   next(): void {
     if (this.hasNext()) {
-      this.onPageIndexChange(++this.pageIndex);
+      this.onPageIndexChange(this.pageIndex + 1);
     }
   }
 
+  preRange() {
+    const pre = this.showPages[0] - 1;
+    this.onPageIndexChange(Math.max(pre, 1));
+  }
+
+  nextRange() {
+    const next = this.showPages[this.showPages.length - 1] + 1;
+    this.onPageIndexChange(Math.min(next, this.totalPage));
+  }
+
   onPageIndexChange(pageIndex: number) {
-    this.pageIndexChange.emit(pageIndex);
+    if (this.pageIndex !== pageIndex) {
+      this.pageIndexChange.emit(pageIndex);
+    }
   }
 
   hasPrev(): boolean {
@@ -57,38 +69,42 @@ export class PaginationComponent implements OnChanges {
   }
 
   hasNext(): boolean {
-    return this.pageIndex < this.totalPage();
+    return this.pageIndex < this.totalPage;
   }
 
-  totalPage(): number {
+  private getTotalPage(): number {
     return Math.ceil(this.total / this.pageSize);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.pageIndex = Math.max(Math.min(this.pageIndex, this.totalPage()), 1);
-    this.changeShowPages();
+    const shouldUpdateRanges = PaginationComponent.EFFECT_PAGE_RANGE_KEYS.some(key => !!changes[key]);
+    if (shouldUpdateRanges) {
+      this.totalPage = this.getTotalPage();
+      this.pageIndex = Math.max(Math.min(this.pageIndex, this.totalPage), 1);
+      this.changeShowPages();
+    }
   }
 
   private changeShowPages() {
-    const totalPage = this.totalPage();
-    if (!totalPage) {
+    if (!this.totalPage) {
       this.showPages = [];
       return;
     }
 
-    // if (totalPage <= this.maxItems) {
-    //   this.showPages = new Array<number>(totalPage).fill(0).map((_, i) => i + 1);
-    //   return;
-    // }
+    if (this.totalPage <= this.maxItems) {
+      this.showPages = new Array<number>(this.totalPage).fill(0).map((_, i) => i + 1);
+      return;
+    }
 
     const showPages = [this.pageIndex];
+
     let start = this.pageIndex - 1;
     let end = this.pageIndex + 1;
-    while (showPages.length < this.maxItems && (start > 0 || end <= totalPage)) {
+    while (showPages.length < this.maxItems && (start > 0 || end <= this.totalPage)) {
       if (start > 0) {
         showPages.unshift((start--));
       }
-      if (showPages.length < this.maxItems && end <= totalPage) {
+      if (showPages.length < this.maxItems && end <= this.totalPage) {
         showPages.push(end++);
       }
     }
