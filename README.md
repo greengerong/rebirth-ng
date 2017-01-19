@@ -8,7 +8,7 @@
 - [x] Modal
 - [x] Alert/Confirm
 - [x] Pager
-- [ ] Pagination
+- [x] Pagination
 - [ ] Collapse
 - [ ] DatePicker
 - [ ] Dropdown
