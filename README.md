@@ -5,7 +5,7 @@
 ## Tasks
 
 - [ ] Accordion
-- [ ] Alert Box
+- [x] Alert Box
 - [x] Modal
 - [x] Alert/Confirm
 - [x] Pager

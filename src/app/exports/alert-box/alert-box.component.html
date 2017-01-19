@@ -1,3 +1,6 @@
-<div>
-  alert box
+<div class="alert alert-{{type}}" [ngClass]="{'alert-dismissible': canClose}" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close" *ngIf="canClose" (click)="closeBox()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <ng-content></ng-content>
 </div>

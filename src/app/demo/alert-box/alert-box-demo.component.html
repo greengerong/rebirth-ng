@@ -1,0 +1,41 @@
+<div class="alert-box-demo">
+
+  <section>
+    <h4>Info:</h4>
+    <re-alert-box>
+      <strong>Heads up!</strong> This <a href="#" class="alert-link">alert needs your attention</a>, but it's not super
+      important.
+    </re-alert-box>
+  </section>
+
+  <section>
+    <h4>Success:</h4>
+    <re-alert-box type="success">
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </re-alert-box>
+  </section>
+
+  <section>
+    <h4>Warning:</h4>
+    <re-alert-box type="warning">
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </re-alert-box>
+  </section>
+
+  <section>
+    <h4>Danger:</h4>
+    <re-alert-box type="danger">
+      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </re-alert-box>
+  </section>
+
+  <section>
+    <h4>Auto dismiss:</h4>
+    <input type="checkbox" [(ngModel)]="autoDismiss" (ngModelChange)="closed = false"/>auto Auto dismiss?
+    <re-alert-box type="danger" (close)="close()" *ngIf="!closed" [dismissTime]="autoDismiss? 2*1000: 0">
+      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </re-alert-box>
+  </section>
+
+
+</div>

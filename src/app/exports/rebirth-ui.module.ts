@@ -5,6 +5,7 @@ import { PagerModule } from './pager';
 import { RebirthUIConfig } from './rebirth-ui.config';
 import { PaginationModule } from './pagination';
 import { COMMON_SERVICES } from './window-ref';
+import { AlertBoxModule } from './alert-box';
 
 
 @NgModule({
@@ -12,13 +13,15 @@ import { COMMON_SERVICES } from './window-ref';
     ModalModule,
     DialogModule,
     PagerModule,
-    PaginationModule
+    PaginationModule,
+    AlertBoxModule
   ],
   exports: [
     ModalModule,
     DialogModule,
     PagerModule,
-    PaginationModule
+    PaginationModule,
+    AlertBoxModule
   ],
   declarations: [],
   providers: [],
