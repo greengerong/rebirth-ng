@@ -22,15 +22,22 @@ export class PagerComponent implements OnChanges {
 
   prev(): void {
     if (this.hasPrev()) {
-      this.pageIndexChange.emit(--this.pageIndex);
+      this.onPageIndexChange(this.pageIndex - 1);
     }
   }
 
   next(): void {
     if (this.hasNext()) {
-      this.pageIndexChange.emit(++this.pageIndex);
+      this.onPageIndexChange(this.pageIndex + 1);
     }
   }
+
+  onPageIndexChange(pageIndex: number) {
+    if (this.pageIndex !== pageIndex) {
+      this.pageIndexChange.emit(pageIndex);
+    }
+  }
+
 
   hasPrev(): boolean {
     return this.pageIndex > 1;
