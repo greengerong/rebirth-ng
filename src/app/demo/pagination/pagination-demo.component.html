@@ -1,0 +1,10 @@
+<div class="pagination">
+
+  <re-pagination [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
+                 (pageIndexChange)="pageChange($event)"></re-pagination>
+
+  <div>
+    <pre>{{pager | json}}</pre>
+  </div>
+
+</div>

@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 })
 export class PagerDemoComponent {
   pager = {
-    total: 100,
+    total: 106,
     pageIndex: 5,
     pageSize: 10
   };

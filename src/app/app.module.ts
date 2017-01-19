@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ModalDemoModule, DialogDemoModule } from './demo';
 import { RebirthUIModule } from './exports';
 import { PagerDemoModule } from './demo/pager/pager-demo.module';
+import { PaginationDemoModule } from './demo/pagination';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PagerDemoModule } from './demo/pager/pager-demo.module';
     RebirthUIModule.forRoot(),
     ModalDemoModule,
     DialogDemoModule,
-    PagerDemoModule
+    PagerDemoModule,
+    PaginationDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
