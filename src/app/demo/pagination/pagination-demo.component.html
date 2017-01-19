@@ -1,8 +1,19 @@
 <div class="pagination">
 
-  <re-pagination [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
-                 (pageIndexChange)="pageChange($event)" [maxItems]="10"></re-pagination>
+  <section>
+    <h4>default pagination:</h4>
+    <re-pagination [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
+                   (pageIndexChange)="pageChange($event)" [maxItems]="10">
+    </re-pagination>
+  </section>
 
+  <section>
+    <h4>Chinese text:</h4>
+    <re-pagination [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
+                   (pageIndexChange)="pageChange($event)" [maxItems]="10"
+                   firstLink="首页" lastLink="尾页" preLink="前一页" nextLink="下一页">
+    </re-pagination>
+  </section>
   <div>
     <pre>{{pager | json}}</pre>
   </div>

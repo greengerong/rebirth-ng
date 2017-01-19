@@ -1,10 +1,10 @@
 <nav aria-label="Pagination">
   <ul class="pagination">
     <li *ngIf="boundary" [ngClass]="{disabled: pageIndex == 1}">
-      <a aria-label="First" (click)="first()"><span aria-hidden="true">First</span></a>
+      <a [attr.aria-label]="firstLink" (click)="first()"><span aria-hidden="true">{{firstLink}}</span></a>
     </li>
     <li [ngClass]="{disabled: pageIndex == 1}">
-      <a (click)="prev()" aria-label="Previous"><span aria-hidden="true">Previous</span></a>
+      <a (click)="prev()" [attr.aria-label]="preLink"><span aria-hidden="true">{{preLink}}</span></a>
     </li>
     <li *ngIf="showPages[0] > 1" (click)="preRange()">
       <a>...</a>
@@ -16,10 +16,10 @@
       <a>...</a>
     </li>
     <li [ngClass]="{disabled: pageIndex == totalPage}">
-      <a (click)="next()" aria-label="Next"><span aria-hidden="true">Next</span></a>
+      <a (click)="next()" [attr.aria-label]="nextLink"><span aria-hidden="true">{{nextLink}}</span></a>
     </li>
     <li *ngIf="boundary" [ngClass]="{disabled: pageIndex == totalPage}">
-      <a aria-label="Last" (click)="last()"><span aria-hidden="true">Last</span></a>
+      <a [attr.aria-label]="lastLink" (click)="last()"><span aria-hidden="true">{{lastLink}}</span></a>
     </li>
   </ul>
 </nav>

@@ -17,6 +17,10 @@ export class PaginationComponent implements OnChanges {
   @Input() pageIndex = 1;
   @Output() pageIndexChange = new EventEmitter<number>();
   @Input() maxItems = 5;
+  @Input() firstLink = 'First';
+  @Input() lastLink = 'Last';
+  @Input() preLink = 'Previous';
+  @Input() nextLink = 'Next';
   showPages = [];
   totalPage = 0;
 
@@ -81,11 +85,11 @@ export class PaginationComponent implements OnChanges {
     if (shouldUpdateRanges) {
       this.totalPage = this.getTotalPage();
       this.pageIndex = Math.max(Math.min(this.pageIndex, this.totalPage), 1);
-      this.changeShowPages();
+      this.updateShowPageRange();
     }
   }
 
-  private changeShowPages() {
+  private updateShowPageRange() {
     if (!this.totalPage) {
       this.showPages = [];
       return;
@@ -95,19 +99,27 @@ export class PaginationComponent implements OnChanges {
       this.showPages = new Array<number>(this.totalPage).fill(0).map((_, i) => i + 1);
       return;
     }
+    this.showPages = this.extractRange();
+  }
 
+  private extractRange() {
     const showPages = [this.pageIndex];
-
     let start = this.pageIndex - 1;
     let end = this.pageIndex + 1;
-    while (showPages.length < this.maxItems && (start > 0 || end <= this.totalPage)) {
-      if (start > 0) {
+
+    const arriveLeftBound = index => index < 1;
+    const arriveRightBound = (index) => index > this.totalPage;
+    const fullPageRang = (pages) => pages.length >= this.maxItems;
+
+    while (!(fullPageRang(showPages) || (arriveLeftBound(start) && arriveRightBound(end)))) {
+      if (!arriveLeftBound(start)) {
         showPages.unshift((start--));
       }
-      if (showPages.length < this.maxItems && end <= this.totalPage) {
+
+      if (!fullPageRang(showPages) && !arriveRightBound(end)) {
         showPages.push(end++);
       }
     }
-    this.showPages = showPages;
+    return showPages;
   }
 }
