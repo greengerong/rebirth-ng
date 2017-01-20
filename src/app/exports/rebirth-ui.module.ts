@@ -8,6 +8,7 @@ import { COMMON_SERVICES } from './window-ref';
 import { AlertBoxModule } from './alert-box';
 import { BadgeModule } from './badge';
 import { PanelModule } from './panel';
+import { AccordionModule } from './accordion';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { PanelModule } from './panel';
     PaginationModule,
     AlertBoxModule,
     BadgeModule,
-    PanelModule
+    PanelModule,
+    AccordionModule
   ],
   exports: [
     ModalModule,
@@ -27,7 +29,8 @@ import { PanelModule } from './panel';
     PaginationModule,
     AlertBoxModule,
     BadgeModule,
-    PanelModule
+    PanelModule,
+    AccordionModule
   ],
   declarations: [],
   providers: [],

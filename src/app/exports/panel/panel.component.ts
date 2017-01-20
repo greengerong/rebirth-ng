@@ -1,8 +1,10 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ContentChild } from '@angular/core';
+import { PanelHeaderComponent } from './panel-header.component';
+import { PanelBodyComponent } from './panel-body.component';
 
 @Component({
   moduleId: module.id,
-  selector: 're-panel',
+  selector: 're-panel,re-accordion-item',
   templateUrl: './panel.component.html'
 })
 export class PanelComponent {
@@ -13,10 +15,14 @@ export class PanelComponent {
   @Output() close = new EventEmitter<any>();
   @Output() collapse = new EventEmitter<any>();
 
+  @ContentChild(PanelHeaderComponent) panelHeader: PanelHeaderComponent;
+  @ContentChild(PanelBodyComponent) panelBody: PanelBodyComponent;
+
   constructor() {
   }
 
-  onClose() {
+  onClose($event: Event) {
+    $event.stopPropagation();
     this.close.emit(this);
   }
 

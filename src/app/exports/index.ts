@@ -1,3 +1,4 @@
+export * from './accordion';
 export * from './alert-box';
 export * from './badge';
 export * from './dialog';

@@ -10,7 +10,8 @@ import {
   BadgeDemoModule,
   PaginationDemoModule,
   PagerDemoModule,
-  PanelDemoModule
+  PanelDemoModule,
+  AccordionDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -28,7 +29,8 @@ import { RebirthUIModule } from './exports';
     PaginationDemoModule,
     AlertBoxDemoModule,
     BadgeDemoModule,
-    PanelDemoModule
+    PanelDemoModule,
+    AccordionDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
