@@ -1,13 +1,16 @@
-import { Component, Input, Output, EventEmitter, ContentChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ContentChild, ChangeDetectionStrategy } from '@angular/core';
 import { PanelHeaderComponent } from './panel-header.component';
 import { PanelBodyComponent } from './panel-body.component';
 
 @Component({
   moduleId: module.id,
   selector: 're-panel,re-accordion-item',
-  templateUrl: './panel.component.html'
+  templateUrl: './panel.component.html',
+  exportAs: 'panel',
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PanelComponent {
+  @Input() id;
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
   @Input() canClose = false;
   @Input() allowCollapse = false;

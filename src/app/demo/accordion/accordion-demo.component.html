@@ -1,8 +1,9 @@
 <div class="accordion-demo">
   <section>
     <h4></h4>
-    <re-accordion>
-      <re-accordion-item [allowCollapse]="true" [isCollapsed]="true">
+    <button class="btn btn-primary" (click)="accordion.toggle('1')">Toggle panel 1</button>
+    <re-accordion type="info" #accordion="accordion">
+      <re-accordion-item id="1">
         <re-accordion-header>
           Panel info header!
         </re-accordion-header>
@@ -10,7 +11,7 @@
           Panel info content.
         </re-accordion-body>
       </re-accordion-item>
-      <re-accordion-item [allowCollapse]="true" [isCollapsed]="true">
+      <re-accordion-item id="2">
         <re-accordion-header>
           Panel success header!
         </re-accordion-header>
@@ -18,7 +19,7 @@
           Panel success content.
         </re-accordion-body>
       </re-accordion-item>
-      <re-accordion-item [allowCollapse]="true" [isCollapsed]="true">
+      <re-accordion-item id="3">
         <re-accordion-header>
           Panel warning header!
         </re-accordion-header>
