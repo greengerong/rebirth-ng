@@ -1,5 +1,15 @@
 <div class="panel-demo">
-  <re-panel type="info" [canClose]="true" (close)="close('info')">
+  <re-panel type="default" [canClose]="true" (close)="close('info')" [allowCollapse]="true">
+    <div class="re-panel-header">
+      Panel default header with close button!
+    </div>
+    <body class="re-panel-body">
+    Panel default content.
+    </body>
+  </re-panel>
+
+
+  <re-panel type="info" >
     <div class="re-panel-header">
       Panel info header!
     </div>

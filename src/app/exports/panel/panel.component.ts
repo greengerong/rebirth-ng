@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,9 +6,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './panel.component.html'
 })
 export class PanelComponent {
-  @Input() type: 'success' | 'info' | 'warning' | 'danger' = 'info';
+  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
   @Input() canClose = false;
+  @Input() allowCollapse = false;
+  @Input() isCollapsed = false;
   @Output() close = new EventEmitter<any>();
+  @Output() collapse = new EventEmitter<any>();
 
   constructor() {
   }
@@ -17,4 +20,10 @@ export class PanelComponent {
     this.close.emit(this);
   }
 
+  onCollapse() {
+    if (this.allowCollapse) {
+      this.isCollapsed = !this.isCollapsed;
+      this.collapse.emit(this.isCollapsed);
+    }
+  }
 }
