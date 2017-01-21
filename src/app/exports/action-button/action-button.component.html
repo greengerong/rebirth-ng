@@ -1,0 +1,17 @@
+<div class="btn-group {{'drop' + direction }}" [ngClass]="{open: isOpen}">
+  <button class="btn btn-{{type}}" (click)="toggle($event)">
+    {{buttonText}}
+  </button>
+  <button type="button" class="btn btn-{{type}} dropdown-toggle" aria-haspopup="true" [attr.aria-expanded]="true"
+          (click)="toggle($event)">
+    <span class="caret"></span>
+    <span class="sr-only">Split button!</span>
+  </button>
+
+  <ul class="dropdown-menu" role="menu">
+    <ng-container *ngFor="let item of actions">
+      <li *ngIf="!item.divider" role="menuitem" (click)="onActionClick(item)"><a>{{item.text}}</a></li>
+      <li *ngIf="item.divider" class="divider"></li>
+    </ng-container>
+  </ul>
+</div>

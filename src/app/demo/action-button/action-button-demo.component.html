@@ -1,0 +1,9 @@
+<div class="action-button-demo">
+  <re-action-button [buttonText]="'Dropdown action'" [actions]="actions"
+                    (actionClick)="onActionClick($event)"></re-action-button>
+  <re-action-button [buttonText]="'Dropup action'" direction="up" [actions]="actions" type="danger"
+                    (actionClick)="onActionClick($event)" [isOpen]="isActionOpen"></re-action-button>
+  <div>
+    <button class="btn" (click)="isActionOpen = !isActionOpen; $event.stopPropagation();">Toggle Dropup action</button>
+  </div>
+</div>

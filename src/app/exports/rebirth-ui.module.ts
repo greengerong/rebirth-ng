@@ -9,6 +9,7 @@ import { AlertBoxModule } from './alert-box';
 import { BadgeModule } from './badge';
 import { PanelModule } from './panel';
 import { AccordionModule } from './accordion';
+import { ActionButtonModule } from './action-button';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AccordionModule } from './accordion';
     AlertBoxModule,
     BadgeModule,
     PanelModule,
-    AccordionModule
+    AccordionModule,
+    ActionButtonModule
   ],
   exports: [
     ModalModule,
@@ -30,7 +32,8 @@ import { AccordionModule } from './accordion';
     AlertBoxModule,
     BadgeModule,
     PanelModule,
-    AccordionModule
+    AccordionModule,
+    ActionButtonModule
   ],
   declarations: [],
   providers: [],

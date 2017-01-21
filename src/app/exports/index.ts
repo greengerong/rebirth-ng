@@ -1,4 +1,5 @@
 export * from './accordion';
+export * from './action-button';
 export * from './alert-box';
 export * from './badge';
 export * from './dialog';
