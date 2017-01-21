@@ -10,6 +10,7 @@ import { BadgeModule } from './badge';
 import { PanelModule } from './panel';
 import { AccordionModule } from './accordion';
 import { ActionButtonModule } from './action-button';
+import { RatingModule } from './rating';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ActionButtonModule } from './action-button';
     BadgeModule,
     PanelModule,
     AccordionModule,
-    ActionButtonModule
+    ActionButtonModule,
+    RatingModule
   ],
   exports: [
     ModalModule,
@@ -33,7 +35,8 @@ import { ActionButtonModule } from './action-button';
     BadgeModule,
     PanelModule,
     AccordionModule,
-    ActionButtonModule
+    ActionButtonModule,
+    RatingModule
   ],
   declarations: [],
   providers: [],

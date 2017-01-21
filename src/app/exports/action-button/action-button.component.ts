@@ -12,6 +12,7 @@ export class ActionButtonComponent {
   @Input() buttonText: string;
   @Input() isOpen = false;
   @Input() actions: ActionItem[];
+  @Input() disabled = false;
   @Output() actionClick = new EventEmitter<ActionItem>();
   @Output() openStatusChange = new EventEmitter<boolean>();
 

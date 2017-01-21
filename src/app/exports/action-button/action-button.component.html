@@ -1,9 +1,9 @@
 <div class="btn-group {{'drop' + direction }}" [ngClass]="{open: isOpen}">
-  <button class="btn btn-{{type}}" (click)="toggle($event)">
+  <button class="btn btn-{{type}}" (click)="toggle($event)" [disabled]="disabled">
     {{buttonText}}
   </button>
   <button type="button" class="btn btn-{{type}} dropdown-toggle" aria-haspopup="true" [attr.aria-expanded]="true"
-          (click)="toggle($event)">
+          (click)="toggle($event)" [disabled]="disabled">
     <span class="caret"></span>
     <span class="sr-only">Split button!</span>
   </button>

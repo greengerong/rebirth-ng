@@ -3,7 +3,11 @@
                     (actionClick)="onActionClick($event)"></re-action-button>
   <re-action-button [buttonText]="'Dropup action'" direction="up" [actions]="actions" type="danger"
                     (actionClick)="onActionClick($event)" [isOpen]="isActionOpen"></re-action-button>
+
+  <re-action-button [buttonText]="'Disabled dropdown action'" [actions]="actions" [disabled]="disabledActionOpen"></re-action-button>
   <div>
     <button class="btn" (click)="isActionOpen = !isActionOpen; $event.stopPropagation();">Toggle Dropup action</button>
+
+    <button class="btn" (click)="disabledActionOpen = !disabledActionOpen;">Toggle Dropup action disabled</button>
   </div>
 </div>
