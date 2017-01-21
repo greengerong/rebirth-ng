@@ -4,7 +4,7 @@
 
 ## Components
 
-- [ ] Accordion
+- [x] Accordion
 - [x] Alert Box
 - [x] Badge
 - [x] Modal
