@@ -16,6 +16,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Input() canClose = false;
   @Input() allowCollapse = false;
   @Input() isCollapsed = false;
+  @Input() cssClass: string;
   @Output() close = new EventEmitter<PanelComponent>();
   @Output() collapse = new EventEmitter<boolean>();
 

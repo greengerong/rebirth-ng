@@ -3,6 +3,7 @@ import { Input } from '@angular/core';
 
 export abstract class PanelGroup {
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
+  @Input() cssClass: string;
   panels: PanelComponent[] = [];
 
   $addItem(panel: PanelComponent) {
@@ -10,6 +11,7 @@ export abstract class PanelGroup {
     if (this.type) {
       panel.type = this.type;
     }
+    panel.cssClass = this.cssClass;
     this.initPanel(panel);
     this.panels.push(panel);
   }

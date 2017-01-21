@@ -1,4 +1,4 @@
-<div class="panel panel-{{type}}" [ngClass]="{'panel-open': !isCollapsed}">
+<div class="panel panel-{{type}} {{cssClass}}" [ngClass]="{'panel-open': !isCollapsed}">
   <div class="panel-heading" (click)="onCollapse()" [ngStyle]="{cursor: allowCollapse ? 'pointer' :'inherit'}">
     <button type="button" class="close" *ngIf="canClose" aria-label="Close" (click)="onClose($event)">
       <span aria-hidden="true">&times;</span>
