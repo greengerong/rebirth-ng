@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 're-panel-demo',
   templateUrl: './panel-demo.component.html'
 })

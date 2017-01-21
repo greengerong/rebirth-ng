@@ -5,7 +5,6 @@ import {
 import { PanelGroup } from './panel-group.model';
 
 @Component({
-  moduleId: module.id,
   selector: 're-panel,re-accordion-item',
   templateUrl: './panel.component.html',
   exportAs: 'panel',
