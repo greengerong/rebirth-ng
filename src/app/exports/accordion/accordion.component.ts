@@ -1,48 +1,50 @@
-import { Component, ContentChildren, QueryList, AfterContentInit, Input, ChangeDetectionStrategy } from '@angular/core';
-import { PanelComponent } from '../panel/panel.component';
+import {
+  Component, Input, ChangeDetectionStrategy,
+  forwardRef
+} from '@angular/core';
+import { PanelComponent, PanelGroup } from '../panel';
 
 @Component({
   selector: 're-accordion',
   templateUrl: './accordion.component.html',
   exportAs: 'accordion',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [{ provide: PanelGroup, useExisting: forwardRef(() => AccordionComponent) }],
 })
-export class AccordionComponent implements AfterContentInit {
-  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
-  @ContentChildren(PanelComponent) panels: QueryList<PanelComponent>;
+export class AccordionComponent extends PanelGroup {
   @Input() keepOneItem = true;
 
   constructor() {
+    super();
   }
 
-  ngAfterContentInit(): void {
-    this.panels.forEach(panel => {
-      panel.allowCollapse = true;
-      panel.isCollapsed = true;
-      if (this.type) {
-        panel.type = this.type;
-      }
-      if (this.keepOneItem) {
-        panel.collapse.subscribe(collapse => {
-          if (!collapse) {
-            this.keepOnePanelOpen(panel);
-          }
-        });
+  protected initPanel(panel: PanelComponent) {
+    panel.allowCollapse = true;
+    panel.isCollapsed = true;
+    panel.collapse.subscribe(collapse => {
+      if (!collapse) {
+        this.keepOnePanelOpen(panel);
       }
     });
+
+    this.panels.push(panel);
   }
 
   toggle(id) {
     const panel = this.panels.find(item => item.id === id);
-    panel.onCollapse();
+    if (panel) {
+      panel.onCollapse();
+    }
   }
 
 
   private keepOnePanelOpen(panel) {
-    this.panels.forEach(item => {
-      if (item !== panel) {
-        item.isCollapsed = true;
-      }
-    });
+    if (this.keepOneItem) {
+      this.panels.forEach(item => {
+        if (item !== panel) {
+          item.isCollapsed = true;
+        }
+      });
+    }
   }
 }

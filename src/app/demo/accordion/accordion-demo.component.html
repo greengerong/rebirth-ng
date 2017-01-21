@@ -1,6 +1,6 @@
 <div class="accordion-demo">
   <section>
-    <h4></h4>
+    <h4>Static text</h4>
     <button class="btn btn-primary" (click)="accordion.toggle('1')">Toggle panel 1</button>
     <re-accordion type="info" #accordion="accordion">
       <re-accordion-item id="1">
@@ -21,12 +21,29 @@
       </re-accordion-item>
       <re-accordion-item id="3">
         <re-accordion-header>
-          Panel warning header!
+          Panel warning header.
         </re-accordion-header>
         <re-accordion-body>
           Panel warning content.
         </re-accordion-body>
       </re-accordion-item>
+    </re-accordion>
+  </section>
+
+  <section>
+    <h4> *ngFor items</h4>
+    <button class="btn btn-primary" (click)="appendItems()">Append more items</button>
+    <re-accordion type="success" #accordion="accordion">
+      <ng-container *ngFor="let item of items">
+        <re-accordion-item [id]="item.id">
+          <re-accordion-header>
+            {{item.title}}
+          </re-accordion-header>
+          <re-accordion-body>
+            {{item.content}}
+          </re-accordion-body>
+        </re-accordion-item>
+      </ng-container>
     </re-accordion>
   </section>
 </div>

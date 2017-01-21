@@ -1,6 +1,5 @@
-import { Component, Input, Output, EventEmitter, ContentChild, ChangeDetectionStrategy } from '@angular/core';
-import { PanelHeaderComponent } from './panel-header.component';
-import { PanelBodyComponent } from './panel-body.component';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit } from '@angular/core';
+import { PanelGroup } from './panel-group.model';
 
 @Component({
   moduleId: module.id,
@@ -9,7 +8,8 @@ import { PanelBodyComponent } from './panel-body.component';
   exportAs: 'panel',
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PanelComponent {
+export class PanelComponent implements OnInit {
+
   @Input() id;
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
   @Input() canClose = false;
@@ -18,10 +18,14 @@ export class PanelComponent {
   @Output() close = new EventEmitter<any>();
   @Output() collapse = new EventEmitter<any>();
 
-  @ContentChild(PanelHeaderComponent) panelHeader: PanelHeaderComponent;
-  @ContentChild(PanelBodyComponent) panelBody: PanelBodyComponent;
+  constructor(@Optional() private  panelGroup: PanelGroup) {
+    if (this.panelGroup) {
+      this.panelGroup.addItem(this);
+    }
+  }
 
-  constructor() {
+  ngOnInit(): void {
+
   }
 
   onClose($event: Event) {
@@ -36,3 +40,5 @@ export class PanelComponent {
     }
   }
 }
+
+// .panel-open
