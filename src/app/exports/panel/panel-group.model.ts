@@ -21,7 +21,7 @@ export abstract class PanelGroup {
 
   $removeItem(panel: PanelComponent) {
     if (panel) {
-      const index = this.panels.findIndex(item => item.id === panel.id);
+      const index = this.panels.findIndex(item => item === panel);
       this.removeItemByIndex(index);
     }
   }
