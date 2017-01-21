@@ -7,8 +7,8 @@ import { PanelGroup } from './panel-group.model';
 @Component({
   selector: 're-panel,re-accordion-item',
   templateUrl: './panel.component.html',
-  exportAs: 'panel',
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush,
+  exportAs: 'panel'
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
@@ -16,8 +16,8 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Input() canClose = false;
   @Input() allowCollapse = false;
   @Input() isCollapsed = false;
-  @Output() close = new EventEmitter<any>();
-  @Output() collapse = new EventEmitter<any>();
+  @Output() close = new EventEmitter<PanelComponent>();
+  @Output() collapse = new EventEmitter<boolean>();
 
   constructor(@Optional() @Host() private  panelGroup: PanelGroup) {
 

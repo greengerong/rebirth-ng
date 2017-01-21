@@ -2,7 +2,7 @@
   <section>
     <h4>Static text</h4>
     <button class="btn btn-primary" (click)="accordion.toggleById('1')">Toggle panel 1</button>
-    <re-accordion type="info" #accordion="accordion">
+    <re-accordion type="info" #accordion="accordion" [canClose]="true" (close)="onClose($event)">
       <re-accordion-item id="1">
         <re-accordion-header>
           Panel info header!
@@ -20,6 +20,36 @@
         </re-accordion-body>
       </re-accordion-item>
       <re-accordion-item id="3">
+        <re-accordion-header>
+          Panel warning header.
+        </re-accordion-header>
+        <re-accordion-body>
+          Panel warning content.
+        </re-accordion-body>
+      </re-accordion-item>
+    </re-accordion>
+  </section>
+
+  <section>
+    <h4>Different type in each panel</h4>
+    <re-accordion>
+      <re-accordion-item type="info">
+        <re-accordion-header>
+          Panel info header!
+        </re-accordion-header>
+        <re-accordion-body>
+          Panel info content.
+        </re-accordion-body>
+      </re-accordion-item>
+      <re-accordion-item type="success">
+        <re-accordion-header>
+          Panel success header!
+        </re-accordion-header>
+        <re-accordion-body>
+          Panel success content.
+        </re-accordion-body>
+      </re-accordion-item>
+      <re-accordion-item type="danger">
         <re-accordion-header>
           Panel warning header.
         </re-accordion-header>

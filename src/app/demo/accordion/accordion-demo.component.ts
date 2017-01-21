@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PanelComponent } from '../../exports/panel/panel.component';
 
 @Component({
   selector: 're-accordion-demo',
@@ -14,6 +15,10 @@ export class AccordionDemoComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onClose(panel: PanelComponent) {
+    console.log(`Panel ${panel.id} will close!`, panel);
   }
 
   appendItems() {

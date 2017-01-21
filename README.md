@@ -2,7 +2,7 @@
 ##########################
 > Angular2 UI plugin with bootstrap;
 
-## Tasks
+## Components
 
 - [ ] Accordion
 - [x] Alert Box
@@ -19,3 +19,15 @@
 - [ ] Popover
 - [ ] Tooltip
 - [ ] Tabs
+
+
+## Tasks
+
+- declare 'default'| 'success' | 'info' | 'warning' | 'danger' to one ts type; 
+
+- refactor all component config to rebirth-ui-config
+
+- publish `exports` build
+
+- document(component & typedoc) & deploy
+

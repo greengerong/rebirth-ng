@@ -1,6 +1,6 @@
 import {
   Component, Input, ChangeDetectionStrategy,
-  forwardRef
+  forwardRef, Output, EventEmitter
 } from '@angular/core';
 import { PanelComponent, PanelGroup } from '../panel';
 
@@ -13,6 +13,8 @@ import { PanelComponent, PanelGroup } from '../panel';
 })
 export class AccordionComponent extends PanelGroup {
   @Input() keepOneItem = true;
+  @Input() canClose = false;
+  @Output() close = new EventEmitter<PanelComponent>();
 
   constructor() {
     super();
@@ -21,6 +23,8 @@ export class AccordionComponent extends PanelGroup {
   protected initPanel(panel: PanelComponent) {
     panel.allowCollapse = true;
     panel.isCollapsed = true;
+    panel.canClose = this.canClose;
+    panel.close.subscribe(item => this.close.emit(item));
     panel.collapse.subscribe(collapse => {
       if (!collapse) {
         this.keepOnePanelOpen(panel);
