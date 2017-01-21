@@ -6,6 +6,10 @@ export abstract class PanelGroup {
   panels: PanelComponent[] = [];
 
   addItem(panel: PanelComponent) {
+    const index = this.panels.findIndex(item => item.id === panel.id);
+    if (index !== -1) {
+      this.panels.splice(index, 1);
+    }
     if (this.type) {
       panel.type = this.type;
     }

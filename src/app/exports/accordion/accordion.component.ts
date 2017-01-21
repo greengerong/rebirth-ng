@@ -26,12 +26,14 @@ export class AccordionComponent extends PanelGroup {
         this.keepOnePanelOpen(panel);
       }
     });
-
-    this.panels.push(panel);
   }
 
-  toggle(id) {
+  toggleById(id) {
     const panel = this.panels.find(item => item.id === id);
+    this.toggle(panel);
+  }
+
+  toggle(panel: PanelComponent) {
     if (panel) {
       panel.onCollapse();
     }

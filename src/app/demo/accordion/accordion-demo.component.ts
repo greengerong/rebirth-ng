@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class AccordionDemoComponent implements OnInit {
   items = [
     { id: 1, title: 'Panel header 1', content: 'Panel header 1' },
-    { id: 1, title: 'Panel header 2', content: 'Panel header 2' }
+    { id: 2, title: 'Panel header 2', content: 'Panel header 2' }
   ];
 
   constructor() {

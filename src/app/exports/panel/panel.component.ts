@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit, Host } from '@angular/core';
 import { PanelGroup } from './panel-group.model';
 
 @Component({
@@ -18,14 +18,14 @@ export class PanelComponent implements OnInit {
   @Output() close = new EventEmitter<any>();
   @Output() collapse = new EventEmitter<any>();
 
-  constructor(@Optional() private  panelGroup: PanelGroup) {
-    if (this.panelGroup) {
-      this.panelGroup.addItem(this);
-    }
+  constructor(@Optional() @Host() private  panelGroup: PanelGroup) {
+
   }
 
   ngOnInit(): void {
-
+    if (this.panelGroup) {
+      this.panelGroup.addItem(this);
+    }
   }
 
   onClose($event: Event) {

@@ -1,7 +1,7 @@
 <div class="accordion-demo">
   <section>
     <h4>Static text</h4>
-    <button class="btn btn-primary" (click)="accordion.toggle('1')">Toggle panel 1</button>
+    <button class="btn btn-primary" (click)="accordion.toggleById('1')">Toggle panel 1</button>
     <re-accordion type="info" #accordion="accordion">
       <re-accordion-item id="1">
         <re-accordion-header>
@@ -33,9 +33,9 @@
   <section>
     <h4> *ngFor items</h4>
     <button class="btn btn-primary" (click)="appendItems()">Append more items</button>
-    <re-accordion type="success" #accordion="accordion">
+    <re-accordion type="success">
       <ng-container *ngFor="let item of items">
-        <re-accordion-item [id]="item.id">
+        <re-accordion-item id="{{item.id}}">
           <re-accordion-header>
             {{item.title}}
           </re-accordion-header>
