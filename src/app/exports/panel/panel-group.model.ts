@@ -5,16 +5,31 @@ export abstract class PanelGroup {
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
   panels: PanelComponent[] = [];
 
-  addItem(panel: PanelComponent) {
-    const index = this.panels.findIndex(item => item.id === panel.id);
-    if (index !== -1) {
-      this.panels.splice(index, 1);
-    }
+  $addItem(panel: PanelComponent) {
+    this.$removeItem(panel);
     if (this.type) {
       panel.type = this.type;
     }
     this.initPanel(panel);
     this.panels.push(panel);
+  }
+
+  $removeItemById(id) {
+    const index = this.panels.findIndex(item => item.id === id);
+    this.removeItemByIndex(index);
+  }
+
+  $removeItem(panel: PanelComponent) {
+    if (panel) {
+      const index = this.panels.findIndex(item => item.id === panel.id);
+      this.removeItemByIndex(index);
+    }
+  }
+
+  private removeItemByIndex(index: number) {
+    if (index !== -1) {
+      this.panels.splice(index, 1);
+    }
   }
 
   protected abstract initPanel(panel: PanelComponent) ;

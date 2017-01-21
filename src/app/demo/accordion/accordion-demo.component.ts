@@ -21,4 +21,8 @@ export class AccordionDemoComponent implements OnInit {
     this.items.push({ id: len, title: `Panel header ${len}`, content: `Panel header ${len}` });
   }
 
+  removeLastItem() {
+    const len = this.items.length;
+    this.items.splice(len - 1, 1);
+  };
 }

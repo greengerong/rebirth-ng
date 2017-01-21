@@ -33,6 +33,9 @@
   <section>
     <h4> *ngFor items</h4>
     <button class="btn btn-primary" (click)="appendItems()">Append more items</button>
+    <button class="btn btn-warning" (click)="removeLastItem()">Remove last
+      {{items.length}}
+    </button>
     <re-accordion type="success">
       <ng-container *ngFor="let item of items">
         <re-accordion-item id="{{item.id}}">

@@ -1,4 +1,7 @@
-import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit, Host } from '@angular/core';
+import {
+  Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit, Host,
+  OnDestroy
+} from '@angular/core';
 import { PanelGroup } from './panel-group.model';
 
 @Component({
@@ -8,8 +11,7 @@ import { PanelGroup } from './panel-group.model';
   exportAs: 'panel',
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PanelComponent implements OnInit {
-
+export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
   @Input() canClose = false;
@@ -24,7 +26,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.panelGroup) {
-      this.panelGroup.addItem(this);
+      this.panelGroup.$addItem(this);
     }
   }
 
@@ -37,6 +39,12 @@ export class PanelComponent implements OnInit {
     if (this.allowCollapse) {
       this.isCollapsed = !this.isCollapsed;
       this.collapse.emit(this.isCollapsed);
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (this.panelGroup) {
+      this.panelGroup.$removeItem(this);
     }
   }
 }
