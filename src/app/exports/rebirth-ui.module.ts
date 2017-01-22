@@ -11,6 +11,7 @@ import { PanelModule } from './panel';
 import { AccordionModule } from './accordion';
 import { ActionButtonModule } from './action-button';
 import { RatingModule } from './rating';
+import { TabsModule } from './tabs';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RatingModule } from './rating';
     PanelModule,
     AccordionModule,
     ActionButtonModule,
-    RatingModule
+    RatingModule,
+    TabsModule
   ],
   exports: [
     ModalModule,
@@ -36,7 +38,8 @@ import { RatingModule } from './rating';
     PanelModule,
     AccordionModule,
     ActionButtonModule,
-    RatingModule
+    RatingModule,
+    TabsModule
   ],
   declarations: [],
   providers: [],

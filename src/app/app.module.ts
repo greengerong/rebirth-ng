@@ -13,7 +13,8 @@ import {
   PanelDemoModule,
   AccordionDemoModule,
   ActionButtonDemoModule,
-  RatingDemoModule
+  RatingDemoModule,
+  TabsDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -34,7 +35,8 @@ import { RebirthUIModule } from './exports';
     PanelDemoModule,
     AccordionDemoModule,
     ActionButtonDemoModule,
-    RatingDemoModule
+    RatingDemoModule,
+    TabsDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

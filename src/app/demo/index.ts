@@ -8,3 +8,4 @@ export * from './pager';
 export * from './pagination';
 export * from './panel';
 export * from './rating';
+export * from './tabs';

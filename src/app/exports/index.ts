@@ -8,6 +8,7 @@ export * from './pager';
 export * from './pagination';
 export * from './panel';
 export * from './rating';
+export * from './tabs';
 export * from './window-ref';
 export * from './rebirth-ui.config';
 export * from './rebirth-ui.module';
