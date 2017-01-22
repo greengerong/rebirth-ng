@@ -1,4 +1,5 @@
-<ul class="nav nav-tabs {{cssClass}}" role="tablist">
+<ul class="nav nav-{{type}} {{cssClass}}" [ngClass]="{'nav-stacked': vertical,'nav-justified': justified}"
+    role="tablist">
   <li role="presentation" *ngFor="let tab of tabs" [class.disabled]="tab.disabled"
       [class.active]="tab.id == activeTab" (click)="select(tab.id)">
     <a role="tab" data-toggle="tab" [attr.aria-expanded]="tab.id == activeTab">

@@ -6,8 +6,10 @@ import { TabComponent } from './tab.component';
   templateUrl: './tabs.component.html'
 })
 export class TabsComponent implements OnInit {
-  @Input() type: 'tabs' | 'pills';
+  @Input() type: 'tabs' | 'pills' = 'tabs';
   @Input() activeTab: number |string;
+  @Input() vertical = false;
+  @Input() justified = false;
   @Input() cssClass: string;
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() activeTabChange = new EventEmitter<number| string>();

@@ -44,6 +44,7 @@
         </template>
 
         <template reTabContent>
+          <button class="btn btn-warning" (click)="alert('tab3')"> Alert</button>
           <p>
             Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny
             pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
@@ -51,6 +52,7 @@
             8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro
             mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown.
             Pitchfork sustainable tofu synth chambray yr.
+
           </p>
         </template>
       </re-tab>
@@ -61,10 +63,25 @@
   </section>
 
   <section>
-    <h4>Dynamic tabs:</h4>
+    <h4>Dynamic justified tabs:</h4>
 
-    <re-tabs [(activeTab)]="tab.activeId">
+    <re-tabs [(activeTab)]="tab.activeId" [justified]="true">
       <re-tab *ngFor="let item of tabItems" [disabled]="item.disabled" [id]="item.id">
+        <template reTabTitle>
+          {{item.title}}
+        </template>
+        <template reTabContent>
+          {{item.content}}
+        </template>
+      </re-tab>
+    </re-tabs>
+  </section>
+
+  <section>
+    <h4>Pills vertical tabs:</h4>
+
+    <re-tabs [(activeTab)]="tab.activeId" type="pills" [vertical]="true">
+      <re-tab *ngFor="let item of tabItems" [id]="item.id">
         <template reTabTitle>
           {{item.title}}
         </template>

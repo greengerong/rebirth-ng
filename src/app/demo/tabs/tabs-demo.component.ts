@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from '../../exports/dialog/dialog.service';
 
 @Component({
   selector: 're-tabs-demo',
   templateUrl: './tabs-demo.component.html'
 })
-export class TabsDemoComponent implements OnInit {
+export class TabsDemoComponent {
   tab = { activeId: 'tab2' };
   tabItems = [
     {
@@ -41,10 +42,20 @@ export class TabsDemoComponent implements OnInit {
     },
   ];
 
-  constructor() {
+  constructor(private dialogService: DialogService) {
+
   }
 
-  ngOnInit() {
+  alert(id) {
+    this.dialogService.alert({
+      title: 'Tab alert',
+      content: `Get tab id <strong>${id}</strong>.`,
+      html: true
+    })
+      .subscribe(
+        data => console.log('Rebirth alert get yes result:', data),
+        error => console.error('Rebirth alert get no result:', error)
+      );
   }
 
 }
