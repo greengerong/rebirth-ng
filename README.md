@@ -18,7 +18,7 @@
 - [x] Rating
 - [ ] Popover
 - [ ] Tooltip
-- [ ] Tabs
+- [x] Tabs
 - [x] Action Button
 
 
