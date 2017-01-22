@@ -1,0 +1,13 @@
+<div class="rating-demo">
+  <section>
+    <h4>default rating:</h4>
+    <re-rating [(ngModel)]="rating.value" [max]="rating.max"></re-rating>
+  </section>
+
+  <section>
+    <h4>Customise icons zrating:</h4>
+    <re-rating [(ngModel)]="rating.value" [max]="rating.max" [icons]="icons"></re-rating>
+  </section>
+
+  <pre>{{rating | json}}</pre>
+</div>

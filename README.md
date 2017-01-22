@@ -15,7 +15,7 @@
 - [ ] Collapse
 - [ ] DatePicker
 - [ ] Dropdown
-- [ ] Rating
+- [x] Rating
 - [ ] Popover
 - [ ] Tooltip
 - [ ] Tabs
