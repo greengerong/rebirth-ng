@@ -1,9 +1,19 @@
-import { Component, OnInit, QueryList, ContentChildren, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  QueryList,
+  ContentChildren,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { TabComponent } from './tab.component';
 
 @Component({
   selector: 're-tabs',
-  templateUrl: './tabs.component.html'
+  templateUrl: './tabs.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsComponent implements OnInit {
   @Input() type: 'tabs' | 'pills' = 'tabs';
