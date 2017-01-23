@@ -12,7 +12,6 @@
 - [x] Pager
 - [x] Pagination
 - [x] Panel
-- [ ] Collapse
 - [ ] DatePicker
 - [ ] Dropdown
 - [x] Rating

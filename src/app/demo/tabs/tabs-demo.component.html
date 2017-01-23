@@ -3,11 +3,7 @@
     <h4>default tabs:</h4>
 
     <re-tabs [(activeTab)]="tab.activeId">
-      <re-tab id="tab1">
-        <template reTabTitle>
-          Home
-        </template>
-
+      <re-tab id="tab1" title="Home">
         <template reTabContent>
           <p>
             Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
@@ -18,11 +14,7 @@
         </template>
       </re-tab>
 
-      <re-tab id="tab2">
-        <template reTabTitle>
-          Profile
-        </template>
-
+      <re-tab id="tab2" title="Profile">
         <template reTabContent>
           <p>
             Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
@@ -38,11 +30,7 @@
         </template>
       </re-tab>
 
-      <re-tab id="tab3">
-        <template reTabTitle>
-          Fat
-        </template>
-
+      <re-tab id="tab3" title="Fat">
         <template reTabContent>
           <button class="btn btn-warning" (click)="alert('tab3')"> Alert</button>
           <p>

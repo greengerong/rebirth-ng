@@ -11,4 +11,16 @@ export class WindowRef {
     return this.documentRef;
   }
 
+  get pageXOffset() {
+    return window.pageXOffset;
+  }
+
+  get pageYOffset() {
+    return window.pageYOffset;
+  }
+
+  getComputedStyle(element) {
+    return window.getComputedStyle(element);
+  }
+
 }

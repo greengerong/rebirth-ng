@@ -3,7 +3,8 @@
   <li role="presentation" *ngFor="let tab of tabs" [class.disabled]="tab.disabled"
       [class.active]="tab.id == activeTab" (click)="select(tab.id)">
     <a role="tab" data-toggle="tab" [attr.aria-expanded]="tab.id == activeTab">
-      <template [ngTemplateOutlet]="tab.titleTpl?.templateRef"></template>
+      <template *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"></template>
+      <span *ngIf="tab.title">{{tab.title}}</span>
     </a>
   </li>
 </ul>
