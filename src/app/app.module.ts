@@ -14,7 +14,8 @@ import {
   AccordionDemoModule,
   ActionButtonDemoModule,
   RatingDemoModule,
-  TabsDemoModule
+  TabsDemoModule,
+  TooltipDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -36,7 +37,8 @@ import { RebirthUIModule } from './exports';
     AccordionDemoModule,
     ActionButtonDemoModule,
     RatingDemoModule,
-    TabsDemoModule
+    TabsDemoModule,
+    TooltipDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

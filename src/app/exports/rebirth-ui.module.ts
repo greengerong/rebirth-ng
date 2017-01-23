@@ -12,6 +12,8 @@ import { AccordionModule } from './accordion';
 import { ActionButtonModule } from './action-button';
 import { RatingModule } from './rating';
 import { TabsModule } from './tabs';
+import { TooltipModule } from './tooltip';
+import { PositionService } from './position';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { TabsModule } from './tabs';
     AccordionModule,
     ActionButtonModule,
     RatingModule,
-    TabsModule
+    TabsModule,
+    TooltipModule
   ],
   exports: [
     ModalModule,
@@ -39,7 +42,8 @@ import { TabsModule } from './tabs';
     AccordionModule,
     ActionButtonModule,
     RatingModule,
-    TabsModule
+    TabsModule,
+    TooltipModule
   ],
   declarations: [],
   providers: [],
@@ -54,7 +58,8 @@ export class RebirthUIModule {
         ...COMMON_SERVICES,
         RebirthUIConfig,
         ModalService,
-        DialogService
+        DialogService,
+        PositionService
       ]
     };
   }

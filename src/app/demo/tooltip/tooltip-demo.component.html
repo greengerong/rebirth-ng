@@ -1,0 +1,52 @@
+<div class="tooltip-demo">
+  <section>
+    <h4>Hover tooltip:</h4>
+    <div style="padding: 10px 100px;">
+      <button class="btn btn-primary" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip on left</button>
+      <button class="btn btn-success" reTooltip="I am a rebirth tooltip!">Tooltip on top</button>
+      <button class="btn btn-warning" reTooltip="I am a rebirth tooltip!" placement="bottom">Tooltip on bottom</button>
+      <button class="btn btn-danger" reTooltip="I am a rebirth tooltip!" placement="right">Tooltip on right</button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Click tooltip:</h4>
+    <div style="padding: 10px 100px;">
+      <button class="btn btn-primary" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip
+        on left
+      </button>
+      <button class="btn btn-success" [trigger]="'click'" reTooltip="I am a rebirth tooltip!">Tooltip on top</button>
+      <button class="btn btn-warning" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="bottom">Tooltip
+        on bottom
+      </button>
+      <button class="btn btn-danger" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="right">Tooltip
+        on right
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Manual tooltip:</h4>
+    <div style="padding: 10px 100px;">
+      <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'" reTooltip="I am a rebirth tooltip!">
+        Tooltip on top
+      </button>
+      <button class="btn btn-success" (click)="tooltip.show()">Show tooltip</button>
+      <button class="btn btn-warning" (click)="tooltip.hide()">Hide tooltip</button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Manual tooltip:</h4>
+    <div style="padding: 10px 100px;">
+      <template #tipContent>
+        <h4>Setting</h4>
+        {{setting}}
+      </template>
+      <button class="btn btn-primary" [reTooltip]="tipContent">
+        Tooltip on top
+      </button>
+    </div>
+  </section>
+
+</div>
