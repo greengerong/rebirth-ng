@@ -1,6 +1,6 @@
 import {
   OnInit, Directive, Input, ViewContainerRef, ComponentFactoryResolver, Injector,
-  ComponentRef, ElementRef, Renderer, HostListener, TemplateRef
+  ComponentRef, ElementRef, Renderer, HostListener, TemplateRef, ChangeDetectionStrategy
 } from '@angular/core';
 import { TooltipPopupComponent } from './tooltip-popup.component';
 import { PositionService } from '../position/positioning.service';

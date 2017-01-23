@@ -1,18 +1,15 @@
-import {
-  Component, OnInit, ChangeDetectionStrategy, Input, HostBinding, ElementRef, Renderer,
-  TemplateRef
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ElementRef, Renderer, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 're-tooltip-popup',
   templateUrl: './tooltip-popup.component.html',
-  host: { '[class]': '"tooltip fade  " + placement', 'role': 'tooltip' }
+  host: { '[class]': '"tooltip fade  " + placement', 'role': 'tooltip' },
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TooltipPopupComponent {
   static ACTIVE_CLASS = 'in';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   @Input() content: string | TemplateRef<any>;
-;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer) {
   }
