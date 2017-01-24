@@ -1,6 +1,6 @@
 import {
   OnInit, Directive, Input, ViewContainerRef, ComponentFactoryResolver, Injector,
-  ComponentRef, ElementRef, Renderer, HostListener, TemplateRef, ChangeDetectionStrategy
+  ComponentRef, ElementRef, Renderer, HostListener, TemplateRef, OnDestroy
 } from '@angular/core';
 import { TooltipPopupComponent } from './tooltip-popup.component';
 import { PositionService } from '../position/positioning.service';
@@ -9,8 +9,9 @@ import { PositionService } from '../position/positioning.service';
   selector: '[reTooltip]',
   exportAs: 'tooltip'
 })
-export class TooltipDirective implements OnInit {
+export class TooltipDirective implements OnInit, OnDestroy {
   @Input('reTooltip') content: string | TemplateRef<any>;
+  @Input('context') context: { [id: string]: any; };
   @Input() trigger: 'hover'|'click' | 'manual' = 'hover';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   popupRef: ComponentRef<TooltipPopupComponent>;
@@ -19,6 +20,7 @@ export class TooltipDirective implements OnInit {
     click: ['click'],
     manual: []
   };
+  listens: Function[] = [];
 
   constructor(private viewContainerRef: ViewContainerRef,
               private elementRef: ElementRef,
@@ -33,14 +35,15 @@ export class TooltipDirective implements OnInit {
     this.popupRef = this.viewContainerRef.createComponent(factory, 0, this.injector);
     const popupComponent = this.popupRef.instance;
     popupComponent.content = this.content;
+    popupComponent.context = this.context;
     popupComponent.placement = this.placement;
     const hostElement = this.elementRef.nativeElement;
     const trigger = this.triggers[this.trigger];
     if (trigger[0]) {
-      this.renderer.listen(hostElement, trigger[0], () => this.show());
+      this.listens.push(this.renderer.listen(hostElement, trigger[0], () => this.show()));
     }
     if (trigger[1]) {
-      this.renderer.listen(hostElement, trigger[1], () => this.hide());
+      this.listens.push(this.renderer.listen(hostElement, trigger[1], () => this.hide()));
     }
   }
 
@@ -54,9 +57,14 @@ export class TooltipDirective implements OnInit {
     }
   }
 
+  ngOnDestroy(): void {
+    this.listens.forEach(unregister => unregister());
+  }
+
   show() {
     const popupComponent = this.popupRef.instance;
     popupComponent.content = this.content;
+    popupComponent.context = this.context;
     popupComponent.show();
     const hostElement = this.elementRef.nativeElement;
     const targetElement = this.popupRef.location.nativeElement;

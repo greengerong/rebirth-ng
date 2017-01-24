@@ -10,6 +10,7 @@ export class TooltipPopupComponent {
   static ACTIVE_CLASS = 'in';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   @Input() content: string | TemplateRef<any>;
+  @Input() context: any;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer) {
   }
