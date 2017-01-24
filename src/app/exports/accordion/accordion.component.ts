@@ -13,7 +13,7 @@ import { PanelComponent, PanelGroup } from '../panel';
 })
 export class AccordionComponent extends PanelGroup {
   @Input() keepOneItem = true;
-  @Input() canClose = false;
+  @Input() closable = false;
   @Output() close = new EventEmitter<PanelComponent>();
 
   constructor() {
@@ -21,9 +21,9 @@ export class AccordionComponent extends PanelGroup {
   }
 
   protected initPanel(panel: PanelComponent) {
-    panel.allowCollapse = true;
+    panel.collapsable = true;
     panel.isCollapsed = true;
-    panel.canClose = this.canClose;
+    panel.closable = this.closable;
     panel.close.subscribe(item => this.close.emit(item));
     panel.collapse.subscribe(collapse => {
       if (!collapse) {

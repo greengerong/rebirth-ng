@@ -37,7 +37,7 @@
       </label>
     </div>
 
-    <re-alert-box type="danger" [canClose]="true" (close)="close()" *ngIf="!closed"
+    <re-alert-box type="danger" [closable]="true" (close)="close()" *ngIf="!closed"
                   [disappearTime]="autoDisappear? 2*1000: 0">
       <strong>Oh snap!</strong> Change a few things up and try submitting again.
     </re-alert-box>

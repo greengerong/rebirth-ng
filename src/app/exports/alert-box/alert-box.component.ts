@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from 
 })
 export class AlertBoxComponent {
   @Input() type: 'success' | 'info' | 'warning' | 'danger' = 'info';
-  @Input() canClose = false;
+  @Input() closable = false;
   @Output() close = new EventEmitter<any>();
 
   @Input()

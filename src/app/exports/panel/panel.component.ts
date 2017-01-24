@@ -13,8 +13,8 @@ import { PanelGroup } from './panel-group.model';
 export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
   @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
-  @Input() canClose = false;
-  @Input() allowCollapse = false;
+  @Input() closable = false;
+  @Input() collapsable = false;
   @Input() isCollapsed = false;
   @Input() cssClass: string;
   @Output() close = new EventEmitter<PanelComponent>();
@@ -36,7 +36,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   }
 
   onCollapse() {
-    if (this.allowCollapse) {
+    if (this.collapsable) {
       this.isCollapsed = !this.isCollapsed;
       this.collapse.emit(this.isCollapsed);
     }
