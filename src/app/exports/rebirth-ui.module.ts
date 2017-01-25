@@ -14,6 +14,7 @@ import { RatingModule } from './rating';
 import { TabsModule } from './tabs';
 import { TooltipModule } from './tooltip';
 import { PositionService } from './position';
+import { PopoverModule } from './popover';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PositionService } from './position';
     ActionButtonModule,
     RatingModule,
     TabsModule,
-    TooltipModule
+    TooltipModule,
+    PopoverModule
   ],
   exports: [
     ModalModule,
@@ -43,7 +45,8 @@ import { PositionService } from './position';
     ActionButtonModule,
     RatingModule,
     TabsModule,
-    TooltipModule
+    TooltipModule,
+    PopoverModule
   ],
   declarations: [],
   providers: [],

@@ -7,6 +7,7 @@ export * from './modal';
 export * from './pager';
 export * from './pagination';
 export * from './panel';
+// export * from './popover';
 export * from './position';
 export * from './rating';
 export * from './tabs';
