@@ -33,18 +33,8 @@ export class TooltipDirective implements OnInit, OnDestroy {
   ngOnInit() {
     const factory = this.componentFactoryResolver.resolveComponentFactory(TooltipPopupComponent);
     this.popupRef = this.viewContainerRef.createComponent(factory, 0, this.injector);
-    const popupComponent = this.popupRef.instance;
-    popupComponent.content = this.content;
-    popupComponent.context = this.context;
-    popupComponent.placement = this.placement;
-    const hostElement = this.elementRef.nativeElement;
-    const trigger = this.triggers[this.trigger];
-    if (trigger[0]) {
-      this.listens.push(this.renderer.listen(hostElement, trigger[0], () => this.show()));
-    }
-    if (trigger[1]) {
-      this.listens.push(this.renderer.listen(hostElement, trigger[1], () => this.hide()));
-    }
+    this.fillPopup();
+    this.registerTriggers();
   }
 
   @HostListener('document:click', ['$event'])
@@ -62,15 +52,9 @@ export class TooltipDirective implements OnInit, OnDestroy {
   }
 
   show() {
-    const popupComponent = this.popupRef.instance;
-    popupComponent.content = this.content;
-    popupComponent.context = this.context;
-    popupComponent.show();
-    const hostElement = this.elementRef.nativeElement;
-    const targetElement = this.popupRef.location.nativeElement;
-    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
-    this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
-    this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
+    this.fillPopup();
+    this.popupRef.instance.show();
+    this.positionTooltip();
   }
 
   hide() {
@@ -80,4 +64,29 @@ export class TooltipDirective implements OnInit, OnDestroy {
     }
   }
 
+  private registerTriggers() {
+    const hostElement = this.elementRef.nativeElement;
+    const trigger = this.triggers[this.trigger];
+    if (trigger[0]) {
+      this.listens.push(this.renderer.listen(hostElement, trigger[0], () => this.show()));
+    }
+    if (trigger[1]) {
+      this.listens.push(this.renderer.listen(hostElement, trigger[1], () => this.hide()));
+    }
+  }
+
+  private positionTooltip() {
+    const hostElement = this.elementRef.nativeElement;
+    const targetElement = this.popupRef.location.nativeElement;
+    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
+    this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
+  }
+
+  private fillPopup() {
+    const popupComponent = this.popupRef.instance;
+    popupComponent.content = this.content;
+    popupComponent.context = this.context || {};
+    popupComponent.placement = this.placement;
+  }
 }
