@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tooltip-demo.component.html'
 })
 export class TooltipDemoComponent implements OnInit {
-  setting: { name: 'rebirth tooltip', placement: 'top', trigger: 'hover' };
+  setting = { name: 'rebirth tooltip', placement: 'top', trigger: 'hover' };
 
   constructor() {
   }

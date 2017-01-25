@@ -11,7 +11,7 @@ import { PositionService } from '../position/positioning.service';
 })
 export class TooltipDirective implements OnInit, OnDestroy {
   @Input('reTooltip') content: string | TemplateRef<any>;
-  @Input('context') context: { [id: string]: any; };
+  @Input() context: any;
   @Input() trigger: 'hover'|'click' | 'manual' = 'hover';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   popupRef: ComponentRef<TooltipPopupComponent>;
@@ -74,8 +74,10 @@ export class TooltipDirective implements OnInit, OnDestroy {
   }
 
   hide() {
-    const popupComponent = this.popupRef.instance;
-    popupComponent.hide();
+    if (this.popupRef) {
+      const popupComponent = this.popupRef.instance;
+      popupComponent.hide();
+    }
   }
 
 }

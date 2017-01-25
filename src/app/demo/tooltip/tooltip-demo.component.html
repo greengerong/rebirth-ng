@@ -39,13 +39,17 @@
   <section>
     <h4>Manual tooltip:</h4>
     <div style="padding: 10px 100px;">
-      <template #tipContent>
-        <h4>Setting</h4>
-        {{setting}}
-      </template>
-      <button class="btn btn-primary" [reTooltip]="tipContent">
+      <button class="btn btn-primary" [reTooltip]="tipContent" [context]="setting">
         Tooltip on top
       </button>
+
+      <template #tipContent let-setting>
+        <h4>Setting</h4>
+        <div>
+          <p><strong>name</strong>: {{setting.name}}</p>
+          <p><strong>trigger</strong>: {{setting.trigger}}</p>
+          <p><strong>placement</strong>: {{setting.placement}}</p></div>
+      </template>
     </div>
   </section>
 
