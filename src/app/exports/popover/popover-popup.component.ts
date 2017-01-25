@@ -1,40 +1,15 @@
-import {
-  Component,
-  Renderer,
-  ElementRef,
-  Input,
-  TemplateRef,
-  HostListener
-} from '@angular/core';
+import { Component, Renderer, ElementRef, Input, TemplateRef } from '@angular/core';
+import { TooltipPopup } from '../tooltip/tooltip-popup';
 
 @Component({
   selector: 're-popover-popup',
   templateUrl: './popover-popup.component.html',
-  host: { '[class]': '"popover fade  " + placement', 'style.display': 'none', 'role': 'tooltip' }
+  host: { '[class]': '"popover fade  " + placement', '[style.display]': '"none"', 'role': 'tooltip' }
 })
-export class PopoverPopupComponent {
-  static ACTIVE_CLASS = 'in';
-  @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
+export class PopoverPopupComponent extends TooltipPopup {
   @Input() title: string | TemplateRef<any>;
-  @Input() content: string | TemplateRef<any>;
-  @Input() context: any;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer) {
+  constructor(elementRef: ElementRef, renderer: Renderer) {
+    super(elementRef, renderer);
   }
-
-  @HostListener('click', ['$event'])
-  onDocumentClick($event: Event) {
-    $event.stopPropagation();
-  }
-
-  show() {
-    this.renderer.setElementClass(this.elementRef.nativeElement, PopoverPopupComponent.ACTIVE_CLASS, true);
-    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'block');
-  }
-
-  hide() {
-    this.renderer.setElementClass(this.elementRef.nativeElement, PopoverPopupComponent.ACTIVE_CLASS, false);
-    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'none');
-  }
-
 }

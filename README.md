@@ -15,7 +15,7 @@
 - [ ] DatePicker
 - [ ] Dropdown
 - [x] Rating
-- [ ] Popover
+- [x] Popover
 - [x] Tooltip
 - [x] Tabs
 - [x] Action Button
