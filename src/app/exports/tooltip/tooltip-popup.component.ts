@@ -3,8 +3,7 @@ import { Component, ChangeDetectionStrategy, Input, ElementRef, Renderer, Templa
 @Component({
   selector: 're-tooltip-popup',
   templateUrl: './tooltip-popup.component.html',
-  host: { '[class]': '"tooltip fade  " + placement', 'role': 'tooltip' },
-  changeDetection: ChangeDetectionStrategy.OnPush
+  host: { '[class]': '"tooltip fade  " + placement', 'style.display': 'none', 'role': 'tooltip' }
 })
 export class TooltipPopupComponent {
   static ACTIVE_CLASS = 'in';
@@ -17,9 +16,11 @@ export class TooltipPopupComponent {
 
   show() {
     this.renderer.setElementClass(this.elementRef.nativeElement, TooltipPopupComponent.ACTIVE_CLASS, true);
+    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'block');
   }
 
   hide() {
     this.renderer.setElementClass(this.elementRef.nativeElement, TooltipPopupComponent.ACTIVE_CLASS, false);
+    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'none');
   }
 }
