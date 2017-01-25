@@ -10,6 +10,7 @@ export class RatingComponent implements OnInit {
   ratingRanges: number[];
   @Input('ngModel') value = 0;
   @Input() disabled = false;
+  @Input() cssClass: string;
   @Input() icons = { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' };
   @Output('ngModelChange') valueChange = new EventEmitter<number>();
   statValue = 0;

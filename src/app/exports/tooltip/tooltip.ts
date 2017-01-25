@@ -17,6 +17,7 @@ import { TooltipPopup } from './tooltip-popup';
 
 export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestroy {
   @Input() context: any;
+  @Input() cssClass: string;
   @Input() trigger: 'hover'|'click' | 'manual' = 'hover';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   popupRef: ComponentRef<T>;
@@ -95,6 +96,7 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
   protected fillPopup(): T {
     const popupComponent = this.popupRef.instance;
     popupComponent.content = this.getContent();
+    popupComponent.cssClass = this.cssClass;
     popupComponent.context = this.context || {};
     popupComponent.placement = this.placement;
     return popupComponent;
