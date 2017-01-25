@@ -28,7 +28,8 @@
   <section>
     <h4>Manual tooltip:</h4>
     <div style="padding: 10px 100px;">
-      <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'" reTooltip="I am a rebirth tooltip!">
+      <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'"
+              [reTooltip]="'I am a rebirth tooltip! <a href='+github+'>' + github +'</a>.'">
         Tooltip on top
       </button>
       <button class="btn btn-success" (click)="tooltip.show()">Show tooltip</button>
@@ -39,16 +40,22 @@
   <section>
     <h4>Manual tooltip:</h4>
     <div style="padding: 10px 100px;">
-      <button class="btn btn-primary" [reTooltip]="tipContent" [context]="setting">
+      <button class="btn btn-primary" [reTooltip]="tipContent" [context]="'button1'">
         Tooltip on top
       </button>
 
-      <template #tipContent let-setting>
+      <button class="btn btn-success" [reTooltip]="tipContent" [context]="'button2'">
+        Tooltip on top
+      </button>
+
+      <template #tipContent let-context>
         <h4>Setting</h4>
         <div>
           <p><strong>name</strong>: {{setting.name}}</p>
           <p><strong>trigger</strong>: {{setting.trigger}}</p>
-          <p><strong>placement</strong>: {{setting.placement}}</p></div>
+          <p><strong>placement</strong>: {{setting.placement}}</p>
+          <p><strong>target</strong>: {{context}}</p>
+        </div>
       </template>
     </div>
   </section>
