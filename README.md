@@ -16,7 +16,7 @@
 - [ ] Dropdown
 - [x] Rating
 - [ ] Popover
-- [ ] Tooltip
+- [x] Tooltip
 - [x] Tabs
 - [x] Action Button
 
