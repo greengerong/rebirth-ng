@@ -1,6 +1,7 @@
 export * from './accordion';
 export * from './action-button';
 export * from './modal';
+export * from './date-picker';
 export * from './dialog';
 export * from './alert-box';
 export * from './badge';

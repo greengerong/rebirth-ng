@@ -15,6 +15,7 @@ import { TabsModule } from './tabs';
 import { TooltipModule } from './tooltip';
 import { PositionService } from './position';
 import { PopoverModule } from './popover';
+import { DatePickerModule } from './date-picker';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PopoverModule } from './popover';
     RatingModule,
     TabsModule,
     TooltipModule,
-    PopoverModule
+    PopoverModule,
+    DatePickerModule
   ],
   exports: [
     ModalModule,
@@ -46,7 +48,8 @@ import { PopoverModule } from './popover';
     RatingModule,
     TabsModule,
     TooltipModule,
-    PopoverModule
+    PopoverModule,
+    DatePickerModule
   ],
   declarations: [],
   providers: [],

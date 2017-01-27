@@ -1,0 +1,51 @@
+
+.month-view {
+  width: auto !important;
+
+  .btn-link {
+    cursor: pointer;
+  }
+
+  .date-select {
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+  .week-header {
+    font-style: italic;
+    font-weight: bold;
+    cursor: default;
+  }
+
+  .day {
+    text-align: center;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    cursor: pointer;
+    border-radius: .25rem;
+    &:hover:not(.bg-primary) {
+      background-color: #e6e6e6;
+      border-color: #adadad;
+    }
+    &.disabled {
+      opacity: 0.2;
+      color: #292b2c !important;
+      background-color: #ddd !important;
+      cursor: not-allowed;
+    }
+  }
+
+  .in-month-day:not(.bg-primary) {
+    color: #292b2c;
+    background-color: #fff;
+    border-color: #ccc;
+  }
+
+  .out-of-month {
+    opacity: 0.5;
+    color: #636c72 !important;
+  }
+
+}
+

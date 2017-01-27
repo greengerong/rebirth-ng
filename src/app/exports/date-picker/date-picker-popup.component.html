@@ -1,0 +1,40 @@
+<table class="table month-view">
+  <thead>
+  <tr>
+    <td>
+      <a class="btn-link glyphicon glyphicon-chevron-left" aria-hidden="true" (click)="onPreMonth()"></a>
+    </td>
+    <td colspan="2">
+      <select class="date-select" [(ngModel)]="month" (change)="onDisplayWeeksChange()">
+        <option *ngFor="let item of dateConfig.months; let $index = index" [value]="$index">{{item}}</option>
+      </select>
+    </td>
+    <td colspan="3">
+      <select class="date-select" [(ngModel)]="year" (change)="onDisplayWeeksChange()">
+        <option *ngFor="let item of years" [value]="item">{{item}}</option>
+      </select>
+    </td>
+    <td>
+      <a class="btn-link glyphicon glyphicon-chevron-right" aria-hidden="true" (click)="onNextMonth()"></a>
+    </td>
+  </tr>
+  <tr class="small text-center text-info week-header">
+    <td>Su</td>
+    <td>Mo</td>
+    <td>Tu</td>
+    <td>We</td>
+    <td>Th</td>
+    <td>Fr</td>
+    <td>Sa</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let week of displayWeeks">
+    <td *ngFor="let day of week" class="day"
+        [ngClass]="{'out-of-month': !day.inMonth, 'in-month-day': day.inMonth, 'bg-primary': isSelectDay(day.date),'disabled': isDisabledDay(day.date)}"
+        (click)="onSelectDate(day.date)">
+      {{day.day}}
+    </td>
+  </tr>
+  </tbody>
+</table>

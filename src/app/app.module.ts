@@ -16,7 +16,8 @@ import {
   RatingDemoModule,
   TabsDemoModule,
   TooltipDemoModule,
-  PopoverDemoModule
+  PopoverDemoModule,
+  DatePickerDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -40,7 +41,8 @@ import { RebirthUIModule } from './exports';
     RatingDemoModule,
     TabsDemoModule,
     TooltipDemoModule,
-    PopoverDemoModule
+    PopoverDemoModule,
+    DatePickerDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
