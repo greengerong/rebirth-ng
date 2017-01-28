@@ -2,7 +2,8 @@
   <thead>
   <tr>
     <td>
-      <a class="btn-link glyphicon glyphicon-chevron-left" aria-hidden="true" (click)="onPreMonth()"></a>
+      <a *ngIf="hasPreMonth()" class="btn-link glyphicon glyphicon-chevron-left" aria-hidden="true"
+         (click)="onPreMonth()"></a>
     </td>
     <td colspan="2">
       <select class="date-select" [(ngModel)]="month" (change)="onDisplayWeeksChange()">
@@ -15,17 +16,12 @@
       </select>
     </td>
     <td>
-      <a class="btn-link glyphicon glyphicon-chevron-right" aria-hidden="true" (click)="onNextMonth()"></a>
+      <a *ngIf="hasNextMonth()" class="btn-link glyphicon glyphicon-chevron-right" aria-hidden="true"
+         (click)="onNextMonth()"></a>
     </td>
   </tr>
-  <tr class="small text-center text-info week-header">
-    <td>Su</td>
-    <td>Mo</td>
-    <td>Tu</td>
-    <td>We</td>
-    <td>Th</td>
-    <td>Fr</td>
-    <td>Sa</td>
+  <tr class="small text-center week-header bg-info">
+    <td *ngFor="let item of dateConfig.weeks">{{item}}</td>
   </tr>
   </thead>
   <tbody>
@@ -37,4 +33,23 @@
     </td>
   </tr>
   </tbody>
+  <tfoot>
+  <tr *ngIf="showTimePicker" class="time-picker-view bg-info">
+    <td></td>
+    <td colspan="2" class="hours">
+      <select class="date-select pull-right" [(ngModel)]="hour">
+        <option *ngFor="let item of hours" [value]="item">{{item}}</option>
+      </select>
+    </td>
+    <td colspan="2" class="minutes">
+      <select class="date-select pull-left" [(ngModel)]="minute">
+        <option *ngFor="let item of minutes" [value]="item">{{item}}</option>
+      </select>
+    </td>
+    <td>
+    </td>
+    <td>
+    </td>
+  </tr>
+  </tfoot>
 </table>

@@ -47,5 +47,19 @@
     color: #636c72 !important;
   }
 
+  .time-picker-view {
+    //border: 1px solid #DDDDDD;
+    //background: #ccc;
+  }
+
+  .minutes {
+    &:before {
+      content: ':';
+      text-align: center;
+      position: absolute;
+      margin-left: -0.5rem;
+    }
+  }
+
 }
 
