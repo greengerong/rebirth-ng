@@ -2,10 +2,10 @@
   <section>
     <h4>Date picker popup</h4>
 
-    <re-date-picker-calendar ([selectedDate])="selectedDate" [showTimePicker]="true">
-
-    </re-date-picker-calendar>
+    <re-date-picker-popup [(selectedDate)]="selectedDate" [showTimePicker]="true">
+    </re-date-picker-popup>
   </section>
 
 
+  <pre>{{selectedDate | date : 'yyyy-MM-dd HH:mm:ss'}}</pre>
 </div>

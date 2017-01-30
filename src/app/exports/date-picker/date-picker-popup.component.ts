@@ -51,8 +51,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     }
     this.currentYear = date.getFullYear();
     this.currentMonth = date.getMonth();
-    this.currentHour = date.getHours();
-    this.currentMinute = date.getMinutes();
+    this.currentHour = this.showTimePicker ? date.getHours() : 0;
+    this.currentMinute = this.showTimePicker ? date.getMinutes() : 0;
     this.onDisplayWeeksChange();
     this.onYearRangeChange();
   }
@@ -61,13 +61,21 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     if (this.isDisabledDay(date)) {
       return;
     }
-    this.selectedDate = new Date(date);
-    this.selectedDateChange.emit(date);
+    this.selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
+      this.currentHour, this.currentMinute);
+    this.selectedDateChange.emit(this.selectedDate);
     if (this.currentMonth !== this.selectedDate.getMonth() || this.currentYear !== this.selectedDate.getFullYear()) {
       this.currentYear = this.selectedDate.getFullYear();
       this.currentMonth = this.selectedDate.getMonth();
       this.onDisplayWeeksChange();
     }
+  }
+
+  onTimeChange() {
+    this.selectedDate = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(),
+      this.selectedDate.getDate(), this.currentHour, this.currentMinute);
+
+    this.selectedDateChange.emit(this.selectedDate);
   }
 
   hasPreMonth() {

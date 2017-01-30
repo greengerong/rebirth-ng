@@ -37,12 +37,12 @@
   <tr *ngIf="showTimePicker" class="time-picker-view bg-info">
     <td></td>
     <td colspan="2" class="hours">
-      <select class="date-select pull-right" [(ngModel)]="currentHour">
+      <select class="date-select pull-right" [(ngModel)]="currentHour" (change)="onTimeChange()">
         <option *ngFor="let item of hourOptions" [value]="item">{{item}}</option>
       </select>
     </td>
     <td colspan="2" class="minutes">
-      <select class="date-select pull-left" [(ngModel)]="currentMinute">
+      <select class="date-select pull-left" [(ngModel)]="currentMinute" (change)="onTimeChange()">
         <option *ngFor="let item of minuteOptions" [value]="item">{{item}}</option>
       </select>
     </td>
