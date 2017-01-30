@@ -16,15 +16,15 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   @Output() selectedDateChange = new EventEmitter<Date>();
   @Input() maxDate: Date;
   @Input() minDate: Date;
-  year: number;
-  month: number;
-  hour: number;
-  minute: number;
+  currentYear: number;
+  currentMonth: number;
+  currentHour: number;
+  currentMinute: number;
   dateConfig: any;
-  hours: number[];
-  minutes: number[];
+  hourOptions: number[];
+  minuteOptions: number[];
   displayWeeks: any[];
-  years: number[];
+  yearOptions: number[];
 
   constructor() {
     this.dateConfig = {
@@ -39,8 +39,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.hours = new Array(24).fill(0).map((value, index) => index);
-    this.minutes = new Array(60).fill(0).map((value, index) => index);
+    this.hourOptions = new Array(24).fill(0).map((value, index) => index);
+    this.minuteOptions = new Array(60).fill(0).map((value, index) => index);
 
     let date = this.selectedDate || new Date();
     if (date.getTime() < this.minDate.getTime()) {
@@ -49,10 +49,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     if (date.getTime() > this.maxDate.getTime()) {
       date = this.maxDate;
     }
-    this.year = date.getFullYear();
-    this.month = date.getMonth();
-    this.hour = date.getHours();
-    this.minute = date.getMinutes();
+    this.currentYear = date.getFullYear();
+    this.currentMonth = date.getMonth();
+    this.currentHour = date.getHours();
+    this.currentMinute = date.getMinutes();
     this.onDisplayWeeksChange();
     this.onYearRangeChange();
   }
@@ -63,15 +63,15 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     }
     this.selectedDate = new Date(date);
     this.selectedDateChange.emit(date);
-    if (this.month !== this.selectedDate.getMonth() || this.year !== this.selectedDate.getFullYear()) {
-      this.year = this.selectedDate.getFullYear();
-      this.month = this.selectedDate.getMonth();
+    if (this.currentMonth !== this.selectedDate.getMonth() || this.currentYear !== this.selectedDate.getFullYear()) {
+      this.currentYear = this.selectedDate.getFullYear();
+      this.currentMonth = this.selectedDate.getMonth();
       this.onDisplayWeeksChange();
     }
   }
 
   hasPreMonth() {
-    return this.month > 0 || this.year > this.minDate.getFullYear();
+    return this.currentMonth > 0 || this.currentYear > this.minDate.getFullYear();
   }
 
   onPreMonth() {
@@ -79,11 +79,11 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
       return;
     }
 
-    if (this.month > 0) {
-      this.month -= 1;
+    if (this.currentMonth > 0) {
+      this.currentMonth -= 1;
     } else {
-      this.month = 11;
-      this.year -= 1;
+      this.currentMonth = 11;
+      this.currentYear -= 1;
     }
 
     this.onDisplayWeeksChange();
@@ -91,7 +91,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
 
 
   hasNextMonth() {
-    return this.month < 11 || this.year < this.maxDate.getFullYear();
+    return this.currentMonth < 11 || this.currentYear < this.maxDate.getFullYear();
   }
 
   onNextMonth() {
@@ -99,11 +99,11 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
       return;
     }
 
-    if (this.month < 11) {
-      this.month += 1;
+    if (this.currentMonth < 11) {
+      this.currentMonth += 1;
     } else {
-      this.month = 0;
-      this.year += 1;
+      this.currentMonth = 0;
+      this.currentYear += 1;
     }
 
     this.onDisplayWeeksChange();
@@ -132,13 +132,13 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   onYearRangeChange() {
     const minYear = this.minDate.getFullYear();
     const maxYear = this.maxDate.getFullYear();
-    this.years = new Array(maxYear - minYear + 1).fill(0).map((value, index) => {
+    this.yearOptions = new Array(maxYear - minYear + 1).fill(0).map((value, index) => {
       return minYear + index;
     });
   }
 
   private onDisplayWeeksChange() {
-    const firstDayOfMonth = new Date(this.year, this.month, 1);
+    const firstDayOfMonth = new Date(this.currentYear, this.currentMonth, 1);
     const weekOfDay = firstDayOfMonth.getDay();
     const startDate = new Date(firstDayOfMonth.getTime() - weekOfDay * DatePickerPopupComponent.DAY_DURATION);
     const displayWeeks = [];
@@ -149,7 +149,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
         return {
           day: currentDate.getDate(),
           date: currentDate,
-          inMonth: currentDate.getMonth().toString() === this.month.toString()
+          inMonth: currentDate.getMonth().toString() === this.currentMonth.toString()
         };
       });
       displayWeeks.push(weekDays);

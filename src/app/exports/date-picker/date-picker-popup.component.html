@@ -6,13 +6,13 @@
          (click)="onPreMonth()"></a>
     </td>
     <td colspan="2">
-      <select class="date-select" [(ngModel)]="month" (change)="onDisplayWeeksChange()">
+      <select class="date-select" [(ngModel)]="currentMonth" (change)="onDisplayWeeksChange()">
         <option *ngFor="let item of dateConfig.months; let $index = index" [value]="$index">{{item}}</option>
       </select>
     </td>
     <td colspan="3">
-      <select class="date-select" [(ngModel)]="year" (change)="onDisplayWeeksChange()">
-        <option *ngFor="let item of years" [value]="item">{{item}}</option>
+      <select class="date-select" [(ngModel)]="currentYear" (change)="onDisplayWeeksChange()">
+        <option *ngFor="let item of yearOptions" [value]="item">{{item}}</option>
       </select>
     </td>
     <td>
@@ -37,13 +37,13 @@
   <tr *ngIf="showTimePicker" class="time-picker-view bg-info">
     <td></td>
     <td colspan="2" class="hours">
-      <select class="date-select pull-right" [(ngModel)]="hour">
-        <option *ngFor="let item of hours" [value]="item">{{item}}</option>
+      <select class="date-select pull-right" [(ngModel)]="currentHour">
+        <option *ngFor="let item of hourOptions" [value]="item">{{item}}</option>
       </select>
     </td>
     <td colspan="2" class="minutes">
-      <select class="date-select pull-left" [(ngModel)]="minute">
-        <option *ngFor="let item of minutes" [value]="item">{{item}}</option>
+      <select class="date-select pull-left" [(ngModel)]="currentMinute">
+        <option *ngFor="let item of minuteOptions" [value]="item">{{item}}</option>
       </select>
     </td>
     <td>
