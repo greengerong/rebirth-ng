@@ -21,8 +21,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   currentHour: number;
   currentMinute: number;
   dateConfig: any;
-  hourOptions: number[];
-  minuteOptions: number[];
+  hourOptions: string[];
+  minuteOptions: string[];
   displayWeeks: any[];
   yearOptions: number[];
 
@@ -39,8 +39,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.hourOptions = new Array(24).fill(0).map((value, index) => index);
-    this.minuteOptions = new Array(60).fill(0).map((value, index) => index);
+    this.hourOptions = new Array(24).fill(0).map((value, index) => this.fillLeft(index));
+    this.minuteOptions = new Array(60).fill(0).map((value, index) => this.fillLeft(index));
 
     let date = this.selectedDate || new Date();
     if (date.getTime() < this.minDate.getTime()) {
@@ -145,6 +145,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     });
   }
 
+  private fillLeft(num: number) {
+    return num < 10 ? `0${num}` : `${num}`;
+  }
+
   private onDisplayWeeksChange() {
     const firstDayOfMonth = new Date(this.currentYear, this.currentMonth, 1);
     const weekOfDay = firstDayOfMonth.getDay();
@@ -155,7 +159,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
       const weekDays = new Array(7).fill(0).map((value, index) => {
         const currentDate = new Date(startWeekDate + index * DatePickerPopupComponent.DAY_DURATION);
         return {
-          day: currentDate.getDate(),
+          day: this.fillLeft(currentDate.getDate()),
           date: currentDate,
           inMonth: currentDate.getMonth().toString() === this.currentMonth.toString()
         };
