@@ -1,7 +1,8 @@
 import {
   Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges,
-  SimpleChanges
+  SimpleChanges, HostListener
 } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 're-date-picker-popup',
@@ -9,8 +10,8 @@ import {
   styleUrls: ['./date-picker-popup.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DatePickerPopupComponent implements OnInit, OnChanges {
-  private static DAY_DURATION = 24 * 60 * 60 * 1000;
+export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValueAccessor {
+  static DAY_DURATION = 24 * 60 * 60 * 1000;
   @Input() selectedDate: Date;
   @Input() showTimePicker = false;
   @Output() selectedDateChange = new EventEmitter<Date>();
@@ -25,6 +26,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
   minuteOptions: string[];
   displayWeeks: any[];
   yearOptions: number[];
+
+  disabled = false;
+  onChange = (_: any) => null;
+  onTouched = () => null;
 
   constructor() {
     this.dateConfig = {
@@ -57,13 +62,32 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     this.onYearRangeChange();
   }
 
+  writeValue(obj: any): void {
+    this.selectedDate = obj;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
   onSelectDate(date) {
     if (this.isDisabledDay(date)) {
       return;
     }
-    this.selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
+    const selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
       this.currentHour, this.currentMinute);
-    this.selectedDateChange.emit(this.selectedDate);
+    // this.selectedDateChange.emit(this.selectedDate);
+    this.onTouched();
+    this.writeValue(selectedDate);
+    this.onChange(selectedDate);
     if (this.currentMonth !== this.selectedDate.getMonth() || this.currentYear !== this.selectedDate.getFullYear()) {
       this.currentYear = this.selectedDate.getFullYear();
       this.currentMonth = this.selectedDate.getMonth();
@@ -75,7 +99,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     this.selectedDate = new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(),
       this.selectedDate.getDate(), this.currentHour, this.currentMinute);
 
-    this.selectedDateChange.emit(this.selectedDate);
+    this.onTouched();
+    this.writeValue(this.selectedDate);
+    this.onChange(this.selectedDate);
+    // this.selectedDateChange.emit(this.selectedDate);
   }
 
   hasPreMonth() {
@@ -143,6 +170,11 @@ export class DatePickerPopupComponent implements OnInit, OnChanges {
     this.yearOptions = new Array(maxYear - minYear + 1).fill(0).map((value, index) => {
       return minYear + index;
     });
+  }
+
+  @HostListener('click', ['$event'])
+  onDocumentClick($event: Event) {
+    $event.stopPropagation();
   }
 
   private fillLeft(num: number) {
