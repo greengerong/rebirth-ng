@@ -63,10 +63,10 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    // this._renderer.setElementProperty(this._elRef.nativeElement, 'disabled', isDisabled);
-    // if (this.isOpen()) {
-    //   this._cRef.instance.setDisabledState(isDisabled);
-    // }
+    this.renderer.setElementProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
+    if (this.isOpen) {
+      this.cmpRef.instance.setDisabledState(isDisabled);
+    }
   }
 
   toggle($event: Event) {
