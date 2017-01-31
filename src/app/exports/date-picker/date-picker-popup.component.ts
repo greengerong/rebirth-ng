@@ -15,8 +15,6 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   @Input() selectedDate: Date;
   @Input() showTimePicker = false;
   @Output() selectedDateChange = new EventEmitter<Date>();
-  @Input() maxDate: Date;
-  @Input() minDate: Date;
   currentYear: number;
   currentMonth: number;
   currentHour: number;
@@ -26,22 +24,41 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   minuteOptions: string[];
   displayWeeks: any[];
   yearOptions: number[];
-
   disabled = false;
+
   onChange = (_: any) => null;
   onTouched = () => null;
+  private _maxDate: Date;
+  private _minDate: Date;
 
   constructor() {
     this.dateConfig = {
       weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      min: 2016,
-      max: 2017
+      min: 1900,
+      max: 2099
     };
 
-    this.minDate = new Date(this.dateConfig.min, 11, 30);
-    this.maxDate = new Date(this.dateConfig.max, 2, 31);
+    this.minDate = new Date(this.dateConfig.min, 0, 1);
+    this.maxDate = new Date(this.dateConfig.max, 11, 31);
   }
+
+  @Input() set maxDate(date: Date | any) {
+    this._maxDate = date instanceof Date ? date : new Date(date);
+  }
+
+  get maxDate() {
+    return this._maxDate;
+  }
+
+  @Input() set minDate(date: Date | any) {
+    this._minDate = date instanceof Date ? date : new Date(date);
+  }
+
+  get minDate() {
+    return this._minDate;
+  }
+
 
   ngOnInit() {
     this.hourOptions = new Array(24).fill(0).map((value, index) => this.fillLeft(index));
@@ -145,6 +162,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   isDisabledDay(date) {
+    // do not include time.
     return date.getTime() < this.minDate.getTime() ||
       date.getTime() > this.maxDate.getTime();
   }

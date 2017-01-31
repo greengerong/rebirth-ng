@@ -12,7 +12,8 @@
       <div class="form-group">
         <div class="input-group">
           <input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker="datePicker" placement="top-left">
+                 name="dp" [(ngModel)]="selectedDate" [showTimePicker]="true" reDatePicker #datePicker="datePicker"
+                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
           <div class="input-group-addon" (click)="datePicker.toggle($event)">
             <i class="glyphicon glyphicon-calendar"></i>
           </div>
@@ -21,5 +22,5 @@
     </form>
   </section>
 
-  <pre>{{selectedDate | date : 'yyyy-MM-dd HH:mm:ss'}}</pre>
+  <pre>{{selectedDate | date : 'yyyy-MM-dd HH:mm'}}</pre>
 </div>

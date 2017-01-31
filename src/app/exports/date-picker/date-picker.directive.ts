@@ -6,6 +6,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
+import { DatePipe } from '@angular/common';
 
 export const RE_DATE_PICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -21,18 +22,35 @@ export const RE_DATE_PICKER_VALUE_ACCESSOR = {
 export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';
   @Input() selectedDate: Date;
+  @Input() locale = 'en-US';
+  @Input() dateFormat: string;
+  @Input() showTimePicker = false;
+  @Input() maxDate: Date | string | number;
+  @Input() minDate: Date| string | number;
   isOpen = false;
+  dateConfig: any;
+  private datePipe: DatePipe;
   private cmpRef: ComponentRef<DatePickerPopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
-              private injector: Injector,
-              private positionService: PositionService) {
+              private injector: Injector, private positionService: PositionService) {
+    this.dateConfig = {
+      weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      min: 2016,
+      max: 2017,
+      format: {
+        date: 'yyyy-MM-dd',
+        time: 'yyyy-MM-dd HH:mm'
+      }
+    };
   }
 
   ngOnInit() {
+    this.datePipe = new DatePipe(this.locale);
     const factory = this.componentFactoryResolver.resolveComponentFactory(DatePickerPopupComponent);
     this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
     this.applyPopupStyling(this.cmpRef.location.nativeElement);
@@ -40,6 +58,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     this.hide();
     component.writeValue(this.selectedDate);
     // minDate, maxDate ....
+    this.fillPopupData();
     component.ngOnInit();
 
     component.registerOnChange((selectedDate) => {
@@ -90,6 +109,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   show() {
+    this.fillPopupData();
     this.isOpen = true;
     const targetElement = this.cmpRef.location.nativeElement;
     const hostElement = this.elementRef.nativeElement;
@@ -116,11 +136,16 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private writeModelValue(selectDate: Date) {
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', selectDate ? selectDate.toLocaleDateString() : '');
+    const value = selectDate ? this.datePipe.transform(selectDate, this.dateFormat || this.getDefaultDateFormat()) : '';
+    this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', value);
     if (this.isOpen) {
       this.cmpRef.instance.writeValue(selectDate);
       this.onTouched();
     }
+  }
+
+  private getDefaultDateFormat() {
+    return this.showTimePicker ? this.dateConfig.format.time : this.dateConfig.format.date;
   }
 
   private applyPopupStyling(nativeElement: any) {
@@ -128,4 +153,11 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     this.renderer.setElementStyle(nativeElement, 'padding', '0');
   }
 
+  private fillPopupData() {
+    ['showTimePicker', 'maxDate', 'minDate'].forEach(key => {
+      if (this[key] !== undefined) {
+        this.cmpRef.instance[key] = this[key];
+      }
+    });
+  }
 }
