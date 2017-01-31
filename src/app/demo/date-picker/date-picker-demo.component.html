@@ -1,13 +1,28 @@
 <div class="date-picker-demo">
   <section>
     <h4>Date picker popup</h4>
-
-    <!--<re-date-picker-popup [(selectedDate)]="selectedDate" [showTimePicker]="true">-->
-    <!--</re-date-picker-popup>-->
+    <re-date-picker-popup [(ngModel)]="selectedDate" [showTimePicker]="true">
+    </re-date-picker-popup>
   </section>
 
   <section>
     <h4>Date picker with input</h4>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker="datePicker"
+                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
+          <div class="input-group-addon" (click)="datePicker.toggle($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Date picker with input with time picker </h4>
     <form class="form-horizontal">
       <div class="form-group">
         <div class="input-group">
