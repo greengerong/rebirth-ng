@@ -11,9 +11,9 @@
       <div class="form-group">
         <div class="input-group">
           <input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker="datePicker"
-                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
-          <div class="input-group-addon" (click)="datePicker.toggle($event)">
+                 name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker1="datePicker"
+                 [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
+          <div class="input-group-addon" (click)="datePicker1.toggle($event)">
             <i class="glyphicon glyphicon-calendar"></i>
           </div>
         </div>
@@ -27,9 +27,9 @@
       <div class="form-group">
         <div class="input-group">
           <input class="form-control" placeholder="yyyy-mm-dd"
-                 name="dp" [(ngModel)]="selectedDate" [showTimePicker]="true" reDatePicker #datePicker="datePicker"
+                 name="dp" [(ngModel)]="selectedDate" [showTimePicker]="true" reDatePicker #datePicker2="datePicker"
                  placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
-          <div class="input-group-addon" (click)="datePicker.toggle($event)">
+          <div class="input-group-addon" (click)="datePicker2.toggle($event)">
             <i class="glyphicon glyphicon-calendar"></i>
           </div>
         </div>

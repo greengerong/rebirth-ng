@@ -57,7 +57,6 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     const component = this.cmpRef.instance;
     this.hide();
     component.writeValue(this.selectedDate);
-    // minDate, maxDate ....
     this.fillPopupData();
     component.ngOnInit();
 
@@ -113,7 +112,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     this.isOpen = true;
     const targetElement = this.cmpRef.location.nativeElement;
     const hostElement = this.elementRef.nativeElement;
-    this.renderer.setElementStyle(targetElement, 'display', 'block');
+    this.renderer.setElementStyle(targetElement, 'display', 'inline-block');
     const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
     this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
     this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);

@@ -1,6 +1,6 @@
 import {
   Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges,
-  SimpleChanges, HostListener, forwardRef
+  SimpleChanges, HostListener, forwardRef, ElementRef, Renderer
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -38,7 +38,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   private _maxDate: Date;
   private _minDate: Date;
 
-  constructor() {
+  constructor(private elementRef: ElementRef, private renderer: Renderer) {
     this.dateConfig = {
       weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
       months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -48,6 +48,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
 
     this.minDate = new Date(this.dateConfig.min, 0, 1);
     this.maxDate = new Date(this.dateConfig.max, 11, 31);
+    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'inline-block');
   }
 
   @Input() set maxDate(date: Date | any) {
