@@ -21,6 +21,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   static DAY_DURATION = 24 * 60 * 60 * 1000;
   @Input() selectedDate: Date;
   @Input() showTimePicker = false;
+  @Input() cssClass: string;
   @Output() selectedDateChange = new EventEmitter<Date>();
   currentYear: number;
   currentMonth: number;

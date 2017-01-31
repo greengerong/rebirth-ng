@@ -27,6 +27,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() showTimePicker = false;
   @Input() maxDate: Date | string | number;
   @Input() minDate: Date| string | number;
+  @Input() cssClass: string;
   isOpen = false;
   dateConfig: any;
   private datePipe: DatePipe;
@@ -153,7 +154,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private fillPopupData() {
-    ['showTimePicker', 'maxDate', 'minDate'].forEach(key => {
+    ['showTimePicker', 'maxDate', 'minDate', 'cssClass'].forEach(key => {
       if (this[key] !== undefined) {
         this.cmpRef.instance[key] = this[key];
       }
