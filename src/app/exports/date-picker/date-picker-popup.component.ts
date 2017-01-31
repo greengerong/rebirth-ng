@@ -14,7 +14,6 @@ export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   selector: 're-date-picker-popup',
   templateUrl: './date-picker-popup.component.html',
   styleUrls: ['./date-picker-popup.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [RE_DATE_PICKER__POPUP_VALUE_ACCESSOR]
 })
 export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValueAccessor {
