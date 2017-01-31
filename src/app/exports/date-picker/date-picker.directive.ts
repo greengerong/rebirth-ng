@@ -69,7 +69,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = obj;
+    this.selectedDate = !obj || obj instanceof Date ? obj : new Date(obj);
     this.writeModelValue(obj);
   }
 
@@ -109,6 +109,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   show() {
+    const component = this.cmpRef.instance;
+    component.writeValue(this.selectedDate);
     this.fillPopupData();
     this.isOpen = true;
     const targetElement = this.cmpRef.location.nativeElement;

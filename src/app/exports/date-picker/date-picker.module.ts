@@ -4,14 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DatePickerDirective } from './date-picker.directive';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
 import { FormsModule } from '@angular/forms';
-import { DatePickerCalendarComponent } from './date-picker-calendar.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
-  exports: [DatePickerDirective, DatePickerCalendarComponent, DatePickerPopupComponent],
-  declarations: [DatePickerDirective, DatePickerCalendarComponent, DatePickerPopupComponent],
+  exports: [DatePickerDirective, DatePickerPopupComponent],
+  declarations: [DatePickerDirective, DatePickerPopupComponent],
   providers: [],
-  entryComponents: [DatePickerCalendarComponent, DatePickerPopupComponent]
+  entryComponents: [DatePickerPopupComponent]
 })
 export class DatePickerModule {
 }

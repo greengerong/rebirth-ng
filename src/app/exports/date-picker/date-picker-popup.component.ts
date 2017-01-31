@@ -19,10 +19,11 @@ export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
 })
 export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValueAccessor {
   static DAY_DURATION = 24 * 60 * 60 * 1000;
+  private _maxDate: Date;
+  private _minDate: Date;
   @Input() selectedDate: Date;
   @Input() showTimePicker = false;
   @Input() cssClass: string;
-  @Output() selectedDateChange = new EventEmitter<Date>();
   currentYear: number;
   currentMonth: number;
   currentHour: number;
@@ -36,8 +37,6 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
 
   onChange = (_: any) => null;
   onTouched = () => null;
-  private _maxDate: Date;
-  private _minDate: Date;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer) {
     this.dateConfig = {
@@ -53,7 +52,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   @Input() set maxDate(date: Date | any) {
-    this._maxDate = date instanceof Date ? date : new Date(date);
+    this._maxDate = !date || date instanceof Date ? date : new Date(date);
   }
 
   get maxDate() {
@@ -61,7 +60,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   @Input() set minDate(date: Date | any) {
-    this._minDate = date instanceof Date ? date : new Date(date);
+    this._minDate = !date || date instanceof Date ? date : new Date(date);
   }
 
   get minDate() {
@@ -89,7 +88,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = obj;
+    this.selectedDate = !obj || obj instanceof Date ? obj : new Date(obj);
   }
 
   registerOnChange(fn: any): void {

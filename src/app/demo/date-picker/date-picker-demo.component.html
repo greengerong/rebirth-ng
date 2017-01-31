@@ -10,7 +10,7 @@
     <form class="form-horizontal">
       <div class="form-group">
         <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd"
+          <input class="form-control" placeholder="yyyy-MM-dd"
                  name="dp" [(ngModel)]="selectedDate" reDatePicker #datePicker1="datePicker"
                  [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
           <div class="input-group-addon" (click)="datePicker1.toggle($event)">
@@ -25,8 +25,14 @@
     <h4>Date picker with input with time picker </h4>
     <form class="form-horizontal">
       <div class="form-group">
+        <label>Date format</label>
+        <select name="dateFormat" class="form-control" [(ngModel)]="dateFormat">
+          <option *ngFor="let item of dateFormatOptions" [ngValue]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-group">
         <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd"
+          <input class="form-control" [placeholder]="dateFormat" [dateFormat]="dateFormat"
                  name="dp" [(ngModel)]="selectedDate" [showTimePicker]="true" reDatePicker #datePicker2="datePicker"
                  placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
           <div class="input-group-addon" (click)="datePicker2.toggle($event)">
