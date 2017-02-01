@@ -7,6 +7,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
 import { DatePipe } from '@angular/common';
+import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 
 export const RE_DATE_PICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -68,7 +69,12 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     component.registerOnChange((selectedDate) => {
       this.writeValue(selectedDate);
       this.onChange(selectedDate);
-      this.hide();
+    });
+
+    component.selectedDateChange.subscribe((arg: SelectDateChangeEventArgs) => {
+      if (arg.reason === SelectDateChangeReason.date) {
+        this.hide();
+      }
     });
   }
 

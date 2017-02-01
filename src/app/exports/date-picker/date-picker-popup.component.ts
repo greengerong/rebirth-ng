@@ -7,9 +7,10 @@ import {
   HostListener,
   forwardRef,
   ElementRef,
-  Renderer
+  Renderer, Output, EventEmitter
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 
 export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -28,6 +29,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   private _maxDate: Date;
   private _minDate: Date;
   @Input() selectedDate: Date;
+  @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
   @Input() showTimePicker = false;
   @Input() cssClass: string;
   currentYear: number;
@@ -110,6 +112,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
     this.onTouched();
     this.writeValue(selectedDate);
     this.onChange(selectedDate);
+    this.selectedDateChange.emit({ reason: SelectDateChangeReason.date, date: this.selectedDate });
     if (this.currentMonth !== this.selectedDate.getMonth() || this.currentYear !== this.selectedDate.getFullYear()) {
       this.currentYear = this.selectedDate.getFullYear();
       this.currentMonth = this.selectedDate.getMonth();
@@ -117,16 +120,16 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
     }
   }
 
-  // onTimeChange() {
-  // const date = this.selectedDate || new Date();
-  // this.selectedDate = new Date(date.getFullYear(), date.getMonth(),
-  //   date.getDate(), this.currentHour, this.currentMinute);
-  //
-  // this.onTouched();
-  // this.writeValue(this.selectedDate);
-  // this.onChange(this.selectedDate);
-  // this.selectedDateChange.emit(this.selectedDate);
-  // }
+  onTimeChange() {
+    const date = this.selectedDate || new Date();
+    this.selectedDate = new Date(date.getFullYear(), date.getMonth(),
+      date.getDate(), this.currentHour, this.currentMinute);
+
+    this.onTouched();
+    this.writeValue(this.selectedDate);
+    this.onChange(this.selectedDate);
+    this.selectedDateChange.emit({ reason: SelectDateChangeReason.time, date: this.selectedDate });
+  }
 
   hasPreMonth() {
     return this.currentMonth > 0 || this.currentYear > this.minDate.getFullYear();
