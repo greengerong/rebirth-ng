@@ -28,6 +28,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() maxDate: Date | string | number;
   @Input() minDate: Date| string | number;
   @Input() cssClass: string;
+  @Input() disabled = false;
+  @Input() dateParser: (date: string, pattern: string, locale: string) => Date;
   isOpen = false;
   dateConfig: any;
   private datePipe: DatePipe;
@@ -82,6 +84,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
     this.renderer.setElementProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
     if (this.isOpen) {
       this.cmpRef.instance.setDisabledState(isDisabled);
@@ -132,6 +135,13 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     this.onTouched();
   }
 
+  @HostListener('change', ['$event'])
+  onChangeFromInput($event) {
+    const value = $event.target.value;
+    const date = this.dateParser ? this.dateParser(value, this.dateFormat, this.locale) : new Date(value);
+    this.writeValue(date && isNaN(date.getTime()) ? null : date);
+  }
+
   @HostListener('keyup.esc', ['$event'])
   onEscKeyup() {
     this.hide();
@@ -156,7 +166,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private fillPopupData() {
-    ['showTimePicker', 'maxDate', 'minDate', 'cssClass'].forEach(key => {
+    ['showTimePicker', 'maxDate', 'minDate', 'cssClass', 'disabled'].forEach(key => {
       if (this[key] !== undefined) {
         this.cmpRef.instance[key] = this[key];
       }

@@ -30,7 +30,7 @@
       background-color: #e6e6e6;
       border-color: #adadad;
     }
-    &.disabled {
+    &.disabled:not(.bg-primary) {
       opacity: 0.2;
       color: #292b2c !important;
       background-color: #ddd !important;

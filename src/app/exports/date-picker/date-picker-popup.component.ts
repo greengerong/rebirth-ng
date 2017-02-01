@@ -1,6 +1,13 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges,
-  SimpleChanges, HostListener, forwardRef, ElementRef, Renderer
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  HostListener,
+  forwardRef,
+  ElementRef,
+  Renderer
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -70,24 +77,16 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   ngOnInit() {
     this.hourOptions = new Array(24).fill(0).map((value, index) => this.fillLeft(index));
     this.minuteOptions = new Array(60).fill(0).map((value, index) => this.fillLeft(index));
-
-    let date = this.selectedDate || new Date();
-    if (date.getTime() < this.minDate.getTime()) {
-      date = this.minDate;
-    }
-    if (date.getTime() > this.maxDate.getTime()) {
-      date = this.maxDate;
-    }
-    this.currentYear = date.getFullYear();
-    this.currentMonth = date.getMonth();
-    this.currentHour = this.showTimePicker ? date.getHours() : 0;
-    this.currentMinute = this.showTimePicker ? date.getMinutes() : 0;
+    this.onSelectDateChanged();
     this.onDisplayWeeksChange();
     this.onYearRangeChange();
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = !obj || obj instanceof Date ? obj : new Date(obj);
+    const date = !obj || obj instanceof Date ? obj : new Date(obj);
+    this.selectedDate = date;
+    this.onSelectDateChanged();
+    this.onDisplayWeeksChange();
   }
 
   registerOnChange(fn: any): void {
@@ -108,7 +107,6 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
     }
     const selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
       this.currentHour, this.currentMinute);
-    // this.selectedDateChange.emit(this.selectedDate);
     this.onTouched();
     this.writeValue(selectedDate);
     this.onChange(selectedDate);
@@ -171,8 +169,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
 
   isDisabledDay(date) {
     // do not include time.
-    return date.getTime() < this.minDate.getTime() ||
-      date.getTime() > this.maxDate.getTime();
+    return this.disabled || (date.getTime() < this.minDate.getTime() ||
+      date.getTime() > this.maxDate.getTime());
   }
 
   isSelectDay(date) {
@@ -201,6 +199,20 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   @HostListener('click', ['$event'])
   onDocumentClick($event: Event) {
     $event.stopPropagation();
+  }
+
+  private onSelectDateChanged() {
+    let date = this.selectedDate || new Date();
+    if (date.getTime() < this.minDate.getTime()) {
+      date = this.minDate;
+    }
+    if (date.getTime() > this.maxDate.getTime()) {
+      date = this.maxDate;
+    }
+    this.currentYear = date.getFullYear();
+    this.currentMonth = date.getMonth();
+    this.currentHour = this.showTimePicker ? date.getHours() : 0;
+    this.currentMinute = this.showTimePicker ? date.getMinutes() : 0;
   }
 
   private fillLeft(num: number) {
