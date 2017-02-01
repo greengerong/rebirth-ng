@@ -12,7 +12,7 @@
 - [x] Pager
 - [x] Pagination
 - [x] Panel
-- [ ] DatePicker
+- [x] DatePicker
 - [ ] Dropdown
 - [x] Rating
 - [x] Popover
@@ -26,6 +26,8 @@
 - declare 'default'| 'success' | 'info' | 'warning' | 'danger' to one ts type; 
 
 - refactor all component config to rebirth-ui-config
+
+- Action button with icon
 
 - publish `exports` build
 
