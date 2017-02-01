@@ -52,8 +52,8 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
       max: 2099
     };
 
-    this.minDate = new Date(this.dateConfig.min, 0, 1);
-    this.maxDate = new Date(this.dateConfig.max, 11, 31);
+    this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
+    this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
     this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'inline-block');
   }
 

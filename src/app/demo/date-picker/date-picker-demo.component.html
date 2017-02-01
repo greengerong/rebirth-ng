@@ -36,7 +36,7 @@
         <div class="input-group">
           <input class="form-control" [placeholder]="dateFormat" [dateFormat]="dateFormat"
                  name="dp" [(ngModel)]="selectedDate3" [showTimePicker]="true" reDatePicker #datePicker2="datePicker"
-                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'" [disabled]="true">
+                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-2-27'">
           <div class="input-group-addon" (click)="datePicker2.toggle($event)">
             <i class="glyphicon glyphicon-calendar"></i>
           </div>

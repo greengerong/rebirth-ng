@@ -50,6 +50,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
         time: 'yyyy-MM-dd HH:mm'
       }
     };
+    this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
+    this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
   }
 
   ngOnInit() {
@@ -139,7 +141,19 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   onChangeFromInput($event) {
     const value = $event.target.value;
     const date = this.dateParser ? this.dateParser(value, this.dateFormat, this.locale) : new Date(value);
-    this.writeValue(date && isNaN(date.getTime()) ? null : date);
+    let parseDate = date && isNaN(date.getTime()) ? null : date;
+    if (parseDate) {
+      const minDate = new Date(<any>this.minDate);
+      const maxDate = new Date(<any>this.maxDate);
+      if (parseDate.getTime() < minDate.getTime()) {
+        parseDate = minDate;
+      }
+      if (parseDate.getTime() > maxDate.getTime()) {
+        parseDate = maxDate;
+      }
+    }
+    this.writeValue(parseDate);
+    this.onChange(this.selectedDate);
   }
 
   @HostListener('keyup.esc', ['$event'])
