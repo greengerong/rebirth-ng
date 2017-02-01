@@ -29,6 +29,8 @@
     &:hover:not(.bg-primary) {
       background-color: #e6e6e6;
       border-color: #adadad;
+      color: #000;
+      font-weight: bold;
     }
     &.disabled:not(.bg-primary) {
       opacity: 0.2;
@@ -45,8 +47,9 @@
   }
 
   .out-of-month {
-    opacity: 0.5;
-    color: #636c72 !important;
+    opacity: 0.8;
+    background-color: #fff;
+    color: #ddd;
   }
 
   .time-picker-view {

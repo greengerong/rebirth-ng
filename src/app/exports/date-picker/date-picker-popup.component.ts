@@ -168,9 +168,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   isDisabledDay(date) {
-    // do not include time.
-    return this.disabled || (date.getTime() < this.minDate.getTime() ||
-      date.getTime() > this.maxDate.getTime());
+    const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+    const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate(), 23, 59, 59);
+    return this.disabled || (date.getTime() < minDate.getTime() ||
+      date.getTime() > maxDate.getTime());
   }
 
   isSelectDay(date) {
