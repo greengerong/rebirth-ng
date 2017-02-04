@@ -3,6 +3,7 @@ import {
   OnDestroy
 } from '@angular/core';
 import { PanelGroup } from './panel-group.model';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-panel,re-accordion-item',
@@ -12,16 +13,18 @@ import { PanelGroup } from './panel-group.model';
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
-  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger' = 'default';
-  @Input() closable = false;
-  @Input() collapsable = false;
+  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
+  @Input() closable: boolean;
+  @Input() collapsable: boolean;
   @Input() isCollapsed = false;
   @Input() cssClass: string;
   @Output() close = new EventEmitter<PanelComponent>();
   @Output() collapse = new EventEmitter<boolean>();
 
-  constructor(@Optional() @Host() private  panelGroup: PanelGroup) {
-
+  constructor(@Optional() @Host() private  panelGroup: PanelGroup, private rebirthUIConfig: RebirthUIConfig) {
+    this.type = <any>rebirthUIConfig.panel.type;
+    this.closable = rebirthUIConfig.panel.closable;
+    this.collapsable = rebirthUIConfig.panel.collapsable;
   }
 
   ngOnInit(): void {

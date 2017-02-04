@@ -39,4 +39,10 @@ export class RebirthUIConfig {
     }
   };
 
+  panel = {
+    type: 'default',
+    closable: false,
+    collapsable: false,
+  };
+
 }
