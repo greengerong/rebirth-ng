@@ -12,4 +12,26 @@ export class RebirthUIConfig {
     }
   };
 
+  pager = {
+    pageSize: 10,
+    aligned: true,
+    button: {
+      previous: '« Previous',
+      next: 'Next »'
+    }
+  };
+
+  pagination = {
+    boundary: true,
+    pageSize: 10,
+    maxItems: 10,
+    size: '', // '' | 'lg' | 'sm'
+    button: {
+      first: 'First',
+      last: 'Last',
+      pre: 'Previous',
+      next: 'Next'
+    }
+  };
+
 }

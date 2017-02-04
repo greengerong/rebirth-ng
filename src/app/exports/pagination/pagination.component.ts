@@ -2,6 +2,7 @@ import {
   Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy,
   SimpleChanges
 } from '@angular/core';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-pagination',
@@ -11,21 +12,29 @@ import {
 export class PaginationComponent implements OnChanges {
   static EFFECT_PAGE_RANGE_KEYS = ['total', 'pageSize', 'pageIndex', 'maxItems'];
 
-  @Input() boundary = true;
+  @Input() boundary: boolean;
   @Input() total = 0;
-  @Input() pageSize = 10;
+  @Input() pageSize: number;
   @Input() pageIndex = 1;
   @Output() pageIndexChange = new EventEmitter<number>();
-  @Input() maxItems = 5;
-  @Input() firstLink = 'First';
-  @Input() lastLink = 'Last';
-  @Input() preLink = 'Previous';
-  @Input() nextLink = 'Next';
-  @Input() size: '' | 'lg' |'sm' = '';
+  @Input() maxItems: number;
+  @Input() firstLink: string;
+  @Input() lastLink: string;
+  @Input() preLink: string;
+  @Input() nextLink: string;
+  @Input() size: '' | 'lg' |'sm';
   showPages = [];
   totalPage = 0;
 
-  constructor() {
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.boundary = rebirthUIConfig.pagination.boundary;
+    this.pageSize = rebirthUIConfig.pagination.pageSize;
+    this.maxItems = rebirthUIConfig.pagination.maxItems;
+    this.firstLink = rebirthUIConfig.pagination.button.first;
+    this.lastLink = rebirthUIConfig.pagination.button.last;
+    this.preLink = rebirthUIConfig.pagination.button.pre;
+    this.nextLink = rebirthUIConfig.pagination.button.next;
+    this.size = <any>rebirthUIConfig.pagination.size;
   }
 
   first() {

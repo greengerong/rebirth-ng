@@ -2,6 +2,7 @@ import {
   Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges,
   SimpleChanges
 } from '@angular/core';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-pager',
@@ -11,14 +12,21 @@ import {
 export class PagerComponent implements OnChanges {
   static EFFECT_PAGE_RANGE_KEYS = ['total', 'pageSize', 'pageIndex'];
   @Input() total = 0;
-  @Input() pageSize = 10;
+  @Input() pageSize: number;
   @Input() pageIndex = 1;
   @Output() pageIndexChange = new EventEmitter<number>();
-  @Input() aligned = true;
-  @Input() previousText = '« Previous';
-  @Input() nextText = 'Next »';
+  @Input() aligned: boolean;
+  @Input() previousText: string;
+  @Input() nextText: string;
   @Input() disable = false;
   totalPage = 0;
+
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.aligned = rebirthUIConfig.pager.aligned;
+    this.pageSize = rebirthUIConfig.pager.pageSize;
+    this.previousText = rebirthUIConfig.pager.button.previous;
+    this.nextText = rebirthUIConfig.pager.button.next;
+  }
 
   prev(): void {
     if (this.hasPrev()) {
