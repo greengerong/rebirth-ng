@@ -5,6 +5,12 @@ export class RebirthUIConfig {
 
   rootContainer: ViewContainerRef;
 
+  accordion = {
+    type: '',
+    keepOneItem: true,
+    closable: false
+  };
+
   alertBox = {
     type: 'info',
     closable: false,

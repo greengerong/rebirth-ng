@@ -3,6 +3,7 @@ import {
   forwardRef, Output, EventEmitter
 } from '@angular/core';
 import { PanelComponent, PanelGroup } from '../panel';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-accordion',
@@ -12,12 +13,15 @@ import { PanelComponent, PanelGroup } from '../panel';
   providers: [{ provide: PanelGroup, useExisting: forwardRef(() => AccordionComponent) }],
 })
 export class AccordionComponent extends PanelGroup {
-  @Input() keepOneItem = true;
-  @Input() closable = false;
+  @Input() keepOneItem: boolean;
+  @Input() closable: boolean;
   @Output() close = new EventEmitter<PanelComponent>();
 
-  constructor() {
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
     super();
+    this.keepOneItem = rebirthUIConfig.accordion.keepOneItem;
+    this.closable = rebirthUIConfig.accordion.closable;
+    this.type = <any>rebirthUIConfig.accordion.type;
   }
 
   protected initPanel(panel: PanelComponent) {
