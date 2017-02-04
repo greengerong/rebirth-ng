@@ -5,6 +5,11 @@ export class RebirthUIConfig {
 
   rootContainer: ViewContainerRef;
 
+  alertBox = {
+    type: 'info',
+    closable: false,
+  };
+
   dialog = {
     button: {
       yes: 'Yes',
