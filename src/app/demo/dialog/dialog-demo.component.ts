@@ -16,7 +16,7 @@ export class DialogDemoComponent {
     this.dialogService.alert({
       title: 'I\'m a rebirth alert!',
       content: 'This is <strong>rebirth alert</strong> content.',
-      yes: '确定',
+      // yes: '确定',
       html: true
     })
       .subscribe(
@@ -29,8 +29,8 @@ export class DialogDemoComponent {
     this.dialogService.confirm({
       title: 'I\'m a rebirth confirm!',
       content: 'This is <strong>rebirth confirm</strong> content.',
-      yes: '确定',
-      no: '取消',
+      // yes: '确定',
+      // no: '取消',
       html: true
     })
       .subscribe(

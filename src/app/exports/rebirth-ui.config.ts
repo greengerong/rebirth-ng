@@ -5,4 +5,11 @@ export class RebirthUIConfig {
 
   rootContainer: ViewContainerRef;
 
+  dialog = {
+    button: {
+      yes: 'Yes',
+      no: 'No'
+    }
+  };
+
 }
