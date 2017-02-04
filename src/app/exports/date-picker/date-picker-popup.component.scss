@@ -1,8 +1,10 @@
 
 .month-view {
-  //width: auto !important;
-  margin-bottom: 0px;
   background-color: #f7f7f7;
+  
+  .month-view-table {
+    margin-bottom: 0px;
+  }
 
   .btn-link {
     cursor: pointer;
