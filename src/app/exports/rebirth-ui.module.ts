@@ -63,6 +63,7 @@ export class RebirthUIModule {
       providers: [
         ...COMMON_SERVICES,
         RebirthUIConfig,
+        // { provide: RebirthUIConfig, useClass: ZHCNRebirthUIConfig },
         ModalService,
         DialogService,
         PositionService

@@ -1,7 +1,8 @@
-import { Inject, Injectable, LOCALE_ID, ViewContainerRef } from '@angular/core';
+import { Injectable, ViewContainerRef } from '@angular/core';
+import { RebirthUIConfig } from './rebirth-ui.config';
 
 @Injectable()
-export class RebirthUIConfig {
+export class ZHCNRebirthUIConfig extends RebirthUIConfig {
 
   rootContainer: ViewContainerRef;
 
@@ -17,11 +18,11 @@ export class RebirthUIConfig {
   };
 
   datePicker = {
-    locale: 'en-US',
+    locale: 'zh-CN',
     timePicker: false,
     dateParser: null, // (date: string, pattern: string, locale: string) => Date
-    weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-    months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    weeks: ['日', '一', '二', '三', '四', '五', '六'],
+    months: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
     min: 1900,
     max: 2099,
     format: {
@@ -32,8 +33,8 @@ export class RebirthUIConfig {
 
   dialog = {
     button: {
-      yes: 'Yes',
-      no: 'No'
+      yes: '确定',
+      no: '取消'
     }
   };
 
@@ -41,8 +42,8 @@ export class RebirthUIConfig {
     pageSize: 10,
     aligned: true,
     button: {
-      previous: '« Previous',
-      next: 'Next »'
+      previous: '« 上一页',
+      next: '下一页 »'
     }
   };
 
@@ -52,10 +53,10 @@ export class RebirthUIConfig {
     maxItems: 10,
     size: '', // '' | 'lg' | 'sm'
     button: {
-      first: 'First',
-      last: 'Last',
-      pre: 'Previous',
-      next: 'Next'
+      first: '首页',
+      last: '尾页',
+      pre: '前一页',
+      next: '下一页'
     }
   };
 
@@ -75,7 +76,4 @@ export class RebirthUIConfig {
     justified: false,
     vertical: false
   };
-
-  constructor(@Inject(LOCALE_ID) private locale: string) {
-  }
 }
