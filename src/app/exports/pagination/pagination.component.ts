@@ -26,7 +26,7 @@ export class PaginationComponent implements OnChanges {
   showPages = [];
   totalPage = 0;
 
-    constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
     this.boundary = rebirthUIConfig.pagination.boundary;
     this.pageSize = rebirthUIConfig.pagination.pageSize;
     this.maxItems = rebirthUIConfig.pagination.maxItems;
