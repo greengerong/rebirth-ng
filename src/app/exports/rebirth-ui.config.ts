@@ -55,4 +55,10 @@ export class RebirthUIConfig {
     max: 10,
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
   };
+
+  tabs = {
+    type: 'tabs', // 'tabs' | 'pills'
+    justified: false,
+    vertical: false
+  };
 }

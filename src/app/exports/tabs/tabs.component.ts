@@ -9,6 +9,7 @@ import {
   ChangeDetectionStrategy
 } from '@angular/core';
 import { TabComponent } from './tab.component';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-tabs',
@@ -16,15 +17,18 @@ import { TabComponent } from './tab.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsComponent implements OnInit {
-  @Input() type: 'tabs' | 'pills' = 'tabs';
+  @Input() type: 'tabs' | 'pills';
   @Input() activeTab: number |string;
-  @Input() vertical = false;
-  @Input() justified = false;
+  @Input() vertical: boolean;
+  @Input() justified: boolean;
   @Input() cssClass: string;
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() activeTabChange = new EventEmitter<number| string>();
 
-  constructor() {
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.type = <any>rebirthUIConfig.tabs.type;
+    this.justified = rebirthUIConfig.tabs.justified;
+    this.vertical = rebirthUIConfig.tabs.vertical;
   }
 
   ngOnInit() {
