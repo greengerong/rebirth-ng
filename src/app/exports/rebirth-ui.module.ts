@@ -62,11 +62,11 @@ export class RebirthUIModule {
       ngModule: RebirthUIModule,
       providers: [
         ...COMMON_SERVICES,
-        RebirthUIConfig,
+        { provide: RebirthUIConfig, useClass: RebirthUIConfig },
         // { provide: RebirthUIConfig, useClass: ZHCNRebirthUIConfig },
-        ModalService,
-        DialogService,
-        PositionService
+        { provide: ModalService, useClass: ModalService },
+        { provide: DialogService, useClass: DialogService },
+        { provide: PositionService, useClass: PositionService }
       ]
     };
   }
