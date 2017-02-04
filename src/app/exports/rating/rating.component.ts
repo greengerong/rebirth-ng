@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-rating',
@@ -11,12 +12,13 @@ export class RatingComponent implements OnInit {
   @Input('ngModel') value = 0;
   @Input() disabled = false;
   @Input() cssClass: string;
-  @Input() icons = { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' };
+  @Input() icons: { stateOn, stateOff };
   @Output('ngModelChange') valueChange = new EventEmitter<number>();
   statValue = 0;
 
-  constructor() {
-    this.ratingRanges = this.fillRatingRange(10);
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.icons = rebirthUIConfig.rating.icons;
+    this.ratingRanges = this.fillRatingRange(rebirthUIConfig.rating.max);
   }
 
   @Input('ngModel')

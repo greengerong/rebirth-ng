@@ -1,12 +1,12 @@
 <span aria-labelledby="default-rating" class="{{cssClass}}">
-  <span (mouseleave)="reset()" (keydown)="onKeydown($event)" tabindex="0" role="slider"
+  <span (mouseleave)="reset()" tabindex="0" role="slider"
         [attr.aria-valuemin]="0" [attr.aria-valuemax]="ratingRanges.length" [attr.aria-valuenow]="statValue"
         [attr.aria-valuetext]="statValue">
 
    <ng-container *ngFor="let item of ratingRanges">
       <span class="sr-only">({{statValue >= item? "*": ""}} )</span>
       <i (mouseenter)="enter(item)" (click)="rate(item)"
-         class="glyphicon {{ statValue < item ? icons.stateOff: icons.stateOn}}"
+         class="{{ statValue < item ? icons.stateOff: icons.stateOn}}"
          [attr.title]="item">
       </i>
    </ng-container>

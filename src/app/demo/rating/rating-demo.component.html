@@ -8,7 +8,7 @@
     <h4>Customise icons rating:</h4>
     <re-rating [(ngModel)]="rating.value" [max]="rating.max" [icons]="icons" [disabled]="disabled"></re-rating>
 
-    <button class="btn btn-primary" (click)="disabled =!disabled">Disabled rating</button>
+    <button class="btn btn-primary" (click)="disabled =!disabled">{{ disabled ? 'Enable': 'Disabled'}} rating</button>
   </section>
 
   <pre>{{rating | json}}</pre>

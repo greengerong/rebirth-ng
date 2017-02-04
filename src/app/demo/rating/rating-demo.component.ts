@@ -10,7 +10,7 @@ export class RatingDemoComponent implements OnInit {
     value: 3,
     max: 10
   };
-  icons = { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' };
+  icons = { stateOn: 'glyphicon glyphicon-heart', stateOff: 'glyphicon glyphicon-ban-circle' };
 
   constructor() {
   }

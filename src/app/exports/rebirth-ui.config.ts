@@ -51,4 +51,8 @@ export class RebirthUIConfig {
     collapsable: false,
   };
 
+  rating = {
+    max: 10,
+    icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
+  };
 }
