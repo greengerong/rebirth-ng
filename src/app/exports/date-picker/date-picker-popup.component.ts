@@ -11,6 +11,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -30,7 +31,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   private _minDate: Date;
   @Input() selectedDate: Date;
   @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
-  @Input() showTimePicker = false;
+  @Input() showTimePicker: boolean;
   @Input() cssClass: string;
   currentYear: number;
   currentMonth: number;
@@ -46,14 +47,10 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   onChange = (_: any) => null;
   onTouched = () => null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer) {
-    this.dateConfig = {
-      weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      min: 1900,
-      max: 2099
-    };
+  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
 
+    this.dateConfig = rebirthUIConfig.datePicker;
+    this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
     this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
     this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
     this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'inline-block');

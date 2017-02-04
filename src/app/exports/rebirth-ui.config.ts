@@ -16,6 +16,20 @@ export class RebirthUIConfig {
     closable: false,
   };
 
+  datePicker = {
+    locale: 'en-US',
+    timePicker: false,
+    dateParser: null, // (date: string, pattern: string, locale: string) => Date
+    weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    min: 1900,
+    max: 2099,
+    format: {
+      date: 'yyyy-MM-dd',
+      time: 'yyyy-MM-dd HH:mm'
+    }
+  };
+
   dialog = {
     button: {
       yes: 'Yes',

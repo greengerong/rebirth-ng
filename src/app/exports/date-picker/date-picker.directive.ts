@@ -8,6 +8,7 @@ import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
 import { DatePipe } from '@angular/common';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 export const RE_DATE_PICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -23,9 +24,9 @@ export const RE_DATE_PICKER_VALUE_ACCESSOR = {
 export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';
   @Input() selectedDate: Date;
-  @Input() locale = 'en-US';
+  @Input() locale: string;
   @Input() dateFormat: string;
-  @Input() showTimePicker = false;
+  @Input() showTimePicker: boolean;
   @Input() maxDate: Date | string | number;
   @Input() minDate: Date| string | number;
   @Input() cssClass: string;
@@ -40,17 +41,13 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
-              private injector: Injector, private positionService: PositionService) {
-    this.dateConfig = {
-      weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
-      months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      min: 2016,
-      max: 2017,
-      format: {
-        date: 'yyyy-MM-dd',
-        time: 'yyyy-MM-dd HH:mm'
-      }
-    };
+              private injector: Injector, private positionService: PositionService,
+              private rebirthUIConfig: RebirthUIConfig) {
+
+    this.dateConfig = rebirthUIConfig.datePicker;
+    this.dateParser = rebirthUIConfig.datePicker.dateParser;
+    this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
+    this.locale = rebirthUIConfig.datePicker.locale;
     this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
     this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
   }
