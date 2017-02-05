@@ -21,7 +21,6 @@ export class DocComponent implements AfterViewInit {
   }
 
   activeTabChange(id) {
-
     setTimeout(() => {
       hljs.highlightBlock(this.html.last.nativeElement);
     }, 0);
