@@ -27,7 +27,7 @@ import { RebirthUIModule } from './exports';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
+    SharedModule.forRoot(),
     RebirthUIModule.forRoot(),
     ModalDemoModule,
     DialogDemoModule,

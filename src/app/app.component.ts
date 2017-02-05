@@ -1,21 +1,6 @@
 import { Component, OnInit, Type, ViewContainerRef } from '@angular/core';
 import { RebirthUIConfig } from './exports/rebirth-ui.config';
-import {
-  ModalDemoComponent,
-  DialogDemoComponent,
-  AlertBoxDemoComponent,
-  BadgeDemoComponent,
-  PaginationDemoComponent,
-  PagerDemoComponent,
-  PanelDemoComponent,
-  AccordionDemoComponent,
-  ActionButtonDemoComponent,
-  RatingDemoComponent,
-  TabsDemoComponent,
-  TooltipDemoComponent,
-  PopoverDemoComponent,
-  DatePickerDemoComponent
-} from './demo';
+import { DemoConfigService } from './shared/demo/demo-config.service';
 
 @Component({
   selector: 're-app',
@@ -26,34 +11,16 @@ export class AppComponent implements OnInit {
 
   components: { name: string, cmp: Type<any> }[];
 
-  constructor(private rebirthConfig: RebirthUIConfig, private viewContainerRef: ViewContainerRef) {
+  constructor(private rebirthConfig: RebirthUIConfig,
+              private viewContainerRef: ViewContainerRef,
+              private demoConfigService: DemoConfigService) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
   }
 
   ngOnInit(): void {
 
-    this.components = [
-      ModalDemoComponent,
-      DialogDemoComponent,
-      AlertBoxDemoComponent,
-      BadgeDemoComponent,
-      PaginationDemoComponent,
-      PagerDemoComponent,
-      PanelDemoComponent,
-      AccordionDemoComponent,
-      ActionButtonDemoComponent,
-      RatingDemoComponent,
-      TabsDemoComponent,
-      TooltipDemoComponent,
-      PopoverDemoComponent,
-      DatePickerDemoComponent
-    ].sort((a: Type<any>, b: Type<any>) => a.name.localeCompare(b.name))
-      .map((item) => {
-        return {
-          name: item.name.replace('DemoComponent', ''),
-          cmp: item
-        };
-      });
+    this.components = this.demoConfigService.components
+      .sort((a, b) => a.name.localeCompare(b.name));
   }
 
 }
