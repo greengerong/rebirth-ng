@@ -37,16 +37,16 @@ export class AppComponent implements OnInit {
       DialogDemoComponent,
       AlertBoxDemoComponent,
       BadgeDemoComponent,
-      // PaginationDemoComponent,
-      // PagerDemoComponent,
+      PaginationDemoComponent,
+      PagerDemoComponent,
       PanelDemoComponent,
-      // AccordionDemoComponent,
+      AccordionDemoComponent,
       ActionButtonDemoComponent,
       RatingDemoComponent,
       TabsDemoComponent,
       TooltipDemoComponent,
       PopoverDemoComponent,
-      // DatePickerDemoComponent
+      DatePickerDemoComponent
     ] .sort((a: Type<any>, b: Type<any>) => a.name.localeCompare(b.name));
   }
 
