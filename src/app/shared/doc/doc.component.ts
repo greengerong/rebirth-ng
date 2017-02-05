@@ -1,5 +1,9 @@
-import { Component, ChangeDetectionStrategy, Type, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component, ChangeDetectionStrategy, Type, Input, AfterViewInit, ViewChild, ElementRef,
+  Renderer, ViewChildren, QueryList
+} from '@angular/core';
 import * as hljs from 'highlight.js';
+import { setTimeout } from 'timers';
 
 @Component({
   selector: 're-doc',
@@ -8,26 +12,29 @@ import * as hljs from 'highlight.js';
 })
 export class DocComponent implements AfterViewInit {
 
-  @ViewChild('html') html: ElementRef;
-  @ViewChild('typescript') typescript: ElementRef;
+  @ViewChildren('html') html: QueryList<ElementRef>;
+  @ViewChildren('typescript') typescript: QueryList<ElementRef>;
 
   @Input() component: { name: string, cmp: Type<any> };
 
-  constructor() {
+  constructor(private  renderer: Renderer) {
   }
 
   activeTabChange(id) {
+
     setTimeout(() => {
-      if (id === 'html') {
-        hljs.highlightBlock(this.html.nativeElement);
-        return;
-      }
-      hljs.highlightBlock(this.typescript.nativeElement);
-    });
+      hljs.highlightBlock(this.html.last.nativeElement);
+    }, 0);
   }
 
   ngAfterViewInit(): void {
 
-    // hljs.highlightBlock(this.typescript.nativeElement);
+    this.html.changes.subscribe((html) => {
+      hljs.highlightBlock(html.last.nativeElement);
+    });
+
+    this.typescript.changes.subscribe((typescript) => {
+      hljs.highlightBlock(typescript.last.nativeElement);
+    });
   }
 }
