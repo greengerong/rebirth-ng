@@ -41,6 +41,7 @@
     "@types/node": "^6.0.42",
     "codelyzer": "~2.0.0-beta.1",
     "compodoc": "0.0.38",
+    "highlight.js": "^9.9.0",
     "html-loader": "^0.4.4",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "2.5.0",

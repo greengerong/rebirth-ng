@@ -6,7 +6,7 @@ import {
   Input,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy, AfterContentInit
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { RebirthUIConfig } from '../rebirth-ui.config';
@@ -16,7 +16,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   templateUrl: './tabs.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TabsComponent implements OnInit {
+export class TabsComponent implements OnInit, AfterContentInit {
   @Input() type: 'tabs' | 'pills';
   @Input() activeTab: number |string;
   @Input() vertical: boolean;
@@ -32,6 +32,12 @@ export class TabsComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  ngAfterContentInit(): void {
+    if (this.activeTab === undefined && this.tabs.length) {
+      this.select(this.tabs.first.id);
+    }
   }
 
   select(id: number | string) {

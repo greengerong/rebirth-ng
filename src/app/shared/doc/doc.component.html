@@ -1,17 +1,17 @@
 <section id="{{component.name}}">
-  <a href="#{{component.name}}"><h2>{{component.name}}</h2></a>
+  <h2><a href="#{{component.name}}">{{component.name}}</a></h2>
   <re-doc-content [component]="component.cmp"></re-doc-content>
-  <re-tabs [activeTab]="'html'" class="code-tabs">
+  <re-tabs class="code-tabs" (activeTabChange)="activeTabChange($event)">
     <re-tab id="html" title="HTML">
       <template reTabContent>
-        <div class="code">
+        <div class="html" #html>
           <pre>{{component.html}}</pre>
         </div>
       </template>
     </re-tab>
     <re-tab id="ts" title="TypeScript">
       <template reTabContent>
-        <div class="code">
+        <div class="typescript" #typescript>
           <pre>{{component.ts}}</pre>
         </div>
       </template>
