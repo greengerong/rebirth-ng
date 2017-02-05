@@ -7,24 +7,8 @@ import { Component, ChangeDetectionStrategy, Type, Input } from '@angular/core';
 })
 export class DocComponent {
 
-  cmp: Type<any>;
-  componentId: string;
+  @Input() component: { name: string, cmp: Type<any> };
 
   constructor() {
   }
-
-  @Input() set component(cmp: Type<any>) {
-    this.cmp = cmp;
-    this.onComponentChange();
-  }
-
-  get component() {
-    return this.cmp;
-  }
-
-  onComponentChange() {
-    const name = this.component.name;
-    this.componentId = name.replace('DemoComponent', '');
-  }
-
 }

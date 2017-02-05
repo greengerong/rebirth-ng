@@ -24,7 +24,7 @@ import {
 })
 export class AppComponent implements OnInit {
 
-  components: Type<any>[];
+  components: { name: string, cmp: Type<any> }[];
 
   constructor(private rebirthConfig: RebirthUIConfig, private viewContainerRef: ViewContainerRef) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
@@ -47,7 +47,13 @@ export class AppComponent implements OnInit {
       TooltipDemoComponent,
       PopoverDemoComponent,
       DatePickerDemoComponent
-    ] .sort((a: Type<any>, b: Type<any>) => a.name.localeCompare(b.name));
+    ].sort((a: Type<any>, b: Type<any>) => a.name.localeCompare(b.name))
+      .map((item) => {
+        return {
+          name: item.name.replace('DemoComponent', ''),
+          cmp: item
+        };
+      });
   }
 
 }
