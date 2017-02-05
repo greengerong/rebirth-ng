@@ -15,7 +15,8 @@ import { CommonModule } from '@angular/common';
   exports: [
     PaginationDemoComponent
   ],
-  providers: [],
+  entryComponents: [PaginationDemoComponent],
+  providers: []
 })
 export class PaginationDemoModule {
 

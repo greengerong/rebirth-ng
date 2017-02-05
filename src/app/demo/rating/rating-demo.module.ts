@@ -9,6 +9,7 @@ import { RebirthUIModule } from '../../exports';
   exports: [RatingDemoComponent],
   declarations: [RatingDemoComponent],
   providers: [],
+  entryComponents: [RatingDemoComponent]
 })
 export class RatingDemoModule {
 }

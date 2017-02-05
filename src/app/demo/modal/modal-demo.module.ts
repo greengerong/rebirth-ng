@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { ModalDemoComponent, ModalTestComponent } from './modal-demo.component';
-import { SharedModule } from '../../shared';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    SharedModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     ModalDemoComponent
@@ -15,7 +17,8 @@ import { SharedModule } from '../../shared';
     ModalTestComponent
   ],
   entryComponents: [
-    ModalTestComponent
+    ModalTestComponent,
+    ModalDemoComponent
   ]
 })
 export class ModalDemoModule {

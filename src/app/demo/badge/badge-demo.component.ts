@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 're-badge-demo',
   templateUrl: './badge-demo.component.html'
 })
-export class BedgeDemoComponent implements OnInit {
+export class BadgeDemoComponent implements OnInit {
   constructor() {
   }
 

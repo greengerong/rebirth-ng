@@ -18,6 +18,8 @@ import { FormsModule } from '@angular/forms';
     AlertBoxDemoComponent
   ],
   providers: [],
+  entryComponents: [AlertBoxDemoComponent]
+
 })
 export class AlertBoxDemoModule {
 }

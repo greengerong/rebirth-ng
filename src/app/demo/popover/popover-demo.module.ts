@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
   exports: [PopoverDemoComponent],
   declarations: [PopoverDemoComponent],
   providers: [],
+  entryComponents: [PopoverDemoComponent]
 })
 export class PopoverDemoModule {
 }

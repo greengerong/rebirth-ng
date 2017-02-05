@@ -14,6 +14,7 @@ import { RebirthUIModule } from '../../exports';
   ],
   declarations: [AccordionDemoComponent],
   providers: [],
+  entryComponents: [AccordionDemoComponent]
 })
 export class AccordionDemoModule {
 }

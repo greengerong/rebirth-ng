@@ -10,6 +10,7 @@ import { RebirthUIModule } from '../../exports/rebirth-ui.module';
   exports: [DatePickerDemoComponent],
   declarations: [DatePickerDemoComponent],
   providers: [],
+  entryComponents: [DatePickerDemoComponent]
 })
 export class DatePickerDemoModule {
 }

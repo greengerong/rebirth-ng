@@ -12,6 +12,7 @@ import { RebirthUIModule } from '../../exports';
   exports: [PanelDemoComponent],
   declarations: [PanelDemoComponent],
   providers: [],
+  entryComponents: [PanelDemoComponent]
 })
 export class PanelDemoModule {
 }

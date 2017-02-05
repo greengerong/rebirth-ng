@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { BedgeDemoComponent } from './badge-demo.component';
+import { BadgeDemoComponent } from './badge-demo.component';
 import { CommonModule } from '@angular/common';
 import { RebirthUIModule } from '../../exports';
 
@@ -9,9 +9,10 @@ import { RebirthUIModule } from '../../exports';
     CommonModule,
     RebirthUIModule
   ],
-  exports: [BedgeDemoComponent],
-  declarations: [BedgeDemoComponent],
+  exports: [BadgeDemoComponent],
+  declarations: [BadgeDemoComponent],
   providers: [],
+  entryComponents: [BadgeDemoComponent]
 })
 export class BadgeDemoModule {
 }

@@ -9,6 +9,7 @@ import { RebirthUIModule } from '../../exports/rebirth-ui.module';
   exports: [TooltipDemoComponent],
   declarations: [TooltipDemoComponent],
   providers: [],
+  entryComponents: [TooltipDemoComponent]
 })
 export class TooltipDemoModule {
 }

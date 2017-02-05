@@ -15,6 +15,9 @@ import { RebirthUIModule } from '../../exports/rebirth-ui.module';
     DialogDemoComponent
   ],
   providers: [],
+  entryComponents: [
+    DialogDemoComponent
+  ]
 })
 export class DialogDemoModule {
 }

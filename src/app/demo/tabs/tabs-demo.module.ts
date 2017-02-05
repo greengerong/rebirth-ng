@@ -9,6 +9,7 @@ import { RebirthUIModule } from '../../exports/rebirth-ui.module';
   exports: [TabsDemoComponent],
   declarations: [TabsDemoComponent],
   providers: [],
+  entryComponents: [TabsDemoComponent]
 })
 export class TabsDemoModule {
 }

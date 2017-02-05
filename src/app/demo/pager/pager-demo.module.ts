@@ -16,6 +16,8 @@ import { PagerModule } from '../../exports/pager';
     PagerDemoComponent
   ],
   providers: [],
+  entryComponents: [PagerDemoComponent]
+
 })
 export class PagerDemoModule {
 }

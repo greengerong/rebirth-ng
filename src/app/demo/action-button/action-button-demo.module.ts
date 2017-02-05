@@ -12,6 +12,7 @@ import { RebirthUIModule } from '../../exports';
   exports: [ActionButtonDemoComponent],
   declarations: [ActionButtonDemoComponent],
   providers: [],
+  entryComponents: [ActionButtonDemoComponent]
 })
 export class ActionButtonDemoModule {
 }

@@ -19,75 +19,7 @@
 </header>
 
 <div class="container">
-  <section id="modal">
-    <a href="#modal"><h2>Modal</h2></a>
-    <re-modal-demo></re-modal-demo>
-  </section>
-
-  <section id="dialog">
-    <a href="#dialog"><h2>Dialog</h2></a>
-    <re-dialog-demo></re-dialog-demo>
-  </section>
-
-  <section id="pager">
-    <a href="#pager"><h2>Pager</h2></a>
-    <re-pager-demo></re-pager-demo>
-  </section>
-
-  <section id="pagination">
-    <a href="#pagination"><h2>Pagination</h2></a>
-    <re-pagination-demo></re-pagination-demo>
-  </section>
-
-  <section id="alert-box">
-    <a href="#alert-box"><h2>Alert box</h2></a>
-    <re-alert-box-demo></re-alert-box-demo>
-  </section>
-
-  <section id="badge">
-    <a href="#badge"><h2>Badge</h2></a>
-    <re-badge-demo></re-badge-demo>
-  </section>
-
-  <section id="panel">
-    <a href="#panel"><h2>Panel</h2></a>
-    <re-panel-demo></re-panel-demo>
-  </section>
-
-  <section id="accordion">
-    <a href="#accordion"><h2>Accordion</h2></a>
-    <re-accordion-demo></re-accordion-demo>
-  </section>
-
-  <section id="action-button">
-    <a href="#action-button"><h2>Action button</h2></a>
-    <re-action-button-demo></re-action-button-demo>
-  </section>
-
-  <section id="rating">
-    <a href="#rating"><h2>Rating</h2></a>
-    <re-rating-demo></re-rating-demo>
-  </section>
-
-  <section id="tabs">
-    <a href="#tabs"><h2>Tabs</h2></a>
-    <re-tabs-demo></re-tabs-demo>
-  </section>
-
-  <section id="tooltip">
-    <a href="#tooltip"><h2>Tooltip</h2></a>
-    <re-tooltip-demo></re-tooltip-demo>
-  </section>
-
-  <section id="popover">
-    <a href="#popover"><h2>Popover</h2></a>
-    <re-popover-demo></re-popover-demo>
-  </section>
-
-  <section id="date-picker">
-    <a href="#date-picker"><h2>DatePicker</h2></a>
-    <re-date-picker-demo></re-date-picker-demo>
-  </section>
+  <re-doc [component]="item" *ngFor="let item of components"></re-doc>
 </div>
 <br>
 <br>
