@@ -1,4 +1,2 @@
-Modal
-========================
 
-** Make sure put your modal component to `entryComponents` of your module!
+****Notice**: Make sure put your modal component to `entryComponents` of your module!

@@ -5,6 +5,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { DocComponent } from './doc';
 import { DocContentComponent } from './doc/doc-content.component';
 import { DemoConfigService } from './demo/demo-config.service';
+import { RebirthUIModule } from '../exports/rebirth-ui.module';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { DemoConfigService } from './demo/demo-config.service';
     FormsModule,
     HttpModule,
     JsonpModule,
+    RebirthUIModule
   ],
   declarations: [
     DocComponent,
