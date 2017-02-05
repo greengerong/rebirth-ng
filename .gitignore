@@ -3,6 +3,8 @@
 # compiled output
 /dist
 /doc
+/typedocs
+/compodocs
 /tmp
 
 # dependencies

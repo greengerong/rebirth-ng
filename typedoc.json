@@ -1,6 +1,6 @@
 {
   "mode": "modules",
-  "out": "doc",
+  "out": "typedocs",
   "theme": "default",
   "ignoreCompilerErrors": "true",
   "experimentalDecorators": "true",
