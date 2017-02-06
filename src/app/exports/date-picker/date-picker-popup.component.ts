@@ -192,6 +192,9 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   onYearRangeChange() {
     const minYear = this.minDate.getFullYear();
     const maxYear = this.maxDate.getFullYear();
+    if (isNaN(minYear) || isNaN(maxYear)) {
+      return;
+    }
     this.yearOptions = new Array(maxYear - minYear + 1).fill(0).map((value, index) => {
       return minYear + index;
     });

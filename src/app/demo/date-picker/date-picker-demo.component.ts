@@ -10,9 +10,10 @@ export class DatePickerDemoComponent implements OnInit {
   dateFormat: string;
   selectedDate1: Date;
   selectedDate2: Date;
-  selectedDate3 = '2017-02-01 09:11';
+  selectedDate3 = new Date('01/02/2017 09:11');
 
   constructor() {
+    console.log(this.selectedDate3);
   }
 
   ngOnInit() {

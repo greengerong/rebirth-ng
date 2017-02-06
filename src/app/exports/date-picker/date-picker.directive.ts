@@ -165,7 +165,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private writeModelValue(selectDate: Date) {
-    const value = selectDate ? this.datePipe.transform(selectDate, this.dateFormat || this.getDefaultDateFormat()) : '';
+    const value = selectDate && !isNaN(selectDate.getTime()) ? this.datePipe.transform(selectDate, this.dateFormat || this.getDefaultDateFormat()) : '';
     this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', value);
     if (this.isOpen) {
       this.cmpRef.instance.writeValue(selectDate);

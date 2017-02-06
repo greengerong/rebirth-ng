@@ -58,9 +58,10 @@
 
 - Alert box service for server side error.
 
+- momentjs refactor date-picker
+
 - publish `exports` build
 
-- document(component & typedoc) & deploy
 
 
 ## Build
