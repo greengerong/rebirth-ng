@@ -14,8 +14,8 @@
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
     "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
-    "github:deploy": "npm run compodocs:deploy && ng github-pages:deploy  --message \"rebirth ui demo deploy\"",
-    "rebith-docs:deploy": "./build/doc-deploy.sh"
+    "github:deploy": "ng github-pages:deploy  --message \"rebirth ui demo deploy\"",
+    "rebith-docs:deploy": "bash ./build/doc-deploy.sh"
   },
   "private": false,
   "repository": {
