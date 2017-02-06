@@ -13,7 +13,7 @@
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./dist/compodocs/ --hideGenerator -s",
-    "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /rebirth-ui/compodocs -d ./dist/compodocs/ --hideGenerator",
+    "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "github:deploy": "npm run compodocs:deploy && ng github-pages:deploy  --message \"rebirth ui deploy\""
   },
   "private": false,
