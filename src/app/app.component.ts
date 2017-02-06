@@ -9,7 +9,7 @@ import { DemoConfigService } from './shared/demo/demo-config.service';
 })
 export class AppComponent implements OnInit {
 
-  components: { name: string, cmp: Type<any> }[];
+  components: any[];
   gettingStarted: any;
 
   constructor(private rebirthConfig: RebirthUIConfig,

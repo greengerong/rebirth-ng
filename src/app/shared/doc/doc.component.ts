@@ -8,6 +8,7 @@ import { setTimeout } from 'timers';
 @Component({
   selector: 're-doc',
   templateUrl: './doc.component.html',
+  styleUrls: ['./doc.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DocComponent implements AfterViewInit {
@@ -15,7 +16,7 @@ export class DocComponent implements AfterViewInit {
   @ViewChildren('html') html: QueryList<ElementRef>;
   @ViewChildren('typescript') typescript: QueryList<ElementRef>;
 
-  @Input() component: { name: string, cmp: Type<any> };
+  @Input() component: any;
 
   constructor(private  renderer: Renderer) {
   }

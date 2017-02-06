@@ -1,5 +1,13 @@
 <section id="{{component.name}}">
-  <h2><a href="#{{component.name}}">{{component.name}}</a></h2>
+  <h2><a href="#{{component.name}}">{{component.name}}</a>
+    <small class="meta-data">
+      (<a class="" target="_blank"
+          [href]="'/rebirth-ui/compodocs/modules/' + component.name +'Module.html'">API Docs
+    </a>, <a class="" target="_blank"
+             [href]="'https://github.com/greengerong/rebirth-ui/tree/master/src/app/exports/' + component.directory">
+      Github Source</a>)
+    </small>
+  </h2>
   <re-doc-content [component]="component.cmp"></re-doc-content>
   <re-tabs class="code-tabs" (activeTabChange)="activeTabChange($event)">
     <re-tab id="html" title="HTML">
