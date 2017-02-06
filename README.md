@@ -62,3 +62,9 @@
 
 - document(component & typedoc) & deploy
 
+
+## Build
+
+** Run serve: `npm start`
+** Docs deploy: `npm run rebith-docs:deploy`
+
