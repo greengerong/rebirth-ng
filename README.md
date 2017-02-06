@@ -1,4 +1,4 @@
-# rebirth-ui
+# @rebirth/ui
 ##########################
 > Angular2 UI plugin with bootstrap;
 

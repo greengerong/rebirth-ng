@@ -10,6 +10,7 @@ import { DemoConfigService } from './shared/demo/demo-config.service';
 export class AppComponent implements OnInit {
 
   components: { name: string, cmp: Type<any> }[];
+  gettingStarted: any;
 
   constructor(private rebirthConfig: RebirthUIConfig,
               private viewContainerRef: ViewContainerRef,
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.gettingStarted = this.demoConfigService.gettingStarted;
     this.components = this.demoConfigService.components
       .sort((a, b) => a.name.localeCompare(b.name));
   }

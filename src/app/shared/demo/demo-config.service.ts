@@ -19,6 +19,10 @@ import {
 
 @Injectable()
 export class DemoConfigService {
+  gettingStarted = {
+    readMe: require('!html-loader!markdown-loader!../../exports/README.md')
+  };
+  
   components: { name: string, cmp: Type<any>, readMe?: string, html?: string, ts?: string }[] = [
     {
       name: 'Modal',

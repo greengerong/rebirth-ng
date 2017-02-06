@@ -1,15 +1,15 @@
-<header class="bs-docs-nav navbar navbar-static-top" id="top">
+<header class="bs-docs-nav navbar navbar-static-top">
   <div class="container">
     <div class="navbar-header">
       <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle"
               data-toggle="collapse" type="button"><span class="sr-only"></span> <span
         class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
-      <a href="../" class="navbar-brand"> Rebirth UI</a></div>
+      <a href="./" class="navbar-brand">@Rebirth/UI</a></div>
     <nav class="collapse navbar-collapse" id="bs-navbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a>Getting started</a></li>
-        <li><a>Type document</a></li>
-        <li><a>@GreenGerong</a></li>
+        <li class="active"><a>Components</a></li>
+        <li><a target="_blank" href="/rebirth-ui/compodocs/overview.html">API Document</a></li>
+        <li><a target="_blank" href="https://github.com/greengerong/rebirth-ui">@Github</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
@@ -19,6 +19,9 @@
 </header>
 
 <div class="container">
+
+  <div class="getting-started" [innerHTML]="gettingStarted.readMe"></div>
+
   <re-doc [component]="item" *ngFor="let item of components"></re-doc>
 </div>
 <br>
