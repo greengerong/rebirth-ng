@@ -4,6 +4,7 @@
 /dist
 /doc
 /typedocs
+/compodocs
 /tmp
 
 # dependencies
