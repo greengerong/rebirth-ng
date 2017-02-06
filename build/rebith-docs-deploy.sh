@@ -1,5 +1,5 @@
-## npm run github:deploy
-## npm run compodocs:deploy
+npm run demo:deploy
+npm run compodocs:deploy
 git checkout gh-pages
 cp -rf ./dist/compodocs ./
 git add ./compodocs/** --all
