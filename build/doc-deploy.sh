@@ -1,9 +1,9 @@
 ## npm run github:deploy
 ## npm run compodocs:deploy
 git checkout gh-pages
-cp ./dist/compodocs ./
+cp -rf ./dist/compodocs ./
 git add ./compodocs/** --all
 git commit -m "rebirth ui compodocs docs deploy"
-git push
+git push origin gh-pages
 echo 'compodocs docs deploy success...........'
 ## git checkout master
