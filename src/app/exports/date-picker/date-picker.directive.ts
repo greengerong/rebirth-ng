@@ -6,9 +6,9 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
-import { DatePipe } from '@angular/common';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
+import { DefaultDateConverter } from './date-converter.service';
 
 export const RE_DATE_PICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -25,16 +25,15 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';
   @Input() selectedDate: Date;
   @Input() locale: string;
-  @Input() dateFormat: string;
+  _dateFormat: string;
   @Input() showTimePicker: boolean;
-  @Input() maxDate: Date | string | number;
-  @Input() minDate: Date| string | number;
+  _maxDate: Date;
+  _minDate: Date;
   @Input() cssClass: string;
   @Input() disabled = false;
-  @Input() dateParser: (date: string, pattern: string, locale: string) => Date;
+  @Input() dateConverter: DefaultDateConverter;
   isOpen = false;
   dateConfig: any;
-  private datePipe: DatePipe;
   private cmpRef: ComponentRef<DatePickerPopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
@@ -45,15 +44,47 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
               private rebirthUIConfig: RebirthUIConfig) {
 
     this.dateConfig = rebirthUIConfig.datePicker;
-    this.dateParser = rebirthUIConfig.datePicker.dateParser;
+    this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
     this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
     this.locale = rebirthUIConfig.datePicker.locale;
-    this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
-    this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
+    this._minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
+    this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
+  }
+
+  @Input() set maxDate(date: Date | any) {
+    const parseDate = this.dateConverter.parse(date, this.getDateFormat(), this.locale);
+    if (parseDate) {
+      this._maxDate = parseDate;
+    }
+  }
+
+  get maxDate() {
+    return this._maxDate;
+  }
+
+  @Input() set minDate(date: Date | any) {
+    const parseDate = this.dateConverter.parse(date, this.getDateFormat(), this.locale);
+    if (parseDate) {
+      this._minDate = parseDate;
+    }
+  }
+
+  get minDate() {
+    return this._minDate;
+  }
+
+  @Input() set dateFormat(dateFormat: string) {
+    if (this._dateFormat !== dateFormat) {
+      this._dateFormat = dateFormat;
+      this.writeModelValue(this.selectedDate);
+    }
+  }
+
+  get dateFormat() {
+    return this._dateFormat;
   }
 
   ngOnInit() {
-    this.datePipe = new DatePipe(this.locale);
     const factory = this.componentFactoryResolver.resolveComponentFactory(DatePickerPopupComponent);
     this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
     this.applyPopupStyling(this.cmpRef.location.nativeElement);
@@ -76,7 +107,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = !obj || obj instanceof Date ? obj : new Date(obj);
+    this.selectedDate = this.dateConverter.parse(obj, this.getDateFormat(), this.locale);
     this.writeModelValue(this.selectedDate);
   }
 
@@ -143,16 +174,14 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @HostListener('change', ['$event'])
   onChangeFromInput($event) {
     const value = $event.target.value;
-    const date = this.dateParser ? this.dateParser(value, this.dateFormat, this.locale) : new Date(value);
-    let parseDate = date && isNaN(date.getTime()) ? null : date;
+    let parseDate = value ? this.dateConverter.parse(value, this.dateFormat, this.locale) : null;
     if (parseDate) {
-      const minDate = new Date(<any>this.minDate);
-      const maxDate = new Date(<any>this.maxDate);
-      if (parseDate.getTime() < minDate.getTime()) {
-        parseDate = minDate;
+      if (parseDate.getTime() < this.minDate.getTime()) {
+        parseDate = this.minDate;
       }
-      if (parseDate.getTime() > maxDate.getTime()) {
-        parseDate = maxDate;
+
+      if (parseDate.getTime() > this.maxDate.getTime()) {
+        parseDate = this.maxDate;
       }
     }
     this.writeValue(parseDate);
@@ -165,7 +194,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private writeModelValue(selectDate: Date) {
-    const value = selectDate && !isNaN(selectDate.getTime()) ? this.datePipe.transform(selectDate, this.dateFormat || this.getDefaultDateFormat()) : '';
+    const value = selectDate ? this.dateConverter.format(selectDate, this.getDateFormat(), this.locale) : '';
     this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', value);
     if (this.isOpen) {
       this.cmpRef.instance.writeValue(selectDate);
@@ -173,7 +202,10 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     }
   }
 
-  private getDefaultDateFormat() {
+  private getDateFormat() {
+    if (this.dateFormat) {
+      return this.dateFormat;
+    }
     return this.showTimePicker ? this.dateConfig.format.time : this.dateConfig.format.date;
   }
 
@@ -183,10 +215,11 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   private fillPopupData() {
-    ['showTimePicker', 'maxDate', 'minDate', 'cssClass', 'disabled'].forEach(key => {
-      if (this[key] !== undefined) {
-        this.cmpRef.instance[key] = this[key];
-      }
-    });
+    ['showTimePicker', 'maxDate', 'minDate', 'cssClass', 'disabled', 'dateConverter', 'locale', 'dateFormat']
+      .forEach(key => {
+        if (this[key] !== undefined) {
+          this.cmpRef.instance[key] = this[key];
+        }
+      });
   }
 }

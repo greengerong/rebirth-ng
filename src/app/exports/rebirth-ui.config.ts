@@ -19,7 +19,7 @@ export class RebirthUIConfig {
   datePicker = {
     locale: 'en-US',
     timePicker: false,
-    dateParser: null, // (date: string, pattern: string, locale: string) => Date
+    dateConverter: null, // DateConverter
     weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     min: 1900,

@@ -20,11 +20,7 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
   datePicker = {
     locale: 'zh-CN',
     timePicker: false,
-    dateParser: (date: string, pattern: string, locale: string) => {
-      if (date && locale === this.datePicker.locale) {
-        return new Date(date.replace(/[年月日时分秒]+/g, ''));
-      }
-    }, // (date: string, pattern: string, locale: string) => Date
+    dateConverter: null, // DateConverter
     weeks: ['日', '一', '二', '三', '四', '五', '六'],
     months: ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'],
     min: 1900,

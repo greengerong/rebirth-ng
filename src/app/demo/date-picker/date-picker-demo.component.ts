@@ -7,7 +7,7 @@ import { DatePickerDirective } from '../../exports/date-picker/date-picker.direc
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DatePickerDemoComponent implements OnInit {
-  dateFormatOptions = ['yyyy-MM-dd HH:mm', 'yy-MM-dd HH:mm', 'MM/dd/yyyy HH:mm', 'MM/dd/yy HH:mm'];
+  dateFormatOptions = ['YYYY-MM-DD HH:mm', 'YY-MM-DD HH:mm', 'MM/DD/YYYY HH:mm', 'MM/DD/YY HH:mm'];
   dateFormat: string;
   selectedDate1: Date;
   selectedDate2: Date;

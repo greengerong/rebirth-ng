@@ -2,8 +2,6 @@ import {
   Component,
   OnInit,
   Input,
-  OnChanges,
-  SimpleChanges,
   HostListener,
   forwardRef,
   ElementRef,
@@ -12,6 +10,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
+import { DefaultDateConverter } from './date-converter.service';
 
 export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -25,14 +24,17 @@ export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   styleUrls: ['./date-picker-popup.component.scss'],
   providers: [RE_DATE_PICKER__POPUP_VALUE_ACCESSOR]
 })
-export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValueAccessor {
+export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   static DAY_DURATION = 24 * 60 * 60 * 1000;
   private _maxDate: Date;
   private _minDate: Date;
-  @Input() selectedDate: Date;
+  selectedDate: Date;
   @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
   @Input() showTimePicker: boolean;
   @Input() cssClass: string;
+  @Input() dateConverter: DefaultDateConverter;
+  @Input() locale: string;
+  @Input() dateFormat: string;
   currentYear: number;
   currentMonth: number;
   currentHour: number;
@@ -49,15 +51,21 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
 
   constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
 
+    this.locale = this.rebirthUIConfig.datePicker.locale;
+    this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
     this.dateConfig = rebirthUIConfig.datePicker;
     this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
-    this.minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
-    this.maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
+    this._minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
+    this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
     this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'inline-block');
   }
 
   @Input() set maxDate(date: Date | any) {
-    this._maxDate = !date || date instanceof Date ? date : new Date(date);
+    const parseDate = this.dateConverter.parse(date, this.dateFormat, this.locale);
+    if (parseDate) {
+      this._maxDate = parseDate;
+      this.onYearRangeChange();
+    }
   }
 
   get maxDate() {
@@ -65,7 +73,11 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   @Input() set minDate(date: Date | any) {
-    this._minDate = !date || date instanceof Date ? date : new Date(date);
+    const parseDate = this.dateConverter.parse(date, this.dateFormat, this.locale);
+    if (parseDate) {
+      this._minDate = parseDate;
+      this.onYearRangeChange();
+    }
   }
 
   get minDate() {
@@ -82,8 +94,7 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
   }
 
   writeValue(obj: any): void {
-    const date = !obj || obj instanceof Date ? obj : new Date(obj);
-    this.selectedDate = date;
+    this.selectedDate = this.dateConverter.parse(obj, this.dateFormat, this.locale);
     this.onSelectDateChanged();
     this.onDisplayWeeksChange();
   }
@@ -183,18 +194,12 @@ export class DatePickerPopupComponent implements OnInit, OnChanges, ControlValue
       date.getDate() === this.selectedDate.getDate();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (['minDate', 'maxDate'].some(key => !!changes[key])) {
-      this.onYearRangeChange();
-    }
-  }
-
   onYearRangeChange() {
-    const minYear = this.minDate.getFullYear();
-    const maxYear = this.maxDate.getFullYear();
-    if (isNaN(minYear) || isNaN(maxYear)) {
+    if (!DefaultDateConverter.isValidDate(this.minDate) || !DefaultDateConverter.isValidDate(this.maxDate)) {
       return;
     }
+    const minYear = this.minDate.getFullYear();
+    const maxYear = this.maxDate.getFullYear();
     this.yearOptions = new Array(maxYear - minYear + 1).fill(0).map((value, index) => {
       return minYear + index;
     });
