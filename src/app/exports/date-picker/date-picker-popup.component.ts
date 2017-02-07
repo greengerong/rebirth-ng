@@ -5,12 +5,16 @@ import {
   HostListener,
   forwardRef,
   ElementRef,
-  Renderer, Output, EventEmitter
+  Renderer,
+  Output,
+  EventEmitter
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
-import { DefaultDateConverter } from './date-converter.service';
+import { DateConverter } from '../utils/date-converter';
+import { DefaultDateConverter } from '../utils/default-date-converter';
+import { isValidDate } from '../utils/date-utils';
 
 export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -29,11 +33,11 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private _maxDate: Date;
   private _minDate: Date;
   selectedDate: Date;
-  @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
   @Input() showTimePicker: boolean;
   @Input() cssClass: string;
-  @Input() dateConverter: DefaultDateConverter;
+  @Input() dateConverter: DateConverter;
   @Input() locale: string;
+  @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
   @Input() dateFormat: string;
   currentYear: number;
   currentMonth: number;
@@ -46,8 +50,8 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   yearOptions: number[];
   disabled = false;
 
-  onChange = (_: any) => null;
-  onTouched = () => null;
+  private onChange = (_: any) => null;
+  private onTouched = () => null;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
 
@@ -94,7 +98,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = this.dateConverter.parse(obj, this.dateFormat, this.locale);
+    this.selectedDate = obj ? this.dateConverter.parse(obj, this.dateFormat, this.locale) : null;
     this.onSelectDateChanged();
     this.onDisplayWeeksChange();
   }
@@ -195,7 +199,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   }
 
   onYearRangeChange() {
-    if (!DefaultDateConverter.isValidDate(this.minDate) || !DefaultDateConverter.isValidDate(this.maxDate)) {
+    if (!isValidDate(this.minDate) || !isValidDate(this.maxDate)) {
       return;
     }
     const minYear = this.minDate.getFullYear();

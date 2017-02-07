@@ -8,7 +8,8 @@ import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
-import { DefaultDateConverter } from './date-converter.service';
+import { DateConverter } from '../utils/date-converter';
+import { DefaultDateConverter } from '../utils/default-date-converter';
 
 export const RE_DATE_PICKER_VALUE_ACCESSOR = {
   provide: NG_VALUE_ACCESSOR,
@@ -25,15 +26,15 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';
   @Input() selectedDate: Date;
   @Input() locale: string;
-  _dateFormat: string;
   @Input() showTimePicker: boolean;
-  _maxDate: Date;
-  _minDate: Date;
   @Input() cssClass: string;
   @Input() disabled = false;
-  @Input() dateConverter: DefaultDateConverter;
+  @Input() dateConverter: DateConverter;
   isOpen = false;
   dateConfig: any;
+  private _dateFormat: string;
+  private _maxDate: Date;
+  private _minDate: Date;
   private cmpRef: ComponentRef<DatePickerPopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
@@ -107,7 +108,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    this.selectedDate = this.dateConverter.parse(obj, this.getDateFormat(), this.locale);
+    this.selectedDate = obj ? this.dateConverter.parse(obj, this.getDateFormat(), this.locale) : null;
     this.writeModelValue(this.selectedDate);
   }
 
@@ -184,6 +185,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
         parseDate = this.maxDate;
       }
     }
+
     this.writeValue(parseDate);
     this.onChange(this.selectedDate);
   }
@@ -211,7 +213,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
 
   private applyPopupStyling(nativeElement: any) {
     this.renderer.setElementClass(nativeElement, 'dropdown-menu', true);
-    this.renderer.setElementStyle(nativeElement, 'padding', '0');
+    this.renderer.setElementStyle(nativeElement, 'padding', '0px');
   }
 
   private fillPopupData() {
