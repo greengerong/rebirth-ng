@@ -22,29 +22,24 @@
     "type": "git",
     "url": "https://github.com/greengerong/rebirth-ui"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@angular/cli": "1.0.0-beta.30",
     "@angular/common": "^2.3.1",
     "@angular/compiler": "^2.3.1",
+    "@angular/compiler-cli": "^2.3.1",
     "@angular/core": "^2.3.1",
     "@angular/forms": "^2.3.1",
     "@angular/http": "^2.3.1",
     "@angular/platform-browser": "^2.3.1",
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
-    "bootstrap-sass": "^3.3.7",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.0.1",
-    "ts-helpers": "^1.1.1",
-    "zone.js": "0.7.4"
-  },
-  "devDependencies": {
-    "@angular/cli": "1.0.0-beta.30",
-    "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
+    "bootstrap-sass": "^3.3.7",
     "classlist.js": "^1.1.20150312",
     "codelyzer": "~2.0.0-beta.1",
     "compodoc": "0.0.38",
+    "core-js": "^2.4.1",
     "highlight.js": "^9.9.0",
     "html-loader": "^0.4.4",
     "intl": "^1.2.5",
@@ -58,10 +53,15 @@
     "markdown-loader": "^2.0.0",
     "npm-run-all": "^4.0.1",
     "protractor": "~5.1.0",
+    "rxjs": "^5.0.1",
+    "ts-helpers": "^1.1.1",
     "ts-node": "1.2.1",
     "tslint": "^4.4.2",
     "typedoc": "^0.5.5",
     "typescript": "~2.1.5",
-    "web-animations-js": "^2.2.2"
+    "web-animations-js": "^2.2.2",
+    "zone.js": "0.7.4"
+  },
+  "dependencies": {
   }
 }
