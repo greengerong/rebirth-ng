@@ -77,7 +77,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
 
   writeValue(obj: any): void {
     this.selectedDate = !obj || obj instanceof Date ? obj : new Date(obj);
-    this.writeModelValue(obj);
+    this.writeModelValue(this.selectedDate);
   }
 
   registerOnChange(fn: any): void {

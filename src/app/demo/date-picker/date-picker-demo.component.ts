@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { DatePickerDirective } from '../../exports/date-picker/date-picker.directive';
 
 @Component({
   selector: 're-date-picker-demo',
@@ -11,10 +12,6 @@ export class DatePickerDemoComponent implements OnInit {
   selectedDate1: Date;
   selectedDate2: Date;
   selectedDate3 = new Date('01/02/2017 09:11');
-
-  constructor() {
-    console.log(this.selectedDate3);
-  }
 
   ngOnInit() {
     this.dateFormat = this.dateFormatOptions[0];
