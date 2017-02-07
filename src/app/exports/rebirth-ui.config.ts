@@ -25,8 +25,8 @@ export class RebirthUIConfig {
     min: 1900,
     max: 2099,
     format: {
-      date: 'yyyy-MM-dd',
-      time: 'yyyy-MM-dd HH:mm'
+      date: 'YYYY-MM-DD',
+      time: 'YYYY-MM-DD HH:mm'
     }
   };
 

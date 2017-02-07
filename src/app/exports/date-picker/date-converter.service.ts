@@ -14,6 +14,10 @@ export class DefaultDateConverter implements DateConverter {
   }
 
   parse(date: any, pattern?: string, locale?: string): Date {
+    if (!date) {
+      return null;
+    }
+
     if (isDate(date)) {
       return date;
     }
