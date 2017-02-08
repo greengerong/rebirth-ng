@@ -7,12 +7,12 @@
            (click)="onPreMonth()"></a>
       </td>
       <td colspan="2">
-        <select class="date-select" [(ngModel)]="currentMonth" (change)="onDisplayWeeksChange()">
+        <select class="date-select pull-right" [(ngModel)]="currentMonth" (change)="onDisplayWeeksChange()">
           <option *ngFor="let item of dateConfig.months; let $index = index" [ngValue]="$index">{{item}}</option>
         </select>
       </td>
       <td colspan="3">
-        <select class="date-select" [(ngModel)]="currentYear" (change)="onDisplayWeeksChange()">
+        <select class="date-select pull-left" [(ngModel)]="currentYear" (change)="onDisplayWeeksChange()">
           <option *ngFor="let item of yearOptions" [ngValue]="item">{{item}}</option>
         </select>
       </td>
