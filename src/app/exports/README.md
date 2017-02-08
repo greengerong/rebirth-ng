@@ -23,11 +23,11 @@ The only required dependencies are:
 
 After installing the above dependencies, install `@Rebirth/UI` via: 
   
-    npm install --save rebirth-ui
+    npm install --save ng2-rebirth-ui
   
 Once installed you need to import our main module.
 
-    import { RebirthUIModule } from 'rebirth-ui';
+    import { RebirthUIModule } from 'ng2-rebirth-ui';
   
 Then use `RebirthUIModule.forRoot()` to declare on your root module:
 

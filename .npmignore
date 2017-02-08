@@ -1,0 +1,14 @@
+# Node generated files
+node_modules
+npm-debug.log
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+e2e
+build
+.idea
+yarn.lock
+# ngc generated files
+aot
