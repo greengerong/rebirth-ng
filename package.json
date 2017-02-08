@@ -1,8 +1,9 @@
 {
   "name": "rebirth-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "angular-cli": {},
+  "main": "lib/index.js",
   "scripts": {
     "ng": "ng",
     "ngc": "ngc -p ./src/tsconfig-aot.json",

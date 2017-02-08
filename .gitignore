@@ -5,7 +5,7 @@
 /doc
 /typedocs
 /tmp
-
+/lib
 # dependencies
 /node_modules
 
