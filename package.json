@@ -1,5 +1,5 @@
 {
-  "name": "rebirth-ui",
+  "name": "@rebirth-ui",
   "version": "0.0.1",
   "license": "MIT",
   "angular-cli": {},
@@ -17,7 +17,8 @@
     "compodocs:serve": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
     "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:deploy": "ng github-pages:deploy  --message \"rebirth ui demo deploy\"",
-    "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh"
+    "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
+    "prepublish": "npm run ngc"
   },
   "private": false,
   "repository": {
