@@ -6,7 +6,7 @@
 
 Welcome to `@Rebirth/UI`. This repo is Angular2 ui library for Bootstrap. And it is being built from scratch in Typescript.
 
-You can check [Demo Showcase](/) & [API document](/ng2-rebirth-ui/compodocs/overview.html).
+You can check [Demo Showcase](/ng2-rebirth-ui) & [API document](/ng2-rebirth-ui/compodocs/overview.html).
 
 
 ## Dependencies
