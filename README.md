@@ -73,3 +73,7 @@
 
 * Docs deploy: `npm run rebith-docs:deploy`
 
+## Get start
+
+ [Get start][./ng2-rebirth-ui/tree/master/src/app/exports]
+
