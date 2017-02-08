@@ -61,6 +61,14 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
     this.listens.forEach(unregister => unregister());
   }
 
+  toggle() {
+    if (this.popupRef.instance.isOpen) {
+      return this.hide();
+    }
+
+    this.show();
+  }
+
   show() {
     this.fillPopup();
     this.popupRef.instance.show();

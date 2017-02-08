@@ -6,6 +6,7 @@ export class TooltipPopup {
   @Input() content: string | TemplateRef<any>;
   @Input() context: any;
   @Input() cssClass: string;
+  isOpen: boolean;
 
   constructor(protected elementRef: ElementRef, protected renderer: Renderer) {
   }
@@ -16,6 +17,7 @@ export class TooltipPopup {
   }
 
   show() {
+    this.isOpen = true;
     this.renderer.setElementClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS, true);
     this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'block');
     if (this.cssClass) {
@@ -24,6 +26,7 @@ export class TooltipPopup {
   }
 
   hide() {
+    this.isOpen = false;
     this.renderer.setElementClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS, false);
     this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'none');
     if (this.cssClass) {
