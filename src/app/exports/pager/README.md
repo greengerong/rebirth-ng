@@ -1,4 +1,8 @@
 
-  <re-pager [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
-            (pageIndexChange)="pageChange($event)" previousText="&larr; Older" nextText="Newer &rarr;">
-  </re-pager>
+#### Notices
+
+* Pager start with **1 (not 0)**.
+
+* Important @Input & @Output 
+  * `[pageSize]="pager.pageSize"`
+  * `(pageIndexChange)="pageChange($event)"`.

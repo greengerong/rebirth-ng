@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { DatePickerDirective } from '../../exports/date-picker/date-picker.directive';
 
 @Component({
   selector: 're-date-picker-demo',
