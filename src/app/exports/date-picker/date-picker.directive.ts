@@ -11,16 +11,14 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
 
-export const RE_DATE_PICKER_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DatePickerDirective),
-  multi: true
-};
-
 @Directive({
   selector: '[reDatePicker]',
   exportAs: 'datePicker',
-  providers: [RE_DATE_PICKER_VALUE_ACCESSOR]
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => DatePickerDirective),
+    multi: true
+  }]
 })
 export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';

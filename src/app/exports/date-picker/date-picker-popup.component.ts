@@ -16,17 +16,15 @@ import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
 import { isValidDate } from '../utils/date-utils';
 
-export const RE_DATE_PICKER__POPUP_VALUE_ACCESSOR = {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => DatePickerPopupComponent),
-  multi: true
-};
-
 @Component({
   selector: 're-date-picker-popup',
   templateUrl: './date-picker-popup.component.html',
   styleUrls: ['./date-picker-popup.component.scss'],
-  providers: [RE_DATE_PICKER__POPUP_VALUE_ACCESSOR]
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => DatePickerPopupComponent),
+    multi: true
+  }]
 })
 export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   static DAY_DURATION = 24 * 60 * 60 * 1000;
