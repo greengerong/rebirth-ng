@@ -15,7 +15,7 @@
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
-    "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
+    "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:deploy": "ng github-pages:deploy  --message \"rebirth ui demo deploy\"",
     "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
     "prepublish": "npm run ngc"
@@ -23,7 +23,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/greengerong/rebirth-ui"
+    "url": "https://github.com/greengerong/ng2-rebirth-ui"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-beta.30",
