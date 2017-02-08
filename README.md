@@ -75,5 +75,5 @@
 
 ## Get start
 
- [Get start](./tree/master/src/app/exports)
+ [Get start](./src/app/exports)
 
