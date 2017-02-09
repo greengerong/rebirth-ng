@@ -5,10 +5,8 @@ var sass = require('gulp-sass');
 var rename = require("gulp-rename");
 var inlineNg2Template = require('gulp-inline-ng2-template');
 var runSequence = require('run-sequence').use(gulp);
-var clean = require('gulp-clean');
 var exec = require('child_process').exec;
 var del = require('del');
-var gulpIgnore = require('gulp-ignore');
 var gulpif = require('gulp-if');
 
 const config = {
