@@ -7,6 +7,15 @@ Thumbs.db
 .DS_Store
 
 e2e
+src
+gulpfile.js
+protractor.conf.js
+karma.conf.js
+tslint.json
+typedoc.json
+ng2-rebirth-ui-**.tgz
+angular-cli.json
+.editorconfig
 build
 .idea
 yarn.lock
