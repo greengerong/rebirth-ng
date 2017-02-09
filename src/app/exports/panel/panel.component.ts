@@ -51,5 +51,3 @@ export class PanelComponent implements OnInit, OnDestroy {
     }
   }
 }
-
-// .panel-open
