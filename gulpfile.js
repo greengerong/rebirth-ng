@@ -23,7 +23,7 @@ function platformPath(path) {
 }
 
 gulp.task('clean:dist', function () {
-  return del(config.dest, config.aot, config.lib);
+  return del.sync(config.dest, config.aot, config.lib);
 });
 
 gulp.task('copy:exports', function () {
@@ -37,30 +37,30 @@ gulp.task('copy:exports', function () {
     .pipe(gulp.dest(config.dest));
 });
 
-gulp.task('ng2:inline', function () {
+gulp.task('ng2:inline', ['copy:exports'], function () {
   return gulp.src([config.dest + '/**/*.ts'])
     .pipe(inlineNg2Template({useRelativePaths: true, target: 'es5'}))
     .pipe(gulp.dest(config.dest + '/'));
 });
 
-gulp.task('ng2:aot', function (cb) {
+gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
   var executable = path.join(__dirname, platformPath('/node_modules/.bin/ngc'));
   exec(executable + ' -p ./dist/tsconfig-es2015.json', function (e) {
     if (e) {
       console.error(e);
     }
-    // del([config.aot, config.dest]);
+    del([config.aot, config.dest]);
     cb(e);
   }).stdout.on('data', function (data) {
     console.log(data);
   });
 });
 
-gulp.task('prenpm', function () {
+gulp.task('prenpm', ['ng2:aot'], function () {
   return gulp.src(['README.md', 'package.json'], {read: true})
     .pipe(gulp.dest(config.lib));
 });
 
 gulp.task('prepublish', function (cb) {
-  runSequence(['copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
+  runSequence(['clean:dist', 'copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
 });

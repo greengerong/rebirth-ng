@@ -18,7 +18,8 @@
     "compodocs:serve": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
     "compodocs:deploy": "node_modules/.bin/compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:deploy": "ng github-pages:deploy  --message \"rebirth ui demo deploy\"",
-    "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh"
+    "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
+    "prepublish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,
   "repository": {
@@ -46,9 +47,6 @@
     "core-js": "^2.4.1",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "gulp-angular-embed-templates": "^2.3.0",
-    "gulp-clean": "^0.3.2",
-    "gulp-contrib-copy": "^0.1.2",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-inline-ng2-template": "^4.0.0",
