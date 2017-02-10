@@ -8,6 +8,7 @@ var runSequence = require('run-sequence').use(gulp);
 var exec = require('child_process').exec;
 var del = require('del');
 var gulpif = require('gulp-if');
+var swPrecache = require('sw-precache');
 
 const config = {
   src: './src/app/exports',
@@ -57,6 +58,16 @@ gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
 gulp.task('prenpm', ['ng2:aot'], function () {
   return gulp.src(['README.md', 'package.json'], {read: true})
     .pipe(gulp.dest(config.lib));
+});
+
+gulp.task('sw:code-gen', function (cb) {
+  var path = require('path');
+  var rootDir = 'src';
+
+  swPrecache.write(rootDir + '/service-worker.js', {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
+    stripPrefix: rootDir
+  }, cb);
 });
 
 gulp.task('prepublish', function (cb) {
