@@ -11,6 +11,7 @@ var gulpif = require('gulp-if');
 var swPrecache = require('sw-precache');
 
 const config = {
+  root: './src',
   src: './src/app/exports',
   dest: './dist',
   lib: './lib',
@@ -61,12 +62,9 @@ gulp.task('prenpm', ['ng2:aot'], function () {
 });
 
 gulp.task('sw:code-gen', function (cb) {
-  var path = require('path');
-  var rootDir = 'src';
-
-  swPrecache.write(rootDir + '/service-worker.js', {
-    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefix: rootDir
+  swPrecache.write(config.root + '/service-worker.js', {
+    staticFileGlobs: [config.root + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
+    stripPrefix: config.root
   }, cb);
 });
 
