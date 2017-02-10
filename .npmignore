@@ -7,7 +7,6 @@ Thumbs.db
 .DS_Store
 
 e2e
-src
 gulpfile.js
 protractor.conf.js
 karma.conf.js
