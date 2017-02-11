@@ -2,7 +2,7 @@ import { PanelComponent } from './panel.component';
 import { Input } from '@angular/core';
 
 export abstract class PanelGroup {
-  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
+  @Input() type: PanelType;
   @Input() cssClass: string;
   panels: PanelComponent[] = [];
 

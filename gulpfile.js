@@ -26,7 +26,7 @@ gulp.task('clean:dist', function () {
   return del.sync(config.dest, config.aot, config.lib);
 });
 
-gulp.task('copy:exports', function () {
+gulp.task('copy:exports', ['clean:dist'], function () {
   return gulp.src([config.src + '/**/*.*'])
     .pipe(gulpif(/.+\.scss/g, sass({outputStyle: 'compressed'}).on('error', sass.logError)))
     .pipe(rename(function (path) {
@@ -49,7 +49,7 @@ gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
     if (e) {
       console.error(e);
     }
-    del([config.aot, config.dest]);
+    // del([config.aot, config.dest]);
     cb(e);
   }).stdout.on('data', function (data) {
     console.log(data);
@@ -57,7 +57,7 @@ gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
 });
 
 gulp.task('prenpm', ['ng2:aot'], function () {
-  return gulp.src(['README.md', 'package.json'], {read: true})
+  return gulp.src(['README.md', 'package.json', 'src/app/exports/**/*.d.ts'], {read: true})
     .pipe(gulp.dest(config.lib));
 });
 

@@ -51,19 +51,15 @@
 
 ## Tasks
 
-- declare 'default'| 'success' | 'info' | 'warning' | 'danger' to one ts type; 
+- rebirth-ui-config with i18n
 
-- refactor all component config to rebirth-ui-config
+- RatingComponent change to control accessor
 
 - Pagination with select for page size
 
 - Action button with icon
 
 - Alert box service for server side error.
-
-- momentjs refactor date-picker
-
-- publish `exports` build
 
 
 

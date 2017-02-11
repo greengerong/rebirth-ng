@@ -13,7 +13,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
-  @Input() type: 'default'| 'success' | 'info' | 'warning' | 'danger';
+  @Input() type: PanelType;
   @Input() closable: boolean;
   @Input() collapsable: boolean;
   @Input() isCollapsed = false;

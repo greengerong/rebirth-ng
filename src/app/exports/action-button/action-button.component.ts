@@ -7,7 +7,7 @@ import { ActionItem } from './action-item.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActionButtonComponent {
-  @Input() type: 'default'|'primary'| 'success' | 'info' | 'warning' | 'danger' = 'primary';
+  @Input() type: ButtonType = 'primary';
   @Input() direction: 'down'| 'up' = 'down';
   @Input() buttonText: string;
   @Input() isOpen = false;

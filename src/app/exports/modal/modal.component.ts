@@ -10,7 +10,7 @@ import { DocumentRef } from '../window-ref';
 })
 export class ModalComponent {
   static MODEL_OPEN_CSS = 'modal-open';
-  @Input() isOpen: boolean = false;
+  @Input() isOpen = false;
   @Output() dismiss = new EventEmitter<any>();
   @Input() modalOptions: ModalOptions;
   @ViewChild(ModalWindowComponent) modalWindowComponent: ModalWindowComponent;

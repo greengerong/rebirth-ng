@@ -21,7 +21,7 @@ import { DefaultDateConverter } from '../utils/default-date-converter';
   }]
 })
 export class DatePickerDirective implements OnInit, ControlValueAccessor {
-  @Input() placement: 'top' | 'bottom' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' = 'bottom-left';
+  @Input() placement: DatePickerPlacement = 'bottom-left';
   @Input() selectedDate: Date;
   @Input() locale: string;
   @Input() showTimePicker: boolean;

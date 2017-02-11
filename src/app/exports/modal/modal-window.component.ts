@@ -17,7 +17,7 @@ import { ModalDismissReasons } from './modal-dismiss-reasons.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalWindowComponent {
-  @Input() isOpen: boolean = false;
+  @Input() isOpen = false;
   @Input() instanceCount = 0;
   @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
   dismiss: EventEmitter<any>;

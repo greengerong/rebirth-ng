@@ -2,7 +2,7 @@ import { Input, ElementRef, Renderer, TemplateRef, HostListener } from '@angular
 
 export class TooltipPopup {
   static ACTIVE_CLASS = 'in';
-  @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
+  @Input() placement: PopoverPlacement | TooltipPlacement = 'top';
   @Input() content: string | TemplateRef<any>;
   @Input() context: any;
   @Input() cssClass: string;
