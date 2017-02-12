@@ -1,29 +1,35 @@
-import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component, Input, EventEmitter, ChangeDetectionStrategy, forwardRef,
+  ChangeDetectorRef
+} from '@angular/core';
 import { RebirthUIConfig } from '../rebirth-ui.config';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 're-rating',
   templateUrl: './rating.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  exportAs: 'rating'
+  exportAs: 'rating',
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => RatingComponent),
+    multi: true
+  }]
 })
-export class RatingComponent implements OnInit {
+export class RatingComponent implements ControlValueAccessor {
   ratingRanges: number[];
-  @Input('ngModel') value = 0;
-  @Input() disabled = false;
+  value = 0;
+  disabled = false;
   @Input() cssClass: string;
   @Input() icons: { stateOn, stateOff };
-  @Output('ngModelChange') valueChange = new EventEmitter<number>();
+  valueChange = new EventEmitter<number>();
   statValue = 0;
+  private onChange = (_: any) => null;
+  private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.icons = rebirthUIConfig.rating.icons;
     this.ratingRanges = this.fillRatingRange(rebirthUIConfig.rating.max);
-  }
-
-  @Input('ngModel')
-  set ratingValue(value: number) {
-    this.statValue = this.value = value;
   }
 
   @Input()
@@ -31,15 +37,40 @@ export class RatingComponent implements OnInit {
     this.ratingRanges = this.fillRatingRange(value);
   }
 
+  setRatingValue(value: number) {
+    this.statValue = this.value = value;
+  }
+
+
+  writeValue(obj: any): void {
+    this.setRatingValue(obj);
+    this.changeDetectorRef.markForCheck();
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.disabled = isDisabled;
+  }
+
   rate(value: number) {
-    if (!this.disabled) {
-      this.ratingValue = value;
+    if (!this.disabled && this.value !== value) {
+      this.onTouched();
+      this.setRatingValue(value);
       this.valueChange.emit(this.value);
+      this.onChange(this.value);
     }
   }
 
   enter(value: number) {
     if (!this.disabled) {
+      this.onTouched();
       this.statValue = value;
     }
   }
@@ -51,8 +82,4 @@ export class RatingComponent implements OnInit {
   private fillRatingRange(range: number) {
     return Array<number>(range).fill(0).map((_, i) => i + 1);
   }
-
-  ngOnInit() {
-  }
-
 }

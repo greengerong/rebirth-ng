@@ -53,8 +53,6 @@
 
 - rebirth-ui-config with i18n
 
-- RatingComponent change to control accessor
-
 - Pagination with select for page size
 
 
