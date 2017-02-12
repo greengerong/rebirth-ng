@@ -7,7 +7,7 @@ import { ActionItem } from './action-item.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActionButtonComponent {
-  @Input() type: ButtonType = 'primary';
+  @Input() type: ButtonType = 'default';
   @Input() direction: DropDirection = 'down';
   @Input() icon: string;
   @Input() btnSize: ButtonSize;

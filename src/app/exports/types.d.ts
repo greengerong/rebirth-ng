@@ -10,3 +10,4 @@ type TooltipPlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-le
 type DropDirection = 'down'| 'up';
 
 type ButtonSize = 'lg' | 'sm' | 'xs';
+type ModalSize =  'lg' | 'sm';
