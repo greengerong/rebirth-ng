@@ -8,10 +8,28 @@ import { ActionItem } from '../../exports/action-button/action-item.model';
 export class ActionButtonDemoComponent implements OnInit {
   isActionOpen: boolean;
   disabledActionOpen = true;
-  actions: ActionItem[] = [{ id: 1, text: 'Save' }, { id: 2, text: 'Refresh' }, { divider: true }, {
-    id: 3,
-    text: 'Remove'
-  }];
+  actions: ActionItem[] = [
+    {
+      text: 'Action Header',
+      header: true
+    },
+    {
+      id: 1,
+      text: 'Save',
+      icon: 'glyphicon glyphicon-floppy-save'
+    }, {
+      id: 2,
+      text: 'Refresh',
+      icon: 'glyphicon glyphicon-refresh'
+    },
+    {
+      divider: true
+    },
+    {
+      id: 3,
+      text: 'Remove',
+      icon: 'glyphicon glyphicon-remove'
+    }];
 
   constructor() {
   }

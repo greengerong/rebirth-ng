@@ -8,8 +8,11 @@ import { ActionItem } from './action-item.model';
 })
 export class ActionButtonComponent {
   @Input() type: ButtonType = 'primary';
-  @Input() direction: 'down'| 'up' = 'down';
+  @Input() direction: DropDirection = 'down';
+  @Input() icon: string;
+  @Input() btnSize: ButtonSize;
   @Input() buttonText: string;
+  @Input() cssClass: string;
   @Input() isOpen = false;
   @Input() actions: ActionItem[];
   @Input() disabled = false;
@@ -31,7 +34,9 @@ export class ActionButtonComponent {
   }
 
   onActionClick(item: ActionItem) {
-    this.close();
-    this.actionClick.emit(item);
+    if (!item.disabled) {
+      this.close();
+      this.actionClick.emit(item);
+    }
   }
 }

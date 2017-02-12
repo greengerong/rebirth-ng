@@ -57,8 +57,6 @@
 
 - Pagination with select for page size
 
-- Action button with icon
-
 - Alert box service for server side error.
 
 

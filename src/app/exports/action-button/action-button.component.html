@@ -1,17 +1,22 @@
-<div class="btn-group {{'drop' + direction }}" [ngClass]="{open: isOpen}">
-  <button class="btn btn-{{type}}" (click)="toggle($event)" [disabled]="disabled">
+<div class="btn-group {{'drop' + direction }} {{cssClass}}" [ngClass]="{open: isOpen}">
+  <button class="btn {{'btn-' + type}} {{'btn-' + btnSize}}" (click)="toggle($event)" [disabled]="disabled">
+    <i *ngIf="icon" class="{{icon}}" aria-hidden="true"></i>
     {{buttonText}}
   </button>
-  <button type="button" class="btn btn-{{type}} dropdown-toggle" aria-haspopup="true" [attr.aria-expanded]="true"
+  <button type="button" class="btn {{'btn-' + type}} {{'btn-' + btnSize}} dropdown-toggle" aria-haspopup="true"
+          [attr.aria-expanded]="true"
           (click)="toggle($event)" [disabled]="disabled">
     <span class="caret"></span>
-    <span class="sr-only">Split button!</span>
+    <span class="sr-only">|</span>
   </button>
 
   <ul class="dropdown-menu" role="menu">
     <ng-container *ngFor="let item of actions">
-      <li *ngIf="!item.divider" role="menuitem" (click)="onActionClick(item)"><a>{{item.text}}</a></li>
-      <li *ngIf="item.divider" class="divider"></li>
+      <li *ngIf="!item.divider && ! item.header" role="menuitem" [ngClass]="{'disabled': item.disabled}"
+          (click)="onActionClick(item)">
+        <a><i *ngIf="item.icon" class="{{item.icon}}"></i>&nbsp;{{item.text}}</a></li>
+      <li *ngIf="item.header" class="dropdown-header">{{item.text}}</li>
+      <li *ngIf="item.divider" class="divider" role="separator"></li>
     </ng-container>
   </ul>
 </div>
