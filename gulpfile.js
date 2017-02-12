@@ -49,7 +49,7 @@ gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
     if (e) {
       console.error(e);
     }
-    // del([config.aot, config.dest]);
+    del([config.aot, config.dest]);
     cb(e);
   }).stdout.on('data', function (data) {
     console.log(data);
