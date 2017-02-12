@@ -14,10 +14,11 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 @Component({
   selector: 're-tabs',
   templateUrl: './tabs.component.html',
+  exportAs: 'tabs',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsComponent implements OnInit, AfterContentInit {
-  @Input() type: 'tabs' | 'pills';
+  @Input() type: TabType = 'tabs';
   @Input() activeTab: number |string;
   @Input() vertical: boolean;
   @Input() justified: boolean;

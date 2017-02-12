@@ -6,6 +6,6 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BadgeComponent {
-  @Input() badgeCss: string;
+  @Input() cssClass: string;
   @Input() text: string;
 }

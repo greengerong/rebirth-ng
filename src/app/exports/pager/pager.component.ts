@@ -7,6 +7,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 @Component({
   selector: 're-pager',
   templateUrl: './re-pager.component.html',
+  exportAs: 'pager',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PagerComponent implements OnChanges {
@@ -19,6 +20,7 @@ export class PagerComponent implements OnChanges {
   @Input() previousText: string;
   @Input() nextText: string;
   @Input() disable = false;
+  @Input() cssClass: string;
   totalPage = 0;
 
   constructor(private rebirthUIConfig: RebirthUIConfig) {

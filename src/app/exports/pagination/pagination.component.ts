@@ -7,6 +7,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 @Component({
   selector: 're-pagination',
   templateUrl: './pagination.component.html',
+  exportAs: 'pagination',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PaginationComponent implements OnChanges {
@@ -22,7 +23,8 @@ export class PaginationComponent implements OnChanges {
   @Input() lastLink: string;
   @Input() preLink: string;
   @Input() nextLink: string;
-  @Input() size: '' | 'lg' |'sm';
+  @Input() size: PaginationSize;
+  @Input() cssClass: string;
   showPages = [];
   totalPage = 0;
 

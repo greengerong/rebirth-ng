@@ -20,6 +20,7 @@ import { isValidDate } from '../utils/date-utils';
   selector: 're-date-picker-popup',
   templateUrl: './date-picker-popup.component.html',
   styleUrls: ['./date-picker-popup.component.scss'],
+  exportAs: 'datePickerPopup',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => DatePickerPopupComponent),

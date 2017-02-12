@@ -57,8 +57,6 @@
 
 - Pagination with select for page size
 
-- Alert box service for server side error.
-
 
 
 ## Build
