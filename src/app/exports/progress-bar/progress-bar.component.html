@@ -1,4 +1,8 @@
 <div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0"
-       aria-valuemax="100" style="width:45%"><span class="sr-only">45% Complete</span></div>
+  <div class="progress-bar  {{ type? 'progress-bar-' + type : ''}}"
+       [ngClass]="{active: animate, 'progress-bar-striped' : striped}"
+       role="progressbar"
+       [attr.aria-valuenow]="value" aria-valuemin="0"
+       [attr.aria-valuemax]="max" style="min-width: 2em;" [style.min-width.%]="value * 100/max">{{text}}
+  </div>
 </div>

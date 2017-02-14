@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 're-progress-bar',
@@ -6,6 +6,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressBarComponent implements OnInit {
+  @Input() type = '';
+  @Input() text: string;
+  @Input() max = 100;
+  @Input() value: number = 45;
+  @Input() animate = false;
+  @Input() striped = false;
+
   constructor() {
   }
 
