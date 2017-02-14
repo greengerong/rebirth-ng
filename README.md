@@ -25,8 +25,7 @@
 - [x] Progress Bar
 - [ ] Auto Complete
 - [ ] Switch
-- [ ] Button Group
-- [ ] Toggle Button
+- [ ] Select Button
 - [ ] Carousel
 - [ ] Overlay
 - [x] Breadcrumbs
@@ -54,6 +53,8 @@
 - rebirth-ui-config with i18n
 
 - Pagination with select for page size
+
+- panel-footer
 
 
 
