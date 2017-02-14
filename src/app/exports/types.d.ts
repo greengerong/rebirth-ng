@@ -2,6 +2,7 @@ type BSType= 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger';
 type ButtonType = BSType;
 type PanelType = BSType;
 type AlertType = 'success' | 'info' | 'warning' | 'danger';
+type ProgressBarType = '' | 'success' | 'info' | 'warning' | 'danger';
 type TabType = 'tabs' | 'pills';
 
 type DatePickerPlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';

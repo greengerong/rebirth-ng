@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
@@ -7,7 +7,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressBarComponent {
-  @Input() type = '';
+  @Input() type: ProgressBarType = '';
   @Input() text: string;
   @Input() max: number;
   @Input() animate: boolean;
@@ -16,7 +16,7 @@ export class ProgressBarComponent {
   @Input() cssClass: string;
 
   constructor(private rebirthUIConfig: RebirthUIConfig) {
-    this.type = rebirthUIConfig.progressBar.type;
+    this.type = <ProgressBarType>rebirthUIConfig.progressBar.type;
     this.animate = rebirthUIConfig.progressBar.animate;
     this.striped = rebirthUIConfig.progressBar.striped;
     this.max = rebirthUIConfig.progressBar.max;
