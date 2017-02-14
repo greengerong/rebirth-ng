@@ -1,8 +1,13 @@
 <div class="action-button-demo">
-  <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks" [type]="'primary'"
+  <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks"
+                    [type]="'primary'"
                     (actionClick)="onActionClick($event)"></re-action-button>
   <re-action-button [buttonText]="'Dropup action'" direction="up" [actions]="actions" type="warning"
                     (actionClick)="onActionClick($event)" [isOpen]="isActionOpen"></re-action-button>
+
+  <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
+                    (actionClick)="onActionClick($event)"></re-action-button>
+
   <re-action-button [buttonText]="'Disabled dropdown action'" type="danger" [actions]="actions"
                     [disabled]="disabledActionOpen" (actionClick)="onActionClick($event)"></re-action-button>
 
