@@ -16,6 +16,7 @@ import {
   DatePickerDemoComponent,
   // component import
 } from '../../demo';
+import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
 
 @Injectable()
 export class DemoConfigService {
@@ -135,6 +136,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/date-picker/README.md'),
       html: require('!raw-loader!../../demo/date-picker/date-picker-demo.component.html'),
       ts: require('!raw-loader!../../demo/date-picker/date-picker-demo.component.ts'),
+    },
+    {
+      name: 'Breadcrumbs',
+      directory: 'breadcrumbs',
+      cmp: BreadcrumbsDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/breadcrumbs/README.md'),
+      html: require('!raw-loader!../../demo/breadcrumbs/breadcrumbs-demo.component.html'),
+      ts: require('!raw-loader!../../demo/breadcrumbs/breadcrumbs-demo.component.ts'),
     },
     // component declare
   ];
