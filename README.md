@@ -22,7 +22,7 @@
 - [x] Tooltip
 - [x] Tabs
 - [x] Action Button
-- [ ] Progress Bar
+- [x] Progress Bar
 - [ ] Auto Complete
 - [ ] Switch
 - [ ] Button Group

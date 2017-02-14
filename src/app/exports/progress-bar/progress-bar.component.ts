@@ -13,6 +13,7 @@ export class ProgressBarComponent {
   @Input() animate: boolean;
   @Input() striped: boolean;
   @Input() value: number;
+  @Input() cssClass: string;
 
   constructor(private rebirthUIConfig: RebirthUIConfig) {
     this.type = rebirthUIConfig.progressBar.type;
