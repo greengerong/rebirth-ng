@@ -66,6 +66,13 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
     collapsable: false,
   };
 
+  progressBar = {
+    type: '',
+    max: 100,
+    animate: false,
+    striped: false
+  };
+
   rating = {
     max: 10,
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }

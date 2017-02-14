@@ -1,22 +1,23 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-progress-bar',
   templateUrl: './progress-bar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent {
   @Input() type = '';
   @Input() text: string;
-  @Input() max = 100;
-  @Input() value: number = 45;
-  @Input() animate = false;
-  @Input() striped = false;
+  @Input() max: number;
+  @Input() animate: boolean;
+  @Input() striped: boolean;
+  @Input() value: number;
 
-  constructor() {
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.type = rebirthUIConfig.progressBar.type;
+    this.animate = rebirthUIConfig.progressBar.animate;
+    this.striped = rebirthUIConfig.progressBar.striped;
+    this.max = rebirthUIConfig.progressBar.max;
   }
-
-  ngOnInit() {
-  }
-
 }
