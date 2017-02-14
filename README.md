@@ -29,7 +29,7 @@
 - [ ] Toggle Button
 - [ ] Carousel
 - [ ] Overlay
-- [ ] Breadcrumbs
+- [x] Breadcrumbs
 - [ ] Menu
 - [ ] Aside Menu
 - [ ] Context Menu

@@ -10,6 +10,7 @@ export * from './pager';
 export * from './pagination';
 export * from './panel';
 export * from './popover';
+export * from './progress-bar';
 export * from './position';
 export * from './rating';
 export * from './tabs';

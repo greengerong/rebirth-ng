@@ -18,7 +18,8 @@ import {
   TooltipDemoModule,
   PopoverDemoModule,
   DatePickerDemoModule,
-  BreadcrumbsDemoModule
+  BreadcrumbsDemoModule,
+  ProgressBarDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -44,7 +45,8 @@ import { RebirthUIModule } from './exports';
     TooltipDemoModule,
     PopoverDemoModule,
     DatePickerDemoModule,
-    BreadcrumbsDemoModule
+    BreadcrumbsDemoModule,
+    ProgressBarDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

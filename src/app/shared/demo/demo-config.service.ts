@@ -14,6 +14,7 @@ import {
   TooltipDemoComponent,
   PopoverDemoComponent,
   DatePickerDemoComponent,
+  ProgressBarDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -144,6 +145,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/breadcrumbs/README.md'),
       html: require('!raw-loader!../../demo/breadcrumbs/breadcrumbs-demo.component.html'),
       ts: require('!raw-loader!../../demo/breadcrumbs/breadcrumbs-demo.component.ts'),
+    },
+    {
+      name: 'ProgressBar',
+      directory: 'progress-bar',
+      cmp: ProgressBarDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/progress-bar/README.md'),
+      html: require('!raw-loader!../../demo/progress-bar/progress-bar-demo.component.html'),
+      ts: require('!raw-loader!../../demo/progress-bar/progress-bar-demo.component.ts'),
     },
     // component declare
   ];
