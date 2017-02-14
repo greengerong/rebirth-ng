@@ -1,7 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, Optional } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Breadcrumb } from './breadcrumbs.model';
-import { Router } from '@angular/router';
-import { WindowRef } from '../window-ref/window-ref.service';
 
 @Component({
   selector: 're-breadcrumbs',
@@ -20,6 +18,8 @@ export class BreadcrumbsComponent implements OnInit {
   }
 
   itemClick(item: Breadcrumb) {
-    item.handle(item);
+    if (item.handle) {
+      item.handle(item);
+    }
   }
 }
