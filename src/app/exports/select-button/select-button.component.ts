@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectButtonItem } from './select-button-item.model';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-select-button',
@@ -20,9 +21,9 @@ import { SelectButtonItem } from './select-button-item.model';
 export class SelectButtonComponent implements ControlValueAccessor {
 
   @Input() size: ButtonSize;
-  @Input() type: ButtonType = 'primary';
-  @Input() justified = false;
-  @Input() multiple = false;
+  @Input() type: ButtonType;
+  @Input() justified: boolean;
+  @Input() multiple: boolean;
   @Input() items: SelectButtonItem;
   @Input() cssClass: string;
   disabled = false;
@@ -30,8 +31,10 @@ export class SelectButtonComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
-
+  constructor(private changeDetectorRef: ChangeDetectorRef, private rebirthUIConfig: RebirthUIConfig) {
+    this.type = <ButtonType>rebirthUIConfig.selectButton.type;
+    this.justified = rebirthUIConfig.selectButton.justified;
+    this.multiple = rebirthUIConfig.selectButton.multiple;
   }
 
   writeValue(obj: any): void {

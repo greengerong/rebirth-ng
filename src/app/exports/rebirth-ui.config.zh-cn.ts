@@ -78,6 +78,12 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
   };
 
+  selectButton = {
+    type: 'primary',
+    justified: false,
+    multiple: false
+  };
+
   tabs = {
     type: 'tabs', // 'tabs' | 'pills'
     justified: false,
