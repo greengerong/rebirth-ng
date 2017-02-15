@@ -23,7 +23,11 @@
   <div class="getting-started" [innerHTML]="gettingStarted.readMe"></div>
   <hr/>
   <h1>Showcase</h1>
-  <re-doc [component]="item" *ngFor="let item of components"></re-doc>
+  <ng-container *ngFor="let item of components">
+    <re-doc [component]="item"></re-doc>
+    <hr/>
+  </ng-container>
+
 </div>
 <br>
 <br>
