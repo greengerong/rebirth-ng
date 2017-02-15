@@ -18,4 +18,29 @@ export class OverlayDemoComponent implements OnInit {
     this.overlayService.open({ html: `<div> <img width="200px" src="./assets/images/loading.gif"></div>` });
     setTimeout(() => this.overlayService.close(), 5 * 1000);
   }
+
+  openComponentOverlay() {
+    this.overlayService.open({ component: OverlayBodyDemoComponent });
+    setTimeout(() => this.overlayService.close(), 5 * 1000);
+  }
 }
+
+@Component({
+  selector: 're-overlay-body-demo',
+  template: `
+    <div>
+      <img width="200px" src="./assets/images/loading.gif">
+      <div class="text-center">Rebirth UI overlay!</div>
+    </div>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class OverlayBodyDemoComponent implements OnInit {
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+}
+

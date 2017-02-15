@@ -56,6 +56,8 @@
 
 - panel-footer
 
+- re-modal-backdrop refactor to common use, not only for modal.
+
 
 
 ## Build

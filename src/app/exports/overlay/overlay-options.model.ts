@@ -5,7 +5,6 @@ export interface OverlayOptions {
   html?: string;
   componentFactoryResolver?: ComponentFactoryResolver;
   injector?: Injector;
-  resolve?: any;
   backdropClass?: string;
   rootContainer?: ViewContainerRef;
 }

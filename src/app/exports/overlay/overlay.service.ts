@@ -35,7 +35,9 @@ export class OverlayService {
   }
 
   close(): void {
-    this.overlayRef.destroy();
     this.hasOverlay = false;
+    if (this.overlayRef) {
+      this.overlayRef.destroy();
+    }
   }
 }
