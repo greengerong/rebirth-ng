@@ -19,6 +19,7 @@ import { DatePickerModule } from './date-picker';
 import { BreadcrumbsModule } from './breadcrumbs';
 import { ProgressBarModule } from './progress-bar';
 import { SelectButtonModule } from './select-button';
+import { OverlayModule, OverlayService } from './overlay';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { SelectButtonModule } from './select-button';
     DatePickerModule,
     BreadcrumbsModule,
     ProgressBarModule,
-    SelectButtonModule
+    SelectButtonModule,
+    OverlayModule
   ],
   exports: [
     ModalModule,
@@ -58,7 +60,8 @@ import { SelectButtonModule } from './select-button';
     DatePickerModule,
     BreadcrumbsModule,
     ProgressBarModule,
-    SelectButtonModule
+    SelectButtonModule,
+    OverlayModule
   ],
   declarations: [],
   providers: [],
@@ -75,7 +78,8 @@ export class RebirthUIModule {
         // { provide: RebirthUIConfig, useClass: ZHCNRebirthUIConfig },
         { provide: ModalService, useClass: ModalService },
         { provide: DialogService, useClass: DialogService },
-        { provide: PositionService, useClass: PositionService }
+        { provide: PositionService, useClass: PositionService },
+        { provide: OverlayService, useClass: OverlayService }
       ]
     };
   }

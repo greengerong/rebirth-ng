@@ -6,6 +6,7 @@ export * from './badge';
 export * from './date-picker';
 export * from './dialog';
 export * from './modal';
+export * from './overlay';
 export * from './pager';
 export * from './pagination';
 export * from './panel';

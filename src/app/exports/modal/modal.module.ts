@@ -10,7 +10,7 @@ import { ModalWindowComponent } from './modal-window.component';
   imports: [
     CommonModule
   ],
-  exports: [],
+  exports: [ModalBackdropComponent],
   declarations: [
     ModalComponent,
     ModalContentComponent,
@@ -19,7 +19,8 @@ import { ModalWindowComponent } from './modal-window.component';
   ],
   entryComponents: [
     ModalContentComponent,
-    ModalComponent
+    ModalComponent,
+    ModalBackdropComponent
   ]
 })
 export class ModalModule {

@@ -19,6 +19,14 @@ export class WindowRef {
     return window.pageYOffset;
   }
 
+  get innerHeight() {
+    return window.innerHeight;
+  }
+
+  get innerWidth() {
+    return window.innerWidth;
+  }
+
   getComputedStyle(element) {
     return window.getComputedStyle(element);
   }

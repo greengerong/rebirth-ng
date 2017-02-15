@@ -12,13 +12,13 @@ export class ModalService {
 
   private instances = [];
 
-  constructor(private rebirthConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private rebirthUIConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 
 
   open<T>(options: ModalOptions): Observable<T> {
-    const rootContainer = options.rootContainer || this.rebirthConfig.rootContainer;
+    const rootContainer = options.rootContainer || this.rebirthUIConfig.rootContainer;
     if (!rootContainer) {
       throw new Error('Should setup ViewContainerRef on modal options or rebirth config service!');
     }

@@ -15,7 +15,8 @@ import {
   PopoverDemoComponent,
   DatePickerDemoComponent,
   ProgressBarDemoComponent,
-  SelectButtonDemoComponent
+  SelectButtonDemoComponent,
+  OverlayDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -162,6 +163,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/select-button/README.md'),
       html: require('!raw-loader!../../demo/select-button/select-button-demo.component.html'),
       ts: require('!raw-loader!../../demo/select-button/select-button-demo.component.ts'),
+    },
+    {
+      name: 'Overlay',
+      directory: 'select-button',
+      cmp: OverlayDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/overlay/README.md'),
+      html: require('!raw-loader!../../demo/overlay/overlay-demo.component.html'),
+      ts: require('!raw-loader!../../demo/overlay/overlay-demo.component.ts'),
     },
     // component declare
   ];
