@@ -25,7 +25,7 @@
 - [x] Progress Bar
 - [ ] Auto Complete
 - [ ] Switch
-- [ ] Select Button
+- [x] Select Button
 - [ ] Carousel
 - [ ] Overlay
 - [x] Breadcrumbs

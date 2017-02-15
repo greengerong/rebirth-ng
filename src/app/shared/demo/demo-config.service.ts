@@ -14,7 +14,8 @@ import {
   TooltipDemoComponent,
   PopoverDemoComponent,
   DatePickerDemoComponent,
-  ProgressBarDemoComponent
+  ProgressBarDemoComponent,
+  SelectButtonDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -153,6 +154,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/progress-bar/README.md'),
       html: require('!raw-loader!../../demo/progress-bar/progress-bar-demo.component.html'),
       ts: require('!raw-loader!../../demo/progress-bar/progress-bar-demo.component.ts'),
+    },
+    {
+      name: 'SelectButton',
+      directory: 'select-button',
+      cmp: SelectButtonDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/select-button/README.md'),
+      html: require('!raw-loader!../../demo/select-button/select-button-demo.component.html'),
+      ts: require('!raw-loader!../../demo/select-button/select-button-demo.component.ts'),
     },
     // component declare
   ];

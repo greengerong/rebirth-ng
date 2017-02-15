@@ -1,0 +1,30 @@
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { SelectButtonItem } from '../../exports/select-button/select-button-item.model';
+
+@Component({
+  selector: 're-select-button-demo',
+  templateUrl: './select-button-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SelectButtonDemoComponent implements OnInit {
+  value: string;
+  multipleValue: string[];
+  items: SelectButtonItem[] = [
+    {
+      text: 'Left'
+    },
+    {
+      text: 'Middle'
+    },
+    {
+      text: 'Right'
+    }
+  ];
+
+  constructor() {
+  }
+
+  ngOnInit() {
+  }
+
+}

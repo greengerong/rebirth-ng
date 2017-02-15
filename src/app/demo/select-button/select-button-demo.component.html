@@ -1,0 +1,28 @@
+<div class="select-button-demo">
+
+  <section>
+    <h4>Single button:</h4>
+
+    <re-select-button [(ngModel)]="value" [items]="items"></re-select-button>
+    <re-select-button [(ngModel)]="value" [items]="items" type="success" size="lg"></re-select-button>
+    <re-select-button [(ngModel)]="value" [items]="items" type="danger" size="xs"></re-select-button>
+
+    <h4>justified:</h4>
+    <re-select-button [(ngModel)]="value" [items]="items" [justified]="true"></re-select-button>
+    <hr>
+    <pre>{{(value | json) || 'No value select!'}}</pre>
+    <button class="btn btn-primary" (click)="value = 'Middle'">Set to Middle</button>
+    <button class="btn btn-primary" (click)="value = null">Clear value</button>
+  </section>
+
+  <section>
+    <h4>Multiple button:</h4>
+
+    <re-select-button [(ngModel)]="multipleValue" type="warning" [items]="items" [multiple]="true"></re-select-button>
+    <hr>
+    <pre>{{(multipleValue | json) || 'No value select!'}}</pre>
+    <button class="btn btn-primary" (click)="multipleValue = ['Middle']">Set to Middle</button>
+    <button class="btn btn-primary" (click)="multipleValue = null">Clear value</button>
+  </section>
+
+</div>

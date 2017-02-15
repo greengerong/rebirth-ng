@@ -17,7 +17,8 @@ import { PositionService } from './position';
 import { PopoverModule } from './popover';
 import { DatePickerModule } from './date-picker';
 import { BreadcrumbsModule } from './breadcrumbs';
-import { ProgressBarModule } from './progress-bar/progress-bar.module';
+import { ProgressBarModule } from './progress-bar';
+import { SelectButtonModule } from './select-button';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ProgressBarModule } from './progress-bar/progress-bar.module';
     PopoverModule,
     DatePickerModule,
     BreadcrumbsModule,
-    ProgressBarModule
+    ProgressBarModule,
+    SelectButtonModule
   ],
   exports: [
     ModalModule,
@@ -55,7 +57,8 @@ import { ProgressBarModule } from './progress-bar/progress-bar.module';
     PopoverModule,
     DatePickerModule,
     BreadcrumbsModule,
-    ProgressBarModule
+    ProgressBarModule,
+    SelectButtonModule
   ],
   declarations: [],
   providers: [],
