@@ -27,7 +27,7 @@
 - [ ] Switch
 - [x] Select Button
 - [ ] Carousel
-- [ ] Overlay
+- [x] Overlay
 - [x] Breadcrumbs
 - [ ] Menu
 - [ ] Aside Menu
