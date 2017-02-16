@@ -25,4 +25,9 @@
     <button class="btn btn-primary" (click)="multipleValue = null">Clear value</button>
   </section>
 
+  <section>
+    <h4>Disabled button:</h4>
+    <re-select-button [(ngModel)]="value" [items]="items" [disabled]="true"></re-select-button>
+  </section>
+
 </div>
