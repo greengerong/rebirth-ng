@@ -3,3 +3,9 @@
 $icon-font-path: "./assets/fonts/";
 @import "~bootstrap-sass/assets/stylesheets/_bootstrap";
 @import '~highlight.js/styles/github';
+
+.overlay-demo-logo{
+  background: url("./assets/images/loading.gif");
+  width: 200px;
+  height: 200px;
+}

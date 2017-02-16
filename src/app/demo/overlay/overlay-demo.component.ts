@@ -15,7 +15,7 @@ export class OverlayDemoComponent implements OnInit {
   }
 
   openOverlay() {
-    this.overlayService.open({ html: `<div> <img width="200px" src="./assets/images/loading.gif"></div>` });
+    this.overlayService.open({ html: `<div class="overlay-demo-logo"></div>` });
     setTimeout(() => this.overlayService.close(), 5 * 1000);
   }
 
@@ -29,7 +29,7 @@ export class OverlayDemoComponent implements OnInit {
   selector: 're-overlay-body-demo',
   template: `
     <div>
-      <img width="200px" src="./assets/images/loading.gif">
+      <div class="overlay-demo-logo"></div>
       <div class="text-center">Rebirth UI overlay!</div>
     </div>
   `,
