@@ -61,6 +61,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
   @HostListener('mouseleave', [])
   startInterval() {
+    this.stopInterval();
     this.intervalId = setInterval(() => this.selectNextSlide(), this.interval);
   }
 

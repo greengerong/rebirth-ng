@@ -1,7 +1,7 @@
 <div class="carousel-demo">
 
   <section>
-    <re-carousel [(activeSlide)]="activeSlide" [interval]="2 * 1000">
+    <re-carousel [(activeSlide)]="activeSlide" [interval]="2 * 1000" #carousel="carousel">
       <template reSlide>
         <img alt="First slide [900x500]"
              data-src="holder.js/900x500/auto/#777:#555/text:First slide"
@@ -34,7 +34,8 @@
 
     <hr>
     <button class="btn btn-primary" (click)="activeSlide = 1">Active second slide</button>
-    <button class="btn btn-primary" (click)="value = null">Clear value</button>
+    <button class="btn btn-primary" (click)="carousel.pauseInterval()">Pause</button>
+    <button class="btn btn-primary" (click)="carousel.startInterval()">Start</button>
   </section>
 
 </div>
