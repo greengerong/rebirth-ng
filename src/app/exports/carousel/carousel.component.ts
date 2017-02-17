@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, QueryList, ContentChildren, Input, Output,
+  Component, ChangeDetectionStrategy, QueryList, ContentChildren, Input, Output,
   EventEmitter, HostListener, AfterContentInit, OnDestroy
 } from '@angular/core';
 import { SlideDirective } from './slide.directive';
