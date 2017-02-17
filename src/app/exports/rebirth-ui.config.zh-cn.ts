@@ -91,7 +91,7 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
     multiple: false
   };
 
-  switch = {
+  switchBtn = {
     onText: '开启',
     offText: '关闭',
     type: 'primary'

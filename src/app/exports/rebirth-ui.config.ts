@@ -90,7 +90,7 @@ export class RebirthUIConfig {
     multiple: false
   };
 
-  switch = {
+  switchBtn = {
     onText: 'ON',
     offText: 'OFF',
     type: 'primary'
