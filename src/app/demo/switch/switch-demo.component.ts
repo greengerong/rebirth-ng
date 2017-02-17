@@ -7,6 +7,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class SwitchDemoComponent implements OnInit {
   checked = true;
+  disabled = false;
 
   constructor() {
   }

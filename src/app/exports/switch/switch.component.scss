@@ -28,6 +28,15 @@
     text-align: center;
   }
 
+  &.disabled {
+    .switch-left, .switch-right {
+      cursor: not-allowed;
+      opacity: 0.65;
+      filter: alpha(opacity=65);
+      box-shadow: none;
+    }
+  }
+
   &.btn-lg {
     width: 120px;
   }

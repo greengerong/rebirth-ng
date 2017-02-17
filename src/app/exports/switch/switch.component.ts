@@ -16,8 +16,8 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 export class SwitchComponent implements ControlValueAccessor {
   @Input() type: ButtonType = 'primary';
   @Input() size: ButtonSize;
+  @Input() disabled: boolean;
   checked: boolean;
-  disabled: boolean;
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
@@ -25,6 +25,9 @@ export class SwitchComponent implements ControlValueAccessor {
   }
 
   toggle() {
+    if (this.disabled) {
+      return;
+    }
     this.onTouched();
     this.checked = !this.checked;
     this.onChange(this.checked);

@@ -1,10 +1,12 @@
 <div class="switch-demo">
 
-  <re-switch [(ngModel)]="checked" [type]="'primary'"></re-switch>
-  <re-switch [(ngModel)]="checked" [type]="'success'"></re-switch>
-  <re-switch [(ngModel)]="checked" [type]="'info'" size="lg"></re-switch>
-  <re-switch [(ngModel)]="checked" [type]="'warning'" size="sm"></re-switch>
-  <re-switch [(ngModel)]="checked" [type]="'danger'" size="xs"></re-switch>
+  <re-switch [(ngModel)]="checked" [disabled]="disabled" [type]="'primary'"></re-switch>
+  <re-switch [(ngModel)]="checked" [disabled]="disabled" [type]="'success'"></re-switch>
+  <re-switch [(ngModel)]="checked" [disabled]="disabled" [type]="'info'" size="lg"></re-switch>
+  <re-switch [(ngModel)]="checked" [disabled]="disabled" [type]="'warning'" size="sm"></re-switch>
+  <re-switch [(ngModel)]="checked" [disabled]="disabled" [type]="'danger'" size="xs"></re-switch>
   <hr>
   <pre>{{checked | json}}</pre>
+
+  <button class="btn btn-primary" (click)="disabled = !disabled"> {{ disabled? 'Enable' : 'Disabled'}}</button>
 </div>
