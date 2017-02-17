@@ -16,7 +16,8 @@ import {
   DatePickerDemoComponent,
   ProgressBarDemoComponent,
   SelectButtonDemoComponent,
-  OverlayDemoComponent
+  OverlayDemoComponent,
+  CarouselDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -171,6 +172,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/overlay/README.md'),
       html: require('!raw-loader!../../demo/overlay/overlay-demo.component.html'),
       ts: require('!raw-loader!../../demo/overlay/overlay-demo.component.ts'),
+    },
+    {
+      name: 'Carousel',
+      directory: 'carousel',
+      cmp: CarouselDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/carousel/README.md'),
+      html: require('!raw-loader!../../demo/carousel/carousel-demo.component.html'),
+      ts: require('!raw-loader!../../demo/carousel/carousel-demo.component.ts'),
     },
     // component declare
   ];

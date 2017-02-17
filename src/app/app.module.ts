@@ -21,7 +21,8 @@ import {
   BreadcrumbsDemoModule,
   ProgressBarDemoModule,
   SelectButtonDemoModule,
-  OverlayDemoModule
+  OverlayDemoModule,
+  CarouselDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -50,7 +51,8 @@ import { RebirthUIModule } from './exports';
     BreadcrumbsDemoModule,
     ProgressBarDemoModule,
     SelectButtonDemoModule,
-    OverlayDemoModule
+    OverlayDemoModule,
+    CarouselDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

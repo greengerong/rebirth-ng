@@ -1,6 +1,7 @@
 export * from './accordion';
 export * from './action-button';
 export * from './breadcrumbs';
+export * from './carousel';
 export * from './modal';
 export * from './overlay';
 export * from './date-picker';

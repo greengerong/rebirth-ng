@@ -20,6 +20,7 @@ import { BreadcrumbsModule } from './breadcrumbs';
 import { ProgressBarModule } from './progress-bar';
 import { SelectButtonModule } from './select-button';
 import { OverlayModule, OverlayService } from './overlay';
+import { CarouselModule } from './carousel';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { OverlayModule, OverlayService } from './overlay';
     BreadcrumbsModule,
     ProgressBarModule,
     SelectButtonModule,
-    OverlayModule
+    OverlayModule,
+    CarouselModule
   ],
   exports: [
     ModalModule,
@@ -61,7 +63,8 @@ import { OverlayModule, OverlayService } from './overlay';
     BreadcrumbsModule,
     ProgressBarModule,
     SelectButtonModule,
-    OverlayModule
+    OverlayModule,
+    CarouselModule
   ],
   declarations: [],
   providers: [],

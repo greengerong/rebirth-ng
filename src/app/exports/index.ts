@@ -2,6 +2,7 @@ export * from './accordion';
 export * from './action-button';
 export * from './alert-box';
 export * from './breadcrumbs';
+export * from './carousel';
 export * from './badge';
 export * from './date-picker';
 export * from './dialog';
