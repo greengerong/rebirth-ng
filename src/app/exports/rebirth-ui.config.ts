@@ -16,6 +16,13 @@ export class RebirthUIConfig {
     closable: false,
   };
 
+  carousel = {
+    interval: 0,
+    animate: false,
+    reflowDuration: 30,
+    animationDuration: 600
+  };
+
   datePicker = {
     locale: 'en-US',
     timePicker: false,

@@ -3,6 +3,8 @@ import {
   EventEmitter, HostListener, AfterContentInit, OnDestroy, Renderer, ViewChildren, ElementRef
 } from '@angular/core';
 import { SlideDirective } from './slide.directive';
+import { animation, animationTimeout } from '../utils/animation-utils';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 export enum CarouselDirection {
   NEXT, PREV
@@ -17,14 +19,20 @@ export enum CarouselDirection {
 export class CarouselComponent implements AfterContentInit, OnDestroy {
 
   @Input() activeSlide = 0;
-  @Input() interval = 0;
-  @Input() animate = false;
+  @Input() interval: number;
+  @Input() animate: boolean;
   @Output() activeSlideChange = new EventEmitter<number>();
   @ContentChildren(SlideDirective) slides: QueryList<SlideDirective>;
   @ViewChildren('slideItem') slideItems: QueryList<ElementRef>;
   intervalId: any;
+  reflowDuration: number;
+  animationDuration: number;
 
-  constructor(private  renderer: Renderer) {
+  constructor(private  renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
+    this.reflowDuration = rebirthUIConfig.carousel.reflowDuration;
+    this.animationDuration = rebirthUIConfig.carousel.animationDuration;
+    this.animate = rebirthUIConfig.carousel.animate;
+    this.interval = rebirthUIConfig.carousel.interval;
   }
 
   ngAfterContentInit(): void {
@@ -64,25 +72,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
       return;
     }
 
-    this.stopInterval();
-    const slideItems = this.slideItems.toArray();
-    const direction = carouselDirection === CarouselDirection.NEXT ? 'left' : 'right';
-    const orderDirection = carouselDirection === CarouselDirection.NEXT ? 'next' : 'prev';
-    this.renderer.setElementClass(slideItems[index].nativeElement, orderDirection, true);
-
-    setTimeout(() => {
-      this.renderer.setElementClass(slideItems[this.activeSlide].nativeElement, direction, true);
-      this.renderer.setElementClass(slideItems[index].nativeElement, direction, true);
-
-      setTimeout(() => {
-        this.renderer.setElementClass(slideItems[index].nativeElement, orderDirection, false);
-        this.renderer.setElementClass(slideItems[index].nativeElement, direction, false);
-        this.renderer.setElementClass(slideItems[this.activeSlide].nativeElement, direction, false);
+    this.slideAnimation(carouselDirection, index)
+      .then(() => {
         this.activeSlide = index;
         this.activeSlideChange.emit(this.activeSlide);
-        this.startInterval();
-      }, 600);
-    }, 30);
+      });
   }
 
   @HostListener('mouseenter', [])
@@ -100,6 +94,30 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.stopInterval();
+  }
+
+  private slideAnimation(carouselDirection: CarouselDirection, index) {
+    this.stopInterval();
+    const slideItems = this.slideItems.toArray();
+    const direction = carouselDirection === CarouselDirection.NEXT ? 'left' : 'right';
+    const orderDirection = carouselDirection === CarouselDirection.NEXT ? 'next' : 'prev';
+
+    const nextElement = slideItems[index].nativeElement;
+    const currentElement = slideItems[this.activeSlide].nativeElement;
+    this.renderer.setElementClass(nextElement, orderDirection, true);
+
+    return animationTimeout(this.reflowDuration)
+      .then(() => {
+        this.renderer.setElementClass(currentElement, direction, true);
+        this.renderer.setElementClass(nextElement, direction, true);
+      })
+      .then(() => animation(this.renderer, nextElement, this.animationDuration))
+      .then(() => {
+        this.renderer.setElementClass(nextElement, orderDirection, false);
+        this.renderer.setElementClass(nextElement, direction, false);
+        this.renderer.setElementClass(currentElement, direction, false);
+        this.startInterval();
+      });
   }
 
   private stopInterval() {
