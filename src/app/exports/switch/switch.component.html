@@ -1,4 +1,4 @@
 <div class="switch {{size ? 'btn-' + size : ''}}" (click)="toggle($event)" [ngClass]="{disabled: disabled}">
-  <span class="switch-left {{checked ? 'bg-'+ type + ' active' : ''}}">ON</span>
-  <span class="switch-right  {{!checked ? 'bg-'+ type + ' active' : ''}}">OFF</span>
+  <span class="switch-left {{checked ? 'bg-'+ type + ' active' : ''}}">{{onText}}</span>
+  <span class="switch-right  {{!checked ? 'bg-'+ type + ' active' : ''}}">{{offText}}</span>
 </div>

@@ -90,6 +90,12 @@ export class RebirthUIConfig {
     multiple: false
   };
 
+  switch = {
+    onText: 'ON',
+    offText: 'OFF',
+    type: 'primary'
+  };
+
   tabs = {
     type: 'tabs', // 'tabs' | 'pills'
     justified: false,

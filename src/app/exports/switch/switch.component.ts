@@ -14,14 +14,19 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   }]
 })
 export class SwitchComponent implements ControlValueAccessor {
-  @Input() type: ButtonType = 'primary';
+  @Input() type: ButtonType;
   @Input() size: ButtonSize;
   @Input() disabled: boolean;
+  @Input() onText: string;
+  @Input() offText: string;
   checked: boolean;
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
   constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.onText = rebirthUIConfig.switch.onText;
+    this.offText = rebirthUIConfig.switch.offText;
+    this.type = <any>rebirthUIConfig.switch.type;
   }
 
   toggle() {

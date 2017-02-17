@@ -91,6 +91,12 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
     multiple: false
   };
 
+  switch = {
+    onText: '开启',
+    offText: '关闭',
+    type: 'primary'
+  };
+
   tabs = {
     type: 'tabs', // 'tabs' | 'pills'
     justified: false,
