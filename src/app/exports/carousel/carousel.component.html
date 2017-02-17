@@ -4,7 +4,9 @@
         (click)="selectSlide($index)" [ngClass]="{active: $index == activeSlide}"></li>
   </ol>
   <div class="carousel-inner" role="listbox">
-    <div class="item" *ngFor="let silde of slides; let $index = index" [ngClass]="{active: $index == activeSlide}">
+    <div *ngFor="let silde of slides; let $index = index"
+         class="item {{$index == activeSlide ? 'active' : ''}} {{  $index == activeSlide ? direction : '' }} {{ $index == nextActiveSlide ? orderDirection + ' ' + direction : ''}}"
+    >
       <template [ngTemplateOutlet]="silde.templateRef"></template>
     </div>
   </div>
