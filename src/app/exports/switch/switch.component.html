@@ -1,5 +1,4 @@
-<div class="switch switch-large has-switch">
-  <div class="switch-on" style=""><input type="checkbox" checked=""><span
-    class="switch-left switch-large">ON</span><label class="switch-large">&nbsp;</label><span
-    class="switch-right switch-large">OFF</span></div>
+<div class="switch {{size ? 'btn-' + size : ''}}" (click)="toggle($event)">
+  <span class="switch-left {{checked ? 'bg-'+ type + ' active' : ''}}">ON</span>
+  <span class="switch-right  {{!checked ? 'bg-'+ type + ' active' : ''}}">OFF</span>
 </div>
