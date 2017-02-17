@@ -26,7 +26,7 @@
 - [ ] Auto Complete
 - [ ] Switch
 - [x] Select Button
-- [ ] Carousel
+- [x] Carousel
 - [x] Overlay
 - [x] Breadcrumbs
 - [ ] Menu
