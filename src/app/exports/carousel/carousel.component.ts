@@ -1,6 +1,6 @@
 import {
   Component, ChangeDetectionStrategy, QueryList, ContentChildren, Input, Output,
-  EventEmitter, HostListener, AfterContentInit, OnDestroy
+  EventEmitter, HostListener, AfterContentInit, OnDestroy, Renderer, ViewChildren, ElementRef
 } from '@angular/core';
 import { SlideDirective } from './slide.directive';
 
@@ -21,10 +21,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   @Input() animate = false;
   @Output() activeSlideChange = new EventEmitter<number>();
   @ContentChildren(SlideDirective) slides: QueryList<SlideDirective>;
+  @ViewChildren('slideItem') slideItems: QueryList<ElementRef>;
   intervalId: any;
-  orderDirection = '';
-  direction = '';
-  nextActiveSlide = -1;
+
+  constructor(private  renderer: Renderer) {
+  }
 
   ngAfterContentInit(): void {
     if (this.interval) {
@@ -58,23 +59,30 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     this.onActiveSlideChange(this.activeSlide + 1, CarouselDirection.NEXT);
   }
 
-  onActiveSlideChange(index, direction: CarouselDirection) {
+  onActiveSlideChange(index, carouselDirection: CarouselDirection) {
     if (this.activeSlide === index) {
       return;
     }
 
-    this.direction = direction === CarouselDirection.NEXT ? 'left' : 'right';
-    this.orderDirection = direction === CarouselDirection.NEXT ? 'next' : 'prev';
-    this.nextActiveSlide = index;
-
+    this.stopInterval();
+    const slideItems = this.slideItems.toArray();
+    const direction = carouselDirection === CarouselDirection.NEXT ? 'left' : 'right';
+    const orderDirection = carouselDirection === CarouselDirection.NEXT ? 'next' : 'prev';
+    this.renderer.setElementClass(slideItems[index].nativeElement, orderDirection, true);
 
     setTimeout(() => {
-      this.nextActiveSlide = -1;
-      this.direction = '';
-      this.orderDirection = '';
-      this.activeSlide = index;
-      this.activeSlideChange.emit(this.activeSlide);
-    }, 700);
+      this.renderer.setElementClass(slideItems[this.activeSlide].nativeElement, direction, true);
+      this.renderer.setElementClass(slideItems[index].nativeElement, direction, true);
+
+      setTimeout(() => {
+        this.renderer.setElementClass(slideItems[index].nativeElement, orderDirection, false);
+        this.renderer.setElementClass(slideItems[index].nativeElement, direction, false);
+        this.renderer.setElementClass(slideItems[this.activeSlide].nativeElement, direction, false);
+        this.activeSlide = index;
+        this.activeSlideChange.emit(this.activeSlide);
+        this.startInterval();
+      }, 600);
+    }, 30);
   }
 
   @HostListener('mouseenter', [])
@@ -85,7 +93,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   @HostListener('mouseleave', [])
   startInterval() {
     this.stopInterval();
-    if (this.intervalId) {
+    if (this.interval) {
       this.intervalId = setInterval(() => this.selectNextSlide(), this.interval);
     }
   }
