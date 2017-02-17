@@ -22,7 +22,8 @@ import {
   ProgressBarDemoModule,
   SelectButtonDemoModule,
   OverlayDemoModule,
-  CarouselDemoModule
+  CarouselDemoModule,
+  SwitchDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 
@@ -52,7 +53,8 @@ import { RebirthUIModule } from './exports';
     ProgressBarDemoModule,
     SelectButtonDemoModule,
     OverlayDemoModule,
-    CarouselDemoModule
+    CarouselDemoModule,
+    SwitchDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

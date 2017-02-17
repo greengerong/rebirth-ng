@@ -16,6 +16,7 @@ export * from './progress-bar';
 export * from './position';
 export * from './rating';
 export * from './select-button';
+export * from './switch';
 export * from './tabs';
 export * from './tooltip';
 export * from './window-ref';

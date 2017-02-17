@@ -17,7 +17,8 @@ import {
   ProgressBarDemoComponent,
   SelectButtonDemoComponent,
   OverlayDemoComponent,
-  CarouselDemoComponent
+  CarouselDemoComponent,
+  SwitchDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -180,6 +181,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/carousel/README.md'),
       html: require('!raw-loader!../../demo/carousel/carousel-demo.component.html'),
       ts: require('!raw-loader!../../demo/carousel/carousel-demo.component.ts'),
+    },
+    {
+      name: 'Switch',
+      directory: 'carousel',
+      cmp: SwitchDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/switch/README.md'),
+      html: require('!raw-loader!../../demo/switch/switch-demo.component.html'),
+      ts: require('!raw-loader!../../demo/switch/switch-demo.component.ts'),
     },
     // component declare
   ];

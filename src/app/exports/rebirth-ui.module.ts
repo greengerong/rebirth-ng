@@ -21,6 +21,7 @@ import { ProgressBarModule } from './progress-bar';
 import { SelectButtonModule } from './select-button';
 import { OverlayModule, OverlayService } from './overlay';
 import { CarouselModule } from './carousel';
+import { SwitchModule } from './switch/switch.module';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CarouselModule } from './carousel';
     ProgressBarModule,
     SelectButtonModule,
     OverlayModule,
-    CarouselModule
+    CarouselModule,
+    SwitchModule
   ],
   exports: [
     ModalModule,
@@ -64,7 +66,8 @@ import { CarouselModule } from './carousel';
     ProgressBarModule,
     SelectButtonModule,
     OverlayModule,
-    CarouselModule
+    CarouselModule,
+    SwitchModule
   ],
   declarations: [],
   providers: [],

@@ -15,6 +15,7 @@ export * from './popover';
 export * from './progress-bar';
 export * from './rating';
 export * from './select-button';
+export * from './switch';
 export * from './tabs';
 export * from './tooltip';
 
