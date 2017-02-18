@@ -7,3 +7,4 @@
 
 * Navbar type support: `navbar-fixed-top`, `navbar-fixed-bottom`, `container-fluid`, `navbar-static-top`, `navbar-static-bottom`, `navbar-form`
 
+* `MenuBar` include normal menus(`menus`) and right side menus(`rightMenus`);
