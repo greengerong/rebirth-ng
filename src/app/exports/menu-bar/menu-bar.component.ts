@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
 
 @Component({
@@ -22,14 +22,19 @@ export class MenuBarComponent {
     if ($event) {
       $event.stopPropagation();
     }
-    this.showNavBar = !this.showNavBar;
+    this.onShowNavBarChange(!this.showNavBar);
   }
 
   hide($event?: Event) {
     if ($event) {
       $event.stopPropagation();
     }
-    this.showNavBar = false;
+    this.onShowNavBarChange(false);
   }
 
+  onShowNavBarChange(showNavBar: boolean) {
+    if (this.showNavBar !== showNavBar) {
+      this.showNavBar = showNavBar;
+    }
+  }
 }

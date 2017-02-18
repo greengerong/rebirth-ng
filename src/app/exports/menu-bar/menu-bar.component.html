@@ -13,7 +13,8 @@
         <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>
       </a>
     </div>
-    <div class="navbar-collapse collapse" [class.in]="showNavBar" aria-expanded="true">
+    <div #navbarCollapse class="navbar-collapse" [ngClass]="{collapse: !showNavBar, in: showNavBar}"
+         aria-expanded="true">
       <ul class="nav navbar-nav">
         <ng-container *ngFor="let menu of menuOptions.menus">
 
