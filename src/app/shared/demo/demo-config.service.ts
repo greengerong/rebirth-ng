@@ -193,7 +193,7 @@ export class DemoConfigService {
     },
     {
       name: 'MenuBar',
-      directory: 'menu-bar-demo',
+      directory: 'menu-bar',
       cmp: MenuBarDemoComponent,
       readMe: require('!html-loader!markdown-loader!../../exports/menu-bar/README.md'),
       html: require('!raw-loader!../../demo/menu-bar/menu-bar-demo.component.html'),
