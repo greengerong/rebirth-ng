@@ -66,9 +66,15 @@ export class MenuBarDemoComponent implements OnInit {
             url: '#'
           }
         ]
+      }
+    ],
+    rightMenus: [
+      {
+        icon: 'glyphicon glyphicon-volume-up',
+        url: '#MenuBar',
       },
       {
-        text: 'About me',
+        icon: 'glyphicon glyphicon-user',
         url: 'http://greengerong.com/rebirth/blog/about',
         target: '_blank'
       }

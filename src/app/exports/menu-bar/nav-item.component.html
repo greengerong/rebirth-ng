@@ -1,0 +1,35 @@
+<ul class="nav navbar-nav" [ngClass]="{'navbar-right': right}">
+  <ng-container *ngFor="let menu of menus">
+
+    <li *ngIf="!menu.children?.length" routerLinkActive="active">
+      <a *ngIf="menu.router" [routerLink]="menu.router"
+         [target]="menu.target || '_self'">
+        <i *ngIf="menu.icon" class="{{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
+      <a *ngIf="!menu.router" [href]="menu.url" [target]="menu.target || '_self'">
+        <i *ngIf="menu.icon" class="{{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
+    </li>
+
+
+    <li *ngIf="menu.children?.length" reDropdown routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+      <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+        <i *ngIf="menu.icon" class="{{menu.icon}}"></i>&nbsp;{{menu.text}}
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <ng-container *ngFor="let child of menu?.children">
+          <li *ngIf="!child.divider && !child.header" role="menuitem" routerLinkActive="active">
+            <a *ngIf="child.router" [routerLink]="child.router"
+               [target]="child.target || '_self'"><i *ngIf="child.icon" class="{{child.icon}}"></i>&nbsp;{{child.text}}</a>
+            <a *ngIf="!child.router" [href]="child.url"
+               [target]="child.target || '_self'"><i *ngIf="child.icon" class="{{child.icon}}"></i>&nbsp;{{child.text}}</a>
+          </li>
+          <li *ngIf="child.divider" role="separator" class="divider"></li>
+          <li *ngIf="child.header" class="dropdown-header">{{child.text}}</li>
+        </ng-container>
+
+      </ul>
+    </li>
+  </ng-container>
+
+</ul>

@@ -15,4 +15,5 @@ export interface MenuBar {
   title: string;
   home: string;
   menus: MenuItem[];
+  rightMenus?: MenuItem[];
 }
