@@ -8,7 +8,7 @@ import { NavItemComponent } from './nav-item.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule],
-  exports: [MenuBarComponent],
+  exports: [MenuBarComponent, DropdownDirective],
   declarations: [MenuBarComponent, DropdownDirective, NavItemComponent],
   providers: [],
 })

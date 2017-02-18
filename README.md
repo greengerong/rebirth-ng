@@ -16,7 +16,6 @@
 - [x] Pagination
 - [x] Panel
 - [x] DatePicker
-- [ ] Dropdown
 - [x] Rating
 - [x] Popover
 - [x] Tooltip
@@ -29,9 +28,8 @@
 - [x] Carousel
 - [x] Overlay
 - [x] Breadcrumbs
-- [ ] Menu Bar
+- [x] Menu Bar
 - [ ] Aside Menu
-- [ ] Context Menu
 
 ## Advance Components
 - [ ] Editor([]())
