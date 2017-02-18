@@ -18,18 +18,22 @@ export class MenuBarDemoComponent implements OnInit {
     menus: [
       {
         text: 'Home',
+        icon: 'glyphicon glyphicon-home',
         router: ['./']
       },
       {
         text: 'Profile',
+        icon: 'glyphicon glyphicon-user',
         router: ['./profile', 'greengerong']
       },
       {
         text: 'Rebirth',
+        icon: 'glyphicon glyphicon-heart',
         router: ['./rebirth', { portal: 'rebirth-ui' }]
       },
       {
         text: 'Resources',
+        icon: 'glyphicon glyphicon-fire',
         children: [
           {
             text: 'Resource',
@@ -52,11 +56,13 @@ export class MenuBarDemoComponent implements OnInit {
           },
           {
             text: 'Angular.js best practices',
+            icon: 'glyphicon glyphicon-book',
             url: 'http://item.jd.com/11845736.html',
             target: '_blank'
           },
           {
             text: 'NG-Book2',
+            icon: 'glyphicon glyphicon-book',
             url: '#'
           }
         ]
