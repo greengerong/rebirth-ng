@@ -19,7 +19,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class RatingComponent implements ControlValueAccessor {
   ratingRanges: number[];
   value = 0;
-  disabled = false;
+  @Input() disabled = false;
   @Input() cssClass: string;
   @Input() icons: { stateOn, stateOff };
   valueChange = new EventEmitter<number>();

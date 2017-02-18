@@ -9,6 +9,7 @@ import { SelectButtonItem } from '../../exports/select-button/select-button-item
 export class SelectButtonDemoComponent implements OnInit {
   value: string;
   multipleValue: string[];
+  disabled = true;
   items: SelectButtonItem[] = [
     {
       text: 'Left'

@@ -26,7 +26,7 @@ export class SelectButtonComponent implements ControlValueAccessor {
   @Input() multiple: boolean;
   @Input() items: SelectButtonItem;
   @Input() cssClass: string;
-  disabled = false;
+  @Input() disabled = false;
   value: any;
   private onChange = (_: any) => null;
   private onTouched = () => null;

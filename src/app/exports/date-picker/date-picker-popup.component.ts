@@ -38,6 +38,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   @Input() locale: string;
   @Output() selectedDateChange = new EventEmitter<SelectDateChangeEventArgs>();
   @Input() dateFormat: string;
+  @Input() disabled = false;
   currentYear: number;
   currentMonth: number;
   currentHour: number;
@@ -47,7 +48,6 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   minuteOptions: string[];
   displayWeeks: any[];
   yearOptions: number[];
-  disabled = false;
 
   private onChange = (_: any) => null;
   private onTouched = () => null;

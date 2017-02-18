@@ -27,7 +27,8 @@
 
   <section>
     <h4>Disabled button:</h4>
-    <re-select-button [(ngModel)]="value" [items]="items" [disabled]="true"></re-select-button>
+    <re-select-button [(ngModel)]="value" [items]="items" [disabled]="disabled"></re-select-button>
+    <button class="btn btn-primary" (click)="disabled = !disabled"> {{ disabled? 'Enable' : 'Disabled'}}</button>
   </section>
 
 </div>
