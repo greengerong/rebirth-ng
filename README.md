@@ -24,7 +24,7 @@
 - [x] Action Button
 - [x] Progress Bar
 - [ ] Auto Complete
-- [ ] Switch
+- [x] Switch
 - [x] Select Button
 - [x] Carousel
 - [x] Overlay
