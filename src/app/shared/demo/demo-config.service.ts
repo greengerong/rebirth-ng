@@ -18,7 +18,8 @@ import {
   SelectButtonDemoComponent,
   OverlayDemoComponent,
   CarouselDemoComponent,
-  SwitchDemoComponent
+  SwitchDemoComponent,
+  MenuBarDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -189,6 +190,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/switch/README.md'),
       html: require('!raw-loader!../../demo/switch/switch-demo.component.html'),
       ts: require('!raw-loader!../../demo/switch/switch-demo.component.ts'),
+    },
+    {
+      name: 'MenuBar',
+      directory: 'menu-bar-demo',
+      cmp: MenuBarDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/menu-bar/README.md'),
+      html: require('!raw-loader!../../demo/menu-bar/menu-bar-demo.component.html'),
+      ts: require('!raw-loader!../../demo/menu-bar/menu-bar-demo.component.ts'),
     },
     // component declare
   ];

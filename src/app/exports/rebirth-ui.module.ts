@@ -22,6 +22,7 @@ import { SelectButtonModule } from './select-button';
 import { OverlayModule, OverlayService } from './overlay';
 import { CarouselModule } from './carousel';
 import { SwitchModule } from './switch/switch.module';
+import { MenuBarModule } from './menu-bar/menu-bar.module';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { SwitchModule } from './switch/switch.module';
     SelectButtonModule,
     OverlayModule,
     CarouselModule,
-    SwitchModule
+    SwitchModule,
+    MenuBarModule
   ],
   exports: [
     ModalModule,
@@ -67,7 +69,8 @@ import { SwitchModule } from './switch/switch.module';
     SelectButtonModule,
     OverlayModule,
     CarouselModule,
-    SwitchModule
+    SwitchModule,
+    MenuBarModule
   ],
   declarations: [],
   providers: [],

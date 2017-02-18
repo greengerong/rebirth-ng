@@ -6,11 +6,13 @@ import { DocComponent } from './doc';
 import { DocContentComponent } from './doc/doc-content.component';
 import { DemoConfigService } from './demo/demo-config.service';
 import { RebirthUIModule } from '../exports/rebirth-ui.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     HttpModule,
     JsonpModule,
     RebirthUIModule
@@ -23,6 +25,7 @@ import { RebirthUIModule } from '../exports/rebirth-ui.module';
   exports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     HttpModule,
     JsonpModule,
     DocComponent

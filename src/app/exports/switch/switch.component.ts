@@ -19,6 +19,7 @@ export class SwitchComponent implements ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() onText: string;
   @Input() offText: string;
+  @Input() cssClass: string;
   checked: boolean;
   private onChange = (_: any) => null;
   private onTouched = () => null;

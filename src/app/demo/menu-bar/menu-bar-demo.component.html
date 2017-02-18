@@ -1,0 +1,15 @@
+<div class="nav-bar-demo">
+
+  <section>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label>Navbar style</label>
+        <select name="dateFormat" class="form-control" [(ngModel)]="type">
+          <option *ngFor="let item of types" [ngValue]="item">{{item}}</option>
+        </select>
+      </div>
+      <re-menu-bar [menuOptions]="menus" [type]="type"></re-menu-bar>
+    </form>
+  </section>
+
+</div>

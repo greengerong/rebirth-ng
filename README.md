@@ -29,7 +29,7 @@
 - [x] Carousel
 - [x] Overlay
 - [x] Breadcrumbs
-- [ ] Menu
+- [ ] Menu Bar
 - [ ] Aside Menu
 - [ ] Context Menu
 

@@ -6,6 +6,7 @@ export * from './carousel';
 export * from './badge';
 export * from './date-picker';
 export * from './dialog';
+export * from './menu-bar';
 export * from './modal';
 export * from './overlay';
 export * from './pager';

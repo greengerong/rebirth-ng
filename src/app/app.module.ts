@@ -23,9 +23,11 @@ import {
   SelectButtonDemoModule,
   OverlayDemoModule,
   CarouselDemoModule,
-  SwitchDemoModule
+  SwitchDemoModule,
+  MenuBarDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { RebirthUIModule } from './exports';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot([]),
     SharedModule.forRoot(),
     RebirthUIModule.forRoot(),
     ModalDemoModule,
@@ -54,7 +57,8 @@ import { RebirthUIModule } from './exports';
     SelectButtonDemoModule,
     OverlayDemoModule,
     CarouselDemoModule,
-    SwitchDemoModule
+    SwitchDemoModule,
+    MenuBarDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
