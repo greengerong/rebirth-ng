@@ -13,6 +13,7 @@ export class MenuBarComponent {
   @Input() type: NavbarType;
   @Input() menuOptions: MenuBar = <MenuBar>{};
   @Input() direction: DropDirection;
+  @Input() inverse = false;
   showNavBar: boolean;
 
   constructor() {

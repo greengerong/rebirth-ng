@@ -1,4 +1,4 @@
-<nav class="menu-bar navbar navbar-default {{type}} {{cssClass}}" (click)="hide($event)">
+<nav class="menu-bar navbar navbar-{{ inverse ? 'inverse' : 'default'}} {{type}} {{cssClass}}" (click)="hide($event)">
   <div class="container">
     <div class="navbar-header collapsed">
       <button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"

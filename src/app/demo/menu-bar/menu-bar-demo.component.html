@@ -8,7 +8,8 @@
           <option *ngFor="let item of types" [ngValue]="item">{{item}}</option>
         </select>
       </div>
-      <re-menu-bar [menuOptions]="menus" [type]="type" ></re-menu-bar>
+      <re-menu-bar [menuOptions]="menus" [type]="type"></re-menu-bar>
+      <re-menu-bar [menuOptions]="menus" [inverse]="true"></re-menu-bar>
     </form>
   </section>
 
