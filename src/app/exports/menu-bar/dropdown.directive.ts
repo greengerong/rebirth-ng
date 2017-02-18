@@ -2,13 +2,14 @@ import { Directive, HostListener, Output, Input, EventEmitter, Renderer, Element
 
 @Directive({
   selector: '[reDropdown]',
-  host: { 'class.dropdown': 'true' },
+  host: { '[class]': '"drop" + (direction?  direction : "down")' },
   exportAs: 'dropdown'
 })
 export class DropdownDirective {
+  active = false;
   @Output() dropdownStatusChange = new EventEmitter();
-  private active = false;
-  @Input() private activeCss = 'open';
+  @Input() activeCss = 'open';
+  @Input() direction: DropDirection;
 
   constructor(private elementRef: ElementRef, private renderer: Renderer) {
   }

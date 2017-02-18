@@ -10,7 +10,7 @@
     </li>
 
 
-    <li *ngIf="menu.children?.length" reDropdown routerLinkActive="active"
+    <li *ngIf="menu.children?.length" reDropdown [direction]="direction" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact: true}">
       <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
         <i *ngIf="menu.icon" class="{{menu.icon}}"></i>&nbsp;{{menu.text}}
