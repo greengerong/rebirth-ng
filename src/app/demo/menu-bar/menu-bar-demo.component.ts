@@ -14,6 +14,7 @@ export class MenuBarDemoComponent implements OnInit {
   menus: MenuBar = {
     logo: 'http://greengerong.com/rebirth/assets/img/wolf2.png',
     title: '破狼博客',
+    home: './',
     menus: [
       {
         text: 'Home',

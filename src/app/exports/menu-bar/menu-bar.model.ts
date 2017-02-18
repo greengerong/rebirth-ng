@@ -13,5 +13,6 @@ export interface MenuItem {
 export interface MenuBar {
   logo?: string;
   title: string;
+  home: string;
   menus: MenuItem[];
 }
