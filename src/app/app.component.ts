@@ -39,21 +39,25 @@ export class AppComponent implements OnInit {
       menus: [
         {
           text: '@Rebirth/UI',
-          router: ['./']
+          router: ['./'],
+          icon: 'glyphicon glyphicon-home'
         },
         {
           text: 'Components',
-          children: cmpMenus
+          children: cmpMenus,
+          icon: 'glyphicon glyphicon-fire'
         },
         {
           text: 'API Docs',
           url: '/ng2-rebirth-ui/compodocs/overview.html',
-          target: '_blank'
+          target: '_blank',
+          icon: 'glyphicon glyphicon-heart'
         },
         {
           text: '@Github',
           url: 'https://github.com/greengerong/ng2-rebirth-ui',
-          target: '_blank'
+          target: '_blank',
+          icon: 'glyphicon glyphicon-user'
         }
       ]
     };

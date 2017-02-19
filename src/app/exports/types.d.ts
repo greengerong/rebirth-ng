@@ -5,7 +5,7 @@ type AlertType = 'success' | 'info' | 'warning' | 'danger';
 type ProgressBarType = '' | 'success' | 'info' | 'warning' | 'danger';
 type TabType = 'tabs' | 'pills';
 type NavbarType = 'navbar-fixed-top' | 'navbar-fixed-bottom' | 'container-fluid'
-  | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form';
+  | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form' | 'sidebar';
 
 type DatePickerPlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
 type PopoverPlacement = 'top' | 'bottom' | 'left' | 'right';
