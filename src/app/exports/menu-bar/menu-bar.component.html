@@ -1,5 +1,5 @@
 <nav class="menu-bar navbar navbar-{{ inverse ? 'inverse' : 'default'}} {{type}} {{cssClass}}" (click)="hide($event)">
-  <div class="container-fluid">
+  <div class="{{type == 'sidebar' ? 'container-fluid' : 'container'}}">
     <div class="navbar-header collapsed">
       <button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"
               (click)="toggle($event);">
