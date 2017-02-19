@@ -23,6 +23,7 @@ import { OverlayModule, OverlayService } from './overlay';
 import { CarouselModule } from './carousel';
 import { SwitchModule } from './switch/switch.module';
 import { MenuBarModule } from './menu-bar/menu-bar.module';
+import { AutoCompleteModule } from './auto-complete/auto-complete.module';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { MenuBarModule } from './menu-bar/menu-bar.module';
     OverlayModule,
     CarouselModule,
     SwitchModule,
-    MenuBarModule
+    MenuBarModule,
+    AutoCompleteModule
   ],
   exports: [
     ModalModule,
@@ -70,7 +72,8 @@ import { MenuBarModule } from './menu-bar/menu-bar.module';
     OverlayModule,
     CarouselModule,
     SwitchModule,
-    MenuBarModule
+    MenuBarModule,
+    AutoCompleteModule
   ],
   declarations: [],
   providers: [],

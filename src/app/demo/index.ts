@@ -1,5 +1,6 @@
 export * from './accordion';
 export * from './action-button';
+export * from './auto-complete';
 export * from './breadcrumbs';
 export * from './carousel';
 export * from './modal';

@@ -19,7 +19,8 @@ import {
   OverlayDemoComponent,
   CarouselDemoComponent,
   SwitchDemoComponent,
-  MenuBarDemoComponent
+  MenuBarDemoComponent,
+  AutoCompleteDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -198,6 +199,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/menu-bar/README.md'),
       html: require('!raw-loader!../../demo/menu-bar/menu-bar-demo.component.html'),
       ts: require('!raw-loader!../../demo/menu-bar/menu-bar-demo.component.ts'),
+    },
+    {
+      name: 'AutoComplete',
+      directory: 'auto-complete',
+      cmp: AutoCompleteDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/auto-complete/README.md'),
+      html: require('!raw-loader!../../demo/auto-complete/auto-complete-demo.component.html'),
+      ts: require('!raw-loader!../../demo/auto-complete/auto-complete-demo.component.ts'),
     },
     // component declare
   ];

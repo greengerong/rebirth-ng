@@ -24,7 +24,8 @@ import {
   OverlayDemoModule,
   CarouselDemoModule,
   SwitchDemoModule,
-  MenuBarDemoModule
+  MenuBarDemoModule,
+  AutoCompleteDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -58,7 +59,8 @@ import { RouterModule } from '@angular/router';
     OverlayDemoModule,
     CarouselDemoModule,
     SwitchDemoModule,
-    MenuBarDemoModule
+    MenuBarDemoModule,
+    AutoCompleteDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+<div class="auto-complete-demo">
+  <section>
+    <h4>Basic</h4>
+
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="language" class="col-sm-2 control-label">Language:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" name="language" id="language"
+                 [(ngModel)]="selectItem" reAutoComplete/>
+        </div>
+      </div>
+      <pre>{{(selectItem | json) || 'No language select!'}}</pre>
+    </form>
+
+  </section>
+</div>
