@@ -29,7 +29,7 @@
 - [x] Overlay
 - [x] Breadcrumbs
 - [x] Menu Bar
-- [ ] Aside Menu
+- [x] Aside Menu
 
 ## Advance Components
 - [ ] Editor([]())
