@@ -1,5 +1,5 @@
-<template #defaultItemTemplate let-item="item">
-  <span>{{formatter(item)}}</span>
+<template #defaultItemTemplate let-item="item" let-term="term">
+  <re-hightlight [value]="formatter(item)" [term]="term"></re-hightlight>
 </template>
 <ul class="list-unstyled">
   <li *ngFor="let item of source; let $index = index;" class="dropdown-item"

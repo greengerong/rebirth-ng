@@ -30,7 +30,8 @@ export class AutoCompleteDemoComponent implements OnInit {
   }
 
   onSearchLocal(term) {
-    return of(['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL']
+    return of(['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
+      'LiveScript', 'CoffeeScript']
       .filter(lang => lang.toLowerCase().indexOf(term.toLowerCase()) !== -1));
   }
 

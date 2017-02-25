@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, TemplateRef, ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
@@ -27,6 +27,10 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   private value: any;
   private onChange = (_: any) => null;
   private onTouched = () => null;
+
+  constructor() {
+
+  }
 
   writeValue(obj: any): void {
     this.value = obj;

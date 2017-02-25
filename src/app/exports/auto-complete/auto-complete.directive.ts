@@ -39,7 +39,6 @@ import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 })
 export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() disabled: boolean;
-  @Input() value: any;
   @Input() delay = 300;
   @Input() minLength = 3;
   @Input() itemTemplate: TemplateRef<any>;
@@ -47,6 +46,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) => string = item => item ? (item.label || item.toString()) : '';
   @Input() valueParser: (item: any) => string = item => item;
   private valueChanges: Observable<string>;
+  private value: any;
   private placement = 'bottom-left';
   private subscription: Subscription;
   private popupRef: ComponentRef<AutoCompletePopupComponent>;
@@ -150,7 +150,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   onSourceChange(source) {
     const pop = this.popupRef.instance;
     pop.reset();
-    this.fillPopup(source);
+    this.fillPopup(source, this.value);
     pop.isOpen = true;
     this.changeDetectorRef.markForCheck();
   }
@@ -188,14 +188,23 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     }
   }
 
+  private onTermChange(term) {
+    this.value = term;
+    if (this.popupRef) {
+      this.popupRef.instance.term = term;
+    }
+    this.onChange(term);
+    this.changeDetectorRef.markForCheck();
+  }
+
   private registerInputEvent(elementRef: ElementRef) {
     return fromEvent(elementRef.nativeElement, 'input')
-      .do(term => this.onTouched())
       .map((e: any) => e.target.value)
+      .do(term => this.onTouched())
       .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
       .debounceTime(this.delay)
       .distinctUntilChanged()
-      .do(term => this.onChange(term))
+      .do(term => this.onTermChange(term))
       .switchMap(term => this.onSearch(term, this));
   }
 }
