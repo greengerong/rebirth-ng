@@ -202,7 +202,6 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.popupRef.instance.term = term;
     }
     this.onChange(term);
-    this.changeDetectorRef.markForCheck();
   }
 
   private registerInputEvent(elementRef: ElementRef) {
