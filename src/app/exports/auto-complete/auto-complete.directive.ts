@@ -41,7 +41,9 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() disabled: boolean;
   @Input() delay = 300;
   @Input() minLength = 3;
+  @Input() cssClass: string;
   @Input() itemTemplate: TemplateRef<any>;
+  @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any>;
   @Input() formatter: (item: any) => string = item => item ? (item.label || item.toString()) : '';
   @Input() valueParser: (item: any) => string = item => item;
@@ -148,11 +150,13 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   onSourceChange(source) {
-    const pop = this.popupRef.instance;
-    pop.reset();
-    this.fillPopup(source, this.value);
-    pop.isOpen = true;
-    this.changeDetectorRef.markForCheck();
+    if ((source && source.length) || this.noResultItemTemplate) {
+      const pop = this.popupRef.instance;
+      pop.reset();
+      this.fillPopup(source, this.value);
+      pop.isOpen = true;
+      this.changeDetectorRef.markForCheck();
+    }
   }
 
   private hidePopup() {
@@ -173,8 +177,12 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     const pop = this.popupRef.instance;
     pop.source = source;
     pop.term = term;
-    pop.formatter = this.formatter;
-    pop.itemTemplate = this.itemTemplate;
+    ['formatter', 'itemTemplate', 'noResultItemTemplate', 'cssClass']
+      .forEach(key => {
+        if (this[key] !== undefined) {
+          pop[key] = this[key];
+        }
+      });
   }
 
   private writeInputValue(value: any) {

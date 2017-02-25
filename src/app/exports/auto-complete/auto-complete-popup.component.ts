@@ -1,20 +1,14 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input, TemplateRef, ChangeDetectorRef } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 're-auto-complete-popup',
   templateUrl: './auto-complete-popup.component.html',
-  host: { '[class.dropdown-menu]': 'true', '[style.display]': 'isOpen ? "inline-block" : "none"' },
-  styles: [
-      `.dropdown-item {
-      display: block;
-      width: 100%;
-      padding: 8px 1rem;
-      clear: both;
-      white-space: nowrap;
-      border: 0;
-    }`
-  ]
+  host: {
+    '[class]': '"dropdown-menu "  +  (cssClass ? cssClass : "")',
+    '[style.display]': 'isOpen && (source?.length || noResultItemTemplate) ? "inline-block" : "none"'
+  },
+  styleUrls: ['./auto-complete-popup.component.scss']
 })
 export class AutoCompletePopupComponent implements ControlValueAccessor {
   activeIndex = 0;
@@ -23,6 +17,8 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   @Input() isOpen: boolean;
   @Input() term: string;
   @Input() itemTemplate: TemplateRef<any>;
+  @Input() cssClass: string;
+  @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string = item => item ? (item.label || item.toString()) : '';
   private value: any;
   private onChange = (_: any) => null;
