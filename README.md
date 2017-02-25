@@ -22,7 +22,7 @@
 - [x] Tabs
 - [x] Action Button
 - [x] Progress Bar
-- [ ] Auto Complete
+- [x] Auto Complete
 - [x] Switch
 - [x] Select Button
 - [x] Carousel
