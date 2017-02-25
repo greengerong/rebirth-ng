@@ -45,9 +45,9 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
-  @Input() valueParser: (item: any) => string;
-  @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any>;
-  private valueChanges: Observable<string>;
+  @Input() valueParser: (item: any) => any;
+  @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
+  private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
   private subscription: Subscription;
