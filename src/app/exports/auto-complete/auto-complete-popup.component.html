@@ -1,0 +1,11 @@
+<template #defaultItemTemplate let-item="item">
+  <span>{{formatter(item)}}</span>
+</template>
+<ul class="list-unstyled">
+  <li *ngFor="let item of source; let $index = index;" class="dropdown-item"
+      [ngClass]="{'bg-primary': $index == activeIndex}" (click)="onSelect(item)"
+      (mouseenter)="onActiveIndexChange($index)">
+    <template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
+              [ngOutletContext]="{ formatter: formatter, term:term, source:source, item:item, $index:$index}"></template>
+  </li>
+</ul>
