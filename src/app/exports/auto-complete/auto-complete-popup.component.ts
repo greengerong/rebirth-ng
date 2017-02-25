@@ -1,5 +1,6 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
+import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-auto-complete-popup',
@@ -12,20 +13,21 @@ import { ControlValueAccessor } from '@angular/forms';
 })
 export class AutoCompletePopupComponent implements ControlValueAccessor {
   activeIndex = 0;
+  @Input() cssClass: string;
   @Input() disabled: boolean;
   @Input() source: any[];
   @Input() isOpen: boolean;
   @Input() term: string;
   @Input() itemTemplate: TemplateRef<any>;
-  @Input() cssClass: string;
   @Input() noResultItemTemplate: TemplateRef<any>;
-  @Input() formatter: (item: any) => string = item => item ? (item.label || item.toString()) : '';
+  @Input() formatter: (item: any) => string;
+
   private value: any;
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor() {
-
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+    this.formatter = rebirthUIConfig.autoComplete.formatter;
   }
 
   writeValue(obj: any): void {

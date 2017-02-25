@@ -39,14 +39,14 @@ import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 })
 export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAccessor {
   @Input() disabled: boolean;
-  @Input() delay = 300;
-  @Input() minLength = 3;
   @Input() cssClass: string;
+  @Input() delay: number;
+  @Input() minLength: number;
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
+  @Input() formatter: (item: any) => string;
+  @Input() valueParser: (item: any) => string;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any>;
-  @Input() formatter: (item: any) => string = item => item ? (item.label || item.toString()) : '';
-  @Input() valueParser: (item: any) => string = item => item;
   private valueChanges: Observable<string>;
   private value: any;
   private placement = 'bottom-left';
@@ -60,6 +60,12 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
               private injector: Injector, private positionService: PositionService,
               private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges = this.registerInputEvent(elementRef);
+    this.delay = rebirthUIConfig.autoComplete.delay;
+    this.minLength = rebirthUIConfig.autoComplete.minLength;
+    this.itemTemplate = rebirthUIConfig.autoComplete.itemTemplate;
+    this.noResultItemTemplate = rebirthUIConfig.autoComplete.noResultItemTemplate;
+    this.formatter = rebirthUIConfig.autoComplete.formatter;
+    this.valueParser = rebirthUIConfig.autoComplete.valueParser;
   }
 
   ngOnInit() {

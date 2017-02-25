@@ -17,6 +17,15 @@ export class ZHCNRebirthUIConfig extends RebirthUIConfig {
     closable: false,
   };
 
+  autoComplete = {
+    delay: 300,
+    minLength: 3,
+    itemTemplate: null,
+    noResultItemTemplate: null,
+    formatter: (item) => item ? (item.label || item.toString()) : '',
+    valueParser: (item) => item
+  };
+
   carousel = {
     interval: 0,
     animate: false,
