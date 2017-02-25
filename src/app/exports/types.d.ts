@@ -8,7 +8,6 @@ type NavbarType = 'navbar-fixed-top' | 'navbar-fixed-bottom' | 'container-fluid'
   | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form' | 'sidebar';
 
 type DatePickerPlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right';
-type AutoCompletePlacement = DatePickerPlacement;
 type PopoverPlacement = 'top' | 'bottom' | 'left' | 'right';
 type TooltipPlacement = 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right';
 
