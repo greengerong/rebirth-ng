@@ -100,6 +100,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
+    this.renderer.setElementProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
     if (this.popupRef) {
       this.popupRef.instance.setDisabledState(isDisabled);
     }

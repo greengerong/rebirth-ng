@@ -17,6 +17,7 @@ export class AutoCompleteDemoComponent implements OnInit {
   selectItem1: string;
   selectItem2: string;
   selectItem3: string;
+  isDisabled = false;
   icons = ['glyphicon-asterisk', 'glyphicon glyphicon-plus', 'glyphicon glyphicon-euro', 'glyphicon glyphicon-eu'];
 
   constructor(private jsonp: Jsonp) {
