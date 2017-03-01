@@ -7,7 +7,7 @@
                    [max]="100"></re-progress-bar>
   <re-progress-bar type="danger" [striped]="true" [animate]="true" [value]="value"></re-progress-bar>
 
-  <re-progress-bar type="success" [value]="value" [text]="value + '%'" [cssClass]="'thin'"></re-progress-bar>
+  <re-progress-bar type="success" [value]="value" [text]="value + '%'" [thin]="true"></re-progress-bar>
 
   <button class="btn btn-primary" (click)="value = value + 10">+10</button>
   <button class="btn btn-primary" (click)="value = value - 10">-10</button>

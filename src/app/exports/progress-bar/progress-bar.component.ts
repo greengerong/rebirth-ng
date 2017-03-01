@@ -4,11 +4,13 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 @Component({
   selector: 're-progress-bar',
   templateUrl: './progress-bar.component.html',
+  styleUrls: ['./progress-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProgressBarComponent {
   @Input() type: ProgressBarType = '';
   @Input() text: string;
+  @Input() thin: boolean;
   @Input() max: number;
   @Input() animate: boolean;
   @Input() striped: boolean;
