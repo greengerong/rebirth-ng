@@ -30,6 +30,7 @@
 - [x] Breadcrumbs
 - [x] Menu Bar
 - [x] Aside Menu
+- [ ] slider
 
 ## Advance Components
 - [ ] Editor([]())
@@ -57,6 +58,8 @@
 - re-modal-backdrop refactor to common use, not only for modal.
 
 - refactor dropdown to service
+
+- Panel without header.
 
 
 
