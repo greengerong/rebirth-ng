@@ -8,6 +8,7 @@
   "scripts": {
     "ng": "ng",
     "ngc": "ngc -p ./src/tsconfig-aot.json",
+    "i18n:extract": "ng-xi18n",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\" --project src/tsconfig.json --type-check && tslint \"e2e/**/*.ts\" --project e2e/tsconfig.json --type-check",
     "test": "ng test",
@@ -27,7 +28,7 @@
     "url": "https://github.com/greengerong/ng2-rebirth-ui"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.30",
+    "@angular/cli": "^1.0.0-rc.0",
     "@angular/common": "^2.4.6",
     "@angular/compiler": "^2.4.6",
     "@angular/compiler-cli": "^2.4.6",

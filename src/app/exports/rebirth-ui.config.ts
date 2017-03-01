@@ -113,4 +113,9 @@ export class RebirthUIConfig {
 
   constructor(@Inject(LOCALE_ID) private locale: string) {
   }
+
+  extend(obj: any): this {
+
+    return this;
+  }
 }

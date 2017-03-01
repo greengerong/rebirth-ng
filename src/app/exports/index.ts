@@ -23,4 +23,5 @@ export * from './tabs';
 export * from './tooltip';
 export * from './window-ref';
 export * from './rebirth-ui.config';
+export * from './rebirth-ui.i18n.zh-cn';
 export * from './rebirth-ui.module';

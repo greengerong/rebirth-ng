@@ -1,7 +1,8 @@
-import { Component, OnInit, Type, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { RebirthUIConfig } from './exports/rebirth-ui.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
+import { REBIRTH_UI_I18N_ZHCN } from './exports/rebirth-ui.i18n.zh-cn';
 
 @Component({
   selector: 're-app',
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
               private viewContainerRef: ViewContainerRef,
               private demoConfigService: DemoConfigService) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
+
+    this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN);
   }
 
   ngOnInit(): void {
@@ -25,6 +28,10 @@ export class AppComponent implements OnInit {
     this.components = this.demoConfigService.components
       .sort((a, b) => a.name.localeCompare(b.name));
 
+    this.setupMenus();
+  }
+
+  private setupMenus() {
     const cmpMenus = this.components.map(item => {
       return {
         text: item.name,

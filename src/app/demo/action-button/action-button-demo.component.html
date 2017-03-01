@@ -11,8 +11,9 @@
   <re-action-button [buttonText]="'Disabled dropdown action'" type="danger" [actions]="actions"
                     [disabled]="disabledActionOpen" (actionClick)="onActionClick($event)"></re-action-button>
 
+  <hr>
   <div>
-    <button class="btn btn-success" (click)="isActionOpen = !isActionOpen; $event.stopPropagation();">Toggle Dropup
+    <button class="btn btn-success" (click)="isActionOpen = !isActionOpen; $event.stopPropagation();">Toggle 4th Dropup
       action
     </button>
 
