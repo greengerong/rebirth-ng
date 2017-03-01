@@ -1,10 +1,10 @@
-import { RebirthUiPage } from './app.po';
+import { DemoPage } from './app.po';
 
-describe('rebirth-ui App', function() {
-  let page: RebirthUiPage;
+describe('demo App', () => {
+  let page: DemoPage;
 
   beforeEach(() => {
-    page = new RebirthUiPage();
+    page = new DemoPage();
   });
 
   it('should display message saying app works', () => {

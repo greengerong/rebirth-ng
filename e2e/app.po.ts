@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class RebirthUiPage {
+export class DemoPage {
   navigateTo() {
     return browser.get('/');
   }

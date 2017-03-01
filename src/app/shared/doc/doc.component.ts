@@ -1,9 +1,8 @@
 import {
-  Component, ChangeDetectionStrategy, Type, Input, AfterViewInit, ViewChild, ElementRef,
+  Component, ChangeDetectionStrategy, Input, AfterViewInit, ElementRef,
   Renderer, ViewChildren, QueryList
 } from '@angular/core';
 import * as hljs from 'highlight.js';
-import { setTimeout } from 'timers';
 
 @Component({
   selector: 're-doc',
@@ -18,7 +17,7 @@ export class DocComponent implements AfterViewInit {
 
   @Input() component: any;
 
-  constructor(private  renderer: Renderer) {
+  constructor(private renderer: Renderer) {
   }
 
   activeTabChange(id) {
