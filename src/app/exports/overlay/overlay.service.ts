@@ -7,18 +7,16 @@ import { OverlayOptions } from './overlay-options.model';
 export class OverlayService {
 
   private overlayRef: ComponentRef<OverlayComponent>;
-  private hasOverlay: boolean;
+  private overlayCount = 0;
 
   constructor(private rebirthUIConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 
   open(options: OverlayOptions): void {
-    if (!this.hasOverlay) {
-      this.hasOverlay = true;
+    if (!this.overlayCount++) {
       this.createOverlay(options);
     }
-
   }
 
   private createOverlay(options: OverlayOptions) {
@@ -35,8 +33,8 @@ export class OverlayService {
   }
 
   close(): void {
-    this.hasOverlay = false;
-    if (this.overlayRef) {
+    this.overlayCount--;
+    if (this.overlayCount < 1 && this.overlayRef) {
       this.overlayRef.destroy();
     }
   }

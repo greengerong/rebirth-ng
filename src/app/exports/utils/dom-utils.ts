@@ -1,7 +1,11 @@
 import { ElementRef } from '@angular/core';
 import { WindowRef } from '../window-ref';
 
-export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef) {
+export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef): { top?: number, left?: number } {
+  if (!elementRef.nativeElement || !elementRef.nativeElement.getBoundingClientRect) {
+    return {};
+  }
+
   const rect = elementRef.nativeElement.getBoundingClientRect();
   const elmHeight = rect.height;
   const elmWidth = rect.width;
