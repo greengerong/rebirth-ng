@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav" [ngClass]="{'navbar-right': right}">
   <ng-container *ngFor="let menu of menus">
 
-    <li *ngIf="!menu.children?.length" routerLinkActive="active">
+    <li *ngIf="!menu.children?.length" routerLinkActive="active" class="{{menu.cssClass}}">
       <a *ngIf="menu.router" [routerLink]="menu.router"
          [target]="menu.target || '_self'">
         <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
@@ -11,14 +11,14 @@
 
 
     <li *ngIf="menu.children?.length" reDropdown [direction]="direction" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
+        class="{{menu.cssClass}}" [routerLinkActiveOptions]="{exact: true}">
       <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
         <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}
         <span class="caret"></span>
       </a>
       <ul class="dropdown-menu forAnimate">
         <ng-container *ngFor="let child of menu?.children">
-          <li *ngIf="!child.divider && !child.header" role="menuitem" routerLinkActive="active">
+          <li *ngIf="!child.divider && !child.header" role="menuitem" routerLinkActive="active" class="{{menu.cssClass}}">
             <a *ngIf="child.router" [routerLink]="child.router"
                [target]="child.target || '_self'"><i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
             <a *ngIf="!child.router" [href]="child.url"

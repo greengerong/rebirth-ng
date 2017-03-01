@@ -7,6 +7,7 @@ export interface MenuItem {
   target?: '_blank' | '_self' | '_parent' | '_top' | any;
   divider?: boolean;
   header?: boolean;
+  cssClass?: string;
   children?: MenuItem[];
 }
 

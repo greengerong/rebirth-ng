@@ -75,8 +75,22 @@ export class MenuBarDemoComponent implements OnInit {
       },
       {
         icon: 'glyphicon glyphicon-user',
-        url: 'http://greengerong.com/rebirth/blog/about',
-        target: '_blank'
+        // url: 'http://greengerong.com/rebirth/blog/about',
+        target: '_blank',
+        children: [
+          {
+            text: 'Profile',
+            url: '#MenuBar'
+          },
+          {
+            text: 'Settings',
+            url: '#MenuBar'
+          },
+          {
+            text: 'Logout',
+            url: '#MenuBar'
+          },
+        ]
       }
     ]
   };
