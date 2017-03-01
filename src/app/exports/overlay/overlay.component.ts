@@ -11,6 +11,7 @@ import {
 import { OverlayOptions } from './overlay-options.model';
 import { WindowRef } from '../window-ref/window-ref.service';
 import { OverlayContentComponent } from './overlay-content.component';
+import { centerWindowPosition } from '../utils/dom-utils';
 
 @Component({
   selector: 're-overlay',
@@ -44,16 +45,9 @@ export class OverlayComponent implements OnInit {
 
   private adjustOverlayPosition() {
     setTimeout(() => {
-      const rect = this.overlayBody.nativeElement.getBoundingClientRect();
-      const elmHeight = rect.height;
-      const elmWidth = rect.width;
-      const winHeight = this.windowRef.innerHeight;
-      const winWidth = this.windowRef.innerWidth;
-
-      const left = ( winWidth - elmWidth) / 2;
-      const top = ( winHeight - elmHeight) / 2;
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'top', `${top}px`);
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'left', `${left}px`);
+      const pos = centerWindowPosition(this.overlayBody, this.windowRef);
+      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'top', `${pos.top}px`);
+      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'left', `${pos.left}px`);
     }, 0);
   }
 }
