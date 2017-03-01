@@ -1,5 +1,5 @@
 import { ElementRef } from '@angular/core';
-import { WindowRef } from '../window-ref/window-ref.service';
+import { WindowRef } from '../window-ref';
 
 export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef) {
   const rect = elementRef.nativeElement.getBoundingClientRect();
