@@ -71,9 +71,10 @@
     <hr>
     <re-accordion type="success">
       <ng-container *ngFor="let item of items">
-        <re-accordion-item id="{{item.id}}">
+        <re-accordion-item id="{{item.id}}" #panel="panel">
           <re-accordion-header>
-            {{item.title}}
+            <i class="glyphicon" [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
+            &nbsp;{{item.title}}
           </re-accordion-header>
           <re-accordion-body>
             {{item.content}}
