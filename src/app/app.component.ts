@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
               private demoConfigService: DemoConfigService) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
 
-    this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN);
+    // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
   }
 
   ngOnInit(): void {

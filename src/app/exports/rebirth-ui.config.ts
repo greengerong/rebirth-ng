@@ -115,7 +115,7 @@ export class RebirthUIConfig {
   }
 
   extend(obj: any): this {
-
+    Object.assign(this, obj);
     return this;
   }
 }
