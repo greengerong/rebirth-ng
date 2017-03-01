@@ -2,7 +2,11 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 're-badge',
-  templateUrl: './badge.component.html',
+  template: '',
+  host: {
+    '[class]': '"badge " + (cssClass ? cssClass : "")',
+    '[innerText]': 'text'
+  },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BadgeComponent {

@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, EventEmitter, ChangeDetectionStrategy, HostListener, Output } from '@angular/core';
+import {
+  Component, OnInit, Input, EventEmitter, ChangeDetectionStrategy, HostListener, Output,
+  TemplateRef
+} from '@angular/core';
 import { ActionItem } from './action-item.model';
 
 @Component({
@@ -16,6 +19,7 @@ export class ActionButtonComponent {
   @Input() isOpen = false;
   @Input() actions: ActionItem[];
   @Input() disabled = false;
+  @Input() buttonTemplate: TemplateRef<any>;
   @Output() actionClick = new EventEmitter<ActionItem>();
   @Output() openStatusChange = new EventEmitter<boolean>();
 

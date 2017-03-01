@@ -1,17 +1,24 @@
-<div class="btn-group {{direction? 'drop' + direction : '' }} {{cssClass}}" [ngClass]="{open: isOpen}">
-  <button class="btn {{type? 'btn-' + type : ''}} {{btnSize? 'btn-' + btnSize : ''}}" (click)="toggle($event)"
-          [disabled]="disabled">
-    <i *ngIf="icon" class="{{icon}}" aria-hidden="true"></i>
-    {{buttonText}}
+<template #defaultButtonTemplate let-action>
+  <button class="btn {{action.type? 'btn-' + action.type : ''}} {{action.btnSize? 'btn-' + action.btnSize : ''}}"
+          (click)="action.toggle($event)"
+          [disabled]="action.disabled">
+    <i *ngIf="action.icon" class="{{action.icon}}" aria-hidden="true"></i>
+    {{action.buttonText}}
   </button>
   <button type="button"
-          class="btn {{type? 'btn-' + type : ''}} {{btnSize? 'btn-' + btnSize : ''}} dropdown-toggle"
+          class="btn {{action.type? 'btn-' + action.type : ''}} {{action.btnSize? 'btn-' + action.btnSize : ''}} dropdown-toggle"
           aria-haspopup="true"
           [attr.aria-expanded]="true"
-          (click)="toggle($event)" [disabled]="disabled">
+          (click)="action.toggle($event)" [disabled]="action.disabled">
     <span class="caret"></span>
     <span class="sr-only">|</span>
   </button>
+</template>
+
+<div class="btn-group {{direction? 'drop' + direction : '' }} {{cssClass}}" [ngClass]="{open: isOpen}">
+
+  <template [ngTemplateOutlet]="buttonTemplate || defaultButtonTemplate"
+            [ngOutletContext]="{ $implicit: this}"></template>
 
   <ul class="dropdown-menu" role="menu">
     <ng-container *ngFor="let item of actions">

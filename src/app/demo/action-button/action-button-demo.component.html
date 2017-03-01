@@ -1,4 +1,5 @@
 <div class="action-button-demo">
+  <h4>Basic:</h4>
   <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks"
                     [type]="'primary'"
                     (actionClick)="onActionClick($event)"></re-action-button>
@@ -10,6 +11,17 @@
 
   <re-action-button [buttonText]="'Disabled dropdown action'" type="danger" [actions]="actions"
                     [disabled]="disabledActionOpen" (actionClick)="onActionClick($event)"></re-action-button>
+
+
+  <h4>Customise button:</h4>
+
+  <template #buttonTemplate let-action>
+    <i class="glyphicon glyphicon-filter" (click)="action.toggle($event)"></i>
+  </template>
+
+  <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
+                    (actionClick)="onActionClick($event)" [buttonTemplate]="buttonTemplate"></re-action-button>
+
 
   <hr>
   <div>
