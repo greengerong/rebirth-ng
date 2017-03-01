@@ -8,9 +8,11 @@
     </re-panel-body>
   </re-panel>
 
-  <re-panel type="info">
+  <re-panel type="info" #panel="panel" [collapsable]="true">
     <re-panel-header>
       Panel info header!
+      <i class="glyphicon pull-right"
+         [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
     </re-panel-header>
     <re-panel-body>
       Panel info content.
