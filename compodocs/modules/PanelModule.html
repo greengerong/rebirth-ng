@@ -221,6 +221,9 @@
                                     <a href="./components/PanelComponent.html" >PanelComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/PanelFooterComponent.html" >PanelFooterComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/PanelHeaderComponent.html" >PanelHeaderComponent</a>
                                 </li>
                                 <li class="link">
@@ -616,6 +619,9 @@
                                            <a href="./components/PanelComponent.html" >PanelComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/PanelFooterComponent.html" >PanelFooterComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/PanelHeaderComponent.html" >PanelHeaderComponent</a>
                                        </li>
                                        <li class="link">
@@ -859,6 +865,9 @@
                             <li class="list-group-item">
                                 <a  href="./components/PanelBodyComponent.html" >PanelBodyComponent</a>
                             </li>
+                            <li class="list-group-item">
+                                <a  href="./components/PanelFooterComponent.html" >PanelFooterComponent</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -873,6 +882,9 @@
                             <li class="list-group-item">
                                     <a href="./components/PanelBodyComponent.html" >PanelBodyComponent</a>
                             </li>
+                            <li class="list-group-item">
+                                    <a href="./components/PanelFooterComponent.html" >PanelFooterComponent</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -885,6 +897,7 @@ import { PanelComponent } from &#x27;./panel.component&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { PanelHeaderComponent } from &#x27;./panel-header.component&#x27;;
 import { PanelBodyComponent } from &#x27;./panel-body.component&#x27;;
+import { PanelFooterComponent } from &#x27;./panel-footer.component&#x27;;
 
 @NgModule({
   imports: [
@@ -893,12 +906,14 @@ import { PanelBodyComponent } from &#x27;./panel-body.component&#x27;;
   exports: [
     PanelComponent,
     PanelHeaderComponent,
-    PanelBodyComponent
+    PanelBodyComponent,
+    PanelFooterComponent
   ],
   declarations: [
     PanelComponent,
     PanelHeaderComponent,
-    PanelBodyComponent
+    PanelBodyComponent,
+    PanelFooterComponent
   ],
   providers: [],
 })
