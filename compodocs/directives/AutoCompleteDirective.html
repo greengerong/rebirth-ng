@@ -995,6 +995,22 @@
                     </table>
             </section>
 
+            <section>
+                <h3 id="outputs">Outputs</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
+                                    <code>selectValue</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
             <section>
                 <h3 id="constructor">Constructor</h3>
@@ -1191,12 +1207,14 @@
   ComponentRef,
   Directive,
   ElementRef,
+  EventEmitter,
   forwardRef,
   HostListener,
   Injector,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   Renderer,
   TemplateRef,
   ViewContainerRef
@@ -1218,6 +1236,11 @@ import { AutoCompletePopupComponent } from &#x27;./auto-complete-popup.component
 @Directive({
   selector: &#x27;[reAutoComplete]&#x27;,
   exportAs: &#x27;autoComplete&#x27;,
+  host: {
+    &#x27;autocomplete&#x27;: &#x27;off&#x27;,
+    &#x27;autocapitalize&#x27;: &#x27;off&#x27;,
+    &#x27;autocorrect&#x27;: &#x27;off&#x27;
+  },
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() &#x3D;&gt; AutoCompleteDirective),
@@ -1234,6 +1257,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) &#x3D;&gt; string;
   @Input() valueParser: (item: any) &#x3D;&gt; any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) &#x3D;&gt; Observable&lt;any[]&gt;;
+  @Output() selectValue &#x3D; new EventEmitter&lt;any&gt;();
   private valueChanges: Observable&lt;any[]&gt;;
   private value: any;
   private placement &#x3D; &#x27;bottom-left&#x27;;
@@ -1269,6 +1293,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.writeValue(value);
       this.onChange(value);
       this.hidePopup();
+      this.selectValue.emit(item);
     });
   }
 
@@ -1349,6 +1374,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       pop.reset();
       this.fillPopup(source, this.value);
       pop.isOpen &#x3D; true;
+      this.positionPopup();
       this.changeDetectorRef.markForCheck();
     }
   }
