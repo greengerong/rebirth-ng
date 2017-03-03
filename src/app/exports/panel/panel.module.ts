@@ -4,6 +4,7 @@ import { PanelComponent } from './panel.component';
 import { CommonModule } from '@angular/common';
 import { PanelHeaderComponent } from './panel-header.component';
 import { PanelBodyComponent } from './panel-body.component';
+import { PanelFooterComponent } from './panel-footer.component';
 
 @NgModule({
   imports: [
@@ -12,12 +13,14 @@ import { PanelBodyComponent } from './panel-body.component';
   exports: [
     PanelComponent,
     PanelHeaderComponent,
-    PanelBodyComponent
+    PanelBodyComponent,
+    PanelFooterComponent
   ],
   declarations: [
     PanelComponent,
     PanelHeaderComponent,
-    PanelBodyComponent
+    PanelBodyComponent,
+    PanelFooterComponent
   ],
   providers: [],
 })

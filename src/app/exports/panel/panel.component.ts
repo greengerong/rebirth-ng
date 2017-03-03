@@ -1,14 +1,10 @@
-import {
-  Component, Input, Output, EventEmitter, ChangeDetectionStrategy, Optional, OnInit, Host,
-  OnDestroy
-} from '@angular/core';
+import { Component, Input, Output, EventEmitter, Optional, OnInit, Host, OnDestroy } from '@angular/core';
 import { PanelGroup } from './panel-group.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
   selector: 're-panel,re-accordion-item',
   templateUrl: './panel.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'panel'
 })
 export class PanelComponent implements OnInit, OnDestroy {
@@ -16,6 +12,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Input() type: PanelType = 'default';
   @Input() closable: boolean;
   @Input() withoutHeader: boolean;
+  @Input() withoutFooter = true;
   @Input() collapsable: boolean;
   @Input() isCollapsed = false;
   @Input() cssClass: string;
