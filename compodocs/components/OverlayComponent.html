@@ -90,6 +90,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                 </li>
                                 <li class="link">
@@ -174,6 +177,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -341,9 +347,6 @@
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
                                 </li>
-                                <li class="link">
-                                    <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -369,6 +372,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -479,6 +485,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                        </li>
                                        <li class="link">
@@ -563,6 +572,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -730,9 +742,6 @@
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -758,6 +767,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -806,6 +818,9 @@
     <ul class="nav nav-tabs" role="tablist">
         <li class="active">
             <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#readme" role="tab" id="readme-tab" data-toggle="tab">README</a>
         </li>
         <li>
             <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
@@ -983,6 +998,16 @@
             </table>
     </section>
 </div>
+        <div class="tab-pane fade" id="readme">
+            <p><h4 id="notices">Notices</h4>
+<ul>
+<li><p>We can open &amp; close overlay many times, but overlay will show only one instance at same time; and it will close when all closed.<br>This feature will help to loading feature that we open overlay before location to next page and open overlay for data request on next page.<br>It will be more fluency for user experience.</p>
+</li>
+<li><p>Please make sure to put your component to your module&#39;s <code>entryComponents</code> when you use component.</p>
+</li>
+</ul>
+</p>
+        </div>
         <div class="tab-pane fade tab-source-code" id="source">
             <pre><code class="hljs javascript">import {
   Component,
@@ -997,6 +1022,7 @@
 import { OverlayOptions } from &#x27;./overlay-options.model&#x27;;
 import { WindowRef } from &#x27;../window-ref/window-ref.service&#x27;;
 import { OverlayContentComponent } from &#x27;./overlay-content.component&#x27;;
+import { centerWindowPosition } from &#x27;../utils/dom-utils&#x27;;
 
 @Component({
   selector: &#x27;re-overlay&#x27;,
@@ -1030,16 +1056,9 @@ export class OverlayComponent implements OnInit {
 
   private adjustOverlayPosition() {
     setTimeout(() &#x3D;&gt; {
-      const rect &#x3D; this.overlayBody.nativeElement.getBoundingClientRect();
-      const elmHeight &#x3D; rect.height;
-      const elmWidth &#x3D; rect.width;
-      const winHeight &#x3D; this.windowRef.innerHeight;
-      const winWidth &#x3D; this.windowRef.innerWidth;
-
-      const left &#x3D; ( winWidth - elmWidth) / 2;
-      const top &#x3D; ( winHeight - elmHeight) / 2;
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, &#x27;top&#x27;, &#x60;${top}px&#x60;);
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, &#x27;left&#x27;, &#x60;${left}px&#x60;);
+      const pos &#x3D; centerWindowPosition(this.overlayBody, this.windowRef);
+      this.renderer.setElementStyle(this.overlayBody.nativeElement, &#x27;top&#x27;, &#x60;${pos.top}px&#x60;);
+      this.renderer.setElementStyle(this.overlayBody.nativeElement, &#x27;left&#x27;, &#x60;${pos.left}px&#x60;);
     }, 0);
   }
 }

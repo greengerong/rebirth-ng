@@ -90,6 +90,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                 </li>
                                 <li class="link">
@@ -174,6 +177,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -341,9 +347,6 @@
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
                                 </li>
-                                <li class="link">
-                                    <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -369,6 +372,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -479,6 +485,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                        </li>
                                        <li class="link">
@@ -563,6 +572,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -730,9 +742,6 @@
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -758,6 +767,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -904,6 +916,9 @@
                             <li class="list-group-item">
                                     <a href="./modules/AutoCompleteModule.html" >AutoCompleteModule</a>
                             </li>
+                            <li class="list-group-item">
+                                    <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -975,6 +990,9 @@
                             <li class="list-group-item">
                                     <a href="./modules/AutoCompleteModule.html" >AutoCompleteModule</a>
                             </li>
+                            <li class="list-group-item">
+                                    <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1006,7 +1024,8 @@ import { OverlayModule, OverlayService } from &#x27;./overlay&#x27;;
 import { CarouselModule } from &#x27;./carousel&#x27;;
 import { SwitchModule } from &#x27;./switch/switch.module&#x27;;
 import { MenuBarModule } from &#x27;./menu-bar/menu-bar.module&#x27;;
-import { AutoCompleteModule } from &#x27;./auto-complete/auto-complete.module&#x27;;
+import { AutoCompleteModule } from &#x27;./auto-complete&#x27;;
+import { FlowStepModule } from &#x27;./flow-step&#x27;;
 
 
 @NgModule({
@@ -1032,7 +1051,8 @@ import { AutoCompleteModule } from &#x27;./auto-complete/auto-complete.module&#x
     CarouselModule,
     SwitchModule,
     MenuBarModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    FlowStepModule
   ],
   exports: [
     ModalModule,
@@ -1056,7 +1076,8 @@ import { AutoCompleteModule } from &#x27;./auto-complete/auto-complete.module&#x
     CarouselModule,
     SwitchModule,
     MenuBarModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    FlowStepModule
   ],
   declarations: [],
   providers: [],
@@ -1070,7 +1091,6 @@ export class RebirthUIModule {
       providers: [
         ...COMMON_SERVICES,
         { provide: RebirthUIConfig, useClass: RebirthUIConfig },
-        // { provide: RebirthUIConfig, useClass: ZHCNRebirthUIConfig },
         { provide: ModalService, useClass: ModalService },
         { provide: DialogService, useClass: DialogService },
         { provide: PositionService, useClass: PositionService },

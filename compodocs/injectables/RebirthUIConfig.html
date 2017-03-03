@@ -90,6 +90,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                 </li>
                                 <li class="link">
@@ -174,6 +177,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -341,9 +347,6 @@
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
                                 </li>
-                                <li class="link">
-                                    <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                </li>
                         </ul>
                     </li>
             
@@ -369,6 +372,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                 </li>
                                 <li class="link">
                                     <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -479,6 +485,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/MenuBarModule.html" >MenuBarModule</a>
                                        </li>
                                        <li class="link">
@@ -563,6 +572,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -730,9 +742,6 @@
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
                                        </li>
-                                       <li class="link">
-                                           <a href="./injectables/ZHCNRebirthUIConfig.html" >ZHCNRebirthUIConfig</a>
-                                       </li>
                                </ul>
                            </li>
                    
@@ -758,6 +767,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/DialogOptions.html" >DialogOptions</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/FlowStep.html" >FlowStep</a>
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/MenuBar.html" >MenuBar</a>
@@ -837,6 +849,33 @@
                     </table>
             </section>
 
+            <section>
+                <h3 id="methods">Methods</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> extend</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>extend(obj: any)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>this</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
             <section>
                 <h3 id="inputs">Properties</h3>
@@ -1182,6 +1221,11 @@ export class RebirthUIConfig {
   };
 
   constructor(@Inject(LOCALE_ID) private locale: string) {
+  }
+
+  extend(obj: any): this {
+    Object.assign(this, obj);
+    return this;
   }
 }
 </code></pre>

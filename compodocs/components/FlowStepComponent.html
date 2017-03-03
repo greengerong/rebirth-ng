@@ -179,7 +179,7 @@
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
+                                    <a href="./components/FlowStepComponent.html"  class="active" >FlowStepComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -300,7 +300,7 @@
                                 id="xs-classes-links"
                             >
                                 <li class="link">
-                                    <a href="./classes/DefaultDateConverter.html"  class="active" >DefaultDateConverter</a>
+                                    <a href="./classes/DefaultDateConverter.html" >DefaultDateConverter</a>
                                 </li>
                                 <li class="link">
                                     <a href="./classes/PanelGroup.html" >PanelGroup</a>
@@ -574,7 +574,7 @@
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
+                                           <a href="./components/FlowStepComponent.html"  class="active" >FlowStepComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/HightlightComponent.html" >HightlightComponent</a>
@@ -695,7 +695,7 @@
                                        id="classes-links"
                    >
                                        <li class="link">
-                                           <a href="./classes/DefaultDateConverter.html"  class="active" >DefaultDateConverter</a>
+                                           <a href="./classes/DefaultDateConverter.html" >DefaultDateConverter</a>
                                        </li>
                                        <li class="link">
                                            <a href="./classes/PanelGroup.html" >PanelGroup</a>
@@ -805,111 +805,238 @@
                    
                    </nav>
                </div>
-               <div class="content class">
+               <div class="content component">
                    <div class="content-data">
 
 
-
-
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li>DefaultDateConverter</li>
+  <li>Components</li>
+  <li>FlowStepComponent</li>
 </ol>
 
-<ul class="nav nav-tabs" role="tablist">
-    <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
-    </li>
-    <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
-    </li>
-</ul>
 
-<div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
-        <p class="comment">
-            <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/exports/utils/default-date-converter.ts</code>
-        </p>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/exports/flow-step/flow-step.component.ts</code>
+</p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
 
 
 
-            <section>
-                <h3 id="methods">Methods</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b> parse</b>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            <code>parse(date: any, pattern: string, locale: string)</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>Date</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b> format</b>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            <code>format(date: Date, pattern: string, locale: string)</code>
-                                </td>
-                            </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>string</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </section>
 
-    </div>
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { DateConverter } from &#x27;./date-converter&#x27;;
-import { formatDate, parseDate } from &#x27;./date-utils&#x27;;
 
-export class DefaultDateConverter implements DateConverter {
 
-  parse(date: any, pattern?: string, locale?: string): Date {
-    return parseDate(date);
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>re-flow-step</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>flow-step.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>flow-step.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>active</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>cssClass</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>string</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>steps</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>FlowStep[]</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>type</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>&quot;dot&quot; | &quot;arrow&quot;</code>
+
+                              </p>
+                            <p>
+                              <em>Default value: </em><code>arrow</code>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="outputs">Outputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>activeChange</code>
+                        </td>
+                        <td class="col-md-10">
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor()</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> stepClick</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>stepClick(step: any, $index: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+</div>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from &#x27;@angular/core&#x27;;
+import { FlowStep } from &#x27;./flow-step.model&#x27;;
+
+@Component({
+  selector: &#x27;re-flow-step&#x27;,
+  templateUrl: &#x27;./flow-step.component.html&#x27;,
+  styleUrls: [&#x27;./flow-step.component.scss&#x27;],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class FlowStepComponent {
+  @Input() type: &#x27;dot&#x27; | &#x27;arrow&#x27; &#x3D; &#x27;arrow&#x27;;
+  @Input() steps: FlowStep[];
+  @Input() active: number;
+  @Output() activeChange &#x3D; new EventEmitter&lt;number&gt;();
+  @Input() cssClass: string;
+
+  constructor() {
   }
 
-  format(date: Date, pattern?: string, locale?: string): string {
-    return formatDate(date, pattern);
+  stepClick(step, $index) {
+    if ($index &lt; this.active) {
+      this.activeChange.emit($index);
+    }
   }
-
 
 }
 </code></pre>
+        </div>
     </div>
-</div>
+
+
+
+
+
 
 
 
