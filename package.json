@@ -18,7 +18,7 @@
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
     "compodocs:deploy": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
-    "demo:deploy": "ng build --prod --aot &&  ngh --message \"rebirth ui demo deploy\"",
+    "demo:deploy": "ng build --prod --aot --base-href=/ng2-rebirth-ui/ &&  ngh --message \"rebirth ui demo deploy\"",
     "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
     "prepublish": "rm -rf ./dist && gulp prepublish"
   },
