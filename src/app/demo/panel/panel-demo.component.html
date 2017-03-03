@@ -8,11 +8,20 @@
     </re-panel-body>
   </re-panel>
 
-  <re-panel type="info" #panel="panel" [collapsable]="true">
+  <re-panel type="primary" #panel="panel" [collapsable]="true">
     <re-panel-header>
-      Panel info header!
+      Panel primary header!
       <i class="glyphicon pull-right"
          [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
+    </re-panel-header>
+    <re-panel-body>
+      Panel primary content.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="info">
+    <re-panel-header>
+      Panel info header!
     </re-panel-header>
     <re-panel-body>
       Panel info content.
