@@ -20,8 +20,7 @@
     "compodocs:deploy": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:gen": "ng build --prod --aot --base-href=/ng2-rebirth-ui/",
     "demo:push": "ngh --message \"rebirth ui demo deploy\"",
-    "demo:deploy": "npm run demo:gen && npm run demo:push",
-    "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
+    "docs:deploy": "npm run demo:gen && npm run compodocs:deploy && npm run demo:push",
     "prepublish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,

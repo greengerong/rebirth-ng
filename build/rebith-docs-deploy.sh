@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+npm run demo:gen
 npm run compodocs:deploy
 git checkout gh-pages
 cp -rf ./dist/compodocs ./
