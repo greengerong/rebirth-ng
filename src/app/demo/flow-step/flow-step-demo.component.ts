@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FlowStep } from '../../exports/flow-step';
 
 @Component({
   selector: 're-flow-step-demo',
@@ -7,7 +8,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class FlowStepDemoComponent {
   active = 0;
-  steps = [
+  steps: FlowStep[] = [
     {
       title: 'Submit order',
       icon: 'glyphicon glyphicon-shopping-cart',
@@ -27,6 +28,11 @@ export class FlowStepDemoComponent {
       title: 'Sign',
       icon: 'glyphicon glyphicon-list-alt',
       description: 'Step 4 description'
+    },
+    {
+      title: 'Completed',
+      icon: 'glyphicon glyphicon-ok',
+      description: 'Step 5 description'
     }
   ];
 }

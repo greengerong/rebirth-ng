@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
+import { FlowStep } from './flow-step.model';
 
 @Component({
   selector: 're-flow-step',
@@ -8,7 +9,7 @@ import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from 
 })
 export class FlowStepComponent {
   @Input() type: 'dot' | 'arrow' = 'arrow';
-  @Input() steps: any[];
+  @Input() steps: FlowStep[];
   @Input() active: number;
   @Output() activeChange = new EventEmitter<number>();
   @Input() cssClass: string;
