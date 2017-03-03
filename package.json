@@ -17,10 +17,10 @@
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
-    "compodocs:deploy": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
+    "compodocs:gen": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:gen": "ng build --prod --aot --base-href=/ng2-rebirth-ui/",
-    "demo:push": "ngh --message \"rebirth ui demo deploy\"",
-    "docs:deploy": "npm run demo:gen && npm run compodocs:deploy && npm run demo:push",
+    "github-pages:push": "ngh --message \"rebirth ui demo deploy\"",
+    "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run github-pages:push && rm -rf ./dist",
     "prepublish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,
