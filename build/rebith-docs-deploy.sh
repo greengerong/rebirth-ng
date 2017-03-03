@@ -1,3 +1,4 @@
+npm run demo:gen
 npm run demo:deploy
 npm run compodocs:deploy
 git checkout gh-pages
