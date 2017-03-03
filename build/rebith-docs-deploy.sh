@@ -10,3 +10,4 @@ echo 'compodocs docs deploy success...........'
 git checkout master
 rm -rf ./dist
 rm -rf ./compodocs
+
