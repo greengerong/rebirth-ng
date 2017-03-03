@@ -21,7 +21,6 @@
     "demo:gen": "ng build --prod --aot --base-href=/ng2-rebirth-ui/",
     "demo:push": "ngh --message \"rebirth ui demo deploy\"",
     "demo:deploy": "npm run demo:gen && npm run demo:push",
-    "prerebith-docs:deploy": "npm run demo:deploy",
     "rebith-docs:deploy": "bash ./build/rebith-docs-deploy.sh",
     "prepublish": "rm -rf ./dist && gulp prepublish"
   },
