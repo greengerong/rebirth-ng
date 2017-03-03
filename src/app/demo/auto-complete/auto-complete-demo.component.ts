@@ -6,24 +6,23 @@ import { Jsonp, URLSearchParams } from '@angular/http';
 @Component({
   selector: 're-auto-complete-demo',
   templateUrl: './auto-complete-demo.component.html',
+  styleUrls: ['./auto-complete-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: {
-    'autocomplete': 'off',
-    'autocapitalize': 'off',
-    'autocorrect': 'off'
-  },
 })
 export class AutoCompleteDemoComponent implements OnInit {
   selectItem1: string;
   selectItem2: string;
   selectItem3: string;
   selectItem4: string;
+  selectItem5: string;
+  mutipleItems: string[] = ['C#', 'C', 'C++', 'CPython', 'Java'];
   isDisabled = false;
   icons = ['glyphicon-asterisk', 'glyphicon glyphicon-plus', 'glyphicon glyphicon-euro', 'glyphicon glyphicon-eu'];
   languages = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
     'LiveScript', 'CoffeeScript'];
 
   constructor(private jsonp: Jsonp) {
+
   }
 
   ngOnInit() {
@@ -43,6 +42,21 @@ export class AutoCompleteDemoComponent implements OnInit {
       .map((lang, index) => ({ label: lang, id: index }))
       .filter(lang => lang.label.toLowerCase().indexOf(term.toLowerCase()) !== -1)
     );
+  }
+
+  onMutipleSearch() {
+    console.log(this.selectItem5);
+    if (this.mutipleItems.indexOf(this.selectItem5) === -1) {
+      this.mutipleItems.push(this.selectItem5);
+    }
+
+    this.selectItem5 = '';
+  }
+
+  removeLabel(label) {
+    if (this.mutipleItems.indexOf(label) !== -1) {
+      this.mutipleItems = this.mutipleItems.filter(item => item !== label);
+    }
   }
 
   onSearch(term) {

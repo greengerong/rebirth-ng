@@ -33,6 +33,11 @@ import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 @Directive({
   selector: '[reAutoComplete]',
   exportAs: 'autoComplete',
+  host: {
+    'autocomplete': 'off',
+    'autocapitalize': 'off',
+    'autocorrect': 'off'
+  },
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => AutoCompleteDirective),

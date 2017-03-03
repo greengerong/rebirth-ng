@@ -69,7 +69,7 @@
       <div class="form-group">
         <label for="language" class="col-sm-2 control-label">Search array:</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" name="language" id="language" [minLength]="0" [disabled]="isDisabled"
+          <input type="text" class="form-control" name="language" id="language1" [minLength]="0" [disabled]="isDisabled"
                  [(ngModel)]="selectItem1" reAutoComplete [onSearch]="onSearchLocal.bind(this)"/>
         </div>
         <div class="col-sm-4">
@@ -80,4 +80,29 @@
       </div>
     </form>
   </section>
+
+  <section>
+    <h4>Mutiple tags</h4>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="mutiple-label-auto-complete" class="mutiple-label-auto-complete">
+          <ul>
+            <li *ngFor="let item of mutipleItems">
+              <span class="label label-info">
+                 <i aria-hidden="true" class="label-close" (click)="removeLabel(item)">&times;</i>{{item}}
+              </span>
+            </li>
+            <li>
+              <input id="mutiple-label-auto-complete" type="text" name="text" class="auto-complete-control"
+                     [(ngModel)]="selectItem5" (selectValue)="onMutipleSearch()" reAutoComplete
+                     [onSearch]="searchWiki.bind(this)">
+            </li>
+          </ul>
+        </label>
+
+        <pre>{{mutipleItems | json}}</pre>
+      </div>
+    </form>
+  </section>
+
 </div>
