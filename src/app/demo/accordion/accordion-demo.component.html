@@ -4,7 +4,7 @@
     <h4>Static text</h4>
     <button class="btn btn-primary" (click)="accordion.toggleById('1')">Toggle panel 1</button>
     <hr>
-    <re-accordion type="info" #accordion="accordion" [closable]="true" (close)="onClose($event)">
+    <re-accordion type="info" #accordion="accordion">
       <re-accordion-item id="1">
         <re-accordion-header>
           Panel info header!
@@ -73,7 +73,8 @@
       <ng-container *ngFor="let item of items">
         <re-accordion-item id="{{item.id}}" #panel="panel">
           <re-accordion-header>
-            <i class="glyphicon" [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
+            <i class="glyphicon"
+               [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
             &nbsp;{{item.title}}
           </re-accordion-header>
           <re-accordion-body>
