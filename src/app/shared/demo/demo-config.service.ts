@@ -20,7 +20,8 @@ import {
   CarouselDemoComponent,
   SwitchDemoComponent,
   MenuBarDemoComponent,
-  AutoCompleteDemoComponent
+  AutoCompleteDemoComponent,
+  FlowStepDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -207,6 +208,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/auto-complete/README.md'),
       html: require('!raw-loader!../../demo/auto-complete/auto-complete-demo.component.html'),
       ts: require('!raw-loader!../../demo/auto-complete/auto-complete-demo.component.ts'),
+    },
+    {
+      name: 'FlowStep',
+      directory: 'flow-step',
+      cmp: FlowStepDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/flow-step/README.md'),
+      html: require('!raw-loader!../../demo/flow-step/flow-step-demo.component.html'),
+      ts: require('!raw-loader!../../demo/flow-step/flow-step-demo.component.ts'),
     },
     // component declare
   ];

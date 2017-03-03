@@ -1,0 +1,8 @@
+<ul class="nav nav-tabs step-anchor-{{type}} {{cssClass}}">
+  <li class="step" *ngFor="let step of steps; let $index = index"
+      [ngClass]="{done: $index < active, 'active': $index == active}" (click)="stepClick(step,$index)">
+    <a class="arrow"><i *ngIf="step.icon" class="step-icon {{step.icon}}"></i>{{step.title}}<br>
+      <small>{{step.description}}</small>
+    </a>
+  </li>
+</ul>

@@ -7,6 +7,7 @@ export * from './carousel';
 export * from './badge';
 export * from './date-picker';
 export * from './dialog';
+export * from './flow-step';
 export * from './menu-bar';
 export * from './modal';
 export * from './overlay';
