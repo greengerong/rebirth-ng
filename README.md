@@ -49,8 +49,6 @@
 
 ## Tasks
 
-- rebirth-ui-config with i18n
-
 - Pagination with select for page size
 
 - panel-footer
@@ -58,8 +56,6 @@
 - re-modal-backdrop refactor to common use, not only for modal.
 
 - refactor dropdown to service
-
-- Panel without header.
 
 
 
