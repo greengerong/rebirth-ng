@@ -30,6 +30,7 @@
 - [x] Breadcrumbs
 - [x] Menu Bar
 - [x] Aside Menu
+- [x] Flow Steps
 - [ ] slider
 
 ## Advance Components
@@ -39,7 +40,6 @@
 - [ ] Infinite Scroll([]())
 - [ ] Tree View([]())
 - [ ] File Upload([]())
-- [ ] Flow Steps([]())
 - [ ] Charts([]())
 
 
