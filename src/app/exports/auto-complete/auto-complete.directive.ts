@@ -4,12 +4,14 @@ import {
   ComponentRef,
   Directive,
   ElementRef,
+  EventEmitter,
   forwardRef,
   HostListener,
   Injector,
   Input,
   OnDestroy,
   OnInit,
+  Output,
   Renderer,
   TemplateRef,
   ViewContainerRef
@@ -47,6 +49,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
+  @Output() selectValue = new EventEmitter<any>();
   private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
@@ -82,6 +85,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.writeValue(value);
       this.onChange(value);
       this.hidePopup();
+      this.selectValue.emit(item);
     });
   }
 
@@ -162,6 +166,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       pop.reset();
       this.fillPopup(source, this.value);
       pop.isOpen = true;
+      this.positionPopup();
       this.changeDetectorRef.markForCheck();
     }
   }
