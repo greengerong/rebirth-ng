@@ -21,7 +21,7 @@ import {
   SwitchDemoComponent,
   MenuBarDemoComponent,
   AutoCompleteDemoComponent,
-  FlowStepDemoComponent
+  FlowStepDemoComponent,
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';

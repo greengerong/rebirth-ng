@@ -9,6 +9,20 @@ var exec = require('child_process').exec;
 var del = require('del');
 var gulpif = require('gulp-if');
 var swPrecache = require('sw-precache');
+var clean = require('gulp-clean');
+var ejs = require('gulp-ejs');
+var insertLines = require('gulp-insert-lines');
+
+var minimist = require('minimist');
+var camelCase = require('camelcase');
+
+var knownOptions = {
+  string: 'comp',
+}
+const component = minimist(process.argv.slice(2), knownOptions)
+const comp = component.comp
+const compCamel = camelCase(comp)
+const compMsg = compCamel.replace(compCamel[0], compCamel[0].toUpperCase())
 
 const config = {
   root: './src',
@@ -71,3 +85,73 @@ gulp.task('sw:code-gen', function (cb) {
 gulp.task('prepublish', function (cb) {
   runSequence(['clean:dist', 'copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
 });
+
+gulp.task('configNewComponent', function() {
+  gulp.src('./src/app/shared/demo/demo-config.service.ts')
+  .pipe(insertLines({
+    'before': /\/\/\scomponent\simport/i,
+    'lineBefore': `  ${compMsg}DemoComponent,`
+  }))
+  .pipe(insertLines({
+    'before': /\/\/\scomponent\sdeclare/i,
+    'lineBefore': `    {
+      name: '${compMsg}',
+      directory: '${comp}',
+      cmp: ${compMsg}DemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/${comp}/README.md'),
+      html: require('!raw-loader!../../demo/${comp}/${comp}-demo.component.html'),
+      ts: require('!raw-loader!../../demo/${comp}/${comp}-demo.component.ts'),
+    },`
+  }))
+  .pipe(gulp.dest('./src/app/shared/demo/demo-config.service.ts'))
+})
+
+gulp.task('createComponent', ['createDemo', 'configNewComponent'], function() {
+  gulp.src("./template/component/*.*")
+  .pipe(rename(function(path) {
+    if (path.basename === 'index') {
+      path = path
+    } else {
+      var name = path.basename.split('.')
+      var finalBasename = ''
+      name.map(function(tinyName) {
+        if (tinyName === 'template') {
+          finalBasename += 're-' + comp
+        } else {
+          finalBasename += '.' + tinyName
+        }
+      })
+      path.basename = finalBasename
+    }
+  }))
+  .pipe(ejs({
+    compMsg: compMsg,
+    comp: comp
+  }))
+  .pipe(gulp.dest(`./src/app/exports/re-${comp}`))
+})
+
+gulp.task('createDemo', function() {
+  gulp.src("./template/demo/*.*")
+  .pipe(rename(function(path) {
+    if (path.basename === 'index') {
+      path = path
+    } else {
+      var name = path.basename.split('.')
+      var finalBasename = ''
+      name.map(tinyName => {
+        if (tinyName === 'template') {
+          finalBasename += 're-' + comp
+        } else {
+          finalBasename += '.' + tinyName
+        }
+      })
+      path.basename = finalBasename
+    }
+  }))
+  .pipe(ejs({
+    compMsg: compMsg,
+    comp: comp
+  }))
+  .pipe(gulp.dest(`./src/app/demo/re-${comp}`))
+})
