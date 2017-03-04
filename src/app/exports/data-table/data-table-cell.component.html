@@ -8,7 +8,7 @@
           let-column="column" let-dataTable="dataTable">
   <form class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" [autofocus]="autofocus" [name]="column.field"
+      <input type="text" class="form-control" autofocus="autofocus" [name]="column.field"
              [(ngModel)]="rowItem[column.field]"
              (blur)="dataTable.onFinishCellEdit($event)"/>
     </div>
