@@ -7,7 +7,7 @@ import { DataTableComponent } from './data-table.component';
   templateUrl: './data-table-Cell.component.html',
   host: {
     '[class]': 'column.cellClass ? column.cellClass : ""',
-    '[style]': 'column.width ? column.width : ""',
+    '[style.width]': 'column.width || ""',
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
