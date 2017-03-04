@@ -5,6 +5,7 @@ import { DataTableComponent } from './data-table.component';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
+import { DataTableCellComponent } from './data-table-cell.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 
@@ -14,14 +15,16 @@ import { DataTableBodyComponent } from './data-table-body.component';
     DataTableComponent,
     DataTableColumnTmplComponent,
     DataTableCellTmplComponent,
-    DataTableCellEditTmplComponent
+    DataTableCellEditTmplComponent,
+    DataTableCellComponent
   ],
   declarations: [
     DataTableComponent,
     DataTableColumnTmplComponent,
     DataTableCellTmplComponent,
     DataTableCellEditTmplComponent,
-    DataTableBodyComponent
+    DataTableBodyComponent,
+    DataTableCellComponent
   ],
   providers: [],
 })

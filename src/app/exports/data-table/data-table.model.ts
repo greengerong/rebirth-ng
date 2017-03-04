@@ -1,4 +1,4 @@
-import { DataTableColumnTmplComponent } from './data-table-column.component';
+import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 export interface CellSelectedEventArg {
   rowIndex: number;
   colIndex: number;

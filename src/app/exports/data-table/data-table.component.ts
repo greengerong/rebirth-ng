@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, Input, ContentChildren, Output,
+  Component, ChangeDetectionStrategy, Input, ContentChildren, Output,
   EventEmitter
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
@@ -12,7 +12,7 @@ import { CellSelectedEventArg, RowSelectedEventArg } from './data-table.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'dataTable'
 })
-export class DataTableComponent implements OnInit {
+export class DataTableComponent {
 
   @Input() dataSource: any[] = [];
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
@@ -30,35 +30,37 @@ export class DataTableComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  onCellClick($event: CellSelectedEventArg) {
+    if (this.selectedRow !== $event.rowIndex || this.selectedCol !== $event.colIndex) {
+      this.selectedRow = $event.rowIndex;
+      this.selectedCol = $event.colIndex;
+      this.cellClick.emit($event);
+    }
   }
 
-  // onCellClick($event, rowIndex, colIndex, column, rowItem) {
-  //   this.selectedRow = rowIndex;
-  //   this.selectedCol = colIndex;
-  //   const cellSelectedEventArg = { rowIndex, colIndex, column, rowItem };
-  //   this.cellClick.emit(cellSelectedEventArg);
-  //   if (column.editable) {
-  //     this.isCellEdit = true;
-  //     $event.stopPropagation();
-  //     this.cellEditStart.emit(cellSelectedEventArg);
-  //   }
-  // }
-  //
-  // onCellDBClick($event, rowIndex, colIndex, column, rowItem) {
-  //   this.cellDBClick.emit({ rowIndex, colIndex, column, rowItem });
-  // }
-  //
-  // onRowClick(rowIndex, rowItem) {
-  //   this.selectedRow = rowIndex;
-  //   this.rowClick.emit({ rowIndex, rowItem });
-  // }
-  //
-  // onRowDBClick($event, rowIndex, rowItem) {
-  //   this.rowDBClick.emit({ rowIndex, rowItem });
-  // }
-  //
-  // isEditCell(rowIndex, colIndex) {
-  //   return this.isCellEdit && this.selectedRow === rowIndex && this.selectedCol === colIndex;
-  // }
+  onCellEditStart($event: CellSelectedEventArg) {
+    this.isCellEdit = true;
+    this.cellEditStart.emit($event);
+  }
+
+  onCellEditEnd($event: CellSelectedEventArg) {
+    this.isCellEdit = false;
+    this.cellEditEnd.emit($event);
+  }
+
+  onCellDBClick($event: CellSelectedEventArg) {
+    this.cellDBClick.emit($event);
+  }
+
+  onRowClick($event: RowSelectedEventArg) {
+    if (this.selectedRow !== $event.rowIndex) {
+      this.selectedRow = $event.rowIndex;
+      this.rowClick.emit($event);
+    }
+  }
+
+  onRowDBClick($event: RowSelectedEventArg) {
+    this.rowDBClick.emit($event);
+  }
+
 }

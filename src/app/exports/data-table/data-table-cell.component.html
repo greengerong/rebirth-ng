@@ -1,0 +1,41 @@
+<template #defaultRowTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+          let-cellItem="cellItem"
+          let-cellValue="cellValue">
+  {{cellValue}}
+</template>
+
+<template #defaultRowEditTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+          let-column="column" let-dataTable="dataTable">
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" [autofocus]="autofocus" [name]="column.field"
+             [(ngModel)]="rowItem[column.field]"
+             (blur)="dataTable.onFinishCellEdit($event)"/>
+    </div>
+  </form>
+</template>
+
+<ng-container>
+  <template *ngIf="!column.editable || !isCellEdit"
+            [ngTemplateOutlet]="column.cellCmp ? column.cellCmp.template : defaultRowTemplate"
+            [ngOutletContext]="{
+                   rowIndex:rowIndex,
+                   colIndex:colIndex,
+                   column: column,
+                   rowItem:rowItem,
+                   cellItem: (column.field == '$index'? rowIndex + 1: rowItem[column.field]),
+                   cellValue: (column.field == '$index'? rowIndex + 1 : column.formatter(rowItem[column.field]))
+                   }">
+  </template>
+
+  <template *ngIf="column.editable && isCellEdit"
+            [ngTemplateOutlet]="column.cellEditCmp ? column.cellEditCmp.template : defaultRowEditTemplate"
+            [ngOutletContext]="{
+                    rowIndex:rowIndex,
+                    colIndex:colIndex,
+                    column: column,
+                    rowItem:rowItem,
+                    dataTable: this
+                    }">
+  </template>
+</ng-container>

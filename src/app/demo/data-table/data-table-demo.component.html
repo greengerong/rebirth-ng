@@ -12,9 +12,9 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-MM-dd"
+                  <input class="form-control" placeholder="yyyy-MM-dd" autofocus="autofocus"
                          name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
-                         (ngModelChange)="dataTable.onFinishCellEdit(null, rowIndex,colIndex, column, rowItem)">
+                         (ngModelChange)="dataTable.onFinishCellEdit()">
                   <div class="input-group-addon" (click)="datePicker.toggle($event)">
                     <i class="glyphicon glyphicon-calendar"></i>
                   </div>
