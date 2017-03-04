@@ -1,0 +1,44 @@
+<div class="data-table-demo">
+  <section>
+    <h4>Data table</h4>
+    <re-data-table [dataSource]="dataSource">
+      <re-column field="$index" header="#"></re-column>
+      <re-column field="firstName" header="First Name" [editable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [editable]="true"></re-column>
+      <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
+        <re-cell-edit>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+                    let-dataTable="dataTable">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-MM-dd"
+                         name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
+                         (ngModelChange)="dataTable.onFinishCellEdit(null, rowIndex,colIndex, column, rowItem)">
+                  <div class="input-group-addon" (click)="datePicker.toggle($event)">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </template>
+        </re-cell-edit>
+      </re-column>
+      <re-column field="score" header="Score">
+        <re-cell>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
+                    let-cellValue="cellValue">
+            <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
+          </template>
+        </re-cell>
+        <re-cell-edit>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
+                    let-cellValue="cellValue">
+            Hello
+          </template>
+        </re-cell-edit>
+      </re-column>
+    </re-data-table>
+  </section>
+
+</div>

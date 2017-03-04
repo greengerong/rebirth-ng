@@ -1,4 +1,4 @@
-<div class="month-view {{cssClass}}">
+<div class="month-view {{cssClass}}" >
   <table class="table month-view-table">
     <thead>
     <tr>
@@ -29,7 +29,7 @@
     <tr *ngFor="let week of displayWeeks">
       <td *ngFor="let day of week" class="day"
           [ngClass]="{'out-of-month': !day.inMonth, 'in-month-day': day.inMonth, 'bg-primary': isSelectDay(day.date),'disabled': isDisabledDay(day.date)}"
-          (click)="onSelectDate(day.date)">
+          (click)="onSelectDate($event, day.date)">
         {{day.day}}
       </td>
     </tr>

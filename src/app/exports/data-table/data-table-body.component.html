@@ -1,0 +1,48 @@
+<template #defaultRowTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+          let-cellItem="cellItem"
+          let-cellValue="cellValue">
+  {{cellValue}}
+</template>
+
+<template #defaultRowEditTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+          let-column="column" let-dataTable="dataTable">
+  <form class="form-inline">
+    <div class="form-group">
+      <input type="text" class="form-control" autofocus="autofocus" [name]="column.field"
+             [(ngModel)]="rowItem[column.field]"
+             (blur)="dataTable.onFinishCellEdit($event, rowIndex,colIndex, column, rowItem)"/>
+    </div>
+  </form>
+</template>
+
+
+<tr *ngFor="let rowItem of dataSource; let rowIndex = index" [ngClass]="{'bg-info': rowIndex == selectedRow}"
+    (click)="onRowClick($event, rowIndex, rowItem)" (dblclick)="onRowDBClick($event, rowIndex, rowItem)">
+  <td *ngFor="let column of columns; let colIndex = index" class="{{column.cellClass}}"
+      style="{{column.width}}" (click)="onCellClick($event, rowIndex, colIndex, column, rowItem)"
+      (dblclick)="onCellDBClick($event, rowIndex,colIndex, column, rowItem)">
+
+    <template *ngIf="!column.editable || !isEditCell(rowIndex,colIndex)"
+              [ngTemplateOutlet]="column.cellCmp ? column.cellCmp.template : defaultRowTemplate"
+              [ngOutletContext]="{
+                   rowIndex:rowIndex,
+                   colIndex:colIndex,
+                   column: column,
+                   rowItem:rowItem,
+                   cellItem: (column.field == '$index'? rowIndex + 1: rowItem[column.field]),
+                   cellValue: (column.field == '$index'? rowIndex + 1 : column.formatter(rowItem[column.field]))
+                   }">
+    </template>
+
+    <template *ngIf="column.editable && isEditCell(rowIndex,colIndex)"
+              [ngTemplateOutlet]="column.cellEditCmp ? column.cellEditCmp.template : defaultRowEditTemplate"
+              [ngOutletContext]="{
+                    rowIndex:rowIndex,
+                    colIndex:colIndex,
+                    column: column,
+                    rowItem:rowItem,
+                    dataTable: this
+                    }">
+    </template>
+  </td>
+</tr>

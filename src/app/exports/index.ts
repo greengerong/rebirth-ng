@@ -4,6 +4,7 @@ export * from './alert-box';
 export * from './auto-complete';
 export * from './breadcrumbs';
 export * from './carousel';
+export * from './data-table';
 export * from './badge';
 export * from './date-picker';
 export * from './dialog';

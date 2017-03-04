@@ -1,0 +1,12 @@
+<div class="panel panel-default">
+  <div class="panel-heading text-center">Panel heading</div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th *ngFor="let col of columns">{{col.header}}</th>
+    </tr>
+    </thead>
+    <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns"></tbody>
+  </table>
+  <div class="panel-footer text-right">Panel footer</div>
+</div>

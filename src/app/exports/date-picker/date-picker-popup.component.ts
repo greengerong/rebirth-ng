@@ -114,7 +114,10 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
-  onSelectDate(date) {
+  onSelectDate($event, date) {
+    if ($event) {
+      $event.stopPropagation();
+    }
     if (this.isDisabledDay(date)) {
       return;
     }
@@ -209,7 +212,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   }
 
   @HostListener('click', ['$event'])
-  onDocumentClick($event: Event) {
+  onHostClick($event: Event) {
     $event.stopPropagation();
   }
 
