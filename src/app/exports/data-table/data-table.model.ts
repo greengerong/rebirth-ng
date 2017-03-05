@@ -17,3 +17,9 @@ export interface SortChangeEventArg {
   column: DataTableColumnTmplComponent;
 }
 
+export interface RowCheckChangeEventArg {
+  rowIndex: number;
+  rowItem: any;
+  checked: boolean;
+}
+

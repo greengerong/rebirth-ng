@@ -1,9 +1,20 @@
 <tr *ngFor="let rowItem of dataSource; let rowIndex = index"
-    [ngClass]="{'table-row-selected': rowIndex == dt.selectedRow}"
+    [ngClass]="{'table-row-selected': rowItem == dt.selectedRowItem}"
     (click)="onRowClick($event, rowIndex, rowItem)" (dblclick)="onRowDBClick($event, rowIndex, rowItem)">
+  <td *ngIf="checkable">
+    <form class="form-inline">
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="rowChecker" [(ngModel)]="rowItem.$$checked"
+                   (change)="onRowCheckChange(rowIndex, rowItem)">
+          </label>
+        </div>
+      </div>
+    </form>
+  </td>
   <ng-container *ngFor="let column of columns; let colIndex = index">
     <td reDataTableCell [rowIndex]="rowIndex" [colIndex]="colIndex" [column]="column" [rowItem]="rowItem">
-
     </td>
   </ng-container>
 </tr>

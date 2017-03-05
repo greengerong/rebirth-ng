@@ -9,6 +9,8 @@ import { DataTableComponent } from './data-table.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableBodyComponent {
+  @Input() checkable: boolean;
+  @Input() allChecked: boolean;
   @Input() dataSource: any[] = [];
   @Input() columns: DataTableColumnTmplComponent[];
 
@@ -22,5 +24,9 @@ export class DataTableBodyComponent {
 
   onRowDBClick($event, rowIndex, rowItem) {
     this.dt.onRowDBClick({ rowIndex, rowItem });
+  }
+
+  onRowCheckChange(rowIndex, rowItem) {
+    this.dt.onRowCheckChange({ rowItem, rowIndex, checked: rowItem.$$checked });
   }
 }

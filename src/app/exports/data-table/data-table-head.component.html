@@ -1,5 +1,16 @@
 <template #defaultHeadTemplate let-head="">
   <tr>
+    <th *ngIf="checkable">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkAll" [(ngModel)]="allChecked" (change)="onCheckAllChange()">
+            </label>
+          </div>
+        </div>
+      </form>
+    </th>
     <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)">{{column.header}} <i
       *ngIf="head.sortField == column.field" class="glyphicon"
       [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>

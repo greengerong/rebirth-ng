@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, TemplateRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
@@ -9,6 +9,8 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableHeadComponent {
+  @Input() checkable: boolean;
+  @Input() allChecked: boolean;
   @Input() head: DataTableHeadTmplComponent;
   @Input() columns: DataTableColumnTmplComponent[];
   sortField: string;
@@ -31,5 +33,9 @@ export class DataTableHeadComponent {
     }
 
     this.dt.sortChange.emit({ field: this.sortField, direction: this.sortDirection, column });
+  }
+
+  onCheckAllChange() {
+    this.dt.onCheckAllChange(this.allChecked);
   }
 }
