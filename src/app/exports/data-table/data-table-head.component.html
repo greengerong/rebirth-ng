@@ -1,0 +1,16 @@
+<template #defaultHeadTemplate let-head="">
+  <tr>
+    <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)">{{column.header}} <i
+      *ngIf="head.sortField == column.field" class="glyphicon"
+      [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
+    </th>
+  </tr>
+</template>
+
+
+<ng-container>
+  <template
+    [ngTemplateOutlet]="head ? head.template : defaultHeadTemplate"
+    [ngOutletContext]="{ $implicit: this }">
+  </template>
+</ng-container>

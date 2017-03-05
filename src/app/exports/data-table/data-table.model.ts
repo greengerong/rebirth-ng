@@ -10,3 +10,10 @@ export interface RowSelectedEventArg {
   rowIndex: number;
   rowItem: any;
 }
+
+export interface SortChangeEventArg {
+  field: string;
+  direction: 'ASC' | 'DESC';
+  column: DataTableColumnTmplComponent;
+}
+

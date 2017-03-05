@@ -8,6 +8,8 @@ import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.comp
 import { DataTableCellComponent } from './data-table-cell.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
+import { DataTableHeadComponent } from './data-table-head.component';
+import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
@@ -16,7 +18,10 @@ import { DataTableBodyComponent } from './data-table-body.component';
     DataTableColumnTmplComponent,
     DataTableCellTmplComponent,
     DataTableCellEditTmplComponent,
-    DataTableCellComponent
+    DataTableBodyComponent,
+    DataTableHeadComponent,
+    DataTableCellComponent,
+    DataTableHeadTmplComponent
   ],
   declarations: [
     DataTableComponent,
@@ -24,7 +29,9 @@ import { DataTableBodyComponent } from './data-table-body.component';
     DataTableCellTmplComponent,
     DataTableCellEditTmplComponent,
     DataTableBodyComponent,
-    DataTableCellComponent
+    DataTableHeadComponent,
+    DataTableCellComponent,
+    DataTableHeadTmplComponent
   ],
   providers: [],
 })

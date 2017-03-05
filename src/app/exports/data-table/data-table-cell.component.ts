@@ -65,8 +65,4 @@ export class DataTableCellComponent {
     this.dt.onCellDBClick(cellSelectedEventArg);
   }
 
-  // isEditCell(rowIndex, colIndex) {
-  //   return this.isCellEdit && this.selectedRow === rowIndex && this.selectedCol === colIndex;
-  // }
-
 }

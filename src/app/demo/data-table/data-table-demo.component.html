@@ -1,10 +1,10 @@
 <div class="data-table-demo">
   <section>
     <h4>Data table</h4>
-    <re-data-table [dataSource]="dataSource">
+    <re-data-table [dataSource]="dataSource" (sortChange)="sortChange($event)">
       <re-column field="$index" header="#"></re-column>
-      <re-column field="firstName" header="First Name" [editable]="true"></re-column>
-      <re-column field="lastName" header="Last Name" [editable]="true"></re-column>
+      <re-column field="firstName" header="First Name" [sortable]="true" [editable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [sortable]="true" [editable]="true"></re-column>
       <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
         <re-cell-edit>
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
@@ -24,20 +24,41 @@
           </template>
         </re-cell-edit>
       </re-column>
-      <re-column field="score" header="Score">
+      <re-column field="score" [sortable]="true" header="Score">
         <re-cell>
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
                     let-cellValue="cellValue">
             <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
           </template>
         </re-cell>
-        <re-cell-edit>
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
-                    let-cellValue="cellValue">
-            Hello
-          </template>
-        </re-cell-edit>
       </re-column>
+    </re-data-table>
+  </section>
+
+  <section>
+    <h4>Customise head</h4>
+    <re-data-table [dataSource]="dataSource" type="bordered" (sortChange)="sortChange($event)">
+      <re-head>
+        <template let-head="">
+          <tr>
+            <th></th>
+            <th colspan="2" class="text-center">User Name</th>
+            <th>Age</th>
+            <th>Score</th>
+          </tr>
+          <tr>
+            <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)">{{column.header}} <i
+              *ngIf="head.sortField == column.field" class="glyphicon"
+              [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
+            </th>
+          </tr>
+        </template>
+      </re-head>
+      <re-column field="$index" header="#"></re-column>
+      <re-column field="firstName" header="First Name" [sortable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [sortable]="true"></re-column>
+      <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
+      <re-column field="score" header="Score" [sortable]="true"></re-column>
     </re-data-table>
   </section>
 
