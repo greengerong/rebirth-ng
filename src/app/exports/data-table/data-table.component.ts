@@ -16,7 +16,8 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 export class DataTableComponent {
 
   @Input() dataSource: any[] = [];
-  @Input() type: '' | 'striped' | 'bordered' | 'condensed' | 'hover' = '';
+  @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
+  @Input() hover = true;
   @Input() cssClass: string;
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
   @Output() cellDBClick = new EventEmitter<CellSelectedEventArg>();

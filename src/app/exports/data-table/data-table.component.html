@@ -1,6 +1,6 @@
 <div class="panel panel-default {{cssClass}}">
   <!--<div class="panel-heading text-center">Panel heading</div>-->
-  <table class="table {{type ? 'table-' + type : ''}}">
+  <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
     <thead reDataTableHead [columns]="columns" [head]="head"></thead>
     <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns"></tbody>
   </table>
