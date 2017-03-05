@@ -1,16 +1,21 @@
 <template #defaultRowTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
           let-cellItem="cellItem"
           let-cellValue="cellValue">
-  {{cellValue}}
+
+  <ng-container [ngSwitch]="column.fieldType">
+    <a *ngSwitchCase="'tel'" [href]="'tel:' + cellValue">{{cellValue}}</a>
+    <a *ngSwitchCase="'mail'" [href]="'mailto:' + cellValue">{{cellValue}}</a>
+    <span *ngSwitchDefault>{{cellValue}}</span>
+  </ng-container>
 </template>
 
 <template #defaultRowEditTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-          let-column="column" let-dataTable="dataTable">
+          let-column="column" let-cell="cell">
   <form class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" autofocus="autofocus" [name]="column.field"
+      <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
              [(ngModel)]="rowItem[column.field]"
-             (blur)="dataTable.onFinishCellEdit($event)"/>
+             (blur)="cell.onFinishCellEdit($event)"/>
     </div>
   </form>
 </template>
@@ -35,7 +40,7 @@
                     colIndex:colIndex,
                     column: column,
                     rowItem:rowItem,
-                    dataTable: this
+                    cell: this
                     }">
   </template>
 </ng-container>

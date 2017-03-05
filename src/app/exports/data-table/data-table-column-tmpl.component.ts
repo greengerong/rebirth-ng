@@ -8,14 +8,18 @@ import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.comp
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableColumnTmplComponent {
+
+  fieldTemplateMap: any;
   @Input() field: string;
+  @Input() fieldType: 'text' | 'number' | 'tel' | 'mail' | 'date' | 'dateTime' | 'select' | string = 'text';
   @Input() header: string;
   @Input() sortable: boolean;
   @Input() editable: boolean;
   @Input() cellClass: string;
   @Input() width: string;
+  @Input() extraOptions: any;
   @ContentChild(DataTableCellTmplComponent) cellCmp: DataTableCellTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
-
   @Input() formatter: (item: any) => string = item => item && item.toString();
+
 }

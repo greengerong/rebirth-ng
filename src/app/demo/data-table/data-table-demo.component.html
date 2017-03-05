@@ -8,13 +8,13 @@
       <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
         <re-cell-edit>
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-                    let-dataTable="dataTable">
+                    let-cell="cell">
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
                   <input class="form-control" placeholder="yyyy-MM-dd" autofocus="autofocus"
                          name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
-                         (ngModelChange)="dataTable.onFinishCellEdit()">
+                         (ngModelChange)="cell.onFinishCellEdit()">
                   <div class="input-group-addon" (click)="datePicker.toggle($event)">
                     <i class="glyphicon glyphicon-calendar"></i>
                   </div>
@@ -24,7 +24,7 @@
           </template>
         </re-cell-edit>
       </re-column>
-      <re-column field="score" [sortable]="true" header="Score">
+      <re-column field="score" [sortable]="true" header="Score" [editable]="true" fieldType="number">
         <re-cell>
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
                     let-cellValue="cellValue">
