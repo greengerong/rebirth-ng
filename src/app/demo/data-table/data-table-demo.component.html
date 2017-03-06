@@ -65,13 +65,13 @@
   <section>
     <h4>Checkable + Filterable column</h4>
     <re-data-table #checkedTable="dataTable" [dataSource]="filterDataSource" type="bordered"
-                   (sortChange)="sortChange($event)" [checkable]="true"
+                   [checkable]="true"
                    (searchQueryChange)="onSearchQueryChange($event)"
                    (checkAllChange)="onCheckAllChange($event,checkedTable)"
                    (rowCheckChange)="onRowCheckChange($event,checkedTable)">
       <re-column field="$index" header="#"></re-column>
-      <re-column field="firstName" header="First Name" [sortable]="true" [filterable]="true"></re-column>
-      <re-column field="lastName" header="Last Name" [sortable]="true" [filterable]="true">
+      <re-column field="firstName" header="First Name" [filterable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [filterable]="true">
         <re-cell-filter>
           <template let-head="" let-column="column">
             <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
