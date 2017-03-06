@@ -10,6 +10,7 @@ import {
   SortChangeEventArg
 } from './data-table.model';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
+import { DataTableFootTmplComponent } from './data-table-footer-tmpl.component';
 
 @Component({
   selector: 're-data-table',
@@ -39,6 +40,7 @@ export class DataTableComponent {
 
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
+  @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
 
   selectedRowItem: any;
   selectedColumnItem: any;

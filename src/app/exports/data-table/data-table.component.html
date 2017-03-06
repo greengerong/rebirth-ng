@@ -5,6 +5,7 @@
            [allChecked]="allChecked"></thead>
     <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns" [checkable]="checkable"
            [allChecked]="allChecked"></tbody>
+    <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
   </table>
   <div class="panel-footer text-right">Panel footer</div>
 </div>
