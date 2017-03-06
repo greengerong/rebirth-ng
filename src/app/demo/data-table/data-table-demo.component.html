@@ -1,7 +1,7 @@
 <div class="data-table-demo">
   <section>
     <h4>Data table</h4>
-    <re-data-table [dataSource]="dataSource" (sortChange)="sortChange($event)">
+    <re-data-table [dataSource]="dataSource" (sortChange)="sortChange($event)" [selectable]="true">
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true" [editable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [sortable]="true" [editable]="true"></re-column>

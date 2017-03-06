@@ -5,7 +5,7 @@
       <thead reDataTableHead [columns]="columns" [headTemplate]="headTemplate" [checkable]="checkable"
              [allChecked]="allChecked"></thead>
       <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns" [checkable]="checkable"
-             [allChecked]="allChecked"></tbody>
+             [allChecked]="allChecked" [selectable]="selectable"></tbody>
       <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
     </table>
   </div>

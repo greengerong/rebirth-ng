@@ -23,6 +23,7 @@ export class DataTableComponent {
 
   @Input() dataSource: any[] = [];
   @Input() checkable: boolean;
+  @Input() selectable: boolean;
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
   @Input() allChecked: boolean;

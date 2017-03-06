@@ -1,5 +1,5 @@
 <tr *ngFor="let rowItem of dataSource; let rowIndex = index"
-    [ngClass]="{'table-row-selected': rowItem == dt.selectedRowItem}"
+    [ngClass]="{'table-row-selected': selectable && (rowItem == dt.selectedRowItem)}"
     (click)="onRowClick($event, rowIndex, rowItem)" (dblclick)="onRowDBClick($event, rowIndex, rowItem)">
   <td *ngIf="checkable">
     <form class="form-inline">

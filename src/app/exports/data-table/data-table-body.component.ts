@@ -11,6 +11,7 @@ import { DataTableComponent } from './data-table.component';
 export class DataTableBodyComponent {
   @Input() checkable: boolean;
   @Input() allChecked: boolean;
+  @Input() selectable: boolean;
   @Input() dataSource: any[] = [];
   @Input() columns: DataTableColumnTmplComponent[];
 
