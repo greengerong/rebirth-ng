@@ -48,4 +48,8 @@ export class DataTableHeadComponent {
   onSearchQueryChange() {
     this.dt.onSearchQueryChange(this.searchQuery);
   }
+
+  canFilterable(column: DataTableColumnTmplComponent) {
+    return column.field && column.field !== '$index' && column.filterable;
+  }
 }
