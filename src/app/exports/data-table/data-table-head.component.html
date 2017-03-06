@@ -21,7 +21,16 @@
 
 <ng-container>
   <template
-    [ngTemplateOutlet]="head ? head.template : defaultHeadTemplate"
+    [ngTemplateOutlet]="headTemplate ? headTemplate.template : defaultHeadTemplate"
     [ngOutletContext]="{ $implicit: this }">
   </template>
+  <!--filter row-->
+  <tr>
+    <th *ngIf="checkable"></th>
+    <th *ngFor="let column of columns">
+      <ng-container *ngIf="column.field && column.field != '$index'">
+        <input type="text" class="form-control search" [name]="column.field"/>
+      </ng-container>
+    </th>
+  </tr>
 </ng-container>

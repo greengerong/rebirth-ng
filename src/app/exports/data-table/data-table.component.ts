@@ -37,7 +37,7 @@ export class DataTableComponent {
   @Output() checkAllChange = new EventEmitter<boolean>();
 
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
-  @ContentChild(DataTableHeadTmplComponent) head: DataTableHeadTmplComponent;
+  @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
 
   selectedRowItem: any;
   selectedColumnItem: any;

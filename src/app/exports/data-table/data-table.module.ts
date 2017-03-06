@@ -21,7 +21,7 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
     DataTableBodyComponent,
     DataTableHeadComponent,
     DataTableCellComponent,
-    DataTableHeadTmplComponent
+    DataTableHeadTmplComponent,
   ],
   declarations: [
     DataTableComponent,
@@ -31,7 +31,7 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
     DataTableBodyComponent,
     DataTableHeadComponent,
     DataTableCellComponent,
-    DataTableHeadTmplComponent
+    DataTableHeadTmplComponent,
   ],
   providers: [],
 })

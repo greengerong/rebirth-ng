@@ -11,7 +11,7 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 export class DataTableHeadComponent {
   @Input() checkable: boolean;
   @Input() allChecked: boolean;
-  @Input() head: DataTableHeadTmplComponent;
+  @Input() headTemplate: DataTableHeadTmplComponent;
   @Input() columns: DataTableColumnTmplComponent[];
   sortField: string;
   sortDirection: 'ASC' | 'DESC';

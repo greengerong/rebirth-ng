@@ -1,7 +1,8 @@
 <div class="panel panel-default {{cssClass}}">
   <!--<div class="panel-heading text-center">Panel heading</div>-->
   <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
-    <thead reDataTableHead [columns]="columns" [head]="head" [checkable]="checkable" [allChecked]="allChecked"></thead>
+    <thead reDataTableHead [columns]="columns" [headTemplate]="headTemplate" [checkable]="checkable"
+           [allChecked]="allChecked"></thead>
     <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns" [checkable]="checkable"
            [allChecked]="allChecked"></tbody>
   </table>
