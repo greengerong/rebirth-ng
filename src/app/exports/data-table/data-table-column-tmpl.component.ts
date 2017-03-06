@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, ContentChild, Input } from '@angular/core';
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
+import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
 
 @Component({
   selector: 're-column',
@@ -21,6 +22,7 @@ export class DataTableColumnTmplComponent {
   @Input() extraOptions: any;
   @ContentChild(DataTableCellTmplComponent) cellCmp: DataTableCellTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
+  @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
   @Input() formatter: (item: any) => string = item => item && item.toString();
 
 }

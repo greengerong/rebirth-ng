@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { formatDate } from '../../exports/utils/date-utils';
-import { SortChangeEventArg } from '../../exports/data-table/data-table.model';
+import { RowCheckChangeEventArg, SortChangeEventArg } from '../../exports/data-table/data-table.model';
+import { DataTableComponent } from '../../exports/data-table/data-table.component';
 
 @Component({
   selector: 're-data-table-demo',
@@ -54,6 +55,14 @@ export class DataTableDemoComponent implements OnInit {
       const factor = $event.direction === 'ASC' ? 1 : -1;
       return factor * first.localeCompare(second);
     });
+  }
+
+  onCheckAllChange($event: boolean, checkedTable: DataTableComponent) {
+    console.log('All checked change', $event, checkedTable.getCheckRows());
+  }
+
+  onRowCheckChange($event: RowCheckChangeEventArg, checkedTable: DataTableComponent) {
+    console.log('Row checked change', $event, checkedTable.getCheckRows());
   }
 
   onSearchQueryChange($event: { [key: string]: any; }) {

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
+import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule],
@@ -22,6 +23,7 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
     DataTableHeadComponent,
     DataTableCellComponent,
     DataTableHeadTmplComponent,
+    DataTableCellFilterTmplComponent
   ],
   declarations: [
     DataTableComponent,
@@ -32,6 +34,7 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
     DataTableHeadComponent,
     DataTableCellComponent,
     DataTableHeadTmplComponent,
+    DataTableCellFilterTmplComponent
   ],
   providers: [],
 })

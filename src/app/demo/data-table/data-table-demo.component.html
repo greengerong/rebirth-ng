@@ -63,12 +63,24 @@
   </section>
 
   <section>
-    <h4>Checkable column</h4>
-    <re-data-table [dataSource]="filterDataSource" type="bordered" (sortChange)="sortChange($event)" [checkable]="true"
-                   (searchQueryChange)="onSearchQueryChange($event)">
+    <h4>Checkable + Filterable column</h4>
+    <re-data-table #checkedTable="dataTable" [dataSource]="filterDataSource" type="bordered"
+                   (sortChange)="sortChange($event)" [checkable]="true"
+                   (searchQueryChange)="onSearchQueryChange($event)"
+                   (checkAllChange)="onCheckAllChange($event,checkedTable)"
+                   (rowCheckChange)="onRowCheckChange($event,checkedTable)">
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true" [filterable]="true"></re-column>
-      <re-column field="lastName" header="Last Name" [sortable]="true" [filterable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [sortable]="true" [filterable]="true">
+        <re-cell-filter>
+          <template let-head="" let-column="column">
+            <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
+                   [name]="column.field" (keydown.enter)="head.onSearchQueryChange()"
+                   (ngModelChange)="head.onSearchQueryChange()"
+                   placeholder="Customise:filter when model change"/>
+          </template>
+        </re-cell-filter>
+      </re-column>
       <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
       <re-column field="score" header="Score"></re-column>
     </re-data-table>
