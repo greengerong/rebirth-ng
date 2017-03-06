@@ -10,7 +10,7 @@
 </template>
 
 <template #defaultRowEditTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-          let-column="column" let-cell="cell">
+          let-column="column" let-cell="">
   <form class="form-inline">
     <div class="form-group">
       <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
@@ -29,7 +29,8 @@
                    column: column,
                    rowItem:rowItem,
                    cellItem: (column.field == '$index'? rowIndex + 1: rowItem[column.field]),
-                   cellValue: (column.field == '$index'? rowIndex + 1 : column.formatter(rowItem[column.field]))
+                   cellValue: (column.field == '$index'? rowIndex + 1 : column.formatter(rowItem[column.field])),
+                   $implicit: this
                    }">
   </template>
 
@@ -40,7 +41,7 @@
                     colIndex:colIndex,
                     column: column,
                     rowItem:rowItem,
-                    cell: this
+                    $implicit: this
                     }">
   </template>
 </ng-container>
