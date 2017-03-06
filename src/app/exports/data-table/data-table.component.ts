@@ -35,6 +35,7 @@ export class DataTableComponent {
   @Output() sortChange = new EventEmitter<SortChangeEventArg>();
   @Output() rowCheckChange = new EventEmitter<RowCheckChangeEventArg>();
   @Output() checkAllChange = new EventEmitter<boolean>();
+  @Output() searchQueryChange = new EventEmitter<{ [key: string]: any; }>();
 
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
@@ -90,6 +91,10 @@ export class DataTableComponent {
     }
     this.allChecked = $event;
     this.checkAllChange.emit($event);
+  }
+
+  onSearchQueryChange($event: { [key: string]: any; }) {
+    this.searchQueryChange.emit($event);
   }
 
   getCheckRows(): any[] {

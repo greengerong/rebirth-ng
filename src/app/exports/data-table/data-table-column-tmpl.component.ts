@@ -15,6 +15,7 @@ export class DataTableColumnTmplComponent {
   @Input() header: string;
   @Input() sortable: boolean;
   @Input() editable: boolean;
+  @Input() filterable: boolean;
   @Input() cellClass: string;
   @Input() width: string;
   @Input() extraOptions: any;

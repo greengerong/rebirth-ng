@@ -34,8 +34,10 @@ export class DataTableDemoComponent implements OnInit {
     },
 
   ];
+  filterDataSource = [];
 
   constructor() {
+    this.filterDataSource = [...this.dataSource];
   }
 
   ngOnInit() {
@@ -51,6 +53,17 @@ export class DataTableDemoComponent implements OnInit {
       const second = b[$event.field].toString();
       const factor = $event.direction === 'ASC' ? 1 : -1;
       return factor * first.localeCompare(second);
+    });
+  }
+
+  onSearchQueryChange($event) {
+    const search = Object.keys($event)
+      .map(key => ({ key, value: $event[key] }))
+      .filter(item => item.value);
+
+    console.log('Got search query:', $event);
+    this.filterDataSource = this.dataSource.filter(item => {
+      return !search.some(query => item[query.key].toLowerCase().indexOf(query.value.toLowerCase()) === -1);
     });
   }
 

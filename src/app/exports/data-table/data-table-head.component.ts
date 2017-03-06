@@ -13,6 +13,8 @@ export class DataTableHeadComponent {
   @Input() allChecked: boolean;
   @Input() headTemplate: DataTableHeadTmplComponent;
   @Input() columns: DataTableColumnTmplComponent[];
+
+  searchQuery: { [key: string]: any; } = {};
   sortField: string;
   sortDirection: 'ASC' | 'DESC';
 
@@ -35,7 +37,15 @@ export class DataTableHeadComponent {
     this.dt.sortChange.emit({ field: this.sortField, direction: this.sortDirection, column });
   }
 
+  hasAnyFilterColumns(columns) {
+    return (columns || []).some(col => col.filterable);
+  }
+
   onCheckAllChange() {
     this.dt.onCheckAllChange(this.allChecked);
+  }
+
+  onSearchQueryChange() {
+    this.dt.onSearchQueryChange(this.searchQuery);
   }
 }

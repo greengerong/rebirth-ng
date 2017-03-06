@@ -25,11 +25,12 @@
     [ngOutletContext]="{ $implicit: this }">
   </template>
   <!--filter row-->
-  <tr>
+  <tr *ngIf="hasAnyFilterColumns(columns)">
     <th *ngIf="checkable"></th>
     <th *ngFor="let column of columns">
-      <ng-container *ngIf="column.field && column.field != '$index'">
-        <input type="text" class="form-control search" [name]="column.field"/>
+      <ng-container *ngIf="column.field && column.field != '$index' && column.filterable">
+        <input type="text" class="form-control search" [(ngModel)]="searchQuery[column.field]" [name]="column.field"
+               (keydown.enter)="onSearchQueryChange()" (change)="onSearchQueryChange()"/>
       </ng-container>
     </th>
   </tr>
