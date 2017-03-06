@@ -35,6 +35,13 @@ export class DataTableDemoComponent implements OnInit {
     },
 
   ];
+
+  pager = {
+    total: 306,
+    pageIndex: 5,
+    pageSize: 10,
+  };
+
   filterDataSource = [];
 
   constructor() {
@@ -74,6 +81,10 @@ export class DataTableDemoComponent implements OnInit {
     this.filterDataSource = this.dataSource.filter(item => {
       return !search.some(query => item[query.key].toLowerCase().indexOf(query.value.toLowerCase()) === -1);
     });
+  }
+
+  onPageIndexChange($event) {
+    console.log('Page index change', $event);
   }
 }
 

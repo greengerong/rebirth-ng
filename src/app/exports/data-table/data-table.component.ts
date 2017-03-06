@@ -26,6 +26,7 @@ export class DataTableComponent {
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
   @Input() allChecked: boolean;
+  @Input() pager: any;
   @Input() cssClass: string;
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
   @Output() cellDBClick = new EventEmitter<CellSelectedEventArg>();
@@ -37,11 +38,13 @@ export class DataTableComponent {
   @Output() rowCheckChange = new EventEmitter<RowCheckChangeEventArg>();
   @Output() checkAllChange = new EventEmitter<boolean>();
   @Output() searchQueryChange = new EventEmitter<{ [key: string]: any; }>();
+  @Output() pageIndexChange = new EventEmitter<number>();
 
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
 
+  pagerMaxItems = 8;
   selectedRowItem: any;
   selectedColumnItem: any;
   isCellEdit: boolean;
@@ -97,6 +100,10 @@ export class DataTableComponent {
 
   onSearchQueryChange($event: { [key: string]: any; }) {
     this.searchQueryChange.emit($event);
+  }
+
+  onPageChange($event: number) {
+    this.pageIndexChange.emit($event);
   }
 
   getCheckRows(): any[] {

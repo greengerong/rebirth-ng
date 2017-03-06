@@ -37,7 +37,8 @@
 
   <section>
     <h4>Customise head & footer</h4>
-    <re-data-table [dataSource]="dataSource" type="bordered" (sortChange)="sortChange($event)">
+    <re-data-table [dataSource]="dataSource" type="bordered" [pager]="pager" (sortChange)="sortChange($event)"
+                   (pageIndexChange)="onPageIndexChange($event)">
       <re-head>
         <template let-head="">
           <tr>

@@ -1,11 +1,18 @@
-<div class="panel panel-default {{cssClass}}">
+<div class="panel panel-default data-table {{cssClass}}">
   <!--<div class="panel-heading text-center">Panel heading</div>-->
-  <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
-    <thead reDataTableHead [columns]="columns" [headTemplate]="headTemplate" [checkable]="checkable"
-           [allChecked]="allChecked"></thead>
-    <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns" [checkable]="checkable"
-           [allChecked]="allChecked"></tbody>
-    <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
-  </table>
-  <div class="panel-footer text-right">Panel footer</div>
+  <div class="table-view">
+    <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
+      <thead reDataTableHead [columns]="columns" [headTemplate]="headTemplate" [checkable]="checkable"
+             [allChecked]="allChecked"></thead>
+      <tbody reDataTableBody [dataSource]="dataSource" [columns]="columns" [checkable]="checkable"
+             [allChecked]="allChecked"></tbody>
+      <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
+    </table>
+  </div>
+  <div class="panel-footer table-view-footer text-center" *ngIf="pager">
+    <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"
+                   [maxItems]="pager.maxItems || pagerMaxItems" [(pageIndex)]="pager.pageIndex"
+                   (pageIndexChange)="onPageChange($event)">
+    </re-pagination>
+  </div>
 </div>

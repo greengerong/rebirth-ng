@@ -13,9 +13,10 @@ import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
 import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
 import { DataTableFootComponent } from './data-table-foot.component';
+import { PaginationModule } from '../pagination';
 
 @NgModule({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PaginationModule],
   exports: [
     DataTableComponent,
     DataTableColumnTmplComponent,
