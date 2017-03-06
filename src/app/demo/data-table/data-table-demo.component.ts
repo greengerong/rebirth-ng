@@ -56,7 +56,7 @@ export class DataTableDemoComponent implements OnInit {
     });
   }
 
-  onSearchQueryChange($event) {
+  onSearchQueryChange($event: { [key: string]: any; }) {
     const search = Object.keys($event)
       .map(key => ({ key, value: $event[key] }))
       .filter(item => item.value);
