@@ -11,7 +11,7 @@ import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
-import { DataTableFootTmplComponent } from './data-table-footer-tmpl.component';
+import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
 import { DataTableFootComponent } from './data-table-foot.component';
 
 @NgModule({
