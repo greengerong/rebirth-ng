@@ -1,6 +1,6 @@
 import {
   Component, ChangeDetectionStrategy, Input, ContentChildren, Output,
-  EventEmitter, ContentChild, ChangeDetectorRef
+  EventEmitter, ContentChild, ChangeDetectorRef, OnDestroy
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import {
@@ -19,11 +19,13 @@ import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'dataTable'
 })
-export class DataTableComponent {
+export class DataTableComponent implements OnDestroy {
 
   @Input() dataSource: any[] = [];
   @Input() checkable: boolean;
   @Input() selectable: boolean;
+  @Input() scrollable: boolean;
+  @Input() maxHeight: string;
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
   @Input() allChecked: boolean;
@@ -113,5 +115,9 @@ export class DataTableComponent {
 
   getSelectedRowItem(): any[] {
     return this.selectedRowItem;
+  }
+
+  ngOnDestroy(): void {
+
   }
 }

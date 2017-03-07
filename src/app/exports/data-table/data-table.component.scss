@@ -6,6 +6,9 @@
     .table {
       margin: 0px;
     }
+    &.scroll-view {
+      overflow: auto;
+    }
   }
 
   .table-view-footer {
@@ -14,8 +17,14 @@
   }
 }
 
-:host /deep/ .table-pagination {
-  .pagination {
-    margin: 0px;
+:host /deep/ {
+  .table-pagination {
+    .pagination {
+      margin: 0px;
+    }
+  }
+
+  .checkable-cell {
+    width: 25px;
   }
 }

@@ -28,10 +28,45 @@ export class DataTableDemoComponent implements OnInit {
     },
     {
       id: 3,
-      firstName: 'Larry',
-      lastName: 'the Bird',
+      firstName: 'Danni',
+      lastName: 'Chen',
+      dob: new Date(1991, 3, 1),
+      score: 80
+    },
+    {
+      id: 4,
+      firstName: 'green',
+      lastName: 'gerong',
+      dob: new Date(1991, 3, 1),
+      score: 98
+    },
+    {
+      id: 5,
+      firstName: 'po',
+      lastName: 'lang',
+      dob: new Date(1991, 3, 1),
+      score: 80
+    },
+    {
+      id: 6,
+      firstName: 'john',
+      lastName: 'li',
       dob: new Date(1991, 3, 1),
       score: 70
+    },
+    {
+      id: 7,
+      firstName: 'peng',
+      lastName: 'li',
+      dob: new Date(1991, 3, 1),
+      score: 60
+    },
+    {
+      id: 8,
+      firstName: 'Danni',
+      lastName: 'Yu',
+      dob: new Date(1991, 3, 1),
+      score: 74
     },
 
   ];

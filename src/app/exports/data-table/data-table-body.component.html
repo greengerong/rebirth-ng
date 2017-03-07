@@ -1,7 +1,7 @@
 <tr *ngFor="let rowItem of dataSource; let rowIndex = index"
     [ngClass]="{'table-row-selected': selectable && (rowItem == dt.selectedRowItem)}"
     (click)="onRowClick($event, rowIndex, rowItem)" (dblclick)="onRowDBClick($event, rowIndex, rowItem)">
-  <td *ngIf="checkable">
+  <td *ngIf="checkable" class="checkable-cell">
     <form class="form-inline">
       <div class="form-group">
         <div class="checkbox">
@@ -14,7 +14,8 @@
     </form>
   </td>
   <ng-container *ngFor="let column of columns; let colIndex = index">
-    <td reDataTableCell [rowIndex]="rowIndex" [colIndex]="colIndex" [column]="column" [rowItem]="rowItem">
+    <td reDataTableCell [rowIndex]="rowIndex" [colIndex]="colIndex" [column]="column" [rowItem]="rowItem"
+        [style.width]="column.width || ''">
     </td>
   </ng-container>
 </tr>
