@@ -65,4 +65,28 @@ export class DataTableCellComponent {
     this.dt.onCellDBClick(cellSelectedEventArg);
   }
 
+  getCellValue(column: DataTableColumnTmplComponent, rowIndex: number, rowItem: any) {
+    if (!column || !column.field) {
+      return null;
+    }
+
+    if (column.field === '$index') {
+      return rowIndex + 1;
+    }
+    return rowItem[column.field];
+
+    /*
+     * field with dot, like address.line1
+     const fields = column.field.split('.');
+     return fields.reduce((obj, field) => obj ? obj[field] : null, rowItem);
+     */
+  }
+
+  getCellFormatValue(column: DataTableColumnTmplComponent, rowIndex: number, rowItem: any) {
+    const cellValue = this.getCellValue(column, rowIndex, rowItem);
+    if (column.field !== '$index' && column.formatter) {
+      return column.formatter(cellValue);
+    }
+    return cellValue;
+  }
 }

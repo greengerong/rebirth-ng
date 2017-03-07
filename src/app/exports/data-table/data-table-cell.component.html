@@ -28,8 +28,8 @@
                    colIndex:colIndex,
                    column: column,
                    rowItem:rowItem,
-                   cellItem: (column.field == '$index'? rowIndex + 1: rowItem[column.field]),
-                   cellValue: (column.field == '$index'? rowIndex + 1 : column.formatter(rowItem[column.field])),
+                   cellItem: getCellValue(column, rowIndex, rowItem),
+                   cellValue:  getCellFormatValue(column, rowIndex, rowItem),
                    $implicit: this
                    }">
   </template>
