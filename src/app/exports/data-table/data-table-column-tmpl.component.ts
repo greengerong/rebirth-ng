@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ContentChild, Input } from '@angular/core';
-import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
+import { DataTableCellViewTmplComponent } from './data-table-cell-view-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
 
@@ -20,7 +20,7 @@ export class DataTableColumnTmplComponent {
   @Input() cellClass: string;
   @Input() width: string;
   @Input() extraOptions: any;
-  @ContentChild(DataTableCellTmplComponent) cellCmp: DataTableCellTmplComponent;
+  @ContentChild(DataTableCellViewTmplComponent) cellCmp: DataTableCellViewTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
   @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
   @Input() formatter: (item: any) => string = item => item && item.toString();

@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableComponent } from './data-table.component';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
-import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
+import { DataTableCellViewTmplComponent } from './data-table-cell-view-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
-import { DataTableCellViewComponent } from './data-table-cell-view.component';
+import { DataTableCellComponent } from './data-table-cell.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
@@ -20,11 +20,11 @@ import { PaginationModule } from '../pagination';
   exports: [
     DataTableComponent,
     DataTableColumnTmplComponent,
-    DataTableCellTmplComponent,
+    DataTableCellViewTmplComponent,
     DataTableCellEditTmplComponent,
     DataTableBodyComponent,
     DataTableHeadComponent,
-    DataTableCellViewComponent,
+    DataTableCellComponent,
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,
@@ -33,11 +33,11 @@ import { PaginationModule } from '../pagination';
   declarations: [
     DataTableComponent,
     DataTableColumnTmplComponent,
-    DataTableCellTmplComponent,
+    DataTableCellViewTmplComponent,
     DataTableCellEditTmplComponent,
     DataTableBodyComponent,
     DataTableHeadComponent,
-    DataTableCellViewComponent,
+    DataTableCellComponent,
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,

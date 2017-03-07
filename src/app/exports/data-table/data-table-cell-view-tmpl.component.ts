@@ -5,7 +5,7 @@ import { Component, ChangeDetectionStrategy, ContentChild, TemplateRef } from '@
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableCellTmplComponent {
+export class DataTableCellViewTmplComponent {
 
   @ContentChild(TemplateRef) template: TemplateRef<any>;
 

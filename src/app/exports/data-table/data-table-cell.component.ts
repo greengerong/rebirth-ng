@@ -10,7 +10,7 @@ import { DataTableComponent } from './data-table.component';
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableCellViewComponent {
+export class DataTableCellComponent {
   @Input() rowIndex: number;
   @Input() colIndex: number;
   @Input() column: DataTableColumnTmplComponent;
