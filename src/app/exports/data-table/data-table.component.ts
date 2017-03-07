@@ -30,6 +30,7 @@ export class DataTableComponent implements OnDestroy {
   @Input() hover = true;
   @Input() allChecked: boolean;
   @Input() pager: any;
+  @Input() editmodel: 'row' | 'cell' = 'row';
   @Input() cssClass: string;
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
   @Output() cellDBClick = new EventEmitter<CellSelectedEventArg>();
@@ -111,6 +112,14 @@ export class DataTableComponent implements OnDestroy {
 
   getCheckRows(): any[] {
     return this.dataSource ? this.dataSource.filter(item => item.$$checked) : [];
+  }
+
+  startEdit(rowItem: any) {
+
+  }
+
+  endtEdit(rowItem: any) {
+
   }
 
   getSelectedRowItem(): any[] {

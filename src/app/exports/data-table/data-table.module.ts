@@ -5,7 +5,7 @@ import { DataTableComponent } from './data-table.component';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
-import { DataTableCellComponent } from './data-table-cell.component';
+import { DataTableCellViewComponent } from './data-table-cell-view.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
@@ -24,7 +24,7 @@ import { PaginationModule } from '../pagination';
     DataTableCellEditTmplComponent,
     DataTableBodyComponent,
     DataTableHeadComponent,
-    DataTableCellComponent,
+    DataTableCellViewComponent,
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,
@@ -37,7 +37,7 @@ import { PaginationModule } from '../pagination';
     DataTableCellEditTmplComponent,
     DataTableBodyComponent,
     DataTableHeadComponent,
-    DataTableCellComponent,
+    DataTableCellViewComponent,
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,
