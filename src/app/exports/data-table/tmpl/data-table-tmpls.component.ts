@@ -15,15 +15,6 @@ export class DataTableTmplsComponent {
     return this[fieldType || 'text'] || this.text;
   }
 
-  getCellFilterTemplate(column) {
-    if (column.cellFilterCmp) {
-      return column.cellFilterCmp.template;
-    }
-
-    const template = this.getTemplate(column.fieldType);
-    return template.filter.template;
-  }
-
   getCellViewTemplate(column) {
     if (column.cellCmp) {
       return column.cellCmp.template;
@@ -40,6 +31,15 @@ export class DataTableTmplsComponent {
 
     const template = this.getTemplate(column.fieldType);
     return template.edit.template;
+  }
+
+  getCellFilterTemplate(column) {
+    if (column.cellFilterCmp) {
+      return column.cellFilterCmp.template;
+    }
+
+    const template = this.getTemplate(column.fieldType);
+    return template.filter.template;
   }
 
 }
