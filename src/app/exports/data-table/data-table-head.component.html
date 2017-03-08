@@ -1,36 +1,15 @@
-<template #defaultHeadTemplate let-head="">
-  <tr>
-    <th *ngIf="checkable" class="checkable-cell">
-      <form class="form-inline">
-        <div class="form-group">
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="checkAll" [(ngModel)]="allChecked" (change)="onCheckAllChange()">
-            </label>
-          </div>
-        </div>
-      </form>
-    </th>
-    <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
-      {{column.header}} <i *ngIf="head.sortField == column.field" class="glyphicon"
-                           [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
-    </th>
-  </tr>
-</template>
-
 <ng-container>
-  <template
-    [ngTemplateOutlet]="headTemplate ? headTemplate.template : defaultHeadTemplate"
-    [ngOutletContext]="{ $implicit: this }">
+  <template [ngTemplateOutlet]="headTemplate ? headTemplate.template : cellTemplates.headTemplate"
+            [ngOutletContext]="{ $implicit: this }">
   </template>
+
   <!--filter row-->
   <tr *ngIf="hasAnyFilterColumns(columns)">
     <th *ngIf="checkable"></th>
     <th *ngFor="let column of columns">
       <ng-container *ngIf="canFilterable(column)">
-        <template
-          [ngTemplateOutlet]="cellTemplates.getCellFilterTemplate(column)"
-          [ngOutletContext]="{ $implicit: this , column: column}">
+        <template [ngTemplateOutlet]="cellTemplates.getCellFilterTemplate(column)"
+                  [ngOutletContext]="{ $implicit: this , column: column}">
         </template>
       </ng-container>
     </th>

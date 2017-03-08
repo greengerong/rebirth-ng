@@ -1,3 +1,26 @@
+<!-- begin:template: header label template-->
+<template #defaultHeadTemplate let-head="">
+  <tr>
+    <th *ngIf="head.checkable" class="checkable-cell">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkAll" [(ngModel)]="head.allChecked" (change)="head.onCheckAllChange()">
+            </label>
+          </div>
+        </div>
+      </form>
+    </th>
+    <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
+      {{column.header}} <i *ngIf="head.sortField == column.field" class="glyphicon"
+                           [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
+    </th>
+  </tr>
+</template>
+<!--end:tempate-->
+
+<!-- begin:template: cell view, edit, filter template-->
 <re-cell-template #textCellTemplate type="text">
   <re-cell>
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
@@ -30,3 +53,4 @@
   </re-cell-filter>
 
 </re-cell-template>
+<!--end:tempate-->

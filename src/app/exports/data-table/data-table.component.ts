@@ -1,6 +1,14 @@
 import {
-  Component, ChangeDetectionStrategy, Input, ContentChildren, Output,
-  EventEmitter, ContentChild, ChangeDetectorRef, OnDestroy, ViewChildren, ViewChild, QueryList
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  ContentChildren,
+  Output,
+  EventEmitter,
+  ContentChild,
+  ChangeDetectorRef,
+  OnDestroy,
+  ViewChild
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import {
@@ -12,7 +20,6 @@ import {
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
 import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
-import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @Component({
   selector: 're-data-table',

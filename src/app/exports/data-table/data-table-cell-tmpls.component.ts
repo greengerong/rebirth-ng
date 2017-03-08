@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 })
 export class DataTableCellTmplsComponent {
 
+  @ViewChild('defaultHeadTemplate') headTemplate: TemplateRef<any>;
   @ViewChild('textCellTemplate') text: DataTableCellTmplComponent;
 
   getTemplate(fieldType: string): DataTableCellTmplComponent {
