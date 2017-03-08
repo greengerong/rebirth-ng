@@ -10,9 +10,12 @@ export class DataTableTmplsComponent {
 
   @ViewChild('defaultHeadTemplate') headTemplate: TemplateRef<any>;
   @ViewChild('textCellTemplate') text: DataTableCellTmplComponent;
+  @ViewChild('numberCellTemplate') number: DataTableCellTmplComponent;
   @ViewChild('telCellTemplate') tel: DataTableCellTmplComponent;
   @ViewChild('mailCellTemplate') mail: DataTableCellTmplComponent;
   @ViewChild('imageCellTemplate') image: DataTableCellTmplComponent;
+  // @ViewChild('selectCellTemplate') select: DataTableCellTmplComponent;
+  @ViewChild('dateCellTemplate') date: DataTableCellTmplComponent;
 
   getTemplate(fieldType: string): DataTableCellTmplComponent {
     return this[fieldType || 'text'] || this.text;

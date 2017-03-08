@@ -50,6 +50,30 @@
 
 </re-cell-template>
 
+<re-cell-template #numberCellTemplate type="number">
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <input type="number" class="form-control search" placeholder="From"
+                   [(ngModel)]="head.searchQuery['ge$' +column.field]"
+                   [name]="column.field + '_min'" (keydown.enter)="head.onSearchQueryChange()"
+                   (change)="head.onSearchQueryChange()"/>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <input type="number" class="form-control search" placeholder="To"
+                   [(ngModel)]="head.searchQuery['le$' +column.field]"
+                   [name]="column.field +'_max'" (keydown.enter)="head.onSearchQueryChange()"
+                   (change)="head.onSearchQueryChange()"/>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
 <re-cell-template #telCellTemplate type="tel">
   <re-cell>
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
@@ -89,4 +113,85 @@
   </re-cell-filter>
 
 </re-cell-template>
+
+<re-cell-template #dateCellTemplate type="date">
+  <re-cell-edit>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cell="">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control search" autofocus="autofocus"
+                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"
+                   (ngModelChange)="cell.onFinishCellEdit()">
+            <div class="input-group-addon" (click)="datePicker.toggle($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+              <input class="form-control search" [name]="'ge$' + column.field" placeholder="From"
+                     [(ngModel)]="head.searchQuery['ge$' + column.field]"
+                     reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
+              <div class="input-group-addon" (click)="geDatePicker.toggle($event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+              <input class="form-control search" [name]="'le$' + column.field" placeholder="To"
+                     [(ngModel)]="head.searchQuery['le$' + column.field]"
+                     reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
+              <div class="input-group-addon" (click)="leDatePicker.toggle($event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
+<!--<re-cell-template #selectCellTemplate type="select">-->
+<!--<re-cell-edit>-->
+<!--<template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<select class="form-control" autofocus="autofocus" [name]="column.field"-->
+<!--[(ngModel)]="rowItem[column.field]" (ngModelChange)="cell.onFinishCellEdit()">-->
+<!--<option *ngFor="let item of column.extraOptions" [value]="item.value || item">{{item.label || item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</form>-->
+<!--</template>-->
+<!--</re-cell-edit>-->
+
+<!--<re-cell-filter>-->
+<!--<template let-head="" let-column="column">-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<select class="form-control search" [name]="column.field"-->
+<!--[(ngModel)]="head.searchQuery[column.field]" (ngModelChange)="head.onSearchQueryChange()">-->
+<!--<option *ngFor="let item of column?.extraOptions" [value]="item.value || item">{{item.label || item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</form>-->
+<!--</template>-->
+<!--</re-cell-filter>-->
+
+<!--</re-cell-template>-->
 <!--end:tempate-->

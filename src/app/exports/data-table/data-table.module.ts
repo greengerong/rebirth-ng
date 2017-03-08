@@ -16,9 +16,10 @@ import { DataTableFootComponent } from './data-table-foot.component';
 import { PaginationModule } from '../pagination';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTableCellTmplComponent } from './tmpl/data-table-cell-tmpl.component';
+import { DatePickerModule } from '../date-picker/date-picker.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, PaginationModule],
+  imports: [CommonModule, FormsModule, PaginationModule, DatePickerModule],
   exports: [
     DataTableComponent,
     DataTableColumnTmplComponent,

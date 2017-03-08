@@ -114,7 +114,8 @@ export class DataTableDemoComponent implements OnInit {
 
     console.log('Got search query:', $event);
     this.filterDataSource = this.dataSource.filter(item => {
-      return !search.some(query => item[query.key].toLowerCase().indexOf(query.value.toLowerCase()) === -1);
+      return !search.some(query => (item[query.key] ? item[query.key].toString() : '')
+        .toLowerCase().indexOf(query.value.toString().toLowerCase()) === -1);
     });
   }
 
