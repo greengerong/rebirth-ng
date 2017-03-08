@@ -1,7 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, QueryList } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
+import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
+import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @Component({
   selector: 're-data-table-head,[reDataTableHead]',
@@ -13,6 +15,7 @@ export class DataTableHeadComponent {
   @Input() allChecked: boolean;
   @Input() headTemplate: DataTableHeadTmplComponent;
   @Input() columns: DataTableColumnTmplComponent[];
+  @Input() cellTemplates: DataTableCellTmplsComponent;
 
   searchQuery: { [key: string]: any; } = {};
   sortField: string;

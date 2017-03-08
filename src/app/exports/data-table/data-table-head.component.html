@@ -18,11 +18,6 @@
   </tr>
 </template>
 
-<template #defaultFilterTemplate let-head="" let-column="column">
-  <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]" [name]="column.field"
-         (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
-</template>
-
 <ng-container>
   <template
     [ngTemplateOutlet]="headTemplate ? headTemplate.template : defaultHeadTemplate"
@@ -34,7 +29,7 @@
     <th *ngFor="let column of columns">
       <ng-container *ngIf="canFilterable(column)">
         <template
-          [ngTemplateOutlet]="column.cellFilterCmp ? column.cellFilterCmp.template : defaultFilterTemplate"
+          [ngTemplateOutlet]="cellTemplates.getCellFilterTemplate(column)"
           [ngOutletContext]="{ $implicit: this , column: column}">
         </template>
       </ng-container>

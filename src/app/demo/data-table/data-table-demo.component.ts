@@ -23,7 +23,7 @@ export class DataTableDemoComponent implements OnInit {
       firstName: 'Jacob',
       lastName: 'Thornton',
       dob: new Date(1989, 1, 1),
-      score: 59
+      score: 43
 
     },
     {
@@ -59,7 +59,7 @@ export class DataTableDemoComponent implements OnInit {
       firstName: 'peng',
       lastName: 'li',
       dob: new Date(1991, 3, 1),
-      score: 60
+      score: 27
     },
     {
       id: 8,

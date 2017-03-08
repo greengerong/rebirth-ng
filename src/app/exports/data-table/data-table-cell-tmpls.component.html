@@ -1,0 +1,32 @@
+<re-cell-template #textCellTemplate type="text">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <ng-container [ngSwitch]="column.fieldType">
+        <a *ngSwitchCase="'tel'" [href]="'tel:' + cellValue">{{cellValue}}</a>
+        <a *ngSwitchCase="'mail'" [href]="'mailto:' + cellValue">{{cellValue}}</a>
+        <span *ngSwitchDefault>{{cellValue}}</span>
+      </ng-container>
+    </template>
+  </re-cell>
+
+  <re-cell-edit>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">
+      <form class="form-inline">
+        <div class="form-group">
+          <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
+                 [(ngModel)]="rowItem[column.field]"
+                 (blur)="cell.onFinishCellEdit($event)"/>
+        </div>
+      </form>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]" [name]="column.field"
+             (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>

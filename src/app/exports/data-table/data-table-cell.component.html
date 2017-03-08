@@ -1,28 +1,6 @@
-<template #defaultRowTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-          let-cellItem="cellItem"
-          let-cellValue="cellValue">
-
-  <ng-container [ngSwitch]="column.fieldType">
-    <a *ngSwitchCase="'tel'" [href]="'tel:' + cellValue">{{cellValue}}</a>
-    <a *ngSwitchCase="'mail'" [href]="'mailto:' + cellValue">{{cellValue}}</a>
-    <span *ngSwitchDefault>{{cellValue}}</span>
-  </ng-container>
-</template>
-
-<template #defaultRowEditTemplate let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-          let-column="column" let-cell="">
-  <form class="form-inline">
-    <div class="form-group">
-      <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
-             [(ngModel)]="rowItem[column.field]"
-             (blur)="cell.onFinishCellEdit($event)"/>
-    </div>
-  </form>
-</template>
-
 <ng-container>
   <template *ngIf="!column.editable || !isCellEdit"
-            [ngTemplateOutlet]="column.cellCmp ? column.cellCmp.template : defaultRowTemplate"
+            [ngTemplateOutlet]="cellTemplates.getCellViewTemplate(column)"
             [ngOutletContext]="{
                    rowIndex:rowIndex,
                    colIndex:colIndex,
@@ -35,7 +13,7 @@
   </template>
 
   <template *ngIf="column.editable && isCellEdit"
-            [ngTemplateOutlet]="column.cellEditCmp ? column.cellEditCmp.template : defaultRowEditTemplate"
+            [ngTemplateOutlet]="cellTemplates.getCellEditTemplate(column)"
             [ngOutletContext]="{
                     rowIndex:rowIndex,
                     colIndex:colIndex,

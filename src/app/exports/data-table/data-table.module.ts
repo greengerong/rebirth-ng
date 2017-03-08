@@ -14,6 +14,8 @@ import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.
 import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
 import { DataTableFootComponent } from './data-table-foot.component';
 import { PaginationModule } from '../pagination';
+import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
+import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, PaginationModule],
@@ -28,7 +30,9 @@ import { PaginationModule } from '../pagination';
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,
-    DataTableFootComponent
+    DataTableFootComponent,
+    DataTableCellTmplsComponent,
+    DataTableCellTmplComponent
   ],
   declarations: [
     DataTableComponent,
@@ -41,7 +45,9 @@ import { PaginationModule } from '../pagination';
     DataTableHeadTmplComponent,
     DataTableCellFilterTmplComponent,
     DataTableFootTmplComponent,
-    DataTableFootComponent
+    DataTableFootComponent,
+    DataTableCellTmplsComponent,
+    DataTableCellTmplComponent
   ],
   providers: [],
 })

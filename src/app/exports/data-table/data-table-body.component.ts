@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
+import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
 
 @Component({
   selector: 're-data-table-body,[reDataTableBody]',
@@ -14,6 +15,7 @@ export class DataTableBodyComponent {
   @Input() selectable: boolean;
   @Input() dataSource: any[] = [];
   @Input() columns: DataTableColumnTmplComponent[];
+  @Input() cellTemplates: DataTableCellTmplsComponent;
 
   constructor(public dt: DataTableComponent) {
 

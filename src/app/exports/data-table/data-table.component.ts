@@ -1,6 +1,6 @@
 import {
   Component, ChangeDetectionStrategy, Input, ContentChildren, Output,
-  EventEmitter, ContentChild, ChangeDetectorRef, OnDestroy
+  EventEmitter, ContentChild, ChangeDetectorRef, OnDestroy, ViewChildren, ViewChild, QueryList
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import {
@@ -11,6 +11,8 @@ import {
 } from './data-table.model';
 import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
 import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
+import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
+import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @Component({
   selector: 're-data-table',
@@ -46,6 +48,7 @@ export class DataTableComponent implements OnDestroy {
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
+  @ViewChild(DataTableCellTmplsComponent) cellTemplates: DataTableCellTmplsComponent;
 
   pagerMaxItems = 8;
   selectedRowItem: any;
