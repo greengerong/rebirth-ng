@@ -2,11 +2,11 @@ import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@ang
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 
 @Component({
-  selector: 're-cell-templates',
-  templateUrl: './data-table-cell-tmpls.component.html',
+  selector: 're-data-table-templates',
+  templateUrl: './data-table-tmpls.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableCellTmplsComponent {
+export class DataTableTmplsComponent {
 
   @ViewChild('defaultHeadTemplate') headTemplate: TemplateRef<any>;
   @ViewChild('textCellTemplate') text: DataTableCellTmplComponent;

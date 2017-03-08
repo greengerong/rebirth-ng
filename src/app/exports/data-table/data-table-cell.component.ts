@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
 import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
-import { DataTableCellTmplsComponent } from './data-table-cell-tmpls.component';
+import { DataTableTmplsComponent } from './data-table-tmpls.component';
 
 @Component({
   selector: 're-data-table-cell,[reDataTableCell]',
@@ -16,7 +16,7 @@ export class DataTableCellComponent {
   @Input() colIndex: number;
   @Input() column: DataTableColumnTmplComponent;
   @Input() rowItem: any;
-  @Input() cellTemplates: DataTableCellTmplsComponent;
+  @Input() dataTableTemplates: DataTableTmplsComponent;
 
   isCellEdit: boolean;
 

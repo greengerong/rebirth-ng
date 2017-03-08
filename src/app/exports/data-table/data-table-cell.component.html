@@ -1,6 +1,6 @@
 <ng-container>
   <template *ngIf="!column.editable || !isCellEdit"
-            [ngTemplateOutlet]="cellTemplates.getCellViewTemplate(column)"
+            [ngTemplateOutlet]="dataTableTemplates.getCellViewTemplate(column)"
             [ngOutletContext]="{
                    rowIndex:rowIndex,
                    colIndex:colIndex,
@@ -13,7 +13,7 @@
   </template>
 
   <template *ngIf="column.editable && isCellEdit"
-            [ngTemplateOutlet]="cellTemplates.getCellEditTemplate(column)"
+            [ngTemplateOutlet]="dataTableTemplates.getCellEditTemplate(column)"
             [ngOutletContext]="{
                     rowIndex:rowIndex,
                     colIndex:colIndex,

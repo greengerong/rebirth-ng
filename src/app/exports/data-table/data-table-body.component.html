@@ -14,8 +14,8 @@
     </form>
   </td>
   <ng-container *ngFor="let column of columns; let colIndex = index">
-    <td reDataTableCell [cellTemplates]="cellTemplates" [rowIndex]="rowIndex" [colIndex]="colIndex" [column]="column"
-        [rowItem]="rowItem" [style.width]="column.width || ''">
+    <td reDataTableCell [dataTableTemplates]="dataTableTemplates" [rowIndex]="rowIndex" [colIndex]="colIndex"
+        [column]="column" [rowItem]="rowItem" [style.width]="column.width || ''">
     </td>
   </ng-container>
 </tr>
