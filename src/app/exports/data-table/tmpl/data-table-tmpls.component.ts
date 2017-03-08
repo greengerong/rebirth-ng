@@ -21,7 +21,7 @@ export class DataTableTmplsComponent {
     }
 
     const template = this.getTemplate(column.fieldType);
-    return template.view.template;
+    return template.view ? template.view.template : this.text.view.template;
   }
 
   getCellEditTemplate(column) {
@@ -30,7 +30,7 @@ export class DataTableTmplsComponent {
     }
 
     const template = this.getTemplate(column.fieldType);
-    return template.edit.template;
+    return template.edit ? template.edit.template : this.text.edit.template;
   }
 
   getCellFilterTemplate(column) {
@@ -39,7 +39,7 @@ export class DataTableTmplsComponent {
     }
 
     const template = this.getTemplate(column.fieldType);
-    return template.filter.template;
+    return template.filter ? template.filter.template : this.text.filter.template;
   }
 
 }
