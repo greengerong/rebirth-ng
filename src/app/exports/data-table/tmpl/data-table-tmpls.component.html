@@ -38,7 +38,7 @@
       <form class="form-inline">
         <div class="form-group">
           <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
-                 [(ngModel)]="rowItem[column.field]"
+                 [(ngModel)]="rowItem[column.field]" (keydown.enter)="cell.onFinishCellEdit($event)"
                  (blur)="cell.onFinishCellEdit($event)"/>
         </div>
       </form>
