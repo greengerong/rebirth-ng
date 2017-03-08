@@ -10,7 +10,7 @@ import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.
 })
 export class DataTableColumnTmplComponent {
   @Input() field: string;
-  @Input() fieldType: 'text' | 'number' | 'tel' | 'mail' | 'date' | 'dateTime' | 'select' | string = 'text';
+  @Input() fieldType: DataTableFieldType = 'text';
   @Input() header: string;
   @Input() sortable: boolean;
   @Input() editable: boolean;
