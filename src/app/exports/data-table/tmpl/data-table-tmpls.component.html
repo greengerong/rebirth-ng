@@ -54,7 +54,7 @@
   <re-cell>
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
-      <a [href]="'tel:' + cellValue">{{cellValue}}</a>
+      <a [href]="'tel:' + cellValue" (click)="stopPropagation($event)">{{cellValue}}</a>
     </template>
   </re-cell>
 
@@ -64,7 +64,7 @@
   <re-cell>
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
-      <a [href]=" cellValue ? ('mailto:' + cellValue) : ''">{{cellValue}}</a>
+      <a [href]=" cellValue ? ('mailto:' + cellValue) : ''" (click)="stopPropagation($event)">{{cellValue}}</a>
     </template>
   </re-cell>
 

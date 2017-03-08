@@ -45,4 +45,7 @@ export class DataTableTmplsComponent {
     return template.filter ? template.filter.template : this.text.filter.template;
   }
 
+  stopPropagation($event: Event) {
+    $event.stopPropagation();
+  }
 }
