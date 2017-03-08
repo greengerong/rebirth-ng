@@ -10,6 +10,9 @@ export class DataTableTmplsComponent {
 
   @ViewChild('defaultHeadTemplate') headTemplate: TemplateRef<any>;
   @ViewChild('textCellTemplate') text: DataTableCellTmplComponent;
+  @ViewChild('telCellTemplate') tel: DataTableCellTmplComponent;
+  @ViewChild('mailCellTemplate') mail: DataTableCellTmplComponent;
+  @ViewChild('imageCellTemplate') image: DataTableCellTmplComponent;
 
   getTemplate(fieldType: string): DataTableCellTmplComponent {
     return this[fieldType || 'text'] || this.text;

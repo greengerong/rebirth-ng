@@ -25,11 +25,7 @@
   <re-cell>
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
-      <ng-container [ngSwitch]="column.fieldType">
-        <a *ngSwitchCase="'tel'" [href]="'tel:' + cellValue">{{cellValue}}</a>
-        <a *ngSwitchCase="'mail'" [href]="'mailto:' + cellValue">{{cellValue}}</a>
-        <span *ngSwitchDefault>{{cellValue}}</span>
-      </ng-container>
+      {{cellValue}}
     </template>
   </re-cell>
 
@@ -47,9 +43,49 @@
 
   <re-cell-filter>
     <template let-head="" let-column="column">
-      <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]" [name]="column.field"
-             (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
+      <input [type]="column.fieldType" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
+             [name]="column.field" (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
     </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
+<re-cell-template #telCellTemplate type="tel">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <a [href]="'tel:' + cellValue">{{cellValue}}</a>
+    </template>
+  </re-cell>
+
+</re-cell-template>
+
+<re-cell-template #mailCellTemplate type="mail">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <a [href]=" cellValue ? ('mailto:' + cellValue) : ''">{{cellValue}}</a>
+    </template>
+  </re-cell>
+
+</re-cell-template>
+
+<re-cell-template #imageCellTemplate type="image">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <img class="img-responsive" [src]="cellValue" [attr.alt]="cellValue">
+    </template>
+  </re-cell>
+
+  <re-cell-edit>
+    <template>
+      <strong>You need customise edit template!</strong>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+
   </re-cell-filter>
 
 </re-cell-template>
