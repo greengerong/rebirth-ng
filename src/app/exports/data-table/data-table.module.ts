@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DataTableComponent } from './data-table.component';
-import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
-import { DataTableCellViewTmplComponent } from './data-table-cell-view-tmpl.component';
-import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
+import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
+import { DataTableCellViewTmplComponent } from './tmpl/data-table-cell-view-tmpl.component';
+import { DataTableCellEditTmplComponent } from './tmpl/data-table-cell-edit-tmpl.component';
 import { DataTableCellComponent } from './data-table-cell.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
-import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
-import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
-import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
+import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
+import { DataTableCellFilterTmplComponent } from './tmpl/data-table-cell-filter-tmpl.component';
+import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 import { DataTableFootComponent } from './data-table-foot.component';
 import { PaginationModule } from '../pagination';
-import { DataTableTmplsComponent } from './data-table-tmpls.component';
-import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
+import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
+import { DataTableCellTmplComponent } from './tmpl/data-table-cell-tmpl.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, PaginationModule],

@@ -10,16 +10,16 @@ import {
   OnDestroy,
   ViewChild
 } from '@angular/core';
-import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
+import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import {
   CellSelectedEventArg,
   RowCheckChangeEventArg,
   RowSelectedEventArg,
   SortChangeEventArg
 } from './data-table.model';
-import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
-import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
-import { DataTableTmplsComponent } from './data-table-tmpls.component';
+import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
+import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
+import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 
 @Component({
   selector: 're-data-table',

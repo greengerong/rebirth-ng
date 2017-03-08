@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
+import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
-import { DataTableTmplsComponent } from './data-table-tmpls.component';
+import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 
 @Component({
   selector: 're-data-table-body,[reDataTableBody]',

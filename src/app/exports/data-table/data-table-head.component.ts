@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy, Input, QueryList } from '@angular/core';
-import { DataTableColumnTmplComponent } from './data-table-column-tmpl.component';
+import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
-import { DataTableHeadTmplComponent } from './data-table-head-tmpl.component';
-import { DataTableTmplsComponent } from './data-table-tmpls.component';
-import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
+import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
+import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
+import { DataTableCellTmplComponent } from './tmpl/data-table-cell-tmpl.component';
 
 @Component({
   selector: 're-data-table-head,[reDataTableHead]',

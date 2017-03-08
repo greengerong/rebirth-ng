@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { DataTableFootTmplComponent } from './data-table-foot-tmpl.component';
+import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 
 @Component({
   selector: 're-data-table-foot,[reDataTableFoot]',
