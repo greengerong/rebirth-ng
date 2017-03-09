@@ -63,9 +63,6 @@ export class DataTableComponent implements OnDestroy {
   selectedColumnItem: any;
   isCellEdit: boolean;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
-  }
-
   onCellClick($event: CellSelectedEventArg) {
     if (this.selectedRowItem !== $event.rowItem || this.selectedColumnItem !== $event.column) {
       this.selectedRowItem = $event.rowItem;
