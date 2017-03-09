@@ -40,7 +40,8 @@ export class DataTableCellComponent {
     }
   }
 
-  @HostListener('document:click', ['$event'])
+  // @HostListener('document:click', ['$event'])
+  // will bring big performance issue when large table
   onFinishCellEdit($event) {
     if (this.editModel !== 'cell') {
       return;
