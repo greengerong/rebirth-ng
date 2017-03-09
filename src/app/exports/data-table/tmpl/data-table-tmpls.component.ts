@@ -9,6 +9,7 @@ import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
 export class DataTableTmplsComponent {
 
   @ViewChild('defaultHeadTemplate') headTemplate: TemplateRef<any>;
+  @ViewChild('defaultPagerTemplate') pagerTemplate: TemplateRef<any>;
   @ViewChild('textCellTemplate') text: DataTableCellTmplComponent;
   @ViewChild('numberCellTemplate') number: DataTableCellTmplComponent;
   @ViewChild('telCellTemplate') tel: DataTableCellTmplComponent;

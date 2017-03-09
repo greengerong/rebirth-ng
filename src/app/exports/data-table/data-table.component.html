@@ -20,10 +20,8 @@
     </table>
   </div>
   <div class="panel-footer table-view-footer text-center" *ngIf="pager">
-    <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"
-                   [maxItems]="pager.maxItems || pagerMaxItems" [(pageIndex)]="pager.pageIndex"
-                   (pageIndexChange)="onPageChange($event)">
-    </re-pagination>
+    <re-data-table-pager [pager]="pager" [dataTableTemplates]="dataTableTemplates"
+                         [pagerTemplate]="pagerTemplate"></re-data-table-pager>
   </div>
 </div>
 

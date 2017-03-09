@@ -20,6 +20,7 @@ import {
 import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
+import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.component';
 
 @Component({
   selector: 're-data-table',
@@ -55,9 +56,9 @@ export class DataTableComponent implements OnDestroy {
   @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
+  @ContentChild(DataTablePagerTmplComponent) pagerTemplate: DataTablePagerTmplComponent;
   @ViewChild(DataTableTmplsComponent) dataTableTemplates: DataTableTmplsComponent;
 
-  pagerMaxItems = 8;
   selectedRowItem: any;
   selectedColumnItem: any;
   isCellEdit: boolean;

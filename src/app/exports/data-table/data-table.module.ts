@@ -17,6 +17,8 @@ import { PaginationModule } from '../pagination';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTableCellTmplComponent } from './tmpl/data-table-cell-tmpl.component';
 import { DatePickerModule } from '../date-picker/date-picker.module';
+import { DataTablePagerComponent } from './data-table-pager.component';
+import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, PaginationModule, DatePickerModule],
@@ -33,7 +35,9 @@ import { DatePickerModule } from '../date-picker/date-picker.module';
     DataTableFootTmplComponent,
     DataTableFootComponent,
     DataTableTmplsComponent,
-    DataTableCellTmplComponent
+    DataTableCellTmplComponent,
+    DataTablePagerComponent,
+    DataTablePagerTmplComponent
   ],
   declarations: [
     DataTableComponent,
@@ -48,7 +52,9 @@ import { DatePickerModule } from '../date-picker/date-picker.module';
     DataTableFootTmplComponent,
     DataTableFootComponent,
     DataTableTmplsComponent,
-    DataTableCellTmplComponent
+    DataTableCellTmplComponent,
+    DataTablePagerComponent,
+    DataTablePagerTmplComponent
   ],
   providers: [],
 })

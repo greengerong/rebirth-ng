@@ -20,6 +20,15 @@
 </template>
 <!--end:tempate-->
 
+<!-- begin:template: pager template-->
+<template #defaultPagerTemplate let-pager="pager" let-pagerPanel="">
+  <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"
+                 [maxItems]="pager.maxItems || pagerPanel.pagerMaxItems" [(pageIndex)]="pager.pageIndex"
+                 (pageIndexChange)="pagerPanel.onPageChange($event)">
+  </re-pagination>
+</template>
+<!--end:tempate-->
+
 <!-- begin:template: cell view, edit, filter template-->
 <re-cell-template #textCellTemplate type="text">
   <re-cell>
