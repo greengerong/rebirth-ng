@@ -1,39 +1,29 @@
-<!--<header>-->
-<!--<re-menu-bar [menuOptions]="menus" [type]="'navbar-fixed-top'"></re-menu-bar>-->
-<!--</header>-->
+<header>
+  <re-menu-bar [menuOptions]="menus" [type]="'navbar-fixed-top'"></re-menu-bar>
+</header>
 
-<!--<div class="container main">-->
+<div class="container main">
 
-<!--<div class="getting-started" [innerHTML]="gettingStarted.readMe"></div>-->
-<!--<hr/>-->
-<!--<h1>Showcase</h1>-->
-<!--<ng-container *ngFor="let item of components">-->
-<!--<re-doc [component]="item"></re-doc>-->
-<!--<hr/>-->
-<!--</ng-container>-->
+  <div class="getting-started" [innerHTML]="gettingStarted.readMe"></div>
+  <hr/>
+  <h1>Showcase</h1>
+  <ng-container *ngFor="let item of components">
+    <re-doc [component]="item"></re-doc>
+    <hr/>
+  </ng-container>
 
-<!--</div>-->
-<!--<br>-->
-<!--<br>-->
-<!--<br>-->
-
-<div class="container">
-  <!--<table class="table">-->
-  <!--<tbody>-->
-  <!--<tr *ngFor="let item of largeDataSource">-->
-  <!--<td>{{item.id}}</td>-->
-  <!--<td>{{item.name}}</td>-->
-  <!--<td>{{item.age}}</td>-->
-  <!--</tr>-->
-  <!--</tbody>-->
-  <!--</table>-->
-
-  <section>
-    <h4>Large data</h4>
-    <re-data-table [dataSource]="largeDataSource">
-      <re-column field="id" header="ID" [editable]="true"></re-column>
-      <re-column field="name" header="User Name" [editable]="true"></re-column>
-      <re-column field="age" header="User Age" [editable]="true"></re-column>
-    </re-data-table>
-  </section>
 </div>
+<br>
+<br>
+<br>
+
+<!--<div class="container">-->
+<!--<section>-->
+<!--<h4>Large data</h4>-->
+<!--<re-data-table [dataSource]="largeDataSource">-->
+<!--<re-column field="id" header="ID" [editable]="true"></re-column>-->
+<!--<re-column field="name" header="User Name" [editable]="true"></re-column>-->
+<!--<re-column field="age" header="User Age" [editable]="true"></re-column>-->
+<!--</re-data-table>-->
+<!--</section>-->
+<!--</div>-->
