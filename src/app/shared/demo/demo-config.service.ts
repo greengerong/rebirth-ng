@@ -22,6 +22,7 @@ import {
   MenuBarDemoComponent,
   AutoCompleteDemoComponent,
   FlowStepDemoComponent,
+  InfiniteScrollDemoComponent,
   DataTableDemoComponent
   // component import
 } from '../../demo';
@@ -217,6 +218,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/flow-step/README.md'),
       html: require('!raw-loader!../../demo/flow-step/flow-step-demo.component.html'),
       ts: require('!raw-loader!../../demo/flow-step/flow-step-demo.component.ts'),
+    },
+    {
+      name: 'InfiniteScroll',
+      directory: 'infinite-scroll',
+      cmp: InfiniteScrollDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/infinite-scroll/README.md'),
+      html: require('!raw-loader!../../demo/infinite-scroll/infinite-scroll-demo.component.html'),
+      ts: require('!raw-loader!../../demo/infinite-scroll/infinite-scroll-demo.component.ts'),
     },
     {
       name: 'DataTable',

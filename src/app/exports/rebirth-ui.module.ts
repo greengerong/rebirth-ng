@@ -26,6 +26,7 @@ import { MenuBarModule } from './menu-bar/menu-bar.module';
 import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
 import { DataTableModule } from './data-table';
+import { InfiniteScrollModule } from './infinite-scroll';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { DataTableModule } from './data-table';
     MenuBarModule,
     AutoCompleteModule,
     FlowStepModule,
+    InfiniteScrollModule,
     DataTableModule
   ],
   exports: [
@@ -79,6 +81,7 @@ import { DataTableModule } from './data-table';
     MenuBarModule,
     AutoCompleteModule,
     FlowStepModule,
+    InfiniteScrollModule,
     DataTableModule
   ],
   declarations: [],

@@ -1,0 +1,15 @@
+<div class="infinite-scroll-demo">
+  <section>
+    <table class="table">
+      <tbody>
+      <tr *ngFor="let item of dataSource">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <re-infinite-scroll [total]="total" [complete]="complete" (loadMore)="loadMore()"></re-infinite-scroll>
+  </section>
+</div>
+
