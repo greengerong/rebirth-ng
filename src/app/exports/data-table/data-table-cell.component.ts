@@ -17,7 +17,7 @@ export class DataTableCellComponent {
   @Input() column: DataTableColumnTmplComponent;
   @Input() rowItem: any;
   @Input() dataTableTemplates: DataTableTmplsComponent;
-
+  @Input() editModel: DataTableEditModel;
   isCellEdit: boolean;
 
   constructor(public dt: DataTableComponent) {
@@ -33,7 +33,7 @@ export class DataTableCellComponent {
     };
 
     this.dt.onCellClick(cellSelectedEventArg);
-    if (this.column.editable) {
+    if (this.column.editable && this.editModel === 'cell') {
       $event.stopPropagation();
       this.isCellEdit = true;
       this.dt.onCellEditStart(cellSelectedEventArg);
@@ -42,6 +42,9 @@ export class DataTableCellComponent {
 
   @HostListener('document:click', ['$event'])
   onFinishCellEdit($event) {
+    if (this.editModel !== 'cell') {
+      return;
+    }
     this.isCellEdit = false;
     if ($event) {
       $event.stopPropagation();
@@ -64,6 +67,14 @@ export class DataTableCellComponent {
       rowItem: this.rowItem
     };
     this.dt.onCellDBClick(cellSelectedEventArg);
+  }
+
+  isCellEditEnable(column, rowItem) {
+    if (this.editModel === 'cell') {
+      return this.isCellEdit;
+    }
+
+    return rowItem.$$edit;
   }
 
   getCellValue(column: DataTableColumnTmplComponent, rowIndex: number, rowItem: any) {

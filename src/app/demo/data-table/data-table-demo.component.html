@@ -98,4 +98,51 @@
     </re-data-table>
   </section>
 
+  <section>
+    <h4>Data table row edit</h4>
+    <re-data-table [dataSource]="dataSource" editModel="row" #table="dataTable">
+      <re-column field="$index" header="#"></re-column>
+      <re-column field="firstName" header="First Name" [editable]="true"></re-column>
+      <re-column field="lastName" header="Last Name" [editable]="true"></re-column>
+      <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
+        <re-cell-edit>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+                    let-cell="">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-MM-dd" autofocus="autofocus"
+                         name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
+                         (ngModelChange)="cell.onFinishCellEdit()">
+                  <div class="input-group-addon" (click)="datePicker.toggle($event)">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </template>
+        </re-cell-edit>
+      </re-column>
+      <re-column field="score" [sortable]="true" header="Score" [editable]="true" fieldType="number"></re-column>
+      <re-column>
+        <re-cell>
+          <template let-rowItem="rowItem" let-column="column" let-cell="">
+            <button class="btn btn-primary" (click)="table.editRow(rowItem)"
+                    *ngIf="!cell.isCellEditEnable(column,rowItem)">Update
+            </button>
+            <button class="btn btn-primary" (click)="table.endEditRow(rowItem)"
+                    *ngIf="cell.isCellEditEnable(column,rowItem)">
+              Save
+            </button>
+            <button class="btn btn-default" (click)="table.endEditRow(rowItem)"
+                    *ngIf="cell.isCellEditEnable(column,rowItem)">
+              Cancel
+            </button>
+            <!--<button class="btn btn-primary">Update</button>-->
+          </template>
+        </re-cell>
+      </re-column>
+    </re-data-table>
+  </section>
+
 </div>

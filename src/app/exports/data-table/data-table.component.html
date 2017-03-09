@@ -15,7 +15,8 @@
              [headTemplate]="headTemplate" [checkable]="checkable" [allChecked]="allChecked"></thead>
 
       <tbody reDataTableBody [dataTableTemplates]="dataTableTemplates" [dataSource]="dataSource" [columns]="columns"
-             [checkable]="checkable" [allChecked]="allChecked" [selectable]="selectable"></tbody>
+             [checkable]="checkable" [allChecked]="allChecked" [selectable]="selectable"
+             [editModel]="editModel"></tbody>
       <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
     </table>
   </div>

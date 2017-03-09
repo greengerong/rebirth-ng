@@ -35,6 +35,7 @@ export class DataTableComponent implements OnDestroy {
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
+  @Input() editModel: DataTableEditModel = 'cell';
   @Input() maxHeight: string;
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
@@ -123,6 +124,14 @@ export class DataTableComponent implements OnDestroy {
 
   getSelectedRowItem(): any[] {
     return this.selectedRowItem;
+  }
+
+  editRow(rowItem) {
+    rowItem.$$edit = true;
+  }
+
+  endEditRow(rowItem) {
+    rowItem.$$edit = false;
   }
 
   ngOnDestroy(): void {

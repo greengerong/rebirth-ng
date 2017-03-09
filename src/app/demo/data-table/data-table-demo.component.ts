@@ -76,7 +76,7 @@ export class DataTableDemoComponent implements OnInit {
     pageIndex: 5,
     pageSize: 10,
   };
-
+  editRowItem: any;
   filterDataSource = [];
 
   constructor() {

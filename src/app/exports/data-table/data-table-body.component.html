@@ -15,7 +15,7 @@
   </td>
   <ng-container *ngFor="let column of columns; let colIndex = index">
     <td reDataTableCell [dataTableTemplates]="dataTableTemplates" [rowIndex]="rowIndex" [colIndex]="colIndex"
-        [column]="column" [rowItem]="rowItem" [style.width]="column.width || ''">
+        [column]="column" [rowItem]="rowItem" [style.width]="column.width || ''" [editModel]="editModel">
     </td>
   </ng-container>
 </tr>

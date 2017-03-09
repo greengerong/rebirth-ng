@@ -18,5 +18,5 @@ type ModalSize = 'lg' | 'sm';
 type PaginationSize = '' | 'lg' | 'sm';
 
 type DataTableFieldType = 'text' | 'number' | 'tel' | 'mail' | 'image' | 'date' | string; // 'select'
-
+type DataTableEditModel = 'row' | 'cell';
 
