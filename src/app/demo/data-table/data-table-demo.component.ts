@@ -76,7 +76,6 @@ export class DataTableDemoComponent implements OnInit {
     pageIndex: 5,
     pageSize: 10,
   };
-  editRowItem: any;
   filterDataSource = [];
 
   constructor() {
@@ -121,6 +120,30 @@ export class DataTableDemoComponent implements OnInit {
 
   onPageIndexChange($event) {
     console.log('Page index change', $event);
+  }
+
+  editRow(table, rowItem) {
+    const editModel = {
+      id: rowItem.id,
+      firstName: rowItem.firstName,
+      lastName: rowItem.lastName,
+      dob: rowItem.dob,
+      score: rowItem.score,
+    };
+
+    table.editRow(rowItem, editModel);
+  }
+
+  saveRow(table, rowItem) {
+    const editModel = table.endEditRow(rowItem);
+    rowItem.firstName = editModel.firstName;
+    rowItem.lastName = editModel.lastName;
+    rowItem.dob = editModel.dob;
+    rowItem.score = editModel.score;
+  }
+
+  cancelRow(table, rowItem) {
+    table.endEditRow(rowItem);
   }
 }
 

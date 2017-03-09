@@ -126,12 +126,16 @@ export class DataTableComponent implements OnDestroy {
     return this.selectedRowItem;
   }
 
-  editRow(rowItem) {
+  editRow(rowItem, editModel) {
     rowItem.$$edit = true;
+    rowItem.$$editModel = editModel;
   }
 
   endEditRow(rowItem) {
-    rowItem.$$edit = false;
+    const editModel = rowItem.$$editModel;
+    delete rowItem.$$edit;
+    delete rowItem.$$editModel;
+    return editModel;
   }
 
   ngOnDestroy(): void {

@@ -18,7 +18,8 @@
                     rowIndex:rowIndex,
                     colIndex:colIndex,
                     column: column,
-                    rowItem:rowItem,
+                    rowItem: rowItem?.$$editModel || rowItem,
+                    viewItem: rowItem,
                     $implicit: this
                     }">
   </template>

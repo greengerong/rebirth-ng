@@ -127,15 +127,15 @@
       <re-column>
         <re-cell>
           <template let-rowItem="rowItem" let-column="column" let-cell="">
-            <button class="btn btn-primary" (click)="table.editRow(rowItem)"
-                    *ngIf="!cell.isCellEditEnable(column,rowItem)">Update
+            <button class="btn btn-primary" (click)="editRow(table, rowItem)"
+                    *ngIf="!cell.isCellEditEnable(column, rowItem)">Update
             </button>
-            <button class="btn btn-primary" (click)="table.endEditRow(rowItem)"
-                    *ngIf="cell.isCellEditEnable(column,rowItem)">
+            <button class="btn btn-primary" (click)="saveRow(table, rowItem)"
+                    *ngIf="cell.isCellEditEnable(column, rowItem)">
               Save
             </button>
-            <button class="btn btn-default" (click)="table.endEditRow(rowItem)"
-                    *ngIf="cell.isCellEditEnable(column,rowItem)">
+            <button class="btn btn-default" (click)="cancelRow(table, rowItem)"
+                    *ngIf="cell.isCellEditEnable(column, rowItem)">
               Cancel
             </button>
             <!--<button class="btn btn-primary">Update</button>-->
