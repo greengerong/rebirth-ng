@@ -15,7 +15,7 @@ import {
   CellSelectedEventArg,
   RowCheckChangeEventArg,
   RowSelectedEventArg,
-  SortChangeEventArg
+  SortChangeEventArg, DataTablePager
 } from './data-table.model';
 import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
@@ -40,7 +40,7 @@ export class DataTableComponent implements OnDestroy {
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
   @Input() allChecked: boolean;
-  @Input() pager: any;
+  @Input() pager: DataTablePager;
   @Input() cssClass: string;
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
   @Output() cellDBClick = new EventEmitter<CellSelectedEventArg>();

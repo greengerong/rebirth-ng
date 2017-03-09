@@ -23,3 +23,10 @@ export interface RowCheckChangeEventArg {
   checked: boolean;
 }
 
+
+export interface DataTablePager {
+  total: number;
+  pageIndex: number;
+  pageSize: number;
+  maxItems?: number;
+}

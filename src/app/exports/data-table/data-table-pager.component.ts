@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, Input, ViewChild } from '@angular/c
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTableComponent } from './data-table.component';
+import { DataTablePager } from './data-table.model';
 
 @Component({
   selector: 're-data-table-pager,[reDataTablePager]',
@@ -9,7 +10,7 @@ import { DataTableComponent } from './data-table.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTablePagerComponent {
-  @Input() pager: any;
+  @Input() pager: DataTablePager;
   @Input() dataTableTemplates: DataTableTmplsComponent;
   @Input() pagerTemplate: DataTableFootTmplComponent;
   pagerMaxItems = 8;

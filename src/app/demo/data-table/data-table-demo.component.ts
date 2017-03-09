@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Pipe, PipeTransform } from '@angular/core';
 import { formatDate } from '../../exports/utils/date-utils';
-import { RowCheckChangeEventArg, SortChangeEventArg } from '../../exports/data-table/data-table.model';
+import { RowCheckChangeEventArg, SortChangeEventArg, DataTablePager } from '../../exports/data-table/data-table.model';
 import { DataTableComponent } from '../../exports/data-table/data-table.component';
 
 @Component({
@@ -71,7 +71,7 @@ export class DataTableDemoComponent implements OnInit {
 
   ];
 
-  pager = {
+  pager: DataTablePager = {
     total: 306,
     pageIndex: 5,
     pageSize: 10,
