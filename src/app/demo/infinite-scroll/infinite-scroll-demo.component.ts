@@ -9,7 +9,7 @@ export class InfiniteScrollDemoComponent implements OnInit {
   dataSource = [];
   total = 500;
   complete = false;
-  next = 0;
+  next = 1;
 
   constructor() {
   }
@@ -18,7 +18,7 @@ export class InfiniteScrollDemoComponent implements OnInit {
   }
 
   loadMore(infiniteScroll: InfiniteScrollComponent) {
-    if (this.next >= this.total) {
+    if (this.next > this.total) {
       return;
     }
 
@@ -30,7 +30,7 @@ export class InfiniteScrollDemoComponent implements OnInit {
     }
 
     this.dataSource = [...this.dataSource, ...dataSource];
-    this.complete = this.next >= this.total;
+    this.complete = this.next > this.total;
     infiniteScroll.loadFinish(this.complete);
     console.log(`load more`, this.next, this.complete);
   }
