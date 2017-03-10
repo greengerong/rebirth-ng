@@ -1,0 +1,28 @@
+<re-data-table-templates></re-data-table-templates>
+
+<div class="panel panel-default data-table {{cssClass}}">
+  <!--<div class="panel-heading text-center">Panel heading</div>-->
+  <div class="table-view" *ngIf="scrollable">
+    <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
+      <thead reDataTableHead [columns]="columns" [headTemplate]="headTemplate" [checkable]="checkable"
+             [allChecked]="allChecked" [dataTableTemplates]="dataTableTemplates"></thead>
+    </table>
+  </div>
+
+  <div class="table-view" [ngClass]="{'scroll-view': scrollable}" [style.max-height]="maxHeight">
+    <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
+      <thead *ngIf="!scrollable" reDataTableHead [dataTableTemplates]="dataTableTemplates" [columns]="columns"
+             [headTemplate]="headTemplate" [checkable]="checkable" [allChecked]="allChecked"></thead>
+
+      <tbody reDataTableBody [dataTableTemplates]="dataTableTemplates" [dataSource]="dataSource" [columns]="columns"
+             [checkable]="checkable" [allChecked]="allChecked" [selectable]="selectable"
+             [editModel]="editModel"></tbody>
+      <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
+    </table>
+  </div>
+  <div class="panel-footer table-view-footer text-center" *ngIf="pager">
+    <re-data-table-pager [pager]="pager" [dataTableTemplates]="dataTableTemplates"
+                         [pagerTemplate]="pagerTemplate"></re-data-table-pager>
+  </div>
+</div>
+

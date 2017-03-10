@@ -1,0 +1,17 @@
+<ng-container>
+  <template [ngTemplateOutlet]="headTemplate ? headTemplate.template : dataTableTemplates.headTemplate"
+            [ngOutletContext]="{ $implicit: this }">
+  </template>
+
+  <!--filter row-->
+  <tr *ngIf="hasAnyFilterColumns(columns)">
+    <th *ngIf="checkable"></th>
+    <th *ngFor="let column of columns">
+      <ng-container *ngIf="canFilterable(column)">
+        <template [ngTemplateOutlet]="dataTableTemplates.getCellFilterTemplate(column)"
+                  [ngOutletContext]="{ $implicit: this , column: column}">
+        </template>
+      </ng-container>
+    </th>
+  </tr>
+</ng-container>

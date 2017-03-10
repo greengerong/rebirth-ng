@@ -1,0 +1,30 @@
+.data-table {
+  border: none;
+  .table-view {
+    padding: 0px;
+    border: none;
+    .table {
+      margin: 0px;
+    }
+    &.scroll-view {
+      overflow: auto;
+    }
+  }
+
+  .table-view-footer {
+    border: none;
+    margin: 0px;
+  }
+}
+
+:host /deep/ {
+  .table-pagination {
+    .pagination {
+      margin: 0px;
+    }
+  }
+
+  .checkable-cell {
+    width: 25px;
+  }
+}

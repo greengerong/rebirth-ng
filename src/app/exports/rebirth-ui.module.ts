@@ -25,6 +25,8 @@ import { SwitchModule } from './switch/switch.module';
 import { MenuBarModule } from './menu-bar/menu-bar.module';
 import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
+import { DataTableModule } from './data-table';
+import { InfiniteScrollModule } from './infinite-scroll';
 
 
 @NgModule({
@@ -51,7 +53,9 @@ import { FlowStepModule } from './flow-step';
     SwitchModule,
     MenuBarModule,
     AutoCompleteModule,
-    FlowStepModule
+    FlowStepModule,
+    InfiniteScrollModule,
+    DataTableModule
   ],
   exports: [
     ModalModule,
@@ -76,7 +80,9 @@ import { FlowStepModule } from './flow-step';
     SwitchModule,
     MenuBarModule,
     AutoCompleteModule,
-    FlowStepModule
+    FlowStepModule,
+    InfiniteScrollModule,
+    DataTableModule
   ],
   declarations: [],
   providers: [],

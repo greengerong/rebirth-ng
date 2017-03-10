@@ -1,5 +1,5 @@
-import { Component, Input, TemplateRef } from '@angular/core';
-import { ControlValueAccessor } from '@angular/forms';
+import { Component, Input, TemplateRef, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 
 @Component({
@@ -9,7 +9,12 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
     '[class]': '"dropdown-menu "  +  (cssClass ? cssClass : "")',
     '[style.display]': 'isOpen && (source?.length || noResultItemTemplate) ? "inline-block" : "none"'
   },
-  styleUrls: ['./auto-complete-popup.component.scss']
+  styleUrls: ['./auto-complete-popup.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => AutoCompletePopupComponent),
+    multi: true
+  }]
 })
 export class AutoCompletePopupComponent implements ControlValueAccessor {
   activeIndex = 0;

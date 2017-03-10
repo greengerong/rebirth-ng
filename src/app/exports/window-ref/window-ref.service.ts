@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ElementRef } from '@angular/core';
 import { DocumentRef } from './document-ref.service';
 
 @Injectable()
@@ -29,6 +29,10 @@ export class WindowRef {
 
   getComputedStyle(element) {
     return window.getComputedStyle(element);
+  }
+
+  getBoundingClientRect(elementRef: ElementRef) {
+    return elementRef.nativeElement && elementRef.nativeElement.getBoundingClientRect();
   }
 
 }

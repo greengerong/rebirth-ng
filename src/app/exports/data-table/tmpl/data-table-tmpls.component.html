@@ -1,0 +1,206 @@
+<!-- begin:template: header label template-->
+<template #defaultHeadTemplate let-head="">
+  <tr>
+    <th *ngIf="head.checkable" class="checkable-cell">
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="checkAll" [(ngModel)]="head.allChecked" (change)="head.onCheckAllChange()">
+            </label>
+          </div>
+        </div>
+      </form>
+    </th>
+    <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
+      {{column.header}} <i *ngIf="head.sortField == column.field" class="glyphicon"
+                           [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
+    </th>
+  </tr>
+</template>
+<!--end:tempate-->
+
+<!-- begin:template: pager template-->
+<template #defaultPagerTemplate let-pager="pager" let-pagerPanel="">
+  <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"
+                 [maxItems]="pager.maxItems || pagerPanel.pagerMaxItems" [(pageIndex)]="pager.pageIndex"
+                 (pageIndexChange)="pagerPanel.onPageChange($event)">
+  </re-pagination>
+</template>
+<!--end:tempate-->
+
+<!-- begin:template: cell view, edit, filter template-->
+<re-cell-template #textCellTemplate type="text">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      {{cellValue}}
+    </template>
+  </re-cell>
+
+  <re-cell-edit>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">
+      <form class="form-inline">
+        <div class="form-group">
+          <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
+                 [(ngModel)]="rowItem[column.field]" (keydown.enter)="cell.onFinishCellEdit($event)"
+                 (blur)="cell.onFinishCellEdit($event)"/>
+        </div>
+      </form>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <input [type]="column.fieldType" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
+             [name]="column.field" (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
+<re-cell-template #numberCellTemplate type="number">
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <input type="number" class="form-control search" placeholder="From"
+                   [(ngModel)]="head.searchQuery['ge$' +column.field]"
+                   [name]="column.field + '_min'" (keydown.enter)="head.onSearchQueryChange()"
+                   (change)="head.onSearchQueryChange()"/>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <input type="number" class="form-control search" placeholder="To"
+                   [(ngModel)]="head.searchQuery['le$' +column.field]"
+                   [name]="column.field +'_max'" (keydown.enter)="head.onSearchQueryChange()"
+                   (change)="head.onSearchQueryChange()"/>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
+<re-cell-template #telCellTemplate type="tel">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <a [href]="'tel:' + cellValue" (click)="stopPropagation($event)">{{cellValue}}</a>
+    </template>
+  </re-cell>
+
+</re-cell-template>
+
+<re-cell-template #mailCellTemplate type="mail">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <a [href]=" cellValue ? ('mailto:' + cellValue) : ''" (click)="stopPropagation($event)">{{cellValue}}</a>
+    </template>
+  </re-cell>
+
+</re-cell-template>
+
+<re-cell-template #imageCellTemplate type="image">
+  <re-cell>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cellItem="cellItem" let-cellValue="cellValue">
+      <img class="img-responsive" [src]="cellValue" [attr.alt]="cellValue">
+    </template>
+  </re-cell>
+
+  <re-cell-edit>
+    <template>
+      <strong>You need customise edit template!</strong>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+
+  </re-cell-filter>
+
+</re-cell-template>
+
+<re-cell-template #dateCellTemplate type="date">
+  <re-cell-edit>
+    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+              let-cell="">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control search" autofocus="autofocus"
+                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"
+                   (ngModelChange)="cell.onFinishCellEdit()">
+            <div class="input-group-addon" (click)="datePicker.toggle($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </div>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-edit>
+
+  <re-cell-filter>
+    <template let-head="" let-column="column">
+      <form>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+              <input class="form-control search" [name]="'ge$' + column.field" placeholder="From"
+                     [(ngModel)]="head.searchQuery['ge$' + column.field]"
+                     reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
+              <div class="input-group-addon" (click)="geDatePicker.toggle($event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <div class="input-group">
+              <input class="form-control search" [name]="'le$' + column.field" placeholder="To"
+                     [(ngModel)]="head.searchQuery['le$' + column.field]"
+                     reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
+              <div class="input-group-addon" (click)="leDatePicker.toggle($event)">
+                <i class="glyphicon glyphicon-calendar"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </template>
+  </re-cell-filter>
+
+</re-cell-template>
+
+<!--<re-cell-template #selectCellTemplate type="select">-->
+<!--<re-cell-edit>-->
+<!--<template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<select class="form-control" autofocus="autofocus" [name]="column.field"-->
+<!--[(ngModel)]="rowItem[column.field]" (ngModelChange)="cell.onFinishCellEdit()">-->
+<!--<option *ngFor="let item of column.extraOptions" [value]="item.value || item">{{item.label || item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</form>-->
+<!--</template>-->
+<!--</re-cell-edit>-->
+
+<!--<re-cell-filter>-->
+<!--<template let-head="" let-column="column">-->
+<!--<form>-->
+<!--<div class="form-group">-->
+<!--<select class="form-control search" [name]="column.field"-->
+<!--[(ngModel)]="head.searchQuery[column.field]" (ngModelChange)="head.onSearchQueryChange()">-->
+<!--<option *ngFor="let item of column?.extraOptions" [value]="item.value || item">{{item.label || item}}-->
+<!--</option>-->
+<!--</select>-->
+<!--</div>-->
+<!--</form>-->
+<!--</template>-->
+<!--</re-cell-filter>-->
+
+<!--</re-cell-template>-->
+<!--end:tempate-->
