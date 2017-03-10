@@ -18,6 +18,8 @@ export class DataTableCellComponent {
   @Input() rowItem: any;
   @Input() dataTableTemplates: DataTableTmplsComponent;
   @Input() editModel: DataTableEditModel;
+  @Input() isEditRow: boolean;
+
   isCellEdit: boolean;
 
   constructor(public dt: DataTableComponent) {

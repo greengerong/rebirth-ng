@@ -63,6 +63,7 @@ export class DataTableComponent implements OnDestroy {
   selectedRowItem: any;
   selectedColumnItem: any;
   isCellEdit: boolean;
+  editRowItem: any;
 
   onCellClick($event: CellSelectedEventArg) {
     if (this.selectedRowItem !== $event.rowItem || this.selectedColumnItem !== $event.column) {
@@ -129,12 +130,14 @@ export class DataTableComponent implements OnDestroy {
   editRow(rowItem, editModel) {
     rowItem.$$edit = true;
     rowItem.$$editModel = editModel;
+    this.editRowItem = rowItem;
   }
 
   endEditRow(rowItem) {
     const editModel = rowItem.$$editModel;
     delete rowItem.$$edit;
     delete rowItem.$$editModel;
+    this.editRowItem = null;
     return editModel;
   }
 

@@ -14,6 +14,7 @@ export class DataTableBodyComponent {
   @Input() allChecked: boolean;
   @Input() selectable: boolean;
   @Input() editModel: DataTableEditModel;
+  @Input() editRowItem: any;
   @Input() dataSource: any[] = [];
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
