@@ -1118,6 +1118,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>editRowItem</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>any</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>selectable</code>
                         </td>
                         <td class="col-md-10">
@@ -1266,6 +1281,7 @@ export class DataTableBodyComponent {
   @Input() allChecked: boolean;
   @Input() selectable: boolean;
   @Input() editModel: DataTableEditModel;
+  @Input() editRowItem: any;
   @Input() dataSource: any[] &#x3D; [];
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;

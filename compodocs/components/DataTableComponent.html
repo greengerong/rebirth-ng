@@ -1721,6 +1721,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> editRowItem</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>editRowItem:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> footTemplate</b>
                         </td>
                     </tr>
@@ -1883,6 +1898,7 @@ export class DataTableComponent implements OnDestroy {
   selectedRowItem: any;
   selectedColumnItem: any;
   isCellEdit: boolean;
+  editRowItem: any;
 
   onCellClick($event: CellSelectedEventArg) {
     if (this.selectedRowItem !&#x3D;&#x3D; $event.rowItem || this.selectedColumnItem !&#x3D;&#x3D; $event.column) {
@@ -1949,12 +1965,14 @@ export class DataTableComponent implements OnDestroy {
   editRow(rowItem, editModel) {
     rowItem.$$edit &#x3D; true;
     rowItem.$$editModel &#x3D; editModel;
+    this.editRowItem &#x3D; rowItem;
   }
 
   endEditRow(rowItem) {
     const editModel &#x3D; rowItem.$$editModel;
     delete rowItem.$$edit;
     delete rowItem.$$editModel;
+    this.editRowItem &#x3D; null;
     return editModel;
   }
 

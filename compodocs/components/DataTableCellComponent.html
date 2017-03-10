@@ -1088,6 +1088,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>isEditRow</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>boolean</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>rowIndex</code>
                         </td>
                         <td class="col-md-10">
@@ -1342,6 +1357,8 @@ export class DataTableCellComponent {
   @Input() rowItem: any;
   @Input() dataTableTemplates: DataTableTmplsComponent;
   @Input() editModel: DataTableEditModel;
+  @Input() isEditRow: boolean;
+
   isCellEdit: boolean;
 
   constructor(public dt: DataTableComponent) {
@@ -1399,7 +1416,7 @@ export class DataTableCellComponent {
       return this.isCellEdit;
     }
 
-    return rowItem.$$edit;
+    return this.isEditRow;
   }
 
   getCellValue(column: DataTableColumnTmplComponent, rowIndex: number, rowItem: any) {
