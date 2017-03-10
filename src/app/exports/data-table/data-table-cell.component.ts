@@ -77,7 +77,7 @@ export class DataTableCellComponent {
       return this.isCellEdit;
     }
 
-    return rowItem.$$edit;
+    return this.isEditRow;
   }
 
   getCellValue(column: DataTableColumnTmplComponent, rowIndex: number, rowItem: any) {
