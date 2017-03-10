@@ -120,6 +120,7 @@ gulp.task('new:lib', ['new:demo', 'new:config'], function () {
 });
 
 gulp.task('new:cmp', function (cb) {
+  // gulp new:cmp --ComponentName
   cmpGenConfig.componentName = process.argv.slice(2)[1].replace(/^(-+)/, '');
   cmpGenConfig.componentSelector = cmpGenConfig.componentName.replace(/([A-Z])/g, '-$1').replace(/^(-+)/, '').toLowerCase();
   runSequence(['new:demo', 'new:config', 'new:lib'], cb);
