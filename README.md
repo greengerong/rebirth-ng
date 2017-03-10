@@ -32,12 +32,12 @@
 - [x] Aside Menu
 - [x] Flow Steps
 - [ ] slider
+- [x] Infinite Scroll
 
 ## Advance Components
 - [ ] Editor([]())
 - [ ] Mask([]())
 - [ ] Data Table([]())
-- [ ] Infinite Scroll([]())
 - [ ] Tree View([]())
 - [ ] File Upload([]())
 - [ ] Charts([]())
