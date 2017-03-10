@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Renderer, ElementRef } from '@angular/core';
 import { RebirthUIConfig } from './exports/rebirth-ui.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
 import { REBIRTH_UI_I18N_ZHCN } from './exports/rebirth-ui.i18n.zh-cn';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 're-app',
@@ -18,9 +19,15 @@ export class AppComponent implements OnInit {
 
   constructor(private rebirthConfig: RebirthUIConfig,
               private viewContainerRef: ViewContainerRef,
-              private demoConfigService: DemoConfigService) {
-    this.rebirthConfig.rootContainer = this.viewContainerRef;
+              private demoConfigService: DemoConfigService,
+              private  router: ActivatedRoute,
+              private  renderer: Renderer,
+              private elementRef: ElementRef) {
 
+    this.rebirthConfig.rootContainer = this.viewContainerRef;
+    this.router.queryParams.subscribe((params: any) => {
+      this.setupTheme(params);
+    });
     // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
   }
 
@@ -73,6 +80,7 @@ export class AppComponent implements OnInit {
         },
         {
           text: 'Themes',
+          icon: 'glyphicon glyphicon-cog',
           children: [
             {
               text: 'Default',
@@ -112,4 +120,12 @@ export class AppComponent implements OnInit {
     };
   }
 
+  private setupTheme(params: any) {
+    const themeKey = 'rebirth-ui:theme';
+    const theme = (params.theme || localStorage.getItem(themeKey) || 'readable').toLowerCase();
+    const link = this.renderer.createElement(this.elementRef.nativeElement, 'link');
+    link.rel = 'stylesheet';
+    link.href = `./assets/themes/bootstrap.${theme}.css`;
+    localStorage.setItem(themeKey, theme);
+  }
 }
