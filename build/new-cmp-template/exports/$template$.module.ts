@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { <%= compMsg %>Component } from './<%= comp %>.component';
+import { <%= componentName %>Component } from './<%= componentSelector %>.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -9,11 +9,11 @@ import { CommonModule } from '@angular/common';
   ],
   providers: [],
   declarations: [
-    <%= compMsg %>Component
+    <%= componentName %>Component
   ],
   exports: [
-    <%= compMsg %>Component
+    <%= componentName %>Component
   ],
 })
-export class <%= compMsg %>Module {
+export class <%= componentName %>Module {
 }

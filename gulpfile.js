@@ -13,23 +13,18 @@ var clean = require('gulp-clean');
 var ejs = require('gulp-ejs');
 var insertLines = require('gulp-insert-lines');
 
-var minimist = require('minimist');
-var camelCase = require('camelcase');
+var cmpGenConfig = {
+  componentSelector: '',
+  componentName: '',
+};
 
-var knownOptions = {
-  string: 'comp',
-}
-const component = minimist(process.argv.slice(2), knownOptions)
-const comp = component.comp
-const compCamel = camelCase(comp)
-const compMsg = compCamel.replace(compCamel[0], compCamel[0].toUpperCase())
-
-const config = {
+var config = {
   root: './src',
   src: './src/app/exports',
   dest: './dist',
   lib: './lib',
-  aot: './aot'
+  aot: './aot',
+  newCmpTmpl: './build/new-cmp-template'
 };
 
 function platformPath(path) {
@@ -82,76 +77,55 @@ gulp.task('sw:code-gen', function (cb) {
   }, cb);
 });
 
+gulp.task('new:config', function () {
+  gulp.src('./src/app/shared/demo/demo-config.service.ts')
+    .pipe(insertLines({
+      'before': /\/\/\scomponent\simport/i,
+      'lineBefore': `  ${cmpGenConfig.componentName}DemoComponent,`
+    }))
+    .pipe(insertLines({
+      'before': /\/\/\scomponent\sdeclare/i,
+      'lineBefore': `    {
+      name: '${cmpGenConfig.componentName}',
+      directory: '${cmpGenConfig.componentSelector}',
+      cmp: ${cmpGenConfig.componentName}DemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/${cmpGenConfig.componentSelector}/README.md'),
+      html: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.html'),
+      ts: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.ts'),
+    },`
+    }))
+    .pipe(gulp.dest('./src/app/shared/demo', {overwrite: true}));
+});
+
+gulp.task('new:demo', function () {
+  gulp.src(`${config.newCmpTmpl}/demo/*.*`)
+    .pipe(rename(function (path) {
+      if (path.basename.indexOf('$template$') !== -1) {
+        path.basename = path.basename.replace('$template$', cmpGenConfig.componentSelector);
+      }
+    }))
+    .pipe(ejs(cmpGenConfig))
+    .pipe(gulp.dest(`./src/app/demo/${cmpGenConfig.componentSelector}`));
+});
+
+gulp.task('new:lib', ['new:demo', 'new:config'], function () {
+  gulp.src(`${config.newCmpTmpl}/exports/*.*`)
+    .pipe(rename(function (path) {
+      if (path.basename.indexOf('$template$') !== -1) {
+        path.basename = path.basename.replace('$template$', cmpGenConfig.componentSelector);
+      }
+    }))
+    .pipe(ejs(cmpGenConfig))
+    .pipe(gulp.dest(`./src/app/exports/${cmpGenConfig.componentSelector}`));
+});
+
+gulp.task('new:cmp', function (cb) {
+  cmpGenConfig.componentName = process.argv.slice(2)[1].replace(/^(-+)/, '');
+  cmpGenConfig.componentSelector = cmpGenConfig.componentName.replace(/([A-Z])/g, '-$1').replace(/^(-+)/, '').toLowerCase();
+  runSequence(['new:demo', 'new:config', 'new:lib'], cb);
+});
+
+
 gulp.task('prepublish', function (cb) {
   runSequence(['clean:dist', 'copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
 });
-
-gulp.task('configNewComponent', function() {
-  gulp.src('./src/app/shared/demo/demo-config.service.ts')
-  .pipe(insertLines({
-    'before': /\/\/\scomponent\simport/i,
-    'lineBefore': `  ${compMsg}DemoComponent,`
-  }))
-  .pipe(insertLines({
-    'before': /\/\/\scomponent\sdeclare/i,
-    'lineBefore': `    {
-      name: '${compMsg}',
-      directory: '${comp}',
-      cmp: ${compMsg}DemoComponent,
-      readMe: require('!html-loader!markdown-loader!../../exports/${comp}/README.md'),
-      html: require('!raw-loader!../../demo/${comp}/${comp}-demo.component.html'),
-      ts: require('!raw-loader!../../demo/${comp}/${comp}-demo.component.ts'),
-    },`
-  }))
-  .pipe(gulp.dest('./src/app/shared/demo/demo-config.service.ts'))
-})
-
-gulp.task('createComponent', ['createDemo', 'configNewComponent'], function() {
-  gulp.src("./template/component/*.*")
-  .pipe(rename(function(path) {
-    if (path.basename === 'index') {
-      path = path
-    } else {
-      var name = path.basename.split('.')
-      var finalBasename = ''
-      name.map(function(tinyName) {
-        if (tinyName === 'template') {
-          finalBasename += 're-' + comp
-        } else {
-          finalBasename += '.' + tinyName
-        }
-      })
-      path.basename = finalBasename
-    }
-  }))
-  .pipe(ejs({
-    compMsg: compMsg,
-    comp: comp
-  }))
-  .pipe(gulp.dest(`./src/app/exports/re-${comp}`))
-})
-
-gulp.task('createDemo', function() {
-  gulp.src("./template/demo/*.*")
-  .pipe(rename(function(path) {
-    if (path.basename === 'index') {
-      path = path
-    } else {
-      var name = path.basename.split('.')
-      var finalBasename = ''
-      name.map(tinyName => {
-        if (tinyName === 'template') {
-          finalBasename += 're-' + comp
-        } else {
-          finalBasename += '.' + tinyName
-        }
-      })
-      path.basename = finalBasename
-    }
-  }))
-  .pipe(ejs({
-    compMsg: compMsg,
-    comp: comp
-  }))
-  .pipe(gulp.dest(`./src/app/demo/re-${comp}`))
-})
