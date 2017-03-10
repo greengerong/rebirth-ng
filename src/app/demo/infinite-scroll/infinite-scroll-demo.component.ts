@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfiniteScrollComponent } from '../../exports/infinite-scroll/infinite-scroll.component';
 
 @Component({
   selector: 're-infinite-scroll-demo',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfiniteScrollDemoComponent implements OnInit {
   dataSource = [];
-  total = 100;
+  total = 500;
   complete = false;
   next = 0;
 
@@ -16,14 +17,21 @@ export class InfiniteScrollDemoComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadMore() {
-    for (let i = 0; i < 10; i++, this.next++) {
-      this.dataSource.push({ id: this.next, name: `Name ${this.next}`, age: 10 });
+  loadMore(infiniteScroll: InfiniteScrollComponent) {
+    if (this.next >= this.total) {
+      return;
     }
 
-    if (this.next >= 100) {
-      this.complete = true;
+
+    const end = this.next + 100;
+    const dataSource = [];
+    for (; this.next < end; this.next++) {
+      dataSource.push({ id: this.next, name: `Name ${this.next}`, age: 10 });
     }
+
+    this.dataSource = [...this.dataSource, ...dataSource];
+    this.complete = this.next >= this.total;
+    infiniteScroll.loadFinish(this.complete);
     console.log(`load more`, this.next, this.complete);
   }
 }

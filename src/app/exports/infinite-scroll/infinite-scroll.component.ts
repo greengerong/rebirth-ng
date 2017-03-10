@@ -1,6 +1,14 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter, HostListener,
-  ElementRef, Renderer, OnDestroy
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener,
+  ElementRef,
+  OnDestroy,
+  TemplateRef
 } from '@angular/core';
 import { WindowRef } from '../window-ref/window-ref.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -8,6 +16,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 're-infinite-scroll',
   templateUrl: './infinite-scroll.component.html',
+  styleUrls: ['./infinite-scroll.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'infiniteScroll'
 })
@@ -16,36 +25,35 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
   @Input() total: number;
   @Input() bufferPx = 40;
   @Input() scrollDelay = 300;
+  @Input() spinnerTemplate: TemplateRef<any>;
   @Output() loadMore = new EventEmitter<InfiniteScrollComponent>();
   scrollStream = new EventEmitter<Event>();
   subscription: Subscription;
 
-  constructor(private windowRef: WindowRef, private elementRef: ElementRef, private renderer: Renderer) {
+  constructor(private windowRef: WindowRef, private elementRef: ElementRef) {
 
   }
-
-  @Input() set complete(complete: boolean) {
-    if (complete) {
-      this.unSubscription();
-      return;
-    }
-
-    this.setupScrollEvent();
-  }
-
 
   ngOnInit(): void {
     this.setupScrollEvent();
   }
 
+  loadFinish(complete: boolean) {
+    if (complete) {
+      return this.unSubscription();
+    }
+
+    setTimeout(_ => this.onWinScroll(null), this.scrollDelay);
+  }
+
   private setupScrollEvent() {
     if (!this.subscription) {
       this.subscription = this.registerOnScrollStream(this.scrollStream)
-        .subscribe($event => this.onScrollChange($event));
+        .subscribe(_ => this.onScrollChange());
     }
   }
 
-  onScrollChange($event: Event) {
+  onScrollChange() {
     const winHeight = this.windowRef.innerHeight;
     const clientRect = this.windowRef.getBoundingClientRect(this.elementRef);
     if (clientRect && winHeight - clientRect.top >= this.bufferPx) {

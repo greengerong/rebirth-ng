@@ -9,7 +9,9 @@
       </tr>
       </tbody>
     </table>
-    <re-infinite-scroll [total]="total" [complete]="complete" (loadMore)="loadMore()"></re-infinite-scroll>
+    <re-infinite-scroll #infiniteScroll="infiniteScroll" *ngIf="!complete" [total]="total"
+                        (loadMore)="loadMore(infiniteScroll)"></re-infinite-scroll>
+    <div *ngIf="complete" class="text-center text-success"> Load completed!</div>
   </section>
 </div>
 
