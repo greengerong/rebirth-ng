@@ -4,6 +4,7 @@ import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
 import { REBIRTH_UI_I18N_ZHCN } from './exports/rebirth-ui.i18n.zh-cn';
 import { ActivatedRoute } from '@angular/router';
+import { ThemeService } from './shared';
 
 @Component({
   selector: 're-app',
@@ -15,19 +16,21 @@ export class AppComponent implements OnInit {
   components: any[];
   gettingStarted: any;
   menus: MenuBar;
-  largeDataSource = [];
+  // largeDataSource = [];
 
   constructor(private rebirthConfig: RebirthUIConfig,
               private viewContainerRef: ViewContainerRef,
               private demoConfigService: DemoConfigService,
               private  router: ActivatedRoute,
+              private  themeService: ThemeService,
               private  renderer: Renderer,
               private elementRef: ElementRef) {
 
     this.rebirthConfig.rootContainer = this.viewContainerRef;
     this.router.queryParams.subscribe((params: any) => {
-      this.setupTheme(params);
+      this.themeService.setupTheme(params.theme, this.renderer, this.elementRef);
     });
+
     // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
   }
 
@@ -118,14 +121,5 @@ export class AppComponent implements OnInit {
         }
       ]
     };
-  }
-
-  private setupTheme(params: any) {
-    const themeKey = 'rebirth-ui:theme';
-    const theme = (params.theme || localStorage.getItem(themeKey) || 'readable').toLowerCase();
-    const link = this.renderer.createElement(this.elementRef.nativeElement, 'link');
-    link.rel = 'stylesheet';
-    link.href = `./assets/themes/bootstrap.${theme}.css`;
-    localStorage.setItem(themeKey, theme);
   }
 }
