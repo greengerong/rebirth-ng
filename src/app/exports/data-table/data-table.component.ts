@@ -8,7 +8,7 @@ import {
   ContentChild,
   ChangeDetectorRef,
   OnDestroy,
-  ViewChild
+  ViewChild, HostListener
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import {
@@ -64,13 +64,12 @@ export class DataTableComponent implements OnDestroy {
   selectedColumnItem: any;
   isCellEdit: boolean;
   editRowItem: any;
+  documentClickEvent = new EventEmitter<Event>();
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
 
-  }
-
-  forceUpdate() {
-    this.changeDetectorRef.markForCheck();
+  @HostListener('document:click', ['$event'])
+  onDocumentClick($event: Event) {
+    this.documentClickEvent.emit($event);
   }
 
   onCellClick($event: CellSelectedEventArg) {

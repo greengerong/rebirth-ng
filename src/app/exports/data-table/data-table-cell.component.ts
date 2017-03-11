@@ -27,6 +27,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
 
   isCellEdit: boolean;
   forceUpdateSubscription: Subscription;
+  documentClickubscription: Subscription;
 
   constructor(public dt: DataTableComponent, private changeDetectorRef: ChangeDetectorRef,
               private rowComponent: DataTableRowComponent) {
@@ -51,6 +52,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
     if (this.column.editable && this.editModel === 'cell') {
       $event.stopPropagation();
       this.isCellEdit = true;
+      this.documentClickubscription = this.dt.documentClickEvent.subscribe(_ => this.onFinishCellEdit());
       this.dt.onCellEditStart(cellSelectedEventArg);
     }
   }
@@ -59,13 +61,12 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
     this.changeDetectorRef.markForCheck();
   }
 
-  // @HostListener('document:click', ['$event'])
-  // will bring big performance issue when large table
-  onFinishCellEdit($event) {
+  onFinishCellEdit($event?: Event) {
     if (this.editModel !== 'cell') {
       return;
     }
     this.isCellEdit = false;
+    this.unSubscription(this.documentClickubscription);
     if ($event) {
       $event.stopPropagation();
     }
@@ -127,13 +128,14 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.unSubscription();
+    this.unSubscription(this.forceUpdateSubscription);
+    this.unSubscription(this.documentClickubscription);
   }
 
-  private unSubscription() {
-    if (this.forceUpdateSubscription) {
-      this.forceUpdateSubscription.unsubscribe();
-      this.forceUpdateSubscription = null;
+  private unSubscription(sbscription: Subscription) {
+    if (sbscription) {
+      sbscription.unsubscribe();
+      sbscription = null;
     }
   }
 }
