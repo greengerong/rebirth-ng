@@ -126,6 +126,9 @@
                                     <a href="./modules/RatingModule.html" >RatingModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/RebirthUIModule.html"  class="active" >RebirthUIModule</a>
                                 </li>
                                 <li class="link">
@@ -224,6 +227,9 @@
                                     <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                 </li>
                                 <li class="link">
@@ -320,6 +326,9 @@
                             >
                                 <li class="link">
                                     <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -593,6 +602,9 @@
                                            <a href="./modules/RatingModule.html" >RatingModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/RebirthUIModule.html"  class="active" >RebirthUIModule</a>
                                        </li>
                                        <li class="link">
@@ -691,6 +703,9 @@
                                            <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                        </li>
                                        <li class="link">
@@ -787,6 +802,9 @@
                    >
                                        <li class="link">
                                            <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -995,6 +1013,9 @@
                     <h3>Imports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#imports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
                             <li class="list-group-item">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                            </li>
+                            <li class="list-group-item">
                                     <a href="./modules/ModalModule.html" >ModalModule</a>
                             </li>
                             <li class="list-group-item">
@@ -1074,6 +1095,9 @@
                 <div class="col-sm-3">
                     <h3>Exports<a href="https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html#!#exports-anchor" target="_blank"><span class="fa fa-info-circle"></a></h3>
                     <ul class="list-group">
+                            <li class="list-group-item">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                            </li>
                             <li class="list-group-item">
                                     <a href="./modules/ModalModule.html" >ModalModule</a>
                             </li>
@@ -1184,10 +1208,12 @@ import { AutoCompleteModule } from &#x27;./auto-complete&#x27;;
 import { FlowStepModule } from &#x27;./flow-step&#x27;;
 import { DataTableModule } from &#x27;./data-table&#x27;;
 import { InfiniteScrollModule } from &#x27;./infinite-scroll&#x27;;
+import { RebirthCommonModule } from &#x27;./common&#x27;;
 
 
 @NgModule({
   imports: [
+    RebirthCommonModule,
     ModalModule,
     DialogModule,
     PagerModule,
@@ -1212,9 +1238,10 @@ import { InfiniteScrollModule } from &#x27;./infinite-scroll&#x27;;
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule
+    DataTableModule,
   ],
   exports: [
+    RebirthCommonModule,
     ModalModule,
     DialogModule,
     PagerModule,
@@ -1239,7 +1266,7 @@ import { InfiniteScrollModule } from &#x27;./infinite-scroll&#x27;;
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule
+    DataTableModule,
   ],
   declarations: [],
   providers: [],

@@ -126,6 +126,9 @@
                                     <a href="./modules/RatingModule.html" >RatingModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                 </li>
                                 <li class="link">
@@ -224,6 +227,9 @@
                                     <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                 </li>
                                 <li class="link">
@@ -320,6 +326,9 @@
                             >
                                 <li class="link">
                                     <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -593,6 +602,9 @@
                                            <a href="./modules/RatingModule.html" >RatingModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                        </li>
                                        <li class="link">
@@ -691,6 +703,9 @@
                                            <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                        </li>
                                        <li class="link">
@@ -787,6 +802,9 @@
                    >
                                        <li class="link">
                                            <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -1014,7 +1032,7 @@
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>data-table-Cell.component.html</code></td>
+                <td class="col-md-9"><code>data-table-cell.component.html</code></td>
             </tr>
 
 
@@ -1138,7 +1156,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(dt: DataTableComponent)</code>
+                            <code>constructor(dt: DataTableComponent, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>, rowComponent: DataTableRowComponent)</code>
                         </td>
                     </tr>
     
@@ -1176,13 +1194,37 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> forceUpdate</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>forceUpdate()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> onFinishCellEdit</b>
                         </td>
                     </tr>
     
                     <tr>
                         <td class="col-md-4">
-    <code>onFinishCellEdit($event: any)</code>
+    <code>onFinishCellEdit($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1300,12 +1342,42 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> documentClickubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>documentClickubscription:     <code>Subscription</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> dt</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
                             <code>dt:     <code>DataTableComponent</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> forceUpdateSubscription</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>forceUpdateSubscription:     <code>Subscription</code>
     </bcode>
                         </td>
                     </tr>
@@ -1337,20 +1409,25 @@
 </p>
         </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, ChangeDetectionStrategy, Input, HostListener } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import {
+  Component, ChangeDetectionStrategy, Input, HostListener, ChangeDetectorRef, OnInit,
+  OnDestroy
+} from &#x27;@angular/core&#x27;;
 import { DataTableColumnTmplComponent } from &#x27;./tmpl/data-table-column-tmpl.component&#x27;;
 import { DataTableComponent } from &#x27;./data-table.component&#x27;;
 import { DataTableTmplsComponent } from &#x27;./tmpl/data-table-tmpls.component&#x27;;
+import { DataTableRowComponent } from &#x27;./data-table-row.component&#x27;;
+import { Subscription } from &#x27;rxjs/Subscription&#x27;;
 
 @Component({
   selector: &#x27;re-data-table-cell,[reDataTableCell]&#x27;,
-  templateUrl: &#x27;./data-table-Cell.component.html&#x27;,
+  templateUrl: &#x27;./data-table-cell.component.html&#x27;,
   host: {
     &#x27;[class]&#x27;: &#x27;column.cellClass ? column.cellClass : &quot;&quot;&#x27;,
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableCellComponent {
+export class DataTableCellComponent implements OnInit, OnDestroy {
   @Input() rowIndex: number;
   @Input() colIndex: number;
   @Input() column: DataTableColumnTmplComponent;
@@ -1360,8 +1437,15 @@ export class DataTableCellComponent {
   @Input() isEditRow: boolean;
 
   isCellEdit: boolean;
+  forceUpdateSubscription: Subscription;
+  documentClickubscription: Subscription;
 
-  constructor(public dt: DataTableComponent) {
+  constructor(public dt: DataTableComponent, private changeDetectorRef: ChangeDetectorRef,
+              private rowComponent: DataTableRowComponent) {
+  }
+
+  ngOnInit(): void {
+    this.forceUpdateSubscription &#x3D; this.rowComponent.forceUpdateEvent.subscribe(_ &#x3D;&gt; this.forceUpdate());
   }
 
   @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
@@ -1370,24 +1454,30 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     };
 
     this.dt.onCellClick(cellSelectedEventArg);
     if (this.column.editable &amp;&amp; this.editModel &#x3D;&#x3D;&#x3D; &#x27;cell&#x27;) {
       $event.stopPropagation();
       this.isCellEdit &#x3D; true;
+      this.documentClickubscription &#x3D; this.dt.documentClickEvent.subscribe(_ &#x3D;&gt; this.onFinishCellEdit());
       this.dt.onCellEditStart(cellSelectedEventArg);
     }
   }
 
-  // @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
-  // will bring big performance issue when large table
-  onFinishCellEdit($event) {
+  forceUpdate() {
+    this.changeDetectorRef.markForCheck();
+  }
+
+  onFinishCellEdit($event?: Event) {
     if (this.editModel !&#x3D;&#x3D; &#x27;cell&#x27;) {
       return;
     }
     this.isCellEdit &#x3D; false;
+    this.unSubscription(this.documentClickubscription);
     if ($event) {
       $event.stopPropagation();
     }
@@ -1396,7 +1486,9 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     });
   }
 
@@ -1406,7 +1498,9 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     };
     this.dt.onCellDBClick(cellSelectedEventArg);
   }
@@ -1442,6 +1536,18 @@ export class DataTableCellComponent {
       return column.formatter(cellValue);
     }
     return cellValue;
+  }
+
+  ngOnDestroy(): void {
+    this.unSubscription(this.forceUpdateSubscription);
+    this.unSubscription(this.documentClickubscription);
+  }
+
+  private unSubscription(sbscription: Subscription) {
+    if (sbscription) {
+      sbscription.unsubscribe();
+      sbscription &#x3D; null;
+    }
   }
 }
 </code></pre>

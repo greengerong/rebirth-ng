@@ -126,6 +126,9 @@
                                     <a href="./modules/RatingModule.html" >RatingModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                 </li>
                                 <li class="link">
@@ -224,6 +227,9 @@
                                     <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                 </li>
                                 <li class="link">
@@ -320,6 +326,9 @@
                             >
                                 <li class="link">
                                     <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -593,6 +602,9 @@
                                            <a href="./modules/RatingModule.html" >RatingModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                        </li>
                                        <li class="link">
@@ -691,6 +703,9 @@
                                            <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                        </li>
                                        <li class="link">
@@ -787,6 +802,9 @@
                    >
                                        <li class="link">
                                            <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -1039,6 +1057,9 @@
                             <li class="list-group-item">
                                 <a  href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                             </li>
+                            <li class="list-group-item">
+                                <a  href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                            </li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -1046,6 +1067,9 @@
                     <ul class="list-group">
                             <li class="list-group-item">
                                     <a href="./modules/PaginationModule.html" >PaginationModule</a>
+                            </li>
+                            <li class="list-group-item">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                             </li>
                             <li class="list-group-item">
                                     <a href="./modules/DatePickerModule.html" >DatePickerModule</a>
@@ -1100,6 +1124,9 @@
                             <li class="list-group-item">
                                     <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                             </li>
+                            <li class="list-group-item">
+                                    <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -1117,6 +1144,7 @@ import { DataTableCellComponent } from &#x27;./data-table-cell.component&#x27;;
 import { FormsModule } from &#x27;@angular/forms&#x27;;
 import { DataTableBodyComponent } from &#x27;./data-table-body.component&#x27;;
 import { DataTableHeadComponent } from &#x27;./data-table-head.component&#x27;;
+import { DataTableRowComponent } from &#x27;./data-table-row.component&#x27;;
 import { DataTableHeadTmplComponent } from &#x27;./tmpl/data-table-head-tmpl.component&#x27;;
 import { DataTableCellFilterTmplComponent } from &#x27;./tmpl/data-table-cell-filter-tmpl.component&#x27;;
 import { DataTableFootTmplComponent } from &#x27;./tmpl/data-table-foot-tmpl.component&#x27;;
@@ -1127,9 +1155,10 @@ import { DataTableCellTmplComponent } from &#x27;./tmpl/data-table-cell-tmpl.com
 import { DatePickerModule } from &#x27;../date-picker/date-picker.module&#x27;;
 import { DataTablePagerComponent } from &#x27;./data-table-pager.component&#x27;;
 import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.component&#x27;;
+import { RebirthCommonModule } from &#x27;../common&#x27;;
 
 @NgModule({
-  imports: [CommonModule, FormsModule, PaginationModule, DatePickerModule],
+  imports: [CommonModule, FormsModule, PaginationModule, RebirthCommonModule, DatePickerModule],
   exports: [
     DataTableComponent,
     DataTableColumnTmplComponent,
@@ -1145,7 +1174,8 @@ import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.c
     DataTableTmplsComponent,
     DataTableCellTmplComponent,
     DataTablePagerComponent,
-    DataTablePagerTmplComponent
+    DataTablePagerTmplComponent,
+    DataTableRowComponent
   ],
   declarations: [
     DataTableComponent,
@@ -1162,7 +1192,8 @@ import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.c
     DataTableTmplsComponent,
     DataTableCellTmplComponent,
     DataTablePagerComponent,
-    DataTablePagerTmplComponent
+    DataTablePagerTmplComponent,
+    DataTableRowComponent
   ],
   providers: [],
 })

@@ -126,6 +126,9 @@
                                     <a href="./modules/RatingModule.html" >RatingModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                 </li>
                                 <li class="link">
@@ -224,6 +227,9 @@
                                     <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                 </li>
                                 <li class="link">
@@ -320,6 +326,9 @@
                             >
                                 <li class="link">
                                     <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -593,6 +602,9 @@
                                            <a href="./modules/RatingModule.html" >RatingModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
                                        </li>
                                        <li class="link">
@@ -691,6 +703,9 @@
                                            <a href="./components/DataTablePagerTmplComponent.html" >DataTablePagerTmplComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/DataTableRowComponent.html" >DataTableRowComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/DataTableTmplsComponent.html" >DataTableTmplsComponent</a>
                                        </li>
                                        <li class="link">
@@ -787,6 +802,9 @@
                    >
                                        <li class="link">
                                            <a href="./directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/AutoFocusDirective.html" >AutoFocusDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
@@ -1351,6 +1369,30 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> onDocumentClick</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>onDocumentClick($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> onCellClick</b>
                         </td>
                     </tr>
@@ -1721,6 +1763,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> documentClickEvent</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>documentClickEvent:     <code>EventEmitter&lt;Event&gt;</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> editRowItem</b>
                         </td>
                     </tr>
@@ -1843,7 +1900,7 @@
   ContentChild,
   ChangeDetectorRef,
   OnDestroy,
-  ViewChild
+  ViewChild, HostListener
 } from &#x27;@angular/core&#x27;;
 import { DataTableColumnTmplComponent } from &#x27;./tmpl/data-table-column-tmpl.component&#x27;;
 import {
@@ -1899,13 +1956,18 @@ export class DataTableComponent implements OnDestroy {
   selectedColumnItem: any;
   isCellEdit: boolean;
   editRowItem: any;
+  documentClickEvent &#x3D; new EventEmitter&lt;Event&gt;();
+
+
+  @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
+  onDocumentClick($event: Event) {
+    this.documentClickEvent.emit($event);
+  }
 
   onCellClick($event: CellSelectedEventArg) {
-    if (this.selectedRowItem !&#x3D;&#x3D; $event.rowItem || this.selectedColumnItem !&#x3D;&#x3D; $event.column) {
-      this.selectedRowItem &#x3D; $event.rowItem;
-      this.selectedColumnItem &#x3D; $event.column;
-      this.cellClick.emit($event);
-    }
+    this.selectedRowItem &#x3D; $event.rowItem;
+    this.selectedColumnItem &#x3D; $event.column;
+    this.cellClick.emit($event);
   }
 
   onCellEditStart($event: CellSelectedEventArg) {
@@ -1923,10 +1985,8 @@ export class DataTableComponent implements OnDestroy {
   }
 
   onRowClick($event: RowSelectedEventArg) {
-    if (this.selectedRowItem !&#x3D;&#x3D; $event.rowItem) {
-      this.selectedRowItem &#x3D; $event.rowItem;
-      this.rowClick.emit($event);
-    }
+    this.selectedRowItem &#x3D; $event.rowItem;
+    this.rowClick.emit($event);
   }
 
   onRowDBClick($event: RowSelectedEventArg) {
