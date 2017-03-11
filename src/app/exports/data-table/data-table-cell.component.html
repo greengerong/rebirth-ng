@@ -8,7 +8,8 @@
                    rowItem:rowItem,
                    cellItem: getCellValue(column, rowIndex, rowItem),
                    cellValue:  getCellFormatValue(column, rowIndex, rowItem),
-                   $implicit: this
+                   $implicit: this,
+                   row: rowComponent
                    }">
   </template>
 
@@ -20,7 +21,8 @@
                     column: column,
                     rowItem: rowItem?.$$editModel || rowItem,
                     viewItem: rowItem,
-                    $implicit: this
+                    $implicit: this,
+                    row: rowComponent
                     }">
   </template>
 </ng-container>

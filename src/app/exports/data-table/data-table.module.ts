@@ -9,6 +9,7 @@ import { DataTableCellComponent } from './data-table-cell.component';
 import { FormsModule } from '@angular/forms';
 import { DataTableBodyComponent } from './data-table-body.component';
 import { DataTableHeadComponent } from './data-table-head.component';
+import { DataTableRowComponent } from './data-table-row.component';
 import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './tmpl/data-table-cell-filter-tmpl.component';
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
@@ -37,7 +38,8 @@ import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.compon
     DataTableTmplsComponent,
     DataTableCellTmplComponent,
     DataTablePagerComponent,
-    DataTablePagerTmplComponent
+    DataTablePagerTmplComponent,
+    DataTableRowComponent
   ],
   declarations: [
     DataTableComponent,
@@ -54,7 +56,8 @@ import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.compon
     DataTableTmplsComponent,
     DataTableCellTmplComponent,
     DataTablePagerComponent,
-    DataTablePagerTmplComponent
+    DataTablePagerTmplComponent,
+    DataTableRowComponent
   ],
   providers: [],
 })

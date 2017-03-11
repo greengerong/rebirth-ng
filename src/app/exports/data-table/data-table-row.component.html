@@ -1,0 +1,18 @@
+<td *ngIf="checkable" class="checkable-cell">
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="rowChecker" [(ngModel)]="rowItem.$$checked"
+                 (change)="onRowCheckChange(rowIndex, rowItem)">
+        </label>
+      </div>
+    </div>
+  </form>
+</td>
+<ng-container *ngFor="let column of columns; let colIndex = index">
+  <td reDataTableCell [dataTableTemplates]="dataTableTemplates" [rowIndex]="rowIndex" [colIndex]="colIndex"
+      [column]="column" [rowItem]="rowItem" [style.width]="column.width || ''" [editModel]="editModel"
+      [isEditRow]="editRowItem == rowItem">
+  </td>
+</ng-container>

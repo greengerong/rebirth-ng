@@ -22,16 +22,4 @@ export class DataTableBodyComponent {
   constructor(public dt: DataTableComponent) {
 
   }
-
-  onRowClick($event, rowIndex, rowItem) {
-    this.dt.onRowClick({ rowIndex, rowItem });
-  }
-
-  onRowDBClick($event, rowIndex, rowItem) {
-    this.dt.onRowDBClick({ rowIndex, rowItem });
-  }
-
-  onRowCheckChange(rowIndex, rowItem) {
-    this.dt.onRowCheckChange({ rowItem, rowIndex, checked: rowItem.$$checked });
-  }
 }

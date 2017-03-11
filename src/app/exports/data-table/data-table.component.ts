@@ -65,12 +65,18 @@ export class DataTableComponent implements OnDestroy {
   isCellEdit: boolean;
   editRowItem: any;
 
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
+
+  }
+
+  forceUpdate() {
+    this.changeDetectorRef.markForCheck();
+  }
+
   onCellClick($event: CellSelectedEventArg) {
-    if (this.selectedRowItem !== $event.rowItem || this.selectedColumnItem !== $event.column) {
-      this.selectedRowItem = $event.rowItem;
-      this.selectedColumnItem = $event.column;
-      this.cellClick.emit($event);
-    }
+    this.selectedRowItem = $event.rowItem;
+    this.selectedColumnItem = $event.column;
+    this.cellClick.emit($event);
   }
 
   onCellEditStart($event: CellSelectedEventArg) {
@@ -88,10 +94,8 @@ export class DataTableComponent implements OnDestroy {
   }
 
   onRowClick($event: RowSelectedEventArg) {
-    if (this.selectedRowItem !== $event.rowItem) {
-      this.selectedRowItem = $event.rowItem;
-      this.rowClick.emit($event);
-    }
+    this.selectedRowItem = $event.rowItem;
+    this.rowClick.emit($event);
   }
 
   onRowDBClick($event: RowSelectedEventArg) {

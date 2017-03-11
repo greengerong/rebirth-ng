@@ -1,8 +1,10 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 're-alert-box-demo',
-  templateUrl: './alert-box-demo.component.html'
+  templateUrl: './alert-box-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
 export class AlertBoxDemoComponent {
   closed = false;

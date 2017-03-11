@@ -1,7 +1,17 @@
-import { Component, OnInit, ChangeDetectionStrategy, Pipe, PipeTransform } from '@angular/core';
+import {
+  Component, OnInit, ChangeDetectionStrategy, Pipe, PipeTransform,
+  ComponentFactoryResolver, EventEmitter
+} from '@angular/core';
 import { formatDate } from '../../exports/utils/date-utils';
-import { RowCheckChangeEventArg, SortChangeEventArg, DataTablePager } from '../../exports/data-table/data-table.model';
+import {
+  RowCheckChangeEventArg, SortChangeEventArg, DataTablePager,
+  RowSelectedEventArg
+} from '../../exports/data-table/data-table.model';
 import { DataTableComponent } from '../../exports/data-table/data-table.component';
+import { ModalService } from '../../exports/modal/modal.service';
+import { Modal } from '../../exports/modal/modal.model';
+import { ModalDismissReasons } from '../../exports/modal/modal-dismiss-reasons.model';
+import { DataTableRowComponent } from '../../exports/data-table/data-table-row.component';
 
 @Component({
   selector: 're-data-table-demo',
@@ -78,7 +88,7 @@ export class DataTableDemoComponent implements OnInit {
   };
   filterDataSource = [];
 
-  constructor() {
+  constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
     this.filterDataSource = [...this.dataSource];
   }
 
@@ -145,6 +155,21 @@ export class DataTableDemoComponent implements OnInit {
   cancelRow(table, rowItem) {
     table.endEditRow(rowItem);
   }
+
+  choosePeople(row: DataTableRowComponent, rowItem: any) {
+    this.modalService.open<any>({
+      component: ModalPeopleComponent,
+      componentFactoryResolver: this.componentFactoryResolver
+    })
+      .subscribe(data => {
+        Object.assign(rowItem, data);
+        row.forceUpdate();
+        console.log('Rebirth Modal -> Get ok with result:', data);
+
+      }, error => {
+        console.error('Rebirth Modal -> Get cancel with result:', error);
+      });
+  }
 }
 
 
@@ -159,5 +184,82 @@ export class AVGPipe implements PipeTransform {
       const svg = value.reduce((sum, item) => sum + item[field], 0) / value.length;
       return svg.toFixed(2);
     }
+  }
+}
+
+@Component({
+  selector: 're-modal-people',
+  template: `
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Peoples</h4>
+  </div>
+  <div class="modal-body">
+     <table class="table">
+       <re-data-table [dataSource]="dataSource" [selectable]="true" (rowClick)="rowClick($event)" (rowDBClick)="rowDBClick($event)">
+          <re-column field="$index" header="#"></re-column>
+          <re-column field="firstName" header="First Name"></re-column>
+          <re-column field="lastName" header="Last Name"></re-column>
+          <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
+           <re-column field="score" [sortable]="true" header="Score"></re-column>
+       </re-data-table>
+     </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="ok()">Ok</button>
+    <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
+  </div>`
+})
+export class ModalPeopleComponent implements Modal {
+  context: { text: string };
+  dismiss: EventEmitter<string>;
+  selectItem: any;
+  dataSource = [
+    {
+      id: 1,
+      firstName: 'Mark',
+      lastName: 'Otto',
+      dob: new Date(1990, 12, 1),
+      score: 80
+    },
+    {
+      id: 2,
+      firstName: 'Jacob',
+      lastName: 'Thornton',
+      dob: new Date(1989, 1, 1),
+      score: 43
+
+    },
+    {
+      id: 3,
+      firstName: 'Danni',
+      lastName: 'Chen',
+      dob: new Date(1991, 3, 1),
+      score: 80
+    }];
+
+  constructor() {
+  }
+
+  rowClick($event: RowSelectedEventArg) {
+    this.selectItem = $event.rowItem;
+  }
+
+  rowDBClick($event: RowSelectedEventArg) {
+    this.selectItem = $event.rowItem;
+    this.ok();
+  }
+
+  dobFormat(item) {
+    return item ? formatDate(item, 'YYYY-MM-DD') : '';
+  }
+
+  ok() {
+    this.dismiss.emit(this.selectItem);
+  }
+
+  cancel() {
+    this.dismiss.error(ModalDismissReasons.NO);
   }
 }

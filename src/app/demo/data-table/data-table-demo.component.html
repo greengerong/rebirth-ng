@@ -102,7 +102,26 @@
     <h4>Data table row edit</h4>
     <re-data-table [dataSource]="dataSource" editModel="row" #table="dataTable">
       <re-column field="$index" header="#"></re-column>
-      <re-column field="firstName" header="First Name" [editable]="true"></re-column>
+      <re-column field="firstName" header="First Name" [editable]="true">
+        <re-cell-edit>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
+                    let-column="column"
+                    let-cell="">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
+                         [(ngModel)]="rowItem[column.field]" (keydown.enter)="cell.onFinishCellEdit($event)"
+                         (blur)="cell.onFinishCellEdit($event)"/>
+                  <div class="input-group-addon" (click)="choosePeople(row, rowItem)">
+                    <i class="glyphicon glyphicon-cog"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </template>
+        </re-cell-edit>
+      </re-column>
       <re-column field="lastName" header="Last Name" [editable]="true"></re-column>
       <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
         <re-cell-edit>

@@ -1,17 +1,22 @@
-import { Component, ChangeDetectionStrategy, Input, HostListener } from '@angular/core';
+import {
+  Component, ChangeDetectionStrategy, Input, HostListener, ChangeDetectorRef, OnInit,
+  OnDestroy
+} from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
+import { DataTableRowComponent } from './data-table-row.component';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 're-data-table-cell,[reDataTableCell]',
-  templateUrl: './data-table-Cell.component.html',
+  templateUrl: './data-table-cell.component.html',
   host: {
     '[class]': 'column.cellClass ? column.cellClass : ""',
   },
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableCellComponent {
+export class DataTableCellComponent implements OnInit, OnDestroy {
   @Input() rowIndex: number;
   @Input() colIndex: number;
   @Input() column: DataTableColumnTmplComponent;
@@ -21,8 +26,14 @@ export class DataTableCellComponent {
   @Input() isEditRow: boolean;
 
   isCellEdit: boolean;
+  forceUpdateSubscription: Subscription;
 
-  constructor(public dt: DataTableComponent) {
+  constructor(public dt: DataTableComponent, private changeDetectorRef: ChangeDetectorRef,
+              private rowComponent: DataTableRowComponent) {
+  }
+
+  ngOnInit(): void {
+    this.forceUpdateSubscription = this.rowComponent.forceUpdateEvent.subscribe(_ => this.forceUpdate());
   }
 
   @HostListener('click', ['$event'])
@@ -31,7 +42,9 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     };
 
     this.dt.onCellClick(cellSelectedEventArg);
@@ -40,6 +53,10 @@ export class DataTableCellComponent {
       this.isCellEdit = true;
       this.dt.onCellEditStart(cellSelectedEventArg);
     }
+  }
+
+  forceUpdate() {
+    this.changeDetectorRef.markForCheck();
   }
 
   // @HostListener('document:click', ['$event'])
@@ -57,7 +74,9 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     });
   }
 
@@ -67,7 +86,9 @@ export class DataTableCellComponent {
       rowIndex: this.rowIndex,
       colIndex: this.colIndex,
       column: this.column,
-      rowItem: this.rowItem
+      rowItem: this.rowItem,
+      cellComponent: this,
+      rowComponent: this.rowComponent
     };
     this.dt.onCellDBClick(cellSelectedEventArg);
   }
@@ -103,5 +124,16 @@ export class DataTableCellComponent {
       return column.formatter(cellValue);
     }
     return cellValue;
+  }
+
+  ngOnDestroy(): void {
+    this.unSubscription();
+  }
+
+  private unSubscription() {
+    if (this.forceUpdateSubscription) {
+      this.forceUpdateSubscription.unsubscribe();
+      this.forceUpdateSubscription = null;
+    }
   }
 }

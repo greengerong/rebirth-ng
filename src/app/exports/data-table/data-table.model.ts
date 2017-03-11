@@ -1,14 +1,20 @@
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
+import { DataTableRowComponent } from './data-table-row.component';
+import { DataTableCellComponent } from './data-table-cell.component';
+
 export interface CellSelectedEventArg {
   rowIndex: number;
   colIndex: number;
   column: DataTableColumnTmplComponent;
   rowItem: any;
+  cellComponent: DataTableCellComponent;
+  rowComponent: DataTableRowComponent;
 }
 
 export interface RowSelectedEventArg {
   rowIndex: number;
   rowItem: any;
+  rowComponent: DataTableRowComponent;
 }
 
 export interface SortChangeEventArg {
