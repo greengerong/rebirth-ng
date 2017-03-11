@@ -20,9 +20,10 @@ import { DataTableCellTmplComponent } from './tmpl/data-table-cell-tmpl.componen
 import { DatePickerModule } from '../date-picker/date-picker.module';
 import { DataTablePagerComponent } from './data-table-pager.component';
 import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.component';
+import { RebirthCommonModule } from '../common';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, PaginationModule, DatePickerModule],
+  imports: [CommonModule, FormsModule, PaginationModule, RebirthCommonModule, DatePickerModule],
   exports: [
     DataTableComponent,
     DataTableColumnTmplComponent,

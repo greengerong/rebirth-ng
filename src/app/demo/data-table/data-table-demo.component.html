@@ -12,7 +12,7 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-MM-dd" autofocus="autofocus"
+                  <input class="form-control" placeholder="yyyy-MM-dd" reAutoFocus [autoFoucs]="true"
                          name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
                          (ngModelChange)="cell.onFinishCellEdit()">
                   <div class="input-group-addon" (click)="datePicker.toggle($event)">
@@ -110,7 +110,7 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input [type]="column.fieldType" class="form-control" autofocus="autofocus" [name]="column.field"
+                  <input [type]="column.fieldType" class="form-control" [name]="column.field"
                          [(ngModel)]="rowItem[column.field]" (keydown.enter)="cell.onFinishCellEdit($event)"
                          (blur)="cell.onFinishCellEdit($event)"/>
                   <div class="input-group-addon" (click)="choosePeople(row, rowItem)">
@@ -130,7 +130,7 @@
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
-                  <input class="form-control" placeholder="yyyy-MM-dd" autofocus="autofocus"
+                  <input class="form-control" placeholder="yyyy-MM-dd"
                          name="dp" [(ngModel)]="rowItem.dob" reDatePicker #datePicker="datePicker"
                          (ngModelChange)="cell.onFinishCellEdit()">
                   <div class="input-group-addon" (click)="datePicker.toggle($event)">

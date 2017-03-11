@@ -27,10 +27,12 @@ import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
 import { DataTableModule } from './data-table';
 import { InfiniteScrollModule } from './infinite-scroll';
+import { RebirthCommonModule } from './common';
 
 
 @NgModule({
   imports: [
+    RebirthCommonModule,
     ModalModule,
     DialogModule,
     PagerModule,
@@ -55,9 +57,10 @@ import { InfiniteScrollModule } from './infinite-scroll';
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule
+    DataTableModule,
   ],
   exports: [
+    RebirthCommonModule,
     ModalModule,
     DialogModule,
     PagerModule,
@@ -82,7 +85,7 @@ import { InfiniteScrollModule } from './infinite-scroll';
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule
+    DataTableModule,
   ],
   declarations: [],
   providers: [],

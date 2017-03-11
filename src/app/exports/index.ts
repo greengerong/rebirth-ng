@@ -2,6 +2,7 @@ export * from './accordion';
 export * from './action-button';
 export * from './alert-box';
 export * from './auto-complete';
+export * from './common';
 export * from './breadcrumbs';
 export * from './carousel';
 export * from './data-table';
