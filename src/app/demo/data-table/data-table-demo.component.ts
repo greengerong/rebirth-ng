@@ -12,6 +12,7 @@ import { ModalService } from '../../exports/modal/modal.service';
 import { Modal } from '../../exports/modal/modal.model';
 import { ModalDismissReasons } from '../../exports/modal/modal-dismiss-reasons.model';
 import { DataTableRowComponent } from '../../exports/data-table/data-table-row.component';
+import * as Immutable from 'immutable';
 
 @Component({
   selector: 're-data-table-demo',
@@ -20,7 +21,7 @@ import { DataTableRowComponent } from '../../exports/data-table/data-table-row.c
 })
 export class DataTableDemoComponent implements OnInit {
 
-  dataSource = [
+  dataSource = Immutable.List([
     {
       id: 1,
       firstName: 'Mark',
@@ -79,17 +80,17 @@ export class DataTableDemoComponent implements OnInit {
       score: 74
     },
 
-  ];
+  ]);
 
   pager: DataTablePager = {
     total: 306,
     pageIndex: 5,
     pageSize: 10,
   };
-  filterDataSource = [];
+  filterDataSource: Immutable.List<any>;
 
   constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
-    this.filterDataSource = [...this.dataSource];
+    this.filterDataSource = Immutable.List(this.dataSource);
   }
 
   ngOnInit() {
@@ -100,12 +101,12 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   sortChange($event: SortChangeEventArg) {
-    this.dataSource = [...this.dataSource.sort((a, b) => {
+    this.dataSource = this.dataSource.sort((a, b) => {
       const first = a[$event.field].toString();
       const second = b[$event.field].toString();
       const factor = $event.direction === 'ASC' ? 1 : -1;
       return factor * first.localeCompare(second);
-    })];
+    });
   }
 
   onCheckAllChange($event: boolean, checkedTable: DataTableComponent) {
@@ -215,7 +216,7 @@ export class ModalPeopleComponent implements Modal {
   context: { text: string };
   dismiss: EventEmitter<string>;
   selectItem: any;
-  dataSource = [
+  dataSource = Immutable.List([
     {
       id: 1,
       firstName: 'Mark',
@@ -237,7 +238,7 @@ export class ModalPeopleComponent implements Modal {
       lastName: 'Chen',
       dob: new Date(1991, 3, 1),
       score: 80
-    }];
+    }]);
 
   constructor() {
   }
