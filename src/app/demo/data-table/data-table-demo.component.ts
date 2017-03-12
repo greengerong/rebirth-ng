@@ -100,12 +100,12 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   sortChange($event: SortChangeEventArg) {
-    this.dataSource = this.dataSource.sort((a, b) => {
+    this.dataSource = [...this.dataSource.sort((a, b) => {
       const first = a[$event.field].toString();
       const second = b[$event.field].toString();
       const factor = $event.direction === 'ASC' ? 1 : -1;
       return factor * first.localeCompare(second);
-    });
+    })];
   }
 
   onCheckAllChange($event: boolean, checkedTable: DataTableComponent) {
