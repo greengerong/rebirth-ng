@@ -1,11 +1,11 @@
 <div class="arrow"></div>
 <h3 class="popover-title" *ngIf="title">
   <span *ngIf="!title?.elementRef" [innerHTML]="title"></span>
-  <template *ngIf="title?.elementRef" [ngTemplateOutlet]="title"
-            [ngOutletContext]="{ $implicit: context }"></template>
+  <ng-template *ngIf="title?.elementRef" [ngTemplateOutlet]="title"
+            [ngOutletContext]="{ $implicit: context }"> </ng-template>
 </h3>
 <div class="popover-content">
   <span *ngIf="!content?.elementRef" [innerHTML]="content"></span>
-  <template *ngIf="content?.elementRef" [ngTemplateOutlet]="content"
-            [ngOutletContext]="{ $implicit: context }"></template>
+  <ng-template *ngIf="content?.elementRef" [ngTemplateOutlet]="content"
+            [ngOutletContext]="{ $implicit: context }"> </ng-template>
 </div>

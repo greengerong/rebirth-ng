@@ -6,7 +6,7 @@
   <div class="carousel-inner" role="listbox">
     <div #slideItem *ngFor="let silde of slides; let $index = index"
          class="item" [ngClass]="{active: $index == activeSlide}">
-      <template [ngTemplateOutlet]="silde.templateRef"></template>
+      <ng-template [ngTemplateOutlet]="silde.templateRef"> </ng-template>
     </div>
   </div>
 
