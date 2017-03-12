@@ -19,6 +19,7 @@ export class DataTableRowComponent {
   @Input() checkable: boolean;
   @Input() rowItem: any;
   @Input() rowIndex: number;
+  @Input() allChecked: boolean;
   @Input() columns: QueryList<DataTableColumnTmplComponent>;
   @Input() dataTableTemplates: DataTableTmplsComponent;
   @Input() editModel: DataTableEditModel;

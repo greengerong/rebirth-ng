@@ -108,7 +108,10 @@ export class DataTableComponent implements OnDestroy {
 
   onCheckAllChange($event: boolean) {
     if (this.dataSource) {
-      this.dataSource.forEach(item => item.$$checked = $event);
+      this.dataSource = this.dataSource.map(item => {
+        item.$$checked = $event;
+        return item;
+      });
     }
     this.allChecked = $event;
     this.checkAllChange.emit($event);
