@@ -66,13 +66,13 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6">
             <input type="number" class="form-control search" placeholder="From"
-                   [(ngModel)]="head.searchQuery['ge$' +column.field]"
+                   [(ngModel)]="head.searchQuery['ge$$' +column.field]"
                    [name]="column.field + '_min'" (keydown.enter)="head.onSearchQueryChange()"
                    (change)="head.onSearchQueryChange()"/>
           </div>
           <div class="col-xs-12 col-sm-6">
             <input type="number" class="form-control search" placeholder="To"
-                   [(ngModel)]="head.searchQuery['le$' +column.field]"
+                   [(ngModel)]="head.searchQuery['le$$' +column.field]"
                    [name]="column.field +'_max'" (keydown.enter)="head.onSearchQueryChange()"
                    (change)="head.onSearchQueryChange()"/>
           </div>
@@ -148,8 +148,8 @@
         <div class="row">
           <div class="col-xs-12 col-sm-6">
             <div class="input-group">
-              <input class="form-control search" [name]="'ge$' + column.field" placeholder="From"
-                     [(ngModel)]="head.searchQuery['ge$' + column.field]"
+              <input class="form-control search" [name]="'ge$$' + column.field" placeholder="From"
+                     [(ngModel)]="head.searchQuery['ge$$' + column.field]"
                      reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
               <div class="input-group-addon" (click)="geDatePicker.toggle($event)">
                 <i class="glyphicon glyphicon-calendar"></i>
@@ -158,8 +158,8 @@
           </div>
           <div class="col-xs-12 col-sm-6">
             <div class="input-group">
-              <input class="form-control search" [name]="'le$' + column.field" placeholder="To"
-                     [(ngModel)]="head.searchQuery['le$' + column.field]"
+              <input class="form-control search" [name]="'le$$' + column.field" placeholder="To"
+                     [(ngModel)]="head.searchQuery['le$$' + column.field]"
                      reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
               <div class="input-group-addon" (click)="leDatePicker.toggle($event)">
                 <i class="glyphicon glyphicon-calendar"></i>
