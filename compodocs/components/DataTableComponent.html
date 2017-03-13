@@ -372,6 +372,9 @@
                                     <a href="./classes/PanelGroup.html" >PanelGroup</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
+                                </li>
+                                <li class="link">
                                     <a href="./classes/Tooltip.html" >Tooltip</a>
                                 </li>
                                 <li class="link">
@@ -846,6 +849,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./classes/PanelGroup.html" >PanelGroup</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
                                        </li>
                                        <li class="link">
                                            <a href="./classes/Tooltip.html" >Tooltip</a>
@@ -2000,7 +2006,10 @@ export class DataTableComponent implements OnDestroy {
 
   onCheckAllChange($event: boolean) {
     if (this.dataSource) {
-      this.dataSource.forEach(item &#x3D;&gt; item.$$checked &#x3D; $event);
+      this.dataSource &#x3D; this.dataSource.map(item &#x3D;&gt; {
+        item.$$checked &#x3D; $event;
+        return item;
+      });
     }
     this.allChecked &#x3D; $event;
     this.checkAllChange.emit($event);

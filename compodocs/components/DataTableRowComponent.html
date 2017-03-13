@@ -372,6 +372,9 @@
                                     <a href="./classes/PanelGroup.html" >PanelGroup</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
+                                </li>
+                                <li class="link">
                                     <a href="./classes/Tooltip.html" >Tooltip</a>
                                 </li>
                                 <li class="link">
@@ -848,6 +851,9 @@
                                            <a href="./classes/PanelGroup.html" >PanelGroup</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./classes/Tooltip.html" >Tooltip</a>
                                        </li>
                                        <li class="link">
@@ -1042,6 +1048,21 @@
 
     <section>
         <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>allChecked</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>boolean</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1328,6 +1349,7 @@ export class DataTableRowComponent {
   @Input() checkable: boolean;
   @Input() rowItem: any;
   @Input() rowIndex: number;
+  @Input() allChecked: boolean;
   @Input() columns: QueryList&lt;DataTableColumnTmplComponent&gt;;
   @Input() dataTableTemplates: DataTableTmplsComponent;
   @Input() editModel: DataTableEditModel;
