@@ -33,14 +33,14 @@
 - [x] Flow Steps
 - [ ] slider
 - [x] Infinite Scroll
+- [ ] Data Table
 
 ## Advance Components
 - [ ] Editor([]())
 - [ ] Mask([]())
-- [ ] Data Table([]())
 - [ ] Tree View([]())
 - [ ] File Upload([]())
-- [ ] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
+- [x] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
 
 
 ## Themes
