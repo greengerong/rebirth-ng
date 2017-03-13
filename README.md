@@ -40,11 +40,26 @@
 - [ ] Data Table([]())
 - [ ] Tree View([]())
 - [ ] File Upload([]())
-- [ ] Charts([]())
+- [ ] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
 
 
 ## Themes
 
+*  Default
+
+*  Dark
+
+*  Cosmo
+
+*  Paper
+
+*  Journal
+
+*  Readable
+
+*  United
+
+*  Sandstone
 
 
 ## Tasks
