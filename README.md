@@ -69,7 +69,7 @@
 
 * Run serve: `npm start`
 
-* Docs deploy: `npm run rebith-docs:deploy`
+* Docs deploy: `npm run docs:deploy`
 
 ## Get start
 
