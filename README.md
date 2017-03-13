@@ -45,21 +45,14 @@
 
 ## Themes
 
-*  Default
-
-*  Dark
-
-*  Cosmo
-
-*  Paper
-
-*  Journal
-
-*  Readable
-
-*  United
-
-*  Sandstone
+- [ ] Default
+- [ ] Dark
+- [ ] Cosmo
+- [ ] Paper
+- [ ] Journal
+- [ ] Readable
+- [ ] United
+- [ ] Sandstone
 
 
 ## Tasks
