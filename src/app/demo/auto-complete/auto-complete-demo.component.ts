@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs/Observable/of';
 import { Jsonp, URLSearchParams } from '@angular/http';
+import { AutoCompleteDirective } from '../../exports/auto-complete/auto-complete.directive';
 
 
 @Component({
@@ -75,9 +76,10 @@ export class AutoCompleteDemoComponent implements OnInit {
       .map(response => <string[]> response.json()[1]);
   }
 
-  onMmutipleSearchBoxBackspace($event: Event) {
+  onMmutipleSearchBoxBackspace($event: Event, autoComplete: AutoCompleteDirective) {
     if (!(<any>$event.target).value && this.mutipleItems.length) {
       this.mutipleItems.pop();
+      setTimeout(() => autoComplete.positionPopup(), 0);
     }
   }
 }

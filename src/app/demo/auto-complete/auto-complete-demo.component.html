@@ -93,9 +93,9 @@
               </span>
             </li>
             <li>
-              <input id="mutiple-label-auto-complete" type="text" name="text" class="auto-complete-control"
+              <input #autoComplete="autoComplete" id="mutiple-label-auto-complete" type="text" name="text" class="auto-complete-control"
                      [(ngModel)]="selectItem5" (selectValue)="onMutipleSearch()" reAutoComplete
-                     [onSearch]="searchWiki.bind(this)" (keydown.backspace)="onMmutipleSearchBoxBackspace($event)">
+                     [onSearch]="searchWiki.bind(this)" (keydown.backspace)="onMmutipleSearchBoxBackspace($event, autoComplete)">
             </li>
           </ul>
         </label>
