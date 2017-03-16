@@ -55,6 +55,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
   @Output() selectValue = new EventEmitter<any>();
+  @Input() placementElement: any;
   private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
@@ -185,7 +186,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   positionPopup() {
     const targetElement = this.popupRef.location.nativeElement;
-    const hostElement = this.elementRef.nativeElement;
+    const hostElement = this.placementElement || this.elementRef.nativeElement;
     const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
     this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
     this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);

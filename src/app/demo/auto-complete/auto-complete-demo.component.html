@@ -85,7 +85,7 @@
     <h4>Mutiple tags</h4>
     <form class="form-horizontal">
       <div class="form-group">
-        <label for="mutiple-label-auto-complete" class="mutiple-label-auto-complete">
+        <label #mutipleContainer for="mutiple-label-auto-complete" class="mutiple-label-auto-complete">
           <ul>
             <li *ngFor="let item of mutipleItems">
               <span class="label label-info">
@@ -93,9 +93,12 @@
               </span>
             </li>
             <li>
-              <input #autoComplete="autoComplete" id="mutiple-label-auto-complete" type="text" name="text" class="auto-complete-control"
+              <input #autoComplete="autoComplete" id="mutiple-label-auto-complete" type="text" name="text"
+                     class="auto-complete-control"
                      [(ngModel)]="selectItem5" (selectValue)="onMutipleSearch()" reAutoComplete
-                     [onSearch]="searchWiki.bind(this)" (keydown.backspace)="onMmutipleSearchBoxBackspace($event, autoComplete)">
+                     [onSearch]="searchWiki.bind(this)"
+                     [placementElement]="mutipleContainer"
+                     (keydown.backspace)="onMmutipleSearchBoxBackspace($event, autoComplete)">
             </li>
           </ul>
         </label>
