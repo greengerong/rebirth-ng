@@ -25,7 +25,6 @@ export class AppComponent implements OnInit {
               private  themeService: ThemeService,
               private  renderer: Renderer,
               private elementRef: ElementRef) {
-
     this.rebirthConfig.rootContainer = this.viewContainerRef;
     this.router.queryParams.subscribe((params: any) => {
       this.themeService.setupTheme(params.theme, this.renderer, this.elementRef);
@@ -35,7 +34,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gettingStarted = this.demoConfigService.gettingStarted;
+    this.gettingStarted = this.demoConfigService.gettingStarted.readMe;
     this.components = this.demoConfigService.components
       .sort((a, b) => a.name.localeCompare(b.name));
 

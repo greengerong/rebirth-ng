@@ -58,7 +58,9 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   }
 
   selectCurrentItem() {
-    this.onSelect(this.source[this.activeIndex]);
+    if (this.source && this.source.length) {
+      this.onSelect(this.source[this.activeIndex]);
+    }
   }
 
   onActiveIndexChange(index) {

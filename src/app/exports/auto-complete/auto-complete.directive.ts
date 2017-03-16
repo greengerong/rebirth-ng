@@ -131,11 +131,11 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   @HostListener('keydown.Enter', ['$event'])
   onEnterKeyDown($event) {
-    this.hidePopup();
-    if (this.popupRef) {
+    if (this.popupRef && this.popupRef.instance.isOpen) {
       $event.preventDefault();
       $event.stopPropagation();
       this.popupRef.instance.selectCurrentItem();
+      this.hidePopup();
     }
   }
 
@@ -178,6 +178,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   private hidePopup() {
     if (this.popupRef) {
+      this.popupRef.instance.activeIndex = 0;
       this.popupRef.instance.isOpen = false;
     }
   }

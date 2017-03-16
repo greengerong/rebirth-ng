@@ -74,4 +74,10 @@ export class AutoCompleteDemoComponent implements OnInit {
       .get('https://en.wikipedia.org/w/api.php', { search: params })
       .map(response => <string[]> response.json()[1]);
   }
+
+  onMmutipleSearchBoxBackspace($event: Event) {
+    if (!(<any>$event.target).value && this.mutipleItems.length) {
+      this.mutipleItems.pop();
+    }
+  }
 }
