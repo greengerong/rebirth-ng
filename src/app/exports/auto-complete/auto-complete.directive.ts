@@ -56,7 +56,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
-  @Output() selectValue = new EventEmitter<any>();
+  @Output() selectValueChange = new EventEmitter<any>();
   @Input() placementElement: any;
   private valueChanges: Observable<any[]>;
   private value: any;
@@ -94,7 +94,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.writeValue(value);
       this.onChange(value);
       this.hidePopup();
-      this.selectValue.emit(item);
+      this.selectValueChange.emit(item);
     });
   }
 
@@ -259,7 +259,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       .do(term => this.onTouched())
       .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
       .debounceTime(this.delay)
-      .distinctUntilChanged()
+      // .distinctUntilChanged()
       .do(term => this.onTermChange(term))
       .switchMap(term => this.onSearch(term, this));
   }
