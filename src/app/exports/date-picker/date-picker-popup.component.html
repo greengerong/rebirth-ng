@@ -34,7 +34,8 @@
     </tbody>
     <tfoot>
     <tr class="time-picker-view bg-info">
-      <td colspan="7">
+      <td></td>
+      <td colspan="6">
         <div *ngIf="showTimePicker" class="pull-left">
           <select class="date-select" [(ngModel)]="currentHour" name="hours" [disabled]="disabled"
                   (change)="onTimeChange()">
