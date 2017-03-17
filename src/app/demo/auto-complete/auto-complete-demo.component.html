@@ -5,9 +5,12 @@
     <form class="form-horizontal">
       <div class="form-group">
         <label for="languageFromSource" class="col-sm-2 control-label">Search array source:</label>
-        <div class="col-sm-10">
+        <div class="input-group">
           <input type="text" class="form-control" name="language" id="languageFromSource" [minLength]="0"
-                 [(ngModel)]="selectItem1" reAutoComplete [dataSource]="languages"/>
+                 [(ngModel)]="selectItem1" reAutoComplete [dataSource]="languages" #autoComplete1="autoComplete"/>
+          <div class="input-group-addon" (click)="autoComplete1.toggle($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -100,11 +103,10 @@
               </span>
             </li>
             <li>
-              <input #autoComplete="autoComplete" id="mutiple-label-auto-complete" type="text" name="text"
+              <input id="mutiple-label-auto-complete" type="text" name="text"
                      class="auto-complete-control"
                      [(ngModel)]="selectItem5" (selectValue)="onMutipleSearch()" reAutoComplete
                      [onSearch]="searchWiki.bind(this)"
-                     [placementElement]="mutipleContainer"
                      (keydown.backspace)="onMmutipleSearchBoxBackspace($event, autoComplete)">
             </li>
           </ul>

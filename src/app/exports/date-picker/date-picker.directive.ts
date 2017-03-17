@@ -10,6 +10,7 @@ import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change
 import { RebirthUIConfig } from '../rebirth-ui.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
   selector: '[reDatePicker]',
@@ -127,9 +128,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   toggle($event: Event) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     if (this.isOpen) {
       this.hide();
       return;

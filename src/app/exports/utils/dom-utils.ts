@@ -17,3 +17,9 @@ export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRe
     top: ( winHeight - elmHeight) / 2
   };
 }
+
+export function stopPropagationIfExist($event?: Event) {
+  if ($event) {
+    $event.stopPropagation();
+  }
+}

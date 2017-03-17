@@ -30,6 +30,7 @@ import 'rxjs/add/operator/do';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 import { PositionService } from '../position/positioning.service';
 import { AutoCompletePopupComponent } from './auto-complete-popup.component';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
   selector: '[reAutoComplete]',
@@ -61,10 +62,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   private value: any;
   private placement = 'bottom-left';
   private subscription: Subscription;
+  private arraySource: any[];
   private popupRef: ComponentRef<AutoCompletePopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
-  private arraySource: any[];
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
@@ -197,6 +198,19 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     if (this.popupRef) {
       this.popupRef.instance.activeIndex = 0;
       this.popupRef.instance.isOpen = false;
+    }
+  }
+
+  toggle($event?: Event) {
+    stopPropagationIfExist($event);
+
+    if (this.popupRef) {
+      const pop = this.popupRef.instance;
+      if (pop.isOpen) {
+        this.hidePopup();
+        return;
+      }
+      this.onSourceChange(this.arraySource);
     }
   }
 

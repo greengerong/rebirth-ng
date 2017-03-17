@@ -1,4 +1,5 @@
 import { Input, ElementRef, Renderer, TemplateRef, HostListener } from '@angular/core';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 export class TooltipPopup {
   static ACTIVE_CLASS = 'in';
@@ -13,7 +14,7 @@ export class TooltipPopup {
 
   @HostListener('click', ['$event'])
   onDocumentClick($event: Event) {
-    $event.stopPropagation();
+    stopPropagationIfExist($event);
   }
 
   show() {

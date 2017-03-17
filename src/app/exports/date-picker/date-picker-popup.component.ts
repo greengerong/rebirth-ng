@@ -16,6 +16,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
 import { isValidDate } from '../utils/date-utils';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-date-picker-popup',
@@ -117,9 +118,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   }
 
   onSelectDate($event, date) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     if (this.isDisabledDay(date)) {
       return;
     }
@@ -215,7 +214,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
 
   @HostListener('click', ['$event'])
   onHostClick($event: Event) {
-    $event.stopPropagation();
+    stopPropagationIfExist($event);
   }
 
   private onSelectDateChanged() {

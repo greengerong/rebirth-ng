@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, Optional, OnInit, Host, OnDestroy } from '@angular/core';
 import { PanelGroup } from './panel-group.model';
 import { RebirthUIConfig } from '../rebirth-ui.config';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-panel,re-accordion-item',
@@ -32,7 +33,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   }
 
   onClose($event: Event) {
-    $event.stopPropagation();
+    stopPropagationIfExist($event);
     this.close.emit(this);
   }
 
