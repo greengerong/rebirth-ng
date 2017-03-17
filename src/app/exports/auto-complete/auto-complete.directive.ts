@@ -18,6 +18,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fromEvent } from 'rxjs/Observable/fromEvent';
+import { of } from 'rxjs/Observable/of';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
@@ -29,6 +30,7 @@ import 'rxjs/add/operator/do';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 import { PositionService } from '../position/positioning.service';
 import { AutoCompletePopupComponent } from './auto-complete-popup.component';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
   selector: '[reAutoComplete]',
@@ -54,12 +56,13 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
-  @Output() selectValue = new EventEmitter<any>();
+  @Output() selectValueChange = new EventEmitter<any>();
   @Input() placementElement: any;
   private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
   private subscription: Subscription;
+  private arraySource: any[];
   private popupRef: ComponentRef<AutoCompletePopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
@@ -91,8 +94,22 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.writeValue(value);
       this.onChange(value);
       this.hidePopup();
-      this.selectValue.emit(item);
+      this.selectValueChange.emit(item);
     });
+  }
+
+  @Input() set dataSource(dataSource: any[]) {
+    this.arraySource = dataSource || [];
+    this.setupArraySource();
+  }
+
+  private setupArraySource() {
+    this.onSearch = (term) => {
+      return of(
+        this.arraySource
+          .filter(item => this.formatter(item).toLowerCase().indexOf(term.toLowerCase()) !== -1)
+      );
+    };
   }
 
   writeValue(obj: any): void {
@@ -167,10 +184,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   onSourceChange(source) {
+    const pop = this.popupRef.instance;
+    pop.reset();
+    this.fillPopup(source, this.value);
     if ((source && source.length) || this.noResultItemTemplate) {
-      const pop = this.popupRef.instance;
-      pop.reset();
-      this.fillPopup(source, this.value);
       pop.isOpen = true;
       this.positionPopup();
       this.changeDetectorRef.markForCheck();
@@ -181,6 +198,19 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     if (this.popupRef) {
       this.popupRef.instance.activeIndex = 0;
       this.popupRef.instance.isOpen = false;
+    }
+  }
+
+  toggle($event?: Event) {
+    stopPropagationIfExist($event);
+
+    if (this.popupRef) {
+      const pop = this.popupRef.instance;
+      if (pop.isOpen) {
+        this.hidePopup();
+        return;
+      }
+      this.onSourceChange(this.arraySource);
     }
   }
 
@@ -229,7 +259,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       .do(term => this.onTouched())
       .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
       .debounceTime(this.delay)
-      .distinctUntilChanged()
+      // .distinctUntilChanged()
       .do(term => this.onTermChange(term))
       .switchMap(term => this.onSearch(term, this));
   }

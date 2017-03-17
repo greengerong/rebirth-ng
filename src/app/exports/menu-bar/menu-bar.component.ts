@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-menu-bar',
@@ -21,16 +22,12 @@ export class MenuBarComponent {
   }
 
   toggle($event?: Event) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     this.onShowNavBarChange(!this.showNavBar);
   }
 
   hide($event?: Event) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     this.onShowNavBarChange(false);
   }
 

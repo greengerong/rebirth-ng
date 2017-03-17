@@ -3,6 +3,7 @@ import {
   TemplateRef
 } from '@angular/core';
 import { ActionItem } from './action-item.model';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-action-button',
@@ -24,9 +25,7 @@ export class ActionButtonComponent {
   @Output() openStatusChange = new EventEmitter<boolean>();
 
   toggle($event?: MouseEvent) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     this.isOpen = !this.isOpen;
     this.openStatusChange.emit(this.isOpen);
   }

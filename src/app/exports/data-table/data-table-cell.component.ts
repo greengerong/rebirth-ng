@@ -7,6 +7,7 @@ import { DataTableComponent } from './data-table.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTableRowComponent } from './data-table-row.component';
 import { Subscription } from 'rxjs/Subscription';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-data-table-cell,[reDataTableCell]',
@@ -50,7 +51,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
 
     this.dt.onCellClick(cellSelectedEventArg);
     if (this.column.editable && this.editModel === 'cell') {
-      $event.stopPropagation();
+      stopPropagationIfExist($event);
       this.isCellEdit = true;
       this.documentClickubscription = this.dt.documentClickEvent.subscribe(_ => this.onFinishCellEdit());
       this.dt.onCellEditStart(cellSelectedEventArg);
@@ -67,9 +68,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
     }
     this.isCellEdit = false;
     this.unSubscription(this.documentClickubscription);
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
 
     this.dt.onCellEditEnd({
       rowIndex: this.rowIndex,

@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { DataTableCellTmplComponent } from './data-table-cell-tmpl.component';
+import { stopPropagationIfExist } from '../../utils/dom-utils';
 
 @Component({
   selector: 're-data-table-templates',
@@ -50,6 +51,6 @@ export class DataTableTmplsComponent {
   }
 
   stopPropagation($event: Event) {
-    $event.stopPropagation();
+    stopPropagationIfExist($event);
   }
 }
