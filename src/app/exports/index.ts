@@ -25,6 +25,7 @@ export * from './select-button';
 export * from './switch';
 export * from './tabs';
 export * from './tooltip';
+export * from './utils';
 export * from './window-ref';
 export * from './rebirth-ui.config';
 export * from './rebirth-ui.i18n.zh-cn';

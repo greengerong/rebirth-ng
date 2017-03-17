@@ -33,18 +33,26 @@
 - [x] Flow Steps
 - [ ] slider
 - [x] Infinite Scroll
+- [ ] Data Table
 
 ## Advance Components
 - [ ] Editor([]())
 - [ ] Mask([]())
-- [ ] Data Table([]())
 - [ ] Tree View([]())
 - [ ] File Upload([]())
-- [ ] Charts([]())
+- [x] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
 
 
 ## Themes
 
+- [x] Default
+- [x] Dark
+- [x] Cosmo
+- [x] Paper
+- [x] Journal
+- [x] Readable
+- [x] United
+- [x] Sandstone
 
 
 ## Tasks
@@ -61,7 +69,7 @@
 
 * Run serve: `npm start`
 
-* Docs deploy: `npm run rebith-docs:deploy`
+* Docs deploy: `npm run docs:deploy`
 
 ## Get start
 

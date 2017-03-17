@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ComponentFactoryResolver, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, ComponentFactoryResolver, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ModalService } from '../../exports/modal/modal.service';
 import { Modal } from '../../exports/modal/modal.model';
 
@@ -55,11 +55,16 @@ export class ModalDemoComponent {
     <button type="button" class="btn btn-warning" (click)="cancel()">Cancel</button>
   </div>`
 })
-export class ModalTestComponent implements Modal {
+export class ModalTestComponent implements Modal, OnInit {
+
   context: { text: string };
   dismiss: EventEmitter<string>;
 
   constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
+  }
+
+  ngOnInit(): void {
+    console.log('ModalTestComponent init....');
   }
 
   show() {

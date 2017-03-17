@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Breadcrumb } from '../../exports/breadcrumbs/breadcrumbs.model';
+import * as Immutable from 'immutable';
 
 @Component({
   selector: 're-breadcrumbs-demo',
@@ -7,7 +8,7 @@ import { Breadcrumb } from '../../exports/breadcrumbs/breadcrumbs.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BreadcrumbsDemoComponent implements OnInit {
-  items: Breadcrumb[] = [
+  items = Immutable.List<Breadcrumb>([
     {
       text: 'Home',
       icon: 'glyphicon glyphicon-home',
@@ -25,7 +26,7 @@ export class BreadcrumbsDemoComponent implements OnInit {
       icon: 'glyphicon glyphicon-th-large',
       handle: item => console.log('Clicked', item)
     }
-  ];
+  ]);
 
   constructor() {
   }
@@ -34,11 +35,11 @@ export class BreadcrumbsDemoComponent implements OnInit {
   }
 
   pushItem() {
-    this.items = [...this.items, { text: 'Test', handle: item => console.log('Clicked', item) }];
+    this.items = this.items.push({ text: 'Test', handle: item => console.log('Clicked', item) });
   }
 
   removeLastItem() {
-    this.items = this.items.slice(0, this.items.length - 1);
+    this.items = this.items.remove(this.items.size - 1);
   }
 
 }

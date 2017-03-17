@@ -7,7 +7,8 @@ import {
   ElementRef,
   Renderer,
   Output,
-  EventEmitter
+  EventEmitter,
+  ChangeDetectorRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
@@ -52,7 +53,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale = this.rebirthUIConfig.datePicker.locale;
     this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
@@ -100,6 +101,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.selectedDate = obj ? this.dateConverter.parse(obj, this.dateFormat, this.locale) : null;
     this.onSelectDateChanged();
     this.onDisplayWeeksChange();
+    this.changeDetectorRef.markForCheck();
   }
 
   registerOnChange(fn: any): void {

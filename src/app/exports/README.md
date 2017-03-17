@@ -19,6 +19,8 @@ The only required dependencies are:
 * [DateFns](https://date-fns.org/) (`date-fns` 1.27.2 or higher. It is for `DatePicker` parse & format date)
 
 
+*Notice*: `OnPush` @Input is recommended in `@Rebirth/UI`, so use `Immutable.js` will be easy.
+
 ## Installation
 
 After installing the above dependencies, install `@Rebirth/UI` via: 
