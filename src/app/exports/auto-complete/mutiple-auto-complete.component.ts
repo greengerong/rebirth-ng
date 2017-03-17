@@ -22,6 +22,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @Input() popupCssClass: string;
   @Input() delay: number;
   @Input() minLength: number;
+  @Input() dataSource: any[];
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
@@ -64,6 +65,12 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   ngAfterViewInit(): void {
     if (this.autoCompleteDirective) {
       this.autoCompleteDirective.registerOnTouched(() => this.onTouched());
+    }
+  }
+
+  toggle($event?: Event) {
+    if (this.autoCompleteDirective) {
+      this.autoCompleteDirective.toggle($event);
     }
   }
 

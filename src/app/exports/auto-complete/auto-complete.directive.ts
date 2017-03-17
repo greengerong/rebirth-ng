@@ -99,8 +99,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   @Input() set dataSource(dataSource: any[]) {
-    this.arraySource = dataSource || [];
-    this.setupArraySource();
+    if (dataSource) {
+      this.arraySource = dataSource;
+      this.setupArraySource();
+    }
   }
 
   private setupArraySource() {
