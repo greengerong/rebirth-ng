@@ -117,6 +117,14 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
+  todayIsOutOfRange() {
+    return this.isDisabledDay(new Date());
+  }
+
+  today($event) {
+    this.onSelectDate($event, new Date());
+  }
+
   onSelectDate($event, date) {
     stopPropagationIfExist($event);
     if (this.isDisabledDay(date)) {
