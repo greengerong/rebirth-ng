@@ -18,6 +18,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fromEvent } from 'rxjs/Observable/fromEvent';
+import { of } from 'rxjs/Observable/of';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
@@ -63,6 +64,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   private popupRef: ComponentRef<AutoCompletePopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
+  private arraySource: any[];
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
@@ -93,6 +95,20 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.hidePopup();
       this.selectValue.emit(item);
     });
+  }
+
+  @Input() set dataSource(dataSource: any[]) {
+    this.arraySource = dataSource || [];
+    this.setupArraySource();
+  }
+
+  private setupArraySource() {
+    this.onSearch = (term) => {
+      return of(
+        this.arraySource
+          .filter(item => this.formatter(item).toLowerCase().indexOf(term.toLowerCase()) !== -1)
+      );
+    };
   }
 
   writeValue(obj: any): void {
@@ -167,10 +183,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   onSourceChange(source) {
+    const pop = this.popupRef.instance;
+    pop.reset();
+    this.fillPopup(source, this.value);
     if ((source && source.length) || this.noResultItemTemplate) {
-      const pop = this.popupRef.instance;
-      pop.reset();
-      this.fillPopup(source, this.value);
       pop.isOpen = true;
       this.positionPopup();
       this.changeDetectorRef.markForCheck();
