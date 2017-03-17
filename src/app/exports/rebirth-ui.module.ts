@@ -28,6 +28,7 @@ import { FlowStepModule } from './flow-step';
 import { DataTableModule } from './data-table';
 import { InfiniteScrollModule } from './infinite-scroll';
 import { RebirthCommonModule } from './common';
+import { DraggableModule } from './draggable';
 
 
 @NgModule({
@@ -86,6 +87,7 @@ import { RebirthCommonModule } from './common';
     FlowStepModule,
     InfiniteScrollModule,
     DataTableModule,
+    DraggableModule
   ],
   declarations: [],
   providers: [],

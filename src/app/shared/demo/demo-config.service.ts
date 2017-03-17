@@ -23,7 +23,8 @@ import {
   AutoCompleteDemoComponent,
   FlowStepDemoComponent,
   InfiniteScrollDemoComponent,
-  DataTableDemoComponent
+  DataTableDemoComponent,
+  DraggableDemoComponent
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -240,6 +241,14 @@ export class DemoConfigService {
       readMe: this.domSanitizer.bypassSecurityTrustHtml(require('!html-loader!markdown-loader!../../exports/data-table/README.md')),
       html: require('!raw-loader!../../demo/data-table/data-table-demo.component.html'),
       ts: require('!raw-loader!../../demo/data-table/data-table-demo.component.ts'),
+    },
+    {
+      name: 'Draggable',
+      directory: 'draggable',
+      cmp: DraggableDemoComponent,
+      readMe: this.domSanitizer.bypassSecurityTrustHtml(require('!html-loader!markdown-loader!../../exports/draggable/README.md')),
+      html: require('!raw-loader!../../demo/draggable/draggable-demo.component.html'),
+      ts: require('!raw-loader!../../demo/draggable/draggable-demo.component.ts'),
     },
     // component declare
   ];

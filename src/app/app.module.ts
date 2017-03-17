@@ -28,7 +28,8 @@ import {
   AutoCompleteDemoModule,
   FlowStepDemoModule,
   InfiniteScrollDemoModule,
-  DataTableDemoModule
+  DataTableDemoModule,
+  DraggableDemoModule
 } from './demo';
 import { RebirthUIModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -66,7 +67,8 @@ import { RouterModule } from '@angular/router';
     AutoCompleteDemoModule,
     FlowStepDemoModule,
     DataTableDemoModule,
-    InfiniteScrollDemoModule
+    InfiniteScrollDemoModule,
+    DraggableDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
