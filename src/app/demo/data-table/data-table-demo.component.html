@@ -5,7 +5,7 @@
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true" [editable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [sortable]="true" [editable]="true"></re-column>
-      <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true">
+      <re-column field="dob" header="Date of birth" [formatter]="dobFormat" [editable]="true" [fieldType]="'date'">
         <re-cell-edit>
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
                     let-cell="">

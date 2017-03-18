@@ -101,7 +101,7 @@ export class DataTableDemoComponent implements OnInit {
       {
         field: 'dob',
         header: 'Date of birth',
-        fieldType: 'datetime',
+        fieldType: 'date',
         sortable: true,
         editable: true,
         formatter: this.dobFormat
