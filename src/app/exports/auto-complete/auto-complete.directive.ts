@@ -51,6 +51,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() cssClass: string;
   @Input() delay: number;
   @Input() minLength: number;
+  @Input() appendBody = false;
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
@@ -85,17 +86,23 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       .subscribe(source => this.onSourceChange(source));
 
     const factory = this.componentFactoryResolver.resolveComponentFactory(AutoCompletePopupComponent);
-    this.popupRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
-    this.fillPopup();
-    this.positionPopup();
 
-    this.popupRef.instance.registerOnChange(item => {
-      const value = this.valueParser(item);
-      this.writeValue(value);
-      this.onChange(value);
-      this.hidePopup();
-      this.selectValueChange.emit(item);
-    });
+    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    // EXCEPTION: Expression has changed after it was checked when append to body;
+
+    setTimeout(() => {
+      this.popupRef = viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
+      this.fillPopup();
+      this.positionPopup();
+
+      this.popupRef.instance.registerOnChange(item => {
+        const value = this.valueParser(item);
+        this.writeValue(value);
+        this.onChange(value);
+        this.hidePopup();
+        this.selectValueChange.emit(item);
+      });
+    }, 0);
   }
 
   @Input() set dataSource(dataSource: any[]) {
@@ -137,6 +144,17 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   ngOnDestroy() {
     this.unSubscription();
+    this.removePopView();
+  }
+
+  private removePopView() {
+    if (this.popupRef) {
+      const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+      const index = viewContainerRef.indexOf(this.popupRef.hostView);
+      if (index !== -1) {
+        viewContainerRef.remove(index);
+      }
+    }
   }
 
   @HostListener('blur', [])
@@ -219,7 +237,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   positionPopup() {
     const targetElement = this.popupRef.location.nativeElement;
     const hostElement = this.placementElement || this.elementRef.nativeElement;
-    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
     this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
     this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
   }

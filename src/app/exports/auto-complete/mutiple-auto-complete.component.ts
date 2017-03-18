@@ -22,6 +22,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @Input() popupCssClass: string;
   @Input() delay: number;
   @Input() minLength: number;
+  @Input() appendBody = false;
   @Input() dataSource: any[];
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
