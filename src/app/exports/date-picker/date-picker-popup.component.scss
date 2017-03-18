@@ -1,7 +1,5 @@
 
 .month-view {
-  background-color: #f7f7f7;
-
   .month-view-table {
     margin-bottom: 0px;
   }
@@ -17,6 +15,7 @@
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    vertical-align: middle;
   }
   .week-header {
     font-style: italic;
@@ -30,7 +29,6 @@
     height: 2rem;
     line-height: 2rem;
     cursor: pointer;
-    border-radius: .25rem;
     &:hover:not(.bg-primary) {
       background-color: #e6e6e6;
       border-color: #adadad;
@@ -58,18 +56,10 @@
   }
 
   .time-picker-view {
-    //border: 1px solid #DDDDDD;
-    //background: #ccc;
-  }
-
-  .minutes {
-    &:before {
-      content: ':';
-      text-align: center;
-      position: absolute;
-      margin-left: -0.8rem;
+    td {
+      vertical-align: middle;
+      line-height: 2;
     }
   }
-
 }
 

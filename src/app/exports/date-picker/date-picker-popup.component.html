@@ -1,23 +1,21 @@
-<div class="month-view {{cssClass}}" >
+<div class="month-view {{cssClass}}">
   <table class="table month-view-table">
     <thead>
     <tr>
       <td>
-        <a *ngIf="hasPreMonth()" class="btn-link glyphicon glyphicon-chevron-left" aria-hidden="true"
+        <a *ngIf="hasPreMonth()" class="btn-link glyphicon glyphicon-chevron-left pull-right" aria-hidden="true"
            (click)="onPreMonth()"></a>
       </td>
-      <td colspan="2">
-        <select class="date-select pull-right" [(ngModel)]="currentMonth" (change)="onDisplayWeeksChange()">
+      <td colspan="5" class="text-center">
+        <select class="date-select" [(ngModel)]="currentMonth" (change)="onDisplayWeeksChange()">
           <option *ngFor="let item of dateConfig.months; let $index = index" [ngValue]="$index">{{item}}</option>
         </select>
-      </td>
-      <td colspan="3">
-        <select class="date-select pull-left" [(ngModel)]="currentYear" (change)="onDisplayWeeksChange()">
+        <select class="date-select" [(ngModel)]="currentYear" (change)="onDisplayWeeksChange()">
           <option *ngFor="let item of yearOptions" [ngValue]="item">{{item}}</option>
         </select>
       </td>
       <td>
-        <a *ngIf="hasNextMonth()" class="btn-link glyphicon glyphicon-chevron-right" aria-hidden="true"
+        <a *ngIf="hasNextMonth()" class="btn-link glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"
            (click)="onNextMonth()"></a>
       </td>
     </tr>
@@ -34,24 +32,25 @@
       </td>
     </tr>
     </tbody>
-    <tfoot *ngIf="showTimePicker">
+    <tfoot>
     <tr class="time-picker-view bg-info">
       <td></td>
-      <td colspan="2" class="hours">
-        <select class="date-select pull-right" [(ngModel)]="currentHour" [disabled]="disabled"
-                (change)="onTimeChange()">
-          <option *ngFor="let item of hourOptions; let $index = index" [ngValue]="$index">{{item}}</option>
-        </select>
-      </td>
-      <td colspan="2" class="minutes">
-        <select class="date-select pull-left" [(ngModel)]="currentMinute" [disabled]="disabled"
-                (change)="onTimeChange()">
-          <option *ngFor="let item of minuteOptions; let $index = index" [ngValue]="$index">{{item}}</option>
-        </select>
-      </td>
-      <td>
-      </td>
-      <td>
+      <td colspan="6">
+        <div *ngIf="showTimePicker" class="pull-left">
+          <select class="date-select" [(ngModel)]="currentHour" name="hours" [disabled]="disabled"
+                  (change)="onTimeChange()">
+            <option *ngFor="let item of hourOptions; let $index = index" [ngValue]="$index">{{item}}</option>
+          </select>
+          :
+          <select class="date-select" [(ngModel)]="currentMinute" name="minutes" [disabled]="disabled"
+                  (change)="onTimeChange()">
+            <option *ngFor="let item of minuteOptions; let $index = index" [ngValue]="$index">{{item}}</option>
+          </select>
+        </div>
+
+        <button class="btn btn-sm btn-primary pull-right" [disabled]="todayIsOutOfRange()" (click)="today($event)">
+          {{dateConfig.today}}
+        </button>
       </td>
     </tr>
     </tfoot>

@@ -1,7 +1,7 @@
 import {
   ComponentFactoryResolver, ComponentRef, Directive, ElementRef, forwardRef, HostListener, Injector, Input, OnInit,
   Renderer,
-  ViewContainerRef
+  ViewContainerRef, OnDestroy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PositionService } from '../position/positioning.service';
@@ -21,7 +21,7 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
     multi: true
   }]
 })
-export class DatePickerDirective implements OnInit, ControlValueAccessor {
+export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDestroy {
   @Input() placement: DatePickerPlacement = 'bottom-left';
   @Input() selectedDate: Date;
   @Input() locale: string;
@@ -29,6 +29,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() cssClass: string;
   @Input() disabled = false;
   @Input() dateConverter: DateConverter;
+  @Input() appendBody = false;
   isOpen = false;
   dateConfig: any;
   private _dateFormat: string;
@@ -74,7 +75,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   @Input() set dateFormat(dateFormat: string) {
-    if (this._dateFormat !== dateFormat) {
+    if (dateFormat && this._dateFormat !== dateFormat) {
       this._dateFormat = dateFormat;
       this.writeModelValue(this.selectedDate);
     }
@@ -86,24 +87,28 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
 
   ngOnInit() {
     const factory = this.componentFactoryResolver.resolveComponentFactory(DatePickerPopupComponent);
-    this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
-    this.applyPopupStyling(this.cmpRef.location.nativeElement);
-    const component = this.cmpRef.instance;
-    this.hide();
-    component.writeValue(this.selectedDate);
-    this.fillPopupData();
-    component.ngOnInit();
+    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    // EXCEPTION: Expression has changed after it was checked when append to body;
+    setTimeout(() => {
+      this.cmpRef = viewContainerRef.createComponent(factory, viewContainerRef.length, this.injector);
+      this.applyPopupStyling(this.cmpRef.location.nativeElement);
+      const component = this.cmpRef.instance;
+      this.hide();
+      component.writeValue(this.selectedDate);
+      this.fillPopupData();
+      component.ngOnInit();
 
-    component.registerOnChange((selectedDate) => {
-      this.writeValue(selectedDate);
-      this.onChange(selectedDate);
-    });
+      component.registerOnChange((selectedDate) => {
+        this.writeValue(selectedDate);
+        this.onChange(selectedDate);
+      });
 
-    component.selectedDateChange.subscribe((arg: SelectDateChangeEventArgs) => {
-      if (arg.reason === SelectDateChangeReason.date) {
-        this.hide();
-      }
-    });
+      component.selectedDateChange.subscribe((arg: SelectDateChangeEventArgs) => {
+        if (arg.reason === SelectDateChangeReason.date) {
+          this.hide();
+        }
+      });
+    }, 0);
   }
 
   writeValue(obj: any): void {
@@ -153,7 +158,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     const targetElement = this.cmpRef.location.nativeElement;
     const hostElement = this.elementRef.nativeElement;
     this.renderer.setElementStyle(targetElement, 'display', 'inline-block');
-    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
     this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
     this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
   }
@@ -190,6 +195,16 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @HostListener('keyup.esc', ['$event'])
   onEscKeyup() {
     this.hide();
+  }
+
+  ngOnDestroy(): void {
+    this.removePopView();
+  }
+
+  private removePopView() {
+    if (this.cmpRef) {
+      this.cmpRef.destroy();
+    }
   }
 
   private writeModelValue(selectDate: Date) {

@@ -27,20 +27,22 @@ export class DataTableDemoComponent implements OnInit {
       firstName: 'Mark',
       lastName: 'Otto',
       dob: new Date(1990, 12, 1),
+      sex: 'male',
       score: 80
     },
     {
       id: 2,
       firstName: 'Jacob',
       lastName: 'Thornton',
+      sex: 'female',
       dob: new Date(1989, 1, 1),
       score: 43
-
     },
     {
       id: 3,
       firstName: 'Danni',
       lastName: 'Chen',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 80
     },
@@ -48,6 +50,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 4,
       firstName: 'green',
       lastName: 'gerong',
+      sex: 'male',
       dob: new Date(1991, 3, 1),
       score: 98
     },
@@ -55,6 +58,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 5,
       firstName: 'po',
       lastName: 'lang',
+      sex: 'male',
       dob: new Date(1991, 3, 1),
       score: 80
     },
@@ -62,6 +66,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 6,
       firstName: 'john',
       lastName: 'li',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 70
     },
@@ -69,6 +74,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 7,
       firstName: 'peng',
       lastName: 'li',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 27
     },
@@ -76,12 +82,45 @@ export class DataTableDemoComponent implements OnInit {
       id: 8,
       firstName: 'Danni',
       lastName: 'Yu',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 74
     },
 
   ]);
 
+  dataTableOptions = {
+    columns: [
+      {
+        field: 'firstName',
+        header: 'First Name',
+        fieldType: 'text',
+        sortable: true,
+        editable: true
+      },
+      {
+        field: 'lastName',
+        header: 'Last Name',
+        fieldType: 'text',
+        sortable: true,
+        editable: true
+      },
+      {
+        field: 'dob',
+        header: 'Date of birth',
+        fieldType: 'date',
+        sortable: true,
+        editable: true
+      },
+      {
+        field: 'score',
+        header: 'Score',
+        fieldType: 'number',
+        sortable: true,
+        editable: true
+      }
+    ]
+  };
   pager: DataTablePager = {
     total: 306,
     pageIndex: 5,
@@ -94,10 +133,6 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  dobFormat(item) {
-    return item ? formatDate(item, 'YYYY-MM-DD') : '';
   }
 
   sortChange($event: SortChangeEventArg) {
@@ -179,10 +214,10 @@ export class DataTableDemoComponent implements OnInit {
 })
 
 export class AVGPipe implements PipeTransform {
-  transform(value: any, args: any[]): any {
+  transform(value: Immutable.List<any>, args: any[]): any {
     if (value) {
       const field = args[0];
-      const svg = value.reduce((sum, item) => sum + item[field], 0) / value.length;
+      const svg = value.reduce((sum, item) => sum + item[field], 0) / value.size;
       return svg.toFixed(2);
     }
   }
@@ -202,7 +237,7 @@ export class AVGPipe implements PipeTransform {
           <re-column field="$index" header="#"></re-column>
           <re-column field="firstName" header="First Name"></re-column>
           <re-column field="lastName" header="Last Name"></re-column>
-          <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
+          <re-column field="dob" header="Date of birth" [fieldType]="'date'"></re-column>
            <re-column field="score" [sortable]="true" header="Score"></re-column>
        </re-data-table>
      </table>
@@ -250,10 +285,6 @@ export class ModalPeopleComponent implements Modal {
   rowDBClick($event: RowSelectedEventArg) {
     this.selectItem = $event.rowItem;
     this.ok();
-  }
-
-  dobFormat(item) {
-    return item ? formatDate(item, 'YYYY-MM-DD') : '';
   }
 
   ok() {

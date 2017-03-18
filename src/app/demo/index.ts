@@ -8,6 +8,7 @@ export * from './modal';
 export * from './overlay';
 export * from './date-picker';
 export * from './dialog';
+export * from './draggable';
 export * from './flow-step';
 export * from './infinite-scroll';
 export * from './menu-bar';

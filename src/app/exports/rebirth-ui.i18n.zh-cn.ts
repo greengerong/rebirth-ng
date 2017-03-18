@@ -2,6 +2,7 @@ export const REBIRTH_UI_I18N_ZHCN = {
 
   datePicker: {
     locale: 'zh-CN',
+    today: '今天',
     timePicker: false,
     dateConverter: null, // DateConverter
     weeks: ['日', '一', '二', '三', '四', '五', '六'],

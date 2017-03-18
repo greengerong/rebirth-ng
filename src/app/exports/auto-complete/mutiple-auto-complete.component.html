@@ -11,8 +11,8 @@
              [(ngModel)]="selectValue" (selectValueChange)="onMutipleSearch()" [onSearch]="onSearch"
              [cssClass]="popupCssClass" [delay]="delay" [minLength]="minLength" [itemTemplate]="itemTemplate"
              [noResultItemTemplate]="noResultItemTemplate" [formatter]="formatter" [valueParser]="valueParser"
-             (keydown.backspace)="onMutipleSearchBoxBackspace($event)" [disabled]="disabled"
-             reAutoComplete>
+             (keydown.backspace)="onMutipleSearchBoxBackspace($event)" [disabled]="disabled" [dataSource]="dataSource"
+             [appendBody]="appendBody" reAutoComplete>
     </li>
   </ul>
 </label>

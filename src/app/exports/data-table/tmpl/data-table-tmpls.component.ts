@@ -18,6 +18,7 @@ export class DataTableTmplsComponent {
   @ViewChild('imageCellTemplate') image: DataTableCellTmplComponent;
   // @ViewChild('selectCellTemplate') select: DataTableCellTmplComponent;
   @ViewChild('dateCellTemplate') date: DataTableCellTmplComponent;
+  @ViewChild('datetimeCellTemplate') datetime: DataTableCellTmplComponent;
 
   getTemplate(fieldType: string): DataTableCellTmplComponent {
     return this[fieldType || 'text'] || this.text;

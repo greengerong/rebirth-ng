@@ -93,10 +93,12 @@
 
   <section>
     <h4>Mutiple tags</h4>
+    <button class="btn" (click)="remove =!remove"></button>
     <form class="form-horizontal">
       <div class="form-group">
-        <re-mutiple-auto-complete id="languageTags" [(ngModel)]="mutipleItems" name="languageTags" [minLength]="0"
-                                  [onSearch]="searchWiki.bind(this)"></re-mutiple-auto-complete>
+        <re-mutiple-auto-complete *ngIf="!remove" id="languageTags" [(ngModel)]="mutipleItems" name="languageTags"
+                                  [minLength]="0"
+                                  [onSearch]="searchWiki.bind(this)" [appendBody]="true"></re-mutiple-auto-complete>
 
         <pre>{{mutipleItems | json}}</pre>
       </div>

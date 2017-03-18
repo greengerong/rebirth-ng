@@ -34,6 +34,7 @@ export class RebirthUIConfig {
 
   datePicker = {
     locale: 'en-US',
+    today: 'Today',
     timePicker: false,
     dateConverter: null, // DateConverter
     weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],

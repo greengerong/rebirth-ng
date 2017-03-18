@@ -1,6 +1,6 @@
 import {
   Component, OnInit, ChangeDetectionStrategy, Type, Input, ViewContainerRef,
-  ComponentFactoryResolver, Injector, ComponentRef
+  ComponentFactoryResolver, Injector, ComponentRef, OnDestroy
 } from '@angular/core';
 
 @Component({
@@ -8,8 +8,7 @@ import {
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DocContentComponent {
-
+export class DocContentComponent implements OnDestroy {
   cmp: Type<any>;
   cmpRef: ComponentRef<any>;
 
@@ -31,4 +30,9 @@ export class DocContentComponent {
     this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
   }
 
+  ngOnDestroy(): void {
+    if (this.cmpRef) {
+      this.cmpRef.destroy();
+    }
+  }
 }
