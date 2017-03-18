@@ -5,6 +5,28 @@
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true" [editable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [sortable]="true" [editable]="true"></re-column>
+      <re-column field="sex" header="Sex" [sortable]="true" [editable]="true">
+
+        <re-cell-edit>
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
+                    let-column="column"
+                    let-cell="">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <select class="form-control" [name]="column.field" [(ngModel)]="rowItem[column.field]"
+                          (blur)="cell.onFinishCellEdit($event)" reAutoFocus [autoFoucs]="cell.isCellEdit">
+                    <option>Please Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </template>
+        </re-cell-edit>
+      </re-column>
       <re-column field="dob" header="Date of birth" [editable]="true" [fieldType]="'date'"
                  [extraOptions]="{dateFormat: 'MM/DD/YYYY'}">
       </re-column>

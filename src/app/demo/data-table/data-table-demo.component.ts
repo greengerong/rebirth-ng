@@ -27,20 +27,22 @@ export class DataTableDemoComponent implements OnInit {
       firstName: 'Mark',
       lastName: 'Otto',
       dob: new Date(1990, 12, 1),
+      sex: 'male',
       score: 80
     },
     {
       id: 2,
       firstName: 'Jacob',
       lastName: 'Thornton',
+      sex: 'female',
       dob: new Date(1989, 1, 1),
       score: 43
-
     },
     {
       id: 3,
       firstName: 'Danni',
       lastName: 'Chen',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 80
     },
@@ -48,6 +50,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 4,
       firstName: 'green',
       lastName: 'gerong',
+      sex: 'male',
       dob: new Date(1991, 3, 1),
       score: 98
     },
@@ -55,6 +58,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 5,
       firstName: 'po',
       lastName: 'lang',
+      sex: 'male',
       dob: new Date(1991, 3, 1),
       score: 80
     },
@@ -62,6 +66,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 6,
       firstName: 'john',
       lastName: 'li',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 70
     },
@@ -69,6 +74,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 7,
       firstName: 'peng',
       lastName: 'li',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 27
     },
@@ -76,6 +82,7 @@ export class DataTableDemoComponent implements OnInit {
       id: 8,
       firstName: 'Danni',
       lastName: 'Yu',
+      sex: 'female',
       dob: new Date(1991, 3, 1),
       score: 74
     },
