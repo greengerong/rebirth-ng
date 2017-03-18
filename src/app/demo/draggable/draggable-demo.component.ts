@@ -22,11 +22,4 @@ export class DraggableDemoComponent implements OnInit {
     this.source = this.source.filter(item => item !== data.data);
     this.target = [...this.target, data.data];
   }
-
-  onPanelDragEnd($event: DragEvent) {
-    // drag start & drag end offset
-    // this.renderer.setElementStyle($event.currentTarget, 'left', `${$event.pageX}px`);
-    // this.renderer.setElementStyle($event.currentTarget, 'top', `${$event.pageX}px`);
-  }
-
 }
