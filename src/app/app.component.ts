@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   components: any[];
   gettingStarted: any;
   menus: MenuBar;
-  largeDataSource = [];
+  // largeDataSource = [];
 
   constructor(private rebirthConfig: RebirthUIConfig,
               private viewContainerRef: ViewContainerRef,
@@ -40,9 +40,9 @@ export class AppComponent implements OnInit {
 
     this.setupMenus();
 
-    for (let i = 1; i <= 5000; i++) {
-      this.largeDataSource.push({ id: i, name: `Name ${i}`, age: 10 });
-    }
+    // for (let i = 1; i <= 5000; i++) {
+    //   this.largeDataSource.push({ id: i, name: `Name ${i}`, age: 10 });
+    // }
   }
 
   private setupMenus() {
