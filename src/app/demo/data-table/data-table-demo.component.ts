@@ -212,10 +212,10 @@ export class DataTableDemoComponent implements OnInit {
 })
 
 export class AVGPipe implements PipeTransform {
-  transform(value: any, args: any[]): any {
+  transform(value: Immutable.List<any>, args: any[]): any {
     if (value) {
       const field = args[0];
-      const svg = value.reduce((sum, item) => sum + item[field], 0) / value.length;
+      const svg = value.reduce((sum, item) => sum + item[field], 0) / value.size;
       return svg.toFixed(2);
     }
   }
