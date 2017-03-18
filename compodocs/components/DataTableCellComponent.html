@@ -93,6 +93,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -260,6 +263,9 @@
                                     <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                 </li>
                                 <li class="link">
@@ -334,7 +340,16 @@
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -572,6 +587,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                        </li>
                                        <li class="link">
@@ -739,6 +757,9 @@
                                            <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                        </li>
                                        <li class="link">
@@ -813,7 +834,16 @@
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -1410,7 +1440,12 @@
             <p><h4 id="datatable">DataTable</h4>
 <h5 id="scrollable">Scrollable</h5>
 <ul>
-<li>Scrollable <code>DataTable</code> must have <code>width</code> for each columns, this is due to we should fixed table header.</li>
+<li><p>Scrollable <code>DataTable</code> must have <code>width</code> for each columns, this is due to we should fixed table header.</p>
+</li>
+<li><p>Horizontally scrollable must have <code>tableWidth</code> (default is <code>100%</code>). Vertically scrollable must have <code>maxHeight</code>;</p>
+</li>
+<li><p><code>OnPush</code> @Input is recommended in <code>DataTable</code>, so use <code>Immutable.js</code> will be easy to get better performance.</p>
+</li>
 </ul>
 </p>
         </div>
@@ -1424,6 +1459,7 @@ import { DataTableComponent } from &#x27;./data-table.component&#x27;;
 import { DataTableTmplsComponent } from &#x27;./tmpl/data-table-tmpls.component&#x27;;
 import { DataTableRowComponent } from &#x27;./data-table-row.component&#x27;;
 import { Subscription } from &#x27;rxjs/Subscription&#x27;;
+import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Component({
   selector: &#x27;re-data-table-cell,[reDataTableCell]&#x27;,
@@ -1467,7 +1503,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
 
     this.dt.onCellClick(cellSelectedEventArg);
     if (this.column.editable &amp;&amp; this.editModel &#x3D;&#x3D;&#x3D; &#x27;cell&#x27;) {
-      $event.stopPropagation();
+      stopPropagationIfExist($event);
       this.isCellEdit &#x3D; true;
       this.documentClickubscription &#x3D; this.dt.documentClickEvent.subscribe(_ &#x3D;&gt; this.onFinishCellEdit());
       this.dt.onCellEditStart(cellSelectedEventArg);
@@ -1484,9 +1520,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
     }
     this.isCellEdit &#x3D; false;
     this.unSubscription(this.documentClickubscription);
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
 
     this.dt.onCellEditEnd({
       rowIndex: this.rowIndex,

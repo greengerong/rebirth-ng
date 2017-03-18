@@ -93,6 +93,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -260,6 +263,9 @@
                                     <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                 </li>
                                 <li class="link">
@@ -334,7 +340,16 @@
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -572,6 +587,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                        </li>
                                        <li class="link">
@@ -739,6 +757,9 @@
                                            <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                        </li>
                                        <li class="link">
@@ -813,7 +834,16 @@
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -1423,7 +1453,9 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   }
 
   selectCurrentItem() {
-    this.onSelect(this.source[this.activeIndex]);
+    if (this.source &amp;&amp; this.source.length) {
+      this.onSelect(this.source[this.activeIndex]);
+    }
   }
 
   onActiveIndexChange(index) {

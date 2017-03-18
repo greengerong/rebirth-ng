@@ -93,6 +93,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -260,6 +263,9 @@
                                     <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                 </li>
                                 <li class="link">
@@ -334,7 +340,16 @@
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -572,6 +587,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                        </li>
                                        <li class="link">
@@ -739,6 +757,9 @@
                                            <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                        </li>
                                        <li class="link">
@@ -813,7 +834,16 @@
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -1045,6 +1075,17 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
+                                    <code>dataSource</code>
+                                </td>
+                                <td class="col-md-10">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
                                     <code>delay</code>
                                 </td>
                                 <td class="col-md-10">
@@ -1150,6 +1191,21 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
+                                    <code>placementElement</code>
+                                </td>
+                                <td class="col-md-10">
+                                      <p>
+                                        <em>Type:</em>    <code>any</code>
+
+                                      </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
                                     <code>valueParser</code>
                                 </td>
                                 <td class="col-md-10">
@@ -1169,7 +1225,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
-                                    <code>selectValue</code>
+                                    <code>selectValueChange</code>
                                 </td>
                                 <td class="col-md-10">
                                     <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
@@ -1364,6 +1420,54 @@
                             </tr>
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> toggle</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>toggle($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> positionPopup</b>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            <code>positionPopup()</code>
+                                </td>
+                            </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div class="io-description">
+                                            <b>Returns: </b>    <code>void</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
             </section>
 
 
@@ -1389,6 +1493,7 @@
 } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 import { fromEvent } from &#x27;rxjs/Observable/fromEvent&#x27;;
+import { of } from &#x27;rxjs/Observable/of&#x27;;
 import { Observable } from &#x27;rxjs/Observable&#x27;;
 import { Subscription } from &#x27;rxjs/Subscription&#x27;;
 import &#x27;rxjs/add/operator/map&#x27;;
@@ -1400,6 +1505,7 @@ import &#x27;rxjs/add/operator/do&#x27;;
 import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
 import { PositionService } from &#x27;../position/positioning.service&#x27;;
 import { AutoCompletePopupComponent } from &#x27;./auto-complete-popup.component&#x27;;
+import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Directive({
   selector: &#x27;[reAutoComplete]&#x27;,
@@ -1425,11 +1531,13 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() formatter: (item: any) &#x3D;&gt; string;
   @Input() valueParser: (item: any) &#x3D;&gt; any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) &#x3D;&gt; Observable&lt;any[]&gt;;
-  @Output() selectValue &#x3D; new EventEmitter&lt;any&gt;();
+  @Output() selectValueChange &#x3D; new EventEmitter&lt;any&gt;();
+  @Input() placementElement: any;
   private valueChanges: Observable&lt;any[]&gt;;
   private value: any;
   private placement &#x3D; &#x27;bottom-left&#x27;;
   private subscription: Subscription;
+  private arraySource: any[];
   private popupRef: ComponentRef&lt;AutoCompletePopupComponent&gt;;
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
@@ -1461,8 +1569,24 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.writeValue(value);
       this.onChange(value);
       this.hidePopup();
-      this.selectValue.emit(item);
+      this.selectValueChange.emit(item);
     });
+  }
+
+  @Input() set dataSource(dataSource: any[]) {
+    if (dataSource) {
+      this.arraySource &#x3D; dataSource;
+      this.setupArraySource();
+    }
+  }
+
+  private setupArraySource() {
+    this.onSearch &#x3D; (term) &#x3D;&gt; {
+      return of(
+        this.arraySource
+          .filter(item &#x3D;&gt; this.formatter(item).toLowerCase().indexOf(term.toLowerCase()) !&#x3D;&#x3D; -1)
+      );
+    };
   }
 
   writeValue(obj: any): void {
@@ -1502,11 +1626,11 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   @HostListener(&#x27;keydown.Enter&#x27;, [&#x27;$event&#x27;])
   onEnterKeyDown($event) {
-    this.hidePopup();
-    if (this.popupRef) {
+    if (this.popupRef &amp;&amp; this.popupRef.instance.isOpen) {
       $event.preventDefault();
       $event.stopPropagation();
       this.popupRef.instance.selectCurrentItem();
+      this.hidePopup();
     }
   }
 
@@ -1537,10 +1661,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   onSourceChange(source) {
+    const pop &#x3D; this.popupRef.instance;
+    pop.reset();
+    this.fillPopup(source, this.value);
     if ((source &amp;&amp; source.length) || this.noResultItemTemplate) {
-      const pop &#x3D; this.popupRef.instance;
-      pop.reset();
-      this.fillPopup(source, this.value);
       pop.isOpen &#x3D; true;
       this.positionPopup();
       this.changeDetectorRef.markForCheck();
@@ -1549,13 +1673,27 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   private hidePopup() {
     if (this.popupRef) {
+      this.popupRef.instance.activeIndex &#x3D; 0;
       this.popupRef.instance.isOpen &#x3D; false;
     }
   }
 
-  private positionPopup() {
+  toggle($event?: Event) {
+    stopPropagationIfExist($event);
+
+    if (this.popupRef) {
+      const pop &#x3D; this.popupRef.instance;
+      if (pop.isOpen) {
+        this.hidePopup();
+        return;
+      }
+      this.onSourceChange(this.arraySource);
+    }
+  }
+
+  positionPopup() {
     const targetElement &#x3D; this.popupRef.location.nativeElement;
-    const hostElement &#x3D; this.elementRef.nativeElement;
+    const hostElement &#x3D; this.placementElement || this.elementRef.nativeElement;
     const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, false);
     this.renderer.setElementStyle(targetElement, &#x27;left&#x27;, &#x60;${clientRect.left}px&#x60;);
     this.renderer.setElementStyle(targetElement, &#x27;top&#x27;, &#x60;${clientRect.top}px&#x60;);
@@ -1598,7 +1736,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       .do(term &#x3D;&gt; this.onTouched())
       .filter(term &#x3D;&gt; !this.disabled &amp;&amp; this.onSearch &amp;&amp; term.length &gt;&#x3D; this.minLength)
       .debounceTime(this.delay)
-      .distinctUntilChanged()
+      // .distinctUntilChanged()
       .do(term &#x3D;&gt; this.onTermChange(term))
       .switchMap(term &#x3D;&gt; this.onSearch(term, this));
   }

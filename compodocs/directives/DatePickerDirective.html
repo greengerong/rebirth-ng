@@ -93,6 +93,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -260,6 +263,9 @@
                                     <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                 </li>
                                 <li class="link">
@@ -334,7 +340,16 @@
                                     <a href="./directives/DatePickerDirective.html"  class="active" >DatePickerDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -572,6 +587,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                        </li>
                                        <li class="link">
@@ -739,6 +757,9 @@
                                            <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                        </li>
                                        <li class="link">
@@ -813,7 +834,16 @@
                                            <a href="./directives/DatePickerDirective.html"  class="active" >DatePickerDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -1453,6 +1483,7 @@ import { SelectDateChangeEventArgs, SelectDateChangeReason } from &#x27;./date-c
 import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
 import { DateConverter } from &#x27;../utils/date-converter&#x27;;
 import { DefaultDateConverter } from &#x27;../utils/default-date-converter&#x27;;
+import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Directive({
   selector: &#x27;[reDatePicker]&#x27;,
@@ -1570,9 +1601,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   toggle($event: Event) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     if (this.isOpen) {
       this.hide();
       return;

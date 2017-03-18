@@ -93,6 +93,9 @@
                                     <a href="./modules/DialogModule.html" >DialogModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -260,6 +263,9 @@
                                     <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                 </li>
                                 <li class="link">
@@ -334,7 +340,16 @@
                                     <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                 </li>
                                 <li class="link">
                                     <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -572,6 +587,9 @@
                                            <a href="./modules/DialogModule.html" >DialogModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                        </li>
                                        <li class="link">
@@ -739,6 +757,9 @@
                                            <a href="./components/ModalWindowComponent.html" >ModalWindowComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/MutipleAutoCompleteComponent.html" >MutipleAutoCompleteComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/NavItemComponent.html" >NavItemComponent</a>
                                        </li>
                                        <li class="link">
@@ -813,7 +834,16 @@
                                            <a href="./directives/DatePickerDirective.html" >DatePickerDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./directives/DraggableDirective.html" >DraggableDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DraggableHandleDirective.html" >DraggableHandleDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./directives/DropdownDirective.html" >DropdownDirective</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./directives/DroppableDirective.html" >DroppableDirective</a>
                                        </li>
                                        <li class="link">
                                            <a href="./directives/PopoverDirective.html" >PopoverDirective</a>
@@ -1192,7 +1222,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer-class.html" target="_blank" >Renderer</a>, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>)</code>
+                            <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer-class.html" target="_blank" >Renderer</a>, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
     
@@ -1202,6 +1232,54 @@
 
     <section>
         <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> todayIsOutOfRange</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>todayIsOutOfRange()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> today</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>today($event: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1667,7 +1745,8 @@
   ElementRef,
   Renderer,
   Output,
-  EventEmitter
+  EventEmitter,
+  ChangeDetectorRef
 } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from &#x27;./date-change-event-args.model&#x27;;
@@ -1675,6 +1754,7 @@ import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
 import { DateConverter } from &#x27;../utils/date-converter&#x27;;
 import { DefaultDateConverter } from &#x27;../utils/default-date-converter&#x27;;
 import { isValidDate } from &#x27;../utils/date-utils&#x27;;
+import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Component({
   selector: &#x27;re-date-picker-popup&#x27;,
@@ -1712,7 +1792,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale &#x3D; this.rebirthUIConfig.datePicker.locale;
     this.dateConverter &#x3D; rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
@@ -1760,6 +1840,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.selectedDate &#x3D; obj ? this.dateConverter.parse(obj, this.dateFormat, this.locale) : null;
     this.onSelectDateChanged();
     this.onDisplayWeeksChange();
+    this.changeDetectorRef.markForCheck();
   }
 
   registerOnChange(fn: any): void {
@@ -1774,10 +1855,16 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.disabled &#x3D; isDisabled;
   }
 
+  todayIsOutOfRange() {
+    return this.isDisabledDay(new Date());
+  }
+
+  today($event) {
+    this.onSelectDate($event, new Date());
+  }
+
   onSelectDate($event, date) {
-    if ($event) {
-      $event.stopPropagation();
-    }
+    stopPropagationIfExist($event);
     if (this.isDisabledDay(date)) {
       return;
     }
@@ -1873,7 +1960,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
 
   @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
   onHostClick($event: Event) {
-    $event.stopPropagation();
+    stopPropagationIfExist($event);
   }
 
   private onSelectDateChanged() {
