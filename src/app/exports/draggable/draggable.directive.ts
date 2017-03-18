@@ -23,9 +23,9 @@ export class DraggableDirective {
   @Input() dragEffect: 'none' | 'copy' | 'copyLink' | 'copyMove' | 'link' | 'linkMove' | 'move'
     | 'all' | 'uninitialized' = 'move';
 
-  @Output() beforeDrag: EventEmitter<any> = new EventEmitter();
-  @Output() afterDrag: EventEmitter<any> = new EventEmitter();
-  @Output() dragging: EventEmitter<any> = new EventEmitter();
+  @Output() onDragStart: EventEmitter<any> = new EventEmitter();
+  @Output() onDragEnd: EventEmitter<any> = new EventEmitter();
+  @Output() onDragging: EventEmitter<any> = new EventEmitter();
   handle: any;
   @ContentChild(DraggableHandleDirective) draggableHandle: DraggableHandleDirective;
 
@@ -37,7 +37,7 @@ export class DraggableDirective {
         group: this.group,
         data: this.dragData
       }));
-      this.beforeDrag.emit($event);
+      this.onDragStart.emit($event);
       return;
     }
     $event.preventDefault();
@@ -45,12 +45,12 @@ export class DraggableDirective {
 
   @HostListener('drag', ['$event'])
   drag($event) {
-    this.dragging.emit($event);
+    this.onDragging.emit($event);
   }
 
   @HostListener('dragend', ['$event'])
   dragEnd($event) {
-    this.afterDrag.emit($event);
+    this.onDragEnd.emit($event);
   }
 
   @HostListener('mouseover', ['$event'])

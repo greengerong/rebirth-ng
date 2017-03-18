@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer, ViewChild } from '@angular/core';
 import { DraggableDirective } from '../../exports/draggable/draggable.directive';
 
 @Component({
@@ -9,7 +9,7 @@ export class DraggableDemoComponent implements OnInit {
   source = new Array(10).fill(0).map((_, index) => index + 1);
   target = [];
 
-  constructor() {
+  constructor(private renderer: Renderer) {
   }
 
   ngOnInit() {
@@ -21,6 +21,12 @@ export class DraggableDemoComponent implements OnInit {
     console.log('drag data to right', data);
     this.source = this.source.filter(item => item !== data.data);
     this.target = [...this.target, data.data];
+  }
+
+  onPanelDragEnd($event: DragEvent) {
+    // drag start & drag end offset
+    // this.renderer.setElementStyle($event.currentTarget, 'left', `${$event.pageX}px`);
+    // this.renderer.setElementStyle($event.currentTarget, 'top', `${$event.pageX}px`);
   }
 
 }

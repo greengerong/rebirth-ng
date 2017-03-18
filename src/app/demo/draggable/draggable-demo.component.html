@@ -1,29 +1,6 @@
 <div class="draggable-demo">
   <section>
-    <h2>Draggable</h2>
-    <span reDraggable class="bg-info">hello</span>
-    <re-panel reDraggable style="display: block">
-      <re-panel-header reDraggableHandle>
-        I am draggable!
-      </re-panel-header>
-      <re-panel-body>
-        Panel <strong>default content</strong>.
-      </re-panel-body>
-    </re-panel>
-  </section>
-
-  <section>
     <h2>Droppable</h2>
-    <span reDraggable (afterDrag)="onAfterDrag($event)" class="bg-info">hello</span>
-    <re-panel reDraggable style="display: block">
-      <re-panel-header reDraggableHandle>
-        I am draggable!
-      </re-panel-header>
-      <re-panel-body>
-        Panel <strong>default content</strong>.
-      </re-panel-body>
-    </re-panel>
-
     <div class="row">
       <div class="col-sm-5" style="min-height: 80px;background: #F5F5F5; padding-top: 20px">
         <ul class="list-group">
@@ -41,7 +18,19 @@
         </ul>
       </div>
     </div>
-
-
+  </section>
+  <section>
+    <h2>Draggable</h2>
+    <div style="height: 100px">
+      <re-panel #panel reDraggable style="display: block; position: absolute;width: 300px; z-index: 100;"
+                (onDragEnd)="onPanelDragEnd($event, panel)">
+        <re-panel-header reDraggableHandle>
+          I am draggable!
+        </re-panel-header>
+        <re-panel-body>
+          Panel <strong>default content</strong>.
+        </re-panel-body>
+      </re-panel>
+    </div>
   </section>
 </div>
