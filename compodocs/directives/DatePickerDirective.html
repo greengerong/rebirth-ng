@@ -1060,6 +1060,20 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
+                                    <code>appendBody</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <p>
+                                      <em>Default value: </em><code>false</code>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
                                     <code>cssClass</code>
                                 </td>
                                 <td class="col-md-10">
@@ -1474,7 +1488,7 @@
         <pre><code class="hljs javascript">import {
   ComponentFactoryResolver, ComponentRef, Directive, ElementRef, forwardRef, HostListener, Injector, Input, OnInit,
   Renderer,
-  ViewContainerRef
+  ViewContainerRef, OnDestroy
 } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 import { PositionService } from &#x27;../position/positioning.service&#x27;;
@@ -1494,7 +1508,7 @@ import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
     multi: true
   }]
 })
-export class DatePickerDirective implements OnInit, ControlValueAccessor {
+export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDestroy {
   @Input() placement: DatePickerPlacement &#x3D; &#x27;bottom-left&#x27;;
   @Input() selectedDate: Date;
   @Input() locale: string;
@@ -1502,6 +1516,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @Input() cssClass: string;
   @Input() disabled &#x3D; false;
   @Input() dateConverter: DateConverter;
+  @Input() appendBody &#x3D; false;
   isOpen &#x3D; false;
   dateConfig: any;
   private _dateFormat: string;
@@ -1547,7 +1562,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   @Input() set dateFormat(dateFormat: string) {
-    if (this._dateFormat !&#x3D;&#x3D; dateFormat) {
+    if (dateFormat &amp;&amp; this._dateFormat !&#x3D;&#x3D; dateFormat) {
       this._dateFormat &#x3D; dateFormat;
       this.writeModelValue(this.selectedDate);
     }
@@ -1559,24 +1574,28 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
 
   ngOnInit() {
     const factory &#x3D; this.componentFactoryResolver.resolveComponentFactory(DatePickerPopupComponent);
-    this.cmpRef &#x3D; this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
-    this.applyPopupStyling(this.cmpRef.location.nativeElement);
-    const component &#x3D; this.cmpRef.instance;
-    this.hide();
-    component.writeValue(this.selectedDate);
-    this.fillPopupData();
-    component.ngOnInit();
+    const viewContainerRef &#x3D; this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    // EXCEPTION: Expression has changed after it was checked when append to body;
+    setTimeout(() &#x3D;&gt; {
+      this.cmpRef &#x3D; viewContainerRef.createComponent(factory, viewContainerRef.length, this.injector);
+      this.applyPopupStyling(this.cmpRef.location.nativeElement);
+      const component &#x3D; this.cmpRef.instance;
+      this.hide();
+      component.writeValue(this.selectedDate);
+      this.fillPopupData();
+      component.ngOnInit();
 
-    component.registerOnChange((selectedDate) &#x3D;&gt; {
-      this.writeValue(selectedDate);
-      this.onChange(selectedDate);
-    });
+      component.registerOnChange((selectedDate) &#x3D;&gt; {
+        this.writeValue(selectedDate);
+        this.onChange(selectedDate);
+      });
 
-    component.selectedDateChange.subscribe((arg: SelectDateChangeEventArgs) &#x3D;&gt; {
-      if (arg.reason &#x3D;&#x3D;&#x3D; SelectDateChangeReason.date) {
-        this.hide();
-      }
-    });
+      component.selectedDateChange.subscribe((arg: SelectDateChangeEventArgs) &#x3D;&gt; {
+        if (arg.reason &#x3D;&#x3D;&#x3D; SelectDateChangeReason.date) {
+          this.hide();
+        }
+      });
+    }, 0);
   }
 
   writeValue(obj: any): void {
@@ -1626,7 +1645,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
     const targetElement &#x3D; this.cmpRef.location.nativeElement;
     const hostElement &#x3D; this.elementRef.nativeElement;
     this.renderer.setElementStyle(targetElement, &#x27;display&#x27;, &#x27;inline-block&#x27;);
-    const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
     this.renderer.setElementStyle(targetElement, &#x27;left&#x27;, &#x60;${clientRect.left}px&#x60;);
     this.renderer.setElementStyle(targetElement, &#x27;top&#x27;, &#x60;${clientRect.top}px&#x60;);
   }
@@ -1663,6 +1682,16 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   @HostListener(&#x27;keyup.esc&#x27;, [&#x27;$event&#x27;])
   onEscKeyup() {
     this.hide();
+  }
+
+  ngOnDestroy(): void {
+    this.removePopView();
+  }
+
+  private removePopView() {
+    if (this.cmpRef) {
+      this.cmpRef.destroy();
+    }
   }
 
   private writeModelValue(selectDate: Date) {

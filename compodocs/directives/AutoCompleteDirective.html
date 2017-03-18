@@ -1060,6 +1060,20 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
+                                    <code>appendBody</code>
+                                </td>
+                                <td class="col-md-10">
+                                    <p>
+                                      <em>Default value: </em><code>false</code>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-2">
                                     <code>cssClass</code>
                                 </td>
                                 <td class="col-md-10">
@@ -1526,6 +1540,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() cssClass: string;
   @Input() delay: number;
   @Input() minLength: number;
+  @Input() appendBody &#x3D; false;
   @Input() itemTemplate: TemplateRef&lt;any&gt;;
   @Input() noResultItemTemplate: TemplateRef&lt;any&gt;;
   @Input() formatter: (item: any) &#x3D;&gt; string;
@@ -1560,17 +1575,23 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       .subscribe(source &#x3D;&gt; this.onSourceChange(source));
 
     const factory &#x3D; this.componentFactoryResolver.resolveComponentFactory(AutoCompletePopupComponent);
-    this.popupRef &#x3D; this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
-    this.fillPopup();
-    this.positionPopup();
 
-    this.popupRef.instance.registerOnChange(item &#x3D;&gt; {
-      const value &#x3D; this.valueParser(item);
-      this.writeValue(value);
-      this.onChange(value);
-      this.hidePopup();
-      this.selectValueChange.emit(item);
-    });
+    const viewContainerRef &#x3D; this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    // EXCEPTION: Expression has changed after it was checked when append to body;
+
+    setTimeout(() &#x3D;&gt; {
+      this.popupRef &#x3D; viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
+      this.fillPopup();
+      this.positionPopup();
+
+      this.popupRef.instance.registerOnChange(item &#x3D;&gt; {
+        const value &#x3D; this.valueParser(item);
+        this.writeValue(value);
+        this.onChange(value);
+        this.hidePopup();
+        this.selectValueChange.emit(item);
+      });
+    }, 0);
   }
 
   @Input() set dataSource(dataSource: any[]) {
@@ -1612,6 +1633,13 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   ngOnDestroy() {
     this.unSubscription();
+    this.removePopView();
+  }
+
+  private removePopView() {
+    if (this.popupRef) {
+      this.popupRef.destroy();
+    }
   }
 
   @HostListener(&#x27;blur&#x27;, [])
@@ -1694,7 +1722,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   positionPopup() {
     const targetElement &#x3D; this.popupRef.location.nativeElement;
     const hostElement &#x3D; this.placementElement || this.elementRef.nativeElement;
-    const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
     this.renderer.setElementStyle(targetElement, &#x27;left&#x27;, &#x60;${clientRect.left}px&#x60;);
     this.renderer.setElementStyle(targetElement, &#x27;top&#x27;, &#x60;${clientRect.top}px&#x60;);
   }

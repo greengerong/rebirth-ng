@@ -1217,6 +1217,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> datetime</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>datetime:     <code>DataTableCellTmplComponent</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> headTemplate</b>
                         </td>
                     </tr>
@@ -1341,6 +1356,7 @@ export class DataTableTmplsComponent {
   @ViewChild(&#x27;imageCellTemplate&#x27;) image: DataTableCellTmplComponent;
   // @ViewChild(&#x27;selectCellTemplate&#x27;) select: DataTableCellTmplComponent;
   @ViewChild(&#x27;dateCellTemplate&#x27;) date: DataTableCellTmplComponent;
+  @ViewChild(&#x27;datetimeCellTemplate&#x27;) datetime: DataTableCellTmplComponent;
 
   getTemplate(fieldType: string): DataTableCellTmplComponent {
     return this[fieldType || &#x27;text&#x27;] || this.text;

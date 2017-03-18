@@ -1083,6 +1083,20 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>appendBody</code>
+                        </td>
+                        <td class="col-md-10">
+                            <p>
+                              <em>Default value: </em><code>false</code>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>cssClass</code>
                         </td>
                         <td class="col-md-10">
@@ -1450,6 +1464,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @Input() popupCssClass: string;
   @Input() delay: number;
   @Input() minLength: number;
+  @Input() appendBody &#x3D; false;
   @Input() dataSource: any[];
   @Input() itemTemplate: TemplateRef&lt;any&gt;;
   @Input() noResultItemTemplate: TemplateRef&lt;any&gt;;

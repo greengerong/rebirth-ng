@@ -1726,6 +1726,10 @@
 <ul>
 <li><p><code>DatePicker</code> component use <a href="https://date-fns.org/"><code>dateFns</code></a> to parse &amp; format Date by default. </p>
 </li>
+<li><p><code>appendBody</code> to append popup to <code>document.body</code>. Make sure you have setup <code>RebirthUIConfig.rootContainer</code> when application bootstrap.</p>
+</li>
+</ul>
+<pre><code class="hljs undefined">export class AppComponent {<br>  constructor(private rebirthConfig: RebirthUIConfig, ...) {<br>    this.rebirthConfig.rootContainer = this.viewContainerRef; // setup root container for all append body component.<br>  }<br>}</code></pre><ul>
 <li><p>If you want to setup a new date converter, you can pass <code>dateConverter</code> to each <code>DatePicker</code> component or override in <code>RebirthUIConfig.datePicker.dateConverter</code>.  Date converter<br>should implements interface <a href="https://greengerong.github.io/ng2-rebirth-ui/compodocs/interfaces/DateConverter.html"><code>DateConverter</code></a>.</p>
 </li>
 <li><p><a href="https://date-fns.org/"><code>dateFns</code></a> format accepted tokens <a href="https://date-fns.org/docs/format">https://date-fns.org/docs/format</a>:</p>

@@ -1052,7 +1052,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-2">
-                                    <code>autoFoucs</code>
+                                    <code>reAutoFocus</code>
                                 </td>
                                 <td class="col-md-10">
                                       <p>
@@ -1091,13 +1091,13 @@
 })
 export class AutoFocusDirective implements AfterViewInit {
 
-  @Input() autoFoucs: boolean;
+  @Input(&#x27;reAutoFocus&#x27;) autoFocus: boolean;
 
   constructor(private  elementRef: ElementRef, private renderer: Renderer) {
   }
 
   ngAfterViewInit(): void {
-    if (this.autoFoucs) {
+    if (this.autoFocus) {
       this.renderer.invokeElementMethod(this.elementRef.nativeElement, &#x27;focus&#x27;);
     }
   }

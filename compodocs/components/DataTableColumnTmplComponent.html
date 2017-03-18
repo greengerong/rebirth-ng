@@ -1167,10 +1167,6 @@
                             <code>formatter</code>
                         </td>
                         <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>(item: any) &#x3D;&gt; string</code>
-
-                              </p>
                         </td>
                     </tr>
                 </tbody>
@@ -1223,10 +1219,113 @@
     </section>
 
 
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>)</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
 
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> defaultFormatter</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>defaultFormatter(item: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> date</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>date(item: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> datetime</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>datetime(item: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
     <section>
         <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> _formatter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>_formatter:     <code>(item: any) &#x3D;&gt; string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1272,6 +1371,21 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> formatter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>formatter:     <code>(item: any) &#x3D;&gt; string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
@@ -1279,6 +1393,8 @@
 import { DataTableCellViewTmplComponent } from &#x27;./data-table-cell-view-tmpl.component&#x27;;
 import { DataTableCellEditTmplComponent } from &#x27;./data-table-cell-edit-tmpl.component&#x27;;
 import { DataTableCellFilterTmplComponent } from &#x27;./data-table-cell-filter-tmpl.component&#x27;;
+import { formatDate } from &#x27;../../utils/date-utils&#x27;;
+import { RebirthUIConfig } from &#x27;../../rebirth-ui.config&#x27;;
 
 @Component({
   selector: &#x27;re-column&#x27;,
@@ -1286,8 +1402,8 @@ import { DataTableCellFilterTmplComponent } from &#x27;./data-table-cell-filter-
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableColumnTmplComponent {
-  @Input() field: string;
   @Input() fieldType: DataTableFieldType &#x3D; &#x27;text&#x27;;
+  @Input() field: string;
   @Input() header: string;
   @Input() sortable: boolean;
   @Input() editable: boolean;
@@ -1298,8 +1414,42 @@ export class DataTableColumnTmplComponent {
   @ContentChild(DataTableCellViewTmplComponent) cellCmp: DataTableCellViewTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
   @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
-  @Input() formatter: (item: any) &#x3D;&gt; string &#x3D; item &#x3D;&gt; item &amp;&amp; item.toString();
+  _formatter: (item: any) &#x3D;&gt; string;
 
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+
+  }
+
+  @Input() set formatter(formatter: (item: any) &#x3D;&gt; string) {
+    this._formatter &#x3D; formatter;
+  }
+
+  get formatter() {
+    return this._formatter || this.defaultFormatter.bind(this);
+  }
+
+  // column.extraOptions?.dateFormat
+
+  defaultFormatter(item) {
+    if (this.fieldType &amp;&amp; this[this.fieldType]) {
+      return this[this.fieldType](item);
+    }
+    return item &amp;&amp; item.toString();
+  }
+
+  date(item) {
+    const pattern &#x3D; this.extraOptions &amp;&amp; this.extraOptions.dateFormat ?
+      this.extraOptions.dateFormat : this.rebirthUIConfig.datePicker.format.date;
+
+    return item ? formatDate(item, pattern) : &#x27;&#x27;;
+  }
+
+  datetime(item) {
+    const pattern &#x3D; this.extraOptions &amp;&amp; this.extraOptions.dateFormat ?
+      this.extraOptions.dateFormat : this.rebirthUIConfig.datePicker.format.time;
+
+    return item ? formatDate(item, pattern) : &#x27;&#x27;;
+  }
 }
 </code></pre>
         </div>
