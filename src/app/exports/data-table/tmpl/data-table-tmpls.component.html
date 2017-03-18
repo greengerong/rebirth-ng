@@ -43,7 +43,8 @@
       <form class="form-inline">
         <div class="form-group">
           <input [type]="column.fieldType" class="form-control" reAutoFocus [autoFoucs]="cell.isCellEdit"
-                 [name]="column.field" [(ngModel)]="rowItem[column.field]" (keydown.enter)="cell.onFinishCellEdit($event)"
+                 [name]="column.field" [(ngModel)]="rowItem[column.field]"
+                 (keydown.enter)="cell.onFinishCellEdit($event)"
                  (blur)="cell.onFinishCellEdit($event)"/>
         </div>
       </form>
@@ -142,34 +143,34 @@
     </template>
   </re-cell-edit>
 
-  <re-cell-filter>
-    <template let-head="" let-column="column">
-      <form>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <div class="input-group">
-              <input class="form-control search" [name]="'ge$$' + column.field" placeholder="From"
-                     [(ngModel)]="head.searchQuery['ge$$' + column.field]"
-                     reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
-              <div class="input-group-addon" (click)="geDatePicker.toggle($event)">
-                <i class="glyphicon glyphicon-calendar"></i>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <div class="input-group">
-              <input class="form-control search" [name]="'le' + column.field" placeholder="To"
-                     [(ngModel)]="head.searchQuery['le$$' + column.field]"
-                     reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">
-              <div class="input-group-addon" (click)="leDatePicker.toggle($event)">
-                <i class="glyphicon glyphicon-calendar"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </form>
-    </template>
-  </re-cell-filter>
+  <!--<re-cell-filter>-->
+  <!--<template let-head="" let-column="column">-->
+  <!--<form>-->
+  <!--<div class="row">-->
+  <!--<div class="col-xs-12 col-sm-6">-->
+  <!--<div class="input-group">-->
+  <!--<input class="form-control search" [name]="'ge$$' + column.field" placeholder="From"-->
+  <!--[(ngModel)]="head.searchQuery['ge$$' + column.field]"-->
+  <!--reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">-->
+  <!--<div class="input-group-addon" (click)="geDatePicker.toggle($event)">-->
+  <!--<i class="glyphicon glyphicon-calendar"></i>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-xs-12 col-sm-6">-->
+  <!--<div class="input-group">-->
+  <!--<input class="form-control search" [name]="'le' + column.field" placeholder="To"-->
+  <!--[(ngModel)]="head.searchQuery['le$$' + column.field]"-->
+  <!--reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">-->
+  <!--<div class="input-group-addon" (click)="leDatePicker.toggle($event)">-->
+  <!--<i class="glyphicon glyphicon-calendar"></i>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</form>-->
+  <!--</template>-->
+  <!--&lt;!&ndash;</re-cell-filter>&ndash;&gt;-->
 
 </re-cell-template>
 
