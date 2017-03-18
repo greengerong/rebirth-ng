@@ -42,6 +42,7 @@ export class DataTableComponent implements OnDestroy {
   @Input() allChecked: boolean;
   @Input() pager: DataTablePager;
   @Input() cssClass: string;
+  @Input() tableWidth = '100%';
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
   @Output() cellDBClick = new EventEmitter<CellSelectedEventArg>();
   @Output() rowClick = new EventEmitter<RowSelectedEventArg>();

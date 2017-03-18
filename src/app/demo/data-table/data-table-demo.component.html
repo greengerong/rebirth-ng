@@ -77,13 +77,13 @@
   <section>
     <h4>Checkable + Filterable + Scrollable</h4>
     <re-data-table #checkedTable="dataTable" [dataSource]="filterDataSource" type="bordered"
-                   [checkable]="true" [scrollable]="true" maxHeight="200px"
+                   [checkable]="true" [scrollable]="true" maxHeight="200px" [tableWidth]="'1500px'"
                    (searchQueryChange)="onSearchQueryChange($event)"
                    (checkAllChange)="onCheckAllChange($event,checkedTable)"
                    (rowCheckChange)="onRowCheckChange($event,checkedTable)">
       <re-column field="$index" header="#" width="25px"></re-column>
-      <re-column field="firstName" header="First Name" [filterable]="true" width="20%"></re-column>
-      <re-column field="lastName" header="Last Name" [filterable]="true" width="20%">
+      <re-column field="firstName" header="First Name" [filterable]="true" width="30%"></re-column>
+      <re-column field="lastName" header="Last Name" [filterable]="true" width="30%">
         <re-cell-filter>
           <template let-head="" let-column="column">
             <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"

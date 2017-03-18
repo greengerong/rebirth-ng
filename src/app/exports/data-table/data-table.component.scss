@@ -1,5 +1,7 @@
 .data-table {
   border: none;
+  overflow-x: auto;
+  overflow-y: hidden;
   .table-view {
     padding: 0px;
     border: none;
@@ -7,7 +9,8 @@
       margin: 0px;
     }
     &.scroll-view {
-      overflow: auto;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 
