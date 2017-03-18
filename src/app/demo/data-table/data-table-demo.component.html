@@ -13,15 +13,13 @@
                     let-cell="">
             <form class="form-inline">
               <div class="form-group">
-                <div class="input-group">
-                  <select class="form-control" [name]="column.field" [(ngModel)]="rowItem[column.field]"
-                          (blur)="cell.onFinishCellEdit($event)" reAutoFocus [autoFoucs]="cell.isCellEdit">
-                    <option>Please Select</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="unknown">Unknown</option>
-                  </select>
-                </div>
+                <select class="form-control" [name]="column.field" [(ngModel)]="rowItem[column.field]"
+                        (blur)="cell.onFinishCellEdit($event)" reAutoFocus [autoFoucs]="cell.isCellEdit">
+                  <option>Please Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="unknown">Unknown</option>
+                </select>
               </div>
             </form>
           </template>
