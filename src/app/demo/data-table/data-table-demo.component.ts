@@ -82,6 +82,39 @@ export class DataTableDemoComponent implements OnInit {
 
   ]);
 
+  dataTableOptions = {
+    columns: [
+      {
+        field: 'firstName',
+        header: 'First Name',
+        fieldType: 'text',
+        sortable: true,
+        editable: true
+      },
+      {
+        field: 'lastName',
+        header: 'Last Name',
+        fieldType: 'text',
+        sortable: true,
+        editable: true
+      },
+      {
+        field: 'dob',
+        header: 'Date of birth',
+        fieldType: 'date',
+        sortable: true,
+        editable: true,
+        formatter: this.dobFormat
+      },
+      {
+        field: 'score',
+        header: 'Score',
+        fieldType: 'number',
+        sortable: true,
+        editable: true
+      }
+    ]
+  };
   pager: DataTablePager = {
     total: 306,
     pageIndex: 5,

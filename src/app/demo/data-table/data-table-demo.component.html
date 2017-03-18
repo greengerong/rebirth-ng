@@ -36,6 +36,37 @@
   </section>
 
   <section>
+    <h4>Dynamic Data table</h4>
+    <re-data-table [dataSource]="dataSource" (sortChange)="sortChange($event)" [selectable]="true">
+      <re-column field="$index" header="#"></re-column>
+      <re-column *ngFor="let colOption of dataTableOptions.columns" [field]="colOption.field"
+                 [header]="colOption.header" [sortable]="colOption.sortable"
+                 [editable]="colOption.editable" [fieldType]="colOption.fieldType"
+                 [formatter]="colOption.formatter"
+      >
+        <re-cell-edit *ngIf="colOption.fieldType == 'date'">
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+                    let-cell="">
+            <form class="form-inline">
+              <div class="form-group">
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-MM-dd" reAutoFocus [autoFoucs]="true"
+                         name="dp" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"
+                         (ngModelChange)="cell.onFinishCellEdit()">
+                  <div class="input-group-addon" (click)="datePicker.toggle($event)">
+                    <i class="glyphicon glyphicon-calendar"></i>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </template>
+        </re-cell-edit>
+      </re-column>
+    </re-data-table>
+  </section>
+
+
+  <section>
     <h4>Customise head & footer</h4>
     <re-data-table [dataSource]="dataSource" type="bordered" [pager]="pager" (sortChange)="sortChange($event)"
                    (pageIndexChange)="onPageIndexChange($event)">
