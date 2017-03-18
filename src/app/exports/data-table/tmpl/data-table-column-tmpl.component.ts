@@ -9,8 +9,8 @@ import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableColumnTmplComponent {
-  @Input() field: string;
   @Input() fieldType: DataTableFieldType = 'text';
+  @Input() field: string;
   @Input() header: string;
   @Input() sortable: boolean;
   @Input() editable: boolean;
