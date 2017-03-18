@@ -203,11 +203,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
 
   private removePopView() {
     if (this.cmpRef) {
-      const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
-      const index = viewContainerRef.indexOf(this.cmpRef.hostView);
-      if (index !== -1) {
-        viewContainerRef.remove(index);
-      }
+      this.cmpRef.destroy();
     }
   }
 

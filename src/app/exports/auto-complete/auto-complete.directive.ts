@@ -149,11 +149,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   private removePopView() {
     if (this.popupRef) {
-      const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
-      const index = viewContainerRef.indexOf(this.popupRef.hostView);
-      if (index !== -1) {
-        viewContainerRef.remove(index);
-      }
+      this.popupRef.destroy();
     }
   }
 
