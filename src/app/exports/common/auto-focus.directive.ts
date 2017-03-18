@@ -5,7 +5,7 @@ import { Directive, Input, ElementRef, Renderer, AfterViewInit } from '@angular/
 })
 export class AutoFocusDirective implements AfterViewInit {
 
-  @Input() autoFoucs: boolean;
+  @Input('reAutoFocus') autoFoucs: boolean;
 
   constructor(private  elementRef: ElementRef, private renderer: Renderer) {
   }

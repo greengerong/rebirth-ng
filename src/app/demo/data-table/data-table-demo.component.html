@@ -14,7 +14,7 @@
             <form class="form-inline">
               <div class="form-group">
                 <select class="form-control" [name]="column.field" [(ngModel)]="rowItem[column.field]"
-                        (blur)="cell.onFinishCellEdit($event)" reAutoFocus [autoFoucs]="cell.isCellEdit">
+                        (blur)="cell.onFinishCellEdit($event)" [reAutoFocus]="cell.isCellEdit">
                   <option>Please Select</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -53,7 +53,7 @@
         <!--<form class="form-inline">-->
         <!--<div class="form-group">-->
         <!--<div class="input-group">-->
-        <!--<input class="form-control" placeholder="yyyy-MM-dd" reAutoFocus [autoFoucs]="true"-->
+        <!--<input class="form-control" placeholder="yyyy-MM-dd" [reAutoFocus]="cell.isCellEdit"-->
         <!--name="dp" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"-->
         <!--(ngModelChange)="cell.onFinishCellEdit()">-->
         <!--<div class="input-group-addon" (click)="datePicker.toggle($event)">-->

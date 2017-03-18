@@ -42,7 +42,7 @@
     <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">
       <form class="form-inline">
         <div class="form-group">
-          <input [type]="column.fieldType" class="form-control" reAutoFocus [autoFoucs]="cell.isCellEdit"
+          <input [type]="column.fieldType" class="form-control" [reAutoFocus]="cell.isCellEdit"
                  [name]="column.field" [(ngModel)]="rowItem[column.field]"
                  (keydown.enter)="cell.onFinishCellEdit($event)"
                  (blur)="cell.onFinishCellEdit($event)"/>
@@ -131,7 +131,7 @@
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
-            <input class="form-control search" reAutoFocus [autoFoucs]="cell.isCellEdit"
+            <input class="form-control search" [reAutoFocus]="cell.isCellEdit"
                    [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker
                    [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker"
                    (ngModelChange)="cell.onFinishCellEdit()">
@@ -182,8 +182,7 @@
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
-            <input class="form-control search" reAutoFocus
-                   [autoFoucs]="cell.isCellEdit" [showTimePicker]="true"
+            <input class="form-control search" [reAutoFocus]="cell.isCellEdit" [showTimePicker]="true"
                    [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker
                    [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker"
                    (ngModelChange)="cell.onFinishCellEdit()">
