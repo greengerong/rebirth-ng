@@ -59,6 +59,13 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
 
   ngOnDestroy(): void {
     this.listens.forEach(unregister => unregister());
+    this.removePopView();
+  }
+
+  private removePopView() {
+    if (this.popupRef) {
+      this.popupRef.destroy();
+    }
   }
 
   toggle() {
