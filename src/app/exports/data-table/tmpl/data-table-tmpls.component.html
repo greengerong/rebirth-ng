@@ -132,7 +132,8 @@
         <div class="form-group">
           <div class="input-group">
             <input class="form-control search" reAutoFocus [autoFoucs]="cell.isCellEdit"
-                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"
+                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker
+                   [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker"
                    (ngModelChange)="cell.onFinishCellEdit()">
             <div class="input-group-addon" (click)="datePicker.toggle($event)">
               <i class="glyphicon glyphicon-calendar"></i>
@@ -181,8 +182,10 @@
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
-            <input class="form-control search" reAutoFocus [autoFoucs]="cell.isCellEdit" [showTimePicker]="true"
-                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker #datePicker="datePicker"
+            <input class="form-control search" reAutoFocus
+                   [autoFoucs]="cell.isCellEdit" [showTimePicker]="true"
+                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker
+                   [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker"
                    (ngModelChange)="cell.onFinishCellEdit()">
             <div class="input-group-addon" (click)="datePicker.toggle($event)">
               <i class="glyphicon glyphicon-calendar"></i>

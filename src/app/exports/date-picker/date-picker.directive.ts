@@ -74,7 +74,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor {
   }
 
   @Input() set dateFormat(dateFormat: string) {
-    if (this._dateFormat !== dateFormat) {
+    if (dateFormat && this._dateFormat !== dateFormat) {
       this._dateFormat = dateFormat;
       this.writeModelValue(this.selectedDate);
     }

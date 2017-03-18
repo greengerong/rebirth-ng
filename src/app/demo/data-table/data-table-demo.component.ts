@@ -103,8 +103,7 @@ export class DataTableDemoComponent implements OnInit {
         header: 'Date of birth',
         fieldType: 'date',
         sortable: true,
-        editable: true,
-        formatter: this.dobFormat
+        editable: true
       },
       {
         field: 'score',
@@ -127,10 +126,6 @@ export class DataTableDemoComponent implements OnInit {
   }
 
   ngOnInit() {
-  }
-
-  dobFormat(item) {
-    return item ? formatDate(item, 'YYYY-MM-DD') : '';
   }
 
   sortChange($event: SortChangeEventArg) {
@@ -235,7 +230,7 @@ export class AVGPipe implements PipeTransform {
           <re-column field="$index" header="#"></re-column>
           <re-column field="firstName" header="First Name"></re-column>
           <re-column field="lastName" header="Last Name"></re-column>
-          <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
+          <re-column field="dob" header="Date of birth" [fieldType]="'date'"></re-column>
            <re-column field="score" [sortable]="true" header="Score"></re-column>
        </re-data-table>
      </table>
@@ -283,10 +278,6 @@ export class ModalPeopleComponent implements Modal {
   rowDBClick($event: RowSelectedEventArg) {
     this.selectItem = $event.rowItem;
     this.ok();
-  }
-
-  dobFormat(item) {
-    return item ? formatDate(item, 'YYYY-MM-DD') : '';
   }
 
   ok() {

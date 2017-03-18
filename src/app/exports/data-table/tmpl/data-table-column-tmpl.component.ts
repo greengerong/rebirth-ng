@@ -2,6 +2,8 @@ import { Component, ChangeDetectionStrategy, ContentChild, Input } from '@angula
 import { DataTableCellViewTmplComponent } from './data-table-cell-view-tmpl.component';
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
+import { formatDate } from '../../utils/date-utils';
+import { RebirthUIConfig } from '../../rebirth-ui.config';
 
 @Component({
   selector: 're-column',
@@ -21,6 +23,40 @@ export class DataTableColumnTmplComponent {
   @ContentChild(DataTableCellViewTmplComponent) cellCmp: DataTableCellViewTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
   @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
-  @Input() formatter: (item: any) => string = item => item && item.toString();
+  _formatter: (item: any) => string;
 
+  constructor(private rebirthUIConfig: RebirthUIConfig) {
+
+  }
+
+  @Input() set formatter(formatter: (item: any) => string) {
+    this._formatter = formatter;
+  }
+
+  get formatter() {
+    return this._formatter || this.defaultFormatter.bind(this);
+  }
+
+  // column.extraOptions?.dateFormat
+
+  defaultFormatter(item) {
+    if (this.fieldType && this[this.fieldType]) {
+      return this[this.fieldType](item);
+    }
+    return item && item.toString();
+  }
+
+  date(item) {
+    const pattern = this.extraOptions && this.extraOptions.dateFormat ?
+      this.extraOptions.dateFormat : this.rebirthUIConfig.datePicker.format.date;
+
+    return item ? formatDate(item, pattern) : '';
+  }
+
+  datetime(item) {
+    const pattern = this.extraOptions && this.extraOptions.dateFormat ?
+      this.extraOptions.dateFormat : this.rebirthUIConfig.datePicker.format.time;
+
+    return item ? formatDate(item, pattern) : '';
+  }
 }
