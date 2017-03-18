@@ -42,8 +42,7 @@
       <re-column *ngFor="let colOption of dataTableOptions.columns" [field]="colOption.field"
                  [header]="colOption.header" [sortable]="colOption.sortable"
                  [editable]="colOption.editable" [fieldType]="colOption.fieldType"
-                 [formatter]="colOption.formatter"
-      >
+                 [formatter]="colOption.formatter">
         <re-cell-edit *ngIf="colOption.fieldType == 'date'">
           <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
                     let-cell="">
@@ -61,6 +60,13 @@
             </form>
           </template>
         </re-cell-edit>
+
+        <re-cell *ngIf="colOption.field == 'score'">
+          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
+                    let-cellValue="cellValue">
+            <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
+          </template>
+        </re-cell>
       </re-column>
     </re-data-table>
   </section>
@@ -131,7 +137,8 @@
 
   <section>
     <h4>Data table row edit</h4>
-    <re-data-table [dataSource]="dataSource" editModel="row" #table="dataTable">
+    <re-data-table [dataSource]="dataSource" editModel="row" #table="dataTable"
+                   (rowDBClick)="editRow(table, $event.rowItem)">
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [editable]="true">
         <re-cell-edit>
