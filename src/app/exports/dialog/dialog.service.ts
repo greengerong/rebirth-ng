@@ -1,5 +1,5 @@
 import { Injectable, ComponentFactoryResolver } from '@angular/core';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 import { ModalService } from '../modal/modal.service';
 import { DialogOptions } from './dialog-options.model';
 import { AlertDialogComponent } from './alert-dialog.component';
