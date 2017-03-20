@@ -1651,9 +1651,11 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   }
 
   hide() {
-    this.isOpen &#x3D; false;
-    const target &#x3D; this.cmpRef.location.nativeElement;
-    this.renderer.setElementStyle(target, &#x27;display&#x27;, &#x27;none&#x27;);
+    if (this.cmpRef) {
+      this.isOpen &#x3D; false;
+      const target &#x3D; this.cmpRef.location.nativeElement;
+      this.renderer.setElementStyle(target, &#x27;display&#x27;, &#x27;none&#x27;);
+    }
   }
 
   @HostListener(&#x27;blur&#x27;, [&#x27;$event&#x27;])
