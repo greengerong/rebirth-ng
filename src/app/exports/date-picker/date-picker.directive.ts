@@ -1,6 +1,6 @@
 import {
   ComponentFactoryResolver, ComponentRef, Directive, ElementRef, forwardRef, HostListener, Injector, Input, OnInit,
-  Renderer,
+  Renderer2,
   ViewContainerRef, OnDestroy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -40,7 +40,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   private onTouched = () => null;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
-              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
+              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
               private rebirthUIConfig: RebirthUIConfig) {
 
@@ -126,7 +126,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
+    this.renderer.setProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
     if (this.isOpen) {
       this.cmpRef.instance.setDisabledState(isDisabled);
     }
@@ -157,17 +157,17 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
     this.isOpen = true;
     const targetElement = this.cmpRef.location.nativeElement;
     const hostElement = this.elementRef.nativeElement;
-    this.renderer.setElementStyle(targetElement, 'display', 'inline-block');
+    this.renderer.setStyle(targetElement, 'display', 'inline-block');
     const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
-    this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
-    this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
+    this.renderer.setStyle(targetElement, 'left', `${clientRect.left}px`);
+    this.renderer.setStyle(targetElement, 'top', `${clientRect.top}px`);
   }
 
   hide() {
     if (this.cmpRef) {
       this.isOpen = false;
       const target = this.cmpRef.location.nativeElement;
-      this.renderer.setElementStyle(target, 'display', 'none');
+      this.renderer.setStyle(target, 'display', 'none');
     }
   }
 
@@ -211,7 +211,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
 
   private writeModelValue(selectDate: Date) {
     const value = selectDate ? this.dateConverter.format(selectDate, this.getDateFormat(), this.locale) : '';
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', value);
+    this.renderer.setProperty(this.elementRef.nativeElement, 'value', value);
     if (this.isOpen) {
       this.cmpRef.instance.writeValue(selectDate);
       this.onTouched();
@@ -226,8 +226,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   }
 
   private applyPopupStyling(nativeElement: any) {
-    this.renderer.setElementClass(nativeElement, 'dropdown-menu', true);
-    this.renderer.setElementStyle(nativeElement, 'padding', '0px');
+    this.renderer.addClass(nativeElement, 'dropdown-menu');
+    this.renderer.setStyle(nativeElement, 'padding', '0px');
   }
 
   private fillPopupData() {

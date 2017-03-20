@@ -6,7 +6,7 @@ import {
   ElementRef,
   ComponentFactoryResolver,
   Injector,
-  Renderer
+  Renderer2
 } from '@angular/core';
 import { PopoverPopupComponent } from './popover-popup.component';
 import { PositionService } from '../position/positioning.service';
@@ -25,7 +25,7 @@ export class PopoverDirective extends Tooltip<PopoverPopupComponent> {
               componentFactoryResolver: ComponentFactoryResolver,
               injector: Injector,
               positionService: PositionService,
-              renderer: Renderer) {
+              renderer: Renderer2) {
     super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer);
     this.tooltipPopupType = PopoverPopupComponent;
     this.trigger = 'click';

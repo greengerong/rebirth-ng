@@ -1,4 +1,4 @@
-import { ElementRef, Renderer } from '@angular/core';
+import { ElementRef, Renderer2 } from '@angular/core';
 const TRANSITION_END_EVENT = {
   WebkitTransition: 'webkitTransitionEnd',
   MozTransition: 'transitionend',
@@ -14,7 +14,7 @@ function getSupportTransitionEndEvent(elementRef: ElementRef) {
   }
 }
 
-export function animation(renderer: Renderer, elementRef: ElementRef, duration = 0): Promise<any> {
+export function animation(renderer: Renderer2, elementRef: ElementRef, duration = 0): Promise<any> {
   const endEvent = getSupportTransitionEndEvent(elementRef);
   return new Promise((resolve) => {
     if (endEvent) {

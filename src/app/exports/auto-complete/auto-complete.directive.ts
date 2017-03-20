@@ -12,7 +12,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  Renderer,
+  Renderer2,
   TemplateRef,
   ViewContainerRef
 } from '@angular/core';
@@ -69,7 +69,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   private onTouched = () => null;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
-              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
+              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
               private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges = this.registerInputEvent(elementRef);
@@ -136,7 +136,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled = isDisabled;
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
+    this.renderer.setProperty(this.elementRef.nativeElement, 'disabled', isDisabled);
     if (this.popupRef) {
       this.popupRef.instance.setDisabledState(isDisabled);
     }
@@ -234,8 +234,8 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     const targetElement = this.popupRef.location.nativeElement;
     const hostElement = this.placementElement || this.elementRef.nativeElement;
     const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
-    this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
-    this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
+    this.renderer.setStyle(targetElement, 'left', `${clientRect.left}px`);
+    this.renderer.setStyle(targetElement, 'top', `${clientRect.top}px`);
   }
 
   private fillPopup(source?: any, term?: string) {
@@ -251,7 +251,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setElementProperty(this.elementRef.nativeElement, 'value', this.formatter(value || ''));
+    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(value || ''));
   }
 
   private unSubscription() {

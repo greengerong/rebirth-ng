@@ -1,7 +1,4 @@
-import {
-  Component, Input, ChangeDetectionStrategy,
-  forwardRef, Output, EventEmitter
-} from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy, forwardRef, Output, EventEmitter } from '@angular/core';
 import { PanelComponent, PanelGroup } from '../panel';
 import { RebirthUIConfig } from '../rebirth-ui.config';
 

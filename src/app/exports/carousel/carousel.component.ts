@@ -1,6 +1,6 @@
 import {
   Component, ChangeDetectionStrategy, QueryList, ContentChildren, Input, Output,
-  EventEmitter, HostListener, AfterContentInit, OnDestroy, Renderer, ViewChildren, ElementRef
+  EventEmitter, HostListener, AfterContentInit, OnDestroy, Renderer2, ViewChildren, ElementRef
 } from '@angular/core';
 import { SlideDirective } from './slide.directive';
 import { animation, animationTimeout } from '../utils/animation-utils';
@@ -28,7 +28,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   reflowDuration: number;
   animationDuration: number;
 
-  constructor(private  renderer: Renderer, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig) {
     this.reflowDuration = rebirthUIConfig.carousel.reflowDuration;
     this.animationDuration = rebirthUIConfig.carousel.animationDuration;
     this.animate = rebirthUIConfig.carousel.animate;
@@ -104,18 +104,18 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
 
     const nextElement = slideItems[index].nativeElement;
     const currentElement = slideItems[this.activeSlide].nativeElement;
-    this.renderer.setElementClass(nextElement, orderDirection, true);
+    this.renderer.addClass(nextElement, orderDirection);
 
     return animationTimeout(this.reflowDuration)
       .then(() => {
-        this.renderer.setElementClass(currentElement, direction, true);
-        this.renderer.setElementClass(nextElement, direction, true);
+        this.renderer.addClass(currentElement, direction);
+        this.renderer.addClass(nextElement, direction);
       })
       .then(() => animation(this.renderer, nextElement, this.animationDuration))
       .then(() => {
-        this.renderer.setElementClass(nextElement, orderDirection, false);
-        this.renderer.setElementClass(nextElement, direction, false);
-        this.renderer.setElementClass(currentElement, direction, false);
+        this.renderer.removeClass(nextElement, orderDirection);
+        this.renderer.removeClass(nextElement, direction);
+        this.renderer.removeClass(currentElement, direction);
         this.startInterval();
       });
   }

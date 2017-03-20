@@ -1,15 +1,16 @@
-import { Injectable, Renderer, ElementRef } from '@angular/core';
+import { Injectable, Renderer2, ElementRef } from '@angular/core';
 
 @Injectable()
 export class ThemeService {
   static THEME_KEY = 'rebirth-ui:theme';
 
-  setupTheme(theme: string, renderer: Renderer, parentElementRef: ElementRef) {
+  setupTheme(theme: string, renderer: Renderer2, parentElementRef: ElementRef) {
     theme = theme || localStorage.getItem(ThemeService.THEME_KEY);
     if (theme) {
-      const link = renderer.createElement(parentElementRef.nativeElement, 'link');
+      const link = renderer.createElement('link');
       link.rel = 'stylesheet';
       link.href = `./assets/themes/bootstrap.${theme.toLowerCase()}.css`;
+      renderer.appendChild(parentElementRef.nativeElement, link);
       localStorage.setItem(ThemeService.THEME_KEY, theme);
     }
   }

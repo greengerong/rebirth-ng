@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DraggableDirective } from '../../exports/draggable/draggable.directive';
 
 @Component({
@@ -9,7 +9,7 @@ export class DraggableDemoComponent implements OnInit {
   source = new Array(10).fill(0).map((_, index) => index + 1);
   target = [];
 
-  constructor(private renderer: Renderer) {
+  constructor() {
   }
 
   ngOnInit() {

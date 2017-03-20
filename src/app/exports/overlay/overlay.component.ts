@@ -5,7 +5,7 @@ import {
   Input,
   ViewChild,
   ElementRef,
-  Renderer,
+  Renderer2,
   HostListener
 } from '@angular/core';
 import { OverlayOptions } from './overlay-options.model';
@@ -24,7 +24,7 @@ export class OverlayComponent implements OnInit {
   @ViewChild('overlayBody') overlayBody: ElementRef;
   @ViewChild(OverlayContentComponent) overlayContent: OverlayContentComponent;
 
-  constructor(private windowRef: WindowRef, private renderer: Renderer) {
+  constructor(private windowRef: WindowRef, private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -46,8 +46,8 @@ export class OverlayComponent implements OnInit {
   private adjustOverlayPosition() {
     setTimeout(() => {
       const pos = centerWindowPosition(this.overlayBody, this.windowRef);
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'top', `${pos.top}px`);
-      this.renderer.setElementStyle(this.overlayBody.nativeElement, 'left', `${pos.left}px`);
+      this.renderer.setStyle(this.overlayBody.nativeElement, 'top', `${pos.top}px`);
+      this.renderer.setStyle(this.overlayBody.nativeElement, 'left', `${pos.left}px`);
     }, 0);
   }
 }

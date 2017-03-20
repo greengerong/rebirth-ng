@@ -1,4 +1,4 @@
-import { Component, Renderer, ElementRef, Input, TemplateRef } from '@angular/core';
+import { Component, Renderer2, ElementRef, Input, TemplateRef } from '@angular/core';
 import { TooltipPopup } from '../tooltip/tooltip-popup';
 
 @Component({
@@ -9,7 +9,7 @@ import { TooltipPopup } from '../tooltip/tooltip-popup';
 export class PopoverPopupComponent extends TooltipPopup {
   @Input() title: string | TemplateRef<any>;
 
-  constructor(elementRef: ElementRef, renderer: Renderer) {
+  constructor(elementRef: ElementRef, renderer: Renderer2) {
     super(elementRef, renderer);
   }
 }
