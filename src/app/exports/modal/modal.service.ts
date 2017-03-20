@@ -5,7 +5,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { _throw } from 'rxjs/observable/throw';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ModalService {

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { of } from 'rxjs/Observable/of';
+import { of } from 'rxjs/observable/of';
 import { Jsonp, URLSearchParams } from '@angular/http';
 import { AutoCompleteDirective } from '../../exports/auto-complete/auto-complete.directive';
 
