@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng2-rebirth-ui documentation</title>
+        <title>ng4-rebirth-ui documentation</title>
         <meta name="description" content="">
         <base href="/ng2-rebirth-ui/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng2-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng2-rebirth-ui documentation</a>
+                        <a href="./">ng4-rebirth-ui documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng2-rebirth-ui documentation</a>
+                               <a href="./">ng4-rebirth-ui documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -1128,7 +1128,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer-class.html" target="_blank" >Renderer</a>, documentRef: <a href="./injectables/DocumentRef.html" >DocumentRef</a>)</code>
+                            <code>constructor(renderer: Renderer2, documentRef: <a href="./injectables/DocumentRef.html" >DocumentRef</a>)</code>
                         </td>
                     </tr>
     
@@ -1298,12 +1298,15 @@
         <div class="tab-pane fade" id="readme">
             <p><h4 id="notices">Notices</h4>
 <ul>
+<li>Shoulde pass <code>rebirthUIConfig.rootContainer</code> in your <code>AppComponent</code> when you did not pass <code>rootContainer</code> parameters to <code>ModalService</code>.</li>
+</ul>
+<pre><code class="hljs undefined">export class AppComponent implements OnInit {<br>  constructor(private rebirthConfig: RebirthUIConfig,<br>              private viewContainerRef: ViewContainerRef) {<br><br>    this.rebirthConfig.rootContainer = this.viewContainerRef; // default container for append body component(Modal, DatePicker...)<br>    // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n<br>  }</code></pre><ul>
 <li>Make sure put your modal component to <code>entryComponents</code> of your module! Example with <code>ModalTestComponent</code>: </li>
 </ul>
 <pre><code class="hljs undefined">@NgModule({<br>  ...<br>  declarations: [<br>    ModalTestComponent<br>  ],<br>  entryComponents: [<br>    ModalTestComponent<br>  ]<br>})<br>export class ModalDemoModule {<br>}</code></pre></p>
         </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, Input, ViewChild, EventEmitter, Output, ChangeDetectionStrategy, Renderer } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, Input, ViewChild, EventEmitter, Output, ChangeDetectionStrategy, Renderer2 } from &#x27;@angular/core&#x27;;
 import { ModalOptions } from &#x27;./modal-options.model&#x27;;
 import { ModalWindowComponent } from &#x27;./modal-window.component&#x27;;
 import { DocumentRef } from &#x27;../window-ref&#x27;;
@@ -1321,7 +1324,7 @@ export class ModalComponent {
   @ViewChild(ModalWindowComponent) modalWindowComponent: ModalWindowComponent;
   instanceCount &#x3D; 0;
 
-  constructor(private renderer: Renderer, private documentRef: DocumentRef) {
+  constructor(private renderer: Renderer2, private documentRef: DocumentRef) {
 
   }
 
@@ -1347,7 +1350,12 @@ export class ModalComponent {
   }
 
   private toggleBodyClass(isAdd: boolean): void {
-    this.renderer.setElementClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS, isAdd);
+    if (isAdd) {
+      this.renderer.addClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS);
+      return;
+    }
+
+    this.renderer.removeClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS);
   }
 
 }

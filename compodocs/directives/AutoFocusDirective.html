@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng2-rebirth-ui documentation</title>
+        <title>ng4-rebirth-ui documentation</title>
         <meta name="description" content="">
         <base href="/ng2-rebirth-ui/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng2-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng2-rebirth-ui documentation</a>
+                        <a href="./">ng4-rebirth-ui documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng2-rebirth-ui documentation</a>
+                               <a href="./">ng4-rebirth-ui documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -1072,7 +1072,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer-class.html" target="_blank" >Renderer</a>)</code>
+                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>)</code>
                                 </td>
                             </tr>
             
@@ -1084,7 +1084,7 @@
 
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">import { Directive, Input, ElementRef, Renderer, AfterViewInit } from &#x27;@angular/core&#x27;;
+        <pre><code class="hljs javascript">import { Directive, Input, ElementRef, AfterViewInit } from &#x27;@angular/core&#x27;;
 
 @Directive({
   selector: &#x27;[reAutoFocus]&#x27;,
@@ -1093,12 +1093,12 @@ export class AutoFocusDirective implements AfterViewInit {
 
   @Input(&#x27;reAutoFocus&#x27;) autoFocus: boolean;
 
-  constructor(private  elementRef: ElementRef, private renderer: Renderer) {
+  constructor(private  elementRef: ElementRef) {
   }
 
   ngAfterViewInit(): void {
-    if (this.autoFocus) {
-      this.renderer.invokeElementMethod(this.elementRef.nativeElement, &#x27;focus&#x27;);
+    if (this.autoFocus &amp;&amp; this.elementRef.nativeElement.focus) {
+      this.elementRef.nativeElement.focus();
     }
   }
 }

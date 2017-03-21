@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng2-rebirth-ui documentation</title>
+        <title>ng4-rebirth-ui documentation</title>
         <meta name="description" content="">
         <base href="/ng2-rebirth-ui/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng2-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng2-rebirth-ui documentation</a>
+                        <a href="./">ng4-rebirth-ui documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng2-rebirth-ui documentation</a>
+                               <a href="./">ng4-rebirth-ui documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -1256,7 +1256,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank" >ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer-class.html" target="_blank" >Renderer</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank" >Injector</a>, positionService: <a href="./injectables/PositionService.html" >PositionService</a>, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
+                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank" >ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a>, renderer: Renderer2, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank" >Injector</a>, positionService: <a href="./injectables/PositionService.html" >PositionService</a>, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
                                 </td>
                             </tr>
             
@@ -1501,7 +1501,7 @@
   OnDestroy,
   OnInit,
   Output,
-  Renderer,
+  Renderer2,
   TemplateRef,
   ViewContainerRef
 } from &#x27;@angular/core&#x27;;
@@ -1558,7 +1558,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   private onTouched &#x3D; () &#x3D;&gt; null;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
-              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer,
+              private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
               private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges &#x3D; this.registerInputEvent(elementRef);
@@ -1625,7 +1625,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   setDisabledState(isDisabled: boolean): void {
     this.disabled &#x3D; isDisabled;
-    this.renderer.setElementProperty(this.elementRef.nativeElement, &#x27;disabled&#x27;, isDisabled);
+    this.renderer.setProperty(this.elementRef.nativeElement, &#x27;disabled&#x27;, isDisabled);
     if (this.popupRef) {
       this.popupRef.instance.setDisabledState(isDisabled);
     }
@@ -1723,8 +1723,8 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     const targetElement &#x3D; this.popupRef.location.nativeElement;
     const hostElement &#x3D; this.placementElement || this.elementRef.nativeElement;
     const clientRect &#x3D; this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
-    this.renderer.setElementStyle(targetElement, &#x27;left&#x27;, &#x60;${clientRect.left}px&#x60;);
-    this.renderer.setElementStyle(targetElement, &#x27;top&#x27;, &#x60;${clientRect.top}px&#x60;);
+    this.renderer.setStyle(targetElement, &#x27;left&#x27;, &#x60;${clientRect.left}px&#x60;);
+    this.renderer.setStyle(targetElement, &#x27;top&#x27;, &#x60;${clientRect.top}px&#x60;);
   }
 
   private fillPopup(source?: any, term?: string) {
@@ -1740,7 +1740,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setElementProperty(this.elementRef.nativeElement, &#x27;value&#x27;, this.formatter(value || &#x27;&#x27;));
+    this.renderer.setProperty(this.elementRef.nativeElement, &#x27;value&#x27;, this.formatter(value || &#x27;&#x27;));
   }
 
   private unSubscription() {
