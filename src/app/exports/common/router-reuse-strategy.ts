@@ -5,7 +5,7 @@ export class RebirthRouterReuseStrategy implements RouteReuseStrategy {
   handlers: { [key: string]: DetachedRouteHandle } = {};
 
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
-    return true;
+    return this.isReusable(route);
   }
 
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
@@ -17,11 +17,15 @@ export class RebirthRouterReuseStrategy implements RouteReuseStrategy {
   }
 
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
-    return route.routeConfig ? this.handlers[route.routeConfig.path] : null;
+    return this.isReusable(route) && route.routeConfig ? this.handlers[route.routeConfig.path] : null;
   }
 
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
-    return future.routeConfig === curr.routeConfig;
+    return future.routeConfig === curr.routeConfig && this.isReusable(future);
+  }
+
+  private isReusable(route: ActivatedRouteSnapshot) {
+    return route.data && route.data['reusable'];
   }
 
 }
