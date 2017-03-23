@@ -29,7 +29,7 @@ export class DraggableDirective {
   @ContentChild(DraggableHandleDirective) draggableHandle: DraggableHandleDirective;
 
   @HostListener('dragstart', ['$event'])
-  dragStart($event: DragEvent) {
+  dragStart($event) {
     if (!this.draggableHandle || this.draggableHandle.elementRef.nativeElement === this.handle) {
       $event.dataTransfer.effectAllowed = this.dragEffect;
       $event.dataTransfer.setData('text/plain', JSON.stringify({
