@@ -115,7 +115,11 @@ export class AppComponent implements OnInit {
             {
               text: 'Sandstone',
               url: '?theme=Sandstone'
-            }
+            },
+            // {
+            //   text: 'Material-Design',
+            //   url: '?theme=Material-Design'
+            // }
           ]
         }
       ]
