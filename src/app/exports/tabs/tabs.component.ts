@@ -18,7 +18,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsComponent implements OnInit, AfterContentInit {
-  @Input() type: TabType = 'tabs';
+  @Input() type: 'tabs' | 'pills' = 'tabs';
   @Input() activeTab: number |string;
   @Input() vertical: boolean;
   @Input() justified: boolean;

@@ -14,8 +14,8 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   }]
 })
 export class SwitchComponent implements ControlValueAccessor {
-  @Input() type: ButtonType;
-  @Input() size: ButtonSize;
+  @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger';
+  @Input() size: 'lg' | 'sm' | 'xs';
   @Input() disabled: boolean;
   @Input() onText: string;
   @Input() offText: string;

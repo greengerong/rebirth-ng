@@ -22,7 +22,7 @@ export class DataTableRowComponent {
   @Input() allChecked: boolean;
   @Input() columns: QueryList<DataTableColumnTmplComponent>;
   @Input() dataTableTemplates: DataTableTmplsComponent;
-  @Input() editModel: DataTableEditModel;
+  @Input() editModel: 'row' | 'cell';
   @Input() editRowItem: any;
   forceUpdateEvent = new EventEmitter<ForceUpdateReason>();
 

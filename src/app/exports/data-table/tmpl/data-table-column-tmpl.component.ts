@@ -11,7 +11,7 @@ import { RebirthUIConfig } from '../../rebirth-ui.config';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableColumnTmplComponent {
-  @Input() fieldType: DataTableFieldType = 'text';
+  @Input() fieldType: 'text' | 'number' | 'tel' | 'mail' | 'image' | 'date' | 'datetime' | string = 'text';
   @Input() field: string;
   @Input() header: string;
   @Input() sortable: boolean;

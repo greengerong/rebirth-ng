@@ -23,7 +23,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
   @Input() column: DataTableColumnTmplComponent;
   @Input() rowItem: any;
   @Input() dataTableTemplates: DataTableTmplsComponent;
-  @Input() editModel: DataTableEditModel;
+  @Input() editModel: 'row' | 'cell';
   @Input() isEditRow: boolean;
 
   isCellEdit: boolean;

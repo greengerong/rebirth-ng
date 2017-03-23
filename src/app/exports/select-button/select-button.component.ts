@@ -20,8 +20,8 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
 })
 export class SelectButtonComponent implements ControlValueAccessor {
 
-  @Input() size: ButtonSize;
-  @Input() type: ButtonType;
+  @Input() size: 'lg' | 'sm' | 'xs';
+  @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger';
   @Input() justified: boolean;
   @Input() multiple: boolean;
   @Input() items: SelectButtonItem;
@@ -32,7 +32,7 @@ export class SelectButtonComponent implements ControlValueAccessor {
   private onTouched = () => null;
 
   constructor(private changeDetectorRef: ChangeDetectorRef, private rebirthUIConfig: RebirthUIConfig) {
-    this.type = <ButtonType>rebirthUIConfig.selectButton.type;
+    this.type = <any>rebirthUIConfig.selectButton.type;
     this.justified = rebirthUIConfig.selectButton.justified;
     this.multiple = rebirthUIConfig.selectButton.multiple;
   }

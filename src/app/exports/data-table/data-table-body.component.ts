@@ -13,7 +13,7 @@ export class DataTableBodyComponent {
   @Input() checkable: boolean;
   @Input() allChecked: boolean;
   @Input() selectable: boolean;
-  @Input() editModel: DataTableEditModel;
+  @Input() editModel: 'row' | 'cell';
   @Input() editRowItem: any;
   @Input() dataSource: any[] = [];
   @Input() columns: DataTableColumnTmplComponent[];

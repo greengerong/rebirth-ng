@@ -1,5 +1,3 @@
-/// <reference path="./types.d.ts" />
-
 export * from './accordion';
 export * from './action-button';
 export * from './alert-box';

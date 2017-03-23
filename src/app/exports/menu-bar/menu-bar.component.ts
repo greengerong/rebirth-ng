@@ -11,9 +11,10 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
 })
 export class MenuBarComponent {
   @Input() cssClass: string;
-  @Input() type: NavbarType;
+  @Input() type: 'navbar-fixed-top' | 'navbar-fixed-bottom' | 'container-fluid'
+    | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form' | 'sidebar';
   @Input() menuOptions: MenuBar = <MenuBar>{};
-  @Input() direction: DropDirection;
+  @Input() direction: 'down' | 'up';
   @Input() inverse = false;
   showNavBar: boolean;
 

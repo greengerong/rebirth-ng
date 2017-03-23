@@ -22,7 +22,7 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
   }]
 })
 export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDestroy {
-  @Input() placement: DatePickerPlacement = 'bottom-left';
+  @Input() placement: 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right' = 'bottom-left';
   @Input() selectedDate: Date;
   @Input() locale: string;
   @Input() showTimePicker: boolean;

@@ -23,7 +23,7 @@ export class PaginationComponent implements OnChanges {
   @Input() lastLink: string;
   @Input() preLink: string;
   @Input() nextLink: string;
-  @Input() size: PaginationSize;
+  @Input() size: '' | 'lg' | 'sm';
   @Input() cssClass: string;
   showPages = [];
   totalPage = 0;
