@@ -10,7 +10,7 @@ export class NavItemComponent implements OnInit {
 
   @Input() menus: MenuItem[] = [];
   @Input() right: boolean;
-  @Input() direction: DropDirection;
+  @Input() direction: 'down' | 'up';
 
   constructor() {
   }

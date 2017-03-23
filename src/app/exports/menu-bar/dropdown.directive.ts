@@ -10,7 +10,7 @@ export class DropdownDirective {
   active = false;
   @Output() dropdownStatusChange = new EventEmitter();
   @Input() activeCss = 'open';
-  @Input() direction: DropDirection;
+  @Input() direction: 'down' | 'up';
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {
   }

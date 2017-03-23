@@ -7,7 +7,8 @@ import { MenuBar } from '../../exports/menu-bar/menu-bar.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuBarDemoComponent implements OnInit {
-  type: NavbarType;
+  type: 'navbar-fixed-top' | 'navbar-fixed-bottom' | 'container-fluid'
+    | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form' | 'sidebar';
   types = ['navbar-fixed-top', 'navbar-fixed-bottom', 'container-fluid', 'navbar-static-top',
     'navbar-static-bottom', 'navbar-form'];
 

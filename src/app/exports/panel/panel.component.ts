@@ -10,7 +10,7 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
 })
 export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
-  @Input() type: PanelType = 'default';
+  @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' = 'default';
   @Input() closable: boolean;
   @Input() withoutHeader: boolean;
   @Input() withoutFooter = true;

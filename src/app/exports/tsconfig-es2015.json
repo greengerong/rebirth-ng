@@ -19,7 +19,6 @@
     "skipLibCheck": true
   },
   "files": [
-    "types.d.ts",
     "index.ts"
   ],
   "angularCompilerOptions": {

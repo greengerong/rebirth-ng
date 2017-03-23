@@ -35,7 +35,7 @@ export class DataTableComponent implements OnDestroy {
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
-  @Input() editModel: DataTableEditModel = 'cell';
+  @Input() editModel: 'row' | 'cell' = 'cell';
   @Input() maxHeight: string;
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;

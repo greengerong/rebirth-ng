@@ -3,7 +3,7 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
 
 export class TooltipPopup {
   static ACTIVE_CLASS = 'in';
-  @Input() placement: PopoverPlacement | TooltipPlacement = 'top';
+  @Input() placement: 'top' | 'top-left' | 'top-right' | 'bottom' | 'bottom-left' | 'bottom-right' | 'left' | 'right' = 'top';
   @Input() content: string | TemplateRef<any>;
   @Input() context: any;
   @Input() cssClass: string;

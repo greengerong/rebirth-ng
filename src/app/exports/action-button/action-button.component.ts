@@ -16,10 +16,10 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActionButtonComponent {
-  @Input() type: ButtonType = 'default';
-  @Input() direction: DropDirection = 'down';
+  @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' = 'default';
+  @Input() direction: 'down' | 'up' = 'down';
   @Input() icon: string;
-  @Input() btnSize: ButtonSize;
+  @Input() btnSize: 'lg' | 'sm' | 'xs';
   @Input() buttonText: string;
   @Input() cssClass: string;
   @Input() isOpen = false;

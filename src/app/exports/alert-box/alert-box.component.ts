@@ -8,7 +8,7 @@ import { RebirthUIConfig } from '../rebirth-ui.config';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlertBoxComponent {
-  @Input() type: AlertType = 'info';
+  @Input() type: 'success' | 'info' | 'warning' | 'danger' = 'info';
   @Input() cssClass: string;
   @Input() closable: boolean;
   @Output() close = new EventEmitter<any>();
