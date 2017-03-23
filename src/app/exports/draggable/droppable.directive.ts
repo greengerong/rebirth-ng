@@ -1,5 +1,4 @@
-import { HostListener, ElementRef, EventEmitter, Output, Input, Directive } from '@angular/core';
-import { DraggableDirective } from './draggable.directive';
+import { HostListener, EventEmitter, Output, Input, Directive } from '@angular/core';
 
 @Directive({
   selector: '[reDroppable]',
@@ -51,7 +50,7 @@ export class DroppableDirective {
   }
 
   isDropGroup($event): boolean {
-    const contextData = $event.dataTransfer.getData(DraggableDirective.DRAGGABLE_KEY);
+    const contextData = $event.dataTransfer.getData('text');
     if (contextData) {
       const draggableData = JSON.parse(contextData);
       return this.group === draggableData.group;
