@@ -29,7 +29,7 @@
     "url": "git+https://github.com/greengerong/ng2-rebirth-ui.git"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0-rc.1",
+    "@angular/cli": "^1.0.0",
     "@angular/common": "^2.4.10",
     "@angular/compiler": "^2.4.10",
     "@angular/compiler-cli": "^2.4.10",
