@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1222,7 +1222,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, renderer: Renderer2, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
+                            <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, renderer: Renderer2, rebirthUIConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
     
@@ -1520,6 +1520,30 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onDisplayWeeksChange</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>onDisplayWeeksChange()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </section>
 
     <section>
@@ -1730,7 +1754,7 @@
 </li>
 </ul>
 <pre><code class="hljs undefined">export class AppComponent {<br>  constructor(private rebirthConfig: RebirthUIConfig, ...) {<br>    this.rebirthConfig.rootContainer = this.viewContainerRef; // setup root container for all append body component.<br>  }<br>}</code></pre><ul>
-<li><p>If you want to setup a new date converter, you can pass <code>dateConverter</code> to each <code>DatePicker</code> component or override in <code>RebirthUIConfig.datePicker.dateConverter</code>.  Date converter<br>should implements interface <a href="https://greengerong.github.io/ng2-rebirth-ui/compodocs/interfaces/DateConverter.html"><code>DateConverter</code></a>.</p>
+<li><p>If you want to setup a new date converter, you can pass <code>dateConverter</code> to each <code>DatePicker</code> component or override in <code>RebirthUIConfig.datePicker.dateConverter</code>.  Date converter<br>should implements interface <a href="https://greengerong.github.io/rebirth-ng/compodocs/interfaces/DateConverter.html"><code>DateConverter</code></a>.</p>
 </li>
 <li><p><a href="https://date-fns.org/"><code>dateFns</code></a> format accepted tokens <a href="https://date-fns.org/docs/format">https://date-fns.org/docs/format</a>:</p>
 </li>
@@ -1754,7 +1778,7 @@
 } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from &#x27;./date-change-event-args.model&#x27;;
-import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 import { DateConverter } from &#x27;../utils/date-converter&#x27;;
 import { DefaultDateConverter } from &#x27;../utils/default-date-converter&#x27;;
 import { isValidDate } from &#x27;../utils/date-utils&#x27;;
@@ -1796,7 +1820,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale &#x3D; this.rebirthUIConfig.datePicker.locale;
     this.dateConverter &#x3D; rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
@@ -1985,7 +2009,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     return num &lt; 10 ? &#x60;0${num}&#x60; : &#x60;${num}&#x60;;
   }
 
-  private onDisplayWeeksChange() {
+  onDisplayWeeksChange() {
     const firstDayOfMonth &#x3D; new Date(this.currentYear, this.currentMonth, 1);
     const weekOfDay &#x3D; firstDayOfMonth.getDay();
     const startDate &#x3D; new Date(firstDayOfMonth.getTime() - weekOfDay * DatePickerPopupComponent.DAY_DURATION);

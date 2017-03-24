@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1135,7 +1135,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>string</code>
 
                               </p>
                             <p>
@@ -1225,7 +1225,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>)</code>
+                            <code>constructor(rebirthUIConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
     
@@ -1394,7 +1394,7 @@ import { DataTableCellViewTmplComponent } from &#x27;./data-table-cell-view-tmpl
 import { DataTableCellEditTmplComponent } from &#x27;./data-table-cell-edit-tmpl.component&#x27;;
 import { DataTableCellFilterTmplComponent } from &#x27;./data-table-cell-filter-tmpl.component&#x27;;
 import { formatDate } from &#x27;../../utils/date-utils&#x27;;
-import { RebirthUIConfig } from &#x27;../../rebirth-ui.config&#x27;;
+import { RebirthNGConfig } from &#x27;../../rebirth-ng.config&#x27;;
 
 @Component({
   selector: &#x27;re-column&#x27;,
@@ -1402,7 +1402,7 @@ import { RebirthUIConfig } from &#x27;../../rebirth-ui.config&#x27;;
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTableColumnTmplComponent {
-  @Input() fieldType: DataTableFieldType &#x3D; &#x27;text&#x27;;
+  @Input() fieldType: &#x27;text&#x27; | &#x27;number&#x27; | &#x27;tel&#x27; | &#x27;mail&#x27; | &#x27;image&#x27; | &#x27;date&#x27; | &#x27;datetime&#x27; | string &#x3D; &#x27;text&#x27;;
   @Input() field: string;
   @Input() header: string;
   @Input() sortable: boolean;
@@ -1416,7 +1416,7 @@ export class DataTableColumnTmplComponent {
   @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
   _formatter: (item: any) &#x3D;&gt; string;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
 
   }
 

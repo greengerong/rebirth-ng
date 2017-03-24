@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1144,7 +1144,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(renderer: Renderer2, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>)</code>
+                            <code>constructor(renderer: Renderer2, rebirthUIConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
     
@@ -1188,7 +1188,7 @@
     
                     <tr>
                         <td class="col-md-4">
-    <code>selectPrevSlide($event: any)</code>
+    <code>selectPrevSlide($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1212,7 +1212,7 @@
     
                     <tr>
                         <td class="col-md-4">
-    <code>selectNextSlide()</code>
+    <code>selectNextSlide($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1386,7 +1386,7 @@
 } from &#x27;@angular/core&#x27;;
 import { SlideDirective } from &#x27;./slide.directive&#x27;;
 import { animation, animationTimeout } from &#x27;../utils/animation-utils&#x27;;
-import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
 export enum CarouselDirection {
   NEXT, PREV
@@ -1410,7 +1410,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   reflowDuration: number;
   animationDuration: number;
 
-  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig) {
     this.reflowDuration &#x3D; rebirthUIConfig.carousel.reflowDuration;
     this.animationDuration &#x3D; rebirthUIConfig.carousel.animationDuration;
     this.animate &#x3D; rebirthUIConfig.carousel.animate;
@@ -1431,7 +1431,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   }
 
   @HostListener(&#x27;keydown.arrowLeft&#x27;, [&#x27;$event&#x27;])
-  selectPrevSlide($event) {
+  selectPrevSlide($event?: Event) {
     if (this.activeSlide &#x3D;&#x3D;&#x3D; 0) {
       this.onActiveSlideChange(this.slides.length - 1, CarouselDirection.PREV);
       return;
@@ -1440,8 +1440,8 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     this.onActiveSlideChange(this.activeSlide - 1, CarouselDirection.PREV);
   }
 
-  @HostListener(&#x27;keydown.arrowRight&#x27;, [])
-  selectNextSlide() {
+  @HostListener(&#x27;keydown.arrowRight&#x27;, [&#x27;$event&#x27;])
+  selectNextSlide($event?: Event) {
     if (this.activeSlide &#x3D;&#x3D;&#x3D; this.slides.length - 1) {
       this.onActiveSlideChange(0, CarouselDirection.NEXT);
       return;

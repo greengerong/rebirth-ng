@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1094,7 +1094,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>&quot;lg&quot; | &quot;sm&quot; | &quot;xs&quot;</code>
 
                               </p>
                         </td>
@@ -1154,7 +1154,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>&quot;down&quot; | &quot;up&quot;</code>
 
                               </p>
                             <p>
@@ -1215,7 +1215,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>&quot;default&quot; | &quot;primary&quot; | &quot;success&quot; | &quot;info&quot; | &quot;warning&quot; | &quot;danger&quot;</code>
 
                               </p>
                             <p>
@@ -1354,10 +1354,10 @@ import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActionButtonComponent {
-  @Input() type: ButtonType &#x3D; &#x27;default&#x27;;
-  @Input() direction: DropDirection &#x3D; &#x27;down&#x27;;
+  @Input() type: &#x27;default&#x27; | &#x27;primary&#x27; | &#x27;success&#x27; | &#x27;info&#x27; | &#x27;warning&#x27; | &#x27;danger&#x27; &#x3D; &#x27;default&#x27;;
+  @Input() direction: &#x27;down&#x27; | &#x27;up&#x27; &#x3D; &#x27;down&#x27;;
   @Input() icon: string;
-  @Input() btnSize: ButtonSize;
+  @Input() btnSize: &#x27;lg&#x27; | &#x27;sm&#x27; | &#x27;xs&#x27;;
   @Input() buttonText: string;
   @Input() cssClass: string;
   @Input() isOpen &#x3D; false;

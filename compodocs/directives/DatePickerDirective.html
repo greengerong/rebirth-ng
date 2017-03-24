@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1170,7 +1170,7 @@
                                 </td>
                                 <td class="col-md-10">
                                       <p>
-                                        <em>Type:</em>    <code>any</code>
+                                        <em>Type:</em>    <code>&quot;top&quot; | &quot;top-left&quot; | &quot;top-right&quot; | &quot;bottom&quot; | &quot;bottom-left&quot; | &quot;bottom-right&quot;</code>
 
                                       </p>
                                     <p>
@@ -1219,7 +1219,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank" >ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a>, renderer: Renderer2, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank" >Injector</a>, positionService: <a href="./injectables/PositionService.html" >PositionService</a>, rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>)</code>
+                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank" >ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a>, renderer: Renderer2, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank" >Injector</a>, positionService: <a href="./injectables/PositionService.html" >PositionService</a>, rebirthUIConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>)</code>
                                 </td>
                             </tr>
             
@@ -1494,7 +1494,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x2
 import { PositionService } from &#x27;../position/positioning.service&#x27;;
 import { DatePickerPopupComponent } from &#x27;./date-picker-popup.component&#x27;;
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from &#x27;./date-change-event-args.model&#x27;;
-import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 import { DateConverter } from &#x27;../utils/date-converter&#x27;;
 import { DefaultDateConverter } from &#x27;../utils/default-date-converter&#x27;;
 import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
@@ -1509,7 +1509,7 @@ import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
   }]
 })
 export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDestroy {
-  @Input() placement: DatePickerPlacement &#x3D; &#x27;bottom-left&#x27;;
+  @Input() placement: &#x27;top&#x27; | &#x27;top-left&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-left&#x27; | &#x27;bottom-right&#x27; &#x3D; &#x27;bottom-left&#x27;;
   @Input() selectedDate: Date;
   @Input() locale: string;
   @Input() showTimePicker: boolean;
@@ -1529,7 +1529,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthUIConfig) {
+              private rebirthUIConfig: RebirthNGConfig) {
 
     this.dateConfig &#x3D; rebirthUIConfig.datePicker;
     this.dateConverter &#x3D; rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();

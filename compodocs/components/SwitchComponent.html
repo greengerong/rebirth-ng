@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>ng4-rebirth-ui documentation</title>
+        <title>rebirth-ng documentation</title>
         <meta name="description" content="">
-        <base href="/ng2-rebirth-ui/compodocs/">
+        <base href="/rebirth-ng/compodocs/">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
@@ -14,7 +14,7 @@
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">ng4-rebirth-ui documentation</a>
+            <a href="./" class="navbar-brand">rebirth-ng documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -27,7 +27,7 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="./">ng4-rebirth-ui documentation</a>
+                        <a href="./">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
@@ -132,7 +132,7 @@
                                     <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                    <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -426,7 +426,7 @@
                                     <a href="./injectables/PositionService.html" >PositionService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                    <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
                                     <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -518,7 +518,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="./">ng4-rebirth-ui documentation</a>
+                               <a href="./">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -626,7 +626,7 @@
                                            <a href="./modules/RebirthCommonModule.html" >RebirthCommonModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./modules/RebirthUIModule.html" >RebirthUIModule</a>
+                                           <a href="./modules/RebirthNGModule.html" >RebirthNGModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/SelectButtonModule.html" >SelectButtonModule</a>
@@ -920,7 +920,7 @@
                                            <a href="./injectables/PositionService.html" >PositionService</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>
+                                           <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
                                            <a href="./injectables/WindowRef.html" >WindowRef</a>
@@ -1151,7 +1151,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>&quot;lg&quot; | &quot;sm&quot; | &quot;xs&quot;</code>
 
                               </p>
                         </td>
@@ -1166,7 +1166,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any</code>
+                                <em>Type:</em>    <code>&quot;default&quot; | &quot;primary&quot; | &quot;success&quot; | &quot;info&quot; | &quot;warning&quot; | &quot;danger&quot;</code>
 
                               </p>
                         </td>
@@ -1182,7 +1182,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="./injectables/RebirthUIConfig.html" >RebirthUIConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
+                            <code>constructor(rebirthUIConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
     
@@ -1202,7 +1202,7 @@
     
                     <tr>
                         <td class="col-md-4">
-    <code>toggle()</code>
+    <code>toggle($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1240,7 +1240,7 @@
         <div class="tab-pane fade tab-source-code" id="source">
             <pre><code class="hljs javascript">import { Component, Input, ChangeDetectionStrategy, forwardRef, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
-import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
 @Component({
   selector: &#x27;re-switch&#x27;,
@@ -1254,8 +1254,8 @@ import { RebirthUIConfig } from &#x27;../rebirth-ui.config&#x27;;
   }]
 })
 export class SwitchComponent implements ControlValueAccessor {
-  @Input() type: ButtonType;
-  @Input() size: ButtonSize;
+  @Input() type: &#x27;default&#x27; | &#x27;primary&#x27; | &#x27;success&#x27; | &#x27;info&#x27; | &#x27;warning&#x27; | &#x27;danger&#x27;;
+  @Input() size: &#x27;lg&#x27; | &#x27;sm&#x27; | &#x27;xs&#x27;;
   @Input() disabled: boolean;
   @Input() onText: string;
   @Input() offText: string;
@@ -1264,13 +1264,13 @@ export class SwitchComponent implements ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.onText &#x3D; rebirthUIConfig.switchBtn.onText;
     this.offText &#x3D; rebirthUIConfig.switchBtn.offText;
     this.type &#x3D; &lt;any&gt;rebirthUIConfig.switchBtn.type;
   }
 
-  toggle() {
+  toggle($event?: Event) {
     if (this.disabled) {
       return;
     }
