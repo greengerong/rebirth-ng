@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef, ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-switch',
@@ -24,7 +24,7 @@ export class SwitchComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.onText = rebirthUIConfig.switchBtn.onText;
     this.offText = rebirthUIConfig.switchBtn.offText;
     this.type = <any>rebirthUIConfig.switchBtn.type;

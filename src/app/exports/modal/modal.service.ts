@@ -1,7 +1,7 @@
 import { Injectable, Injector, ComponentFactoryResolver, ComponentRef } from '@angular/core';
 import { ModalComponent } from './modal.component';
 import { ModalOptions } from './modal-options.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { _throw } from 'rxjs/observable/throw';
@@ -12,7 +12,7 @@ export class ModalService {
 
   private instances = [];
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private rebirthUIConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 

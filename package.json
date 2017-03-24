@@ -1,5 +1,5 @@
 {
-  "name": "ng4-rebirth-ui",
+  "name": "rebirth-ng",
   "version": "0.0.5",
   "license": "MIT",
   "angular-cli": {},
@@ -17,16 +17,16 @@
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
-    "compodocs:gen": "compodoc ./src/app/exports/ -p ./src/tsconfig.app.json -b /ng2-rebirth-ui/compodocs/ -d ./dist/compodocs/ --hideGenerator",
-    "demo:gen": "ng build --prod --aot --base-href=/ng2-rebirth-ui/",
-    "github-pages:push": "ngh --message \"rebirth ui demo deploy\"",
+    "compodocs:gen": "compodoc ./src/app/exports/ -p ./src/tsconfig.app.json -b /rebirth-ng/compodocs/ -d ./dist/compodocs/ --hideGenerator",
+    "demo:gen": "ng build --prod --aot --base-href=/rebirth-ng/",
+    "github-pages:push": "ngh --message \"rebirth ng demo deploy\"",
     "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run github-pages:push && rm -rf ./dist",
     "prepublish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/greengerong/ng2-rebirth-ui.git"
+    "url": "git+https://github.com/greengerong/rebirth-ng.git"
   },
   "devDependencies": {
     "@angular/cli": "^1.0.0",
@@ -91,8 +91,8 @@
   },
   "description": "> Angular2 UI plugin with bootstrap;",
   "bugs": {
-    "url": "https://github.com/greengerong/ng2-rebirth-ui/issues"
+    "url": "https://github.com/greengerong/rebirth-ng/issues"
   },
-  "homepage": "https://github.com/greengerong/ng2-rebirth-ui#readme",
+  "homepage": "https://github.com/greengerong/rebirth-ng#readme",
   "author": ""
 }

@@ -1,8 +1,8 @@
-# @rebirth/ui
+# @Rebirth/NG
 ##########################
 > Angular2 UI plugin with bootstrap;
 
-* Online Document link: [https://greengerong.github.io/ng2-rebirth-ui/](http://greengerong.github.io/ng2-rebirth-ui/)
+* Online Document link: [https://greengerong.github.io/rebirth-ng/](http://greengerong.github.io/rebirth-ng/)
 
 
 ## Components

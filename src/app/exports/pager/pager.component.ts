@@ -2,7 +2,7 @@ import {
   Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges,
   SimpleChanges
 } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-pager',
@@ -23,7 +23,7 @@ export class PagerComponent implements OnChanges {
   @Input() cssClass: string;
   totalPage = 0;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.aligned = rebirthUIConfig.pager.aligned;
     this.pageSize = rebirthUIConfig.pager.pageSize;
     this.previousText = rebirthUIConfig.pager.button.previous;

@@ -30,7 +30,7 @@ export class MenuBarDemoComponent implements OnInit {
       {
         text: 'Rebirth',
         icon: 'glyphicon glyphicon-heart',
-        router: ['./rebirth', { portal: 'rebirth-ui' }]
+        router: ['./rebirth', { portal: 'rebirth-ng' }]
       },
       {
         text: 'Resources',

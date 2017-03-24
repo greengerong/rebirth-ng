@@ -30,7 +30,7 @@ export class OverlayDemoComponent implements OnInit {
   template: `
     <div>
       <div class="overlay-demo-logo"></div>
-      <div class="text-center">Rebirth UI overlay!</div>
+      <div class="text-center">Rebirth NG overlay!</div>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush

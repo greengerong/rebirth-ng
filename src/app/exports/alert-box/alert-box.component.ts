@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-alert-box',
@@ -13,7 +13,7 @@ export class AlertBoxComponent {
   @Input() closable: boolean;
   @Output() close = new EventEmitter<any>();
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.alertBox.type;
     this.closable = rebirthUIConfig.alertBox.closable;
   }

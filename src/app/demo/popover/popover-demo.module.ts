@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PopoverDemoComponent } from './popover-demo.component';
-import { RebirthUIModule } from '../../exports';
+import { RebirthNGModule } from '../../exports';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, RebirthUIModule],
+  imports: [CommonModule, FormsModule, RebirthNGModule],
   exports: [PopoverDemoComponent],
   declarations: [PopoverDemoComponent],
   providers: [],

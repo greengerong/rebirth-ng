@@ -27,7 +27,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { PositionService } from '../position/positioning.service';
 import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 import { stopPropagationIfExist } from '../utils/dom-utils';
@@ -71,7 +71,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+              private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges = this.registerInputEvent(elementRef);
     this.delay = rebirthUIConfig.autoComplete.delay;
     this.minLength = rebirthUIConfig.autoComplete.minLength;

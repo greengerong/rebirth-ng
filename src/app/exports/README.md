@@ -4,14 +4,14 @@
 
 ## Welcome
 
-Welcome to `@Rebirth/UI`. This repo is Angular2 ui library for Bootstrap. And it is being built from scratch in Typescript.
+Welcome to `@Rebirth/NG`. This repo is Angular2 ui library for Bootstrap. And it is being built from scratch in Typescript.
 
-You can check [Demo Showcase](/ng2-rebirth-ui) & [API document](/ng2-rebirth-ui/compodocs/overview.html).
+You can check [Demo Showcase](/rebirth-ng) & [API document](/rebirth-ng/compodocs/overview.html).
 
 
 ## Dependencies
 
-`@Rebirth/UI` is all base on Angular2 and Bootstrap css. It no dependency on jQuery or Bootstrap's JavaScript is required.
+`@Rebirth/NG` is all base on Angular2 and Bootstrap css. It no dependency on jQuery or Bootstrap's JavaScript is required.
 The only required dependencies are:
 
 * [Angular](https://angular.io/) (requires `Angular` version 2.3.1 or higher)
@@ -19,19 +19,19 @@ The only required dependencies are:
 * [DateFns](https://date-fns.org/) (`date-fns` 1.27.2 or higher. It is for `DatePicker` parse & format date)
 
 
-*Notice*: `OnPush` @Input is recommended in `@Rebirth/UI`, so use `Immutable.js` will be easy.
+*Notice*: `OnPush` @Input is recommended in `@Rebirth/NG`, so use `Immutable.js` will be easy.
 
 ## Installation
 
-After installing the above dependencies, install `@Rebirth/UI` via: 
+After installing the above dependencies, install `@Rebirth/NG` via: 
   
-    npm install --save ng2-rebirth-ui
+    npm install --save rebirth-ng
   
 Once installed you need to import our main module.
 
-    import { RebirthUIModule } from 'ng2-rebirth-ui';
+    import { RebirthNGModule } from 'rebirth-ng';
   
-Then use `RebirthUIModule.forRoot()` to declare on your root module:
+Then use `RebirthNGModule.forRoot()` to declare on your root module:
 
     
     @NgModule({
@@ -40,7 +40,7 @@ Then use `RebirthUIModule.forRoot()` to declare on your root module:
       ],
       imports: [
         BrowserModule,
-        RebirthUIModule.forRoot(),
+        RebirthNGModule.forRoot(),
       ],
       providers: [],
       bootstrap: [AppComponent]
@@ -49,10 +49,10 @@ Then use `RebirthUIModule.forRoot()` to declare on your root module:
     }
 
 
-And use `RebirthUIModule` to declare on your feature module:
+And use `RebirthNGModule` to declare on your feature module:
 
     @NgModule({
-      imports: [CommonModule, FormsModule, RebirthUIModule],
+      imports: [CommonModule, FormsModule, RebirthNGModule],
       exports: [DatePickerDemoComponent],
       declarations: [DatePickerDemoComponent],
       providers: [],
@@ -62,4 +62,4 @@ And use `RebirthUIModule` to declare on your feature module:
 
 ## FAQ
 
-Please check [github](https://github.com/greengerong/ng2-rebirth-ui/issues) issue for your common problems / solutions.
+Please check [github](https://github.com/greengerong/rebirth-ng/issues) issue for your common problems / solutions.

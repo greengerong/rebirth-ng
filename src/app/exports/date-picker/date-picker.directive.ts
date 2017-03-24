@@ -7,7 +7,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { PositionService } from '../position/positioning.service';
 import { DatePickerPopupComponent } from './date-picker-popup.component';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
 import { stopPropagationIfExist } from '../utils/dom-utils';
@@ -42,7 +42,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthUIConfig) {
+              private rebirthUIConfig: RebirthNGConfig) {
 
     this.dateConfig = rebirthUIConfig.datePicker;
     this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();

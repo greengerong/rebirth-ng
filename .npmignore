@@ -12,7 +12,7 @@ protractor.conf.js
 karma.conf.js
 tslint.json
 typedoc.json
-ng2-rebirth-ui-**.tgz
+rebirth-ng-**.tgz
 angular-cli.json
 .editorconfig
 build

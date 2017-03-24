@@ -1,7 +1,7 @@
 import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions } from './dialog-options.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-alert-dialog',
@@ -13,7 +13,7 @@ export class AlertDialogComponent implements Modal {
   dismiss: EventEmitter<any>;
   btnYes: string;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.btnYes = rebirthUIConfig.dialog.button.yes;
   }
 

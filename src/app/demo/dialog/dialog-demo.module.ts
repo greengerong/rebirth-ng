@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 
 import { DialogDemoComponent } from './dialog-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
   imports: [
-    RebirthUIModule
+    RebirthNGModule
   ],
   declarations: [
     DialogDemoComponent

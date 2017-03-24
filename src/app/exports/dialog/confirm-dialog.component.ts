@@ -1,7 +1,7 @@
 import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions } from './dialog-options.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-confirm-dialog',
@@ -14,7 +14,7 @@ export class ConfirmDialogComponent implements Modal {
   btnYes: string;
   btnNo: string;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.btnYes = rebirthUIConfig.dialog.button.yes;
     this.btnNo = rebirthUIConfig.dialog.button.no;
   }

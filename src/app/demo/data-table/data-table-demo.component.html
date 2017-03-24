@@ -9,8 +9,8 @@
 
         <re-cell-edit>
           <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
-                    let-column="column"
-                    let-cell="">
+                       let-column="column"
+                       let-cell="">
             <form class="form-inline">
               <div class="form-group">
                 <select class="form-control" [name]="column.field" [(ngModel)]="rowItem[column.field]"
@@ -30,7 +30,7 @@
       <re-column field="score" [sortable]="true" header="Score" [editable]="true" fieldType="number">
         <re-cell>
           <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
-                    let-cellValue="cellValue">
+                       let-cellValue="cellValue">
             <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
           </ng-template>
         </re-cell>
@@ -48,7 +48,7 @@
                  [formatter]="colOption.formatter">
         <re-cell *ngIf="colOption.field == 'score'">
           <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
-                    let-cellValue="cellValue">
+                       let-cellValue="cellValue">
             <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
           </ng-template>
         </re-cell>
@@ -80,7 +80,7 @@
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [sortable]="true"></re-column>
-      <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
+      <re-column field="dob" header="Date of birth" fieldType="date"></re-column>
       <re-column field="score" header="Score" [sortable]="true"></re-column>
       <re-foot>
         <ng-template>
@@ -128,8 +128,8 @@
       <re-column field="firstName" header="First Name" [editable]="true">
         <re-cell-edit>
           <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
-                    let-column="column"
-                    let-cell="">
+                       let-column="column"
+                       let-cell="">
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">
@@ -149,7 +149,7 @@
       <re-column field="dob" header="Date of birth" [fieldType]="'date'" [editable]="true">
         <re-cell-edit>
           <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
-                    let-cell="">
+                       let-cell="">
             <form class="form-inline">
               <div class="form-group">
                 <div class="input-group">

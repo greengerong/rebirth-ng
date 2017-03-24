@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { <%= componentName %>DemoComponent } from './<%= componentSelector %>-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthUIModule } from '../../exports/rebirth-ng.module';
 
 
 @NgModule({

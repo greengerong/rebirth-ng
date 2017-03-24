@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 
 import { RatingDemoComponent } from './rating-demo.component';
 import { CommonModule } from '@angular/common';
-import { RebirthUIModule } from '../../exports';
+import { RebirthNGModule } from '../../exports';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, RebirthUIModule],
+  imports: [CommonModule, FormsModule, RebirthNGModule],
   exports: [RatingDemoComponent],
   declarations: [RatingDemoComponent],
   providers: [],

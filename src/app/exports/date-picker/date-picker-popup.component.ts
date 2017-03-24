@@ -12,7 +12,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change-event-args.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
 import { isValidDate } from '../utils/date-utils';
@@ -54,7 +54,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale = this.rebirthUIConfig.datePicker.locale;
     this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();

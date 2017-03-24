@@ -14,7 +14,7 @@
 
 
 * If you want to setup a new date converter, you can pass `dateConverter` to each `DatePicker` component or override in `RebirthUIConfig.datePicker.dateConverter`.  Date converter
-  should implements interface [`DateConverter`](https://greengerong.github.io/ng2-rebirth-ui/compodocs/interfaces/DateConverter.html).
+  should implements interface [`DateConverter`](https://greengerong.github.io/rebirth-ng/compodocs/interfaces/DateConverter.html).
 
 * [`dateFns`](https://date-fns.org/) format accepted tokens [https://date-fns.org/docs/format](https://date-fns.org/docs/format):
 

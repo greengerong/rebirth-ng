@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, Optional, OnInit, Host, OnDestroy } from '@angular/core';
 import { PanelGroup } from './panel-group.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
@@ -20,7 +20,7 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<PanelComponent>();
   @Output() collapse = new EventEmitter<boolean>();
 
-  constructor(@Optional() @Host() private  panelGroup: PanelGroup, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(@Optional() @Host() private  panelGroup: PanelGroup, private rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.panel.type;
     this.closable = rebirthUIConfig.panel.closable;
     this.collapsable = rebirthUIConfig.panel.collapsable;

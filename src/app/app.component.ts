@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewContainerRef, Renderer2, ElementRef } from '@angular/core';
-import { RebirthUIConfig } from './exports/rebirth-ui.config';
+import { RebirthNGConfig } from './exports/rebirth-ng.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
-import { REBIRTH_UI_I18N_ZHCN } from './exports/rebirth-ui.i18n.zh-cn';
+import { REBIRTH_NG_I18N_ZHCN } from './exports/rebirth-ng.i18n.zh-cn';
 import { ActivatedRoute } from '@angular/router';
 import { ThemeService } from './shared';
 
@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   menus: MenuBar;
   // largeDataSource = [];
 
-  constructor(private rebirthConfig: RebirthUIConfig,
+  constructor(private rebirthConfig: RebirthNGConfig,
               private viewContainerRef: ViewContainerRef,
               private demoConfigService: DemoConfigService,
               private  router: ActivatedRoute,
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
       this.themeService.setupTheme(params.theme, this.renderer, this.elementRef);
     });
 
-    // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
+    // this.rebirthConfig.extend(REBIRTH_NG_I18N_ZHCN); i18n
   }
 
   ngOnInit(): void {
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
       home: './',
       menus: [
         {
-          text: '@Rebirth/UI',
+          text: '@Rebirth/NG',
           router: ['./'],
           icon: 'glyphicon glyphicon-home'
         },
@@ -70,13 +70,13 @@ export class AppComponent implements OnInit {
         },
         {
           text: 'API Docs',
-          url: '/ng2-rebirth-ui/compodocs/overview.html',
+          url: '/rebirth-ng/compodocs/overview.html',
           target: '_blank',
           icon: 'glyphicon glyphicon-heart'
         },
         {
           text: '@Github',
-          url: 'https://github.com/greengerong/ng2-rebirth-ui',
+          url: 'https://github.com/greengerong/rebirth-ng',
           target: '_blank',
           icon: 'glyphicon glyphicon-user'
         },

@@ -9,7 +9,7 @@ import {
   ChangeDetectionStrategy, AfterContentInit
 } from '@angular/core';
 import { TabComponent } from './tab.component';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-tabs',
@@ -26,7 +26,7 @@ export class TabsComponent implements OnInit, AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() activeTabChange = new EventEmitter<number| string>();
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.tabs.type;
     this.justified = rebirthUIConfig.tabs.justified;
     this.vertical = rebirthUIConfig.tabs.vertical;

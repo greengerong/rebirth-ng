@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import { SlideDirective } from './slide.directive';
 import { animation, animationTimeout } from '../utils/animation-utils';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 export enum CarouselDirection {
   NEXT, PREV
@@ -28,7 +28,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   reflowDuration: number;
   animationDuration: number;
 
-  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig) {
     this.reflowDuration = rebirthUIConfig.carousel.reflowDuration;
     this.animationDuration = rebirthUIConfig.carousel.animationDuration;
     this.animate = rebirthUIConfig.carousel.animate;

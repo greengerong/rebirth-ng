@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { TabsDemoComponent } from './tabs-demo.component';
 import { CommonModule } from '@angular/common';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
-  imports: [CommonModule, RebirthUIModule],
+  imports: [CommonModule, RebirthNGModule],
   exports: [TabsDemoComponent],
   declarations: [TabsDemoComponent],
   providers: [],

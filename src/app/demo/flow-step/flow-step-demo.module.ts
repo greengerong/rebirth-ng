@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FlowStepDemoComponent } from './flow-step-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
-  imports: [CommonModule, RebirthUIModule],
+  imports: [CommonModule, RebirthNGModule],
   exports: [FlowStepDemoComponent],
   declarations: [FlowStepDemoComponent],
   providers: [],

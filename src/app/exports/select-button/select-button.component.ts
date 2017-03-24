@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, forwardRef, Input, ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SelectButtonItem } from './select-button-item.model';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-select-button',
@@ -31,7 +31,7 @@ export class SelectButtonComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, private rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.selectButton.type;
     this.justified = rebirthUIConfig.selectButton.justified;
     this.multiple = rebirthUIConfig.selectButton.multiple;

@@ -2,7 +2,7 @@ import { Component, Input, TemplateRef, forwardRef, ViewChild, AfterViewInit, Ch
 import { AutoCompleteDirective } from './auto-complete.directive';
 import { Observable } from 'rxjs/Observable';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-mutiple-auto-complete',
@@ -35,7 +35,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @ViewChild(AutoCompleteDirective) autoCompleteDirective: AutoCompleteDirective;
   private onChange = (_: any) => null;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.delay = rebirthUIConfig.autoComplete.delay;
     this.minLength = rebirthUIConfig.autoComplete.minLength;
     this.itemTemplate = rebirthUIConfig.autoComplete.itemTemplate;

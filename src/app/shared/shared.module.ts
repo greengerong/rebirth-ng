@@ -6,7 +6,7 @@ import { DocComponent } from './doc';
 import { DocContentComponent } from './doc/doc-content.component';
 import { DemoConfigService } from './demo/demo-config.service';
 import { ThemeService } from './theme';
-import { RebirthUIModule } from '../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../exports/rebirth-ng.module';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     HttpModule,
     JsonpModule,
-    RebirthUIModule
+    RebirthNGModule
   ],
   declarations: [
     DocComponent,

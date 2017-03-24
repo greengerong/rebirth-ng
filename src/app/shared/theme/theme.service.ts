@@ -2,7 +2,7 @@ import { Injectable, Renderer2, ElementRef } from '@angular/core';
 
 @Injectable()
 export class ThemeService {
-  static THEME_KEY = 'rebirth-ui:theme';
+  static THEME_KEY = 'rebirth-ng:theme';
 
   setupTheme(theme: string, renderer: Renderer2, parentElementRef: ElementRef) {
     theme = theme || localStorage.getItem(ThemeService.THEME_KEY);

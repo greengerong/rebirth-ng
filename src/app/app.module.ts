@@ -31,7 +31,7 @@ import {
   DataTableDemoModule,
   DraggableDemoModule
 } from './demo';
-import { RebirthUIModule } from './exports';
+import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -42,7 +42,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     RouterModule.forRoot([]),
     SharedModule.forRoot(),
-    RebirthUIModule.forRoot(),
+    RebirthNGModule.forRoot(),
     ModalDemoModule,
     DialogDemoModule,
     PagerDemoModule,

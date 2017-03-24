@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { TooltipDemoComponent } from './tooltip-demo.component';
 import { CommonModule } from '@angular/common';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
-  imports: [CommonModule, RebirthUIModule],
+  imports: [CommonModule, RebirthNGModule],
   exports: [TooltipDemoComponent],
   declarations: [TooltipDemoComponent],
   providers: [],

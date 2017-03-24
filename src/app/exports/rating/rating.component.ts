@@ -2,7 +2,7 @@ import {
   Component, Input, EventEmitter, ChangeDetectionStrategy, forwardRef,
   ChangeDetectorRef
 } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -27,7 +27,7 @@ export class RatingComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.icons = rebirthUIConfig.rating.icons;
     this.ratingRanges = this.fillRatingRange(rebirthUIConfig.rating.max);
   }

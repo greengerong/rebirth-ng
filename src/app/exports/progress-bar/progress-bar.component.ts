@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-progress-bar',
@@ -17,7 +17,7 @@ export class ProgressBarComponent {
   @Input() value: number;
   @Input() cssClass: string;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.progressBar.type;
     this.animate = rebirthUIConfig.progressBar.animate;
     this.striped = rebirthUIConfig.progressBar.striped;

@@ -1,5 +1,5 @@
 import { ComponentFactoryResolver, ComponentRef, Injectable, Injector } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 import { OverlayComponent } from './overlay.component';
 import { OverlayOptions } from './overlay-options.model';
 
@@ -9,7 +9,7 @@ export class OverlayService {
   private overlayRef: ComponentRef<OverlayComponent>;
   private overlayCount = 0;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig, private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private rebirthUIConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 

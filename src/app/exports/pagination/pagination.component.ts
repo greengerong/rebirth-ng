@@ -2,7 +2,7 @@ import {
   Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy,
   SimpleChanges
 } from '@angular/core';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-pagination',
@@ -28,7 +28,7 @@ export class PaginationComponent implements OnChanges {
   showPages = [];
   totalPage = 0;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     this.boundary = rebirthUIConfig.pagination.boundary;
     this.pageSize = rebirthUIConfig.pagination.pageSize;
     this.maxItems = rebirthUIConfig.pagination.maxItems;

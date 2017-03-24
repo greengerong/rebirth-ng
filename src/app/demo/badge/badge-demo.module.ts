@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 
 import { BadgeDemoComponent } from './badge-demo.component';
 import { CommonModule } from '@angular/common';
-import { RebirthUIModule } from '../../exports';
+import { RebirthNGModule } from '../../exports';
 
 @NgModule({
   imports: [
     CommonModule,
-    RebirthUIModule
+    RebirthNGModule
   ],
   exports: [BadgeDemoComponent],
   declarations: [BadgeDemoComponent],

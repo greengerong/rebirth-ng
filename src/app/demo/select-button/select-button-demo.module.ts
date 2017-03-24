@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { SelectButtonDemoComponent } from './select-button-demo.component';
 import { FormsModule } from '@angular/forms';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, RebirthUIModule],
+  imports: [CommonModule, FormsModule, RebirthNGModule],
   exports: [SelectButtonDemoComponent],
   declarations: [SelectButtonDemoComponent],
   providers: [SelectButtonDemoComponent],

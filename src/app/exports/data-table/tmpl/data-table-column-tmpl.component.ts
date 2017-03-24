@@ -3,7 +3,7 @@ import { DataTableCellViewTmplComponent } from './data-table-cell-view-tmpl.comp
 import { DataTableCellEditTmplComponent } from './data-table-cell-edit-tmpl.component';
 import { DataTableCellFilterTmplComponent } from './data-table-cell-filter-tmpl.component';
 import { formatDate } from '../../utils/date-utils';
-import { RebirthUIConfig } from '../../rebirth-ui.config';
+import { RebirthNGConfig } from '../../rebirth-ng.config';
 
 @Component({
   selector: 're-column',
@@ -25,7 +25,7 @@ export class DataTableColumnTmplComponent {
   @ContentChild(DataTableCellFilterTmplComponent) cellFilterCmp: DataTableCellFilterTmplComponent;
   _formatter: (item: any) => string;
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
 
   }
 

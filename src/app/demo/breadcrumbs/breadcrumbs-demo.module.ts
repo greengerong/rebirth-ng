@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BreadcrumbsDemoComponent } from './breadcrumbs-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 
 @NgModule({
-  imports: [CommonModule, RebirthUIModule],
+  imports: [CommonModule, RebirthNGModule],
   exports: [BreadcrumbsDemoComponent],
   declarations: [BreadcrumbsDemoComponent],
   providers: [],

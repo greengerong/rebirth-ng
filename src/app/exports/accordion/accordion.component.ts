@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy, forwardRef, Output, EventEmitter } from '@angular/core';
 import { PanelComponent, PanelGroup } from '../panel';
-import { RebirthUIConfig } from '../rebirth-ui.config';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-accordion',
@@ -14,7 +14,7 @@ export class AccordionComponent extends PanelGroup {
   @Input() closable: boolean;
   @Output() close = new EventEmitter<PanelComponent>();
 
-  constructor(private rebirthUIConfig: RebirthUIConfig) {
+  constructor(private rebirthUIConfig: RebirthNGConfig) {
     super();
     this.keepOneItem = rebirthUIConfig.accordion.keepOneItem;
     this.closable = rebirthUIConfig.accordion.closable;

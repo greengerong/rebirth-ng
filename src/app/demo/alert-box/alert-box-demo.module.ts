@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { AlertBoxDemoComponent } from './alert-box-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ui.module';
+import { RebirthNGModule } from '../../exports/rebirth-ng.module';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
-    RebirthUIModule
+    RebirthNGModule
   ],
   declarations: [
     AlertBoxDemoComponent
