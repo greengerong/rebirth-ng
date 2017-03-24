@@ -1,10 +1,10 @@
 # Getting started 
 
-> Angular2 UI plugin with bootstrap
+> Angular4 UI plugin with bootstrap
 
 ## Welcome
 
-Welcome to `@Rebirth/NG`. This repo is Angular2 ui library for Bootstrap. And it is being built from scratch in Typescript.
+Welcome to `@Rebirth/NG`. This repo is Angular4 ui library for Bootstrap. And it is being built from scratch in Typescript.
 
 You can check [Demo Showcase](/rebirth-ng) & [API document](/rebirth-ng/compodocs/overview.html).
 
@@ -14,7 +14,7 @@ You can check [Demo Showcase](/rebirth-ng) & [API document](/rebirth-ng/compodoc
 `@Rebirth/NG` is all base on Angular2 and Bootstrap css. It no dependency on jQuery or Bootstrap's JavaScript is required.
 The only required dependencies are:
 
-* [Angular](https://angular.io/) (requires `Angular` version 2.3.1 or higher)
+* [Angular](https://angular.io/) (requires `Angular` version 4.0.0 or higher)
 * [Bootstrap CSS](http://getbootstrap.com/) (`bootstrap-sass` 3.3.7)
 * [DateFns](https://date-fns.org/) (`date-fns` 1.27.2 or higher. It is for `DatePicker` parse & format date)
 

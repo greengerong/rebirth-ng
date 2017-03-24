@@ -89,7 +89,7 @@
   "dependencies": {
     "date-fns": "^1.27.2"
   },
-  "description": "> Angular2 UI plugin with bootstrap;",
+  "description": "> Angular4 UI plugin with bootstrap;",
   "bugs": {
     "url": "https://github.com/greengerong/rebirth-ng/issues"
   },
