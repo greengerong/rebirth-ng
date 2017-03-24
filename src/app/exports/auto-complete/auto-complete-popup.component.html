@@ -1,16 +1,16 @@
-<template #defaultItemTemplate let-item="item" let-term="term">
+<ng-template #defaultItemTemplate let-item="item" let-term="term">
   <re-hightlight [value]="formatter(item)" [term]="term"></re-hightlight>
-</template>
+</ng-template>
 
 <ul class="list-unstyled">
   <li *ngFor="let item of source; let $index = index;" class="dropdown-item"
       [ngClass]="{'bg-primary': $index == activeIndex}" (click)="onSelect(item)"
       (mouseenter)="onActiveIndexChange($index)">
-    <template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
-              [ngOutletContext]="{ formatter: formatter, term:term, source:source, item:item, $index:$index}"></template>
+    <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
+              [ngOutletContext]="{ formatter: formatter, term:term, source:source, item:item, $index:$index}"></ng-template>
   </li>
   <li class="dropdown-item" *ngIf="!source?.length && noResultItemTemplate">
-    <template [ngTemplateOutlet]="noResultItemTemplate"
-              [ngOutletContext]="{ term:term, source:source}"></template>
+    <ng-template [ngTemplateOutlet]="noResultItemTemplate"
+              [ngOutletContext]="{ term:term, source:source}"> </ng-template>
   </li>
 </ul>

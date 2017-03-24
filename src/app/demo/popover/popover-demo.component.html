@@ -54,17 +54,17 @@
       </div>
     </div>
 
-    <template #popTitle let-context>
+    <ng-template #popTitle let-context>
       From {{context.target}}!
-    </template>
+    </ng-template>
 
-    <template #popContent let-context>
+    <ng-template #popContent let-context>
       Hello {{name}}.
-    </template>
+    </ng-template>
 
-    <template #popContent2 let-context>
+    <ng-template #popContent2 let-context>
       <input type="text" [(ngModel)]="name"/>
-    </template>
+    </ng-template>
 
   </section>
 

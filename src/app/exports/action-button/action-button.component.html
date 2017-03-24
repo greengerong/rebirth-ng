@@ -1,4 +1,4 @@
-<template #defaultButtonTemplate let-action>
+<ng-template #defaultButtonTemplate let-action>
   <button class="btn {{action.type? 'btn-' + action.type : ''}} {{action.btnSize? 'btn-' + action.btnSize : ''}}"
           (click)="action.toggle($event)"
           [disabled]="action.disabled">
@@ -13,12 +13,12 @@
     <span class="caret"></span>
     <span class="sr-only">|</span>
   </button>
-</template>
+</ng-template>
 
 <div class="btn-group {{direction? 'drop' + direction : '' }} {{cssClass}}" [ngClass]="{open: isOpen}">
 
-  <template [ngTemplateOutlet]="buttonTemplate || defaultButtonTemplate"
-            [ngOutletContext]="{ $implicit: this}"></template>
+  <ng-template [ngTemplateOutlet]="buttonTemplate || defaultButtonTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
 
   <ul class="dropdown-menu" role="menu">
     <ng-container *ngFor="let item of actions">

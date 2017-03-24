@@ -5,7 +5,7 @@ import {
   ComponentFactoryResolver,
   Injector,
   ElementRef,
-  Renderer,
+  Renderer2,
   TemplateRef
 } from '@angular/core';
 import { PositionService } from '../position/positioning.service';
@@ -24,7 +24,7 @@ export class TooltipDirective extends Tooltip<TooltipPopupComponent> {
               componentFactoryResolver: ComponentFactoryResolver,
               injector: Injector,
               positionService: PositionService,
-              renderer: Renderer) {
+              renderer: Renderer2) {
     super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer);
     this.tooltipPopupType = TooltipPopupComponent;
   }

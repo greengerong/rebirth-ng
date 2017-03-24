@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, Renderer, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, Renderer2, ElementRef } from '@angular/core';
 import { RebirthUIConfig } from './exports/rebirth-ui.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
               private demoConfigService: DemoConfigService,
               private  router: ActivatedRoute,
               private  themeService: ThemeService,
-              private  renderer: Renderer,
+              private  renderer: Renderer2,
               private elementRef: ElementRef) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
     this.router.queryParams.subscribe((params: any) => {
@@ -115,7 +115,11 @@ export class AppComponent implements OnInit {
             {
               text: 'Sandstone',
               url: '?theme=Sandstone'
-            }
+            },
+            // {
+            //   text: 'Material-Design',
+            //   url: '?theme=Material-Design'
+            // }
           ]
         }
       ]

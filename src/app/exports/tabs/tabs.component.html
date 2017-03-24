@@ -3,7 +3,7 @@
   <li role="presentation" *ngFor="let tab of tabs" [class.disabled]="tab.disabled"
       [class.active]="tab.id == activeTab" (click)="select(tab.id)">
     <a role="tab" data-toggle="tab" [attr.aria-expanded]="tab.id == activeTab">
-      <template *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"></template>
+      <ng-template *ngIf="!tab.title" [ngTemplateOutlet]="tab.titleTpl?.templateRef"> </ng-template>
       <span *ngIf="tab.title">{{tab.title}}</span>
     </a>
   </li>
@@ -12,7 +12,7 @@
   <ng-container *ngFor="let tab of tabs">
     <div class="tab-pane fade in" role="tabpanel" *ngIf="tab.id == activeTab"
          [ngClass]="{'in active': tab.id == activeTab}">
-      <template [ngTemplateOutlet]="tab.contentTpl.templateRef"></template>
+      <ng-template [ngTemplateOutlet]="tab.contentTpl.templateRef"> </ng-template>
     </div>
   </ng-container>
 </div>

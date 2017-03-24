@@ -8,7 +8,7 @@
       <re-column field="sex" header="Sex" [sortable]="true" [editable]="true">
 
         <re-cell-edit>
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
+          <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
                     let-column="column"
                     let-cell="">
             <form class="form-inline">
@@ -21,7 +21,7 @@
                 </select>
               </div>
             </form>
-          </template>
+          </ng-template>
         </re-cell-edit>
       </re-column>
       <re-column field="dob" header="Date of birth" [editable]="true" [fieldType]="'date'"
@@ -29,10 +29,10 @@
       </re-column>
       <re-column field="score" [sortable]="true" header="Score" [editable]="true" fieldType="number">
         <re-cell>
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
+          <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
                     let-cellValue="cellValue">
             <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
-          </template>
+          </ng-template>
         </re-cell>
       </re-column>
     </re-data-table>
@@ -47,10 +47,10 @@
                  [editable]="colOption.editable" [fieldType]="colOption.fieldType"
                  [formatter]="colOption.formatter">
         <re-cell *ngIf="colOption.field == 'score'">
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
+          <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-cellItem="cellItem"
                     let-cellValue="cellValue">
             <div class="text-center" [style.background]="cellItem >= 60 ? '#DFF0D8' : '#F2DEDE'">{{cellValue}}</div>
-          </template>
+          </ng-template>
         </re-cell>
       </re-column>
     </re-data-table>
@@ -62,7 +62,7 @@
     <re-data-table [dataSource]="dataSource" type="bordered" [pager]="pager" (sortChange)="sortChange($event)"
                    (pageIndexChange)="onPageIndexChange($event)">
       <re-head>
-        <template let-head="">
+        <ng-template let-head="">
           <tr>
             <th></th>
             <th colspan="2" class="text-center">User Name</th>
@@ -75,15 +75,15 @@
               [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
             </th>
           </tr>
-        </template>
+        </ng-template>
       </re-head>
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [sortable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [sortable]="true"></re-column>
-      <re-column field="dob" header="Date of birth" [fieldType]="'date'"></re-column>
+      <re-column field="dob" header="Date of birth" [formatter]="dobFormat"></re-column>
       <re-column field="score" header="Score" [sortable]="true"></re-column>
       <re-foot>
-        <template>
+        <ng-template>
           <tr>
             <td></td>
             <td></td>
@@ -91,7 +91,7 @@
             <td></td>
             <td>AVG Score: {{dataSource | reAVG: ['score']}}</td>
           </tr>
-        </template>
+        </ng-template>
       </re-foot>
     </re-data-table>
   </section>
@@ -107,12 +107,12 @@
       <re-column field="firstName" header="First Name" [filterable]="true" width="30%" [sortable]="true"></re-column>
       <re-column field="lastName" header="Last Name" [filterable]="true" width="30%" [sortable]="true">
         <re-cell-filter>
-          <template let-head="" let-column="column">
+          <ng-template let-head="" let-column="column">
             <input type="text" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
                    [name]="column.field" (keydown.enter)="head.onSearchQueryChange()"
                    (ngModelChange)="head.onSearchQueryChange()"
                    placeholder="Customise:filter when model change"/>
-          </template>
+          </ng-template>
         </re-cell-filter>
       </re-column>
       <re-column field="dob" header="Date of birth" [fieldType]="'date'" width="20%"></re-column>
@@ -127,7 +127,7 @@
       <re-column field="$index" header="#"></re-column>
       <re-column field="firstName" header="First Name" [editable]="true">
         <re-cell-edit>
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
+          <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-row="row"
                     let-column="column"
                     let-cell="">
             <form class="form-inline">
@@ -142,13 +142,13 @@
                 </div>
               </div>
             </form>
-          </template>
+          </ng-template>
         </re-cell-edit>
       </re-column>
       <re-column field="lastName" header="Last Name" [editable]="true"></re-column>
       <re-column field="dob" header="Date of birth" [fieldType]="'date'" [editable]="true">
         <re-cell-edit>
-          <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
+          <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem"
                     let-cell="">
             <form class="form-inline">
               <div class="form-group">
@@ -162,13 +162,13 @@
                 </div>
               </div>
             </form>
-          </template>
+          </ng-template>
         </re-cell-edit>
       </re-column>
       <re-column field="score" [sortable]="true" header="Score" [editable]="true" fieldType="number"></re-column>
       <re-column>
         <re-cell>
-          <template let-rowItem="rowItem" let-column="column" let-cell="">
+          <ng-template let-rowItem="rowItem" let-column="column" let-cell="">
             <button class="btn btn-primary" (click)="editRow(table, rowItem)"
                     *ngIf="!cell.isCellEditEnable(column, rowItem)">Update
             </button>
@@ -180,7 +180,7 @@
                     *ngIf="cell.isCellEditEnable(column, rowItem)">
               Cancel
             </button>
-          </template>
+          </ng-template>
         </re-cell>
       </re-column>
     </re-data-table>

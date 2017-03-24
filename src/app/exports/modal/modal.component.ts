@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, EventEmitter, Output, ChangeDetectionStrategy, Renderer } from '@angular/core';
+import { Component, Input, ViewChild, EventEmitter, Output, ChangeDetectionStrategy, Renderer2 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
 import { DocumentRef } from '../window-ref';
@@ -16,7 +16,7 @@ export class ModalComponent {
   @ViewChild(ModalWindowComponent) modalWindowComponent: ModalWindowComponent;
   instanceCount = 0;
 
-  constructor(private renderer: Renderer, private documentRef: DocumentRef) {
+  constructor(private renderer: Renderer2, private documentRef: DocumentRef) {
 
   }
 
@@ -42,7 +42,12 @@ export class ModalComponent {
   }
 
   private toggleBodyClass(isAdd: boolean): void {
-    this.renderer.setElementClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS, isAdd);
+    if (isAdd) {
+      this.renderer.addClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS);
+      return;
+    }
+
+    this.renderer.removeClass(this.documentRef.body, ModalComponent.MODEL_OPEN_CSS);
   }
 
 }

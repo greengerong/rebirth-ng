@@ -55,6 +55,7 @@ export class DataTableCellComponent implements OnInit, OnDestroy {
       this.isCellEdit = true;
       this.documentClickubscription = this.dt.documentClickEvent.subscribe(_ => this.onFinishCellEdit());
       this.dt.onCellEditStart(cellSelectedEventArg);
+      this.forceUpdate();
     }
   }
 

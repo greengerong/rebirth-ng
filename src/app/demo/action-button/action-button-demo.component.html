@@ -15,9 +15,9 @@
 
   <h4>Customise button:</h4>
 
-  <template #buttonTemplate let-action>
+  <ng-template #buttonTemplate let-action>
     <i class="glyphicon glyphicon-filter" (click)="action.toggle($event)"></i>
-  </template>
+  </ng-template>
 
   <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
                     (actionClick)="onActionClick($event)" [buttonTemplate]="buttonTemplate"></re-action-button>

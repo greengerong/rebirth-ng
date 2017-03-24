@@ -1,4 +1,4 @@
-import { Directive, HostListener, Output, Input, EventEmitter, Renderer, ElementRef, } from '@angular/core';
+import { Directive, HostListener, Output, Input, EventEmitter, Renderer2, ElementRef, } from '@angular/core';
 import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
@@ -12,7 +12,7 @@ export class DropdownDirective {
   @Input() activeCss = 'open';
   @Input() direction: 'down' | 'up';
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
   }
 
   @HostListener('document:click', ['$event'])
@@ -36,6 +36,10 @@ export class DropdownDirective {
 
   updateHostStatus() {
     this.dropdownStatusChange.emit(this.active);
-    this.renderer.setElementClass(this.elementRef.nativeElement, this.activeCss, this.active);
+    if (this.active) {
+      this.renderer.addClass(this.elementRef.nativeElement, this.activeCss);
+      return;
+    }
+    this.renderer.removeClass(this.elementRef.nativeElement, this.activeCss);
   }
 }

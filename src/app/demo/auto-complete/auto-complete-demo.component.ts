@@ -11,7 +11,7 @@ import { AutoCompleteDirective } from '../../exports/auto-complete/auto-complete
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AutoCompleteDemoComponent implements OnInit {
-  selectItem1: string;
+  selectItem1 = 'C#';
   selectItem2: string;
   selectItem3: string;
   selectItem4: string;

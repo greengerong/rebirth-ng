@@ -5,7 +5,7 @@ import {
   HostListener,
   forwardRef,
   ElementRef,
-  Renderer,
+  Renderer2,
   Output,
   EventEmitter,
   ChangeDetectorRef
@@ -54,7 +54,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthUIConfig, private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale = this.rebirthUIConfig.datePicker.locale;
     this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
@@ -62,7 +62,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
     this._minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
     this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
-    this.renderer.setElementStyle(this.elementRef.nativeElement, 'display', 'inline-block');
+    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'inline-block');
   }
 
   @Input() set maxDate(date: Date | any) {

@@ -50,14 +50,14 @@
   <section>
     <h4>Customise</h4>
 
-    <template #customiseItemTemplate let-item="item" let-formatter="formatter" let-$index="$index" let-source="source"
+    <ng-template #customiseItemTemplate let-item="item" let-formatter="formatter" let-$index="$index" let-source="source"
               let-term="term">
       <span><i class="glyphicon {{getIcon($index)}}"></i>&nbsp;{{$index +1}}: {{formatter(item)}}</span>
-    </template>
+    </ng-template>
 
-    <template #noResultItemTemplate let-term="term">
+    <ng-template #noResultItemTemplate let-term="term">
       <span>No any results match <b>{{term}}</b></span>
-    </template>
+    </ng-template>
     <form class="form-horizontal">
       <div class="form-group">
         <label for="language-customiseItemTemplate" class="col-sm-2 control-label">Search array:</label>

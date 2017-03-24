@@ -48,7 +48,7 @@
         Tooltip on top
       </button>
 
-      <template #tipContent let-context>
+      <ng-template #tipContent let-context>
         <h4>Setting</h4>
         <div>
           <p><strong>name</strong>: {{setting.name}}</p>
@@ -56,7 +56,7 @@
           <p><strong>placement</strong>: {{setting.placement}}</p>
           <p><strong>target</strong>: {{context}}</p>
         </div>
-      </template>
+      </ng-template>
     </div>
   </section>
 

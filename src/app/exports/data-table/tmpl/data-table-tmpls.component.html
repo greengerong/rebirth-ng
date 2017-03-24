@@ -1,5 +1,5 @@
 <!-- begin:template: header label template-->
-<template #defaultHeadTemplate let-head="">
+<ng-template #defaultHeadTemplate let-head="">
   <tr>
     <th *ngIf="head.checkable" class="checkable-cell">
       <form class="form-inline">
@@ -17,29 +17,29 @@
                            [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
     </th>
   </tr>
-</template>
+</ng-template>
 <!--end:tempate-->
 
 <!-- begin:template: pager template-->
-<template #defaultPagerTemplate let-pager="pager" let-pagerPanel="">
+<ng-template #defaultPagerTemplate let-pager="pager" let-pagerPanel="">
   <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"
                  [maxItems]="pager.maxItems || pagerPanel.pagerMaxItems" [(pageIndex)]="pager.pageIndex"
                  (pageIndexChange)="pagerPanel.onPageChange($event)">
   </re-pagination>
-</template>
+</ng-template>
 <!--end:tempate-->
 
 <!-- begin:template: cell view, edit, filter template-->
 <re-cell-template #textCellTemplate type="text">
   <re-cell>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
       {{cellValue}}
-    </template>
+    </ng-template>
   </re-cell>
 
   <re-cell-edit>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">
       <form class="form-inline">
         <div class="form-group">
           <input [type]="column.fieldType" class="form-control" [reAutoFocus]="cell.isCellEdit"
@@ -48,21 +48,21 @@
                  (blur)="cell.onFinishCellEdit($event)"/>
         </div>
       </form>
-    </template>
+    </ng-template>
   </re-cell-edit>
 
   <re-cell-filter>
-    <template let-head="" let-column="column">
+    <ng-template let-head="" let-column="column">
       <input [type]="column.fieldType" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"
              [name]="column.field" (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>
-    </template>
+    </ng-template>
   </re-cell-filter>
 
 </re-cell-template>
 
 <re-cell-template #numberCellTemplate type="number">
   <re-cell-filter>
-    <template let-head="" let-column="column">
+    <ng-template let-head="" let-column="column">
       <form>
         <div class="row">
           <div class="col-xs-12 col-sm-6">
@@ -79,43 +79,43 @@
           </div>
         </div>
       </form>
-    </template>
+    </ng-template>
   </re-cell-filter>
 
 </re-cell-template>
 
 <re-cell-template #telCellTemplate type="tel">
   <re-cell>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
       <a [href]="'tel:' + cellValue" (click)="stopPropagation($event)">{{cellValue}}</a>
-    </template>
+    </ng-template>
   </re-cell>
 
 </re-cell-template>
 
 <re-cell-template #mailCellTemplate type="mail">
   <re-cell>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
       <a [href]=" cellValue ? ('mailto:' + cellValue) : ''" (click)="stopPropagation($event)">{{cellValue}}</a>
-    </template>
+    </ng-template>
   </re-cell>
 
 </re-cell-template>
 
 <re-cell-template #imageCellTemplate type="image">
   <re-cell>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cellItem="cellItem" let-cellValue="cellValue">
       <img class="img-responsive" [src]="cellValue" [attr.alt]="cellValue">
-    </template>
+    </ng-template>
   </re-cell>
 
   <re-cell-edit>
-    <template>
+    <ng-template>
       <strong>You need customise edit template!</strong>
-    </template>
+    </ng-template>
   </re-cell-edit>
 
   <re-cell-filter>
@@ -126,7 +126,7 @@
 
 <re-cell-template #dateCellTemplate type="date">
   <re-cell-edit>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cell="">
       <form class="form-inline">
         <div class="form-group">
@@ -141,11 +141,11 @@
           </div>
         </div>
       </form>
-    </template>
+    </ng-template>
   </re-cell-edit>
 
   <!--<re-cell-filter>-->
-  <!--<template let-head="" let-column="column">-->
+  <!--<ng-template let-head="" let-column="column">-->
   <!--<form>-->
   <!--<div class="row">-->
   <!--<div class="col-xs-12 col-sm-6">-->
@@ -170,14 +170,14 @@
   <!--</div>-->
   <!--</div>-->
   <!--</form>-->
-  <!--</template>-->
+  <!--</ng-template>-->
   <!--&lt;!&ndash;</re-cell-filter>&ndash;&gt;-->
 
 </re-cell-template>
 
 <re-cell-template #datetimeCellTemplate type="datetime">
   <re-cell-edit>
-    <template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
+    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
               let-cell="">
       <form class="form-inline">
         <div class="form-group">
@@ -192,12 +192,12 @@
           </div>
         </div>
       </form>
-    </template>
+    </ng-template>
   </re-cell-edit>
 </re-cell-template>
 <!--<re-cell-template #selectCellTemplate type="select">-->
 <!--<re-cell-edit>-->
-<!--<template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">-->
+<!--<ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">-->
 <!--<form>-->
 <!--<div class="form-group">-->
 <!--<select class="form-control" autofocus="autofocus" [name]="column.field"-->
@@ -207,11 +207,11 @@
 <!--</select>-->
 <!--</div>-->
 <!--</form>-->
-<!--</template>-->
+<!--</ng-template>-->
 <!--</re-cell-edit>-->
 
 <!--<re-cell-filter>-->
-<!--<template let-head="" let-column="column">-->
+<!--<ng-template let-head="" let-column="column">-->
 <!--<form>-->
 <!--<div class="form-group">-->
 <!--<select class="form-control search" [name]="column.field"-->
@@ -221,7 +221,7 @@
 <!--</select>-->
 <!--</div>-->
 <!--</form>-->
-<!--</template>-->
+<!--</ng-template>-->
 <!--</re-cell-filter>-->
 
 <!--</re-cell-template>-->

@@ -6,7 +6,7 @@ import {
   Injector,
   ComponentRef,
   ElementRef,
-  Renderer,
+  Renderer2,
   HostListener,
   TemplateRef,
   OnDestroy,
@@ -35,7 +35,7 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
               protected componentFactoryResolver: ComponentFactoryResolver,
               protected injector: Injector,
               protected positionService: PositionService,
-              protected renderer: Renderer) {
+              protected renderer: Renderer2) {
   }
 
   abstract getContent(): string | TemplateRef<any>;
@@ -104,8 +104,8 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
     const hostElement = this.elementRef.nativeElement;
     const targetElement = this.popupRef.location.nativeElement;
     const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
-    this.renderer.setElementStyle(targetElement, 'left', `${clientRect.left}px`);
-    this.renderer.setElementStyle(targetElement, 'top', `${clientRect.top}px`);
+    this.renderer.setStyle(targetElement, 'left', `${clientRect.left}px`);
+    this.renderer.setStyle(targetElement, 'top', `${clientRect.top}px`);
   }
 
   protected fillPopup(): T {

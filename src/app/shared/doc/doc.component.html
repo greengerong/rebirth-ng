@@ -12,18 +12,18 @@
   <hr/>
   <re-tabs class="code-tabs" (activeTabChange)="activeTabChange($event)">
     <re-tab id="html" title="HTML">
-      <template reTabContent>
+      <ng-template reTabContent>
         <div class="html" #html>
           <pre>{{component.html}}</pre>
         </div>
-      </template>
+      </ng-template>
     </re-tab>
     <re-tab id="ts" title="TypeScript">
-      <template reTabContent>
+      <ng-template reTabContent>
         <div class="typescript" #typescript>
           <pre>{{component.ts}}</pre>
         </div>
-      </template>
+      </ng-template>
     </re-tab>
   </re-tabs>
 

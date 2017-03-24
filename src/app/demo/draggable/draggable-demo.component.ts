@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 're-draggable-demo',
@@ -8,7 +8,7 @@ export class DraggableDemoComponent implements OnInit {
   source = new Array(10).fill(0).map((_, index) => index + 1);
   target = [];
 
-  constructor(private renderer: Renderer) {
+  constructor() {
   }
 
   ngOnInit() {

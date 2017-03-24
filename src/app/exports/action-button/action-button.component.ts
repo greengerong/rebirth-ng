@@ -1,5 +1,10 @@
 import {
-  Component, OnInit, Input, EventEmitter, ChangeDetectionStrategy, HostListener, Output,
+  Component,
+  Input,
+  EventEmitter,
+  ChangeDetectionStrategy,
+  HostListener,
+  Output,
   TemplateRef
 } from '@angular/core';
 import { ActionItem } from './action-item.model';
