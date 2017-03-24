@@ -1,6 +1,13 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, Type, Input, ViewContainerRef,
-  ComponentFactoryResolver, Injector, ComponentRef, OnDestroy
+  Component,
+  ChangeDetectionStrategy,
+  Type,
+  Input,
+  ViewContainerRef,
+  ComponentFactoryResolver,
+  Injector,
+  ComponentRef,
+  OnDestroy
 } from '@angular/core';
 
 @Component({
