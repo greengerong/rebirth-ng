@@ -30,7 +30,7 @@ export class SwitchComponent implements ControlValueAccessor {
     this.type = <any>rebirthUIConfig.switchBtn.type;
   }
 
-  toggle() {
+  toggle($event?: Event) {
     if (this.disabled) {
       return;
     }

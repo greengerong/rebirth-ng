@@ -49,7 +49,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   }
 
   @HostListener('keydown.arrowLeft', ['$event'])
-  selectPrevSlide($event) {
+  selectPrevSlide($event?: Event) {
     if (this.activeSlide === 0) {
       this.onActiveSlideChange(this.slides.length - 1, CarouselDirection.PREV);
       return;
@@ -58,8 +58,8 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
     this.onActiveSlideChange(this.activeSlide - 1, CarouselDirection.PREV);
   }
 
-  @HostListener('keydown.arrowRight', [])
-  selectNextSlide() {
+  @HostListener('keydown.arrowRight', ['$event'])
+  selectNextSlide($event?: Event) {
     if (this.activeSlide === this.slides.length - 1) {
       this.onActiveSlideChange(0, CarouselDirection.NEXT);
       return;

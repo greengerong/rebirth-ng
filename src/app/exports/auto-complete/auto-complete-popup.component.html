@@ -9,7 +9,7 @@
     <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
               [ngOutletContext]="{ formatter: formatter, term:term, source:source, item:item, $index:$index}"></ng-template>
   </li>
-  <li class="dropdown-item" *ngIf="!source?.length && noResultItemTemplate">
+  <li class="dropdown-item" *ngIf="!source?.length && noResultItemTemplate != null">
     <ng-template [ngTemplateOutlet]="noResultItemTemplate"
               [ngOutletContext]="{ term:term, source:source}"> </ng-template>
   </li>

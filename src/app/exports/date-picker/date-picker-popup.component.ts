@@ -243,7 +243,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     return num < 10 ? `0${num}` : `${num}`;
   }
 
-  private onDisplayWeeksChange() {
+  onDisplayWeeksChange() {
     const firstDayOfMonth = new Date(this.currentYear, this.currentMonth, 1);
     const weekOfDay = firstDayOfMonth.getDay();
     const startDate = new Date(firstDayOfMonth.getTime() - weekOfDay * DatePickerPopupComponent.DAY_DURATION);

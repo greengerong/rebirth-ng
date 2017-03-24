@@ -34,4 +34,8 @@ export class TooltipPopup {
       this.renderer.removeClass(this.elementRef.nativeElement, this.cssClass);
     }
   }
+
+  isTemplateRef(obj) {
+    return obj != null && obj instanceof TemplateRef && obj.elementRef;
+  }
 }
