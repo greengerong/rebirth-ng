@@ -1,4 +1,5 @@
 export * from './data-table.component';
+export * from './data-table.model';
 export * from './tmpl/data-table-column-tmpl.component';
 export * from './tmpl/data-table-cell-view-tmpl.component';
 export * from './tmpl/data-table-cell-edit-tmpl.component';
