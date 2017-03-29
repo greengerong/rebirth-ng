@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewContainerRef } from '@angular/core';
 import { DialogService } from '../../exports';
 
 @Component({
@@ -8,7 +8,7 @@ import { DialogService } from '../../exports';
 })
 export class DialogDemoComponent {
 
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DialogService, private viewContainerRef: ViewContainerRef) {
 
   }
 
@@ -29,9 +29,10 @@ export class DialogDemoComponent {
     this.dialogService.confirm({
       title: 'I\'m a rebirth confirm!',
       content: 'This is <strong>rebirth confirm</strong> content.',
+      html: true,
       // yes: '确定',
       // no: '取消',
-      html: true
+      // rootContainer: this.viewContainerRef
     })
       .subscribe(
         data => console.log('Rebirth confirm get yes result:', data),

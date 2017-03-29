@@ -17,7 +17,9 @@ export class DialogService {
       component: AlertDialogComponent,
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: dialogOptions,
-      modalClass: dialogOptions.cssClass
+      modalClass: dialogOptions.cssClass,
+      injector: dialogOptions.injector,
+      rootContainer: dialogOptions.rootContainer,
     });
   }
 
@@ -26,7 +28,9 @@ export class DialogService {
       component: ConfirmDialogComponent,
       componentFactoryResolver: this.componentFactoryResolver,
       resolve: dialogOptions,
-      modalClass: dialogOptions.cssClass
+      modalClass: dialogOptions.cssClass,
+      injector: dialogOptions.injector,
+      rootContainer: dialogOptions.rootContainer,
     });
   }
 }

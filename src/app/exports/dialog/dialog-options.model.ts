@@ -1,3 +1,5 @@
+import { ViewContainerRef, Injector, ComponentFactoryResolver } from '@angular/core';
+
 export interface DialogOptions {
   title: string;
   content: string;
@@ -5,4 +7,7 @@ export interface DialogOptions {
   yes?: string;
   no?: string;
   cssClass?: string;
+  componentFactoryResolver?: ComponentFactoryResolver;
+  injector?: Injector;
+  rootContainer?: ViewContainerRef;
 }
