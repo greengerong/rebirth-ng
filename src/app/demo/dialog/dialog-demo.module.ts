@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { DialogDemoComponent } from './dialog-demo.component';
-import { RebirthNGModule } from '../../exports/rebirth-ng.module';
+import { RebirthNGModule } from '../../exports';
 
 @NgModule({
   imports: [

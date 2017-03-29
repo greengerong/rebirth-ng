@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { SelectButtonItem } from '../../exports/select-button/select-button-item.model';
+import { SelectButtonItem } from '../../exports';
 
 @Component({
   selector: 're-select-button-demo',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActionItem } from '../../exports/action-button/action-item.model';
+import { ActionItem } from '../../exports';
 
 @Component({
   selector: 're-action-button-demo',

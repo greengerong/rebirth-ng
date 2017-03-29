@@ -2,16 +2,17 @@ import {
   Component, OnInit, ChangeDetectionStrategy, Pipe, PipeTransform,
   ComponentFactoryResolver, EventEmitter
 } from '@angular/core';
-import { formatDate } from '../../exports/utils/date-utils';
 import {
-  RowCheckChangeEventArg, SortChangeEventArg, DataTablePager,
-  RowSelectedEventArg
-} from '../../exports/data-table/data-table.model';
-import { DataTableComponent } from '../../exports/data-table/data-table.component';
-import { ModalService } from '../../exports/modal/modal.service';
-import { Modal } from '../../exports/modal/modal.model';
-import { ModalDismissReasons } from '../../exports/modal/modal-dismiss-reasons.model';
-import { DataTableRowComponent } from '../../exports/data-table/data-table-row.component';
+  RowCheckChangeEventArg,
+  SortChangeEventArg,
+  DataTablePager,
+  RowSelectedEventArg,
+  DataTableComponent,
+  ModalDismissReasons,
+  ModalService,
+  Modal,
+  DataTableRowComponent
+} from '../../exports';
 import * as Immutable from 'immutable';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FlowStep } from '../../exports/flow-step';
+import { FlowStep } from '../../exports';
 
 @Component({
   selector: 're-flow-step-demo',

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { OverlayService } from '../../exports/overlay/overlay.service';
+import { OverlayService } from '../../exports';
 
 @Component({
   selector: 're-overlay-demo',

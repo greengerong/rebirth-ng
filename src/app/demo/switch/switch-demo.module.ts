@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { SwitchDemoComponent } from './switch-demo.component';
-import { RebirthNGModule } from '../../exports/rebirth-ng.module';
+import { RebirthNGModule } from '../../exports';
 
 @NgModule({
   imports: [CommonModule, RebirthNGModule, FormsModule],

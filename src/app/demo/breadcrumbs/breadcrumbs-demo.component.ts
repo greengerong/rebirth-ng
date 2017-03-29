@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Breadcrumb } from '../../exports/breadcrumbs/breadcrumbs.model';
+import { Breadcrumb } from '../../exports';
 import * as Immutable from 'immutable';
 
 @Component({

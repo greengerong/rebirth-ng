@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { MenuBar } from '../../exports/menu-bar/menu-bar.model';
+import { MenuBar } from '../../exports';
 
 @Component({
   selector: 're-menu-bar-demo',

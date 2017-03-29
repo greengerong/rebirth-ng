@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PanelComponent } from '../../exports/panel/panel.component';
+import { PanelComponent } from '../../exports';
 
 @Component({
   selector: 're-accordion-demo',

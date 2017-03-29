@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { DialogService } from '../../exports/dialog/dialog.service';
+import { Component } from '@angular/core';
+import { DialogService } from '../../exports';
 
 @Component({
   selector: 're-tabs-demo',

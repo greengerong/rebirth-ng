@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InfiniteScrollComponent } from '../../exports/infinite-scroll/infinite-scroll.component';
+import { InfiniteScrollComponent } from '../../exports';
 import * as Immutable from 'immutable';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 import { Jsonp, URLSearchParams } from '@angular/http';
-import { AutoCompleteDirective } from '../../exports/auto-complete/auto-complete.directive';
+import { AutoCompleteDirective } from '../../exports';
 
 
 @Component({

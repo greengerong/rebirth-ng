@@ -1,6 +1,5 @@
 import { Component, EventEmitter, ComponentFactoryResolver, ChangeDetectionStrategy, OnInit } from '@angular/core';
-import { ModalService } from '../../exports/modal/modal.service';
-import { Modal } from '../../exports/modal/modal.model';
+import { Modal, ModalService } from '../../exports';
 
 @Component({
   selector: 're-modal-demo',

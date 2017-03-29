@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { DialogService } from '../../exports/dialog/dialog.service';
+import { DialogService } from '../../exports';
 
 @Component({
   selector: 're-dialog-demo',

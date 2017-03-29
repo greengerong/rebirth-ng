@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { PaginationDemoComponent } from './pagination-demo.component';
-import { RebirthNGModule } from '../../exports/rebirth-ng.module';
+import { RebirthNGModule } from '../../exports';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

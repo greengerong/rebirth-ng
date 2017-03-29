@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { DraggableDemoComponent } from './draggable-demo.component';
-import { RebirthNGModule } from '../../exports/rebirth-ng.module';
+import { RebirthNGModule } from '../../exports';
 import { CommonModule } from '@angular/common';
 
 @NgModule({

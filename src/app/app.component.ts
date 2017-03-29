@@ -5,6 +5,7 @@ import { MenuBar } from './exports/menu-bar/menu-bar.model';
 import { REBIRTH_NG_I18N_ZHCN } from './exports/rebirth-ng.i18n.zh-cn';
 import { ActivatedRoute } from '@angular/router';
 import { ThemeService } from './shared';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 're-app',
@@ -24,7 +25,8 @@ export class AppComponent implements OnInit {
               private  router: ActivatedRoute,
               private  themeService: ThemeService,
               private  renderer: Renderer2,
-              private elementRef: ElementRef) {
+              private elementRef: ElementRef,
+              private domSanitizer: DomSanitizer) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
     this.router.queryParams.subscribe((params: any) => {
       this.themeService.setupTheme(params.theme, this.renderer, this.elementRef);
@@ -34,8 +36,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.gettingStarted = this.demoConfigService.gettingStarted.readMe;
+    this.gettingStarted = this.domSanitizer.bypassSecurityTrustHtml(this.demoConfigService.gettingStarted.readMe);
     this.components = this.demoConfigService.components
+      .map(cmp => {
+        cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);
+        cmp.ts = this.fixTSModuleImport(cmp.ts);
+        return cmp;
+      })
       .sort((a, b) => a.name.localeCompare(b.name));
 
     this.setupMenus();
@@ -43,6 +50,10 @@ export class AppComponent implements OnInit {
     // for (let i = 1; i <= 5000; i++) {
     //   this.largeDataSource.push({ id: i, name: `Name ${i}`, age: 10 });
     // }
+  }
+
+  private fixTSModuleImport(code): string {
+    return code.replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
   }
 
   private setupMenus() {
