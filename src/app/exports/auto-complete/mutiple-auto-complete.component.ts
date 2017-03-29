@@ -7,7 +7,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 @Component({
   selector: 're-mutiple-auto-complete',
   templateUrl: './mutiple-auto-complete.component.html',
-  styleUrls: ['./mutiple-auto-complete-demo.component.scss'],
+  styleUrls: ['./mutiple-auto-complete.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => MutipleAutoCompleteComponent),
