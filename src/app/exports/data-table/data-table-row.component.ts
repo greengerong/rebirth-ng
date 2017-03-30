@@ -18,6 +18,7 @@ import { ForceUpdateReason } from './force-update-reason.model';
 export class DataTableRowComponent {
   @Input() checkable: boolean;
   @Input() rowItem: any;
+  @Input() selectable: boolean;
   @Input() rowIndex: number;
   @Input() allChecked: boolean;
   @Input() columns: QueryList<DataTableColumnTmplComponent>;

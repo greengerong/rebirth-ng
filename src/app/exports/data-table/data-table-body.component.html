@@ -1,4 +1,4 @@
-<tr *ngFor="let rowItem of dataSource; let rowIndex = index" reDataTableRow
+<tr *ngFor="let rowItem of dataSource; let rowIndex = index" reDataTableRow [selectable]="selectable"
     [checkable]="checkable" [rowIndex]="rowIndex" [rowItem]="rowItem" [columns]="columns" [editRowItem]="editRowItem"
     [editModel]="editModel" [dataTableTemplates]="dataTableTemplates" [allChecked]="allChecked">
 </tr>
