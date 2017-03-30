@@ -1159,19 +1159,6 @@
     </section>
 
 
-    <section>
-        <h3 id="constructor">Constructor</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>constructor()</code>
-                        </td>
-                    </tr>
-    
-                </tbody>
-            </table>
-    </section>
 
     <section>
         <h3 id="methods">Methods</h3>
@@ -1285,7 +1272,7 @@
 </p>
         </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
 import { MenuBar } from &#x27;./menu-bar.model&#x27;;
 import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
@@ -1304,10 +1291,6 @@ export class MenuBarComponent {
   @Input() direction: &#x27;down&#x27; | &#x27;up&#x27;;
   @Input() inverse &#x3D; false;
   showNavBar: boolean;
-
-  constructor() {
-
-  }
 
   toggle($event?: Event) {
     stopPropagationIfExist($event);

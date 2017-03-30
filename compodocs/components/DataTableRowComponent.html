@@ -1198,6 +1198,21 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>selectable</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>boolean</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </section>
 
 
@@ -1383,6 +1398,7 @@ import { ForceUpdateReason } from &#x27;./force-update-reason.model&#x27;;
 export class DataTableRowComponent {
   @Input() checkable: boolean;
   @Input() rowItem: any;
+  @Input() selectable: boolean;
   @Input() rowIndex: number;
   @Input() allChecked: boolean;
   @Input() columns: QueryList&lt;DataTableColumnTmplComponent&gt;;

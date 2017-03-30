@@ -1173,12 +1173,15 @@
             </section>
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre><code class="hljs javascript">export interface MenuItem {
+        <pre><code class="hljs javascript">import { TemplateRef } from &#x27;@angular/core&#x27;;
+export interface MenuItem {
   id?: string | number;
   text?: string;
   icon?: string;
   url?: string;
   router?: any[];
+  handler?: (item: MenuItem) &#x3D;&gt; void;
+  itemTemplate?: TemplateRef&lt;any&gt;;
   target?: &#x27;_blank&#x27; | &#x27;_self&#x27; | &#x27;_parent&#x27; | &#x27;_top&#x27; | any;
   divider?: boolean;
   header?: boolean;
