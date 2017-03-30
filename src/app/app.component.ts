@@ -28,14 +28,12 @@ export class AppComponent implements OnInit {
               private elementRef: ElementRef,
               private domSanitizer: DomSanitizer) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
-    this.router.queryParams.subscribe((params: any) => {
-      this.themeService.setupTheme(params.theme, this.renderer, this.elementRef);
-    });
 
     // this.rebirthConfig.extend(REBIRTH_NG_I18N_ZHCN); i18n
   }
 
   ngOnInit(): void {
+    this.themeService.setupTheme('', this.renderer, this.elementRef);
     this.gettingStarted = this.domSanitizer.bypassSecurityTrustHtml(this.demoConfigService.gettingStarted.readMe);
     this.components = this.demoConfigService.components
       .map(cmp => {
@@ -56,6 +54,10 @@ export class AppComponent implements OnInit {
     return code.replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
   }
 
+  private changeTheme(menu) {
+    this.themeService.setupTheme(menu.text, this.renderer, this.elementRef);
+  }
+
   private setupMenus() {
     const cmpMenus = this.components.map(item => {
       return {
@@ -63,6 +65,9 @@ export class AppComponent implements OnInit {
         url: `#${item.name}`
       };
     });
+
+
+    const changeThemeHandler = (item) => this.changeTheme(item);
 
     this.menus = {
       logo: 'http://greengerong.com/rebirth/assets/img/wolf2.png',
@@ -97,35 +102,35 @@ export class AppComponent implements OnInit {
           children: [
             {
               text: 'Default',
-              url: '?theme=Default'
+              handler: changeThemeHandler
             },
             {
               text: 'Dark',
-              url: '?theme=Dark'
+              handler: changeThemeHandler
             },
             {
               text: 'Cosmo',
-              url: '?theme=Cosmo'
+              handler: changeThemeHandler
             },
             {
               text: 'Paper',
-              url: '?theme=Paper'
+              handler: changeThemeHandler
             },
             {
               text: 'Journal',
-              url: '?theme=Journal'
+              handler: changeThemeHandler
             },
             {
               text: 'Readable',
-              url: '?theme=Readable'
+              handler: changeThemeHandler
             },
             {
               text: 'United',
-              url: '?theme=United'
+              handler: changeThemeHandler
             },
             {
               text: 'Sandstone',
-              url: '?theme=Sandstone'
+              handler: changeThemeHandler
             },
             // {
             //   text: 'Material-Design',

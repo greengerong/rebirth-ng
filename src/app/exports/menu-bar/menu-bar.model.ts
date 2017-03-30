@@ -4,6 +4,7 @@ export interface MenuItem {
   icon?: string;
   url?: string;
   router?: any[];
+  handler?: (item: MenuItem) => void;
   target?: '_blank' | '_self' | '_parent' | '_top' | any;
   divider?: boolean;
   header?: boolean;
