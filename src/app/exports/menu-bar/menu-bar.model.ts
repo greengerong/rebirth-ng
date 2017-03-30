@@ -1,3 +1,4 @@
+import { TemplateRef } from '@angular/core';
 export interface MenuItem {
   id?: string | number;
   text?: string;
@@ -5,6 +6,7 @@ export interface MenuItem {
   url?: string;
   router?: any[];
   handler?: (item: MenuItem) => void;
+  itemTemplate?: TemplateRef<any>;
   target?: '_blank' | '_self' | '_parent' | '_top' | any;
   divider?: boolean;
   header?: boolean;

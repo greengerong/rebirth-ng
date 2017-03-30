@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
 import { stopPropagationIfExist } from '../utils/dom-utils';
 
@@ -17,10 +17,6 @@ export class MenuBarComponent {
   @Input() direction: 'down' | 'up';
   @Input() inverse = false;
   showNavBar: boolean;
-
-  constructor() {
-
-  }
 
   toggle($event?: Event) {
     stopPropagationIfExist($event);

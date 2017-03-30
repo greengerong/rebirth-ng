@@ -16,7 +16,7 @@
   <ng-container *ngFor="let menu of menus">
 
     <li *ngIf="!menu.children?.length" routerLinkActive="active" class="{{menu.cssClass}}">
-      <ng-template [ngTemplateOutlet]="defaultMenuTemplate"
+      <ng-template [ngTemplateOutlet]="menu.itemTemplate || defaultMenuTemplate"
                    [ngOutletContext]="{ menu: menu }">
       </ng-template>
     </li>
@@ -32,7 +32,7 @@
         <ng-container *ngFor="let child of menu?.children">
           <li *ngIf="!child.divider && !child.header" role="menuitem" routerLinkActive="active"
               class="{{menu.cssClass}}">
-            <ng-template [ngTemplateOutlet]="defaultMenuTemplate"
+            <ng-template [ngTemplateOutlet]="child.itemTemplate || defaultMenuTemplate"
                          [ngOutletContext]="{ menu: child }">
             </ng-template>
           </li>
