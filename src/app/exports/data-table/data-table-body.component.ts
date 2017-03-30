@@ -15,7 +15,8 @@ export class DataTableBodyComponent {
   @Input() selectable: boolean;
   @Input() editModel: 'row' | 'cell';
   @Input() editRowItem: any;
-  @Input() dataSource: any[] = [];
+  @Input() dataSource: any;
+  @Input() emptyLinePlaceholder: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
 

@@ -2,3 +2,6 @@
     [checkable]="checkable" [rowIndex]="rowIndex" [rowItem]="rowItem" [columns]="columns" [editRowItem]="editRowItem"
     [editModel]="editModel" [dataTableTemplates]="dataTableTemplates" [allChecked]="allChecked">
 </tr>
+<tr *ngIf="!dataSource?.size">
+  <td [attr.colspan]="columns.length" class="text-center">{{emptyLinePlaceholder || 'Data source is empty!'}}</td>
+</tr>

@@ -90,6 +90,9 @@ export class DataTableDemoComponent implements OnInit {
 
   ]);
 
+  emptyDataSource = Immutable.List([]);
+  emptyLinePlaceholder = '暂时没有相关数据';
+
   dataTableOptions = {
     columns: [
       {

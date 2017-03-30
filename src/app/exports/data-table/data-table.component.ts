@@ -32,6 +32,7 @@ import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.compon
 export class DataTableComponent implements OnDestroy {
 
   @Input() dataSource: any[] = [];
+  @Input() emptyLinePlaceholder: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
