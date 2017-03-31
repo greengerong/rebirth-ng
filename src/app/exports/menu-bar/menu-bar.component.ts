@@ -17,6 +17,7 @@ export class MenuBarComponent {
   @Input() direction: 'down' | 'up';
   @Input() inverse = false;
   showNavBar: boolean;
+  sidebarOpen: boolean;
 
   toggle($event?: Event) {
     stopPropagationIfExist($event);

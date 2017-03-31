@@ -4,10 +4,10 @@
      [target]="menu.target || '_self'">
     <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
 
-  <a *ngIf="menu.url" [href]="menu.url" [target]="menu.target || '_self'">
+  <a *ngIf="menu.handler" (click)="menu.handler(menu)">
     <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
 
-  <a *ngIf="menu.handler" (click)="menu.handler(menu)">
+  <a *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || '_self'">
     <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
 
 </ng-template>

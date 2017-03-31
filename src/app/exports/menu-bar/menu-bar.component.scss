@@ -32,7 +32,7 @@ nav.sidebar {
     float: left;
     margin-bottom: 0px;
 
-    &:hover {
+    &.sidebar-open, &:hover {
       margin-left: 0px;
     }
 
