@@ -1131,7 +1131,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>any[]</code>
+                                <em>Type:</em>    <code>any</code>
 
                               </p>
                         </td>
@@ -1177,6 +1177,21 @@
                         <td class="col-md-10">
                               <p>
                                 <em>Type:</em>    <code>any</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>emptyLinePlaceholder</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>string</code>
 
                               </p>
                         </td>
@@ -1266,7 +1281,8 @@ export class DataTableBodyComponent {
   @Input() selectable: boolean;
   @Input() editModel: &#x27;row&#x27; | &#x27;cell&#x27;;
   @Input() editRowItem: any;
-  @Input() dataSource: any[] &#x3D; [];
+  @Input() dataSource: any;
+  @Input() emptyLinePlaceholder: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
 

@@ -1164,6 +1164,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>emptyLinePlaceholder</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>string</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>hover</code>
                         </td>
                         <td class="col-md-10">
@@ -1979,6 +1994,7 @@ import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.c
 export class DataTableComponent implements OnDestroy {
 
   @Input() dataSource: any[] &#x3D; [];
+  @Input() emptyLinePlaceholder: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
