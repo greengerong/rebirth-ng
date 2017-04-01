@@ -33,6 +33,7 @@ import {
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([]),
     SharedModule.forRoot(),
     RebirthNGModule.forRoot(),
+    BrowserAnimationsModule,
     ModalDemoModule,
     DialogDemoModule,
     PagerDemoModule,
