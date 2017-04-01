@@ -10,10 +10,12 @@ import {
   HostListener,
   TemplateRef,
   OnDestroy,
-  Type
+  Type,
+  EventEmitter
 } from '@angular/core';
 import { PositionService } from '../position/positioning.service';
 import { TooltipPopup } from './tooltip-popup';
+import { stopPropagationIfExist } from '../utils/dom-utils';
 
 export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestroy {
   @Input() context: any;
@@ -29,6 +31,7 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
   };
   listens: Function[] = [];
   tooltipPopupType: Type<T>;
+  positionChange = new EventEmitter<any>();
 
   constructor(protected viewContainerRef: ViewContainerRef,
               protected elementRef: ElementRef,
@@ -45,6 +48,11 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
     this.popupRef = this.viewContainerRef.createComponent(factory, 0, this.injector);
     this.fillPopup();
     this.registerTriggers();
+    this.positionChange
+      .filter(() => this.popupRef && this.popupRef.instance.isOpen)
+      .debounceTime(100)
+      .distinctUntilChanged()
+      .subscribe(() => this.positionTooltip());
   }
 
   @HostListener('document:click', ['$event'])
@@ -56,6 +64,16 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
       }
     }
   }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize($event: Event) {
+    this.positionChange.emit($event);
+  }
+
+  // @HostListener('document:scroll', ['$event'])
+  // onDocumentScroll($event: Event) {
+  //   this.positionChange.emit($event);
+  // }
 
   ngOnDestroy(): void {
     this.listens.forEach(unregister => unregister());
@@ -93,10 +111,16 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
     const hostElement = this.elementRef.nativeElement;
     const trigger = this.triggers[this.trigger];
     if (trigger[0]) {
-      this.listens.push(this.renderer.listen(hostElement, trigger[0], () => this.show()));
+      this.listens.push(this.renderer.listen(hostElement, trigger[0], (event) => {
+        stopPropagationIfExist(event);
+        this.show();
+      }));
     }
     if (trigger[1]) {
-      this.listens.push(this.renderer.listen(hostElement, trigger[1], () => this.hide()));
+      this.listens.push(this.renderer.listen(hostElement, trigger[1], ($event) => {
+        stopPropagationIfExist($event);
+        this.hide();
+      }));
     }
   }
 
