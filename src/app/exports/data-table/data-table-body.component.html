@@ -3,5 +3,5 @@
     [editModel]="editModel" [dataTableTemplates]="dataTableTemplates" [allChecked]="allChecked">
 </tr>
 <tr *ngIf="isEmpty(dataSource)">
-  <td [attr.colspan]="columns.length" class="text-center">{{emptyLinePlaceholder || 'Data source is empty!'}}</td>
+  <td [attr.colspan]="columns.length" class="text-center">{{emptyRowText}}</td>
 </tr>

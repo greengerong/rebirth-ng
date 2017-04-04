@@ -16,7 +16,7 @@ export class DataTableBodyComponent {
   @Input() editModel: 'row' | 'cell';
   @Input() editRowItem: any;
   @Input() dataSource: any;
-  @Input() emptyLinePlaceholder: string;
+  @Input() emptyRowText: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
 

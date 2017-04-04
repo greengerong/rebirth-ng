@@ -21,6 +21,7 @@ import { DataTableHeadTmplComponent } from './tmpl/data-table-head-tmpl.componen
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.component';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-data-table',
@@ -32,7 +33,7 @@ import { DataTablePagerTmplComponent } from './tmpl/data-table-pager-tmpl.compon
 export class DataTableComponent implements OnDestroy {
 
   @Input() dataSource: any[] = [];
-  @Input() emptyLinePlaceholder: string;
+  @Input() emptyRowText: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
@@ -68,6 +69,9 @@ export class DataTableComponent implements OnDestroy {
   editRowItem: any;
   documentClickEvent = new EventEmitter<Event>();
 
+  constructor(private rebirthNGConfig: RebirthNGConfig) {
+    this.emptyRowText = rebirthNGConfig.datatable.emptyRowText;
+  }
 
   @HostListener('document:click', ['$event'])
   onDocumentClick($event: Event) {
