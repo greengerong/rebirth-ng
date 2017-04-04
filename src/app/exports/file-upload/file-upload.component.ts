@@ -1,10 +1,24 @@
 import {
-  Component, ChangeDetectionStrategy, ViewChild, ElementRef, Input, AfterViewInit,
-  Renderer2, Output, EventEmitter, ChangeDetectorRef
+  Component,
+  ChangeDetectionStrategy,
+  ViewChild,
+  ElementRef,
+  Input,
+  AfterViewInit,
+  Renderer2,
+  Output,
+  EventEmitter,
+  ChangeDetectorRef
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
-import { Http, RequestOptionsArgs, Response } from '@angular/http';
+import { Http, Response, RequestOptions } from '@angular/http';
+
+/**
+ * FileUploadComponent still WIP.
+ *
+ * @experimental
+ */
 
 @Component({
   selector: 're-file-upload',
@@ -19,7 +33,7 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() maxItems: number;
   @Input() maxFileSize: number;
   @Input() uploadUrl: string;
-  @Input() uploadRequestOptions: RequestOptionsArgs;
+  @Input() uploadRequestOptions: RequestOptions;
   @Input() imgPreview: boolean;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
