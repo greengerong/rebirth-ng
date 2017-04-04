@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
 import { stopPropagationIfExist } from '../utils/dom-utils';
 
@@ -13,6 +13,7 @@ export class MenuBarComponent {
   @Input() cssClass: string;
   @Input() type: 'navbar-fixed-top' | 'navbar-fixed-bottom' | 'container-fluid'
     | 'navbar-static-top' | 'navbar-static-bottom' | 'navbar-form' | 'sidebar';
+  @Input() contentType: 'container-fluid' | 'container' = 'container';
   @Input() menuOptions: MenuBar = <MenuBar>{};
   @Input() direction: 'down' | 'up';
   @Input() inverse = false;

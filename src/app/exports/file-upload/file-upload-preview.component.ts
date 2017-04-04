@@ -13,6 +13,11 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 })
 export class FileUploadPreviewComponent {
 
+  @Input() imgPreview: boolean;
   @Input() selectFiles: SelectFileModel[] = [];
+  @Output() removeFile = new EventEmitter<SelectFileModel>();
 
+  onRemoveFile(fileItem) {
+    this.removeFile.emit(fileItem);
+  }
 }

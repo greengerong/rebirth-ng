@@ -4,6 +4,7 @@ import {
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
+import { Http, RequestOptionsArgs, Response } from '@angular/http';
 
 @Component({
   selector: 're-file-upload',
@@ -18,12 +19,16 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() maxItems: number;
   @Input() maxFileSize: number;
   @Input() uploadUrl: string;
+  @Input() uploadRequestOptions: RequestOptionsArgs;
+  @Input() imgPreview: boolean;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
+  @Output() fileUploadSuccess = new EventEmitter<any>();
+  @Output() fileUploadError = new EventEmitter<any>();
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
   errors: string[] = [];
 
-  constructor(private renderer: Renderer2, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private renderer: Renderer2, private http: Http, private changeDetectorRef: ChangeDetectorRef) {
 
   }
 
@@ -36,6 +41,9 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   isMoreThanMaxItems() {
+    if (!this.multiple) {
+      return this.selectFiles.length >= 1;
+    }
     return this.maxItems && (this.selectFiles.length >= this.maxItems);
   }
 
@@ -65,8 +73,34 @@ export class FileUploadComponent implements AfterViewInit {
     }
   }
 
+  removeAllUnUploadFiles() {
+    this.selectFiles = this.selectFiles.filter(item => item.uploaded);
+  }
+
+  onRemoveFile(fileItem) {
+    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+  }
+
+  uploadAllFiles() {
+    if (this.selectFiles.length) {
+      const formData = new FormData();
+      // this.selectFiles.filter()
+      this.selectFiles.reduce((formData, fileItem) => {
+        formData.append('file', fileItem.file);
+        return formData;
+      }, formData);
+
+      this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
+        .subscribe(
+          (res: Response) => this.fileUploadSuccess.emit(res.json()),
+          error => this.fileUploadError.emit(error)
+        );
+    }
+  }
+
   private handleFileChoose(uploadFiles: FileList) {
     const files = this.validFiles(Array.from(uploadFiles));
+    //TODO: (比对去掉超过maxItems的部分)。
     this.mapFileModel(files)
       .then(fileModels => {
         this.selectFiles = [...this.selectFiles, ...fileModels];
@@ -84,6 +118,7 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   validFile(file: File): boolean {
+    //TODO: (验证还需进一步完善)。
     let errors = [];
     if (this.maxFileSize && file.size > this.maxFileSize) {
       errors.push(`${file.name}: size is too large, allowed size is ${this.maxFileSize};`);

@@ -5,8 +5,12 @@
             [disabled]="isMoreThanMaxItems()">
       <i class="glyphicon glyphicon-plus"></i> Choose
     </button>
-    <button class="btn btn-info"><i class="glyphicon glyphicon-upload"></i> Upload</button>
-    <button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> Cancel</button>
+    <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
+      <i class="glyphicon glyphicon-upload"></i> Upload
+    </button>
+    <button class="btn btn-danger" (click)="removeAllUnUploadFiles()">
+      <i class="glyphicon glyphicon-trash"></i> Cancel
+    </button>
   </div>
 
   <re-alert-box type="danger" [closable]="true" (close)="clearErrors()" *ngIf="errors.length">
@@ -15,5 +19,6 @@
     </ul>
   </re-alert-box>
 
-  <re-file-upload-preview [selectFiles]="selectFiles"></re-file-upload-preview>
+  <re-file-upload-preview [selectFiles]="selectFiles" [imgPreview]="imgPreview"
+                          (removeFile)="onRemoveFile($event)"></re-file-upload-preview>
 </div>

@@ -2,14 +2,17 @@
   <table class="table">
     <tbody>
     <tr *ngFor="let fileItem of selectFiles">
-      <td>
-        <img *ngIf="fileItem.dataUrl" style="width: 50px;" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"/>
+      <td *ngIf="imgPreview">
+        <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"/>
       </td>
-      <td>{{fileItem.file.name}}</td>
-      <td>{{fileItem.displaySize}}</td>
       <td>
-        <i class="glyphicon glyphicon-upload"></i>
-        <i class="glyphicon glyphicon-trash"></i>
+        {{fileItem.file.name}}
+      </td>
+      <td>
+        {{fileItem.displaySize}}bytes
+      </td>
+      <td>
+        <i *ngIf="!fileItem.uploaded"  class="glyphicon glyphicon-trash" (click)="onRemoveFile(fileItem)"></i>
       </td>
     </tr>
     </tbody>
