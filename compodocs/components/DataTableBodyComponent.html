@@ -1211,7 +1211,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>emptyLinePlaceholder</code>
+                            <code>emptyRowText</code>
                         </td>
                         <td class="col-md-10">
                               <p>
@@ -1254,6 +1254,33 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isEmpty</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>isEmpty(dataSource: any)</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 
     <section>
         <h3 id="inputs">Properties</h3>
@@ -1306,12 +1333,16 @@ export class DataTableBodyComponent {
   @Input() editModel: &#x27;row&#x27; | &#x27;cell&#x27;;
   @Input() editRowItem: any;
   @Input() dataSource: any;
-  @Input() emptyLinePlaceholder: string;
+  @Input() emptyRowText: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
 
   constructor(public dt: DataTableComponent) {
 
+  }
+
+  isEmpty(dataSource) {
+    return !dataSource || !(dataSource.length || dataSource.size);
   }
 }
 </code></pre>

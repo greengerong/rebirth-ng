@@ -1188,7 +1188,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>emptyLinePlaceholder</code>
+                            <code>emptyRowText</code>
                         </td>
                         <td class="col-md-10">
                               <p>
@@ -1451,6 +1451,19 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(rebirthNGConfig: <a href="./injectables/RebirthNGConfig.html" >RebirthNGConfig</a>)</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
 
     <section>
         <h3 id="methods">Methods</h3>
@@ -2007,6 +2020,7 @@ import { DataTableHeadTmplComponent } from &#x27;./tmpl/data-table-head-tmpl.com
 import { DataTableFootTmplComponent } from &#x27;./tmpl/data-table-foot-tmpl.component&#x27;;
 import { DataTableTmplsComponent } from &#x27;./tmpl/data-table-tmpls.component&#x27;;
 import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.component&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
 @Component({
   selector: &#x27;re-data-table&#x27;,
@@ -2018,7 +2032,7 @@ import { DataTablePagerTmplComponent } from &#x27;./tmpl/data-table-pager-tmpl.c
 export class DataTableComponent implements OnDestroy {
 
   @Input() dataSource: any[] &#x3D; [];
-  @Input() emptyLinePlaceholder: string;
+  @Input() emptyRowText: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;
@@ -2054,6 +2068,9 @@ export class DataTableComponent implements OnDestroy {
   editRowItem: any;
   documentClickEvent &#x3D; new EventEmitter&lt;Event&gt;();
 
+  constructor(private rebirthNGConfig: RebirthNGConfig) {
+    this.emptyRowText &#x3D; rebirthNGConfig.datatable.emptyRowText;
+  }
 
   @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
   onDocumentClick($event: Event) {
