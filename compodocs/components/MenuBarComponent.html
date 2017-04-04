@@ -96,6 +96,9 @@
                                     <a href="./modules/DraggableModule.html" >DraggableModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
                                 </li>
                                 <li class="link">
@@ -237,6 +240,12 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FileUploadPreviewComponent.html" >FileUploadPreviewComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
@@ -494,6 +503,9 @@
                                     <a href="./interfaces/SelectDateChangeEventArgs.html" >SelectDateChangeEventArgs</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./interfaces/SelectFileModel.html" >SelectFileModel</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                 </li>
                         </ul>
@@ -588,6 +600,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/FlowStepModule.html" >FlowStepModule</a>
@@ -731,6 +746,12 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FileUploadPreviewComponent.html" >FileUploadPreviewComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/FlowStepComponent.html" >FlowStepComponent</a>
@@ -986,6 +1007,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/SelectDateChangeEventArgs.html" >SelectDateChangeEventArgs</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./interfaces/SelectFileModel.html" >SelectFileModel</a>
                                        </li>
                                        <li class="link">
                                            <a href="./interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
@@ -1253,6 +1277,21 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> sidebarOpen</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>sidebarOpen:     <code>boolean</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </section>
 </div>
         <div class="tab-pane fade" id="readme">
@@ -1291,6 +1330,7 @@ export class MenuBarComponent {
   @Input() direction: &#x27;down&#x27; | &#x27;up&#x27;;
   @Input() inverse &#x3D; false;
   showNavBar: boolean;
+  sidebarOpen: boolean;
 
   toggle($event?: Event) {
     stopPropagationIfExist($event);
