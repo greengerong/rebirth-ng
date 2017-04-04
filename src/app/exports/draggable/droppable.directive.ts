@@ -21,7 +21,7 @@ export class DroppableDirective {
 
   @HostListener('drop', ['$event'])
   drop($event) {
-    if (this.isDropGroup($event)) {
+    if (!this.group || this.isDropGroup($event)) {
       $event.preventDefault();
       this.onDrop.emit($event);
     }

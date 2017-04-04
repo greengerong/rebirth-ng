@@ -23,3 +23,18 @@ export function stopPropagationIfExist($event?: Event) {
     $event.stopPropagation();
   }
 }
+
+export function readFileAsDataURL(file) {
+  return new Promise<any>((resolve, reject) => {
+    if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        resolve(this.result);
+      }, false);
+
+      return reader.readAsDataURL(file);
+    }
+
+    resolve(null);
+  });
+}

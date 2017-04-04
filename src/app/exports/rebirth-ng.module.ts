@@ -29,6 +29,7 @@ import { DataTableModule } from './data-table';
 import { InfiniteScrollModule } from './infinite-scroll';
 import { RebirthCommonModule } from './common';
 import { DraggableModule } from './draggable';
+import { FileUploadModule } from './file-upload';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { DraggableModule } from './draggable';
     FlowStepModule,
     InfiniteScrollModule,
     DataTableModule,
+    FileUploadModule
   ],
   exports: [
     RebirthCommonModule,
@@ -87,7 +89,8 @@ import { DraggableModule } from './draggable';
     FlowStepModule,
     InfiniteScrollModule,
     DataTableModule,
-    DraggableModule
+    DraggableModule,
+    FileUploadModule
   ],
   declarations: [],
   providers: [],

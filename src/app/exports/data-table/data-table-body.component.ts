@@ -23,4 +23,8 @@ export class DataTableBodyComponent {
   constructor(public dt: DataTableComponent) {
 
   }
+
+  isEmpty(dataSource) {
+    return !dataSource || !(dataSource.length || dataSource.size);
+  }
 }

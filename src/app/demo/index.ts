@@ -9,6 +9,7 @@ export * from './overlay';
 export * from './date-picker';
 export * from './dialog';
 export * from './draggable';
+export * from './file-upload';
 export * from './flow-step';
 export * from './infinite-scroll';
 export * from './menu-bar';

@@ -29,7 +29,8 @@ import {
   FlowStepDemoModule,
   InfiniteScrollDemoModule,
   DataTableDemoModule,
-  DraggableDemoModule
+  DraggableDemoModule,
+  FileUploadDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -70,7 +71,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FlowStepDemoModule,
     DataTableDemoModule,
     InfiniteScrollDemoModule,
-    DraggableDemoModule
+    DraggableDemoModule,
+    FileUploadDemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { <%= componentName %>DemoComponent } from './<%= componentSelector %>-demo.component';
-import { RebirthUIModule } from '../../exports/rebirth-ng.module';
+import { RebirthNGModule } from '../../exports';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    RebirthUIModule
+    RebirthNGModule
   ],
   exports: [
     <%= componentName %>DemoComponent

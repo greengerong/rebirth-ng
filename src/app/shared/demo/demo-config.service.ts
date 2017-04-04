@@ -24,7 +24,8 @@ import {
   FlowStepDemoComponent,
   InfiniteScrollDemoComponent,
   DataTableDemoComponent,
-  DraggableDemoComponent
+  DraggableDemoComponent,
+  FileUploadDemoComponent,
   // component import
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
@@ -248,6 +249,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/draggable/README.md'),
       html: require('!raw-loader!../../demo/draggable/draggable-demo.component.html'),
       ts: require('!raw-loader!../../demo/draggable/draggable-demo.component.ts'),
+    },
+    {
+      name: 'FileUpload',
+      directory: 'file-upload',
+      cmp: FileUploadDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/file-upload/README.md'),
+      html: require('!raw-loader!../../demo/file-upload/file-upload-demo.component.html'),
+      ts: require('!raw-loader!../../demo/file-upload/file-upload-demo.component.ts'),
     },
     // component declare
   ];
