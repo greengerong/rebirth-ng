@@ -96,6 +96,7 @@ export class FileUploadComponent implements AfterViewInit {
 
   addNewFile(fileInput: HTMLInputElement, $event) {
     $event.stopPropagation();
+    fileInput.value = null;
     fileInput.click(); // simulate file input event
   }
 
@@ -185,7 +186,7 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   private validFileType(file: File) {
-    return this.accept.split(';').some(type => {
+    return this.accept.split(',').some(type => {
       return new RegExp(`^${type.replace(/\*/g, '.*')}$`).test(file.type);
     });
   }
