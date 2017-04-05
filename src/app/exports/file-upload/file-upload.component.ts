@@ -13,16 +13,12 @@ import {
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
 import { Http, Response, RequestOptions } from '@angular/http';
-
-/**
- * FileUploadComponent still WIP.
- *
- * @experimental
- */
+import { formatFileSize } from '../utils/lange-utils';
 
 @Component({
   selector: 're-file-upload',
   templateUrl: './file-upload.component.html',
+  styleUrls: ['./file-upload.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'fileUpload'
 })
@@ -30,16 +26,21 @@ export class FileUploadComponent implements AfterViewInit {
 
   @Input() accept: string;
   @Input() multiple: boolean;
+  @Input() autoUpload: boolean;
   @Input() maxItems: number;
   @Input() maxFileSize: number;
   @Input() uploadUrl: string;
+  @Input() uploadParamName: string = 'file';
   @Input() uploadRequestOptions: RequestOptions;
   @Input() imgPreview: boolean;
+  @Input() previewWidth = '50px';
+  @Input() cssClass: string;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
   @Output() fileUploadError = new EventEmitter<any>();
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
+  uploadFiles: SelectFileModel[] = [];
   errors: string[] = [];
 
   constructor(private renderer: Renderer2, private http: Http, private changeDetectorRef: ChangeDetectorRef) {
@@ -87,8 +88,9 @@ export class FileUploadComponent implements AfterViewInit {
     }
   }
 
-  removeAllUnUploadFiles() {
-    this.selectFiles = this.selectFiles.filter(item => item.uploaded);
+  removeAllSelectedFiles() {
+    this.selectFiles = [];
+    this.clearErrors();
   }
 
   onRemoveFile(fileItem) {
@@ -96,36 +98,54 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   uploadAllFiles() {
-    if (this.selectFiles.length) {
-      const formData = new FormData();
-      // this.selectFiles.filter()
-      this.selectFiles.reduce((formData, fileItem) => {
-        formData.append('file', fileItem.file);
-        return formData;
-      }, formData);
+    this.clearErrors();
+    this.selectFiles.map(fileItem => {
+      return this.uploadFile(fileItem);
+    });
+  }
 
-      this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
-        .subscribe(
-          (res: Response) => this.fileUploadSuccess.emit(res.json()),
-          error => this.fileUploadError.emit(error)
-        );
-    }
+  private uploadFile(fileItem) {
+    const formData = new FormData();
+    formData.append(this.uploadParamName, fileItem.file);
+    return this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
+      .map(res => res.json())
+      .subscribe(
+        (res: Response) => {
+          fileItem.uploadResponse = res;
+          this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+          this.uploadFiles = [...this.uploadFiles, fileItem];
+          this.fileUploadSuccess.emit(res);
+          this.changeDetectorRef.markForCheck();
+        },
+        (error) => {
+          this.errors.push(`${fileItem.file.name}: Upload error: ${error}`);
+          this.fileUploadError.emit(error);
+          this.changeDetectorRef.markForCheck();
+        }
+      );
   }
 
   private handleFileChoose(uploadFiles: FileList) {
     const files = this.validFiles(Array.from(uploadFiles));
-    //TODO: (比对去掉超过maxItems的部分)。
     this.mapFileModel(files)
       .then(fileModels => {
         this.selectFiles = [...this.selectFiles, ...fileModels];
         this.selectFilesChange.emit(this.selectFiles);
-        console.log(this.selectFiles);
         this.changeDetectorRef.markForCheck();
+        return fileModels || [];
+      })
+      .then((fileModels) => {
+        if (this.autoUpload) {
+          return fileModels.map(fileItem => this.uploadFile(fileItem));
+        }
       });
   }
 
   validFiles(files: File[]): File[] {
-    // return valid files(size & accept)
+    if (this.maxItems && (this.selectFiles.length + files.length > this.maxItems)) {
+      files = files.slice(0, this.maxItems - this.selectFiles.length);
+    }
+
     return files.filter(file => {
       return this.validFile(file);
     });
@@ -155,12 +175,8 @@ export class FileUploadComponent implements AfterViewInit {
   mapFileModel(files: File[]): Promise<SelectFileModel[]> {
     return Promise.all(files.map(file => {
       return readFileAsDataURL(file)
-        .then(dataUrl => ({ dataUrl, file, displaySize: this.displaySize(file) }));
+        .then(dataUrl => ({ dataUrl, file, displaySize: formatFileSize(file.size) }));
     }));
 
-  }
-
-  displaySize(file: File) {
-    return file.size;
   }
 }

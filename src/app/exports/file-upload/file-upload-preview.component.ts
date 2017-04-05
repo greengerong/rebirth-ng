@@ -14,6 +14,8 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 export class FileUploadPreviewComponent {
 
   @Input() imgPreview: boolean;
+  @Input() previewWidth: string;
+  @Input() uploaded: boolean;
   @Input() selectFiles: SelectFileModel[] = [];
   @Output() removeFile = new EventEmitter<SelectFileModel>();
 

@@ -1,24 +1,32 @@
-<div class="file-upload-panel" reDroppable (onDrop)="onDropFiles($event)">
+<ng-template>
+
+</ng-template>
+
+<div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
   <div class="file-upload-toolbar">
     <input #file type="file" (change)="newFileChoose(file)" style="display: none">
     <button class="btn btn-primary" (click)="addNewFile(file, $event)"
             [disabled]="isMoreThanMaxItems()">
       <i class="glyphicon glyphicon-plus"></i> Choose
     </button>
-    <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
+    <button class="btn btn-info" *ngIf="!autoUpload" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
       <i class="glyphicon glyphicon-upload"></i> Upload
     </button>
-    <button class="btn btn-danger" (click)="removeAllUnUploadFiles()">
+    <button class="btn btn-danger" *ngIf="!autoUpload" (click)="removeAllSelectedFiles()">
       <i class="glyphicon glyphicon-trash"></i> Cancel
     </button>
   </div>
 
-  <re-alert-box type="danger" [closable]="true" (close)="clearErrors()" *ngIf="errors.length">
+  <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
+                *ngIf="errors.length">
     <ul>
       <li *ngFor="let error of errors">{{error}}</li>
     </ul>
   </re-alert-box>
 
-  <re-file-upload-preview [selectFiles]="selectFiles" [imgPreview]="imgPreview"
+  <re-file-upload-preview [selectFiles]="selectFiles" [imgPreview]="imgPreview" [previewWidth]="previewWidth"
                           (removeFile)="onRemoveFile($event)"></re-file-upload-preview>
+
+  <re-file-upload-preview [selectFiles]="uploadFiles" [imgPreview]="imgPreview" [previewWidth]="previewWidth"
+                          [uploaded]="true"></re-file-upload-preview>
 </div>
