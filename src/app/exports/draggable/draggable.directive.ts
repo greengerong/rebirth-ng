@@ -16,11 +16,12 @@ export class DraggableHandleDirective {
   }
 })
 export class DraggableDirective {
+  static DRAGGABLE_DATA_KEY = 'rebirth-ng:draggable-data'; // key 'text' firefox will open new tab;
   @Input('reDraggable') group: string;
   @Input() dragData: any;
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/effectAllowed
   @Input() dragEffect: 'none' | 'copy' | 'copyLink' | 'copyMove' | 'link' | 'linkMove' | 'move'
-    | 'all' | 'uninitialized' = 'move';
+    | 'all' | 'uninitialized' = 'copy';
 
   @Output() onDragStart: EventEmitter<any> = new EventEmitter();
   @Output() onDragEnd: EventEmitter<any> = new EventEmitter();
@@ -32,7 +33,7 @@ export class DraggableDirective {
   dragStart($event) {
     if (!this.draggableHandle || this.draggableHandle.elementRef.nativeElement === this.handle) {
       $event.dataTransfer.effectAllowed = this.dragEffect;
-      $event.dataTransfer.setData('text/plain', JSON.stringify({
+      $event.dataTransfer.setData(DraggableDirective.DRAGGABLE_DATA_KEY, JSON.stringify({
         group: this.group,
         data: this.dragData
       }));

@@ -9,10 +9,10 @@
             [disabled]="isMoreThanMaxItems()">
       <i class="glyphicon glyphicon-plus"></i> Choose
     </button>
-    <button class="btn btn-info" *ngIf="!autoUpload" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
+    <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
       <i class="glyphicon glyphicon-upload"></i> Upload
     </button>
-    <button class="btn btn-danger" *ngIf="!autoUpload" (click)="removeAllSelectedFiles()">
+    <button class="btn btn-danger" (click)="removeAllSelectedFiles()">
       <i class="glyphicon glyphicon-trash"></i> Cancel
     </button>
   </div>
