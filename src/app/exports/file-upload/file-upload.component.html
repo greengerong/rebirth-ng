@@ -12,7 +12,7 @@
     <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
       <i class="glyphicon glyphicon-upload"></i> Upload
     </button>
-    <button class="btn btn-danger" (click)="removeAllSelectedFiles()">
+    <button class="btn btn-danger" [disabled]="!selectFiles?.length" (click)="removeAllSelectedFiles()">
       <i class="glyphicon glyphicon-trash"></i> Cancel
     </button>
   </div>
