@@ -7,13 +7,13 @@
     <input #file type="file" (change)="newFileChoose(file)" style="display: none">
     <button class="btn btn-primary" (click)="addNewFile(file, $event)"
             [disabled]="isMoreThanMaxItems()">
-      <i class="glyphicon glyphicon-plus"></i> Choose
+      <i class="glyphicon glyphicon-plus"></i> {{chooseButton}}
     </button>
     <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
-      <i class="glyphicon glyphicon-upload"></i> Upload
+      <i class="glyphicon glyphicon-upload"></i> {{uploadButton}}
     </button>
     <button class="btn btn-danger" [disabled]="!selectFiles?.length" (click)="removeAllSelectedFiles()">
-      <i class="glyphicon glyphicon-trash"></i> Cancel
+      <i class="glyphicon glyphicon-trash"></i> {{cancelButton}}
     </button>
   </div>
 

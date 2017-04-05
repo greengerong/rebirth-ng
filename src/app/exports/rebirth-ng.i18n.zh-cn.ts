@@ -31,7 +31,10 @@ export const REBIRTH_NG_I18N_ZHCN = {
       previewWidth: '50px',
       uploadParamName: 'file',
       fileSizeErrorMessage: '{0}文件大小不能超过{1};',
-      fileTypeErrorMessage: '{0}文件类型必须满足{1};'
+      fileTypeErrorMessage: '{0}文件类型必须满足{1};',
+      chooseButton: '浏览',
+      uploadButton: '上传',
+      cancelButton: '取消'
     },
 
     pager: {

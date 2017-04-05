@@ -63,7 +63,10 @@ export class RebirthNGConfig {
     previewWidth: '50px',
     uploadParamName: 'file',
     fileSizeErrorMessage: '{0}: size is too large, allowed size is {1};',
-    fileTypeErrorMessage: '{0}: file type is invalid, allowed file type is {1};'
+    fileTypeErrorMessage: '{0}: file type is invalid, allowed file type is {1};',
+    chooseButton: 'Choose',
+    uploadButton: 'Upload',
+    cancelButton: 'Cancel'
   };
 
   pager = {

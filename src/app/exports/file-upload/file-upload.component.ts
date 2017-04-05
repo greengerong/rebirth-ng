@@ -29,7 +29,7 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() multiple: boolean;
   @Input() autoUpload: boolean;
   @Input() maxItems: number;
-  @Input() maxFileSize: number;
+  @Input() maxFileSize: number; // bytes
   @Input() uploadUrl: string;
   @Input() uploadParamName: string;
   @Input() uploadRequestOptions: RequestOptions;
@@ -38,6 +38,9 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() cssClass: string;
   @Input() fileSizeErrorMessage: string;
   @Input() fileTypeErrorMessage: string;
+  @Input() chooseButton: string;
+  @Input() uploadButton: string;
+  @Input() cancelButton: string;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
   @Output() fileUploadError = new EventEmitter<any>();
@@ -56,6 +59,9 @@ export class FileUploadComponent implements AfterViewInit {
     this.uploadParamName = this.rebirthNGConfig.fileUpload.uploadParamName;
     this.previewWidth = this.rebirthNGConfig.fileUpload.previewWidth;
     this.imgPreview = this.rebirthNGConfig.fileUpload.imgPreview;
+    this.chooseButton = this.rebirthNGConfig.fileUpload.chooseButton;
+    this.uploadButton = this.rebirthNGConfig.fileUpload.uploadButton;
+    this.cancelButton = this.rebirthNGConfig.fileUpload.cancelButton;
 
   }
 
