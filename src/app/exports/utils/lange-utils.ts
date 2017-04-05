@@ -9,3 +9,11 @@ export function formatFileSize(bytes: number): string {
 
   return `${parseFloat((bytes / Math.pow(rate, cover)).toFixed(precision))} ${sizes[cover]}`;
 }
+
+export function formatString(input, ...args) {
+  if (input) {
+    return input.replace(/\{(\d+)\}/g, function (match, index) {
+      return args[index];
+    });
+  }
+}

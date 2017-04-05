@@ -13,7 +13,8 @@ import {
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
 import { Http, Response, RequestOptions } from '@angular/http';
-import { formatFileSize } from '../utils/lange-utils';
+import { formatFileSize, formatString } from '../utils/lange-utils';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-file-upload',
@@ -30,11 +31,13 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() maxItems: number;
   @Input() maxFileSize: number;
   @Input() uploadUrl: string;
-  @Input() uploadParamName: string = 'file';
+  @Input() uploadParamName: string;
   @Input() uploadRequestOptions: RequestOptions;
   @Input() imgPreview: boolean;
-  @Input() previewWidth = '50px';
+  @Input() previewWidth: string;
   @Input() cssClass: string;
+  @Input() fileSizeErrorMessage: string;
+  @Input() fileTypeErrorMessage: string;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
   @Output() fileUploadError = new EventEmitter<any>();
@@ -43,7 +46,16 @@ export class FileUploadComponent implements AfterViewInit {
   uploadFiles: SelectFileModel[] = [];
   errors: string[] = [];
 
-  constructor(private renderer: Renderer2, private http: Http, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private rebirthNGConfig: RebirthNGConfig,
+              private renderer: Renderer2,
+              private http: Http,
+              private changeDetectorRef: ChangeDetectorRef) {
+
+    this.fileSizeErrorMessage = this.rebirthNGConfig.fileUpload.fileSizeErrorMessage;
+    this.fileTypeErrorMessage = this.rebirthNGConfig.fileUpload.fileTypeErrorMessage;
+    this.uploadParamName = this.rebirthNGConfig.fileUpload.uploadParamName;
+    this.previewWidth = this.rebirthNGConfig.fileUpload.previewWidth;
+    this.imgPreview = this.rebirthNGConfig.fileUpload.imgPreview;
 
   }
 
@@ -155,11 +167,11 @@ export class FileUploadComponent implements AfterViewInit {
     //TODO: (验证还需进一步完善)。
     let errors = [];
     if (this.maxFileSize && file.size > this.maxFileSize) {
-      errors.push(`${file.name}: size is too large, allowed size is ${this.maxFileSize};`);
+      errors.push(formatString(this.fileSizeErrorMessage, file.name, formatFileSize(file.size)));
     }
 
     if (this.accept && !this.validFileType(file)) {
-      errors.push(`${file.name}: file type is invalid, allowed file type is ${this.accept};`);
+      errors.push(formatString(this.fileTypeErrorMessage, file.name, this.accept));
     }
 
     this.errors.push(...errors);
