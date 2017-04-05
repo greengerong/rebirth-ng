@@ -18,6 +18,6 @@ export interface MenuBar {
   logo?: string;
   title?: string;
   home?: string;
-  menus: MenuItem[];
+  menus?: MenuItem[];
   rightMenus?: MenuItem[];
 }
