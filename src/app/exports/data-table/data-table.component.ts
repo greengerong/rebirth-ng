@@ -32,7 +32,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 })
 export class DataTableComponent implements OnDestroy {
 
-  @Input() dataSource: any[] = [];
+  @Input() _dataSource: any[] = [];
   @Input() emptyRowText: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
@@ -71,6 +71,15 @@ export class DataTableComponent implements OnDestroy {
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.emptyRowText = rebirthNGConfig.datatable.emptyRowText;
+  }
+
+  @Input() set dataSource(dataSource: any[]) {
+    this._dataSource = dataSource;
+    this.allChecked = false;
+  }
+
+  get dataSource(): any[] {
+    return this._dataSource;
   }
 
   @HostListener('document:click', ['$event'])
