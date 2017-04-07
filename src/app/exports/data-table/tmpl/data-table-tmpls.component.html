@@ -12,9 +12,17 @@
         </div>
       </form>
     </th>
-    <th *ngFor="let column of head.columns" (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
-      {{column.header}} <i *ngIf="head.sortField == column.field" class="glyphicon"
-                           [ngClass]="{ 'glyphicon-triangle-bottom': head.sortDirection == 'DESC','glyphicon-triangle-top': head.sortDirection == 'ASC' }"></i>
+    <th *ngFor="let column of head.columns" [ngClass]="{'sorting-header': column.sortable}"
+        (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
+      {{column.header}}
+      <ng-container *ngIf="column.sortable">
+        <i class="glyphicon sorting-icon"
+           [ngClass]="{
+           'glyphicon-triangle-bottom': head.sortField == column.field && head.sortDirection == 'DESC',
+           'glyphicon-triangle-top': head.sortField == column.field && head.sortDirection == 'ASC',
+           'sorting-default': head.sortField != column.field
+           }"></i>
+      </ng-container>
     </th>
   </tr>
 </ng-template>
@@ -33,7 +41,7 @@
 <re-cell-template #textCellTemplate type="text">
   <re-cell>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cellItem="cellItem" let-cellValue="cellValue">
+                 let-cellItem="cellItem" let-cellValue="cellValue">
       {{cellValue}}
     </ng-template>
   </re-cell>
@@ -87,7 +95,7 @@
 <re-cell-template #telCellTemplate type="tel">
   <re-cell>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cellItem="cellItem" let-cellValue="cellValue">
+                 let-cellItem="cellItem" let-cellValue="cellValue">
       <a [href]="'tel:' + cellValue" (click)="stopPropagation($event)">{{cellValue}}</a>
     </ng-template>
   </re-cell>
@@ -97,7 +105,7 @@
 <re-cell-template #mailCellTemplate type="mail">
   <re-cell>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cellItem="cellItem" let-cellValue="cellValue">
+                 let-cellItem="cellItem" let-cellValue="cellValue">
       <a [href]=" cellValue ? ('mailto:' + cellValue) : ''" (click)="stopPropagation($event)">{{cellValue}}</a>
     </ng-template>
   </re-cell>
@@ -107,7 +115,7 @@
 <re-cell-template #imageCellTemplate type="image">
   <re-cell>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cellItem="cellItem" let-cellValue="cellValue">
+                 let-cellItem="cellItem" let-cellValue="cellValue">
       <img class="img-responsive" [src]="cellValue" [attr.alt]="cellValue">
     </ng-template>
   </re-cell>
@@ -127,7 +135,7 @@
 <re-cell-template #dateCellTemplate type="date">
   <re-cell-edit>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cell="">
+                 let-cell="">
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
@@ -178,7 +186,7 @@
 <re-cell-template #datetimeCellTemplate type="datetime">
   <re-cell-edit>
     <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"
-              let-cell="">
+                 let-cell="">
       <form class="form-inline">
         <div class="form-group">
           <div class="input-group">
