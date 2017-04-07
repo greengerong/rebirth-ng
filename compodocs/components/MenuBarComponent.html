@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1063,10 +1087,6 @@
     <table class="table table-sm table-hover">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
-            </tr>
 
 
 
@@ -1106,6 +1126,24 @@
 
     <section>
         <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>contentType</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>&quot;container-fluid&quot; | &quot;container&quot;</code>
+
+                              </p>
+                            <p>
+                              <em>Default value: </em><code>container</code>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1311,7 +1349,7 @@
 </p>
         </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, ChangeDetectionStrategy, Input, ViewChild, ElementRef, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { MenuBar } from &#x27;./menu-bar.model&#x27;;
 import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
@@ -1319,13 +1357,13 @@ import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
   selector: &#x27;re-menu-bar&#x27;,
   templateUrl: &#x27;./menu-bar.component.html&#x27;,
   styleUrls: [&#x27;./menu-bar.component.scss&#x27;],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: &#x27;menuBar&#x27;
 })
 export class MenuBarComponent {
   @Input() cssClass: string;
   @Input() type: &#x27;navbar-fixed-top&#x27; | &#x27;navbar-fixed-bottom&#x27; | &#x27;container-fluid&#x27;
     | &#x27;navbar-static-top&#x27; | &#x27;navbar-static-bottom&#x27; | &#x27;navbar-form&#x27; | &#x27;sidebar&#x27;;
+  @Input() contentType: &#x27;container-fluid&#x27; | &#x27;container&#x27; &#x3D; &#x27;container&#x27;;
   @Input() menuOptions: MenuBar &#x3D; &lt;MenuBar&gt;{};
   @Input() direction: &#x27;down&#x27; | &#x27;up&#x27;;
   @Input() inverse &#x3D; false;

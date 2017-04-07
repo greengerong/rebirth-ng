@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1292,6 +1316,7 @@
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre><code class="hljs javascript">import { HostListener, EventEmitter, Output, Input, Directive } from &#x27;@angular/core&#x27;;
+import { DraggableDirective } from &#x27;./draggable.directive&#x27;;
 
 @Directive({
   selector: &#x27;[reDroppable]&#x27;,
@@ -1316,6 +1341,7 @@ export class DroppableDirective {
   drop($event) {
     if (!this.group || this.isDropGroup($event)) {
       $event.preventDefault();
+      $event.stopPropagation();
       this.onDrop.emit($event);
     }
   }
@@ -1343,7 +1369,7 @@ export class DroppableDirective {
   }
 
   isDropGroup($event): boolean {
-    const contextData &#x3D; $event.dataTransfer.getData(&#x27;text&#x27;);
+    const contextData &#x3D; $event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY);
     if (contextData) {
       const draggableData &#x3D; JSON.parse(contextData);
       return this.group &#x3D;&#x3D;&#x3D; draggableData.group;

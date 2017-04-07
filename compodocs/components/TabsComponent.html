@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html"  class="active" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html"  class="active" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1060,10 +1084,6 @@
     <table class="table table-sm table-hover">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
-            </tr>
 
 
 
@@ -1266,7 +1286,7 @@
   Input,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy, AfterContentInit
+  AfterContentInit
 } from &#x27;@angular/core&#x27;;
 import { TabComponent } from &#x27;./tab.component&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
@@ -1274,8 +1294,7 @@ import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 @Component({
   selector: &#x27;re-tabs&#x27;,
   templateUrl: &#x27;./tabs.component.html&#x27;,
-  exportAs: &#x27;tabs&#x27;,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  exportAs: &#x27;tabs&#x27;
 })
 export class TabsComponent implements OnInit, AfterContentInit {
   @Input() type: &#x27;tabs&#x27; | &#x27;pills&#x27; &#x3D; &#x27;tabs&#x27;;

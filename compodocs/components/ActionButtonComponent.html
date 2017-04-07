@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1060,10 +1084,6 @@
     <table class="table table-sm table-hover">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
-            </tr>
 
 
 
@@ -1364,7 +1384,6 @@
   Component,
   Input,
   EventEmitter,
-  ChangeDetectionStrategy,
   HostListener,
   Output,
   TemplateRef
@@ -1374,8 +1393,7 @@ import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Component({
   selector: &#x27;re-action-button&#x27;,
-  templateUrl: &#x27;./action-button.component.html&#x27;,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: &#x27;./action-button.component.html&#x27;
 })
 export class ActionButtonComponent {
   @Input() type: &#x27;default&#x27; | &#x27;primary&#x27; | &#x27;success&#x27; | &#x27;info&#x27; | &#x27;warning&#x27; | &#x27;danger&#x27; &#x3D; &#x27;default&#x27;;

@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1060,10 +1084,6 @@
     <table class="table table-sm table-hover">
         <tbody>
 
-            <tr>
-                <td class="col-md-3">changeDetection</td>
-                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
-            </tr>
 
 
 
@@ -1251,7 +1271,7 @@
 
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, Input, ChangeDetectionStrategy, forwardRef, Output, EventEmitter } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, Input, forwardRef, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { PanelComponent, PanelGroup } from &#x27;../panel&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
@@ -1259,7 +1279,6 @@ import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
   selector: &#x27;re-accordion&#x27;,
   templateUrl: &#x27;./accordion.component.html&#x27;,
   exportAs: &#x27;accordion&#x27;,
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{ provide: PanelGroup, useExisting: forwardRef(() &#x3D;&gt; AccordionComponent) }],
 })
 export class AccordionComponent extends PanelGroup {

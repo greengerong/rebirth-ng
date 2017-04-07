@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1210,6 +1234,21 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b> fileUpload</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>fileUpload:     <code>{ imgPreview: boolean; previewWidth: string; uploadParamName: string; fileSizeErrorMessage: strin...</code>
+            </bcode>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> pager</b>
                                 </td>
                             </tr>
@@ -1402,6 +1441,17 @@ export class RebirthNGConfig {
       yes: &#x27;Yes&#x27;,
       no: &#x27;No&#x27;
     }
+  };
+
+  fileUpload &#x3D; {
+    imgPreview: false,
+    previewWidth: &#x27;50px&#x27;,
+    uploadParamName: &#x27;file&#x27;,
+    fileSizeErrorMessage: &#x27;{0}: size is too large, allowed size is {1};&#x27;,
+    fileTypeErrorMessage: &#x27;{0}: file type is invalid, allowed file type is {1};&#x27;,
+    chooseButton: &#x27;Choose&#x27;,
+    uploadButton: &#x27;Upload&#x27;,
+    cancelButton: &#x27;Cancel&#x27;
   };
 
   pager &#x3D; {

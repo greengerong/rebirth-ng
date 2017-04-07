@@ -323,7 +323,19 @@
                                     <a href="./components/TabsComponent.html" >TabsComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                 </li>
                         </ul>
                     </li>
@@ -829,7 +841,19 @@
                                            <a href="./components/TabsComponent.html" >TabsComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadPreviewTmplComponent.html" >UploadPreviewTmplComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/UploadToolbarTmplComponent.html" >UploadToolbarTmplComponent</a>
                                        </li>
                                </ul>
                            </li>
@@ -1126,11 +1150,12 @@ export class DraggableHandleDirective {
   }
 })
 export class DraggableDirective {
+  static DRAGGABLE_DATA_KEY &#x3D; &#x27;text&#x27;;
   @Input(&#x27;reDraggable&#x27;) group: string;
   @Input() dragData: any;
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/effectAllowed
   @Input() dragEffect: &#x27;none&#x27; | &#x27;copy&#x27; | &#x27;copyLink&#x27; | &#x27;copyMove&#x27; | &#x27;link&#x27; | &#x27;linkMove&#x27; | &#x27;move&#x27;
-    | &#x27;all&#x27; | &#x27;uninitialized&#x27; &#x3D; &#x27;move&#x27;;
+    | &#x27;all&#x27; | &#x27;uninitialized&#x27; &#x3D; &#x27;copy&#x27;;
 
   @Output() onDragStart: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
   @Output() onDragEnd: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
@@ -1142,7 +1167,7 @@ export class DraggableDirective {
   dragStart($event) {
     if (!this.draggableHandle || this.draggableHandle.elementRef.nativeElement &#x3D;&#x3D;&#x3D; this.handle) {
       $event.dataTransfer.effectAllowed &#x3D; this.dragEffect;
-      $event.dataTransfer.setData(&#x27;text/plain&#x27;, JSON.stringify({
+      $event.dataTransfer.setData(DraggableDirective.DRAGGABLE_DATA_KEY, JSON.stringify({
         group: this.group,
         data: this.dragData
       }));
