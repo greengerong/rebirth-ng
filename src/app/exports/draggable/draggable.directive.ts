@@ -16,7 +16,7 @@ export class DraggableHandleDirective {
   }
 })
 export class DraggableDirective {
-  static DRAGGABLE_DATA_KEY = 'rebirth-ng:draggable-data'; // key 'text' firefox will open new tab;
+  static DRAGGABLE_DATA_KEY = 'text';
   @Input('reDraggable') group: string;
   @Input() dragData: any;
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/effectAllowed

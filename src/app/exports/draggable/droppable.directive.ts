@@ -24,6 +24,7 @@ export class DroppableDirective {
   drop($event) {
     if (!this.group || this.isDropGroup($event)) {
       $event.preventDefault();
+      $event.stopPropagation();
       this.onDrop.emit($event);
     }
   }
@@ -49,17 +50,6 @@ export class DroppableDirective {
     $event.preventDefault();
     this.onDragOver.emit($event);
   }
-
-  @HostListener('document:drop', ['$event'])
-  documentDrop($event) {
-    $event.preventDefault();
-  }
-
-  @HostListener('document:dragover', ['$event'])
-  documentDragOver($event) {
-    $event.preventDefault();
-  }
-
 
   isDropGroup($event): boolean {
     const contextData = $event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY);
