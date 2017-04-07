@@ -2,7 +2,6 @@ import {
   Component,
   Input,
   EventEmitter,
-  ChangeDetectionStrategy,
   HostListener,
   Output,
   TemplateRef
@@ -12,8 +11,7 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-action-button',
-  templateUrl: './action-button.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl: './action-button.component.html'
 })
 export class ActionButtonComponent {
   @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' = 'default';

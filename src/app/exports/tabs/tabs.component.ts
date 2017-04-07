@@ -6,7 +6,7 @@ import {
   Input,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy, AfterContentInit
+  AfterContentInit
 } from '@angular/core';
 import { TabComponent } from './tab.component';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -14,8 +14,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 @Component({
   selector: 're-tabs',
   templateUrl: './tabs.component.html',
-  exportAs: 'tabs',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  exportAs: 'tabs'
 })
 export class TabsComponent implements OnInit, AfterContentInit {
   @Input() type: 'tabs' | 'pills' = 'tabs';

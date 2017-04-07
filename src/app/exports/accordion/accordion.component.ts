@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy, forwardRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, forwardRef, Output, EventEmitter } from '@angular/core';
 import { PanelComponent, PanelGroup } from '../panel';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -6,7 +6,6 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
   selector: 're-accordion',
   templateUrl: './accordion.component.html',
   exportAs: 'accordion',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{ provide: PanelGroup, useExisting: forwardRef(() => AccordionComponent) }],
 })
 export class AccordionComponent extends PanelGroup {

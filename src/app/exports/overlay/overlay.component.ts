@@ -1,7 +1,6 @@
 import {
   Component,
   OnInit,
-  ChangeDetectionStrategy,
   Input,
   ViewChild,
   ElementRef,
@@ -17,7 +16,6 @@ import { centerWindowPosition } from '../utils/dom-utils';
   selector: 're-overlay',
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OverlayComponent implements OnInit {
   @Input() overlayOptions: OverlayOptions;

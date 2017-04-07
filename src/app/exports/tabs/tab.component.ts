@@ -1,11 +1,10 @@
-import { Component, Input, ContentChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, ContentChild } from '@angular/core';
 import { TabContentDirective } from './tab-content.directive';
 import { TabTitleDirective } from './tab-title.directive';
 
 @Component({
   selector: 're-tab',
-  template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  template: ''
 })
 export class TabComponent {
   @Input() id: number |string;

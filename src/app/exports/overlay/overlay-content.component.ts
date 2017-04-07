@@ -4,7 +4,6 @@ import {
   ViewContainerRef,
   Injector,
   OnDestroy,
-  ChangeDetectionStrategy,
   ComponentFactoryResolver
 } from '@angular/core';
 import { OverlayOptions } from './overlay-options.model';
@@ -12,7 +11,6 @@ import { OverlayOptions } from './overlay-options.model';
 @Component({
   selector: 're-overlay-content',
   template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'overlayContent'
 })
 export class OverlayContentComponent implements OnDestroy {

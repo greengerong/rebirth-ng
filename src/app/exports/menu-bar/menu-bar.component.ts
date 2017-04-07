@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
 import { stopPropagationIfExist } from '../utils/dom-utils';
 
@@ -6,7 +6,6 @@ import { stopPropagationIfExist } from '../utils/dom-utils';
   selector: 're-menu-bar',
   templateUrl: './menu-bar.component.html',
   styleUrls: ['./menu-bar.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'menuBar'
 })
 export class MenuBarComponent {
