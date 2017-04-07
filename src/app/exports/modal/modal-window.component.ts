@@ -16,7 +16,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 @Component({
   selector: 're-modal-window',
   templateUrl: './modal-window.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('flyInOut', [
       state('void', style({ top: '-100%' })),

@@ -1,12 +1,11 @@
-import { Component, Input, ViewChild, EventEmitter, Output, ChangeDetectionStrategy, Renderer2 } from '@angular/core';
+import { Component, Input, ViewChild, EventEmitter, Output, Renderer2 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
 import { DocumentRef } from '../window-ref';
 
 @Component({
   selector: 're-modal',
-  templateUrl: './modal.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './modal.component.html'
 })
 export class ModalComponent {
   static MODEL_OPEN_CSS = 'modal-open';

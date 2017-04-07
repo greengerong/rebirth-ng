@@ -5,7 +5,7 @@ import {
   Injector,
   OnDestroy,
   EventEmitter,
-  ChangeDetectionStrategy, ComponentFactoryResolver
+  ComponentFactoryResolver
 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { Modal } from './modal.model';
@@ -13,7 +13,6 @@ import { Modal } from './modal.model';
 @Component({
   selector: 're-modal-content',
   template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'modalContent'
 })
 export class ModalContentComponent implements OnDestroy {
