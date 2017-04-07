@@ -3,8 +3,8 @@
   "version": "0.0.6",
   "license": "MIT",
   "angular-cli": {},
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
+  "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "ng": "ng",
     "ngc": "ngc -p ./src/tsconfig-aot.json",
@@ -21,7 +21,7 @@
     "demo:gen": "ng build --prod --aot --base-href=/rebirth-ng/",
     "github-pages:push": "ngh --message \"rebirth ng demo deploy\"",
     "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run github-pages:push && rm -rf ./dist",
-    "prepublish": "rm -rf ./dist && gulp prepublish"
+    "npm:publish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,
   "repository": {
@@ -29,6 +29,7 @@
     "url": "git+https://github.com/greengerong/rebirth-ng.git"
   },
   "devDependencies": {
+    "@angular/animations": "4.0.0",
     "@angular/cli": "^1.0.0",
     "@angular/common": "4.0.0",
     "@angular/compiler": "4.0.0",
@@ -36,7 +37,6 @@
     "@angular/core": "4.0.0",
     "@angular/forms": "4.0.0",
     "@angular/http": "4.0.0",
-    "@angular/animations": "4.0.0",
     "@angular/platform-browser": "4.0.0",
     "@angular/platform-browser-dynamic": "4.0.0",
     "@angular/router": "4.0.0",
@@ -75,6 +75,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-remap-istanbul": "^0.2.1",
     "markdown-loader": "^2.0.0",
+    "npm-publish-release": "^1.3.10",
     "npm-run-all": "^4.0.1",
     "protractor": "~5.1.0",
     "run-sequence": "^1.2.2",

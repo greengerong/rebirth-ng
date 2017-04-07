@@ -71,6 +71,8 @@
 
 * Docs deploy: `npm run docs:deploy`
 
+* npm publish `npm run npm:publish` and then 'cd .lib && npm publish'
+
 ## Get start
 
  [Get start](./src/app/exports)
