@@ -57,9 +57,12 @@
 
   <h4>Without panel header:</h4>
 
-  <re-panel [withoutHeader]="true" [withoutFooter]="false">
+  <re-panel type="danger" [collapsable]="true">
+    <re-panel-header>
+      Panel header
+    </re-panel-header>
     <re-panel-body>
-      This panel is <strong>without header</strong>.
+      This panel has <strong>panel footer</strong>.
     </re-panel-body>
     <re-panel-footer>
       Panel footer
