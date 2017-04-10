@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
+import { isEmpty } from '../utils/immutable-data-utils'
 
 @Component({
   selector: 're-data-table-body,[reDataTableBody]',
@@ -19,12 +20,9 @@ export class DataTableBodyComponent {
   @Input() emptyRowText: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
+  isEmpty: (data) => boolean;
 
   constructor(public dt: DataTableComponent) {
-
-  }
-
-  isEmpty(dataSource) {
-    return !dataSource || !(dataSource.length || dataSource.size);
+    this.isEmpty = isEmpty;
   }
 }
