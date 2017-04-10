@@ -4,7 +4,6 @@ import {
   ViewChild,
   HostListener,
   EventEmitter,
-  ChangeDetectionStrategy,
   ElementRef,
   Output
 } from '@angular/core';
@@ -18,10 +17,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './modal-window.component.html',
   animations: [
     trigger('flyInOut', [
-      state('void', style({ top: '-100%' })),
-      state('in', style({ top: '30px' })),
-      transition('void => in', animate('200ms ease-in-out')),
-      transition('in => void', animate('200ms ease-in-out')),
+      state('void', style({ top: '-100%', opacity: 0 })),
+      state('in', style({ top: '10%', opacity: 1 })),
+      transition('void => in', animate('0.2s ease-in-out')),
+      transition('in => void', animate('0.2s ease-in-out')),
     ])
   ]
 })
