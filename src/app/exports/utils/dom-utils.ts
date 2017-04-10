@@ -1,5 +1,6 @@
-import { ElementRef } from '@angular/core';
+import { ElementRef, Renderer2 } from '@angular/core';
 import { WindowRef } from '../window-ref';
+import { DocumentRef } from '../window-ref/document-ref.service';
 
 export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef): { top?: number, left?: number } {
   if (!elementRef.nativeElement || !elementRef.nativeElement.getBoundingClientRect) {
@@ -38,3 +39,27 @@ export function readFileAsDataURL(file) {
     resolve(null);
   });
 }
+
+
+export function getScrollBarWidth(renderer: Renderer2, documentRef: DocumentRef) {
+  const outer = renderer.createElement('div');
+  renderer.setStyle(outer, 'visibility', 'hidden');
+  renderer.setStyle(outer, 'width', '100px');
+  renderer.setStyle(outer, 'msOverflowStyle', 'scrollbar');
+
+  const body = documentRef.body;
+  renderer.appendChild(body, outer);
+
+  const widthNoScroll = outer.offsetWidth;
+  renderer.setStyle(outer, 'overflow', 'scroll');
+  const inner = renderer.createElement('div');
+  renderer.setStyle(inner, 'width', '100%');
+
+  renderer.appendChild(outer, inner);
+
+  const widthWithScroll = inner.offsetWidth;
+  renderer.removeChild(body, outer);
+  return widthNoScroll - widthWithScroll;
+}
+
+

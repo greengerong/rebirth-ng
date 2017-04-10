@@ -17,3 +17,26 @@ export function formatString(input, ...args) {
     });
   }
 }
+
+export function deepValueGetter(obj: any, path: string) {
+  if (!obj || !path) {
+    return obj;
+  }
+
+  let current = obj;
+  const split = path.split('.');
+  if (split.length) {
+    for (let i = 0; i < split.length; i++) {
+      current = current[split[i]];
+      // if found undefined, return empty string
+      if (current === undefined || current === null) {
+        return '';
+      }
+    }
+  }
+  return current;
+}
+
+export function isImmutableEmpty(array: any): boolean {
+  return !array || !(array.length || array.size);
+}
