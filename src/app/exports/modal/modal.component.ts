@@ -2,6 +2,7 @@ import { Component, Input, ViewChild, EventEmitter, Output, Renderer2 } from '@a
 import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
 import { DocumentRef } from '../window-ref';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 're-modal',
@@ -21,12 +22,13 @@ export class ModalComponent {
 
   open() {
     this.isOpen = true;
-    this.modalWindowComponent.isOpen = true;
+    this.modalWindowComponent.open();
     this.toggleBodyClass(true);
   }
 
   close() {
-    this.isOpen = false;
+    return this.modalWindowComponent.close()
+      .do(_ => this.isOpen = false);
   }
 
   cleanup() {

@@ -31,10 +31,23 @@ export class ModalWindowComponent {
   @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
   dismiss: EventEmitter<any>;
   modalOptions: ModalOptions;
+  animateState: string;
 
   constructor(private elementRef: ElementRef) {
 
   }
+
+  open() {
+    this.isOpen = true;
+    this.animateState = 'in';
+  }
+
+  close() {
+    this.isOpen = false;
+    this.animateState = 'void';
+    return this.animationDone;
+  }
+
 
   onAnimationDone($event) {
     this.animationDone.emit($event);
