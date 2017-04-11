@@ -1354,6 +1354,7 @@
 import { ModalOptions } from &#x27;./modal-options.model&#x27;;
 import { ModalWindowComponent } from &#x27;./modal-window.component&#x27;;
 import { DocumentRef } from &#x27;../window-ref&#x27;;
+import &#x27;rxjs/add/operator/do&#x27;;
 
 @Component({
   selector: &#x27;re-modal&#x27;,
@@ -1373,12 +1374,13 @@ export class ModalComponent {
 
   open() {
     this.isOpen &#x3D; true;
-    this.modalWindowComponent.isOpen &#x3D; true;
+    this.modalWindowComponent.open();
     this.toggleBodyClass(true);
   }
 
   close() {
-    this.isOpen &#x3D; false;
+    return this.modalWindowComponent.close()
+      .do(_ &#x3D;&gt; this.isOpen &#x3D; false);
   }
 
   cleanup() {

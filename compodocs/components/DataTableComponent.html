@@ -1134,6 +1134,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>_dataSource</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>any[]</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>allChecked</code>
                         </td>
                         <td class="col-md-10">
@@ -1182,10 +1197,6 @@
                             <code>dataSource</code>
                         </td>
                         <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>any[]</code>
-
-                              </p>
                         </td>
                     </tr>
                 </tbody>
@@ -1256,11 +1267,56 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
+                            <code>maxPageItems</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>pageIndex</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
                             <code>pager</code>
                         </td>
                         <td class="col-md-10">
                               <p>
                                 <em>Type:</em>    <code>DataTablePager</code>
+
+                              </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>pageSize</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>number</code>
 
                               </p>
                         </td>
@@ -1307,6 +1363,21 @@
                             <p>
                               <em>Default value: </em><code>100%</code>
                             </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>totalRecord</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code>number</code>
+
+                              </p>
                         </td>
                     </tr>
                 </tbody>
@@ -1874,6 +1945,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> dataSource</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>dataSource:     <code>any[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> dataTableTemplates</b>
                         </td>
                     </tr>
@@ -2055,7 +2141,7 @@ import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 })
 export class DataTableComponent implements OnDestroy {
 
-  @Input() dataSource: any[] &#x3D; [];
+  @Input() _dataSource: any[] &#x3D; [];
   @Input() emptyRowText: string;
   @Input() checkable: boolean;
   @Input() selectable: boolean;
@@ -2066,6 +2152,10 @@ export class DataTableComponent implements OnDestroy {
   @Input() hover &#x3D; true;
   @Input() allChecked: boolean;
   @Input() pager: DataTablePager;
+  @Input() totalRecord: number;
+  @Input() pageIndex: number;
+  @Input() pageSize: number;
+  @Input() maxPageItems?: number;
   @Input() cssClass: string;
   @Input() tableWidth &#x3D; &#x27;100%&#x27;;
   @Output() cellClick &#x3D; new EventEmitter&lt;CellSelectedEventArg&gt;();
@@ -2094,6 +2184,15 @@ export class DataTableComponent implements OnDestroy {
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.emptyRowText &#x3D; rebirthNGConfig.datatable.emptyRowText;
+  }
+
+  @Input() set dataSource(dataSource: any[]) {
+    this._dataSource &#x3D; dataSource;
+    this.allChecked &#x3D; false;
+  }
+
+  get dataSource(): any[] {
+    return this._dataSource;
   }
 
   @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])

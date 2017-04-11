@@ -1278,33 +1278,6 @@
             </table>
     </section>
 
-    <section>
-        <h3 id="methods">Methods</h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isEmpty</b>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    <code>isEmpty(dataSource: any)</code>
-                        </td>
-                    </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-description">
-                                    <b>Returns: </b>    <code>void</code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-    </section>
 
     <section>
         <h3 id="inputs">Properties</h3>
@@ -1318,6 +1291,21 @@
                     <tr>
                         <td class="col-md-4">
                             <code>dt:     <code>DataTableComponent</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isEmpty</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>isEmpty:     <code>(data: any) &#x3D;&gt; boolean</code>
     </bcode>
                         </td>
                     </tr>
@@ -1343,6 +1331,7 @@
 import { DataTableColumnTmplComponent } from &#x27;./tmpl/data-table-column-tmpl.component&#x27;;
 import { DataTableComponent } from &#x27;./data-table.component&#x27;;
 import { DataTableTmplsComponent } from &#x27;./tmpl/data-table-tmpls.component&#x27;;
+import { isImmutableEmpty } from &#x27;../utils/lange-utils&#x27;
 
 @Component({
   selector: &#x27;re-data-table-body,[reDataTableBody]&#x27;,
@@ -1360,13 +1349,10 @@ export class DataTableBodyComponent {
   @Input() emptyRowText: string;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
+  isEmpty: (data) &#x3D;&gt; boolean;
 
   constructor(public dt: DataTableComponent) {
-
-  }
-
-  isEmpty(dataSource) {
-    return !dataSource || !(dataSource.length || dataSource.size);
+    this.isEmpty &#x3D; isImmutableEmpty;
   }
 }
 </code></pre>

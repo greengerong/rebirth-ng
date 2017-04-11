@@ -1207,35 +1207,6 @@
                     </tr>
                 </tbody>
             </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>withoutFooter</code>
-                        </td>
-                        <td class="col-md-10">
-                            <p>
-                              <em>Default value: </em><code>true</code>
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-2">
-                            <code>withoutHeader</code>
-                        </td>
-                        <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code>boolean</code>
-
-                              </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
     </section>
 
     <section>
@@ -1334,12 +1305,63 @@
             </table>
     </section>
 
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> panelBody</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>panelBody:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> panelFooter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>panelFooter:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> panelHeader</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>panelHeader:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
 </div>
         <div class="tab-pane fade tab-source-code" id="source">
-            <pre><code class="hljs javascript">import { Component, Input, Output, EventEmitter, Optional, OnInit, Host, OnDestroy } from &#x27;@angular/core&#x27;;
+            <pre><code class="hljs javascript">import { Component, Input, Output, EventEmitter, Optional, OnInit, Host, OnDestroy, ContentChild } from &#x27;@angular/core&#x27;;
 import { PanelGroup } from &#x27;./panel-group.model&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
+import { PanelHeaderComponent } from &#x27;./panel-header.component&#x27;;
+import { PanelBodyComponent } from &#x27;./panel-body.component&#x27;;
+import { PanelFooterComponent } from &#x27;./panel-footer.component&#x27;;
 
 @Component({
   selector: &#x27;re-panel,re-accordion-item&#x27;,
@@ -1350,13 +1372,14 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Input() id;
   @Input() type: &#x27;default&#x27; | &#x27;primary&#x27; | &#x27;success&#x27; | &#x27;info&#x27; | &#x27;warning&#x27; | &#x27;danger&#x27; &#x3D; &#x27;default&#x27;;
   @Input() closable: boolean;
-  @Input() withoutHeader: boolean;
-  @Input() withoutFooter &#x3D; true;
   @Input() collapsable: boolean;
   @Input() isCollapsed &#x3D; false;
   @Input() cssClass: string;
   @Output() close &#x3D; new EventEmitter&lt;PanelComponent&gt;();
   @Output() collapse &#x3D; new EventEmitter&lt;boolean&gt;();
+  @ContentChild(PanelHeaderComponent) panelHeader;
+  @ContentChild(PanelBodyComponent) panelBody;
+  @ContentChild(PanelFooterComponent) panelFooter;
 
   constructor(@Optional() @Host() private  panelGroup: PanelGroup, private rebirthUIConfig: RebirthNGConfig) {
     this.type &#x3D; &lt;any&gt;rebirthUIConfig.panel.type;

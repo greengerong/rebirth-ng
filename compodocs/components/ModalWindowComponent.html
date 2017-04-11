@@ -1185,6 +1185,54 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> open</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>open()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> close</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>close()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> onAnimationDone</b>
                         </td>
                     </tr>
@@ -1285,6 +1333,21 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> animateState</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>animateState:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> dismiss</b>
                         </td>
                     </tr>
@@ -1345,7 +1408,6 @@
   ViewChild,
   HostListener,
   EventEmitter,
-  ChangeDetectionStrategy,
   ElementRef,
   Output
 } from &#x27;@angular/core&#x27;;
@@ -1359,10 +1421,10 @@ import { trigger, state, style, transition, animate } from &#x27;@angular/animat
   templateUrl: &#x27;./modal-window.component.html&#x27;,
   animations: [
     trigger(&#x27;flyInOut&#x27;, [
-      state(&#x27;void&#x27;, style({ top: &#x27;-100%&#x27; })),
-      state(&#x27;in&#x27;, style({ top: &#x27;30px&#x27; })),
-      transition(&#x27;void &#x3D;&gt; in&#x27;, animate(&#x27;200ms ease-in-out&#x27;)),
-      transition(&#x27;in &#x3D;&gt; void&#x27;, animate(&#x27;200ms ease-in-out&#x27;)),
+      state(&#x27;void&#x27;, style({ top: &#x27;-100%&#x27;, opacity: 0 })),
+      state(&#x27;in&#x27;, style({ top: &#x27;10%&#x27;, opacity: 1 })),
+      transition(&#x27;void &#x3D;&gt; in&#x27;, animate(&#x27;0.2s ease-in-out&#x27;)),
+      transition(&#x27;in &#x3D;&gt; void&#x27;, animate(&#x27;0.2s ease-in-out&#x27;)),
     ])
   ]
 })
@@ -1373,10 +1435,23 @@ export class ModalWindowComponent {
   @ViewChild(ModalContentComponent) modalContent: ModalContentComponent;
   dismiss: EventEmitter&lt;any&gt;;
   modalOptions: ModalOptions;
+  animateState: string;
 
   constructor(private elementRef: ElementRef) {
 
   }
+
+  open() {
+    this.isOpen &#x3D; true;
+    this.animateState &#x3D; &#x27;in&#x27;;
+  }
+
+  close() {
+    this.isOpen &#x3D; false;
+    this.animateState &#x3D; &#x27;void&#x27;;
+    return this.animationDone;
+  }
+
 
   onAnimationDone($event) {
     this.animationDone.emit($event);
