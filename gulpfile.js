@@ -70,13 +70,6 @@ gulp.task('prenpm', ['ng2:aot'], function () {
     .pipe(gulp.dest(config.lib));
 });
 
-gulp.task('sw:code-gen', function (cb) {
-  swPrecache.write(config.root + '/service-worker.js', {
-    staticFileGlobs: [config.root + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefix: config.root
-  }, cb);
-});
-
 gulp.task('new:config', function () {
   gulp.src('./src/app/shared/demo/demo-config.service.ts')
     .pipe(insertLines({
@@ -129,4 +122,11 @@ gulp.task('new:cmp', function (cb) {
 
 gulp.task('prepublish', function (cb) {
   runSequence(['clean:dist', 'copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
+});
+
+gulp.task('sw:gen', function (callback) {
+  swPrecache.write(`${config.dest}/service-worker.js`, {
+    staticFileGlobs: [config.dest + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
+    stripPrefix: config.dest
+  }, callback);
 });
