@@ -1,5 +1,6 @@
-import { Input, ElementRef, Renderer2, TemplateRef, HostListener } from '@angular/core';
+import { Input, ElementRef, Renderer2, TemplateRef, HostListener, ChangeDetectorRef } from '@angular/core';
 import { stopPropagationIfExist } from '../utils/dom-utils';
+import { AnimationEvent } from '@angular/animations';
 
 export class TooltipPopup {
   static ACTIVE_CLASS = 'in';
@@ -8,30 +9,43 @@ export class TooltipPopup {
   @Input() context: any;
   @Input() cssClass: string;
   isOpen: boolean;
+  animateState = 'initial';
 
-  constructor(protected elementRef: ElementRef, protected renderer: Renderer2) {
+  constructor(protected elementRef: ElementRef, protected renderer: Renderer2, protected changeDetectorRef: ChangeDetectorRef) {
   }
 
   @HostListener('click', ['$event'])
-  onDocumentClick($event: Event) {
+  onHostClick($event: Event) {
     stopPropagationIfExist($event);
   }
 
   show() {
-    this.isOpen = true;
-    this.renderer.addClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'block');
-    if (this.cssClass) {
-      this.renderer.addClass(this.elementRef.nativeElement, this.cssClass);
+    if (!this.isOpen) {
+      this.isOpen = true;
+      this.renderer.addClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS);
+      this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'block');
+      this.animateState = 'visible';
+      if (this.cssClass) {
+        this.renderer.addClass(this.elementRef.nativeElement, this.cssClass);
+      }
+      this.changeDetectorRef.markForCheck();
     }
   }
 
   hide() {
-    this.isOpen = false;
-    this.renderer.removeClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
-    if (this.cssClass) {
-      this.renderer.removeClass(this.elementRef.nativeElement, this.cssClass);
+    if (this.isOpen) {
+      this.isOpen = false;
+      this.animateState = 'hidden';
+      if (this.cssClass) {
+        this.renderer.removeClass(this.elementRef.nativeElement, this.cssClass);
+      }
+    }
+  }
+
+  afterVisibilityAnimation(e: AnimationEvent) {
+    if (e.toState === 'hidden' && !this.isOpen) {
+      this.renderer.removeClass(this.elementRef.nativeElement, TooltipPopup.ACTIVE_CLASS);
+      this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
     }
   }
 
