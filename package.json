@@ -51,8 +51,8 @@
     "bootstrap-sass": "^3.3.7",
     "classlist.js": "^1.1.20150312",
     "codelyzer": "~2.0.0",
-    "compodoc": "0.0.38",
     "core-js": "^2.4.1",
+    "@compodoc/compodoc": "^1.0.0-beta.3",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
@@ -86,9 +86,9 @@
     "ts-node": "~2.0.0",
     "tslint": "~4.4.2",
     "typedoc": "^0.5.5",
+    "typescript": "^2.2.2",
     "web-animations-js": "^2.2.2",
-    "zone.js": "0.8.4",
-    "typescript": "^2.2.2"
+    "zone.js": "0.8.4"
   },
   "dependencies": {
     "date-fns": "^1.27.2"
