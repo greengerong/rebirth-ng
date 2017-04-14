@@ -60,7 +60,6 @@ And use `RebirthNGModule` to declare on your feature module:
     export class DatePickerDemoModule {
     }
 
-## FAQ
 
 ## Animations
 
@@ -86,5 +85,8 @@ example:
     })
     export class AppModule {
     }
+
+## FAQ
+
 
 Please check [github](https://github.com/greengerong/rebirth-ng/issues) issue for your common problems / solutions.
