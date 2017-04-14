@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { TooltipPopup } from './tooltip-popup';
-import { trigger, style, state, transition, animate } from '@angular/animations';
+import { SCALE_ANIMATIONS } from '../utils/animation-utils';
 
 @Component({
   selector: 're-tooltip-popup',
@@ -12,16 +12,7 @@ import { trigger, style, state, transition, animate } from '@angular/animations'
     '[@state]': "animateState",
     '(@state.done)': "afterVisibilityAnimation($event)"
   },
-  animations: [
-    trigger('state', [
-      state('void', style({ transform: 'scale(0)' })),
-      state('initial', style({ transform: 'scale(0)' })),
-      state('visible', style({ transform: 'scale(1)' })),
-      state('hidden', style({ transform: 'scale(0)' })),
-      transition('* => visible', animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
-      transition('* => hidden', animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
-    ])
-  ],
+  animations: SCALE_ANIMATIONS,
 })
 export class TooltipPopupComponent extends TooltipPopup {
 
