@@ -204,7 +204,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     pop.reset();
     this.fillPopup(source, this.value);
     if ((source && source.length) || this.noResultItemTemplate) {
-      pop.isOpen = true;
+      pop.show();
       this.positionPopup();
       this.changeDetectorRef.markForCheck();
     }
@@ -213,7 +213,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   private hidePopup() {
     if (this.popupRef) {
       this.popupRef.instance.activeIndex = 0;
-      this.popupRef.instance.isOpen = false;
+      this.popupRef.instance.hide();
     }
   }
 

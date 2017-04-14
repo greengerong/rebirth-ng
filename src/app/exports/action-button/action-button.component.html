@@ -20,7 +20,7 @@
   <ng-template [ngTemplateOutlet]="buttonTemplate || defaultButtonTemplate"
                [ngOutletContext]="{ $implicit: this}"></ng-template>
 
-  <ul class="dropdown-menu" role="menu">
+  <ul class="dropdown-menu" role="menu" [@state]="animateState" (@state.done)="afterVisibilityAnimation($event)">
     <ng-container *ngFor="let item of actions">
       <li *ngIf="!item.divider && ! item.header" role="menuitem" [ngClass]="{'disabled': item.disabled}"
           (click)="onActionClick(item)">

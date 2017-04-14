@@ -3,8 +3,9 @@
   <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks"
                     [type]="'primary'"
                     (actionClick)="onActionClick($event)"></re-action-button>
-  <re-action-button [buttonText]="'Dropup action'" direction="up" [actions]="actions" type="warning"
-                    (actionClick)="onActionClick($event)" [isOpen]="isActionOpen"></re-action-button>
+  <re-action-button #actionButton="actionButton" [buttonText]="'Dropup action'" direction="up" [actions]="actions"
+                    type="warning"
+                    (actionClick)="onActionClick($event)"></re-action-button>
 
   <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
                     (actionClick)="onActionClick($event)"></re-action-button>
@@ -25,7 +26,7 @@
 
   <hr>
   <div>
-    <button class="btn btn-success" (click)="isActionOpen = !isActionOpen; $event.stopPropagation();">Toggle 4th Dropup
+    <button class="btn btn-success" (click)="actionButton.toggle($event)">Toggle 4th Dropup
       action
     </button>
 

@@ -1,20 +1,33 @@
 import { Component, Input, TemplateRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 're-auto-complete-popup',
   templateUrl: './auto-complete-popup.component.html',
   host: {
     '[class]': '"dropdown-menu "  +  (cssClass ? cssClass : "")',
-    '[style.display]': 'isOpen && (source?.length || noResultItemTemplate) ? "inline-block" : "none"'
+    '[style.display]': 'isOpen && (source?.length || noResultItemTemplate) ? "inline-block" : "none"',
+    '[@state]': "animateState",
+    '(@state.done)': "afterVisibilityAnimation($event)"
   },
   styleUrls: ['./auto-complete-popup.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => AutoCompletePopupComponent),
     multi: true
-  }]
+  }],
+  animations: [
+    trigger('state', [
+      state('void', style({ transform: 'scale(0)' })),
+      state('initial', style({ transform: 'scale(0)' })),
+      state('visible', style({ transform: 'scale(1)' })),
+      state('hidden', style({ transform: 'scale(0)' })),
+      transition('* => visible', animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+      transition('* => hidden', animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+    ])
+  ]
 })
 export class AutoCompletePopupComponent implements ControlValueAccessor {
   activeIndex = 0;
@@ -26,6 +39,7 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
+  animateState = 'initial';
 
   private value: any;
   private onChange = (_: any) => null;
@@ -37,6 +51,25 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
 
   writeValue(obj: any): void {
     this.value = obj;
+  }
+
+  show() {
+    if (!this.isOpen) {
+      this.isOpen = true;
+      this.animateState = 'visible';
+    }
+  }
+
+  hide() {
+    if (this.isOpen) {
+      this.animateState = 'hidden';
+    }
+  }
+
+  afterVisibilityAnimation(e: AnimationEvent) {
+    if (e.toState === 'hidden' && this.isOpen) {
+      this.isOpen = false;
+    }
   }
 
   setDisabledState(isDisabled: boolean): void {
