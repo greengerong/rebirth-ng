@@ -7,6 +7,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 @Component({
   selector: 're-pager',
   templateUrl: './re-pager.component.html',
+  styleUrls: ['./pager.component.scss'],
   exportAs: 'pager',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

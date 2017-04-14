@@ -7,6 +7,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 @Component({
   selector: 're-pagination',
   templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.scss'],
   exportAs: 'pagination',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
