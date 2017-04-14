@@ -8,6 +8,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
   selector: 're-rating',
   templateUrl: './rating.component.html',
+  styleUrls: ['./rating.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'rating',
   providers: [{
