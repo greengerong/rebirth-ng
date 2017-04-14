@@ -62,4 +62,29 @@ And use `RebirthNGModule` to declare on your feature module:
 
 ## FAQ
 
+## Animations
+
+`@Rebirth/NG` have got animations done. So You should include `BrowserAnimationsModule` or `NoopAnimationsModule` to your `AppModule`.
+
+example:
+
+    import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+    
+    @NgModule({
+      declarations: [
+        AppComponent,
+      ],
+      imports: [
+        BrowserModule,
+        RouterModule.forRoot([]),
+        SharedModule.forRoot(),
+        RebirthNGModule.forRoot(),
+        BrowserAnimationsModule
+      ],
+      providers: [],
+      bootstrap: [AppComponent]
+    })
+    export class AppModule {
+    }
+
 Please check [github](https://github.com/greengerong/rebirth-ng/issues) issue for your common problems / solutions.
