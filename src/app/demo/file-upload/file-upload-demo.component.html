@@ -2,7 +2,9 @@
   <p>Work in progress</p>
   <section>
     <h4>Basic:</h4>
-    <re-file-upload [multiple]="true" uploadUrl="http://localhost:8080/upload"></re-file-upload>
+    <re-file-upload [multiple]="true"
+                    (removeDone)="onRemoveDone($event)"
+                    uploadUrl="http://localhost:8080/upload"></re-file-upload>
   </section>
 
   <section>

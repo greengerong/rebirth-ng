@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
 })
 export class FileUploadDemoComponent {
 
+  onRemoveDone(files) {
+  }
+
 }

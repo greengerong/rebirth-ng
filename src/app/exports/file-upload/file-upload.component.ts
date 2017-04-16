@@ -44,6 +44,7 @@ export class FileUploadComponent implements AfterViewInit {
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
   @Output() fileUploadError = new EventEmitter<any>();
+  @Output() removeDone = new EventEmitter<any>();
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
   uploadFiles: SelectFileModel[] = [];
@@ -108,12 +109,15 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   removeAllSelectedFiles() {
+    const files = this.selectFiles;
     this.selectFiles = [];
     this.clearErrors();
+    this.removeDone.emit(files);
   }
 
   onRemoveFile(fileItem) {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+    this.removeDone.emit(fileItem);
   }
 
   uploadAllFiles() {
