@@ -13,7 +13,7 @@ describe('FileUpload', () => {
     TestBed.compileComponents();
   });
 
-  it('mcok test', async(() => {
+  it('mock test', async(() => {
     expect(true).toBeTruthy();
   }));
 
