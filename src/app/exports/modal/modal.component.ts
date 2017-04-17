@@ -3,6 +3,7 @@ import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
 import { DocumentRef } from '../window-ref';
 import 'rxjs/add/operator/do';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 're-modal',
@@ -26,7 +27,7 @@ export class ModalComponent {
     this.toggleBodyClass(true);
   }
 
-  close() {
+  close(): Observable<any> {
     return this.modalWindowComponent.close()
       .do(_ => this.isOpen = false);
   }
