@@ -1,14 +1,22 @@
 import { Component, Input, EventEmitter, HostListener, Output, TemplateRef } from '@angular/core';
 import { ActionItem } from './action-item.model';
 import { stopPropagationIfExist } from '../utils/dom-utils';
-import { AnimationEvent } from '@angular/animations';
-import { SCALE_ANIMATIONS } from '../utils/animation-utils';
+import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 're-action-button',
   templateUrl: './action-button.component.html',
   exportAs: 'actionButton',
-  animations: SCALE_ANIMATIONS
+  animations: [
+    trigger('state', [
+      state('void', style({ transform: 'scale(0)' })),
+      state('initial', style({ transform: 'scale(0)' })),
+      state('visible', style({ transform: 'scale(1)' })),
+      state('hidden', style({ transform: 'scale(0)' })),
+      transition('* => visible', animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+      transition('* => hidden', animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+    ])
+  ]
 })
 export class ActionButtonComponent {
   @Input() type: 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger' = 'default';

@@ -1,8 +1,8 @@
 import { Component, Input, TemplateRef, forwardRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { AnimationEvent } from '@angular/animations';
-import { SCALE_ANIMATIONS } from '../utils/animation-utils';
+import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
+
 
 @Component({
   selector: 're-auto-complete-popup',
@@ -19,7 +19,16 @@ import { SCALE_ANIMATIONS } from '../utils/animation-utils';
     useExisting: forwardRef(() => AutoCompletePopupComponent),
     multi: true
   }],
-  animations: SCALE_ANIMATIONS
+  animations: [
+    trigger('state', [
+      state('void', style({ transform: 'scale(0)' })),
+      state('initial', style({ transform: 'scale(0)' })),
+      state('visible', style({ transform: 'scale(1)' })),
+      state('hidden', style({ transform: 'scale(0)' })),
+      transition('* => visible', animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+      transition('* => hidden', animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+    ])
+  ]
 })
 export class AutoCompletePopupComponent implements ControlValueAccessor {
   activeIndex = 0;

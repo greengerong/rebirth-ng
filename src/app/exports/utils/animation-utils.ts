@@ -1,5 +1,4 @@
 import { ElementRef, Renderer2 } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 const TRANSITION_END_EVENT = {
   WebkitTransition: 'webkitTransitionEnd',
@@ -42,14 +41,3 @@ export function animationTimeout(duration = 0) {
     }, duration);
   });
 }
-
-export const SCALE_ANIMATIONS = [
-  trigger('state', [
-    state('void', style({ transform: 'scale(0)' })),
-    state('initial', style({ transform: 'scale(0)' })),
-    state('visible', style({ transform: 'scale(1)' })),
-    state('hidden', style({ transform: 'scale(0)' })),
-    transition('* => visible', animate('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
-    transition('* => hidden', animate('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
-  ])
-];
