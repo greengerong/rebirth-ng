@@ -91,7 +91,8 @@
     "zone.js": "0.8.4"
   },
   "dependencies": {
-    "date-fns": "^1.27.2"
+    "date-fns": "^1.27.2",
+    "intl": "^1.2.5"
   },
   "description": "> Angular4 UI plugin with bootstrap;",
   "bugs": {
