@@ -88,11 +88,11 @@
     "typedoc": "^0.5.5",
     "typescript": "^2.2.2",
     "web-animations-js": "^2.2.2",
+    "intl": "^1.2.5",
     "zone.js": "0.8.4"
   },
   "dependencies": {
-    "date-fns": "^1.27.2",
-    "intl": "^1.2.5"
+    "date-fns": "^1.27.2"
   },
   "description": "> Angular4 UI plugin with bootstrap;",
   "bugs": {
