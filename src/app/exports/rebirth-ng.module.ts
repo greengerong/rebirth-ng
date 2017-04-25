@@ -30,6 +30,7 @@ import { InfiniteScrollModule } from './infinite-scroll';
 import { RebirthCommonModule } from './common';
 import { DraggableModule } from './draggable';
 import { FileUploadModule } from './file-upload';
+import { TimePickerModule } from './time-picker/time-picker.module';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { FileUploadModule } from './file-upload';
     FlowStepModule,
     InfiniteScrollModule,
     DataTableModule,
-    FileUploadModule
+    FileUploadModule,
+    TimePickerModule,
   ],
   exports: [
     RebirthCommonModule,
@@ -90,7 +92,8 @@ import { FileUploadModule } from './file-upload';
     InfiniteScrollModule,
     DataTableModule,
     DraggableModule,
-    FileUploadModule
+    FileUploadModule,
+    TimePickerModule,
   ],
   declarations: [],
   providers: [],
