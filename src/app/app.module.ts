@@ -30,7 +30,8 @@ import {
   InfiniteScrollDemoModule,
   DataTableDemoModule,
   DraggableDemoModule,
-  FileUploadDemoModule
+  FileUploadDemoModule,
+  TimePickerDemoModule,
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -72,7 +73,8 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     DataTableDemoModule,
     InfiniteScrollDemoModule,
     DraggableDemoModule,
-    FileUploadDemoModule
+    FileUploadDemoModule,
+    TimePickerDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

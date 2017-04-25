@@ -26,6 +26,7 @@ export * from './rating';
 export * from './select-button';
 export * from './switch';
 export * from './tabs';
+export * from './time-picker';
 export * from './tooltip';
 export * from './utils';
 export * from './window-ref';

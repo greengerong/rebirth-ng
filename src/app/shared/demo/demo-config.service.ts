@@ -1,34 +1,34 @@
 import { Injectable, Type } from '@angular/core';
 import {
-  ModalDemoComponent,
-  DialogDemoComponent,
-  AlertBoxDemoComponent,
-  BadgeDemoComponent,
-  PaginationDemoComponent,
-  PagerDemoComponent,
-  PanelDemoComponent,
   AccordionDemoComponent,
   ActionButtonDemoComponent,
-  RatingDemoComponent,
-  TabsDemoComponent,
-  TooltipDemoComponent,
-  PopoverDemoComponent,
-  DatePickerDemoComponent,
-  ProgressBarDemoComponent,
-  SelectButtonDemoComponent,
-  OverlayDemoComponent,
-  CarouselDemoComponent,
-  SwitchDemoComponent,
-  MenuBarDemoComponent,
+  AlertBoxDemoComponent,
   AutoCompleteDemoComponent,
-  FlowStepDemoComponent,
-  InfiniteScrollDemoComponent,
+  BadgeDemoComponent,
+  CarouselDemoComponent,
   DataTableDemoComponent,
+  DatePickerDemoComponent,
+  DialogDemoComponent,
   DraggableDemoComponent,
   FileUploadDemoComponent,
-  // component import
+  FlowStepDemoComponent,
+  InfiniteScrollDemoComponent,
+  MenuBarDemoComponent,
+  ModalDemoComponent,
+  OverlayDemoComponent,
+  PagerDemoComponent,
+  PaginationDemoComponent,
+  PanelDemoComponent,
+  PopoverDemoComponent,
+  ProgressBarDemoComponent,
+  RatingDemoComponent,
+  SelectButtonDemoComponent,
+  SwitchDemoComponent,
+  TabsDemoComponent,
+  TooltipDemoComponent
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
+import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
 
 @Injectable()
 export class DemoConfigService {
@@ -258,6 +258,15 @@ export class DemoConfigService {
       html: require('!raw-loader!../../demo/file-upload/file-upload-demo.component.html'),
       ts: require('!raw-loader!../../demo/file-upload/file-upload-demo.component.ts'),
     },
+    {
+      name: 'TimePicker',
+      directory: 'time-picker',
+      cmp: TimePickerDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/time-picker/README.md'),
+      html: require('!raw-loader!../../demo/time-picker/time-picker-demo.component.html'),
+      ts: require('!raw-loader!../../demo/time-picker/time-picker-demo.component.ts'),
+    },
+
     // component declare
   ];
 }

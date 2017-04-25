@@ -8,7 +8,7 @@ import * as Immutable from 'immutable';
 })
 export class InfiniteScrollDemoComponent implements OnInit {
   dataSource = Immutable.List([]);
-  total = 500;
+  total = 200;
   complete = false;
   next = 1;
 
