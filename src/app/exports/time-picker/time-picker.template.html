@@ -1,19 +1,17 @@
-<section>
-  <input type="number"
-         name="hours"
-         [class.error]="!isCorrectHours"
-         max="23"
-         [min]="conditionTime.minHours"
-         maxlength="2"
-         [ngModel]="hours"
-         (ngModelChange)="onHoursChange($event)">
-  <span>:</span>
-  <input type="number"
-         name="minutes"
-         [class.error]="!isCorrectMinutes"
-         max="59"
-         min="0"
-         maxlength="2"
-         [ngModel]="minutes"
-         (ngModelChange)="onMinutesChange($event)">
-</section>
+<input type="number"
+       name="hours"
+       [class.error]="!isCorrectHours"
+       max="23"
+       [min]="conditionTime.minHours"
+       maxlength="2"
+       [ngModel]="hours"
+       (ngModelChange)="onHoursChange($event)">
+<span>:</span>
+<input type="number"
+       name="minutes"
+       [class.error]="!isCorrectMinutes"
+       max="59"
+       min="0"
+       maxlength="2"
+       [ngModel]="minutes"
+       (ngModelChange)="onMinutesChange($event)">
