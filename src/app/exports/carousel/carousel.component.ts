@@ -21,6 +21,7 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   @Input() activeSlide = 0;
   @Input() interval: number;
   @Input() animate: boolean;
+  @Input() disableCarouselControl = false;
   @Output() activeSlideChange = new EventEmitter<number>();
   @ContentChildren(SlideDirective) slides: QueryList<SlideDirective>;
   @ViewChildren('slideItem') slideItems: QueryList<ElementRef>;
