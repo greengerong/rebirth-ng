@@ -6,9 +6,10 @@ import {
   Output,
   EventEmitter,
   ContentChild,
-  ChangeDetectorRef,
   OnDestroy,
-  ViewChild, HostListener
+  ViewChild,
+  HostListener,
+  QueryList
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import {
@@ -57,7 +58,7 @@ export class DataTableComponent implements OnDestroy {
   @Output() searchQueryChange = new EventEmitter<{ [key: string]: any; }>();
   @Output() pageIndexChange = new EventEmitter<number>();
 
-  @ContentChildren(DataTableColumnTmplComponent) columns: DataTableColumnTmplComponent[];
+  @ContentChildren(DataTableColumnTmplComponent) columns: QueryList<DataTableColumnTmplComponent>;
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
   @ContentChild(DataTablePagerTmplComponent) pagerTemplate: DataTablePagerTmplComponent;
