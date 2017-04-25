@@ -5,7 +5,7 @@
          max="23"
          [min]="conditionTime.minHours"
          maxlength="2"
-         [(ngModel)]="hours"
+         [ngModel]="hours"
          (ngModelChange)="onHoursChange($event)">
   <span>:</span>
   <input type="number"
@@ -14,6 +14,6 @@
          max="59"
          min="0"
          maxlength="2"
-         [(ngModel)]="minutes"
+         [ngModel]="minutes"
          (ngModelChange)="onMinutesChange($event)">
 </section>
