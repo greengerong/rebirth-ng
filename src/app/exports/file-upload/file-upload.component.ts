@@ -45,9 +45,10 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
-  @Output() fileUploadSuccess = new EventEmitter<any>();
-  @Output() fileUploadError = new EventEmitter<any>();
-  @Output() removeDone = new EventEmitter<any>();
+  @Output() fileUploadSuccess = new EventEmitter<SelectFileModel>();
+  @Output() fileUploadError = new EventEmitter<SelectFileModel>();
+  @Output() removeFiles = new EventEmitter<SelectFileModel[]>();
+  @Output() uploadFilesChange = new EventEmitter<SelectFileModel[]>();
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
   uploadFiles: SelectFileModel[] = [];
@@ -115,12 +116,12 @@ export class FileUploadComponent implements AfterViewInit {
     const files = this.selectFiles;
     this.selectFiles = [];
     this.clearErrors();
-    this.removeDone.emit(files);
+    this.removeFiles.emit(files);
   }
 
   onRemoveFile(fileItem) {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-    this.removeDone.emit(fileItem);
+    this.removeFiles.emit([fileItem]);
   }
 
   uploadAllFiles() {
@@ -140,12 +141,18 @@ export class FileUploadComponent implements AfterViewInit {
           fileItem.uploadResponse = res;
           this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
           this.uploadFiles = [...this.uploadFiles, fileItem];
-          this.fileUploadSuccess.emit(res);
+          this.fileUploadSuccess.emit(fileItem);
+          this.uploadFilesChange.emit(this.uploadFiles);
           this.changeDetectorRef.markForCheck();
         },
         (error) => {
           this.errors.push(`${fileItem.file.name}: Upload error: ${error}`);
-          this.fileUploadError.emit(error);
+          this.fileUploadError.emit({
+            displaySize: fileItem.displaySize,
+            dataUrl: fileItem.dataUrl,
+            file: fileItem.file,
+            uploadResponse: error
+          });
           this.changeDetectorRef.markForCheck();
         }
       );

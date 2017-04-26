@@ -2,15 +2,17 @@
   <p>Work in progress</p>
   <section>
     <h4>Basic:</h4>
-    <re-file-upload [multiple]="true"
-                    (removeDone)="onRemoveDone($event)" uploadParamName="rebirth"
+    <re-file-upload [multiple]="true" (removeFiles)="onRemoveDone($event)" uploadParamName="files"
+                    (uploadFilesChange)="uploadFilesChange($event)"
                     uploadUrl="http://localhost:3000/upload"></re-file-upload>
+
+    <pre>{{uploadFiles | json}}</pre>
   </section>
 
   <section>
     <h4>Image preview:</h4>
     <re-file-upload [multiple]="true" [autoUpload]="true" [accept]="'image/*'" [imgPreview]="true"
-                    [previewWidth]="'50px'" uploadParamName="rebirth"
+                    [previewWidth]="'50px'" uploadParamName="files"
                     uploadUrl="http://localhost:3000/upload"></re-file-upload>
   </section>
 </div>

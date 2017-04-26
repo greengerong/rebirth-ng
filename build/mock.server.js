@@ -34,7 +34,7 @@ app.get('/greeting', function (req, res) {
   res.send({desc: 'rebirth demo'});
 });
 
-app.post('/upload', upload.single('rebirth'), function (req, res) {
+app.post('/upload', upload.single('files'), function (req, res) {
   var file = req.file;
 
   console.log('文件类型：%s', file.mimetype);

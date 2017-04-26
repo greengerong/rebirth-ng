@@ -6,7 +6,14 @@ import { Component } from '@angular/core';
 })
 export class FileUploadDemoComponent {
 
+  uploadFiles: any[];
+
   onRemoveDone(files) {
+
+  }
+
+  uploadFilesChange($event) {
+    this.uploadFiles = $event.map(item => item.uploadResponse.path);
   }
 
 }
