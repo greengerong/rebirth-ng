@@ -8,7 +8,8 @@ import {
   Renderer2,
   Output,
   EventEmitter,
-  ChangeDetectorRef
+  ChangeDetectorRef,
+  TemplateRef
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
@@ -41,6 +42,8 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() chooseButton: string;
   @Input() uploadButton: string;
   @Input() cancelButton: string;
+  @Input() toolbarTemplate: TemplateRef<any>;
+  @Input() previewTemplate: TemplateRef<any>;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<any>();
   @Output() fileUploadError = new EventEmitter<any>();

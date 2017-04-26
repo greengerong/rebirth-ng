@@ -1,21 +1,36 @@
-<ng-template>
+<ng-template #defaultToolbarTemplate let-toolbar="">
+  <div class="file-upload-toolbar">
+    <input #file type="file" (change)="toolbar.newFileChoose(file)" style="display: none">
+    <button class="btn btn-primary" (click)="toolbar.addNewFile(file, $event)"
+            [disabled]="toolbar.isMoreThanMaxItems()">
+      <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
+    </button>
+    <button class="btn btn-info" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.uploadAllFiles()">
+      <i class="glyphicon glyphicon-upload"></i> {{toolbar.uploadButton}}
+    </button>
+    <button class="btn btn-danger" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.removeAllSelectedFiles()">
+      <i class="glyphicon glyphicon-trash"></i> {{toolbar.cancelButton}}
+    </button>
+  </div>
 
 </ng-template>
 
+<ng-template #defaultPreviewTemplate let-preview="">
+
+  <re-file-upload-preview [selectFiles]="preview.selectFiles" [imgPreview]="preview.imgPreview"
+                          [previewWidth]="preview.previewWidth"
+                          (removeFile)="preview.onRemoveFile($event)"></re-file-upload-preview>
+
+  <re-file-upload-preview [selectFiles]="preview.uploadFiles" [imgPreview]="preview.imgPreview"
+                          [previewWidth]="preview.previewWidth"
+                          [uploaded]="true"></re-file-upload-preview>
+</ng-template>
+
 <div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
-  <div class="file-upload-toolbar">
-    <input #file type="file" (change)="newFileChoose(file)" style="display: none">
-    <button class="btn btn-primary" (click)="addNewFile(file, $event)"
-            [disabled]="isMoreThanMaxItems()">
-      <i class="glyphicon glyphicon-plus"></i> {{chooseButton}}
-    </button>
-    <button class="btn btn-info" [disabled]="!selectFiles?.length" (click)="uploadAllFiles()">
-      <i class="glyphicon glyphicon-upload"></i> {{uploadButton}}
-    </button>
-    <button class="btn btn-danger" [disabled]="!selectFiles?.length" (click)="removeAllSelectedFiles()">
-      <i class="glyphicon glyphicon-trash"></i> {{cancelButton}}
-    </button>
-  </div>
+
+  <ng-template [ngTemplateOutlet]="toolbarTemplate || defaultToolbarTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
+
 
   <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
                 *ngIf="errors.length">
@@ -24,9 +39,7 @@
     </ul>
   </re-alert-box>
 
-  <re-file-upload-preview [selectFiles]="selectFiles" [imgPreview]="imgPreview" [previewWidth]="previewWidth"
-                          (removeFile)="onRemoveFile($event)"></re-file-upload-preview>
+  <ng-template [ngTemplateOutlet]="previewTemplate || defaultPreviewTemplate"
+               [ngOutletContext]="{ $implicit: this}"></ng-template>
 
-  <re-file-upload-preview [selectFiles]="uploadFiles" [imgPreview]="imgPreview" [previewWidth]="previewWidth"
-                          [uploaded]="true"></re-file-upload-preview>
 </div>
