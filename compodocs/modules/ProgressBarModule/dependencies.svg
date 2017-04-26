@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_ProgressBarModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="89,-70 89,-268 407,-268 407,-70 89,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="155,-70 155,-268 341,-268 341,-70 155,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_ProgressBarModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="233,-78 233,-130 399,-130 399,-78 233,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_ProgressBarModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_ProgressBarModule_imports</title>
-<polygon fill="none" stroke="#000000" points="97,-78 97,-130 225,-130 225,-78 97,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_ProgressBarModule_exports</title>
 <polygon fill="none" stroke="#000000" points="163,-208 163,-260 333,-260 333,-208 163,-208"/>
 </g>
-<!-- ProgressBarComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>ProgressBarComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="390.752,-122 241.248,-122 241.248,-86 390.752,-86 390.752,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProgressBarComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- ProgressBarModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="311.9692,-187 308.9692,-191 287.9692,-191 284.9692,-187 184.0308,-187 184.0308,-151 311.9692,-151 311.9692,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProgressBarModule</text>
 </g>
-<!-- ProgressBarComponent&#45;&gt;ProgressBarModule -->
+<!-- CommonModule&#45;&gt;ProgressBarModule -->
 <g id="edge1" class="edge">
-<title>ProgressBarComponent&#45;&gt;ProgressBarModule</title>
-<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
+<title>CommonModule&#45;&gt;ProgressBarModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- ProgressBarComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>ProgressBarComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="324.752,-252 171.248,-252 171.248,-216 324.752,-216 324.752,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProgressBarComponent </text>
 </g>
 <!-- ProgressBarModule&#45;&gt;ProgressBarComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>ProgressBarModule&#45;&gt;ProgressBarComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="216.6681,-122 213.6681,-126 192.6681,-126 189.6681,-122 105.3319,-122 105.3319,-86 216.6681,-86 216.6681,-122"/>
-<text text-anchor="middle" x="161" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;ProgressBarModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;ProgressBarModule</title>
-<path fill="none" stroke="#000000" d="M200.4246,-122.1061C200.4246,-122.1061 200.4246,-140.991 200.4246,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="196.9247,-140.9909 200.4246,-150.991 203.9247,-140.991 196.9247,-140.9909"/>
 </g>
 </g>
 </svg>

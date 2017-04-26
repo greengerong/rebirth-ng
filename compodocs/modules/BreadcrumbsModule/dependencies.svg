@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_BreadcrumbsModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="86,-70 86,-268 410,-268 410,-70 86,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="152,-70 152,-268 344,-268 344,-70 152,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_BreadcrumbsModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="230,-78 230,-130 402,-130 402,-78 230,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_BreadcrumbsModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_BreadcrumbsModule_imports</title>
-<polygon fill="none" stroke="#000000" points="94,-78 94,-130 222,-130 222,-78 94,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_BreadcrumbsModule_exports</title>
 <polygon fill="none" stroke="#000000" points="160,-208 160,-260 336,-260 336,-208 160,-208"/>
 </g>
-<!-- BreadcrumbsComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>BreadcrumbsComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="393.9692,-122 238.0308,-122 238.0308,-86 393.9692,-86 393.9692,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BreadcrumbsComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- BreadcrumbsModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="315.1867,-187 312.1867,-191 291.1867,-191 288.1867,-187 180.8133,-187 180.8133,-151 315.1867,-151 315.1867,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">BreadcrumbsModule</text>
 </g>
-<!-- BreadcrumbsComponent&#45;&gt;BreadcrumbsModule -->
+<!-- CommonModule&#45;&gt;BreadcrumbsModule -->
 <g id="edge1" class="edge">
-<title>BreadcrumbsComponent&#45;&gt;BreadcrumbsModule</title>
-<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
+<title>CommonModule&#45;&gt;BreadcrumbsModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- BreadcrumbsComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>BreadcrumbsComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="327.9699,-252 168.0301,-252 168.0301,-216 327.9699,-216 327.9699,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">BreadcrumbsComponent </text>
 </g>
 <!-- BreadcrumbsModule&#45;&gt;BreadcrumbsComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>BreadcrumbsModule&#45;&gt;BreadcrumbsComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="213.6681,-122 210.6681,-126 189.6681,-126 186.6681,-122 102.3319,-122 102.3319,-86 213.6681,-86 213.6681,-122"/>
-<text text-anchor="middle" x="158" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;BreadcrumbsModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;BreadcrumbsModule</title>
-<path fill="none" stroke="#000000" d="M197.3703,-122.1061C197.3703,-122.1061 197.3703,-140.991 197.3703,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="193.8703,-140.9909 197.3703,-150.991 200.8703,-140.991 193.8703,-140.9909"/>
 </g>
 </g>
 </svg>

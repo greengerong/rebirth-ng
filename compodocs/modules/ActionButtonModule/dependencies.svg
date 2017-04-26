@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_ActionButtonModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="85,-70 85,-268 411,-268 411,-70 85,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="151,-70 151,-268 345,-268 345,-70 151,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_ActionButtonModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="229,-78 229,-130 403,-130 403,-78 229,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_ActionButtonModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_ActionButtonModule_imports</title>
-<polygon fill="none" stroke="#000000" points="93,-78 93,-130 221,-130 221,-78 93,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_ActionButtonModule_exports</title>
 <polygon fill="none" stroke="#000000" points="159,-208 159,-260 337,-260 337,-208 159,-208"/>
 </g>
-<!-- ActionButtonComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>ActionButtonComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="394.5532,-122 237.4468,-122 237.4468,-86 394.5532,-86 394.5532,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionButtonComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- ActionButtonModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="315.7702,-187 312.7702,-191 291.7702,-191 288.7702,-187 180.2298,-187 180.2298,-151 315.7702,-151 315.7702,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionButtonModule</text>
 </g>
-<!-- ActionButtonComponent&#45;&gt;ActionButtonModule -->
+<!-- CommonModule&#45;&gt;ActionButtonModule -->
 <g id="edge1" class="edge">
-<title>ActionButtonComponent&#45;&gt;ActionButtonModule</title>
-<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
+<title>CommonModule&#45;&gt;ActionButtonModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- ActionButtonComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>ActionButtonComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="328.5526,-252 167.4474,-252 167.4474,-216 328.5526,-216 328.5526,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionButtonComponent </text>
 </g>
 <!-- ActionButtonModule&#45;&gt;ActionButtonComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>ActionButtonModule&#45;&gt;ActionButtonComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="212.6681,-122 209.6681,-126 188.6681,-126 185.6681,-122 101.3319,-122 101.3319,-86 212.6681,-86 212.6681,-122"/>
-<text text-anchor="middle" x="157" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;ActionButtonModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;ActionButtonModule</title>
-<path fill="none" stroke="#000000" d="M196.4744,-122.1061C196.4744,-122.1061 196.4744,-140.991 196.4744,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="192.9745,-140.9909 196.4744,-150.991 199.9745,-140.991 192.9745,-140.9909"/>
 </g>
 </g>
 </svg>

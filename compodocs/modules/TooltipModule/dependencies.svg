@@ -22,85 +22,57 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_TooltipModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="21,-70 21,-268 475,-268 475,-70 21,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="86,-70 86,-268 410,-268 410,-70 86,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_TooltipModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="165,-78 165,-130 467,-130 467,-78 165,-78"/>
-</g>
-<g id="clust5" class="cluster">
+<g id="clust3" class="cluster">
 <title>cluster_TooltipModule_imports</title>
-<polygon fill="none" stroke="#000000" points="29,-78 29,-130 157,-130 157,-78 29,-78"/>
+<polygon fill="none" stroke="#000000" points="196,-78 196,-130 324,-130 324,-78 196,-78"/>
 </g>
-<g id="clust6" class="cluster">
+<g id="clust4" class="cluster">
 <title>cluster_TooltipModule_exports</title>
 <polygon fill="none" stroke="#000000" points="94,-208 94,-260 402,-260 402,-208 94,-208"/>
 </g>
-<!-- TooltipDirective -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>TooltipDirective</title>
-<polygon fill="#ffffb3" stroke="#000000" points="458.8076,-122 349.1924,-122 349.1924,-86 458.8076,-86 458.8076,-122"/>
-<text text-anchor="middle" x="404" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipDirective</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="315.6681,-122 312.6681,-126 291.6681,-126 288.6681,-122 204.3319,-122 204.3319,-86 315.6681,-86 315.6681,-122"/>
+<text text-anchor="middle" x="260" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- TooltipModule -->
-<g id="node3" class="node">
-<title>TooltipModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="302.2745,-187 299.2745,-191 278.2745,-191 275.2745,-187 201.7255,-187 201.7255,-151 302.2745,-151 302.2745,-187"/>
-<text text-anchor="middle" x="252" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipModule</text>
-</g>
-<!-- TooltipDirective&#45;&gt;TooltipModule -->
-<g id="edge1" class="edge">
-<title>TooltipDirective&#45;&gt;TooltipModule</title>
-<path fill="none" stroke="#000000" d="M371.875,-122.1061C371.875,-141.3391 371.875,-169 371.875,-169 371.875,-169 312.4904,-169 312.4904,-169"/>
-<polygon fill="#000000" stroke="#000000" points="312.4904,-165.5001 302.4904,-169 312.4903,-172.5001 312.4904,-165.5001"/>
-</g>
-<!-- TooltipPopupComponent -->
 <g id="node2" class="node">
-<title>TooltipPopupComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="331.3398,-122 172.6602,-122 172.6602,-86 331.3398,-86 331.3398,-122"/>
-<text text-anchor="middle" x="252" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipPopupComponent</text>
+<title>TooltipModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="310.2745,-187 307.2745,-191 286.2745,-191 283.2745,-187 209.7255,-187 209.7255,-151 310.2745,-151 310.2745,-187"/>
+<text text-anchor="middle" x="260" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipModule</text>
 </g>
-<!-- TooltipPopupComponent&#45;&gt;TooltipModule -->
-<g id="edge2" class="edge">
-<title>TooltipPopupComponent&#45;&gt;TooltipModule</title>
-<path fill="none" stroke="#000000" d="M252,-122.1061C252,-122.1061 252,-140.991 252,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="248.5001,-140.9909 252,-150.991 255.5001,-140.991 248.5001,-140.9909"/>
+<!-- CommonModule&#45;&gt;TooltipModule -->
+<g id="edge1" class="edge">
+<title>CommonModule&#45;&gt;TooltipModule</title>
+<path fill="none" stroke="#000000" d="M260,-122.1061C260,-122.1061 260,-140.991 260,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="256.5001,-140.9909 260,-150.991 263.5001,-140.991 256.5001,-140.9909"/>
 </g>
 <!-- TooltipDirective  -->
-<g id="node5" class="node">
+<g id="node3" class="node">
 <title>TooltipDirective </title>
 <polygon fill="#fb8072" stroke="#000000" points="394.3074,-252 281.6926,-252 281.6926,-216 394.3074,-216 394.3074,-252"/>
 <text text-anchor="middle" x="338" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipDirective </text>
 </g>
 <!-- TooltipModule&#45;&gt;TooltipDirective  -->
-<g id="edge4" class="edge">
+<g id="edge2" class="edge">
 <title>TooltipModule&#45;&gt;TooltipDirective </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M291.9918,-187.1061C291.9918,-187.1061 291.9918,-205.991 291.9918,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="288.4918,-205.9909 291.9918,-215.991 295.4918,-205.991 288.4918,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M295.9918,-187.1061C295.9918,-187.1061 295.9918,-205.991 295.9918,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="292.4918,-205.9909 295.9918,-215.991 299.4918,-205.991 292.4918,-205.9909"/>
 </g>
 <!-- TooltipPopupComponent  -->
-<g id="node6" class="node">
+<g id="node4" class="node">
 <title>TooltipPopupComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="263.8395,-252 102.1605,-252 102.1605,-216 263.8395,-216 263.8395,-252"/>
 <text text-anchor="middle" x="183" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TooltipPopupComponent </text>
 </g>
 <!-- TooltipModule&#45;&gt;TooltipPopupComponent  -->
-<g id="edge5" class="edge">
-<title>TooltipModule&#45;&gt;TooltipPopupComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M232.7663,-187.1061C232.7663,-187.1061 232.7663,-205.991 232.7663,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="229.2664,-205.9909 232.7663,-215.991 236.2664,-205.991 229.2664,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node4" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="148.6681,-122 145.6681,-126 124.6681,-126 121.6681,-122 37.3319,-122 37.3319,-86 148.6681,-86 148.6681,-122"/>
-<text text-anchor="middle" x="93" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;TooltipModule -->
 <g id="edge3" class="edge">
-<title>CommonModule&#45;&gt;TooltipModule</title>
-<path fill="none" stroke="#000000" d="M125.4571,-122.1061C125.4571,-141.3391 125.4571,-169 125.4571,-169 125.4571,-169 191.6233,-169 191.6233,-169"/>
-<polygon fill="#000000" stroke="#000000" points="191.6233,-172.5001 201.6233,-169 191.6232,-165.5001 191.6233,-172.5001"/>
+<title>TooltipModule&#45;&gt;TooltipPopupComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M236.7663,-187.1061C236.7663,-187.1061 236.7663,-205.991 236.7663,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="233.2664,-205.9909 236.7663,-215.991 240.2664,-205.991 233.2664,-205.9909"/>
 </g>
 </g>
 </svg>

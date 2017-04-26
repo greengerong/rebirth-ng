@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_PaginationModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="93,-70 93,-268 403,-268 403,-70 93,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="160,-70 160,-268 336,-268 336,-70 160,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_PaginationModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="237,-78 237,-130 395,-130 395,-78 237,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_PaginationModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_PaginationModule_imports</title>
-<polygon fill="none" stroke="#000000" points="101,-78 101,-130 229,-130 229,-78 101,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_PaginationModule_exports</title>
 <polygon fill="none" stroke="#000000" points="168,-208 168,-260 328,-260 328,-208 168,-208"/>
 </g>
-<!-- PaginationComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>PaginationComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="386.7162,-122 245.2838,-122 245.2838,-86 386.7162,-86 386.7162,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PaginationComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- PaginationModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="307.9342,-187 304.9342,-191 283.9342,-191 280.9342,-187 188.0658,-187 188.0658,-151 307.9342,-151 307.9342,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PaginationModule</text>
 </g>
-<!-- PaginationComponent&#45;&gt;PaginationModule -->
+<!-- CommonModule&#45;&gt;PaginationModule -->
 <g id="edge1" class="edge">
-<title>PaginationComponent&#45;&gt;PaginationModule</title>
-<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
+<title>CommonModule&#45;&gt;PaginationModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- PaginationComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>PaginationComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="320.2163,-252 175.7837,-252 175.7837,-216 320.2163,-216 320.2163,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PaginationComponent </text>
 </g>
 <!-- PaginationModule&#45;&gt;PaginationComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>PaginationModule&#45;&gt;PaginationComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="220.6681,-122 217.6681,-126 196.6681,-126 193.6681,-122 109.3319,-122 109.3319,-86 220.6681,-86 220.6681,-122"/>
-<text text-anchor="middle" x="165" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;PaginationModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;PaginationModule</title>
-<path fill="none" stroke="#000000" d="M204.5586,-122.1061C204.5586,-122.1061 204.5586,-140.991 204.5586,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="201.0586,-140.9909 204.5586,-150.991 208.0586,-140.991 201.0586,-140.9909"/>
 </g>
 </g>
 </svg>

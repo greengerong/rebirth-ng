@@ -22,25 +22,21 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_AlertBoxModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="97,-70 97,-268 399,-268 399,-70 97,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="164,-70 164,-268 332,-268 332,-70 164,-70"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_AlertBoxModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="241,-78 241,-130 391,-130 391,-78 241,-78"/>
+<g id="clust3" class="cluster">
+<title>cluster_AlertBoxModule_imports</title>
+<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
 </g>
 <g id="clust4" class="cluster">
-<title>cluster_AlertBoxModule_imports</title>
-<polygon fill="none" stroke="#000000" points="105,-78 105,-130 233,-130 233,-78 105,-78"/>
-</g>
-<g id="clust5" class="cluster">
 <title>cluster_AlertBoxModule_exports</title>
 <polygon fill="none" stroke="#000000" points="172,-208 172,-260 324,-260 324,-208 172,-208"/>
 </g>
-<!-- AlertBoxComponent -->
+<!-- CommonModule -->
 <g id="node1" class="node">
-<title>AlertBoxComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="382.9327,-122 249.0673,-122 249.0673,-86 382.9327,-86 382.9327,-122"/>
-<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxComponent</text>
+<title>CommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- AlertBoxModule -->
 <g id="node2" class="node">
@@ -48,35 +44,23 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="303.6499,-187 300.6499,-191 279.6499,-191 276.6499,-187 192.3501,-187 192.3501,-151 303.6499,-151 303.6499,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
 </g>
-<!-- AlertBoxComponent&#45;&gt;AlertBoxModule -->
+<!-- CommonModule&#45;&gt;AlertBoxModule -->
 <g id="edge1" class="edge">
-<title>AlertBoxComponent&#45;&gt;AlertBoxModule</title>
-<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
+<title>CommonModule&#45;&gt;AlertBoxModule</title>
+<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
 <!-- AlertBoxComponent  -->
-<g id="node4" class="node">
+<g id="node3" class="node">
 <title>AlertBoxComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="316.432,-252 179.568,-252 179.568,-216 316.432,-216 316.432,-252"/>
 <text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxComponent </text>
 </g>
 <!-- AlertBoxModule&#45;&gt;AlertBoxComponent  -->
-<g id="edge3" class="edge">
+<g id="edge2" class="edge">
 <title>AlertBoxModule&#45;&gt;AlertBoxComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
-</g>
-<!-- CommonModule -->
-<g id="node3" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="224.6681,-122 221.6681,-126 200.6681,-126 197.6681,-122 113.3319,-122 113.3319,-86 224.6681,-86 224.6681,-122"/>
-<text text-anchor="middle" x="169" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
-</g>
-<!-- CommonModule&#45;&gt;AlertBoxModule -->
-<g id="edge2" class="edge">
-<title>CommonModule&#45;&gt;AlertBoxModule</title>
-<path fill="none" stroke="#000000" d="M208.5046,-122.1061C208.5046,-122.1061 208.5046,-140.991 208.5046,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="205.0046,-140.9909 208.5046,-150.991 212.0046,-140.991 205.0046,-140.9909"/>
 </g>
 </g>
 </svg>

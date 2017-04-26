@@ -26,17 +26,17 @@
                 <ul class="list">
             
                     <li class="title">
-                        <a href="../">rebirth-ng documentation</a>
+                        <a href="../index.html">rebirth-ng documentation</a>
                     </li>
             
                     <li class="divider"></li>
             
             
                     <li class="chapter">
-                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
                                     <a 
@@ -145,6 +145,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/TabsModule.html" >TabsModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/TimePickerModule.html" >TimePickerModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/TooltipModule.html" >TooltipModule</a>
@@ -324,6 +327,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TimePickerComponent.html" >TimePickerComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
@@ -546,7 +552,7 @@
                        <ul class="list">
                    
                            <li class="title">
-                               <a href="../">rebirth-ng documentation</a>
+                               <a href="../index.html">rebirth-ng documentation</a>
                            </li>
                    
                            <li class="divider"></li>
@@ -556,10 +562,10 @@
                                </div>
                    
                            <li class="chapter">
-                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../" ><span class="fa fa-file-text-o"></span>README</a>
+                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
                                            <a 
@@ -668,6 +674,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/TabsModule.html" >TabsModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/TimePickerModule.html" >TimePickerModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/TooltipModule.html" >TooltipModule</a>
@@ -847,6 +856,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/TemplateLoaderComponent.html" >TemplateLoaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TimePickerComponent.html" >TimePickerComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
@@ -1071,15 +1083,15 @@
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab" data-link="infos">Infos</a>
     </li>
 
     <li>
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
     </li>
 
     <li>
-        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab">DOM Tree</a>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
     </li>
 </ul>
 
@@ -1097,7 +1109,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-class.html" target="_blank" >OnChanges</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnChanges-interface.html" target="_blank" >OnChanges</a></code>
     </p>
 
 
@@ -1394,7 +1406,7 @@ export class HightlightComponent implements OnChanges {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'HightlightComponent'};
 </script>
@@ -1436,6 +1448,7 @@ export class HightlightComponent implements OnChanges {
        <script src="../js/search/lunr.min.js"></script>
        <script src="../js/search/search-lunr.js"></script>
 
+       <script src="../js/tabs.js"></script>
        <script src="../js/menu.js"></script>
        <script src="../js/libs/prism.js"></script>
        <script src="../js/sourceCode.js"></script>
