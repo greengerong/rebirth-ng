@@ -48,7 +48,7 @@
           </ng-template>
 
           <ng-container *ngIf="!child.itemTemplate">
-            <li *ngIf="!child.divider && !child.header" role="menuitem" class="{{menu.cssClass}}">
+            <li *ngIf="!child.divider && !child.header" role="menuitem" class="{{child.cssClass}}">
               <a *ngIf="child.router" [routerLink]="child.router" routerLinkActive="active"
                  [target]="child.target || '_self'">
                 <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
