@@ -15,8 +15,9 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
   }]
 })
 export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValueAccessor {
+  static ID_SEED = 0;
 
-  @Input() id: string;
+  id: number;
   @Input() disabled: boolean;
   @Input() cssClass: string;
   @Input() popupCssClass: string;
@@ -42,6 +43,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
     this.noResultItemTemplate = rebirthUIConfig.autoComplete.noResultItemTemplate;
     this.formatter = rebirthUIConfig.autoComplete.formatter;
     this.valueParser = rebirthUIConfig.autoComplete.valueParser;
+    this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
 
   private onTouched = () => null;
