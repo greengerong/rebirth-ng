@@ -3,14 +3,14 @@
   <section>
     <h4>Basic:</h4>
     <re-file-upload [multiple]="true"
-                    (removeDone)="onRemoveDone($event)"
-                    uploadUrl="http://localhost:8080/upload"></re-file-upload>
+                    (removeDone)="onRemoveDone($event)" uploadParamName="rebirth"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
   </section>
 
   <section>
     <h4>Image preview:</h4>
     <re-file-upload [multiple]="true" [autoUpload]="true" [accept]="'image/*'" [imgPreview]="true"
-                    [previewWidth]="'50px'"
-                    uploadUrl="http://localhost:8080/upload"></re-file-upload>
+                    [previewWidth]="'50px'" uploadParamName="rebirth"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
   </section>
 </div>
