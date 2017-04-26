@@ -4,4 +4,5 @@
 ## Bug Fixes
 
 * (Menubar) Menu bar routerLinkActive for active router
+* (FileUpload) Add File upload component
    
