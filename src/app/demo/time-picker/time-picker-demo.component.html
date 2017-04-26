@@ -4,8 +4,11 @@
     <re-time-picker [(ngModel)]="date"></re-time-picker>
   </section>
 
-   <section>
+  <section>
     <h4>time picker with min date:</h4>
     <re-time-picker [(ngModel)]="date" [minDate]="minDate"></re-time-picker>
+
+    <hr>
+    <pre>{{date}}</pre>
   </section>
 </div>

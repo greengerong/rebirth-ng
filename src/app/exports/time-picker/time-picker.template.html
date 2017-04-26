@@ -1,17 +1,29 @@
-<input type="number"
-       name="hours"
-       [class.error]="!isCorrectHours"
-       max="23"
-       [min]="conditionTime.minHours"
-       maxlength="2"
-       [ngModel]="hours"
-       (ngModelChange)="onHoursChange($event)">
-<span>:</span>
-<input type="number"
-       name="minutes"
-       [class.error]="!isCorrectMinutes"
-       max="59"
-       min="0"
-       maxlength="2"
-       [ngModel]="minutes"
-       (ngModelChange)="onMinutesChange($event)">
+<form class="form-inline">
+  <div class="form-group">
+    <input type="number"
+           [disabled]="disabled"
+           name="hours"
+           [class.error]="!isCorrectHours"
+           class="form-control"
+           max="23"
+           [min]="conditionTime.minHours"
+           maxlength="2"
+           [ngModel]="hours"
+           (ngModelChange)="onHoursChange($event)"
+           (blur)="inputBoxBlur()">
+  </div>
+  <span>:</span>
+  <div class="form-group">
+    <input type="number"
+           [disabled]="disabled"
+           name="minutes"
+           [class.error]="!isCorrectMinutes"
+           class="form-control"
+           max="59"
+           min="0"
+           maxlength="2"
+           [ngModel]="minutes"
+           (ngModelChange)="onMinutesChange($event)"
+           (blur)="inputBoxBlur()">
+  </div>
+</form>

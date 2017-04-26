@@ -20,11 +20,14 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   _hours;
   _minutes;
-  onChange = Function.prototype;
+
   time = new Date();
   conditionTime: { maxHours?: number, maxMinutes?: number, minHours?: number, minMinutes?: number } = { minHours: 0 };
   isCorrectHours = true;
   isCorrectMinutes = true;
+  disabled: boolean
+  private onChange = (_: any) => null;
+  private onTouched = () => null;
 
   constructor() {
   }
@@ -80,10 +83,16 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.onChange = fn;
   }
 
-  registerOnTouched() {
+  registerOnTouched(fn) {
+    this.onTouched = fn;
   }
 
-  setDisabledState() {
+  setDisabledState(disabled) {
+    this.disabled = disabled;
+  }
+
+  inputBoxBlur() {
+    this.onTouched();
   }
 
   padTime(value) {
