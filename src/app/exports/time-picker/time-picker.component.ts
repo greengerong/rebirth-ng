@@ -110,6 +110,15 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   onHoursChange(value) {
+    if (isNaN(value)) {
+      (function (time) {
+        const cacheTime  = time;
+        setTimeout(() => {
+          time = cacheTime;
+        });
+      })(this.hours);
+      return ;
+    }
     this.isCorrectHours = true;
     if (!_.isEmpty(this.conditionTime)) {
       if (this.conditionTime.minHours > parseInt(value, 10)) {
@@ -124,8 +133,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       if (this.conditionTime.minHours < parseInt(value, 10)) {
         this.isCorrectMinutes = true;
       }
+      this.hours = value;
+      if (parseInt(value, 10) >= 24) {
+        this.hours = '23';
+      }
     }
-    this.hours = this.padTime(value);
   }
 
   onMinutesChange(value) {
@@ -136,7 +148,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
         this.isCorrectMinutes = false;
       }
     }
-    this.minutes = this.padTime(value);
+    this.minutes = value;
+    if (parseInt(value, 10) >= 60) {
+      this.minutes = '59';
+    }
   }
 
   onSecondsChange(value) {
