@@ -31,15 +31,14 @@
 - [x] Menu Bar
 - [x] Aside Menu
 - [x] Flow Steps
-- [ ] slider
 - [x] Infinite Scroll
-- [ ] Data Table
+- [x] Data Table
 
 ## Advance Components
 - [ ] Editor([]())
 - [ ] Mask([]())
 - [ ] Tree View([]())
-- [ ] File Upload([]())
+- [x] File Upload([]())
 - [x] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
 
 
