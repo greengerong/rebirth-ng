@@ -68,7 +68,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   onModelChange() {
-    this.onChange({ hours: parseInt(this.hour), minutes: parseInt(this.minute), seconds: parseInt(this.second) });
+    this.onChange(this.getTimePickerModel());
+  }
+
+  private getTimePickerModel() {
+    return { hours: parseInt(this.hour), minutes: parseInt(this.minute), seconds: parseInt(this.second) };
   }
 
   onHoursChange() {
