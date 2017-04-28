@@ -9,7 +9,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand text-center" [href]="menuOptions.home">
+      <a *ngIf="!isRouter(menuOptions.home)" class="navbar-brand text-center" [href]="menuOptions.home">
+        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>
+        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>
+      </a>
+      <a *ngIf="isRouter(menuOptions.home)" class="navbar-brand text-center" [routerLink]="menuOptions.home"
+         [queryParams]="menuOptions.homeQueryParams">
         <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>
         <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>
       </a>

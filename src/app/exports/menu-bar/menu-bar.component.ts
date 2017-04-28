@@ -34,4 +34,8 @@ export class MenuBarComponent {
       this.showNavBar = showNavBar;
     }
   }
+
+  isRouter(url) {
+    return url instanceof Array;
+  }
 }
