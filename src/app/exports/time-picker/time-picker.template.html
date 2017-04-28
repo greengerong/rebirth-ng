@@ -26,4 +26,19 @@
            (ngModelChange)="onMinutesChange($event)"
            (blur)="inputBoxBlur()">
   </div>
+  <span *ngIf="showSeconds">
+    <span>:</span>
+     <div class="form-group">
+      <input type="number"
+             [disabled]="disabled"
+             name="seconds"
+             class="form-control"
+             max="59"
+             min="0"
+             maxlength="2"
+             [ngModel]="time.seconds"
+             (ngModelChange)="onSecondsChange($event)"
+             (blur)="inputBoxBlur()">
+    </div>
+  </span>
 </form>

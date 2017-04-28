@@ -23,6 +23,7 @@ interface Time {
 export class TimePickerComponent implements OnInit, ControlValueAccessor {
   @Input() minDate;
   @Input() initialDate;
+  @Input() showSeconds = true;
 
   time: Time = { hours: '00', minutes: '00', seconds: '00' };
   conditionTime: { maxHours?: number, maxMinutes?: number, minHours?: number, minMinutes?: number } = { minHours: 0 };
@@ -136,6 +137,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       }
     }
     this.minutes = this.padTime(value);
+  }
+
+  onSecondsChange(value) {
+    this.seconds = this.padTime(value);
   }
 }
 
