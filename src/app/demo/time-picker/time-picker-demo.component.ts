@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimePickerModel } from '../../exports';
 
 @Component({
   selector: 're-time-picker-demo',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class TimePickerDemoComponent {
 
-  time;
+  time: TimePickerModel = { hour: 13, minute: 30 };
 
   constructor() {
   }

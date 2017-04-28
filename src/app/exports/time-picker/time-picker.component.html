@@ -3,43 +3,33 @@
     <input type="text"
            [disabled]="disabled"
            name="hours"
-           [class.error]="!isCorrectHours"
            class="form-control"
-           max="23"
-           [min]="conditionTime.minHours"
            maxlength="2"
-           [value]="time.hours"
-           [ngModel]="time.hours"
-           (ngModelChange)="onHoursChange($event)"
-           (blur)="inputBoxBlur()">
+           [(ngModel)]="hour"
+           (blur)="onHoursChange()">
   </div>
   <span>:</span>
   <div class="form-group">
     <input type="text"
            [disabled]="disabled"
            name="minutes"
-           [class.error]="!isCorrectMinutes"
            class="form-control"
-           max="59"
-           min="0"
            maxlength="2"
-           [ngModel]="time.minutes"
-           (ngModelChange)="onMinutesChange($event)"
-           (blur)="inputBoxBlur()">
+           [(ngModel)]="minute"
+           (blur)="onMinutesChange()">
   </div>
   <span *ngIf="showSeconds">
     <span>:</span>
      <div class="form-group">
-      <input type="number"
+      <input type="text"
              [disabled]="disabled"
              name="seconds"
              class="form-control"
              max="59"
              min="0"
              maxlength="2"
-             [ngModel]="time.seconds"
-             (ngModelChange)="onSecondsChange($event)"
-             (blur)="inputBoxBlur()">
+             [(ngModel)]="second"
+             (blur)="onSecondsChange()">
     </div>
   </span>
 </form>
