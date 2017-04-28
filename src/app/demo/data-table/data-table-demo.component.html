@@ -81,7 +81,8 @@
 
   <section>
     <h4>Customise head & footer</h4>
-    <re-data-table [dataSource]="dataSource" type="bordered" [pager]="pager" (sortChange)="sortChange($event)"
+    <re-data-table [dataSource]="dataSource" type="bordered" [totalRecord]="pager.total"
+                   [pageIndex]="pager.pageIndex" (sortChange)="sortChange($event)"
                    (pageIndexChange)="onPageIndexChange($event)">
       <re-head>
         <ng-template let-head="">

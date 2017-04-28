@@ -43,7 +43,6 @@ export class DataTableComponent implements OnDestroy {
   @Input() type: '' | 'striped' | 'bordered' | 'condensed' = '';
   @Input() hover = true;
   @Input() allChecked: boolean;
-  @Input() pager: DataTablePager;
   @Input() cssClass: string;
   @Input() tableWidth = '100%';
   @Output() cellClick = new EventEmitter<CellSelectedEventArg>();
@@ -57,14 +56,15 @@ export class DataTableComponent implements OnDestroy {
   @Output() checkAllChange = new EventEmitter<boolean>();
   @Output() searchQueryChange = new EventEmitter<{ [key: string]: any; }>();
   @Output() pageIndexChange = new EventEmitter<number>();
-
   @ContentChildren(DataTableColumnTmplComponent) columns: QueryList<DataTableColumnTmplComponent>;
+
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
   @ContentChild(DataTablePagerTmplComponent) pagerTemplate: DataTablePagerTmplComponent;
   @ViewChild(DataTableTmplsComponent) dataTableTemplates: DataTableTmplsComponent;
-
   selectedRowItem: any;
+
+  pager: DataTablePager = { total: 0, pageIndex: 1, pageSize: 10 };
   selectedColumnItem: any;
   isCellEdit: boolean;
   editRowItem: any;
@@ -72,6 +72,22 @@ export class DataTableComponent implements OnDestroy {
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.emptyRowText = rebirthNGConfig.datatable.emptyRowText;
+  }
+
+  @Input() set totalRecord(totalRecord: number) {
+    this.pager.total = totalRecord;
+  }
+
+  @Input() set pageIndex(pageIndex: number) {
+    this.pager.pageIndex = pageIndex;
+  }
+
+  @Input() set pageSize(pageSize: number) {
+    this.pager.pageSize = pageSize;
+  }
+
+  @Input() set maxPageItems(maxPageItems: number) {
+    this.pager.maxItems = maxPageItems;
   }
 
   @Input() set dataSource(dataSource: any[]) {
