@@ -20,6 +20,8 @@ export interface TimePickerModel {
 })
 export class TimePickerComponent implements OnInit, ControlValueAccessor {
   @Input() showSeconds = true;
+  @Input() minTime: TimePickerModel = { hour: 0, minute: 0, second: 0 };
+  @Input() maxTime: TimePickerModel = { hour: 23, minute: 59, second: 59 };
 
   hour = '00';
   minute = '00';
