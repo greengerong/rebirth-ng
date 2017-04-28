@@ -81,7 +81,7 @@ export class RebirthNGConfig {
   pagination = {
     boundary: true,
     pageSize: 10,
-    maxItems: 10,
+    maxItems: 5,
     size: '', // '' | 'lg' | 'sm'
     button: {
       first: 'First',

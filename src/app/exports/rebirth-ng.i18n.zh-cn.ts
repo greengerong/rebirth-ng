@@ -50,7 +50,7 @@ export const REBIRTH_NG_I18N_ZHCN = {
     pagination: {
       boundary: true,
       pageSize: 10,
-      maxItems: 10,
+      maxItems: 5,
       size: '', // '' | 'lg' | 'sm'
       button: {
         first: '首页',
