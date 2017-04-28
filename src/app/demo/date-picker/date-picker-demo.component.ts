@@ -6,7 +6,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DatePickerDemoComponent implements OnInit {
-  dateFormatOptions = ['YYYY-MM-DD HH:mm', 'YY-MM-DD HH:mm', 'MM/DD/YYYY HH:mm', 'MM/DD/YY HH:mm'];
+  dateFormatOptions = ['YYYY-MM-DD HH:mm:ss', 'YY-MM-DD HH:mm:ss', 'MM/DD/YYYY HH:mm:ss', 'MM/DD/YY HH:mm:ss'];
   dateFormat: string;
   selectedDate1 = new Date('01/02/2017 09:11');
   selectedDate2: Date;

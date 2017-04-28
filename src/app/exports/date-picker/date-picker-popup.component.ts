@@ -45,9 +45,11 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   currentMonth: number;
   currentHour: number;
   currentMinute: number;
+  currentSecond: number;
   dateConfig: any;
   hourOptions: string[];
   minuteOptions: string[];
+  secondOptions: string[];
   displayWeeks: any[];
   yearOptions: number[];
 
@@ -91,11 +93,16 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
 
 
   ngOnInit() {
-    this.hourOptions = new Array(24).fill(0).map((value, index) => this.fillLeft(index));
-    this.minuteOptions = new Array(60).fill(0).map((value, index) => this.fillLeft(index));
+    this.hourOptions = this.fillRange(24);
+    this.minuteOptions = this.fillRange(60);
+    this.secondOptions = this.fillRange(60);
     this.onSelectDateChanged();
     this.onDisplayWeeksChange();
     this.onYearRangeChange();
+  }
+
+  private fillRange(number: number) {
+    return new Array(number).fill(0).map((value, index) => this.fillLeft(index));
   }
 
   writeValue(obj: any): void {
@@ -131,7 +138,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
       return;
     }
     const selectedDate = new Date(date.getFullYear(), date.getMonth(), date.getDate(),
-      this.currentHour, this.currentMinute);
+      this.currentHour, this.currentMinute, this.currentSecond);
     this.onTouched();
     this.writeValue(selectedDate);
     this.onChange(selectedDate);
@@ -146,7 +153,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   onTimeChange() {
     const date = this.selectedDate || new Date();
     this.selectedDate = new Date(date.getFullYear(), date.getMonth(),
-      date.getDate(), this.currentHour, this.currentMinute);
+      date.getDate(), this.currentHour, this.currentMinute, this.currentSecond);
 
     this.onTouched();
     this.writeValue(this.selectedDate);
@@ -194,7 +201,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   }
 
   isDisabledDay(date) {
-    const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate());
+    const minDate = new Date(this.minDate.getFullYear(), this.minDate.getMonth(), this.minDate.getDate(), 0, 0, 0);
     const maxDate = new Date(this.maxDate.getFullYear(), this.maxDate.getMonth(), this.maxDate.getDate(), 23, 59, 59);
     return this.disabled || (date.getTime() < minDate.getTime() ||
       date.getTime() > maxDate.getTime());
@@ -237,6 +244,7 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
     this.currentMonth = date.getMonth();
     this.currentHour = this.showTimePicker ? date.getHours() : 0;
     this.currentMinute = this.showTimePicker ? date.getMinutes() : 0;
+    this.currentSecond = this.showTimePicker ? date.getSeconds() : 0;
   }
 
   private fillLeft(num: number) {

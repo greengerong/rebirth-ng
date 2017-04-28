@@ -46,6 +46,11 @@
                   (change)="onTimeChange()">
             <option *ngFor="let item of minuteOptions; let $index = index" [ngValue]="$index">{{item}}</option>
           </select>
+          :
+          <select class="date-select" [(ngModel)]="currentSecond" name="seconds" [disabled]="disabled"
+                  (change)="onTimeChange()">
+            <option *ngFor="let item of secondOptions; let $index = index" [ngValue]="$index">{{item}}</option>
+          </select>
         </div>
 
         <button class="btn btn-sm btn-primary pull-right" [disabled]="todayIsOutOfRange()" (click)="today($event)">
