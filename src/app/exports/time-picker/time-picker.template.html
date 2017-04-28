@@ -1,6 +1,6 @@
 <form class="form-inline">
   <div class="form-group">
-    <input type="number"
+    <input type="text"
            [disabled]="disabled"
            name="hours"
            [class.error]="!isCorrectHours"
@@ -8,13 +8,14 @@
            max="23"
            [min]="conditionTime.minHours"
            maxlength="2"
+           [value]="time.hours"
            [ngModel]="time.hours"
            (ngModelChange)="onHoursChange($event)"
            (blur)="inputBoxBlur()">
   </div>
   <span>:</span>
   <div class="form-group">
-    <input type="number"
+    <input type="text"
            [disabled]="disabled"
            name="minutes"
            [class.error]="!isCorrectMinutes"
