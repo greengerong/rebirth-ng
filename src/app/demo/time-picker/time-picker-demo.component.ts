@@ -6,11 +6,8 @@ import { Component } from '@angular/core';
 })
 export class TimePickerDemoComponent {
 
-  date = new Date();
-
-  minDate;
+  time;
 
   constructor() {
-    this.minDate = this.date.setHours(this.date.getHours() - 1);
   }
 }

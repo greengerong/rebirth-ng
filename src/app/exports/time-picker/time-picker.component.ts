@@ -8,6 +8,12 @@ export const TIME_PICKER_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
+interface Time {
+  hours: string;
+  minutes: string;
+  seconds: string;
+}
+
 @Component({
   selector: 're-time-picker',
   styleUrls: ['time-picker.style.scss'],
@@ -18,14 +24,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   @Input() minDate;
   @Input() initialDate;
 
-  _hours;
-  _minutes;
-
-  time = new Date();
+  time: Time = { hours: '00', minutes: '00', seconds: '00' };
   conditionTime: { maxHours?: number, maxMinutes?: number, minHours?: number, minMinutes?: number } = { minHours: 0 };
   isCorrectHours = true;
   isCorrectMinutes = true;
-  disabled: boolean
+  disabled: boolean;
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
@@ -33,23 +36,30 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   get hours() {
-    return this._hours;
+    return this.time.hours;
   }
 
   set hours(hours) {
-    this._hours = hours;
-    this.time.setHours(parseInt(hours, 10));
+    this.time.hours = hours;
     this.onChange(this.time);
   }
 
   get minutes() {
-    return this._minutes;
+    return this.time.minutes;
   }
 
   set minutes(minutes) {
-    this._minutes = minutes;
-    this.time.setMinutes(parseInt(minutes, 10));
+    this.time.minutes = minutes;
     this.onChange(this.time);
+  }
+
+  get seconds() {
+    return this.time.seconds;
+  }
+
+  set seconds(seconds) {
+    this.time.seconds = seconds;
+    this.onChange(seconds);
   }
 
   ngOnInit() {
@@ -63,19 +73,18 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     }
 
     if (this.initialDate) {
-      const initialTime = new Date(this.initialDate);
-      this.hours = this.padTime(initialTime.getHours());
-      this.minutes = this.padTime(initialTime.getMinutes());
-    } else {
-      const currentTime = new Date();
-      this.hours = this.padTime(currentTime.getHours());
-      this.minutes = this.padTime(currentTime.getMinutes());
+      const initialTime = this.initialDate;
+      this.hours = this.padTime(initialTime.hours);
+      this.minutes = this.padTime(initialTime.minutes);
+      this.seconds = this.padTime(initialTime.seconds);
     }
   }
 
-  writeValue(value: Date) {
-    if (value && value instanceof Date) {
-      this.time = new Date(value.getTime());
+  writeValue(value: Time) {
+    if (_.isObject(value)) {
+      this.time.hours = value.hours;
+      this.time.minutes = value.minutes;
+      this.time.seconds = value.seconds;
     }
   }
 

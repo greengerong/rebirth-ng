@@ -8,7 +8,7 @@
            max="23"
            [min]="conditionTime.minHours"
            maxlength="2"
-           [ngModel]="hours"
+           [ngModel]="time.hours"
            (ngModelChange)="onHoursChange($event)"
            (blur)="inputBoxBlur()">
   </div>
@@ -22,7 +22,7 @@
            max="59"
            min="0"
            maxlength="2"
-           [ngModel]="minutes"
+           [ngModel]="time.minutes"
            (ngModelChange)="onMinutesChange($event)"
            (blur)="inputBoxBlur()">
   </div>
