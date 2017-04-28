@@ -526,7 +526,7 @@
                                     <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../interfaces/Time.html" >Time</a>
+                                    <a href="../interfaces/TimePickerModel.html" >TimePickerModel</a>
                                 </li>
                         </ul>
                     </li>
@@ -1058,7 +1058,7 @@
                                            <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../interfaces/Time.html" >Time</a>
+                                           <a href="../interfaces/TimePickerModel.html" >TimePickerModel</a>
                                        </li>
                                </ul>
                            </li>
@@ -1131,6 +1131,10 @@
 
 
 
+            <tr>
+                <td class="col-md-3">exportAs</td>
+                <td class="col-md-9"><code>timePicker</code></td>
+            </tr>
 
 
 
@@ -1141,7 +1145,7 @@
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
                     <code>
-                        TIME_PICKER_CONTROL_VALUE_ACCESSOR
+                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
                     </code>
                 </td>
             </tr>
@@ -1154,14 +1158,14 @@
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>time-picker.style.scss</code></td>
+                <td class="col-md-9"><code>time-picker.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>time-picker.template.html</code></td>
+                <td class="col-md-9"><code>./time-picker.component.html</code></td>
             </tr>
 
 
@@ -1175,14 +1179,18 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>initialDate</code>
+                            <code>maxTime</code>
                         </td>
                         <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="../interfaces/TimePickerModel.html" target="_self" >TimePickerModel</a></code>
+
+                              </p>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:24</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1191,14 +1199,37 @@
                 <tbody>
                     <tr>
                         <td class="col-md-2">
-                            <code>minDate</code>
+                            <code>minTime</code>
                         </td>
                         <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="../interfaces/TimePickerModel.html" target="_self" >TimePickerModel</a></code>
+
+                              </p>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:23</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <code>showSeconds</code>
+                        </td>
+                        <td class="col-md-10">
+                            <p>
+                              <em>Default value: </em><code>true</code>
+                            </p>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:22</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1212,12 +1243,12 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor()</code>
+                            <code>constructor(changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:32</a></div>
                             </td>
                         </tr>
     
@@ -1245,7 +1276,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:65</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:37</a></div>
                             </td>
                         </tr>
     
@@ -1269,13 +1300,13 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>writeValue(value: <a href="../interfaces/Time.html">Time</a>)</code>
+    <code>writeValue(value: <a href="../interfaces/TimePickerModel.html">TimePickerModel</a>)</code>
                         </td>
                     </tr>
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:83</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:41</a></div>
                             </td>
                         </tr>
     
@@ -1305,7 +1336,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:91</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:50</a></div>
                             </td>
                         </tr>
     
@@ -1335,7 +1366,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:95</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:54</a></div>
                             </td>
                         </tr>
     
@@ -1365,7 +1396,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:99</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:58</a></div>
                             </td>
                         </tr>
     
@@ -1395,7 +1426,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:103</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:62</a></div>
                             </td>
                         </tr>
     
@@ -1414,18 +1445,84 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> padTime</b>
+                            <b><span class="modifier">Private</span> fillLeft</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>padTime(value: any)</code>
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>fillLeft(num: number)</code>
                         </td>
                     </tr>
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:107</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:66</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onModelChange</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onModelChange()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:70</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Private</span> getTimePickerModel</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <span class="modifier-icon method fa fa-play lock">
+                                    <span class="fa fa-lock"></span>
+                                </span>
+                            <code>getTimePickerModel()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:74</a></div>
                             </td>
                         </tr>
     
@@ -1449,13 +1546,13 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>onHoursChange(value: any)</code>
+    <code>onHoursChange()</code>
                         </td>
                     </tr>
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:111</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:78</a></div>
                             </td>
                         </tr>
     
@@ -1479,13 +1576,43 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>onMinutesChange(value: any)</code>
+    <code>onMinutesChange()</code>
                         </td>
                     </tr>
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:130</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:90</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> onSecondsChange</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>onSecondsChange()</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:102</a></div>
                             </td>
                         </tr>
     
@@ -1511,26 +1638,6 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> conditionTime</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>conditionTime:     <code>{ maxHours?: number; maxMinutes?: number; minHours?: number; minMinutes?: number; }</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:28</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <b> disabled</b>
                         </td>
                     </tr>
@@ -1542,76 +1649,6 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:31</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> hours</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>hours:     <code>string</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:38</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isCorrectHours</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isCorrectHours:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>true</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:29</a></div>
-                            </td>
-                        </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> isCorrectMinutes</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>isCorrectMinutes:     <code>boolean</code>
-    </bcode>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value: </i><code>true</code>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
                                 <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:30</a></div>
                             </td>
                         </tr>
@@ -1621,18 +1658,48 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> minutes</b>
+                            <b> hour</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>minutes:     <code>string</code>
+                            <code>hour:     <code>string</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:47</a></div>
+                                <i>Default value: </i><code>00</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:26</a></div>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> minute</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>minute:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value: </i><code>00</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:27</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1652,7 +1719,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:31</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1672,7 +1739,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:32</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1681,38 +1748,23 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <b> seconds</b>
+                            <b> second</b>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <code>seconds:     <code>string</code>
+                            <code>second:     <code>string</code>
     </bcode>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:56</a></div>
+                                <i>Default value: </i><code>00</code>
                             </td>
                         </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <b> time</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <code>time:     <code><a href="../interfaces/Time.html" target="_self" >Time</a></code>
-    </bcode>
-                        </td>
-                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:28</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1722,93 +1774,52 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, forwardRef, Input, OnInit } from &#x27;@angular/core&#x27;;
-import * as _ from &#x27;lodash&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, forwardRef, Input, OnInit, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 
-export const TIME_PICKER_CONTROL_VALUE_ACCESSOR: any &#x3D; {
-  provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() &#x3D;&gt; TimePickerComponent),
-  multi: true
-};
-
-interface Time {
-  hours: string;
-  minutes: string;
-  seconds: string;
+export interface TimePickerModel {
+  hour: number;
+  minute: number;
+  second?: number;
 }
 
 @Component({
   selector: &#x27;re-time-picker&#x27;,
-  styleUrls: [&#x27;time-picker.style.scss&#x27;],
-  templateUrl: &#x27;time-picker.template.html&#x27;,
-  providers: [TIME_PICKER_CONTROL_VALUE_ACCESSOR]
+  styleUrls: [&#x27;./time-picker.component.scss&#x27;],
+  templateUrl: &#x27;./time-picker.component.html&#x27;,
+  exportAs: &#x27;timePicker&#x27;,
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() &#x3D;&gt; TimePickerComponent),
+    multi: true
+  }]
 })
 export class TimePickerComponent implements OnInit, ControlValueAccessor {
-  @Input() minDate;
-  @Input() initialDate;
+  @Input() showSeconds &#x3D; true;
+  @Input() minTime: TimePickerModel &#x3D; { hour: 0, minute: 0, second: 0 };
+  @Input() maxTime: TimePickerModel &#x3D; { hour: 23, minute: 59, second: 59 };
 
-  time: Time &#x3D; { hours: &#x27;00&#x27;, minutes: &#x27;00&#x27;, seconds: &#x27;00&#x27; };
-  conditionTime: { maxHours?: number, maxMinutes?: number, minHours?: number, minMinutes?: number } &#x3D; { minHours: 0 };
-  isCorrectHours &#x3D; true;
-  isCorrectMinutes &#x3D; true;
+  hour &#x3D; &#x27;00&#x27;;
+  minute &#x3D; &#x27;00&#x27;;
+  second &#x3D; &#x27;00&#x27;;
+
   disabled: boolean;
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor() {
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
   }
 
-  get hours() {
-    return this.time.hours;
+  ngOnInit(): void {
+
   }
 
-  set hours(hours) {
-    this.time.hours &#x3D; hours;
-    this.onChange(this.time);
-  }
-
-  get minutes() {
-    return this.time.minutes;
-  }
-
-  set minutes(minutes) {
-    this.time.minutes &#x3D; minutes;
-    this.onChange(this.time);
-  }
-
-  get seconds() {
-    return this.time.seconds;
-  }
-
-  set seconds(seconds) {
-    this.time.seconds &#x3D; seconds;
-    this.onChange(seconds);
-  }
-
-  ngOnInit() {
-    if (this.minDate) {
-      if (!_.isDate(this.minDate)) {
-        this.minDate &#x3D; new Date(parseInt(this.minDate, 10));
-      }
-
-      this.conditionTime.minHours &#x3D; this.minDate.getHours();
-      this.conditionTime.minMinutes &#x3D; this.minDate.getMinutes();
-    }
-
-    if (this.initialDate) {
-      const initialTime &#x3D; this.initialDate;
-      this.hours &#x3D; this.padTime(initialTime.hours);
-      this.minutes &#x3D; this.padTime(initialTime.minutes);
-      this.seconds &#x3D; this.padTime(initialTime.seconds);
-    }
-  }
-
-  writeValue(value: Time) {
-    if (_.isObject(value)) {
-      this.time.hours &#x3D; value.hours;
-      this.time.minutes &#x3D; value.minutes;
-      this.time.seconds &#x3D; value.seconds;
+  writeValue(value: TimePickerModel) {
+    if (value) {
+      this.hour &#x3D; this.fillLeft(value.hour || 0);
+      this.minute &#x3D; this.fillLeft(value.minute || 0);
+      this.second &#x3D; this.fillLeft(value.second || 0);
+      this.changeDetectorRef.markForCheck();
     }
   }
 
@@ -1828,38 +1839,52 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
   }
 
-  padTime(value) {
-    return _.padStart(value, 2, &#x27;0&#x27;);
+  private fillLeft(num: number) {
+    return num &lt; 10 ? &#x60;0${num}&#x60; : &#x60;${num}&#x60;;
   }
 
-  onHoursChange(value) {
-    this.isCorrectHours &#x3D; true;
-    if (!_.isEmpty(this.conditionTime)) {
-      if (this.conditionTime.minHours &gt; parseInt(value, 10)) {
-        this.isCorrectHours &#x3D; false;
-      }
-
-      if (this.conditionTime.minHours &gt;&#x3D; parseInt(value, 10) &amp;&amp;
-        this.conditionTime.minMinutes &gt;&#x3D; parseInt(this.minutes, 10)) {
-        this.isCorrectMinutes &#x3D; false;
-      }
-
-      if (this.conditionTime.minHours &lt; parseInt(value, 10)) {
-        this.isCorrectMinutes &#x3D; true;
-      }
-    }
-    this.hours &#x3D; this.padTime(value);
+  onModelChange() {
+    this.onChange(this.getTimePickerModel());
   }
 
-  onMinutesChange(value) {
-    this.isCorrectMinutes &#x3D; true;
-    if (!_.isEmpty(this.conditionTime)) {
-      if (this.conditionTime.minHours &gt;&#x3D; parseInt(this.hours, 10) &amp;&amp;
-        this.conditionTime.minMinutes &gt; parseInt(value, 10)) {
-        this.isCorrectMinutes &#x3D; false;
-      }
+  private getTimePickerModel() {
+    return { hours: parseInt(this.hour), minutes: parseInt(this.minute), seconds: parseInt(this.second) };
+  }
+
+  onHoursChange() {
+    this.onTouched();
+    const hour &#x3D; parseInt(this.hour);
+    if (isNaN(hour) || hour &lt; 0) {
+      this.hour &#x3D; &#x27;00&#x27;;
+    } else if (hour &gt; 23) {
+      this.hour &#x3D; &#x27;23&#x27;;
     }
-    this.minutes &#x3D; this.padTime(value);
+
+    this.onModelChange();
+  }
+
+  onMinutesChange() {
+    this.onTouched();
+    const minute &#x3D; parseInt(this.minute);
+    if (isNaN(minute) || minute &lt; 0) {
+      this.minute &#x3D; &#x27;00&#x27;;
+    } else if (minute &gt; 59) {
+      this.minute &#x3D; &#x27;59&#x27;;
+    }
+
+    this.onModelChange();
+  }
+
+  onSecondsChange() {
+    this.onTouched();
+    const second &#x3D; parseInt(this.second);
+    if (isNaN(second) || second &lt; 0) {
+      this.second &#x3D; &#x27;00&#x27;;
+    } else if (second &gt; 59) {
+      this.second &#x3D; &#x27;59&#x27;;
+    }
+
+    this.onModelChange();
   }
 }
 
@@ -1869,32 +1894,38 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;form class&#x3D;&quot;form-inline&quot;&gt;
   &lt;div class&#x3D;&quot;form-group&quot;&gt;
-    &lt;input type&#x3D;&quot;number&quot;
+    &lt;input type&#x3D;&quot;text&quot;
            [disabled]&#x3D;&quot;disabled&quot;
            name&#x3D;&quot;hours&quot;
-           [class.error]&#x3D;&quot;!isCorrectHours&quot;
            class&#x3D;&quot;form-control&quot;
-           max&#x3D;&quot;23&quot;
-           [min]&#x3D;&quot;conditionTime.minHours&quot;
            maxlength&#x3D;&quot;2&quot;
-           [ngModel]&#x3D;&quot;time.hours&quot;
-           (ngModelChange)&#x3D;&quot;onHoursChange($event)&quot;
-           (blur)&#x3D;&quot;inputBoxBlur()&quot;&gt;
+           [(ngModel)]&#x3D;&quot;hour&quot;
+           (blur)&#x3D;&quot;onHoursChange()&quot;&gt;
   &lt;/div&gt;
   &lt;span&gt;:&lt;/span&gt;
   &lt;div class&#x3D;&quot;form-group&quot;&gt;
-    &lt;input type&#x3D;&quot;number&quot;
+    &lt;input type&#x3D;&quot;text&quot;
            [disabled]&#x3D;&quot;disabled&quot;
            name&#x3D;&quot;minutes&quot;
-           [class.error]&#x3D;&quot;!isCorrectMinutes&quot;
            class&#x3D;&quot;form-control&quot;
-           max&#x3D;&quot;59&quot;
-           min&#x3D;&quot;0&quot;
            maxlength&#x3D;&quot;2&quot;
-           [ngModel]&#x3D;&quot;time.minutes&quot;
-           (ngModelChange)&#x3D;&quot;onMinutesChange($event)&quot;
-           (blur)&#x3D;&quot;inputBoxBlur()&quot;&gt;
+           [(ngModel)]&#x3D;&quot;minute&quot;
+           (blur)&#x3D;&quot;onMinutesChange()&quot;&gt;
   &lt;/div&gt;
+  &lt;span *ngIf&#x3D;&quot;showSeconds&quot;&gt;
+    &lt;span&gt;:&lt;/span&gt;
+     &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;input type&#x3D;&quot;text&quot;
+             [disabled]&#x3D;&quot;disabled&quot;
+             name&#x3D;&quot;seconds&quot;
+             class&#x3D;&quot;form-control&quot;
+             max&#x3D;&quot;59&quot;
+             min&#x3D;&quot;0&quot;
+             maxlength&#x3D;&quot;2&quot;
+             [(ngModel)]&#x3D;&quot;second&quot;
+             (blur)&#x3D;&quot;onSecondsChange()&quot;&gt;
+    &lt;/div&gt;
+  &lt;/span&gt;
 &lt;/form&gt;
 </code></pre>
     </div>
@@ -1922,7 +1953,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form class="form-inline">  <div class="form-group">    <input type="number"           [disabled]="disabled"           name="hours"           [class.error]="!isCorrectHours"           class="form-control"           max="23"           [min]="conditionTime.minHours"           maxlength="2"           [ngModel]="time.hours"           (ngModelChange)="onHoursChange($event)"           (blur)="inputBoxBlur()">  </div>  <span>:</span>  <div class="form-group">    <input type="number"           [disabled]="disabled"           name="minutes"           [class.error]="!isCorrectMinutes"           class="form-control"           max="59"           min="0"           maxlength="2"           [ngModel]="time.minutes"           (ngModelChange)="onMinutesChange($event)"           (blur)="inputBoxBlur()">  </div></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form class="form-inline">  <div class="form-group">    <input type="text"           [disabled]="disabled"           name="hours"           class="form-control"           maxlength="2"           [(ngModel)]="hour"           (blur)="onHoursChange()">  </div>  <span>:</span>  <div class="form-group">    <input type="text"           [disabled]="disabled"           name="minutes"           class="form-control"           maxlength="2"           [(ngModel)]="minute"           (blur)="onMinutesChange()">  </div>  <span *ngIf="showSeconds">    <span>:</span>     <div class="form-group">      <input type="text"             [disabled]="disabled"             name="seconds"             class="form-control"             max="59"             min="0"             maxlength="2"             [(ngModel)]="second"             (blur)="onSecondsChange()">    </div>  </span></form></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'TimePickerComponent'};

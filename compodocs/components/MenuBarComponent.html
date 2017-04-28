@@ -526,7 +526,7 @@
                                     <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../interfaces/Time.html" >Time</a>
+                                    <a href="../interfaces/TimePickerModel.html" >TimePickerModel</a>
                                 </li>
                         </ul>
                     </li>
@@ -1058,7 +1058,7 @@
                                            <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../interfaces/Time.html" >Time</a>
+                                           <a href="../interfaces/TimePickerModel.html" >TimePickerModel</a>
                                        </li>
                                </ul>
                            </li>
@@ -1384,6 +1384,36 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> isRouter</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>isRouter(url: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/exports/menu-bar/menu-bar.component.ts:38</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
     </section>
 
     <section>
@@ -1488,6 +1518,10 @@ export class MenuBarComponent {
       this.showNavBar &#x3D; showNavBar;
     }
   }
+
+  isRouter(url) {
+    return url instanceof Array;
+  }
 }
 </code></pre>
     </div>
@@ -1504,7 +1538,12 @@ export class MenuBarComponent {
         &lt;span class&#x3D;&quot;icon-bar&quot;&gt;&lt;/span&gt;
         &lt;span class&#x3D;&quot;icon-bar&quot;&gt;&lt;/span&gt;
       &lt;/button&gt;
-      &lt;a class&#x3D;&quot;navbar-brand text-center&quot; [href]&#x3D;&quot;menuOptions.home&quot;&gt;
+      &lt;a *ngIf&#x3D;&quot;!isRouter(menuOptions.home)&quot; class&#x3D;&quot;navbar-brand text-center&quot; [href]&#x3D;&quot;menuOptions.home&quot;&gt;
+        &lt;img class&#x3D;&quot;logo&quot; *ngIf&#x3D;&quot;menuOptions.logo&quot; [src]&#x3D;&quot;menuOptions.logo&quot; [attr.alt]&#x3D;&quot;menuOptions.title&quot;/&gt;
+        &lt;span *ngIf&#x3D;&quot;!menuOptions.logo&quot;&gt;{{menuOptions.title}}&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;a *ngIf&#x3D;&quot;isRouter(menuOptions.home)&quot; class&#x3D;&quot;navbar-brand text-center&quot; [routerLink]&#x3D;&quot;menuOptions.home&quot;
+         [queryParams]&#x3D;&quot;menuOptions.homeQueryParams&quot;&gt;
         &lt;img class&#x3D;&quot;logo&quot; *ngIf&#x3D;&quot;menuOptions.logo&quot; [src]&#x3D;&quot;menuOptions.logo&quot; [attr.alt]&#x3D;&quot;menuOptions.title&quot;/&gt;
         &lt;span *ngIf&#x3D;&quot;!menuOptions.logo&quot;&gt;{{menuOptions.title}}&lt;/span&gt;
       &lt;/a&gt;
@@ -1543,7 +1582,7 @@ export class MenuBarComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nav class="menu-bar navbar navbar-{{ inverse ? \'inverse\' : \'default\'}} {{type}} {{cssClass}}"     [ngClass]="{\'sidebar-open\': sidebarOpen}" (click)="hide($event)">  <div class="{{type == \'sidebar\' ? \'container-fluid\' : contentType}}">    <div class="navbar-header collapsed" *ngIf="menuOptions.logo || menuOptions.title">      <button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"              (click)="toggle($event);">        <span class="sr-only">{{menuOptions.title}}</span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>      </button>      <a class="navbar-brand text-center" [href]="menuOptions.home">        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>      </a>    </div>    <div #navbarCollapse class="navbar-collapse" [ngClass]="{collapse: !showNavBar, in: showNavBar}"         aria-expanded="true">      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.menus"></re-nav-item>      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.rightMenus"                   [right]="true"></re-nav-item>    </div>  </div></nav></div>'
+        var COMPONENT_TEMPLATE = '<div><nav class="menu-bar navbar navbar-{{ inverse ? \'inverse\' : \'default\'}} {{type}} {{cssClass}}"     [ngClass]="{\'sidebar-open\': sidebarOpen}" (click)="hide($event)">  <div class="{{type == \'sidebar\' ? \'container-fluid\' : contentType}}">    <div class="navbar-header collapsed" *ngIf="menuOptions.logo || menuOptions.title">      <button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"              (click)="toggle($event);">        <span class="sr-only">{{menuOptions.title}}</span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>        <span class="icon-bar"></span>      </button>      <a *ngIf="!isRouter(menuOptions.home)" class="navbar-brand text-center" [href]="menuOptions.home">        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>      </a>      <a *ngIf="isRouter(menuOptions.home)" class="navbar-brand text-center" [routerLink]="menuOptions.home"         [queryParams]="menuOptions.homeQueryParams">        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>      </a>    </div>    <div #navbarCollapse class="navbar-collapse" [ngClass]="{collapse: !showNavBar, in: showNavBar}"         aria-expanded="true">      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.menus"></re-nav-item>      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.rightMenus"                   [right]="true"></re-nav-item>    </div>  </div></nav></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'MenuBarComponent'};
