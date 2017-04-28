@@ -2,6 +2,11 @@
 .month-view {
   .month-view-table {
     margin-bottom: 0px;
+    tr {
+      td {
+        border: none;
+      }
+    }
   }
 
   .btn-link {
@@ -29,11 +34,15 @@
     height: 2rem;
     line-height: 2rem;
     cursor: pointer;
+    &.bg-primary {
+      border-radius: 4px;
+    }
     &:hover:not(.bg-primary) {
       background-color: #e6e6e6;
       border-color: #adadad;
       color: #000;
       font-weight: bold;
+      border-radius: 4px;
     }
     &.disabled:not(.bg-primary) {
       opacity: 0.2;
