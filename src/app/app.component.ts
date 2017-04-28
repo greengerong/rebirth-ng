@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
               private domSanitizer: DomSanitizer) {
     this.rebirthConfig.rootContainer = this.viewContainerRef;
 
-    // this.rebirthConfig.extend(REBIRTH_NG_I18N_ZHCN); i18n
+    // this.rebirthConfig.extend(REBIRTH_NG_I18N_ZHCN);  // i18n
   }
 
   ngOnInit(): void {

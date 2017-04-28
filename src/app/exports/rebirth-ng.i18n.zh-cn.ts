@@ -67,5 +67,4 @@ export const REBIRTH_NG_I18N_ZHCN = {
       type: 'primary'
     }
 
-  }
-  ;
+  };
