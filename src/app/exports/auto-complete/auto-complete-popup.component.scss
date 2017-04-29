@@ -6,3 +6,8 @@
   white-space: nowrap;
   border: 0;
 }
+
+.popup-list {
+  max-height: 380px;
+  overflow: auto;
+}

@@ -2,7 +2,7 @@
   <re-hightlight [value]="formatter(item)" [term]="term"></re-hightlight>
 </ng-template>
 
-<ul class="list-unstyled">
+<ul class="list-unstyled popup-list">
   <li *ngFor="let item of source; let $index = index;" class="dropdown-item"
       [ngClass]="{'bg-primary': $index == activeIndex}" (click)="onSelect(item)"
       (mouseenter)="onActiveIndexChange($index)">
