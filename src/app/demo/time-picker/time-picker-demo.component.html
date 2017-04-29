@@ -1,9 +1,18 @@
 <div class="rating-demo">
   <section>
     <h4>time picker:</h4>
-    <re-time-picker [(ngModel)]="time"></re-time-picker>
-
-    <hr>
-    <pre>{{time | json}}</pre>
+    <re-time-picker [(ngModel)]="time" [disabled]="disabled"></re-time-picker>
   </section>
+
+  <section>
+    <h4>No seconds:</h4>
+    <re-time-picker [(ngModel)]="time" [showSeconds]="false" [disabled]="disabled"></re-time-picker>
+
+    <button class="btn btn-primary" (click)="disabled = !disabled">{{disabled ? 'Enable' : 'Disable'}}</button>
+  </section>
+
+
+  <hr>
+  <pre>{{time | json}}</pre>
+
 </div>

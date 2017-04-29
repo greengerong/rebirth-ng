@@ -28,7 +28,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   second = '00';
 
   disabled: boolean;
-  private onChange = (_: any) => null;
+  private onChange = (_: TimePickerModel) => null;
   private onTouched = () => null;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
@@ -57,10 +57,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState(disabled) {
     this.disabled = disabled;
-  }
-
-  inputBoxBlur() {
-    this.onTouched();
+    this.changeDetectorRef.markForCheck();
   }
 
   private fillLeft(num: number) {
@@ -72,7 +69,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   private getTimePickerModel() {
-    return { hours: parseInt(this.hour), minutes: parseInt(this.minute), seconds: parseInt(this.second) };
+    const model: TimePickerModel = { hour: parseInt(this.hour), minute: parseInt(this.minute) };
+    if (this.showSeconds) {
+      model.second = parseInt(this.second);
+    }
+    return model;
   }
 
   onHoursChange() {

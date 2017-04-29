@@ -18,9 +18,9 @@
            [(ngModel)]="minute"
            (blur)="onMinutesChange()">
   </div>
-  <span *ngIf="showSeconds">
+  <ng-container *ngIf="showSeconds">
     <span>:</span>
-     <div class="form-group">
+    <div class="form-group">
       <input type="text"
              [disabled]="disabled"
              name="seconds"
@@ -31,5 +31,5 @@
              [(ngModel)]="second"
              (blur)="onSecondsChange()">
     </div>
-  </span>
+  </ng-container>
 </form>
