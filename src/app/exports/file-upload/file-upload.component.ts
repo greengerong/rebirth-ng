@@ -16,6 +16,7 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 import { Http, Response, RequestOptions } from '@angular/http';
 import { formatFileSize, formatString } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { file } from 'babel-types';
 
 @Component({
   selector: 're-file-upload',
@@ -49,9 +50,9 @@ export class FileUploadComponent implements AfterViewInit {
   @Output() fileUploadError = new EventEmitter<SelectFileModel>();
   @Output() removeFiles = new EventEmitter<SelectFileModel[]>();
   @Output() uploadFilesChange = new EventEmitter<SelectFileModel[]>();
+  @Input() uploadFiles: SelectFileModel[] = [];
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
-  uploadFiles: SelectFileModel[] = [];
   errors: string[] = [];
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
@@ -146,8 +147,9 @@ export class FileUploadComponent implements AfterViewInit {
           this.changeDetectorRef.markForCheck();
         },
         (error) => {
-          this.errors.push(`${fileItem.file.name}: Upload error: ${error}`);
+          this.errors.push(`${fileItem.name}: Upload error: ${error}`);
           this.fileUploadError.emit({
+            name: fileItem.name,
             displaySize: fileItem.displaySize,
             dataUrl: fileItem.dataUrl,
             file: fileItem.file,
@@ -207,7 +209,7 @@ export class FileUploadComponent implements AfterViewInit {
   mapFileModel(files: File[]): Promise<SelectFileModel[]> {
     return Promise.all(files.map(file => {
       return readFileAsDataURL(file)
-        .then(dataUrl => ({ dataUrl, file, displaySize: formatFileSize(file.size) }));
+        .then(dataUrl => ({ dataUrl, name: file.name, file, displaySize: formatFileSize(file.size) }));
     }));
 
   }
