@@ -70,7 +70,7 @@ export class AppComponent implements OnInit {
     const changeThemeHandler = (item) => this.changeTheme(item);
 
     this.menus = {
-      logo: 'http://greengerong.com/rebirth/assets/img/wolf2.png',
+      logo: 'http://greengerong.github.io/rebirth/assets/img/wolf2.png',
       title: '破狼博客',
       home: './',
       menus: [
