@@ -84,7 +84,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
       this.onChange(this.mutipleItems);
     }
 
-    this.selectValue = '';
+    this.selectValue = null;
   }
 
   removeLabel(label) {

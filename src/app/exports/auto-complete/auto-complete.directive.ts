@@ -122,7 +122,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   writeValue(obj: any): void {
-    this.value = obj;
+    this.value = obj || '';
     this.writeInputValue(this.value);
   }
 
