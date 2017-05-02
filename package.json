@@ -23,7 +23,7 @@
     "demo:gen": "ng build --prod --aot --base-href=/rebirth-ng/",
     "github-pages:push": "ngh --message \"rebirth ng demo deploy\"",
     "sw:gen": "gulp sw:gen",
-    "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run github-pages:push && rm -rf ./dist",
+    "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run sw:gen && npm run github-pages:push && rm -rf ./dist",
     "npm:publish": "rm -rf ./dist && gulp prepublish"
   },
   "private": false,
