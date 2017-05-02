@@ -1133,7 +1133,7 @@
 
             <tr>
                 <td class="col-md-3">exportAs</td>
-                <td class="col-md-9"><code>fileUpload</code></td>
+                <td class="col-md-9"><code>fileUploadPreview</code></td>
             </tr>
 
 
@@ -1178,7 +1178,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:12</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1198,7 +1198,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:13</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1218,7 +1218,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:15</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1238,7 +1238,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:14</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1260,7 +1260,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:20</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:16</a></div>
                             </td>
                         </tr>
                 </tbody>
@@ -1288,7 +1288,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:18</a></div>
                             </td>
                         </tr>
     
@@ -1313,18 +1313,14 @@
     </div>
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import {
-  Component, ChangeDetectionStrategy, ViewChild, ElementRef, Input, AfterViewInit,
-  Renderer2, Output, EventEmitter
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from &#x27;@angular/core&#x27;;
 import { SelectFileModel } from &#x27;./file-upload.model&#x27;;
-import { readFileAsDataURL } from &#x27;../utils/dom-utils&#x27;;
 
 @Component({
   selector: &#x27;re-file-upload-preview&#x27;,
   templateUrl: &#x27;./file-upload-preview.component.html&#x27;,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  exportAs: &#x27;fileUpload&#x27;
+  exportAs: &#x27;fileUploadPreview&#x27;
 })
 export class FileUploadPreviewComponent {
 
@@ -1353,7 +1349,7 @@ export class FileUploadPreviewComponent {
         &lt;/a&gt;
       &lt;/td&gt;
       &lt;td&gt;
-        {{fileItem.file.name}}
+        {{fileItem.name}}
       &lt;/td&gt;
       &lt;td&gt;
         {{fileItem.displaySize}}
@@ -1392,7 +1388,7 @@ export class FileUploadPreviewComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="file-upload-preview">  <table class="table">    <tbody>    <tr *ngFor="let fileItem of selectFiles">      <td *ngIf="imgPreview">        <a [href]="fileItem.dataUrl" target="_blank">          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"               [style.width]="previewWidth || \'\'"/>        </a>      </td>      <td>        {{fileItem.file.name}}      </td>      <td>        {{fileItem.displaySize}}      </td>      <td>        <i *ngIf="!uploaded" class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i>      </td>    </tr>    </tbody>  </table></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="file-upload-preview">  <table class="table">    <tbody>    <tr *ngFor="let fileItem of selectFiles">      <td *ngIf="imgPreview">        <a [href]="fileItem.dataUrl" target="_blank">          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"               [style.width]="previewWidth || \'\'"/>        </a>      </td>      <td>        {{fileItem.name}}      </td>      <td>        {{fileItem.displaySize}}      </td>      <td>        <i *ngIf="!uploaded" class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i>      </td>    </tr>    </tbody>  </table></div></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'FileUploadPreviewComponent'};

@@ -1245,7 +1245,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   second &#x3D; &#x27;00&#x27;;
 
   disabled: boolean;
-  private onChange &#x3D; (_: any) &#x3D;&gt; null;
+  private onChange &#x3D; (_: TimePickerModel) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
@@ -1274,22 +1274,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState(disabled) {
     this.disabled &#x3D; disabled;
-  }
-
-  inputBoxBlur() {
-    this.onTouched();
-  }
-
-  private fillLeft(num: number) {
-    return num &lt; 10 ? &#x60;0${num}&#x60; : &#x60;${num}&#x60;;
-  }
-
-  onModelChange() {
-    this.onChange(this.getTimePickerModel());
-  }
-
-  private getTimePickerModel() {
-    return { hours: parseInt(this.hour), minutes: parseInt(this.minute), seconds: parseInt(this.second) };
+    this.changeDetectorRef.markForCheck();
   }
 
   onHoursChange() {
@@ -1301,6 +1286,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.hour &#x3D; &#x27;23&#x27;;
     }
 
+    this.hour &#x3D; this.fillLeft(hour);
     this.onModelChange();
   }
 
@@ -1313,6 +1299,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.minute &#x3D; &#x27;59&#x27;;
     }
 
+    this.minute &#x3D; this.fillLeft(minute);
     this.onModelChange();
   }
 
@@ -1325,8 +1312,27 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.second &#x3D; &#x27;59&#x27;;
     }
 
+    this.second &#x3D; this.fillLeft(second);
     this.onModelChange();
   }
+
+  private fillLeft(num: number) {
+    return num &lt; 10 ? &#x60;0${num}&#x60; : &#x60;${num}&#x60;;
+  }
+
+  onModelChange() {
+    this.onChange(this.getTimePickerModel());
+  }
+
+  private getTimePickerModel() {
+    const model: TimePickerModel &#x3D; { hour: parseInt(this.hour), minute: parseInt(this.minute) };
+    if (this.showSeconds) {
+      model.second &#x3D; parseInt(this.second);
+    }
+    return model;
+  }
+
+
 }
 
 </code></pre>
