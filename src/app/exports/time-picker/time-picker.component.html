@@ -1,6 +1,6 @@
 <form class="form-inline time-picker">
   <div class="form-group">
-    <input type="text"
+    <input type="text" #hours
            [disabled]="disabled"
            name="hours"
            class="form-control"
@@ -10,7 +10,7 @@
   </div>
   <span>:</span>
   <div class="form-group">
-    <input type="text"
+    <input type="text" #minutes
            [disabled]="disabled"
            name="minutes"
            class="form-control"
@@ -21,7 +21,7 @@
   <ng-container *ngIf="showSeconds">
     <span>:</span>
     <div class="form-group">
-      <input type="text"
+      <input type="text" #seconds
              [disabled]="disabled"
              name="seconds"
              class="form-control"
