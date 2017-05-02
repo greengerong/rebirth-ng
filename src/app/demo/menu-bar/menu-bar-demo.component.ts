@@ -25,7 +25,7 @@ export class MenuBarDemoComponent implements OnInit {
 
   private demoMenus() {
     return {
-      logo: 'http://greengerong.com/rebirth/assets/img/wolf2.png',
+      logo: 'https://greengerong.github.io/rebirth/assets/img/wolf2.png',
       title: '破狼博客',
       home: './',
       menus: [
@@ -54,7 +54,7 @@ export class MenuBarDemoComponent implements OnInit {
             },
             {
               text: 'Blog',
-              url: 'http://greengerong.com/rebirth/blog/home',
+              url: 'https://greengerong.github.io/rebirth/blog/home',
               target: '_blank'
             },
             {
@@ -89,7 +89,6 @@ export class MenuBarDemoComponent implements OnInit {
         },
         {
           icon: 'glyphicon glyphicon-user',
-          // url: 'http://greengerong.com/rebirth/blog/about',
           target: '_blank',
           children: [
             {

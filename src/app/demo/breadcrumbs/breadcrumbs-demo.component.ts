@@ -12,12 +12,12 @@ export class BreadcrumbsDemoComponent implements OnInit {
     {
       text: 'Home',
       icon: 'glyphicon glyphicon-home',
-      url: 'http://greengerong.com/rebirth-ng/',
+      url: 'https://greengerong.github.io/rebirth-ng/',
     },
     {
       text: 'Library',
       icon: 'glyphicon glyphicon-heart',
-      url: 'http://greengerong.com/rebirth-ng/compodocs/overview.html',
+      url: 'https://greengerong.github.io/rebirth-ng/compodocs/overview.html',
     },
     {
       text: 'Data',

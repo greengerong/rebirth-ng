@@ -22,7 +22,6 @@
         "styles.scss"
       ],
       "scripts": [
-        "service-worker-registration.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
