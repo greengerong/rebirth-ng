@@ -1,27 +1,31 @@
 <form class="form-inline time-picker">
   <div class="form-group">
-    <input type="text" #hours
+    <input type="number" #hours
            [disabled]="disabled"
            name="hours"
            class="form-control"
            maxlength="2"
+           max="23"
+           min="0"
            [(ngModel)]="hour"
            (blur)="onHoursChange()">
   </div>
   <span>:</span>
   <div class="form-group">
-    <input type="text" #minutes
+    <input type="number" #minutes
            [disabled]="disabled"
            name="minutes"
            class="form-control"
            maxlength="2"
+           max="59"
+           min="0"
            [(ngModel)]="minute"
            (blur)="onMinutesChange()">
   </div>
   <ng-container *ngIf="showSeconds">
     <span>:</span>
     <div class="form-group">
-      <input type="text" #seconds
+      <input type="number" #seconds
              [disabled]="disabled"
              name="seconds"
              class="form-control"

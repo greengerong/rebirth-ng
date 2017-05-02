@@ -67,9 +67,9 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.hour = '00';
     } else if (hour > 23) {
       this.hour = '23';
+    } else {
+      this.hour = this.fillLeft(hour);
     }
-
-    this.hour = this.fillLeft(hour);
     this.onModelChange();
   }
 
@@ -80,9 +80,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.minute = '00';
     } else if (minute > 59) {
       this.minute = '59';
+    } else {
+      this.minute = this.fillLeft(minute);
     }
 
-    this.minute = this.fillLeft(minute);
     this.onModelChange();
   }
 
@@ -93,9 +94,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.second = '00';
     } else if (second > 59) {
       this.second = '59';
+    } else {
+      this.second = this.fillLeft(second);
     }
 
-    this.second = this.fillLeft(second);
     this.onModelChange();
   }
 
