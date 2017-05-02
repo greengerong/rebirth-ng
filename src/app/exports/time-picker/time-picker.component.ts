@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, OnInit, ChangeDetectorRef, ViewChild, ElementRef } from '@angular/core';
+import { Component, forwardRef, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export interface TimePickerModel {
