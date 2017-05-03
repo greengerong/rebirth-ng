@@ -1486,7 +1486,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:89</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:90</a></div>
                             </td>
                         </tr>
     
@@ -1519,7 +1519,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:102</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:104</a></div>
                             </td>
                         </tr>
     
@@ -1549,7 +1549,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="106" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:106</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:108</a></div>
                             </td>
                         </tr>
     
@@ -1582,7 +1582,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:110</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:112</a></div>
                             </td>
                         </tr>
     
@@ -1813,9 +1813,9 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.hour &#x3D; &#x27;00&#x27;;
     } else if (hour &gt; 23) {
       this.hour &#x3D; &#x27;23&#x27;;
+    } else {
+      this.hour &#x3D; this.fillLeft(hour);
     }
-
-    this.hour &#x3D; this.fillLeft(hour);
     this.onModelChange();
   }
 
@@ -1826,9 +1826,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.minute &#x3D; &#x27;00&#x27;;
     } else if (minute &gt; 59) {
       this.minute &#x3D; &#x27;59&#x27;;
+    } else {
+      this.minute &#x3D; this.fillLeft(minute);
     }
 
-    this.minute &#x3D; this.fillLeft(minute);
     this.onModelChange();
   }
 
@@ -1839,9 +1840,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       this.second &#x3D; &#x27;00&#x27;;
     } else if (second &gt; 59) {
       this.second &#x3D; &#x27;59&#x27;;
+    } else {
+      this.second &#x3D; this.fillLeft(second);
     }
 
-    this.second &#x3D; this.fillLeft(second);
     this.onModelChange();
   }
 
@@ -1875,6 +1877,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
            name&#x3D;&quot;hours&quot;
            class&#x3D;&quot;form-control&quot;
            maxlength&#x3D;&quot;2&quot;
+           max&#x3D;&quot;23&quot;
+           min&#x3D;&quot;0&quot;
            [(ngModel)]&#x3D;&quot;hour&quot;
            (blur)&#x3D;&quot;onHoursChange()&quot;&gt;
   &lt;/div&gt;
@@ -1885,6 +1889,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
            name&#x3D;&quot;minutes&quot;
            class&#x3D;&quot;form-control&quot;
            maxlength&#x3D;&quot;2&quot;
+           max&#x3D;&quot;59&quot;
+           min&#x3D;&quot;0&quot;
            [(ngModel)]&#x3D;&quot;minute&quot;
            (blur)&#x3D;&quot;onMinutesChange()&quot;&gt;
   &lt;/div&gt;
@@ -1929,7 +1935,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form class="form-inline time-picker">  <div class="form-group">    <input type="text" #hours           [disabled]="disabled"           name="hours"           class="form-control"           maxlength="2"           [(ngModel)]="hour"           (blur)="onHoursChange()">  </div>  <span>:</span>  <div class="form-group">    <input type="text" #minutes           [disabled]="disabled"           name="minutes"           class="form-control"           maxlength="2"           [(ngModel)]="minute"           (blur)="onMinutesChange()">  </div>  <ng-container *ngIf="showSeconds">    <span>:</span>    <div class="form-group">      <input type="text" #seconds             [disabled]="disabled"             name="seconds"             class="form-control"             max="59"             min="0"             maxlength="2"             [(ngModel)]="second"             (blur)="onSecondsChange()">    </div>  </ng-container></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form class="form-inline time-picker">  <div class="form-group">    <input type="text" #hours           [disabled]="disabled"           name="hours"           class="form-control"           maxlength="2"           max="23"           min="0"           [(ngModel)]="hour"           (blur)="onHoursChange()">  </div>  <span>:</span>  <div class="form-group">    <input type="text" #minutes           [disabled]="disabled"           name="minutes"           class="form-control"           maxlength="2"           max="59"           min="0"           [(ngModel)]="minute"           (blur)="onMinutesChange()">  </div>  <ng-container *ngIf="showSeconds">    <span>:</span>    <div class="form-group">      <input type="text" #seconds             [disabled]="disabled"             name="seconds"             class="form-control"             max="59"             min="0"             maxlength="2"             [(ngModel)]="second"             (blur)="onSecondsChange()">    </div>  </ng-container></form></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'TimePickerComponent'};
