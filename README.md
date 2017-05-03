@@ -63,8 +63,6 @@
 
 - refactor dropdown to service
 
-- overflow:auto for dropmenu(autocomplete)
-
 
 
 ## Build
