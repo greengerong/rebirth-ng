@@ -33,7 +33,7 @@
 - [x] Flow Steps
 - [x] Infinite Scroll
 - [x] Data Table
-- [ ] TimePicker
+- [x] TimePicker
 
 ## Advance Components
 - [ ] Editor([]())
@@ -73,7 +73,7 @@
 
 * Docs deploy: `npm run docs:deploy`
 
-* npm publish `npm run npm:publish` and then 'cd .lib && npm publish'
+* npm publish `npm run npm:publish` and then `cd .lib && npm publish`
 
 ## Get start
 
