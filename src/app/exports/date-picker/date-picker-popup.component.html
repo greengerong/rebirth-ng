@@ -26,9 +26,9 @@
     <tbody>
     <tr *ngFor="let week of displayWeeks">
       <td *ngFor="let day of week" class="day"
-          [ngClass]="{'out-of-month': !day.inMonth, 'in-month-day': day.inMonth, 'bg-primary': isSelectDay(day.date),'disabled': isDisabledDay(day.date)}"
+          [ngClass]="{'out-of-month': !day.inMonth, 'in-month-day': day.inMonth,'disabled': isDisabledDay(day.date)}"
           (click)="onSelectDate($event, day.date)">
-        {{day.day}}
+        <div class="calendar-date" [ngClass]="{'bg-primary': isSelectDay(day.date)}">{{day.day}}</div>
       </td>
     </tr>
     </tbody>
