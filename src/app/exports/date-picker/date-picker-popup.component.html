@@ -34,9 +34,8 @@
     </tbody>
     <tfoot>
     <tr class="time-picker-view bg-info">
-      <td></td>
-      <td colspan="6">
-        <div *ngIf="showTimePicker" class="pull-left">
+      <td colspan="7">
+        <div *ngIf="showTimePicker" class="pull-left time-panel">
           <select class="date-select" [(ngModel)]="currentHour" name="hours" [disabled]="disabled"
                   (change)="onTimeChange()">
             <option *ngFor="let item of hourOptions; let $index = index" [ngValue]="$index">{{item}}</option>

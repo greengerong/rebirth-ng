@@ -1,7 +1,6 @@
 
 .month-view {
   background-color: #f7f7f7;
-  min-width: 300px;
   text-align: center;
   box-shadow: 0 2px 2px rgba(0, 0, 0, .24), 0 0 2px rgba(0, 0, 0, .12);
 
@@ -35,8 +34,8 @@
 
   .day {
     text-align: center;
-    width: 2em;
-    height: 2em;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
     &.bg-primary {
       border-radius: 50%;
@@ -71,6 +70,10 @@
     td {
       vertical-align: middle;
       line-height: 2;
+    }
+
+    .time-panel {
+      margin-left: 1em;
     }
   }
 }
