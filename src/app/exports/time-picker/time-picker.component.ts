@@ -129,7 +129,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     return model;
   }
 
-  isSafetyKeyPress(keyType, target: string) {
+  isSafetyKeyPress(keyType: string, target: string) {
     return !(keyType === 'ArrowDown' && parseInt(target) === 0);
   }
 
@@ -142,6 +142,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     if (keyEventType === 'ArrowDown') {
       step = -1;
     }
+    this.modifyTimeByKeyEvent(type, keyEventType, step);
+  }
+
+  modifyTimeByKeyEvent(type: number, keyEventType: string, step: number) {
     switch (type) {
       case this.timeType.HOURS:
         if (this.isSafetyKeyPress(keyEventType, this.hour)) {
