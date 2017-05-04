@@ -129,24 +129,34 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     return model;
   }
 
+  isSafetyKeyPress(keyType, target: string) {
+    return !(keyType === 'ArrowDown' && parseInt(target) === 0);
+  }
+
   handleKeyEvent(event, type) {
     const keyEventType = event.code;
     if (supportKeyType.indexOf(keyEventType) === -1) {
       return;
     }
     let step = 1;
-    if (event.code === 'ArrowDown') {
+    if (keyEventType === 'ArrowDown') {
       step = -1;
     }
     switch (type) {
       case this.timeType.HOURS:
-        this.hour = this.fillLeft(parseInt(this.hour) + step);
+        if (this.isSafetyKeyPress(keyEventType, this.hour)) {
+          this.hour = this.fillLeft(parseInt(this.hour) + step);
+        }
         break;
       case this.timeType.MINUTES:
-        this.minute = this.fillLeft(parseInt(this.minute) + step);
+        if (this.isSafetyKeyPress(keyEventType, this.minute)) {
+          this.minute = this.fillLeft(parseInt(this.minute) + step);
+        }
         break;
       case this.timeType.SECONDS:
-        this.second = this.fillLeft(parseInt(this.second) + step);
+        if (this.isSafetyKeyPress(keyEventType, this.second)) {
+          this.second = this.fillLeft(parseInt(this.second) + step);
+        }
         break;
     }
   }
