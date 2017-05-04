@@ -125,8 +125,10 @@ gulp.task('prepublish', function (cb) {
 });
 
 gulp.task('sw:gen', function (callback) {
+  const stripPrefixMulti = {};
+  stripPrefixMulti[config.dest] = 'https://greengerong.github.io/rebirth-ng';
   swPrecache.write(`${config.dest}/service-worker.js`, {
     staticFileGlobs: [config.dest + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefix: config.dest
+    stripPrefixMulti: stripPrefixMulti
   }, callback);
 });
