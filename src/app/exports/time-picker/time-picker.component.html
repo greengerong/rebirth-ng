@@ -1,6 +1,7 @@
 <form class="form-inline time-picker">
   <div class="form-group">
-    <input type="text" #hours
+    <input type="text"
+           #hours
            [disabled]="disabled"
            name="hours"
            class="form-control"
@@ -8,11 +9,13 @@
            max="23"
            min="0"
            [(ngModel)]="hour"
+           (keydown)="handleKeyEvent($event, timeType.HOURS)"
            (blur)="onHoursChange()">
   </div>
   <span>:</span>
   <div class="form-group">
-    <input type="text" #minutes
+    <input type="text"
+           #minutes
            [disabled]="disabled"
            name="minutes"
            class="form-control"
@@ -20,12 +23,14 @@
            max="59"
            min="0"
            [(ngModel)]="minute"
+           (keydown)="handleKeyEvent($event, timeType.MINUTES)"
            (blur)="onMinutesChange()">
   </div>
   <ng-container *ngIf="showSeconds">
     <span>:</span>
     <div class="form-group">
-      <input type="text" #seconds
+      <input type="text"
+             #seconds
              [disabled]="disabled"
              name="seconds"
              class="form-control"
@@ -33,6 +38,7 @@
              min="0"
              maxlength="2"
              [(ngModel)]="second"
+             (keydown)="handleKeyEvent($event, timeType.SECONDS)"
              (blur)="onSecondsChange()">
     </div>
   </ng-container>
