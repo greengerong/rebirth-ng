@@ -9,7 +9,7 @@
            max="23"
            min="0"
            [(ngModel)]="hour"
-           (keydown)="handleKeyEvent($event, timeType.HOURS)"
+           (keydown)="handleKeyEvent($event, timeType.HOUR)"
            (blur)="onHoursChange()">
   </div>
   <span>:</span>
@@ -23,7 +23,7 @@
            max="59"
            min="0"
            [(ngModel)]="minute"
-           (keydown)="handleKeyEvent($event, timeType.MINUTES)"
+           (keydown)="handleKeyEvent($event, timeType.MINUTE)"
            (blur)="onMinutesChange()">
   </div>
   <ng-container *ngIf="showSeconds">
@@ -38,7 +38,7 @@
              min="0"
              maxlength="2"
              [(ngModel)]="second"
-             (keydown)="handleKeyEvent($event, timeType.SECONDS)"
+             (keydown)="handleKeyEvent($event, timeType.SECOND)"
              (blur)="onSecondsChange()">
     </div>
   </ng-container>

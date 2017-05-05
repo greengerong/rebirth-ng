@@ -8,10 +8,16 @@ export interface TimePickerModel {
 }
 
 enum TIME {
-  HOURS,
-  MINUTES,
-  SECONDS,
+  HOUR,
+  MINUTE,
+  SECOND,
 }
+
+const TIME_KEY = {
+  HOUR: 'hour',
+  MINUTE: 'minute',
+  SECOND: 'second',
+};
 
 const MAX_TIME_RANGE = {
   hour: 23,
@@ -110,21 +116,21 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   onHoursChange() {
     this.onTouched();
     const hour = parseInt(this.hour);
-    this.modifyTimeByKey(hour, 'hour');
+    this.modifyTimeByKey(hour, TIME_KEY.HOUR);
     this.onModelChange();
   }
 
   onMinutesChange() {
     this.onTouched();
     const minute = parseInt(this.minute);
-    this.modifyTimeByKey(minute, 'minute', MAX_TIME_RANGE.minute.toString(), this.fillLeft(0));
+    this.modifyTimeByKey(minute, TIME_KEY.MINUTE, MAX_TIME_RANGE.minute.toString(), this.fillLeft(0));
     this.onModelChange();
   }
 
   onSecondsChange() {
     this.onTouched();
     const second = parseInt(this.second);
-    this.modifyTimeByKey(second, 'second', MAX_TIME_RANGE.second.toString(), this.fillLeft(0));
+    this.modifyTimeByKey(second, TIME_KEY.SECOND, MAX_TIME_RANGE.second.toString(), this.fillLeft(0));
 
     this.onModelChange();
   }
@@ -158,25 +164,25 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     if (keyEventType === 'ArrowDown') {
       step = -1;
     }
-    this.modifyTimeByKeyEvent(type, keyEventType, step);
+    this.modifyTimeByKeyPressEvent(type, keyEventType, step);
   }
 
-  modifyTimeByKeyEvent(type: number, keyEventType: string, step: number) {
+  modifyTimeByKeyPress(key: string, type: string, step: number) {
+    if (this.isSafetyKeyPress(type, this[key])) {
+      this[key] = this.fillLeft(parseInt(this[key]) + step);
+    }
+  }
+
+  modifyTimeByKeyPressEvent(type: number, keyEventType: string, step: number) {
     switch (type) {
-      case this.timeType.HOURS:
-        if (this.isSafetyKeyPress(keyEventType, this.hour)) {
-          this.hour = this.fillLeft(parseInt(this.hour) + step);
-        }
+      case this.timeType.HOUR:
+        this.modifyTimeByKeyPress(TIME_KEY.HOUR, keyEventType, step);
         break;
-      case this.timeType.MINUTES:
-        if (this.isSafetyKeyPress(keyEventType, this.minute)) {
-          this.minute = this.fillLeft(parseInt(this.minute) + step);
-        }
+      case this.timeType.MINUTE:
+        this.modifyTimeByKeyPress(TIME_KEY.MINUTE, keyEventType, step);
         break;
-      case this.timeType.SECONDS:
-        if (this.isSafetyKeyPress(keyEventType, this.second)) {
-          this.second = this.fillLeft(parseInt(this.second) + step);
-        }
+      case this.timeType.SECOND:
+        this.modifyTimeByKeyPress(TIME_KEY.SECOND, keyEventType, step);
         break;
     }
   }
