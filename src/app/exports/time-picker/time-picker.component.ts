@@ -38,6 +38,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   second = '00';
 
   timeType = TIME;
+  minDate: Date;
+  maxDate: Date;
 
   disabled: boolean;
   private onChange = (_: TimePickerModel) => null;
@@ -47,7 +49,16 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   ngOnInit(): void {
+    this.initConditionDate();
+  }
 
+  initConditionDate() {
+    this.minDate = this.getDateByTime(this.minTime);
+    this.maxDate = this.getDateByTime(this.maxTime);
+  }
+
+  getDateByTime(time: TimePickerModel) {
+    return new Date((new Date()).setHours(time.hour, time.minute, time.second));
   }
 
   writeValue(value: TimePickerModel) {
@@ -76,9 +87,9 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
     const hour = parseInt(this.hour);
     if (isNaN(hour) || hour < 0) {
-      this.hour = '00';
+      this.hour = this.fillLeft(this.minTime.hour);
     } else if (hour > 23) {
-      this.hour = '23';
+      this.hour = this.fillLeft(this.maxTime.hour);
     } else {
       this.hour = this.fillLeft(hour);
     }
