@@ -13,6 +13,12 @@ enum TIME {
   SECONDS,
 }
 
+const MAX_TIME_RANGE = {
+  hour: 23,
+  minute: 59,
+  second: 59,
+};
+
 const supportKeyType = ['ArrowUp', 'ArrowDown'];
 
 @Component({
@@ -58,7 +64,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   getDateByTime(time: TimePickerModel) {
-    return new Date((new Date()).setHours(time.hour, time.minute, time.second));
+    return new Date((new Date()).setHours(time.hour || 0, time.minute || 0, time.second || 0));
+  }
+
+  getCurrentTimestamp(time): number {
+    return (new Date()).setHours(time.hour || parseInt(this.hour), time.minute || parseInt(this.minute), time.second || parseInt(this.second));
   }
 
   writeValue(value: TimePickerModel) {
@@ -83,43 +93,38 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.changeDetectorRef.markForCheck();
   }
 
+  modifyTimeByKey(value: number, key: string, maxValue?: string, minValue?: string) {
+    if (isNaN(value) || value < 0) {
+      this[key] = minValue || this.fillLeft(this.minTime[key]);
+    } else if (value > MAX_TIME_RANGE[key]) {
+      this[key] = maxValue || this.fillLeft(this.maxTime[key]);
+    } else if (this.getCurrentTimestamp({ [key]: value }) < this.minDate.getTime()) {
+      this[key] = this.fillLeft(this.minTime[key]);
+    } else if (this.getCurrentTimestamp({ [key]: value }) > this.maxDate.getTime()) {
+      this[key] = this.fillLeft(this.maxTime[key]);
+    } else {
+      this[key] = this.fillLeft(value);
+    }
+  }
+
   onHoursChange() {
     this.onTouched();
     const hour = parseInt(this.hour);
-    if (isNaN(hour) || hour < 0) {
-      this.hour = this.fillLeft(this.minTime.hour);
-    } else if (hour > 23) {
-      this.hour = this.fillLeft(this.maxTime.hour);
-    } else {
-      this.hour = this.fillLeft(hour);
-    }
+    this.modifyTimeByKey(hour, 'hour');
     this.onModelChange();
   }
 
   onMinutesChange() {
     this.onTouched();
     const minute = parseInt(this.minute);
-    if (isNaN(minute) || minute < 0) {
-      this.minute = '00';
-    } else if (minute > 59) {
-      this.minute = '59';
-    } else {
-      this.minute = this.fillLeft(minute);
-    }
-
+    this.modifyTimeByKey(minute, 'minute', MAX_TIME_RANGE.minute.toString(), this.fillLeft(0));
     this.onModelChange();
   }
 
   onSecondsChange() {
     this.onTouched();
     const second = parseInt(this.second);
-    if (isNaN(second) || second < 0) {
-      this.second = '00';
-    } else if (second > 59) {
-      this.second = '59';
-    } else {
-      this.second = this.fillLeft(second);
-    }
+    this.modifyTimeByKey(second, 'second', MAX_TIME_RANGE.second.toString(), this.fillLeft(0));
 
     this.onModelChange();
   }

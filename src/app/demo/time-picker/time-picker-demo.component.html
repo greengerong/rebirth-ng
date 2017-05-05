@@ -1,6 +1,6 @@
 <div class="rating-demo">
   <section>
-    <h4>time picker:</h4>
+    <h4>Normal:</h4>
     <re-time-picker [(ngModel)]="time" [disabled]="disabled"></re-time-picker>
   </section>
 
@@ -9,6 +9,13 @@
     <re-time-picker [(ngModel)]="time" [showSeconds]="false" [disabled]="disabled"></re-time-picker>
 
     <button class="btn btn-primary" (click)="disabled = !disabled">{{disabled ? 'Enable' : 'Disable'}}</button>
+  </section>
+
+  <section>
+    <h4>Min time and max time:</h4>
+    <re-time-picker [(ngModel)]="time"
+                    [maxTime]="{ hour: 20, minute: 0, second: 0 }"
+                    [minTime]="{ hour: 1, minute: 0, second: 0 }"></re-time-picker>
   </section>
 
 
