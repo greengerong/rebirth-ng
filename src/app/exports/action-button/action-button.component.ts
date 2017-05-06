@@ -50,7 +50,7 @@ export class ActionButtonComponent {
   }
 
   @HostListener('document:click', ['$event'])
-  close($event?: MouseEvent) {
+  close() {
     if (this.isOpen) {
       this.hide();
       this.openStatusChange.emit(this.isOpen);

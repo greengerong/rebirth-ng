@@ -16,7 +16,6 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 import { Http, Response, RequestOptions } from '@angular/http';
 import { formatFileSize, formatString } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { file } from 'babel-types';
 
 @Component({
   selector: 're-file-upload',

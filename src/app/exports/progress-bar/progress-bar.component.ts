@@ -17,7 +17,7 @@ export class ProgressBarComponent {
   @Input() value: number;
   @Input() cssClass: string;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
+  constructor(rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.progressBar.type;
     this.animate = rebirthUIConfig.progressBar.animate;
     this.striped = rebirthUIConfig.progressBar.striped;

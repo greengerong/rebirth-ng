@@ -127,8 +127,8 @@ export class RebirthNGConfig {
     vertical: false
   };
 
-  constructor(@Inject(LOCALE_ID) private locale: string) {
-  }
+  // constructor(@Inject(LOCALE_ID) private locale: string) {
+  // }
 
   extend(obj: any): this {
     Object.assign(this, obj);

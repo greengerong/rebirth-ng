@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   QueryList,
   ContentChildren,
   Input,
@@ -25,7 +24,7 @@ export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() activeTabChange = new EventEmitter<number| string>();
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
+  constructor(rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.tabs.type;
     this.justified = rebirthUIConfig.tabs.justified;
     this.vertical = rebirthUIConfig.tabs.vertical;

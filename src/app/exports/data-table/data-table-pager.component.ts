@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input, ViewChild } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DataTableFootTmplComponent } from './tmpl/data-table-foot-tmpl.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
 import { DataTableComponent } from './data-table.component';

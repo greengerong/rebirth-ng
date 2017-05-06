@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 're-hightlight',
@@ -14,7 +14,7 @@ export class HightlightComponent implements OnChanges {
   @Input() term: string;
   hightlightHtml: string;
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     this.hightlightHtml = this.transform(this.value, this.term);
   }
 

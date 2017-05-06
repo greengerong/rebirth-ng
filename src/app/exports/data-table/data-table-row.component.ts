@@ -1,5 +1,10 @@
 import {
-  Component, ChangeDetectionStrategy, Input, HostListener, ChangeDetectorRef, ViewChildren, QueryList, forwardRef,
+  Component,
+  ChangeDetectionStrategy,
+  Input,
+  HostListener,
+  ChangeDetectorRef,
+  QueryList,
   EventEmitter
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';

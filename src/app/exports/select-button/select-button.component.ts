@@ -31,7 +31,7 @@ export class SelectButtonComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private rebirthUIConfig: RebirthNGConfig) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.selectButton.type;
     this.justified = rebirthUIConfig.selectButton.justified;
     this.multiple = rebirthUIConfig.selectButton.multiple;

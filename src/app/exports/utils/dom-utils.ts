@@ -26,7 +26,7 @@ export function stopPropagationIfExist($event?: Event) {
 }
 
 export function readFileAsDataURL(file) {
-  return new Promise<any>((resolve, reject) => {
+  return new Promise<any>((resolve) => {
     if (/\.(jpe?g|png|gif)$/i.test(file.name)) {
       const reader = new FileReader();
       reader.addEventListener('load', function () {

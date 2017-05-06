@@ -24,13 +24,13 @@ export class SwitchComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.onText = rebirthUIConfig.switchBtn.onText;
     this.offText = rebirthUIConfig.switchBtn.offText;
     this.type = <any>rebirthUIConfig.switchBtn.type;
   }
 
-  toggle($event?: Event) {
+  toggle() {
     if (this.disabled) {
       return;
     }

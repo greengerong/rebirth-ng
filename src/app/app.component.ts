@@ -2,8 +2,7 @@ import { Component, OnInit, ViewContainerRef, Renderer2, ElementRef } from '@ang
 import { RebirthNGConfig } from './exports/rebirth-ng.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
-import { REBIRTH_NG_I18N_ZHCN } from './exports/rebirth-ng.i18n.zh-cn';
-import { ActivatedRoute } from '@angular/router';
+// import { REBIRTH_NG_I18N_ZHCN } from './exports/rebirth-ng.i18n.zh-cn';
 import { ThemeService } from './shared';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -22,7 +21,6 @@ export class AppComponent implements OnInit {
   constructor(private rebirthConfig: RebirthNGConfig,
               private viewContainerRef: ViewContainerRef,
               private demoConfigService: DemoConfigService,
-              private  router: ActivatedRoute,
               private  themeService: ThemeService,
               private  renderer: Renderer2,
               private elementRef: ElementRef,

@@ -6,7 +6,6 @@ import {
   Output,
   EventEmitter,
   ContentChild,
-  OnDestroy,
   ViewChild,
   HostListener,
   QueryList
