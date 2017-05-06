@@ -1,6 +1,5 @@
 import {
   Component,
-  ChangeDetectionStrategy,
   Type,
   Input,
   ViewContainerRef,
@@ -12,8 +11,7 @@ import {
 
 @Component({
   selector: 're-doc-content',
-  template: '',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  template: ''
 })
 export class DocContentComponent implements OnDestroy {
   cmp: Type<any>;

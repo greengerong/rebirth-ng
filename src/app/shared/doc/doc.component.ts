@@ -1,6 +1,5 @@
 import {
   Component,
-  ChangeDetectionStrategy,
   Input,
   AfterViewInit,
   ElementRef,
@@ -13,7 +12,6 @@ import * as hljs from 'highlight.js';
   selector: 're-doc',
   templateUrl: './doc.component.html',
   styleUrls: ['./doc.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DocComponent implements AfterViewInit {
 
