@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs/observable/of';
-import { URLSearchParams } from '@angular/http';
+import { URLSearchParams, Jsonp } from '@angular/http';
 import { AutoCompleteDirective } from '../../exports';
 
 
@@ -21,6 +21,10 @@ export class AutoCompleteDemoComponent {
   icons = ['glyphicon-asterisk', 'glyphicon glyphicon-plus', 'glyphicon glyphicon-euro', 'glyphicon glyphicon-eu'];
   languages = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
     'LiveScript', 'CoffeeScript'];
+
+  constructor(private jsonp: Jsonp) {
+
+  }
 
   getIcon(index) {
     return this.icons[index % this.icons.length];

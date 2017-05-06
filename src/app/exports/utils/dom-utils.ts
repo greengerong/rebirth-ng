@@ -1,7 +1,6 @@
 import { ElementRef, Renderer2 } from '@angular/core';
 import { WindowRef } from '../window-ref';
 import { DocumentRef } from '../window-ref/document-ref.service';
-import Promise = promise.Promise;
 
 export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef): { top?: number, left?: number } {
   if (!elementRef.nativeElement || !elementRef.nativeElement.getBoundingClientRect) {
