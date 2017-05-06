@@ -25,7 +25,7 @@ export class RebirthRouterReuseStrategy implements RouteReuseStrategy {
   }
 
   private isReusable(route: ActivatedRouteSnapshot) {
-    return route.data && route.data['reusable'];
+    return route.data && route.data.reusable;
   }
 
 }
