@@ -56,7 +56,10 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private elementRef: ElementRef,
+              private renderer: Renderer2,
+              private rebirthUIConfig: RebirthNGConfig,
+              private changeDetectorRef: ChangeDetectorRef) {
 
     this.locale = this.rebirthUIConfig.datePicker.locale;
     this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();

@@ -1,6 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs/observable/of';
-import { Jsonp, URLSearchParams } from '@angular/http';
+import { URLSearchParams } from '@angular/http';
 import { AutoCompleteDirective } from '../../exports';
 
 
@@ -10,7 +10,7 @@ import { AutoCompleteDirective } from '../../exports';
   styleUrls: ['./auto-complete-demo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AutoCompleteDemoComponent implements OnInit {
+export class AutoCompleteDemoComponent {
   selectItem1 = 'C#';
   selectItem2: string;
   selectItem3: string;
@@ -21,13 +21,6 @@ export class AutoCompleteDemoComponent implements OnInit {
   icons = ['glyphicon-asterisk', 'glyphicon glyphicon-plus', 'glyphicon glyphicon-euro', 'glyphicon glyphicon-eu'];
   languages = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
     'LiveScript', 'CoffeeScript'];
-
-  constructor(private jsonp: Jsonp) {
-
-  }
-
-  ngOnInit() {
-  }
 
   getIcon(index) {
     return this.icons[index % this.icons.length];

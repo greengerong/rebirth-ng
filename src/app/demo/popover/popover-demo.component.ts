@@ -1,17 +1,11 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 're-popover-demo',
   templateUrl: './popover-demo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PopoverDemoComponent implements OnInit {
+export class PopoverDemoComponent {
   name = 'greengerong';
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
 }

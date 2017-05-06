@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { OverlayService } from '../../exports';
 
 @Component({
@@ -6,12 +6,9 @@ import { OverlayService } from '../../exports';
   templateUrl: './overlay-demo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OverlayDemoComponent implements OnInit {
+export class OverlayDemoComponent {
 
   constructor(private  overlayService: OverlayService) {
-  }
-
-  ngOnInit() {
   }
 
   openOverlay() {
@@ -35,12 +32,7 @@ export class OverlayDemoComponent implements OnInit {
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OverlayBodyDemoComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+export class OverlayBodyDemoComponent {
 
 }
 

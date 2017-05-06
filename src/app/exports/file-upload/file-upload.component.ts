@@ -187,7 +187,7 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   validFile(file: File): boolean {
-    let errors = [];
+    const errors = [];
     if (this.maxFileSize && file.size > this.maxFileSize) {
       errors.push(formatString(this.fileSizeErrorMessage, file.name, formatFileSize(file.size)));
     }

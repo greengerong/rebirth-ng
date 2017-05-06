@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Breadcrumb } from '../../exports';
 import * as Immutable from 'immutable';
 
@@ -7,7 +7,7 @@ import * as Immutable from 'immutable';
   templateUrl: './breadcrumbs-demo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BreadcrumbsDemoComponent implements OnInit {
+export class BreadcrumbsDemoComponent {
   items = Immutable.List<Breadcrumb>([
     {
       text: 'Home',
@@ -25,12 +25,6 @@ export class BreadcrumbsDemoComponent implements OnInit {
       handle: item => console.log('Clicked', item)
     }
   ]);
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   pushItem() {
     this.items = this.items.push({ text: 'Test', handle: item => console.log('Clicked', item) });

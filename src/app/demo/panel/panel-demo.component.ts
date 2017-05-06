@@ -4,12 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 're-panel-demo',
   templateUrl: './panel-demo.component.html'
 })
-export class PanelDemoComponent implements OnInit {
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
+export class PanelDemoComponent {
 
   close(type) {
     console.log(`Panel ${type} closing!`);

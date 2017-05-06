@@ -22,10 +22,7 @@ export class DocComponent implements AfterViewInit {
 
   @Input() component: any;
 
-  constructor() {
-  }
-
-  activeTabChange(id) {
+  activeTabChange() {
     setTimeout(() => {
       hljs.highlightBlock(this.html.last.nativeElement);
     }, 0);

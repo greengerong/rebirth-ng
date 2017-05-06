@@ -15,6 +15,7 @@
     "build": "ng build",
     "test": "cross-env NODE_ENV=dev && ng test",
     "lint": "ng lint",
+    "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
     "e2e": "ng e2e",
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",

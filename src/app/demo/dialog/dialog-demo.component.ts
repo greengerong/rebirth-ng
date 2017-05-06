@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewContainerRef } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DialogService } from '../../exports';
 
 @Component({
@@ -8,8 +8,7 @@ import { DialogService } from '../../exports';
 })
 export class DialogDemoComponent {
 
-  constructor(private dialogService: DialogService, private viewContainerRef: ViewContainerRef) {
-
+  constructor(private dialogService: DialogService) {
   }
 
   alert() {

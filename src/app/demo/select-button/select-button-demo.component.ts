@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { SelectButtonItem } from '../../exports';
 
 @Component({
@@ -6,7 +6,7 @@ import { SelectButtonItem } from '../../exports';
   templateUrl: './select-button-demo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SelectButtonDemoComponent implements OnInit {
+export class SelectButtonDemoComponent {
   value: string;
   multipleValue: string[];
   disabled = true;
@@ -21,11 +21,5 @@ export class SelectButtonDemoComponent implements OnInit {
       text: 'Right'
     }
   ];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
 }

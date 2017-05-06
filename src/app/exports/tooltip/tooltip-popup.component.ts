@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, ChangeDetectorRef } from '@angular/core';
 import { TooltipPopup } from './tooltip-popup';
-import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 're-tooltip-popup',
@@ -9,8 +9,8 @@ import { trigger, state, style, animate, transition, AnimationEvent } from '@ang
     '[class]': '"tooltip fade  " + placement',
     '[style.display]': '"none"',
     'role': 'tooltip',
-    '[@state]': "animateState",
-    '(@state.done)': "afterVisibilityAnimation($event)"
+    '[@state]': 'animateState',
+    '(@state.done)': 'afterVisibilityAnimation($event)'
   },
   animations: [
     trigger('state', [

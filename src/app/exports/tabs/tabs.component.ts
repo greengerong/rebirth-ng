@@ -16,7 +16,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
   templateUrl: './tabs.component.html',
   exportAs: 'tabs'
 })
-export class TabsComponent implements OnInit, AfterContentInit {
+export class TabsComponent implements AfterContentInit {
   @Input() type: 'tabs' | 'pills' = 'tabs';
   @Input() activeTab: number |string;
   @Input() vertical: boolean;
@@ -29,9 +29,6 @@ export class TabsComponent implements OnInit, AfterContentInit {
     this.type = <any>rebirthUIConfig.tabs.type;
     this.justified = rebirthUIConfig.tabs.justified;
     this.vertical = rebirthUIConfig.tabs.vertical;
-  }
-
-  ngOnInit() {
   }
 
   ngAfterContentInit(): void {

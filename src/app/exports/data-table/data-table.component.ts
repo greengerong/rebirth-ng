@@ -31,7 +31,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'dataTable'
 })
-export class DataTableComponent implements OnDestroy {
+export class DataTableComponent {
 
   @Input() _dataSource: any[] = [];
   @Input() emptyRowText: string;
@@ -177,9 +177,5 @@ export class DataTableComponent implements OnDestroy {
     delete rowItem.$$editModel;
     this.editRowItem = null;
     return editModel;
-  }
-
-  ngOnDestroy(): void {
-
   }
 }

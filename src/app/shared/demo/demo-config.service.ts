@@ -33,10 +33,6 @@ import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo
 @Injectable()
 export class DemoConfigService {
 
-  constructor() {
-
-  }
-
   gettingStarted = {
     readMe: require('!html-loader!markdown-loader!../../exports/README.md')
   };

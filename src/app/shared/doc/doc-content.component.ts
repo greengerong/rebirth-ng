@@ -35,6 +35,7 @@ export class DocContentComponent implements OnDestroy {
   onComponentChange() {
     const factory = this.componentFactoryResolver.resolveComponentFactory(this.cmp);
     this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
+    this.cmpRef.changeDetectorRef.markForCheck();
   }
 
   ngOnDestroy(): void {

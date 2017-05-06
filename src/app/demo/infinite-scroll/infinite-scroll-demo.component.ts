@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { InfiniteScrollComponent } from '../../exports';
 import * as Immutable from 'immutable';
 
@@ -6,17 +6,11 @@ import * as Immutable from 'immutable';
   selector: 're-infinite-scroll-demo',
   templateUrl: './infinite-scroll-demo.component.html'
 })
-export class InfiniteScrollDemoComponent implements OnInit {
+export class InfiniteScrollDemoComponent {
   dataSource = Immutable.List([]);
   total = 200;
   complete = false;
   next = 1;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   loadMore(infiniteScroll: InfiniteScrollComponent) {
     if (this.next > this.total) {

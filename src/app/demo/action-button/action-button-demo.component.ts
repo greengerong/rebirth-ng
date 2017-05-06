@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActionItem } from '../../exports';
 
 @Component({
   selector: 're-action-button-demo',
   templateUrl: './action-button-demo.component.html'
 })
-export class ActionButtonDemoComponent implements OnInit {
+export class ActionButtonDemoComponent {
   isActionOpen: boolean;
   disabledActionOpen = true;
   actions: ActionItem[] = [
@@ -30,12 +30,6 @@ export class ActionButtonDemoComponent implements OnInit {
       text: 'Remove',
       icon: 'glyphicon glyphicon-remove'
     }];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   onActionClick(item: ActionItem) {
     console.log(`Action item ${item.id} clicked`, item);

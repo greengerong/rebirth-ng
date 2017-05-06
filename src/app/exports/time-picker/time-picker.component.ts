@@ -74,7 +74,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   getCurrentTimestamp(time): number {
-    return (new Date()).setHours(time.hour || parseInt(this.hour), time.minute || parseInt(this.minute), time.second || parseInt(this.second));
+    return (new Date()).setHours(
+      time.hour || parseInt(this.hour, 10),
+      time.minute || parseInt(this.minute, 10),
+      time.second || parseInt(this.second, 10)
+    );
   }
 
   writeValue(value: TimePickerModel) {
@@ -115,21 +119,21 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   onHoursChange() {
     this.onTouched();
-    const hour = parseInt(this.hour);
+    const hour = parseInt(this.hour, 10);
     this.modifyTimeByKey(hour, TIME_KEY.HOUR);
     this.onModelChange();
   }
 
   onMinutesChange() {
     this.onTouched();
-    const minute = parseInt(this.minute);
+    const minute = parseInt(this.minute, 10);
     this.modifyTimeByKey(minute, TIME_KEY.MINUTE, MAX_TIME_RANGE.minute.toString(), this.fillLeft(0));
     this.onModelChange();
   }
 
   onSecondsChange() {
     this.onTouched();
-    const second = parseInt(this.second);
+    const second = parseInt(this.second, 10);
     this.modifyTimeByKey(second, TIME_KEY.SECOND, MAX_TIME_RANGE.second.toString(), this.fillLeft(0));
 
     this.onModelChange();
@@ -144,15 +148,15 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   private getTimePickerModel() {
-    const model: TimePickerModel = { hour: parseInt(this.hour), minute: parseInt(this.minute) };
+    const model: TimePickerModel = { hour: parseInt(this.hour, 10), minute: parseInt(this.minute, 10) };
     if (this.showSeconds) {
-      model.second = parseInt(this.second);
+      model.second = parseInt(this.second, 10);
     }
     return model;
   }
 
   isSafetyKeyPress(keyType: string, target: string) {
-    return !(keyType === 'ArrowDown' && parseInt(target) === 0);
+    return !(keyType === 'ArrowDown' && parseInt(target, 10) === 0);
   }
 
   handleKeyEvent(event, type) {
@@ -169,7 +173,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   modifyTimeByKeyPress(key: string, type: string, step: number) {
     if (this.isSafetyKeyPress(type, this[key])) {
-      this[key] = this.fillLeft(parseInt(this[key]) + step);
+      this[key] = this.fillLeft(parseInt(this[key], 10) + step);
     }
   }
 

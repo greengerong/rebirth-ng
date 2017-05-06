@@ -6,16 +6,9 @@ import { MenuItem } from './menu-bar.model';
   styleUrls: ['./nav-item.component.scss'],
   templateUrl: './nav-item.component.html',
 })
-export class NavItemComponent implements OnInit {
+export class NavItemComponent {
 
   @Input() menus: MenuItem[] = [];
   @Input() right: boolean;
   @Input() direction: 'down' | 'up';
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

@@ -16,9 +16,6 @@ export class MenuBarDemoComponent implements OnInit {
   menus: MenuBar;
   messages = 10;
 
-  constructor() {
-  }
-
   ngOnInit() {
     this.menus = this.demoMenus();
   }

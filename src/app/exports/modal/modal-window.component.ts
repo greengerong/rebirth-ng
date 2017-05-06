@@ -16,8 +16,8 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   selector: 're-modal-window',
   templateUrl: './modal-window.component.html',
   host: {
-    "[@flyInOut]": "animateState",
-    "(@flyInOut.done)": "onAnimationDone($event)"
+    '[@flyInOut]': 'animateState',
+    '(@flyInOut.done)': 'onAnimationDone($event)'
   },
   animations: [
     trigger('flyInOut', [

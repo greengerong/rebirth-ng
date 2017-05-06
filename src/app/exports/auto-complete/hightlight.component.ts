@@ -14,10 +14,6 @@ export class HightlightComponent implements OnChanges {
   @Input() term: string;
   hightlightHtml: string;
 
-  constructor() {
-  }
-
-
   ngOnChanges(changes: SimpleChanges): void {
     this.hightlightHtml = this.transform(this.value, this.term);
   }

@@ -14,9 +14,6 @@ export class FlowStepComponent {
   @Output() activeChange = new EventEmitter<number>();
   @Input() cssClass: string;
 
-  constructor() {
-  }
-
   stepClick(step, $index) {
     if ($index < this.active) {
       this.activeChange.emit($index);

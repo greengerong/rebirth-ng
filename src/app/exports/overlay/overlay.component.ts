@@ -17,16 +17,15 @@ import { centerWindowPosition } from '../utils/dom-utils';
   templateUrl: './overlay.component.html',
   styleUrls: ['./overlay.component.scss'],
 })
-export class OverlayComponent implements OnInit {
+export class OverlayComponent {
   @Input() overlayOptions: OverlayOptions;
   @ViewChild('overlayBody') overlayBody: ElementRef;
   @ViewChild(OverlayContentComponent) overlayContent: OverlayContentComponent;
 
   constructor(private windowRef: WindowRef, private renderer: Renderer2) {
+
   }
 
-  ngOnInit() {
-  }
 
   addContent(options: OverlayOptions) {
     this.overlayOptions = options;

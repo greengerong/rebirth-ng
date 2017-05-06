@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
-import { isImmutableEmpty } from '../utils/lange-utils'
+import { isImmutableEmpty } from '../utils/lange-utils';
 
 @Component({
   selector: 're-data-table-body,[reDataTableBody]',

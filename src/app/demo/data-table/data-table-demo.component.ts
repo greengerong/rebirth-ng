@@ -1,6 +1,10 @@
 import {
-  Component, OnInit, ChangeDetectionStrategy, Pipe, PipeTransform,
-  ComponentFactoryResolver, EventEmitter
+  Component,
+  ChangeDetectionStrategy,
+  Pipe,
+  PipeTransform,
+  ComponentFactoryResolver,
+  EventEmitter
 } from '@angular/core';
 import {
   RowCheckChangeEventArg,
@@ -20,7 +24,7 @@ import * as Immutable from 'immutable';
   templateUrl: './data-table-demo.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DataTableDemoComponent implements OnInit {
+export class DataTableDemoComponent {
 
   dataSource = Immutable.List([
     {
@@ -134,9 +138,6 @@ export class DataTableDemoComponent implements OnInit {
 
   constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
     this.filterDataSource = Immutable.List(this.dataSource);
-  }
-
-  ngOnInit() {
   }
 
   sortChange($event: SortChangeEventArg) {
@@ -278,9 +279,6 @@ export class ModalPeopleComponent implements Modal {
       dob: new Date(1991, 3, 1),
       score: 80
     }]);
-
-  constructor() {
-  }
 
   rowClick($event: RowSelectedEventArg) {
     this.selectItem = $event.rowItem;

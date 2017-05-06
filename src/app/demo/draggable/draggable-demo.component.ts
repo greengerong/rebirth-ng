@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DraggableDirective } from '../../exports';
 
 @Component({
   selector: 're-draggable-demo',
   templateUrl: './draggable-demo.component.html'
 })
-export class DraggableDemoComponent implements OnInit {
+export class DraggableDemoComponent {
   source = new Array(10).fill(0).map((_, index) => index + 1);
   target = [];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   onDrop2Right($event) {
     const contextData = $event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY);

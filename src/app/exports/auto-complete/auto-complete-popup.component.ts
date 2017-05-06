@@ -10,8 +10,8 @@ import { trigger, state, style, animate, transition, AnimationEvent } from '@ang
   host: {
     '[class]': '"dropdown-menu "  +  (cssClass ? cssClass : "")',
     '[style.display]': 'isOpen && (source?.length || noResultItemTemplate) ? "inline-block" : "none"',
-    '[@state]': "animateState",
-    '(@state.done)': "afterVisibilityAnimation($event)"
+    '[@state]': 'animateState',
+    '(@state.done)': 'afterVisibilityAnimation($event)'
   },
   styleUrls: ['./auto-complete-popup.component.scss'],
   providers: [{

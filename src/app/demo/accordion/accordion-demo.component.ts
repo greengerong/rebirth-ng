@@ -1,21 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PanelComponent } from '../../exports';
 
 @Component({
   selector: 're-accordion-demo',
   templateUrl: './accordion-demo.component.html'
 })
-export class AccordionDemoComponent implements OnInit {
+export class AccordionDemoComponent {
   items = [
     { id: 1, title: 'Panel header 1', content: 'Panel header 1' },
     { id: 2, title: 'Panel header 2', content: 'Panel header 2' }
   ];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   onClose(panel: PanelComponent) {
     console.log(`Panel ${panel.id} will close!`, panel);

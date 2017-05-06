@@ -9,7 +9,7 @@ export class FileUploadDemoComponent {
   uploadFiles: any[];
 
   onRemoveDone(files) {
-
+    console.log('files', files);
   }
 
   uploadFilesChange($event) {

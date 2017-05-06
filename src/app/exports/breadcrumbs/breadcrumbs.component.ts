@@ -7,15 +7,9 @@ import { Breadcrumb } from './breadcrumbs.model';
   styleUrls: ['./breadcrumbs.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BreadcrumbsComponent implements OnInit {
+export class BreadcrumbsComponent {
   @Input() items: Breadcrumb[] = [];
   @Input() cssClass: string;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   itemClick(item: Breadcrumb) {
     if (item.handle) {

@@ -10,6 +10,4 @@ export class TimePickerDemoComponent {
   time: TimePickerModel = { hour: 13, minute: 30 };
   disabled: boolean;
 
-  constructor() {
-  }
 }
