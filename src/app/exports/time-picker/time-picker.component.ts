@@ -171,11 +171,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     if (supportKeyType.indexOf(keyEventType) === -1) {
       return;
     }
-    let step = 1;
-    if (keyEventType === 'ArrowDown') {
-      step = -1;
-    }
-    this.modifyTimeByKeyPressEvent(type, keyEventType, step);
+    this.modifyTimeByKeyPressEvent(type, keyEventType);
   }
 
   modifyTimeByKeyPress(key: string, type: string, step: number) {
@@ -184,7 +180,11 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  modifyTimeByKeyPressEvent(type: number, keyEventType: string, step: number) {
+  modifyTimeByKeyPressEvent(type: number, keyEventType: string) {
+    let step = 1;
+    if (keyEventType === 'ArrowDown') {
+      step = -1;
+    }
     switch (type) {
       case this.timeType.HOUR:
         this.modifyTimeByKeyPress(TIME_KEY.HOUR, keyEventType, step);
