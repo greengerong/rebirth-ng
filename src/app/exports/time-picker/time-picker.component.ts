@@ -103,14 +103,27 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.changeDetectorRef.markForCheck();
   }
 
+  resetMinuteAndSecondByKey(key: string) {
+    if (key === TIME_KEY.HOUR) {
+      this.minute = this.fillLeft(0);
+    }
+
+    if (this.showSeconds && key !== TIME_KEY.SECOND) {
+      this.second = this.fillLeft(0);
+    }
+  }
+
   modifyTimeByKey(value: number, key: string, maxValue?: string, minValue?: string) {
     if (isNaN(value) || value < 0) {
       this[key] = minValue || this.fillLeft(this.minTime[key]);
     } else if (value > MAX_TIME_RANGE[key]) {
+      this.resetMinuteAndSecondByKey(key);
       this[key] = maxValue || this.fillLeft(this.maxTime[key]);
     } else if (this.getCurrentTimestamp({ [key]: value }) < this.minDate.getTime()) {
+      this.resetMinuteAndSecondByKey(key);
       this[key] = this.fillLeft(this.minTime[key]);
     } else if (this.getCurrentTimestamp({ [key]: value }) > this.maxDate.getTime()) {
+      this.resetMinuteAndSecondByKey(key);
       this[key] = this.fillLeft(this.maxTime[key]);
     } else {
       this[key] = this.fillLeft(value);
