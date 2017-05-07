@@ -155,8 +155,15 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     return model;
   }
 
-  isSafetyKeyPress(keyType: string, target: string) {
-    return !(keyType === 'ArrowDown' && parseInt(target, 10) === 0);
+  isSafetyKeyPress(keyType: any, target: string, key: string) {
+    const parsedTarget = parseInt(target, 10);
+    return !(keyType === 'ArrowDown' && parsedTarget < 1) &&
+      (
+        (keyType === 'ArrowDown' && key === TIME_KEY.HOUR && parsedTarget <= MAX_TIME_RANGE.hour) ||
+        (keyType === 'ArrowDown' && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget <= MAX_TIME_RANGE.minute) ||
+        (keyType === 'ArrowUp' && key === TIME_KEY.HOUR && parsedTarget < MAX_TIME_RANGE.hour) ||
+        (keyType === 'ArrowUp' && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget < MAX_TIME_RANGE.minute)
+      );
   }
 
   handleKeyEvent(event, type) {
@@ -172,7 +179,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   modifyTimeByKeyPress(key: string, type: string, step: number) {
-    if (this.isSafetyKeyPress(type, this[key])) {
+    if (this.isSafetyKeyPress(type, this[key], key)) {
       this[key] = this.fillLeft(parseInt(this[key], 10) + step);
     }
   }
