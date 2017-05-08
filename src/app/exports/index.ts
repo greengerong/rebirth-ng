@@ -22,6 +22,7 @@ export * from './panel';
 export * from './popover';
 export * from './position';
 export * from './progress-bar';
+export * from './radio-group';
 export * from './rating';
 export * from './select-button';
 export * from './switch';

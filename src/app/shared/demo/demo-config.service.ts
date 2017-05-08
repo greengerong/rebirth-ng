@@ -25,7 +25,8 @@ import {
   SelectButtonDemoComponent,
   SwitchDemoComponent,
   TabsDemoComponent,
-  TooltipDemoComponent
+  TooltipDemoComponent,
+  RadioGroupDemoComponent
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
 import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
@@ -263,6 +264,14 @@ export class DemoConfigService {
       ts: require('!raw-loader!../../demo/time-picker/time-picker-demo.component.ts'),
     },
 
+    {
+      name: 'RadioGroup',
+      directory: 'radio-group',
+      cmp: RadioGroupDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/radio-group/README.md'),
+      html: require('!raw-loader!../../demo/radio-group/radio-group-demo.component.html'),
+      ts: require('!raw-loader!../../demo/radio-group/radio-group-demo.component.ts'),
+    },
     // component declare
   ];
 }

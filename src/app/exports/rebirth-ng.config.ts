@@ -104,6 +104,11 @@ export class RebirthNGConfig {
     striped: false
   };
 
+  radioGroup = {
+    formatter: (item) => item ? (item.label || item.toString()) : '',
+    valueParser: (item) => item
+  };
+
   rating = {
     max: 10,
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
