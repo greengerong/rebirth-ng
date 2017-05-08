@@ -32,6 +32,7 @@ import { DraggableModule } from './draggable';
 import { FileUploadModule } from './file-upload';
 import { TimePickerModule } from './time-picker';
 import { RadioGroupModule } from './radio-group';
+import { CheckboxGroupModule } from './checkbox-group';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { RadioGroupModule } from './radio-group';
     DataTableModule,
     FileUploadModule,
     TimePickerModule,
-    RadioGroupModule
+    RadioGroupModule,
+    CheckboxGroupModule
   ],
   exports: [
     RebirthCommonModule,
@@ -96,7 +98,8 @@ import { RadioGroupModule } from './radio-group';
     DraggableModule,
     FileUploadModule,
     TimePickerModule,
-    RadioGroupModule
+    RadioGroupModule,
+    CheckboxGroupModule
   ],
   declarations: [],
   providers: [],

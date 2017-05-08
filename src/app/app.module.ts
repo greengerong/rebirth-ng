@@ -32,7 +32,8 @@ import {
   DraggableDemoModule,
   FileUploadDemoModule,
   TimePickerDemoModule,
-  RadioGroupDemoModule
+  RadioGroupDemoModule,
+  CheckboxGroupDemoModule,
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -77,6 +78,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     FileUploadDemoModule,
     TimePickerDemoModule,
     RadioGroupDemoModule,
+    CheckboxGroupDemoModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

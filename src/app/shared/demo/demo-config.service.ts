@@ -26,7 +26,8 @@ import {
   SwitchDemoComponent,
   TabsDemoComponent,
   TooltipDemoComponent,
-  RadioGroupDemoComponent
+  RadioGroupDemoComponent,
+  CheckboxGroupDemoComponent
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
 import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
@@ -271,6 +272,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/radio-group/README.md'),
       html: require('!raw-loader!../../demo/radio-group/radio-group-demo.component.html'),
       ts: require('!raw-loader!../../demo/radio-group/radio-group-demo.component.ts'),
+    },
+    {
+      name: 'CheckboxGroup',
+      directory: 'checkbox-group',
+      cmp: CheckboxGroupDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/checkbox-group/README.md'),
+      html: require('!raw-loader!../../demo/checkbox-group/checkbox-group-demo.component.html'),
+      ts: require('!raw-loader!../../demo/checkbox-group/checkbox-group-demo.component.ts'),
     },
     // component declare
   ];

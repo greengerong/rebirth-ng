@@ -3,6 +3,7 @@ export * from './action-button';
 export * from './auto-complete';
 export * from './breadcrumbs';
 export * from './carousel';
+export * from './checkbox-group';
 export * from './data-table';
 export * from './modal';
 export * from './overlay';
