@@ -12,6 +12,7 @@
 - [x] Badge
 - [x] Modal
 - [x] Alert/Confirm
+- [x] Checkbox/RadioGroup
 - [x] Pager
 - [x] Pagination
 - [x] Panel
