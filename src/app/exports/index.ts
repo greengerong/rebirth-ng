@@ -31,6 +31,7 @@ export * from './tabs';
 export * from './time-picker';
 export * from './tooltip';
 export * from './utils';
+export * from './validators';
 export * from './window-ref';
 export * from './rebirth-ng.config';
 export * from './rebirth-ng.i18n.zh-cn';
