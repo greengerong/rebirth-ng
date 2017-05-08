@@ -10,10 +10,10 @@ export class CheckboxGroupDemoComponent {
   seasonLabel: string;
 
   seasonOptions = [
-    { label: 'Spring', value: "SPRING" },
-    { label: 'Summer', value: "SUMMER" },
-    { label: 'Autumn', value: "AUTUMN" },
-    { label: 'Winter', value: "WINTER" }
+    { label: 'Spring', value: 'SPRING' },
+    { label: 'Summer', value: 'SUMMER' },
+    { label: 'Autumn', value: 'AUTUMN' },
+    { label: 'Winter', value: 'WINTER' }
   ];
 
   season = [this.seasonOptions[1]];
