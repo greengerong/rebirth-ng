@@ -32,6 +32,11 @@ export class RebirthNGConfig {
     animationDuration: 600
   };
 
+  checkboxGroup = {
+    formatter: (item) => item ? (item.label || item.toString()) : '',
+    valueParser: (item) => item
+  };
+
   datatable = {
     emptyRowText: 'Data source is empty!'
   };

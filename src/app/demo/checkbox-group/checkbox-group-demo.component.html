@@ -1,8 +1,22 @@
 <div class="checkbox-group-demo">
 
   <section>
-    <h4>Demo:</h4>
-    <re-checkbox-group ></re-checkbox-group>
+    <h4>Season string:</h4>
+    <re-checkbox-group [options]="seasonLabelOptions" [(ngModel)]="seasonLabel"></re-checkbox-group>
+    <pre>{{seasonLabel | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Season Object:</h4>
+    <re-checkbox-group [options]="seasonOptions" [(ngModel)]="season"></re-checkbox-group>
+    <pre>{{season | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Season value:</h4>
+    <re-checkbox-group [options]="seasonOptions" [(ngModel)]="seasonValue" [inline]="true"
+                       [valueParser]="valueParser"></re-checkbox-group>
+    <pre>{{seasonValue | json}}</pre>
   </section>
 
 </div>

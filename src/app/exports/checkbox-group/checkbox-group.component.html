@@ -1,3 +1,6 @@
-<div>
-  hello CheckboxGroup
+<div [ngClass]="{'checkbox-inline': inline, 'checkbox': !inline}" *ngFor="let item of options">
+  <label>
+    <input #checkbox type="checkbox" [checked]="isChecked(item)" [disabled]="disabled"
+           (change)="onCheckBoxChange(item, checkbox)">{{formatter(item)}}
+  </label>
 </div>
