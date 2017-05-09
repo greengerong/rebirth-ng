@@ -1,4 +1,4 @@
-import { Component, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions } from './dialog-options.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -6,7 +6,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 @Component({
   selector: 're-confirm-dialog',
   templateUrl: './confirm-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./dialog.scss']
 })
 export class ConfirmDialogComponent implements Modal {
   context: DialogOptions;

@@ -1,10 +1,12 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { DialogService } from '../../exports';
 
 @Component({
   selector: 're-dialog-demo',
   templateUrl: './dialog-demo.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./dialog-demo.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None
 })
 export class DialogDemoComponent {
 
@@ -16,6 +18,7 @@ export class DialogDemoComponent {
       title: 'I\'m a rebirth alert!',
       content: 'This is <strong>rebirth alert</strong> content.',
       // yes: '确定',
+      icon: 'icon-success',
       html: true
     })
       .subscribe(
@@ -29,6 +32,7 @@ export class DialogDemoComponent {
       title: 'I\'m a rebirth confirm!',
       content: 'This is <strong>rebirth confirm</strong> content.',
       html: true,
+      // icon: 'icon-success',
       // yes: '确定',
       // no: '取消',
       // rootContainer: this.viewContainerRef

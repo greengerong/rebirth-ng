@@ -6,6 +6,7 @@ export interface DialogOptions {
   html?: boolean;
   yes?: string;
   no?: string;
+  icon?: string;
   cssClass?: string;
   componentFactoryResolver?: ComponentFactoryResolver;
   injector?: Injector;
