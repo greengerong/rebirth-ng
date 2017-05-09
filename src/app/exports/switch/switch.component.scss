@@ -11,12 +11,10 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -o-user-select: none;
   user-select: none;
   width: 100px;
   white-space: nowrap;
-  overflow: hidden;
-  padding: 0px;
+  padding: 0;
   text-overflow: ellipsis;
   .switch-left, .switch-right {
     box-sizing: border-box;
