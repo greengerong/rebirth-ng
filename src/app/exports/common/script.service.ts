@@ -14,7 +14,7 @@ export class ScriptService {
       return this.resources[src];
     }
 
-    const promise = new Promise((resolve) => {
+    const promise = new Promise((resolve, reject) => {
       const script = this.documentRef.createElement('script');
       script.type = 'text/javascript';
       script.src = src;
@@ -25,6 +25,9 @@ export class ScriptService {
         if ((!script.readyState || /loaded|complete/.test(script.readyState))) {
           resolve(script);
         }
+      };
+      script.onerror = (e) => {
+        reject(e);
       };
       this.documentRef.body.appendChild(script);
     });
@@ -38,7 +41,7 @@ export class ScriptService {
       return this.resources[src];
     }
 
-    const promise = new Promise((resolve) => {
+    const promise = new Promise((resolve, reject) => {
       const link = this.documentRef.createElement('link');
       link.rel = 'stylesheet';
       link.href = src;
@@ -46,9 +49,10 @@ export class ScriptService {
       link.charset = 'UTF-8';
       link.id = `rebirth_link_${src}`;
       link.onreadystatechange = link.onload = () => {
-        if ((!link.readyState || /loaded|complete/.test(link.readyState))) {
-          resolve(link);
-        }
+        resolve(link);
+      };
+      link.onerror = (e) => {
+        reject(e);
       };
       this.documentRef.body.appendChild(link);
     });
