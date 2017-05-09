@@ -22,29 +22,41 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_DialogModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="176,-70 176,-195 320,-195 320,-70 176,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="90,-70 90,-195 406,-195 406,-70 90,-70"/>
 </g>
 <g id="clust3" class="cluster">
 <title>cluster_DialogModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<polygon fill="none" stroke="#000000" points="98,-78 98,-130 398,-130 398,-78 98,-78"/>
 </g>
 <!-- CommonModule -->
 <g id="node1" class="node">
 <title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="389.6681,-122 386.6681,-126 365.6681,-126 362.6681,-122 278.3319,-122 278.3319,-86 389.6681,-86 389.6681,-122"/>
+<text text-anchor="middle" x="334" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
 </g>
 <!-- DialogModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>DialogModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="296.6528,-187 293.6528,-191 272.6528,-191 269.6528,-187 199.3472,-187 199.3472,-151 296.6528,-151 296.6528,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">DialogModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="306.6528,-187 303.6528,-191 282.6528,-191 279.6528,-187 209.3472,-187 209.3472,-151 306.6528,-151 306.6528,-187"/>
+<text text-anchor="middle" x="258" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">DialogModule</text>
 </g>
 <!-- CommonModule&#45;&gt;DialogModule -->
 <g id="edge1" class="edge">
 <title>CommonModule&#45;&gt;DialogModule</title>
-<path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M292.4962,-122.1061C292.4962,-122.1061 292.4962,-140.991 292.4962,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="288.9962,-140.9909 292.4962,-150.991 295.9962,-140.991 288.9962,-140.9909"/>
+</g>
+<!-- RebirthCommonModule -->
+<g id="node2" class="node">
+<title>RebirthCommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="259.661,-122 256.661,-126 235.661,-126 232.661,-122 106.339,-122 106.339,-86 259.661,-86 259.661,-122"/>
+<text text-anchor="middle" x="183" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RebirthCommonModule</text>
+</g>
+<!-- RebirthCommonModule&#45;&gt;DialogModule -->
+<g id="edge2" class="edge">
+<title>RebirthCommonModule&#45;&gt;DialogModule</title>
+<path fill="none" stroke="#000000" d="M234.5021,-122.1061C234.5021,-122.1061 234.5021,-140.991 234.5021,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="231.0022,-140.9909 234.5021,-150.991 238.0022,-140.991 231.0022,-140.9909"/>
 </g>
 </g>
 </svg>

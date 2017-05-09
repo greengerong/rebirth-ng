@@ -84,6 +84,9 @@
                                     <a href="../modules/CarouselModule.html" >CarouselModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../modules/CheckboxGroupModule.html" >CheckboxGroupModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/DataTableModule.html" >DataTableModule</a>
                                 </li>
                                 <li class="link">
@@ -127,6 +130,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/ProgressBarModule.html" >ProgressBarModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/RadioGroupModule.html" >RadioGroupModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/RatingModule.html" >RatingModule</a>
@@ -189,6 +195,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/CarouselComponent.html" >CarouselComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CheckboxGroupComponent.html" >CheckboxGroupComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/ConfirmDialogComponent.html" >ConfirmDialogComponent</a>
@@ -311,6 +320,9 @@
                                     <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/RatingComponent.html" >RatingComponent</a>
                                 </li>
                                 <li class="link">
@@ -415,6 +427,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../classes/RebirthValidators.html" >RebirthValidators</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/Tooltip.html" >Tooltip</a>
@@ -531,6 +546,22 @@
                         </ul>
                     </li>
             
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-pipes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
+                                </li>
+                        </ul>
+                    </li>
             
             
                     <li class="chapter">
@@ -616,6 +647,9 @@
                                            <a href="../modules/CarouselModule.html" >CarouselModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../modules/CheckboxGroupModule.html" >CheckboxGroupModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/DataTableModule.html" >DataTableModule</a>
                                        </li>
                                        <li class="link">
@@ -659,6 +693,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/ProgressBarModule.html" >ProgressBarModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/RadioGroupModule.html" >RadioGroupModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/RatingModule.html" >RatingModule</a>
@@ -721,6 +758,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/CarouselComponent.html" >CarouselComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CheckboxGroupComponent.html" >CheckboxGroupComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/ConfirmDialogComponent.html" >ConfirmDialogComponent</a>
@@ -843,6 +883,9 @@
                                            <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/RatingComponent.html" >RatingComponent</a>
                                        </li>
                                        <li class="link">
@@ -947,6 +990,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../classes/RebirthValidators.html" >RebirthValidators</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/Tooltip.html" >Tooltip</a>
@@ -1063,6 +1109,22 @@
                                </ul>
                            </li>
                    
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#pipes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
                    
                    
                            <li class="chapter">
@@ -1828,7 +1890,7 @@ export class DataTableTmplsComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><!-- begin:template: header label template--><ng-template #defaultHeadTemplate let-head="">  <tr>    <th *ngIf="head.checkable" class="checkable-cell">      <form class="form-inline">        <div class="form-group">          <div class="checkbox">            <label>              <input type="checkbox" name="checkAll" [(ngModel)]="head.allChecked" (change)="head.onCheckAllChange()">            </label>          </div>        </div>      </form>    </th>    <th *ngFor="let column of head.columns" [ngClass]="{\'sorting-header\': column.sortable}"        (click)="head.onHeadClick(column)" [style.width]="column.width || \'\'">      {{column.header}}      <ng-container *ngIf="column.sortable">        <i class="glyphicon sorting-icon"           [ngClass]="{           \'glyphicon-triangle-bottom\': head.sortField == column.field && head.sortDirection == \'DESC\',           \'glyphicon-triangle-top\': head.sortField == column.field && head.sortDirection == \'ASC\',           \'sorting-default\': head.sortField != column.field           }"></i>      </ng-container>    </th>  </tr></ng-template><!--end:tempate--><!-- begin:template: pager template--><ng-template #defaultPagerTemplate let-pager="pager" let-pagerPanel="">  <re-pagination cssClass="table-pagination" [total]="pager.total" [pageSize]="pager.pageSize"                 [maxItems]="pager.maxItems || pagerPanel.pagerMaxItems" [(pageIndex)]="pager.pageIndex"                 (pageIndexChange)="pagerPanel.onPageChange($event)">  </re-pagination></ng-template><!--end:tempate--><!-- begin:template: cell view, edit, filter template--><re-cell-template #textCellTemplate type="text">  <re-cell>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cellItem="cellItem" let-cellValue="cellValue">      {{cellValue}}    </ng-template>  </re-cell>  <re-cell-edit>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">      <form class="form-inline">        <div class="form-group">          <input [type]="column.fieldType" class="form-control" [reAutoFocus]="cell.isCellEdit"                 [name]="column.field" [(ngModel)]="rowItem[column.field]"                 (keydown.enter)="cell.onFinishCellEdit($event)"                 (blur)="cell.onFinishCellEdit($event)"/>        </div>      </form>    </ng-template>  </re-cell-edit>  <re-cell-filter>    <ng-template let-head="" let-column="column">      <input [type]="column.fieldType" class="form-control search" [(ngModel)]="head.searchQuery[column.field]"             [name]="column.field" (keydown.enter)="head.onSearchQueryChange()" (change)="head.onSearchQueryChange()"/>    </ng-template>  </re-cell-filter></re-cell-template><re-cell-template #numberCellTemplate type="number">  <re-cell-filter>    <ng-template let-head="" let-column="column">      <form>        <div class="row">          <div class="col-xs-12 col-sm-6">            <input type="number" class="form-control search" placeholder="From"                   [(ngModel)]="head.searchQuery[\'ge$$\' + column.field]"                   [name]="column.field + \'_min\'" (keydown.enter)="head.onSearchQueryChange()"                   (change)="head.onSearchQueryChange()"/>          </div>          <div class="col-xs-12 col-sm-6">            <input type="number" class="form-control search" placeholder="To"                   [(ngModel)]="head.searchQuery[\'le$$\' +column.field]"                   [name]="column.field +\'_max\'" (keydown.enter)="head.onSearchQueryChange()"                   (change)="head.onSearchQueryChange()"/>          </div>        </div>      </form>    </ng-template>  </re-cell-filter></re-cell-template><re-cell-template #telCellTemplate type="tel">  <re-cell>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cellItem="cellItem" let-cellValue="cellValue">      <a [href]="\'tel:\' + cellValue" (click)="stopPropagation($event)">{{cellValue}}</a>    </ng-template>  </re-cell></re-cell-template><re-cell-template #mailCellTemplate type="mail">  <re-cell>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cellItem="cellItem" let-cellValue="cellValue">      <a [href]=" cellValue ? (\'mailto:\' + cellValue) : \'\'" (click)="stopPropagation($event)">{{cellValue}}</a>    </ng-template>  </re-cell></re-cell-template><re-cell-template #imageCellTemplate type="image">  <re-cell>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cellItem="cellItem" let-cellValue="cellValue">      <img class="img-responsive" [src]="cellValue" [attr.alt]="cellValue">    </ng-template>  </re-cell>  <re-cell-edit>    <ng-template>      <strong>You need customise edit template!</strong>    </ng-template>  </re-cell-edit>  <re-cell-filter>  </re-cell-filter></re-cell-template><re-cell-template #dateCellTemplate type="date">  <re-cell-edit>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cell="">      <form class="form-inline">        <div class="form-group">          <div class="input-group">            <input class="form-control search" [reAutoFocus]="cell.isCellEdit"                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker                   [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker" [appendBody]="true"                   (ngModelChange)="cell.onFinishCellEdit()">            <div class="input-group-addon" (click)="datePicker.toggle($event)">              <i class="glyphicon glyphicon-calendar"></i>            </div>          </div>        </div>      </form>    </ng-template>  </re-cell-edit>  <!--<re-cell-filter>-->  <!--<ng-template let-head="" let-column="column">-->  <!--<form>-->  <!--<div class="row">-->  <!--<div class="col-xs-12 col-sm-6">-->  <!--<div class="input-group">-->  <!--<input class="form-control search" [name]="\'ge$$\' + column.field" placeholder="From"-->  <!--[(ngModel)]="head.searchQuery[\'ge$$\' + column.field]"-->  <!--reDatePicker #geDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">-->  <!--<div class="input-group-addon" (click)="geDatePicker.toggle($event)">-->  <!--<i class="glyphicon glyphicon-calendar"></i>-->  <!--</div>-->  <!--</div>-->  <!--</div>-->  <!--<div class="col-xs-12 col-sm-6">-->  <!--<div class="input-group">-->  <!--<input class="form-control search" [name]="\'le\' + column.field" placeholder="To"-->  <!--[(ngModel)]="head.searchQuery[\'le$$\' + column.field]"-->  <!--reDatePicker #leDatePicker="datePicker" (ngModelChange)="head.onSearchQueryChange()">-->  <!--<div class="input-group-addon" (click)="leDatePicker.toggle($event)">-->  <!--<i class="glyphicon glyphicon-calendar"></i>-->  <!--</div>-->  <!--</div>-->  <!--</div>-->  <!--</div>-->  <!--</form>-->  <!--</ng-template>-->  <!--&lt;!&ndash;</re-cell-filter>&ndash;&gt;--></re-cell-template><re-cell-template #datetimeCellTemplate type="datetime">  <re-cell-edit>    <ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column"                 let-cell="">      <form class="form-inline">        <div class="form-group">          <div class="input-group">            <input class="form-control search" [reAutoFocus]="cell.isCellEdit" [showTimePicker]="true"                   [name]="column.field" [(ngModel)]="rowItem[column.field]" reDatePicker [appendBody]="true"                   [dateFormat]="column.extraOptions?.dateFormat" #datePicker="datePicker"                   (ngModelChange)="cell.onFinishCellEdit()">            <div class="input-group-addon" (click)="datePicker.toggle($event)">              <i class="glyphicon glyphicon-calendar"></i>            </div>          </div>        </div>      </form>    </ng-template>  </re-cell-edit></re-cell-template><!--<re-cell-template #selectCellTemplate type="select">--><!--<re-cell-edit>--><!--<ng-template let-rowIndex="rowIndex" let-colIndex="colIndex" let-rowItem="rowItem" let-column="column" let-cell="">--><!--<form>--><!--<div class="form-group">--><!--<select class="form-control" autofocus="autofocus" [name]="column.field"--><!--[(ngModel)]="rowItem[column.field]" (ngModelChange)="cell.onFinishCellEdit()">--><!--<option *ngFor="let item of column.extraOptions" [value]="item.value || item">{{item.label || item}}--><!--</option>--><!--</select>--><!--</div>--><!--</form>--><!--</ng-template>--><!--</re-cell-edit>--><!--<re-cell-filter>--><!--<ng-template let-head="" let-column="column">--><!--<form>--><!--<div class="form-group">--><!--<select class="form-control search" [name]="column.field"--><!--[(ngModel)]="head.searchQuery[column.field]" (ngModelChange)="head.onSearchQueryChange()">--><!--<option *ngFor="let item of column?.extraOptions" [value]="item.value || item">{{item.label || item}}--><!--</option>--><!--</select>--><!--</div>--><!--</form>--><!--</ng-template>--><!--</re-cell-filter>--><!--</re-cell-template>--><!--end:tempate--></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'}];
     var ACTUAL_COMPONENT = {'name': 'DataTableTmplsComponent'};
 </script>
