@@ -2,6 +2,7 @@ import { ComponentFactoryResolver, ComponentRef, Injectable, Injector } from '@a
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { OverlayComponent } from './overlay.component';
 import { OverlayOptions } from './overlay-options.model';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable()
 export class OverlayService {
@@ -10,7 +11,7 @@ export class OverlayService {
   private overlayCount = 0;
 
   constructor(private rebirthUIConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
-              private injector: Injector) {
+              private injector: Injector, private domSanitizer: DomSanitizer) {
   }
 
   open(options: OverlayOptions): void {
@@ -25,6 +26,9 @@ export class OverlayService {
       throw new Error('Should setup ViewContainerRef on modal overlay or rebirth config service!');
     }
 
+    if (options.html && (typeof options.html === 'string')) {
+      options.html = this.domSanitizer.bypassSecurityTrustHtml(options.html as string);
+    }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(OverlayComponent);
     const injector = options.injector || this.injector;
     this.overlayRef = rootContainer.createComponent(componentFactory, rootContainer.length, injector);

@@ -10,7 +10,7 @@
   </div>
   <div *ngIf="context.html">
     <div *ngIf="context.icon" class="dialog-icon"><i class="{{context.icon}}"></i></div>
-    <div class="dialog-content" [innerHTML]="context.content | trustHtml"></div>
+    <div class="dialog-content" [innerHTML]="context.content"></div>
   </div>
 </div>
 <div class="modal-footer">
