@@ -10,4 +10,8 @@ export class DocumentRef {
   get documentElement(): any {
     return document.documentElement;
   }
+
+  createElement(tag) {
+    return document.createElement(tag);
+  }
 }

@@ -27,7 +27,7 @@ import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
 import { DataTableModule } from './data-table';
 import { InfiniteScrollModule } from './infinite-scroll';
-import { RebirthCommonModule } from './common';
+import { RebirthCommonModule, ScriptService } from './common';
 import { DraggableModule } from './draggable';
 import { FileUploadModule } from './file-upload';
 import { TimePickerModule } from './time-picker';
@@ -116,7 +116,8 @@ export class RebirthNGModule {
         { provide: ModalService, useClass: ModalService },
         { provide: DialogService, useClass: DialogService },
         { provide: PositionService, useClass: PositionService },
-        { provide: OverlayService, useClass: OverlayService }
+        { provide: OverlayService, useClass: OverlayService },
+        { provide: ScriptService, useClass: ScriptService }
       ]
     };
   }
