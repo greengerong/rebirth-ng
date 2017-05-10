@@ -17,13 +17,15 @@ export class ShowcaseComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
-      let component = this.demoConfigService.components.find(cmp => {
-        return cmp.name === params['name'];
-      });
 
-      component.readMe = this.domSanitizer.bypassSecurityTrustHtml(component.readMe);
-      component.ts = this.fixTSModuleImport(component.ts);
-      this.components = [component];
+      this.components = this.demoConfigService.components.filter(cmp => {
+        return cmp.name === params['name'];
+      })
+        .map((cmp) => {
+          cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);
+          cmp.ts = this.fixTSModuleImport(cmp.ts);
+          return cmp;
+        });
     });
 
 
