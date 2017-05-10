@@ -4,7 +4,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 're-getting-started',
-  templateUrl: './gettingStarted.component.html'
+  templateUrl: './getting-started.component.html',
+  styleUrls: ['./getting-started.component.scss']
 })
 export class GettingStartedComponent implements OnInit {
   gettingStarted: any;
