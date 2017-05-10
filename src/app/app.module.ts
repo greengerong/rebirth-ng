@@ -37,15 +37,21 @@ import {
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // or NoopAnimationsModule
+// NoopAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ROUTER_CONFIG } from './app.route';
+import { GettingStartedComponent, ShowcaseComponent } from './feature';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
+    GettingStartedComponent,
+    ShowcaseComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(ROUTER_CONFIG),
     SharedModule.forRoot(),
     RebirthNGModule.forRoot(),
     BrowserAnimationsModule,
@@ -80,7 +86,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     RadioGroupDemoModule,
     CheckboxGroupDemoModule,
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

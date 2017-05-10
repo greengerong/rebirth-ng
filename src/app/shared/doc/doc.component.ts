@@ -27,7 +27,6 @@ export class DocComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-
     this.html.changes.subscribe((html) => {
       hljs.highlightBlock(html.last.nativeElement);
     });

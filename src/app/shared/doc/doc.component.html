@@ -1,5 +1,5 @@
 <section id="{{component.name}}">
-  <h2><a href="#{{component.name}}">{{component.name}}</a>
+  <h2><a [routerLink]="['/component', component.name]">{{component.name}}</a>
     <small class="meta-data">
       (<a class="" target="_blank"
           [href]="'/rebirth-ng/compodocs/modules/' + component.name +'Module.html'">API Docs

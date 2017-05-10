@@ -8,7 +8,7 @@ import * as Immutable from 'immutable';
 })
 export class InfiniteScrollDemoComponent {
   dataSource = Immutable.List([]);
-  total = 200;
+  total = 500;
   complete = false;
   next = 1;
 

@@ -14,9 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
 
   components: any[];
-  gettingStarted: any;
   menus: MenuBar;
-  // largeDataSource = [];
 
   constructor(private rebirthConfig: RebirthNGConfig,
               private viewContainerRef: ViewContainerRef,
@@ -25,31 +23,18 @@ export class AppComponent implements OnInit {
               private  renderer: Renderer2,
               private elementRef: ElementRef,
               private domSanitizer: DomSanitizer) {
-    this.rebirthConfig.rootContainer = this.viewContainerRef;
 
+    this.rebirthConfig.rootContainer = this.viewContainerRef;
     // this.rebirthConfig.extend(REBIRTH_NG_I18N_ZHCN);  // i18n
   }
 
   ngOnInit(): void {
     this.themeService.setupTheme('', this.renderer, this.elementRef);
-    this.gettingStarted = this.domSanitizer.bypassSecurityTrustHtml(this.demoConfigService.gettingStarted.readMe);
+
     this.components = this.demoConfigService.components
-      .map(cmp => {
-        cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);
-        cmp.ts = this.fixTSModuleImport(cmp.ts);
-        return cmp;
-      })
       .sort((a, b) => a.name.localeCompare(b.name));
 
     this.setupMenus();
-
-    // for (let i = 1; i <= 5000; i++) {
-    //   this.largeDataSource.push({ id: i, name: `Name ${i}`, age: 10 });
-    // }
-  }
-
-  private fixTSModuleImport(code): string {
-    return code.replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
   }
 
   private changeTheme(menu) {
@@ -60,7 +45,7 @@ export class AppComponent implements OnInit {
     const cmpMenus = this.components.map(item => {
       return {
         text: item.name,
-        url: `#${item.name}`
+        router: [`/component/${item.name}`]
       };
     });
 
@@ -70,7 +55,7 @@ export class AppComponent implements OnInit {
     this.menus = {
       logo: 'https://greengerong.github.io/rebirth/assets/img/wolf2.png',
       title: '破狼博客',
-      home: './',
+      home: ['./'],
       menus: [
         {
           text: '@Rebirth/NG',

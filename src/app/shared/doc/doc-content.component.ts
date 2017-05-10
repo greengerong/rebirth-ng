@@ -31,12 +31,17 @@ export class DocContentComponent implements OnDestroy {
   }
 
   onComponentChange() {
+    this.destroyCmp();
     const factory = this.componentFactoryResolver.resolveComponentFactory(this.cmp);
     this.cmpRef = this.viewContainerRef.createComponent(factory, this.viewContainerRef.length, this.injector);
     this.cmpRef.changeDetectorRef.markForCheck();
   }
 
   ngOnDestroy(): void {
+    this.destroyCmp();
+  }
+
+  private destroyCmp() {
     if (this.cmpRef) {
       this.cmpRef.destroy();
     }

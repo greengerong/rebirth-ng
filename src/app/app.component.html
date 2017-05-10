@@ -3,27 +3,6 @@
 </header>
 
 <div class="container main">
-
-  <div class="getting-started" [innerHTML]="gettingStarted"></div>
-  <hr/>
-  <h1>Showcase</h1>
-  <ng-container *ngFor="let item of components">
-    <re-doc [component]="item"></re-doc>
-    <hr/>
-  </ng-container>
-
+  <router-outlet></router-outlet>
 </div>
 <br>
-<br>
-<br>
-
-<!--<div class="container">-->
-<!--<section>-->
-<!--<h4>Large data</h4>-->
-<!--<re-data-table [dataSource]="largeDataSource">-->
-<!--<re-column field="id" header="ID" [sortable]="true" [editable]="true"></re-column>-->
-<!--<re-column field="name" header="User Name" [editable]="true"></re-column>-->
-<!--<re-column field="age" header="User Age" [editable]="true" [fieldType]="'number'"></re-column>-->
-<!--</re-data-table>-->
-<!--</section>-->
-<!--</div>-->
