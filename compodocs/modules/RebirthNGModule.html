@@ -470,6 +470,9 @@
                                     <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../injectables/ScriptService.html" >ScriptService</a>
+                                </li>
+                                <li class="link">
                                     <a href="../injectables/WindowRef.html" >WindowRef</a>
                                 </li>
                         </ul>
@@ -1031,6 +1034,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ScriptService.html" >ScriptService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/WindowRef.html" >WindowRef</a>
@@ -2182,7 +2188,7 @@ import { AutoCompleteModule } from &#x27;./auto-complete&#x27;;
 import { FlowStepModule } from &#x27;./flow-step&#x27;;
 import { DataTableModule } from &#x27;./data-table&#x27;;
 import { InfiniteScrollModule } from &#x27;./infinite-scroll&#x27;;
-import { RebirthCommonModule } from &#x27;./common&#x27;;
+import { RebirthCommonModule, ScriptService } from &#x27;./common&#x27;;
 import { DraggableModule } from &#x27;./draggable&#x27;;
 import { FileUploadModule } from &#x27;./file-upload&#x27;;
 import { TimePickerModule } from &#x27;./time-picker&#x27;;
@@ -2271,7 +2277,8 @@ export class RebirthNGModule {
         { provide: ModalService, useClass: ModalService },
         { provide: DialogService, useClass: DialogService },
         { provide: PositionService, useClass: PositionService },
-        { provide: OverlayService, useClass: OverlayService }
+        { provide: OverlayService, useClass: OverlayService },
+        { provide: ScriptService, useClass: ScriptService }
       ]
     };
   }
