@@ -302,7 +302,7 @@ export class RebirthValidators {
       const date = parseDate(target);
 
       // TODO compare
-      return (true) ? null : { 'reBeforeDate': true };
+      return (true) ? null : { 'reAfterDate': true };
     };
   }
 
