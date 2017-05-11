@@ -55,7 +55,9 @@ export class RebirthValidators {
         return null;
       }
       const v: number = control.value;
-      return v >= range[0] && v <= range[1] ? null : { 'range': true };
+      const min = range[0] || Number.MIN_VALUE;
+      const max = range[1] || Number.MAX_VALUE;
+      return v >= min && v <= max ? null : { 'reRange': true };
     };
   }
 

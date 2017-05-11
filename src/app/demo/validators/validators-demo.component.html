@@ -14,16 +14,31 @@
     </form>
   </section>
   <section>
-    <h4>Min number:</h4>
+    <h4>Min & Max number:</h4>
     <form>
       <div class="form-group">
         <label for="age">Age</label>
-        <input type="number" id="age" name="name" class="form-control" [(ngModel)]="model['age']"
+        <input type="number" id="age" name="age" class="form-control" [(ngModel)]="model['age']"
                [reMin]="18" [reMax]="100" #age="ngModel"/>
 
         <re-alert-box *ngIf="age.errors &&  age.touched" type="danger">
           <div *ngIf="age.errors.reMin">Age should greater than 18.</div>
           <div *ngIf="age.errors.reMax">Age should less than 100.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Number range:</h4>
+    <form>
+      <div class="form-group">
+        <label for="age2">Age</label>
+        <input type="number" id="age2" name="age2" class="form-control" [(ngModel)]="model['age2']"
+               [reRange]="[18,100]" #age2="ngModel"/>
+
+        <re-alert-box *ngIf="age2.errors &&  age2.touched" type="danger">
+          <div *ngIf="age2.errors.reRange">Age should between 18 and 100.</div>
         </re-alert-box>
       </div>
     </form>

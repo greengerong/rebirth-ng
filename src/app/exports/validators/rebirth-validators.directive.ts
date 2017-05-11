@@ -49,3 +49,19 @@ export class MaxDirective implements Validator {
     return RebirthValidators.max(this.reMax)(control);
   }
 }
+
+@Directive({
+  selector: '[reRange]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: RangeDirective, multi: true }]
+})
+export class RangeDirective implements Validator {
+
+  @Input() reRange: number[];
+
+  constructor() {
+  }
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.range(this.reRange)(control);
+  }
+}
