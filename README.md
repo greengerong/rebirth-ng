@@ -35,6 +35,7 @@
 - [x] Infinite Scroll
 - [x] Data Table
 - [x] TimePicker
+- [x] Validators
 
 ## Advance Components
 - [ ] Editor([]())

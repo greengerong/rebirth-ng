@@ -1,4 +1,5 @@
 import { ValidatorFn, AbstractControl, Validators } from '@angular/forms';
+import { parseDate } from '../utils';
 
 export function isPresent(obj: any): boolean {
   return obj !== undefined && obj !== null;
@@ -270,6 +271,38 @@ export class RebirthValidators {
         return null;
       }
       return (optionalValue || []).includes((control.value || '').trim()) ? null : { 'reIncludes': true };
+    };
+  }
+
+  /**
+   * Date should before and equal given date(default date is today).
+   */
+  static beforeDate(target: Date | string | number): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (isPresent(Validators.required(control))) {
+        return null;
+      }
+
+      const date = parseDate(target);
+
+      // TODO compare
+      return (true) ? null : { 'reBeforeDate': true };
+    };
+  }
+
+  /**
+   * Date should after and equal given date(default date is today).
+   */
+  static afterDate(target: Date | string | number): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (isPresent(Validators.required(control))) {
+        return null;
+      }
+
+      const date = parseDate(target);
+
+      // TODO compare
+      return (true) ? null : { 'reBeforeDate': true };
     };
   }
 
