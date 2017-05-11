@@ -33,6 +33,7 @@ import { FileUploadModule } from './file-upload';
 import { TimePickerModule } from './time-picker';
 import { RadioGroupModule } from './radio-group';
 import { CheckboxGroupModule } from './checkbox-group';
+import { RebirthValidatorsModule } from './validators';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { CheckboxGroupModule } from './checkbox-group';
     FileUploadModule,
     TimePickerModule,
     RadioGroupModule,
-    CheckboxGroupModule
+    CheckboxGroupModule,
+    RebirthValidatorsModule
   ],
   exports: [
     RebirthCommonModule,
@@ -99,7 +101,8 @@ import { CheckboxGroupModule } from './checkbox-group';
     FileUploadModule,
     TimePickerModule,
     RadioGroupModule,
-    CheckboxGroupModule
+    CheckboxGroupModule,
+    RebirthValidatorsModule
   ],
   declarations: [],
   providers: [],
