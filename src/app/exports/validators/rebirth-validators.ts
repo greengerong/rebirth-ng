@@ -238,7 +238,7 @@ export class RebirthValidators {
         return null;
       }
       const v: any = control.value;
-      return val === v ? null : { equal: true };
+      return val === v ? null : { reEqual: true };
     };
   }
 
@@ -257,7 +257,7 @@ export class RebirthValidators {
       if (isPresent(Validators.required(control))) {
         return null;
       }
-      return optionalValue.includes(control.value) ? null : { 'rangeLength': true };
+      return (optionalValue || []).includes((control.value || '').trim()) ? null : { 'reIncludes': true };
     };
   }
 

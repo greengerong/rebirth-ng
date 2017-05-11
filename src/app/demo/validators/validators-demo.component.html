@@ -195,5 +195,35 @@
     </form>
   </section>
 
+  <section>
+    <h4>Equal constant value</h4>
+    <form>
+      <div class="form-group">
+        <label for="equal10">Equal 10</label>
+        <input id="equal10" type="text" name="equal10" class="form-control" [(ngModel)]="model['equal10']"
+               reEqual="10" #equal10="ngModel"/>
+
+        <re-alert-box *ngIf="equal10.errors &&  equal10.touched" type="danger">
+          <div *ngIf="equal10.errors.reEqual">The number should equal 10.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Includes in ['greengerong', 'polang']</h4>
+    <form>
+      <div class="form-group">
+        <label for="includes">Equal 10</label>
+        <input id="includes" type="text" name="includes" class="form-control" [(ngModel)]="model['includes']"
+               [reIncludes]="['greengerong', 'polang']" #includes="ngModel"/>
+
+        <re-alert-box *ngIf="includes.errors &&  includes.touched" type="danger">
+          <div *ngIf="includes.errors.reIncludes">The name should includes in ['greengerong', 'polang'].</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
 
 </div>

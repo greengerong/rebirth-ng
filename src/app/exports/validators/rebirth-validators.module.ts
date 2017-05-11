@@ -14,7 +14,9 @@ import {
   JsonDirective,
   Base64Directive,
   PhoneDirective,
-  UUIDDirective
+  UUIDDirective,
+  EqualDirective,
+  IncludesDirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -34,7 +36,9 @@ import { CommonModule } from '@angular/common';
     JsonDirective,
     Base64Directive,
     PhoneDirective,
-    UUIDDirective
+    UUIDDirective,
+    EqualDirective,
+    IncludesDirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -50,7 +54,9 @@ import { CommonModule } from '@angular/common';
     JsonDirective,
     Base64Directive,
     PhoneDirective,
-    UUIDDirective
+    UUIDDirective,
+    EqualDirective,
+    IncludesDirective
   ],
   providers: [],
 })

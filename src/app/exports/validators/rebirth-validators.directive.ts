@@ -180,3 +180,29 @@ export class UUIDDirective implements Validator {
     return RebirthValidators.uuid()(control);
   }
 }
+
+@Directive({
+  selector: '[reEqual]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: EqualDirective, multi: true }]
+})
+export class EqualDirective implements Validator {
+
+  @Input() reEqual;
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.equal(this.reEqual)(control);
+  }
+}
+
+@Directive({
+  selector: '[reIncludes]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: IncludesDirective, multi: true }]
+})
+export class IncludesDirective implements Validator {
+
+  @Input() reIncludes;
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.includes(this.reIncludes)(control);
+  }
+}
