@@ -1,17 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 're-validators-demo',
   templateUrl: './validators-demo.component.html',
   styleUrls: ['./validators-demo.component.scss']
 })
-export class ValidatorsDemoComponent implements OnInit {
+export class ValidatorsDemoComponent {
   model: any = {};
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

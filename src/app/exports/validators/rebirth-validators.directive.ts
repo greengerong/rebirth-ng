@@ -3,17 +3,17 @@ import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@an
 import { RebirthValidators } from './rebirth-validators';
 
 @Directive({
-  selector: '[rangeLength]',
+  selector: '[reRangeLength]',
   providers: [{ provide: NG_VALIDATORS, useExisting: RangeLengthDirective, multi: true }]
 })
 export class RangeLengthDirective implements Validator {
 
-  @Input() rangeLength: number[];
+  @Input() reRangeLength: number[];
 
   constructor() {
   }
 
   validate(control: AbstractControl): ValidationErrors|any {
-    return RebirthValidators.rangeLength(this.rangeLength)(control);
+    return RebirthValidators.rangeLength(this.reRangeLength)(control);
   }
 }

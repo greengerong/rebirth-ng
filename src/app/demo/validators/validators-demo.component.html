@@ -5,10 +5,10 @@
       <div class="form-group">
         <label for="firstName">First name</label>
         <input type="text" id="firstName" name="name" class="form-control" [(ngModel)]="model['firstName']"
-               [rangeLength]="[5,10]" #firstName="ngModel"/>
+               [reRangeLength]="[5,10]" #firstName="ngModel"/>
 
         <re-alert-box *ngIf="firstName.errors &&  firstName.touched" type="danger">
-          <div *ngIf="firstName.errors.rangeLength">Length of first name should be range between 5 and 10.</div>
+          <div *ngIf="firstName.errors.reRangeLength">Length of first name should be range between 5 and 10.</div>
         </re-alert-box>
       </div>
     </form>

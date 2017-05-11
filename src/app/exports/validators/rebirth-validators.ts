@@ -13,8 +13,10 @@ export class RebirthValidators {
       if (isPresent(Validators.required(control))) {
         return null;
       }
-      const v: string = control.value;
-      return v.length >= rangeLength[0] && v.length <= rangeLength[1] ? null : { 'rangeLength': true };
+      const value: string = control.value;
+      const min = rangeLength[0] || 0;
+      const max = rangeLength[1] || Number.MAX_VALUE;
+      return value.length >= min && value.length <= max ? null : { 'reRangeLength': true };
     };
   }
 
