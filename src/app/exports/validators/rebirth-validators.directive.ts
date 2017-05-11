@@ -131,3 +131,14 @@ export class DateISODirective implements Validator {
     return RebirthValidators.dateISO()(control);
   }
 }
+
+@Directive({
+  selector: '[reJson]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: JsonDirective, multi: true }]
+})
+export class JsonDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.json()(control);
+  }
+}

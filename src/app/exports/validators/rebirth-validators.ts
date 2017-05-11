@@ -145,15 +145,15 @@ export class RebirthValidators {
       if (isPresent(Validators.required(control))) {
         return null;
       }
-      const v: string = control.value;
+      const value: string = control.value;
       try {
-        const obj = JSON.parse(v);
+        const obj = JSON.parse(value);
         if (Boolean(obj) && typeof obj === 'object') {
           return null;
         }
-        return { 'json': true };
+        return { 'reJson': true };
       } catch (e) {
-        return { 'json': true };
+        return { 'reJson': true };
       }
     };
   }

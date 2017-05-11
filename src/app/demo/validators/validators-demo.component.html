@@ -134,5 +134,20 @@
     </form>
   </section>
 
+  <section>
+    <h4>JSON</h4>
+    <form>
+      <div class="form-group">
+        <label for="json">JSON</label>
+        <textarea id="json" name="json" class="form-control" [(ngModel)]="model['json']"
+                  reJson #json="ngModel"></textarea>
+
+        <re-alert-box *ngIf="json.errors &&  json.touched" type="danger">
+          <div *ngIf="json.errors.reJson">It is a invalid json.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
 
 </div>
