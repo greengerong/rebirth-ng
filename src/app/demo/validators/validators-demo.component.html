@@ -180,5 +180,20 @@
     </form>
   </section>
 
+  <section>
+    <h4>UUID</h4>
+    <form>
+      <div class="form-group">
+        <label for="uuid">UUID</label>
+        <input id="uuid" type="text" name="uuid" class="form-control" [(ngModel)]="model['uuid']"
+               reUUID #uuid="ngModel"/>
+
+        <re-alert-box *ngIf="uuid.errors &&  uuid.touched" type="danger">
+          <div *ngIf="uuid.errors.reUUID">It is a invalid uuid.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
 
 </div>

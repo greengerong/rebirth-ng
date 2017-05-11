@@ -169,3 +169,14 @@ export class PhoneDirective implements Validator {
     return RebirthValidators.phone(this.rePhone || this.locale)(control);
   }
 }
+
+@Directive({
+  selector: '[reUUID]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: UUIDDirective, multi: true }]
+})
+export class UUIDDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.uuid()(control);
+  }
+}

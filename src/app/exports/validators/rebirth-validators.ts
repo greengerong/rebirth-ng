@@ -225,7 +225,7 @@ export class RebirthValidators {
       }
       const v: string = control.value;
       const pattern = uuid[version] || uuid.all;
-      return (new RegExp(pattern)).test(v) ? null : { 'uuid': true };
+      return (new RegExp(pattern)).test(v) ? null : { 'reUUID': true };
     };
   }
 
