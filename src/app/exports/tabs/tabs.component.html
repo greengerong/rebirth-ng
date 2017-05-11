@@ -12,7 +12,7 @@
   <ng-container *ngFor="let tab of tabs">
     <div class="tab-pane fade in" role="tabpanel" *ngIf="tab.id == activeTab"
          [ngClass]="{'in active': tab.id == activeTab}">
-      <ng-template [ngTemplateOutlet]="tab.contentTpl.templateRef"> </ng-template>
+      <ng-template [ngTemplateOutlet]="tab?.contentTpl?.templateRef"> </ng-template>
     </div>
   </ng-container>
 </div>
