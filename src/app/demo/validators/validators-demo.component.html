@@ -150,4 +150,20 @@
   </section>
 
 
+  <section>
+    <h4>ase64</h4>
+    <form>
+      <div class="form-group">
+        <label for="base64">Base64</label>
+        <textarea id="base64" name="base64" class="form-control" [(ngModel)]="model['base64']"
+                  reBase64 #base64="ngModel"></textarea>
+
+        <re-alert-box *ngIf="base64.errors &&  base64.touched" type="danger">
+          <div *ngIf="base64.errors.reBase64">It is a invalid base64 encoding.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+
 </div>

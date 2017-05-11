@@ -167,7 +167,7 @@ export class RebirthValidators {
         return null;
       }
       const v: string = control.value;
-      return /^(?:[A-Z0-9+\/]{4})*(?:[A-Z0-9+\/]{2}==|[A-Z0-9+\/]{3}=|[A-Z0-9+\/]{4})$/i.test(v) ? null : { 'base64': true };
+      return /^(data:image\/\w+;base64,)?(?:[A-Z0-9+\/]{4})*(?:[A-Z0-9+\/]{2}==|[A-Z0-9+\/]{3}=|[A-Z0-9+\/]{4})$/i.test(v) ? null : { 'reBase64': true };
 
     };
   }

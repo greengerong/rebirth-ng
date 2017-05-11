@@ -142,3 +142,14 @@ export class JsonDirective implements Validator {
     return RebirthValidators.json()(control);
   }
 }
+
+@Directive({
+  selector: '[reBase64]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: Base64Directive, multi: true }]
+})
+export class Base64Directive implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.base64()(control);
+  }
+}

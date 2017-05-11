@@ -11,7 +11,8 @@ import {
   EmailDirective,
   DateDirective,
   DateISODirective,
-  JsonDirective
+  JsonDirective,
+  Base64Directive
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -28,7 +29,8 @@ import { CommonModule } from '@angular/common';
     EmailDirective,
     DateDirective,
     DateISODirective,
-    JsonDirective
+    JsonDirective,
+    Base64Directive
   ],
   declarations: [
     RangeLengthDirective,
@@ -41,7 +43,8 @@ import { CommonModule } from '@angular/common';
     EmailDirective,
     DateDirective,
     DateISODirective,
-    JsonDirective
+    JsonDirective,
+    Base64Directive
   ],
   providers: [],
 })
