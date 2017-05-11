@@ -29,7 +29,7 @@ export class RebirthValidators {
         return null;
       }
       const v: number = control.value;
-      return v >= min ? null : { 'min': true };
+      return v >= min ? null : { 'reMin': true };
     };
   }
 
@@ -42,7 +42,7 @@ export class RebirthValidators {
         return null;
       }
       const v: number = control.value;
-      return v <= max ? null : { 'max': true };
+      return v <= max ? null : { 'reMax': true };
     };
   }
 

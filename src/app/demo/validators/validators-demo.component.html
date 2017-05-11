@@ -8,7 +8,22 @@
                [reRangeLength]="[5,10]" #firstName="ngModel"/>
 
         <re-alert-box *ngIf="firstName.errors &&  firstName.touched" type="danger">
-          <div *ngIf="firstName.errors.reRangeLength">Length of first name should be range between 5 and 10.</div>
+          <div *ngIf="firstName.errors.reRangeLength">Length of first name should range between 5 and 10.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+  <section>
+    <h4>Min number:</h4>
+    <form>
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" id="age" name="name" class="form-control" [(ngModel)]="model['age']"
+               [reMin]="18" [reMax]="100" #age="ngModel"/>
+
+        <re-alert-box *ngIf="age.errors &&  age.touched" type="danger">
+          <div *ngIf="age.errors.reMin">Age should greater than 18.</div>
+          <div *ngIf="age.errors.reMax">Age should less than 100.</div>
         </re-alert-box>
       </div>
     </form>

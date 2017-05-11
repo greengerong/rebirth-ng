@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 
-import { RangeLengthDirective } from './rebirth-validators.directive';
+import { RangeLengthDirective, MinDirective, MaxDirective } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [CommonModule],
-  exports: [RangeLengthDirective],
-  declarations: [RangeLengthDirective],
+  exports: [RangeLengthDirective, MinDirective, MaxDirective],
+  declarations: [RangeLengthDirective, MinDirective, MaxDirective],
   providers: [],
 })
 export class RebirthValidatorsModule {
