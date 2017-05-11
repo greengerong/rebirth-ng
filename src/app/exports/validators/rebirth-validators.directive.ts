@@ -231,7 +231,6 @@ export class BeforeDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
   @Input() set reBeforeDate(target: string | Date | number) {
-    console.log('1 :', target);
     this.validatorFn = RebirthValidators.beforeDate(target);
   };
 

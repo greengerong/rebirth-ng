@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ValidatorsDemoComponent {
   model: any = {};
-  now = Date.now();
+  date = Date.parse('2017-05-01');
 }

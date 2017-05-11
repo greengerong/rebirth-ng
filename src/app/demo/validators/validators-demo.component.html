@@ -266,6 +266,16 @@
           <div *ngIf="beforeDate.errors.reBeforeDate">It should before 2017-05-01</div>
         </re-alert-box>
       </div>
+
+      <div class="form-group">
+        <label>Before <input type="date" name="date" [(ngModel)]="model['date']"> </label>
+        <input type="date" name="beforeDate1" class="form-control" [(ngModel)]="model['beforeDate1']"
+               [reBeforeDate]="model['date']" #beforeDate1="ngModel"/>
+
+        <re-alert-box *ngIf="beforeDate1.errors &&  beforeDate1.touched" type="danger">
+          <div *ngIf="beforeDate1.errors.reBeforeDate">It should before {{model['date']| date}}</div>
+        </re-alert-box>
+      </div>
     </form>
   </section>
 
