@@ -285,7 +285,7 @@ export class RebirthValidators {
 
       const date = parseDate(target);
 
-      return date.getTime() >= control.root.get(target).value.getTime() ? null : { 'reBeforeDate': true };
+      return date.getTime() >= control.value.getTime() ? null : { 'reBeforeDate': true };
     };
   }
 
@@ -300,7 +300,7 @@ export class RebirthValidators {
 
       const date = parseDate(target);
 
-      return date.getTime() <= control.root.get(target).value.getTime() ? null : { 'reAfterDate': true };
+      return date.getTime() <= control.value.getTime() ? null : { 'reAfterDate': true };
     };
   }
 
