@@ -27,7 +27,8 @@ import {
   TabsDemoComponent,
   TooltipDemoComponent,
   RadioGroupDemoComponent,
-  CheckboxGroupDemoComponent
+  CheckboxGroupDemoComponent,
+  ValidatorsDemoComponent
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
 import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
@@ -280,6 +281,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/checkbox-group/README.md'),
       html: require('!raw-loader!../../demo/checkbox-group/checkbox-group-demo.component.html'),
       ts: require('!raw-loader!../../demo/checkbox-group/checkbox-group-demo.component.ts'),
+    },
+    {
+      name: 'Validators',
+      directory: 'validators',
+      cmp: ValidatorsDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/validators/README.md'),
+      html: require('!raw-loader!../../demo/validators/validators-demo.component.html'),
+      ts: require('!raw-loader!../../demo/validators/validators-demo.component.ts'),
     },
     // component declare
   ];
