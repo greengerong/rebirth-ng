@@ -244,6 +244,19 @@ export class RebirthValidators {
   static equalTo(): ValidatorFn {
     return null;
   }
+
+  /**
+   * Validator that requires controls to have a value include in a array.
+   */
+  static includes(optionalValue: Array<any>): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      if (isPresent(Validators.required(control))) {
+        return null;
+      }
+      return optionalValue.includes(control.value) ? null : { 'rangeLength': true };
+    };
+  }
+
 }
 
 /* tslint:enable:max-line-length */

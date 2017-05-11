@@ -5,6 +5,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 @Component({
   selector: 're-tooltip-popup',
   templateUrl: './tooltip-popup.component.html',
+  styleUrls: ['./tooltip-popup.component.scss'],
   host: {
     '[class]': '"tooltip fade  " + placement',
     '[style.display]': '"none"',
