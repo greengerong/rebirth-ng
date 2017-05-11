@@ -87,3 +87,36 @@ export class NumberDirective implements Validator {
     return RebirthValidators.number()(control);
   }
 }
+
+@Directive({
+  selector: '[reUrl]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: UrlDirective, multi: true }]
+})
+export class UrlDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.url()(control);
+  }
+}
+
+@Directive({
+  selector: '[reEmail]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: EmailDirective, multi: true }]
+})
+export class EmailDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.email()(control);
+  }
+}
+
+@Directive({
+  selector: '[reDate]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: DateDirective, multi: true }]
+})
+export class DateDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.date()(control);
+  }
+}

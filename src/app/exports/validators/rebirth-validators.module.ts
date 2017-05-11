@@ -5,7 +5,11 @@ import {
   MinDirective,
   RangeDirective,
   MaxDirective,
-  DigitsDirective, NumberDirective
+  DigitsDirective,
+  NumberDirective,
+  UrlDirective,
+  EmailDirective,
+  DateDirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -17,7 +21,10 @@ import { CommonModule } from '@angular/common';
     RangeDirective,
     MaxDirective,
     DigitsDirective,
-    NumberDirective
+    NumberDirective,
+    UrlDirective,
+    EmailDirective,
+    DateDirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -25,7 +32,10 @@ import { CommonModule } from '@angular/common';
     RangeDirective,
     MaxDirective,
     DigitsDirective,
-    NumberDirective
+    NumberDirective,
+    UrlDirective,
+    EmailDirective,
+    DateDirective
   ],
   providers: [],
 })

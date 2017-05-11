@@ -73,4 +73,51 @@
       </div>
     </form>
   </section>
+
+  <section>
+    <h4>Url:</h4>
+    <form>
+      <div class="form-group">
+        <label for="url">Url</label>
+        <input type="text" id="url" name="url" class="form-control" [(ngModel)]="model['url']"
+               reUrl #url="ngModel"/>
+
+        <re-alert-box *ngIf="url.errors &&  url.touched" type="danger">
+          <div *ngIf="url.errors.reUrl">It is a invalid url.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Email:</h4>
+    <form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" class="form-control" [(ngModel)]="model['email']"
+               reEmail #email="ngModel"/>
+
+        <re-alert-box *ngIf="email.errors &&  email.touched" type="danger">
+          <div *ngIf="email.errors.reEmail">It is a invalid email.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Date:</h4>
+    <form>
+      <div class="form-group">
+        <label for="Date">Date</label>
+        <input type="text" id="Date" name="Date" class="form-control" [(ngModel)]="model['date']"
+               reDate #date="ngModel"/>
+
+        <re-alert-box *ngIf="date.errors &&  date.touched" type="danger">
+          <div *ngIf="date.errors.reDate">It is a invalid date.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+
 </div>
