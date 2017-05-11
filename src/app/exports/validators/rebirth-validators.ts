@@ -298,6 +298,10 @@ export class RebirthValidators {
         return null;
       }
 
+      if (!target) {
+        target = new Date();
+      }
+
       if (isNumber(target)) {
         target = parseInt(<string>target);
       }
@@ -323,7 +327,9 @@ export class RebirthValidators {
       if (isPresent(Validators.required(control))) {
         return null;
       }
-
+      if (!target) {
+        target = new Date();
+      }
       const date = parseDate(target);
       const targetDate = parseDate(control.value);
       return date.getTime() <= targetDate.getTime() ? null : { 'reAfterDate': true };
