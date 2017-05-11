@@ -230,11 +230,11 @@
     <form>
       <div class="form-group">
         <label for="pwd">Password</label>
-        <input id="pwd" type="text" name="pwd" class="form-control" [(ngModel)]="model['pwd']"/>
+        <input id="pwd" type="password" name="pwd" class="form-control" [(ngModel)]="model['pwd']"/>
       </div>
       <div class="form-group">
         <label for="confirm">Confirm</label>
-        <input id="confirm" type="text" name="confirm" class="form-control" [(ngModel)]="model['confirm']"
+        <input id="confirm" type="password" name="confirm" class="form-control" [(ngModel)]="model['confirm']"
                reEqualTo="pwd" #confirm="ngModel"/>
 
         <re-alert-box *ngIf="confirm.errors &&  confirm.touched" type="danger">
