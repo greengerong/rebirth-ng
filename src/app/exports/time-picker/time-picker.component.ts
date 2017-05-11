@@ -1,12 +1,6 @@
 import { ChangeDetectorRef, Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export interface TimePickerModel {
-  hour: number;
-  minute: number;
-  second?: number;
-}
-
 function range(start: number, end: number) {
   const result = [];
   let index = start;
@@ -15,6 +9,15 @@ function range(start: number, end: number) {
     index++;
   }
   return result;
+}
+
+const ARROW_DOWN = 'ArrowDown';
+const ARROW_UP = 'ArrowUp';
+
+export interface TimePickerModel {
+  hour: number;
+  minute: number;
+  second?: number;
 }
 
 
@@ -195,12 +198,12 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   isSafetyKeyPress(keyType: any, target: string, key: string) {
     const parsedTarget = parseInt(target, 10);
-    return !(keyType === 'ArrowDown' && parsedTarget < 1) &&
+    return !(keyType === ARROW_DOWN && parsedTarget < 1) &&
       (
-        (keyType === 'ArrowDown' && key === TIME_KEY.HOUR && parsedTarget <= MAX_TIME_RANGE.hour) ||
-        (keyType === 'ArrowDown' && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget <= MAX_TIME_RANGE.minute) ||
-        (keyType === 'ArrowUp' && key === TIME_KEY.HOUR && parsedTarget < MAX_TIME_RANGE.hour) ||
-        (keyType === 'ArrowUp' && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget < MAX_TIME_RANGE.minute)
+        (keyType === ARROW_DOWN && key === TIME_KEY.HOUR && parsedTarget <= MAX_TIME_RANGE.hour) ||
+        (keyType === ARROW_DOWN && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget <= MAX_TIME_RANGE.minute) ||
+        (keyType === ARROW_UP && key === TIME_KEY.HOUR && parsedTarget < MAX_TIME_RANGE.hour) ||
+        (keyType === ARROW_UP && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget < MAX_TIME_RANGE.minute)
       );
   }
 
@@ -229,7 +232,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   modifyTimeByKeyPressEvent(type: number, keyEventType: string) {
     let step = 1;
-    if (keyEventType === 'ArrowDown') {
+    if (keyEventType === ARROW_DOWN) {
       step = -1;
     }
     switch (type) {
