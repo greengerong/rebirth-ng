@@ -83,7 +83,7 @@ export class RebirthValidators {
         return null;
       }
       const v: string = control.value;
-      return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(v) ? null : { 'number': true };
+      return /^(?:-?\d+|-?\d{1,3}(?:,\d{3})+)?(?:\.\d+)?$/.test(v) ? null : { 'reNumber': true };
     };
   }
 

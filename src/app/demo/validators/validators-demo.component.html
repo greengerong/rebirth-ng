@@ -53,7 +53,22 @@
                reDigits #orderNumber="ngModel"/>
 
         <re-alert-box *ngIf="orderNumber.errors &&  orderNumber.touched" type="danger">
-          <div *ngIf="orderNumber.errors.reDigits">Order number should be digits</div>
+          <div *ngIf="orderNumber.errors.reDigits">Order number should be digits.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
+  <section>
+    <h4>Number:</h4>
+    <form>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" id="amount" name="amount" class="form-control" [(ngModel)]="model['amount']"
+               reNumber #amount="ngModel"/>
+
+        <re-alert-box *ngIf="amount.errors &&  amount.touched" type="danger">
+          <div *ngIf="amount.errors.reNumber">Amount should be number.</div>
         </re-alert-box>
       </div>
     </form>

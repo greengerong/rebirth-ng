@@ -72,10 +72,18 @@ export class RangeDirective implements Validator {
 })
 export class DigitsDirective implements Validator {
 
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors|any {
     return RebirthValidators.digits()(control);
+  }
+}
+
+@Directive({
+  selector: '[reNumber]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: NumberDirective, multi: true }]
+})
+export class NumberDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.number()(control);
   }
 }
