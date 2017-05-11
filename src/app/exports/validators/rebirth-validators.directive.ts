@@ -65,3 +65,17 @@ export class RangeDirective implements Validator {
     return RebirthValidators.range(this.reRange)(control);
   }
 }
+
+@Directive({
+  selector: '[reDigits]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: DigitsDirective, multi: true }]
+})
+export class DigitsDirective implements Validator {
+
+  constructor() {
+  }
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.digits()(control);
+  }
+}

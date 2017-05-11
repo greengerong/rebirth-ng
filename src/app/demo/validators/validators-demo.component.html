@@ -43,4 +43,19 @@
       </div>
     </form>
   </section>
+
+  <section>
+    <h4>Digits:</h4>
+    <form>
+      <div class="form-group">
+        <label for="orderNumber">Order number</label>
+        <input type="text" id="orderNumber" name="orderNumber" class="form-control" [(ngModel)]="model['orderNumber']"
+               reDigits #orderNumber="ngModel"/>
+
+        <re-alert-box *ngIf="orderNumber.errors &&  orderNumber.touched" type="danger">
+          <div *ngIf="orderNumber.errors.reDigits">Order number should be digits</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
 </div>

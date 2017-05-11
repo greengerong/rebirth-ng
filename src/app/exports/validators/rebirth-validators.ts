@@ -70,7 +70,7 @@ export class RebirthValidators {
         return null;
       }
       const v: string = control.value;
-      return /^\d+$/.test(v) ? null : { 'digits': true };
+      return /^\d+$/.test(v) ? null : { 'reDigits': true };
     };
   }
 
