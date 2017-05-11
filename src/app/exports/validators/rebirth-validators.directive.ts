@@ -1,5 +1,5 @@
 import { Directive, Input, LOCALE_ID, Inject } from '@angular/core';
-import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
+import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS, ValidatorFn } from '@angular/forms';
 import { RebirthValidators } from './rebirth-validators';
 
 @Directive({
@@ -212,10 +212,13 @@ export class IncludesDirective implements Validator {
   providers: [{ provide: NG_VALIDATORS, useExisting: EqualToDirective, multi: true }]
 })
 export class EqualToDirective implements Validator {
+  private validatorFn: ValidatorFn;
 
-  @Input() reEqualTo: AbstractControl | string;
+  @Input() set reEqualTo(target: AbstractControl | string) {
+    this.validatorFn = RebirthValidators.equalTo(target);
+  };
 
   validate(control: AbstractControl): ValidationErrors|any {
-    return RebirthValidators.equalTo(this.reEqualTo)(control);
+    return this.validatorFn(control);
   }
 }

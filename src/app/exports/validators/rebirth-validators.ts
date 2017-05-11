@@ -246,12 +246,17 @@ export class RebirthValidators {
    * Validator that requires controls to have a value to equal another control.
    */
   static equalTo(target: AbstractControl | string): ValidatorFn {
+    let subscription;
     return (control: AbstractControl): { [key: string]: any } => {
       if (isPresent(Validators.required(control))) {
         return null;
       }
+      const targetControl = typeof target === 'string' ? control.root.get(target) : target;
+      if (!subscription) {
+        subscription = targetControl.valueChanges.subscribe(() => control.updateValueAndValidity());
+      }
       const sourceValue: any = control.value;
-      const targetValue: any = typeof target === 'string' ? control.root.get(target).value : target.value;
+      const targetValue: any = targetControl.value;
       return sourceValue === targetValue ? null : { reEqualTo: true };
     };
   }
