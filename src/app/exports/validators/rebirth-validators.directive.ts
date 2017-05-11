@@ -1,5 +1,5 @@
-import { Directive, Input, LOCALE_ID, Inject } from '@angular/core';
-import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS, ValidatorFn } from '@angular/forms';
+import { Directive, Inject, Input, LOCALE_ID } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { RebirthValidators } from './rebirth-validators';
 
 @Directive({
@@ -13,7 +13,7 @@ export class RangeLengthDirective implements Validator {
   constructor() {
   }
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.rangeLength(this.reRangeLength)(control);
   }
 }
@@ -29,7 +29,7 @@ export class MinDirective implements Validator {
   constructor() {
   }
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.min(this.reMin)(control);
   }
 }
@@ -45,7 +45,7 @@ export class MaxDirective implements Validator {
   constructor() {
   }
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.max(this.reMax)(control);
   }
 }
@@ -61,7 +61,7 @@ export class RangeDirective implements Validator {
   constructor() {
   }
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.range(this.reRange)(control);
   }
 }
@@ -72,7 +72,7 @@ export class RangeDirective implements Validator {
 })
 export class DigitsDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.digits()(control);
   }
 }
@@ -83,7 +83,7 @@ export class DigitsDirective implements Validator {
 })
 export class NumberDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.number()(control);
   }
 }
@@ -94,7 +94,7 @@ export class NumberDirective implements Validator {
 })
 export class UrlDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.url()(control);
   }
 }
@@ -105,7 +105,7 @@ export class UrlDirective implements Validator {
 })
 export class EmailDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.email()(control);
   }
 }
@@ -116,7 +116,7 @@ export class EmailDirective implements Validator {
 })
 export class DateDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.date()(control);
   }
 }
@@ -127,7 +127,7 @@ export class DateDirective implements Validator {
 })
 export class DateISODirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.dateISO()(control);
   }
 }
@@ -138,7 +138,7 @@ export class DateISODirective implements Validator {
 })
 export class JsonDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.json()(control);
   }
 }
@@ -149,7 +149,7 @@ export class JsonDirective implements Validator {
 })
 export class Base64Directive implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.base64()(control);
   }
 }
@@ -165,7 +165,7 @@ export class PhoneDirective implements Validator {
   constructor(@Inject(LOCALE_ID) private locale: string) {
   }
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.phone(this.rePhone || this.locale)(control);
   }
 }
@@ -176,7 +176,7 @@ export class PhoneDirective implements Validator {
 })
 export class UUIDDirective implements Validator {
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.uuid()(control);
   }
 }
@@ -189,7 +189,7 @@ export class EqualDirective implements Validator {
 
   @Input() reEqual: any;
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.equal(this.reEqual)(control);
   }
 }
@@ -202,7 +202,7 @@ export class IncludesDirective implements Validator {
 
   @Input() reIncludes: any[];
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
     return RebirthValidators.includes(this.reIncludes)(control);
   }
 }
@@ -218,7 +218,24 @@ export class EqualToDirective implements Validator {
     this.validatorFn = RebirthValidators.equalTo(target);
   };
 
-  validate(control: AbstractControl): ValidationErrors|any {
+  validate(control: AbstractControl): ValidationErrors | any {
+    return this.validatorFn(control);
+  }
+}
+
+@Directive({
+  selector: '[reBeforeDate]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: BeforeDateDirective, multi: true }]
+})
+export class BeforeDateDirective implements Validator {
+  private validatorFn: ValidatorFn;
+
+  @Input() set reBeforeDate(target: string | Date | number) {
+    console.log('1 :', target);
+    this.validatorFn = RebirthValidators.beforeDate(target);
+  };
+
+  validate(control: AbstractControl): ValidationErrors | any {
     return this.validatorFn(control);
   }
 }

@@ -4,6 +4,21 @@ import { parseDate } from '../utils';
 export function isPresent(obj: any): boolean {
   return obj !== undefined && obj !== null;
 }
+
+function isNumber(value: any): boolean {
+  if (typeof value === 'number') {
+    return true;
+  }
+
+  if (typeof value === 'string') {
+    let parsedValue = parseInt(value);
+    if (value.length === parsedValue.toString().length && Number.isInteger(parsedValue)) {
+      return true;
+    }
+  }
+  return false;
+}
+
 /* tslint:disable:max-line-length */
 export class RebirthValidators {
   /**
@@ -283,8 +298,19 @@ export class RebirthValidators {
         return null;
       }
 
+      if (isNumber(target)) {
+        target = parseInt(<string>target);
+      }
+
       const date = parseDate(target);
-      const targetDate = parseDate(control.value);
+      let targetValue = control.value;
+
+      if (isNumber(targetValue)) {
+        targetValue = parseInt(targetValue);
+      }
+
+      const targetDate = parseDate(targetValue);
+
       return date.getTime() >= targetDate.getTime() ? null : { 'reBeforeDate': true };
     };
   }

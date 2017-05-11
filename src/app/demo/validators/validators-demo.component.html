@@ -244,5 +244,19 @@
     </form>
   </section>
 
+  <section>
+    <h4>Before Date:</h4>
+    <form>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input id="date" type="text" name="date" class="form-control" [(ngModel)]="model['date']"
+               reBeforeDate="{{now}}" #date="ngModel"/>
+
+        <re-alert-box *ngIf="date.errors &&  date.touched" type="danger">
+          <div *ngIf="date.errors.reBeforeDate">It is a incorrect date.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
 
 </div>

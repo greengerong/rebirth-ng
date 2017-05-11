@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 
 import {
-  RangeLengthDirective,
-  MinDirective,
-  RangeDirective,
-  MaxDirective,
-  DigitsDirective,
-  NumberDirective,
-  UrlDirective,
-  EmailDirective,
+  Base64Directive,
+  BeforeDateDirective,
   DateDirective,
   DateISODirective,
-  JsonDirective,
-  Base64Directive,
-  PhoneDirective,
-  UUIDDirective,
+  DigitsDirective,
+  EmailDirective,
   EqualDirective,
+  EqualToDirective,
   IncludesDirective,
-  EqualToDirective
+  JsonDirective,
+  MaxDirective,
+  MinDirective,
+  NumberDirective,
+  PhoneDirective,
+  RangeDirective,
+  RangeLengthDirective,
+  UrlDirective,
+  UUIDDirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -40,7 +41,8 @@ import { CommonModule } from '@angular/common';
     UUIDDirective,
     EqualDirective,
     IncludesDirective,
-    EqualToDirective
+    EqualToDirective,
+    BeforeDateDirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -59,7 +61,8 @@ import { CommonModule } from '@angular/common';
     UUIDDirective,
     EqualDirective,
     IncludesDirective,
-    EqualToDirective
+    EqualToDirective,
+    BeforeDateDirective
   ],
   providers: [],
 })
