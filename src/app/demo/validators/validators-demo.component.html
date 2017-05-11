@@ -119,5 +119,20 @@
     </form>
   </section>
 
+  <section>
+    <h4>ISO Date:</h4>
+    <form>
+      <div class="form-group">
+        <label for="isoDate">ISO Date</label>
+        <input type="text" id="isoDate" name="isoDate" class="form-control" [(ngModel)]="model['isoDate']"
+               reDateISO #isoDate="ngModel"/>
+
+        <re-alert-box *ngIf="isoDate.errors &&  isoDate.touched" type="danger">
+          <div *ngIf="isoDate.errors.reDateISO">It is a invalid ISO date.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
 
 </div>

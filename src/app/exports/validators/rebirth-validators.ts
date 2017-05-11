@@ -133,7 +133,7 @@ export class RebirthValidators {
         return null;
       }
       const v: string = control.value;
-      return /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(v) ? null : { 'dateISO': true };
+      return /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/.test(v) ? null : { 'reDateISO': true };
     };
   }
 

@@ -9,7 +9,8 @@ import {
   NumberDirective,
   UrlDirective,
   EmailDirective,
-  DateDirective
+  DateDirective,
+  DateISODirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -24,7 +25,8 @@ import { CommonModule } from '@angular/common';
     NumberDirective,
     UrlDirective,
     EmailDirective,
-    DateDirective
+    DateDirective,
+    DateISODirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -35,7 +37,8 @@ import { CommonModule } from '@angular/common';
     NumberDirective,
     UrlDirective,
     EmailDirective,
-    DateDirective
+    DateDirective,
+    DateISODirective
   ],
   providers: [],
 })

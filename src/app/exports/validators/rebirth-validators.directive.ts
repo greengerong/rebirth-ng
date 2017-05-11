@@ -120,3 +120,14 @@ export class DateDirective implements Validator {
     return RebirthValidators.date()(control);
   }
 }
+
+@Directive({
+  selector: '[reDateISO]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: DateISODirective, multi: true }]
+})
+export class DateISODirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.dateISO()(control);
+  }
+}
