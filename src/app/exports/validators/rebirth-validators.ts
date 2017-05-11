@@ -204,7 +204,7 @@ export class RebirthValidators {
       }
       const v: string = control.value;
       const pattern = phones[locale] || phones['en-US'];
-      return (new RegExp(pattern)).test(v) ? null : { 'phone': true };
+      return (new RegExp(pattern)).test(v) ? null : { 'rePhone': true };
     };
   }
 

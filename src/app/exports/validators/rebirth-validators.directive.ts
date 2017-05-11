@@ -1,4 +1,4 @@
-import { Directive, Input } from '@angular/core';
+import { Directive, Input, LOCALE_ID, Inject } from '@angular/core';
 import { Validator, AbstractControl, ValidationErrors, NG_VALIDATORS } from '@angular/forms';
 import { RebirthValidators } from './rebirth-validators';
 
@@ -151,5 +151,21 @@ export class Base64Directive implements Validator {
 
   validate(control: AbstractControl): ValidationErrors|any {
     return RebirthValidators.base64()(control);
+  }
+}
+
+@Directive({
+  selector: '[rePhone]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: PhoneDirective, multi: true }]
+})
+export class PhoneDirective implements Validator {
+
+  @Input() rePhone;
+
+  constructor(@Inject(LOCALE_ID) private locale: string) {
+  }
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.phone(this.rePhone || this.locale)(control);
   }
 }
