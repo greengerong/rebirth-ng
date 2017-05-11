@@ -284,7 +284,6 @@ export class RebirthValidators {
       }
 
       const date = parseDate(target);
-
       return date.getTime() >= control.value.getTime() ? null : { 'reBeforeDate': true };
     };
   }
@@ -299,7 +298,6 @@ export class RebirthValidators {
       }
 
       const date = parseDate(target);
-
       return date.getTime() <= control.value.getTime() ? null : { 'reAfterDate': true };
     };
   }
