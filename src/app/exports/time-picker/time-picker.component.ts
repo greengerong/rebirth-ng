@@ -7,6 +7,31 @@ export interface TimePickerModel {
   second?: number;
 }
 
+function range(start: number, end: number) {
+  const result = [];
+  let index = start;
+  while (index < end) {
+    result.push(index);
+    index++;
+  }
+  return result;
+}
+
+
+const NUMBER_KEY_CODE_RANGE = range(48, 58);
+const ARROW_KEY_CODE_RANGE = range(37, 41);
+const BACKSPACE_KEY_CODE = 8;
+const ENTER_KEY_CODE = 13;
+const TAB_KEY_CODE = 9;
+const SUPPORTED_KEY_CODE = [
+  ...NUMBER_KEY_CODE_RANGE,
+  ...ARROW_KEY_CODE_RANGE,
+  BACKSPACE_KEY_CODE,
+  ENTER_KEY_CODE,
+  TAB_KEY_CODE
+];
+
+
 enum TIME {
   HOUR,
   MINUTE,
@@ -179,7 +204,16 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
       );
   }
 
+  isSupportedKeyPress(event): boolean {
+    return !SUPPORTED_KEY_CODE.includes(event.keyCode) ||
+      (event.shiftKey && NUMBER_KEY_CODE_RANGE.includes(event.keyCode));
+  }
+
   handleKeyEvent(event, type) {
+    if (this.isSupportedKeyPress(event)) {
+      event.preventDefault();
+      return;
+    }
     const keyEventType = event.code;
     if (supportKeyType.indexOf(keyEventType) === -1) {
       return;
