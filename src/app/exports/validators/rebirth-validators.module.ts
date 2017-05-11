@@ -16,7 +16,8 @@ import {
   PhoneDirective,
   UUIDDirective,
   EqualDirective,
-  IncludesDirective
+  IncludesDirective,
+  EqualToDirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -38,7 +39,8 @@ import { CommonModule } from '@angular/common';
     PhoneDirective,
     UUIDDirective,
     EqualDirective,
-    IncludesDirective
+    IncludesDirective,
+    EqualToDirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -56,7 +58,8 @@ import { CommonModule } from '@angular/common';
     PhoneDirective,
     UUIDDirective,
     EqualDirective,
-    IncludesDirective
+    IncludesDirective,
+    EqualToDirective
   ],
   providers: [],
 })

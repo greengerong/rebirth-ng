@@ -225,5 +225,24 @@
     </form>
   </section>
 
+  <section>
+    <h4>Equal to control:</h4>
+    <form>
+      <div class="form-group">
+        <label for="pwd">Password</label>
+        <input id="pwd" type="text" name="pwd" class="form-control" [(ngModel)]="model['pwd']"/>
+      </div>
+      <div class="form-group">
+        <label for="confirm">Confirm</label>
+        <input id="confirm" type="text" name="confirm" class="form-control" [(ngModel)]="model['confirm']"
+               reEqualTo="pwd" #confirm="ngModel"/>
+
+        <re-alert-box *ngIf="confirm.errors &&  confirm.touched" type="danger">
+          <div *ngIf="confirm.errors.reEqualTo">It should equal to password.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+
 
 </div>

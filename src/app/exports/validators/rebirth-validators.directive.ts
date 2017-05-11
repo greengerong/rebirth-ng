@@ -160,7 +160,7 @@ export class Base64Directive implements Validator {
 })
 export class PhoneDirective implements Validator {
 
-  @Input() rePhone;
+  @Input() rePhone: string;
 
   constructor(@Inject(LOCALE_ID) private locale: string) {
   }
@@ -187,7 +187,7 @@ export class UUIDDirective implements Validator {
 })
 export class EqualDirective implements Validator {
 
-  @Input() reEqual;
+  @Input() reEqual: any;
 
   validate(control: AbstractControl): ValidationErrors|any {
     return RebirthValidators.equal(this.reEqual)(control);
@@ -200,9 +200,22 @@ export class EqualDirective implements Validator {
 })
 export class IncludesDirective implements Validator {
 
-  @Input() reIncludes;
+  @Input() reIncludes: any[];
 
   validate(control: AbstractControl): ValidationErrors|any {
     return RebirthValidators.includes(this.reIncludes)(control);
+  }
+}
+
+@Directive({
+  selector: '[reEqualTo]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: EqualToDirective, multi: true }]
+})
+export class EqualToDirective implements Validator {
+
+  @Input() reEqualTo: AbstractControl | string;
+
+  validate(control: AbstractControl): ValidationErrors|any {
+    return RebirthValidators.equalTo(this.reEqualTo)(control);
   }
 }
