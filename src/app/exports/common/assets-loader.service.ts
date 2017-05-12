@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DocumentRef } from '../window-ref/document-ref.service';
 
 @Injectable()
-export class ScriptService {
+export class AssetsLoader {
 
   private resources: { [key: string]: Promise<any> } = {};
 
