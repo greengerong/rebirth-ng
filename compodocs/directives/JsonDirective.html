@@ -373,6 +373,9 @@
                                 id="xs-directives-links"
                             >
                                 <li class="link">
+                                    <a href="../directives/AfterDateDirective.html" >AfterDateDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="../directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
                                 </li>
                                 <li class="link">
@@ -484,9 +487,6 @@
                                 </li>
                                 <li class="link">
                                     <a href="../classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../classes/RebirthValidators.html" >RebirthValidators</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/TimePickerModel.html" >TimePickerModel</a>
@@ -996,6 +996,9 @@
                                        id="directives-links"
                    >
                                        <li class="link">
+                                           <a href="../directives/AfterDateDirective.html" >AfterDateDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../directives/AutoCompleteDirective.html" >AutoCompleteDirective</a>
                                        </li>
                                        <li class="link">
@@ -1107,9 +1110,6 @@
                                        </li>
                                        <li class="link">
                                            <a href="../classes/RebirthRouterReuseStrategy.html" >RebirthRouterReuseStrategy</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../classes/RebirthValidators.html" >RebirthValidators</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/TimePickerModel.html" >TimePickerModel</a>
@@ -1336,7 +1336,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-2" colspan="2">
-                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:11</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:31</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1355,7 +1355,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:11</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:31</a></div>
                                     </td>
                                 </tr>
             
@@ -1383,7 +1383,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:16</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:36</a></div>
                                     </td>
                                 </tr>
             
@@ -1405,7 +1405,27 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Directive, Inject, Input, LOCALE_ID } from &#x27;@angular/core&#x27;;
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from &#x27;@angular/forms&#x27;;
-import { RebirthValidators } from &#x27;./rebirth-validators&#x27;;
+import {
+  includesValidator,
+  equalToValidator,
+  rangeLengthValidator,
+  minValidator,
+  maxValidator,
+  rangeValidator,
+  digitsValidator,
+  numberValidator,
+  urlValidator,
+  emailValidator,
+  dateValidator,
+  dateISOValidator,
+  jsonValidator,
+  base64Validator,
+  phoneValidator,
+  uuidValidator,
+  equalValidator,
+  beforeDateValidator,
+  afterDateValidator
+} from &#x27;./rebirth-validators&#x27;;
 
 @Directive({
   selector: &#x27;[reRangeLength]&#x27;,
@@ -1419,7 +1439,7 @@ export class RangeLengthDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.rangeLength(this.reRangeLength)(control);
+    return rangeLengthValidator(this.reRangeLength)(control);
   }
 }
 
@@ -1435,7 +1455,7 @@ export class MinDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.min(this.reMin)(control);
+    return minValidator(this.reMin)(control);
   }
 }
 
@@ -1451,7 +1471,7 @@ export class MaxDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.max(this.reMax)(control);
+    return maxValidator(this.reMax)(control);
   }
 }
 
@@ -1467,7 +1487,7 @@ export class RangeDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.range(this.reRange)(control);
+    return rangeValidator(this.reRange)(control);
   }
 }
 
@@ -1478,7 +1498,7 @@ export class RangeDirective implements Validator {
 export class DigitsDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.digits()(control);
+    return digitsValidator()(control);
   }
 }
 
@@ -1489,7 +1509,7 @@ export class DigitsDirective implements Validator {
 export class NumberDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.number()(control);
+    return numberValidator()(control);
   }
 }
 
@@ -1500,7 +1520,7 @@ export class NumberDirective implements Validator {
 export class UrlDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.url()(control);
+    return urlValidator()(control);
   }
 }
 
@@ -1511,7 +1531,7 @@ export class UrlDirective implements Validator {
 export class EmailDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.email()(control);
+    return emailValidator()(control);
   }
 }
 
@@ -1522,7 +1542,7 @@ export class EmailDirective implements Validator {
 export class DateDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.date()(control);
+    return dateValidator()(control);
   }
 }
 
@@ -1533,7 +1553,7 @@ export class DateDirective implements Validator {
 export class DateISODirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.dateISO()(control);
+    return dateISOValidator()(control);
   }
 }
 
@@ -1544,7 +1564,7 @@ export class DateISODirective implements Validator {
 export class JsonDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.json()(control);
+    return jsonValidator()(control);
   }
 }
 
@@ -1555,7 +1575,7 @@ export class JsonDirective implements Validator {
 export class Base64Directive implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.base64()(control);
+    return base64Validator()(control);
   }
 }
 
@@ -1571,7 +1591,7 @@ export class PhoneDirective implements Validator {
   }
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.phone(this.rePhone || this.locale)(control);
+    return phoneValidator(this.rePhone || this.locale)(control);
   }
 }
 
@@ -1582,7 +1602,7 @@ export class PhoneDirective implements Validator {
 export class UUIDDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.uuid()(control);
+    return uuidValidator()(control);
   }
 }
 
@@ -1595,7 +1615,7 @@ export class EqualDirective implements Validator {
   @Input() reEqual: any;
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.equal(this.reEqual)(control);
+    return equalValidator(this.reEqual)(control);
   }
 }
 
@@ -1608,7 +1628,7 @@ export class IncludesDirective implements Validator {
   @Input() reIncludes: any[];
 
   validate(control: AbstractControl): ValidationErrors | any {
-    return RebirthValidators.includes(this.reIncludes)(control);
+    return includesValidator(this.reIncludes)(control);
   }
 }
 
@@ -1620,7 +1640,7 @@ export class EqualToDirective implements Validator {
   private validatorFn: ValidatorFn;
 
   @Input() set reEqualTo(target: AbstractControl | string) {
-    this.validatorFn &#x3D; RebirthValidators.equalTo(target);
+    this.validatorFn &#x3D; equalToValidator(target);
   };
 
   validate(control: AbstractControl): ValidationErrors | any {
@@ -1636,7 +1656,23 @@ export class BeforeDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
   @Input() set reBeforeDate(target: string | Date | number) {
-    this.validatorFn &#x3D; RebirthValidators.beforeDate(target);
+    this.validatorFn &#x3D; beforeDateValidator(target);
+  };
+
+  validate(control: AbstractControl): ValidationErrors | any {
+    return this.validatorFn(control);
+  }
+}
+
+@Directive({
+  selector: &#x27;[reAfterDate]&#x27;,
+  providers: [{ provide: NG_VALIDATORS, useExisting: AfterDateDirective, multi: true }]
+})
+export class AfterDateDirective implements Validator {
+  private validatorFn: ValidatorFn;
+
+  @Input() set reBeforeDate(target: string | Date | number) {
+    this.validatorFn &#x3D; afterDateValidator(target);
   };
 
   validate(control: AbstractControl): ValidationErrors | any {
