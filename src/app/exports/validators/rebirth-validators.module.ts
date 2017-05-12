@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import {
   Base64Directive,
-  BeforeDateDirective,
   DateDirective,
   DateISODirective,
   DigitsDirective,
@@ -18,7 +17,9 @@ import {
   RangeDirective,
   RangeLengthDirective,
   UrlDirective,
-  UUIDDirective
+  UUIDDirective,
+  BeforeDateDirective,
+  AfterDateDirective
 } from './rebirth-validators.directive';
 import { CommonModule } from '@angular/common';
 
@@ -42,7 +43,8 @@ import { CommonModule } from '@angular/common';
     EqualDirective,
     IncludesDirective,
     EqualToDirective,
-    BeforeDateDirective
+    BeforeDateDirective,
+    AfterDateDirective
   ],
   declarations: [
     RangeLengthDirective,
@@ -62,7 +64,8 @@ import { CommonModule } from '@angular/common';
     EqualDirective,
     IncludesDirective,
     EqualToDirective,
-    BeforeDateDirective
+    BeforeDateDirective,
+    AfterDateDirective
   ],
   providers: [],
 })

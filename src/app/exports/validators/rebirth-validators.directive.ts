@@ -3,7 +3,6 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorF
 import {
   includesValidator,
   equalToValidator,
-  beforeDateValidator,
   rangeLengthValidator,
   minValidator,
   maxValidator,
@@ -18,7 +17,9 @@ import {
   base64Validator,
   phoneValidator,
   uuidValidator,
-  equalValidator, afterDateValidator
+  equalValidator,
+  beforeDateValidator,
+  afterDateValidator
 } from './rebirth-validators';
 
 @Directive({
