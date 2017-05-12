@@ -1,11 +1,13 @@
 # @Rebirth/NG
-##########################
-> Angular4 UI plugin with bootstrap;
 
 [![Build Status](https://travis-ci.org/greengerong/rebirth-ng.svg?branch=master)](https://travis-ci.org/greengerong/rebirth-ng)
 [![dependcy](https://david-dm.org/greengerong/rebirth-ng.svg)](https://david-dm.org/greengerong/rebirth-ng)
 [![dev dependcy](https://david-dm.org/greengerong/rebirth-ng/dev-status.svg)](https://david-dm.org/greengerong/rebirth-ng?type=dev)
 [![npm version](https://img.shields.io/npm/v/rebirth-ng.svg)](https://www.npmjs.com/package/rebirth-ng)
+
+===================
+> Angular4 UI plugin with bootstrap;
+
 
 
 * Online Document link: [https://greengerong.github.io/rebirth-ng/](http://greengerong.github.io/rebirth-ng/)
