@@ -9,7 +9,6 @@ addons:
 language: node_js
 node_js:
   - "7"
-  - "node"
 matrix:
   fast_finish: true
 before_install:
