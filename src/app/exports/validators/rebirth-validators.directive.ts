@@ -30,9 +30,6 @@ export class RangeLengthDirective implements Validator {
 
   @Input() reRangeLength: number[];
 
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors | any {
     return rangeLengthValidator(this.reRangeLength)(control);
   }
@@ -45,9 +42,6 @@ export class RangeLengthDirective implements Validator {
 export class MinDirective implements Validator {
 
   @Input() reMin: number;
-
-  constructor() {
-  }
 
   validate(control: AbstractControl): ValidationErrors | any {
     return minValidator(this.reMin)(control);
@@ -62,9 +56,6 @@ export class MaxDirective implements Validator {
 
   @Input() reMax: number;
 
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors | any {
     return maxValidator(this.reMax)(control);
   }
@@ -77,9 +68,6 @@ export class MaxDirective implements Validator {
 export class RangeDirective implements Validator {
 
   @Input() reRange: number[];
-
-  constructor() {
-  }
 
   validate(control: AbstractControl): ValidationErrors | any {
     return rangeValidator(this.reRange)(control);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DemoConfigService } from '../shared/demo/demo-config.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 're-show-case',
@@ -16,10 +16,10 @@ export class ShowcaseComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
+    this.activatedRoute.params.subscribe((params: Params) => {
 
       this.components = this.demoConfigService.components.filter(cmp => {
-        return cmp.name === params['name'];
+        return cmp.name === params.name;
       })
         .map((cmp) => {
           cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);

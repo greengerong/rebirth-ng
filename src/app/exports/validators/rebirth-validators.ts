@@ -11,7 +11,7 @@ function isNumber(value: any): boolean {
   }
 
   if (typeof value === 'string') {
-    let parsedValue = parseInt(value);
+    const parsedValue = parseInt(value, 10);
     if (value.length === parsedValue.toString().length && Number.isInteger(parsedValue)) {
       return true;
     }
@@ -303,14 +303,14 @@ export function beforeDateValidator(target: Date | string | number): ValidatorFn
     }
 
     if (isNumber(target)) {
-      target = parseInt(<string>target);
+      target = parseInt(<string>target, 10);
     }
 
     const date = parseDate(target);
     let targetValue = control.value;
 
     if (isNumber(targetValue)) {
-      targetValue = parseInt(targetValue);
+      targetValue = parseInt(targetValue, 10);
     }
 
     const targetDate = parseDate(targetValue);
@@ -333,14 +333,14 @@ export function afterDateValidator(target: Date | string | number): ValidatorFn 
     }
 
     if (isNumber(target)) {
-      target = parseInt(<string>target);
+      target = parseInt(<string>target, 10);
     }
 
     const date = parseDate(target);
     let targetValue = control.value;
 
     if (isNumber(targetValue)) {
-      targetValue = parseInt(targetValue);
+      targetValue = parseInt(targetValue, 10);
     }
 
     const targetDate = parseDate(targetValue);

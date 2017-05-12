@@ -12,7 +12,7 @@
     "client:run": "ng serve -o",
     "server:run": "nodemon  ./build/mock.server.js",
     "build": "ng build",
-    "test": "ng test --watch=false --single-run=true --code-coverage && npm run npm:publish",
+    "test": "npm run lint && ng test --watch=false --single-run=true --code-coverage && npm run npm:publish",
     "lint": "ng lint",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
     "e2e": "ng e2e",

@@ -1,4 +1,4 @@
-import { TestBed, async,  ComponentFixture } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { By, BrowserModule } from '@angular/platform-browser';
 import { AutoCompleteModule } from './auto-complete.module';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -12,7 +12,7 @@ import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 
 const allSource = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
   'LiveScript', 'CoffeeScript'].toString();
-@Component({ selector: 'test-cmp', template: '' })
+@Component({ selector: 're-test-cmp', template: '' })
 class TestComponent {
   selectItem1 = 'C#';
   languages = allSource;
