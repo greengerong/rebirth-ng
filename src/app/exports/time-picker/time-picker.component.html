@@ -8,6 +8,7 @@
            maxlength="2"
            max="23"
            min="0"
+           autocomplete="off"
            [(ngModel)]="hour"
            (keydown)="handleKeyEvent($event, timeType.HOUR)"
            (blur)="onHoursChange()">
@@ -22,6 +23,7 @@
            maxlength="2"
            max="59"
            min="0"
+           autocomplete="off"
            [(ngModel)]="minute"
            (keydown)="handleKeyEvent($event, timeType.MINUTE)"
            (blur)="onMinutesChange()">
@@ -37,6 +39,7 @@
              max="59"
              min="0"
              maxlength="2"
+             autocomplete="off"
              [(ngModel)]="second"
              (keydown)="handleKeyEvent($event, timeType.SECOND)"
              (blur)="onSecondsChange()">
