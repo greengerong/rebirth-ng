@@ -13,6 +13,7 @@ function range(start: number, end: number) {
 
 const ARROW_DOWN = 'ArrowDown';
 const ARROW_UP = 'ArrowUp';
+const supportKeyType = [ARROW_UP, ARROW_DOWN];
 
 export interface TimePickerModel {
   hour: number;
@@ -53,7 +54,6 @@ const MAX_TIME_RANGE = {
   second: 59,
 };
 
-const supportKeyType = ['ArrowUp', 'ArrowDown'];
 
 @Component({
   selector: 're-time-picker',
@@ -131,28 +131,41 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     this.changeDetectorRef.markForCheck();
   }
 
-  resetMinuteAndSecondByKey(key: string) {
-    if (key === TIME_KEY.HOUR) {
-      this.minute = this.fillLeft(0);
-    }
-
-    if (this.showSeconds && key !== TIME_KEY.SECOND) {
-      this.second = this.fillLeft(0);
+  updateTimeByMargin(key: string, marginDate) {
+    switch (key) {
+      case TIME_KEY.HOUR:
+        this.hour = this.fillLeft(marginDate[TIME_KEY.HOUR]);
+        this.minute = this.fillLeft(marginDate[TIME_KEY.MINUTE]);
+        if (marginDate[TIME_KEY.SECOND]) {
+          this.second = this.fillLeft(marginDate[TIME_KEY.SECOND]);
+        }
+        break;
+      case TIME_KEY.MINUTE:
+        this.minute = this.fillLeft(marginDate[TIME_KEY.MINUTE]);
+        if (marginDate[TIME_KEY.SECOND]) {
+          this.second = this.fillLeft(marginDate[TIME_KEY.SECOND]);
+        }
+        break;
+      case TIME_KEY.SECOND:
+        this.second = this.fillLeft(marginDate[TIME_KEY.SECOND]);
+        break;
     }
   }
 
-  modifyTimeByKey(value: number, key: string, maxValue?: string, minValue?: string) {
-    if (isNaN(value) || value < 0) {
-      this[key] = minValue || this.fillLeft(this.minTime[key]);
-    } else if (value > MAX_TIME_RANGE[key]) {
-      this.resetMinuteAndSecondByKey(key);
-      this[key] = maxValue || this.fillLeft(this.maxTime[key]);
+  modifyTimeByKey(value: number, key: string) {
+    if (isNaN(value)) {
+      if (this.getCurrentTimestamp({ [key]: 0 }) < this.minDate.getTime()) {
+        this.updateTimeByMargin(key, this.minTime);
+      }
+      if (this.getCurrentTimestamp({ [key]: 0}) > this.maxDate.getTime()) {
+        this.updateTimeByMargin(key, this.maxTime);
+      }
+    } else if ( value < 0) {
+      this[key] = this.fillLeft(0) || this.fillLeft(this.minTime[key]);
+    } else if (value > MAX_TIME_RANGE[key] || this.getCurrentTimestamp({ [key]: value }) > this.maxDate.getTime()) {
+      this.updateTimeByMargin(key, this.maxTime);
     } else if (this.getCurrentTimestamp({ [key]: value }) < this.minDate.getTime()) {
-      this.resetMinuteAndSecondByKey(key);
-      this[key] = this.fillLeft(this.minTime[key]);
-    } else if (this.getCurrentTimestamp({ [key]: value }) > this.maxDate.getTime()) {
-      this.resetMinuteAndSecondByKey(key);
-      this[key] = this.fillLeft(this.maxTime[key]);
+      this.updateTimeByMargin(key, this.minTime);
     } else {
       this[key] = this.fillLeft(value);
     }
@@ -168,14 +181,14 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   onMinutesChange() {
     this.onTouched();
     const minute = parseInt(this.minute, 10);
-    this.modifyTimeByKey(minute, TIME_KEY.MINUTE, MAX_TIME_RANGE.minute.toString(), this.fillLeft(0));
+    this.modifyTimeByKey(minute, TIME_KEY.MINUTE);
     this.onModelChange();
   }
 
   onSecondsChange() {
     this.onTouched();
     const second = parseInt(this.second, 10);
-    this.modifyTimeByKey(second, TIME_KEY.SECOND, MAX_TIME_RANGE.second.toString(), this.fillLeft(0));
+    this.modifyTimeByKey(second, TIME_KEY.SECOND);
 
     this.onModelChange();
   }
