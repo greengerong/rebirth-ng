@@ -61,7 +61,7 @@ describe('AutoComplete', () => {
       fixture.detectChanges();
 
       const popDebugElement = fixture.debugElement.query(By.directive(AutoCompletePopupComponent));
-      console.log(popDebugElement, fixture);
+
       expect(popDebugElement.styles.top).not.toBeUndefined();
       expect(popDebugElement.styles.left).not.toBeUndefined();
     });
