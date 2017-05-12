@@ -13,7 +13,7 @@
     "client:run": "ng serve -o",
     "server:run": "nodemon  ./build/mock.server.js",
     "build": "ng build",
-    "test": "cross-env NODE_ENV=dev && ng test",
+    "test": "cross-env NODE_ENV=dev && ng test --code-coverage",
     "lint": "ng lint",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
     "e2e": "ng e2e",
