@@ -13,9 +13,8 @@
 
   <section>
     <h4>Min time and max time:</h4>
-    <re-time-picker [(ngModel)]="time"
-                    [maxTime]="{ hour: 20, minute: 0, second: 10 }"
-                    [minTime]="{ hour: 1, minute: 0, second: 0 }"></re-time-picker>
+    <re-time-picker [(ngModel)]="time" [maxTime]="{ hour: 20, minute: 0, second: 10 }"
+                    [minTime]="{ hour: 1, minute: 0, second: 0 }" (ngModelChange)="timeChange($event)"></re-time-picker>
   </section>
 
 

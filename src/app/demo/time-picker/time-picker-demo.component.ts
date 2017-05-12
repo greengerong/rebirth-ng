@@ -7,7 +7,10 @@ import { TimePickerModel } from '../../exports';
 })
 export class TimePickerDemoComponent {
 
-  time: TimePickerModel = { hour: 13, minute: 30 };
+  time = new TimePickerModel(13, 30);
   disabled: boolean;
 
+  timeChange(time) {
+    console.log(time.toString());
+  }
 }
