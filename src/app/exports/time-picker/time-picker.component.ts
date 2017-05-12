@@ -45,19 +45,19 @@ const SUPPORTED_KEY_CODE = [
 ];
 
 
-enum TIME {
+export enum TIME {
   HOUR,
   MINUTE,
   SECOND,
 }
 
-const TIME_KEY = {
+export const TIME_KEY = {
   HOUR: 'hour',
   MINUTE: 'minute',
   SECOND: 'second',
 };
 
-const MAX_TIME_RANGE = {
+export const MAX_TIME_RANGE = {
   hour: 23,
   minute: 59,
   second: 59,
@@ -226,8 +226,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   isSupportedKeyPress(event): boolean {
-    return !SUPPORTED_KEY_CODE.includes(event.keyCode) ||
-      (event.shiftKey && NUMBER_KEY_CODE_RANGE.includes(event.keyCode));
+    return SUPPORTED_KEY_CODE.indexOf(event.keyCode) === -1 ||
+      (event.shiftKey && NUMBER_KEY_CODE_RANGE.indexOf(event.keyCode) !== -1);
   }
 
   handleKeyEvent(event, type) {

@@ -285,7 +285,7 @@ export class RebirthValidators {
       if (isPresent(Validators.required(control))) {
         return null;
       }
-      return (optionalValue || []).includes((control.value || '').trim()) ? null : { 'reIncludes': true };
+      return (optionalValue || []).indexOf((control.value || '').trim()) !== -1 ? null : { 'reIncludes': true };
     };
   }
 
