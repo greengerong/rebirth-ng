@@ -11,6 +11,6 @@ export class TimePickerDemoComponent {
   disabled: boolean;
 
   timeChange(time) {
-    console.log(time.toString());
+    console.log('time change:',time, time.toString());
   }
 }
