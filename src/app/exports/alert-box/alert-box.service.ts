@@ -13,6 +13,12 @@ export class AlertBoxService {
 
   }
 
+  placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right') {
+    if (this.panelRef) {
+      this.panelRef.instance.placement = placement;
+    }
+  }
+
   show(alertModel: AlertBoxModel, duration?: number) {
     if (!this.panelRef) {
       const rootContainer = this.rebirthNGConfig.rootContainer;

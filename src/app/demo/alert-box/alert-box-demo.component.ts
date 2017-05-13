@@ -47,6 +47,10 @@ export class AlertBoxDemoComponent implements OnInit {
     }
   }
 
+  placementChange(placement) {
+    this.alertBoxService.placement(placement);
+  }
+
   showAlertMessage() {
     const index = this.alertIndex++ % 2;
     this.alertBoxService.show({ ...this.alerts[index] }, index === 1 ? 2 * 1000 : 0);
