@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+
+  &.alert-top {
+    left: 0px;
+    top: 0px;
+  }
+
+  &.alert-top-right {
+    width: 40%;
+    right: 10px;
+    top: 10px;
+  }
+
+  &.alert-bottom {
+    left: 0px;
+    bottom: 0px;
+  }
+
+  &.alert-bottom-right {
+    width: 40%;
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+:host {
+  /deep/ .alert {
+    margin: 0px 0px 5px 0px;
+  }
+}
+
+:host.alert-top, :host.alert-bottom {
+  /deep/ .alert {
+    border-radius: 0px;
+  }
+}

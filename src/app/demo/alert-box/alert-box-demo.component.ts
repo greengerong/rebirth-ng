@@ -1,4 +1,5 @@
-import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
+import { AlertBoxModel } from '../../exports';
 
 @Component({
   selector: 're-alert-box-demo',
@@ -6,11 +7,27 @@ import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class AlertBoxDemoComponent {
+export class AlertBoxDemoComponent implements OnInit {
+
+  @ViewChild('alertTemplate') alertTemplate: TemplateRef<any>;
   closed = false;
   autoDisappear = false;
+  alerts: AlertBoxModel[] = [
+    {
+      type: 'success',
+      html: 'heelo message'
+    },
+    {
+      type: 'info',
+      html: '2222222222'
+    }
+  ];
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {
+  }
+
+  ngOnInit(): void {
+    this.alerts[1].template = this.alertTemplate;
   }
 
   close() {
