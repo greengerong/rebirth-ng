@@ -50,7 +50,8 @@
 - [ ] Mask([]())
 - [ ] Tree View([]())
 - [x] File Upload([]())
-- [x] Charts([https://github.com/greengerong/rebirth-chart](https://github.com/greengerong/rebirth-chart))
+- [x] Chartjs([https://greengerong.github.io/rebirth-chart/](https://greengerong.github.io/rebirth-chart/))
+- [x] ECharts([https://greengerong.github.io/rebirth-echarts/](https://greengerong.github.io/rebirth-echarts/))
 
 
 ## Themes
