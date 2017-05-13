@@ -11,6 +11,7 @@
 
   &.alert-top-right {
     width: 40%;
+    min-width: 200px;
     right: 10px;
     top: 10px;
   }
@@ -22,6 +23,7 @@
 
   &.alert-bottom-right {
     width: 40%;
+    min-width: 200px;
     right: 10px;
     bottom: 10px;
   }
