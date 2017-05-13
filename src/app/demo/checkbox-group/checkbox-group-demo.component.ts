@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CheckboxGroupComponent } from '../../exports';
 
 @Component({
   selector: 're-checkbox-group-demo',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class CheckboxGroupDemoComponent {
 
+  checked;
+  yesno = 'YES';
   seasonLabelOptions = ['Spring', 'Summer', 'Autumn', 'Winter'];
   seasonLabel: string;
 
@@ -18,6 +21,16 @@ export class CheckboxGroupDemoComponent {
 
   season = [this.seasonOptions[1]];
   seasonValue = ['SUMMER'];
-  valueParser = (item) => item.value;
+  valueParser = (item) => item && item.value;
 
+  selectAll(checkboxGroup: CheckboxGroupComponent, selectAll) {
+    if (selectAll) {
+      return checkboxGroup.selectAll();
+    }
+    checkboxGroup.unselectAll();
+  }
+
+  invertAll(checkboxgroup) {
+    checkboxgroup.invertSelect();
+  }
 }

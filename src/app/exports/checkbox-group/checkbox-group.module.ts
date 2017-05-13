@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { CheckboxGroupComponent } from './checkbox-group.component';
 import { CommonModule } from '@angular/common';
+import { CheckboxComponent } from './checkbox.component';
 
 @NgModule({
   imports: [
@@ -9,10 +10,12 @@ import { CommonModule } from '@angular/common';
   ],
   providers: [],
   declarations: [
-    CheckboxGroupComponent
+    CheckboxGroupComponent,
+    CheckboxComponent
   ],
   exports: [
-    CheckboxGroupComponent
+    CheckboxGroupComponent,
+    CheckboxComponent
   ],
 })
 export class CheckboxGroupModule {

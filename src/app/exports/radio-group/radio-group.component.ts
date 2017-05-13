@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy, forwardRef, Input, ChangeDetectorRef } from '@angular/core';
+import {
+  Component, ChangeDetectionStrategy, forwardRef, Input, ChangeDetectorRef, EventEmitter,
+  Output
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -23,6 +26,7 @@ export class RadioGroupComponent implements ControlValueAccessor {
   @Input() cssClass: string;
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
+  @Output() valueChange = new EventEmitter<any>();
   name: string;
   value: any;
   private onChange = (_: any) => null;
@@ -55,6 +59,7 @@ export class RadioGroupComponent implements ControlValueAccessor {
     this.onTouched();
     this.value = this.valueParser(item);
     this.onChange(this.value);
+    this.valueChange.emit(this.value);
   }
 
   isChecked(item: any) {

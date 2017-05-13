@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, forwardRef } from '@angular/core';
+import {
+  Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, forwardRef, Output,
+  EventEmitter
+} from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -22,6 +25,7 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
   @Input() cssClass: string;
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
+  @Output() valueChange = new EventEmitter<any>();
   value: any[] = [];
   private onChange = (_: any) => null;
   private onTouched = () => null;
@@ -48,6 +52,28 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
+  selectAll() {
+    this.value = this.options.map((item) => this.valueParser(item));
+    this.onChange(this.value);
+    this.valueChange.emit(this.value);
+  }
+
+  unselectAll() {
+    this.value = [];
+    this.onChange(this.value);
+    this.valueChange.emit(this.value);
+  }
+
+  invertSelect() {
+    const current = this.value || [];
+    this.value = this.options
+      .filter((item) => current.indexOf(this.valueParser(item)) === -1)
+      .map((item) => this.valueParser(item));
+    this.onChange(this.value);
+    this.valueChange.emit(this.value);
+  }
+
+
   onCheckBoxChange(item: any, checkbox) {
     this.onTouched();
     this.value = this.value || [];
@@ -58,6 +84,7 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
       this.value = this.value.filter((valueItem) => valueItem !== value);
     }
     this.onChange(this.value);
+    this.valueChange.emit(this.value);
   }
 
   isChecked(item: any) {
