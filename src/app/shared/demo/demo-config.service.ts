@@ -29,7 +29,8 @@ import {
   RadioGroupDemoComponent,
   CheckboxGroupDemoComponent,
   ValidatorsDemoComponent,
-  NotifyDemoComponent
+  NotifyDemoComponent,
+  TreeViewDemoComponent
 } from '../../demo';
 import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
 import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
@@ -298,6 +299,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/notify/README.md'),
       html: require('!raw-loader!../../demo/notify/notify-demo.component.html'),
       ts: require('!raw-loader!../../demo/notify/notify-demo.component.ts'),
+    },
+    {
+      name: 'TreeView',
+      directory: 'tree-view',
+      cmp: TreeViewDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/tree-view/README.md'),
+      html: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.html'),
+      ts: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.ts'),
     },
     // component declare
   ];

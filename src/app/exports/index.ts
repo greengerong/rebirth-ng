@@ -31,6 +31,7 @@ export * from './switch';
 export * from './tabs';
 export * from './time-picker';
 export * from './tooltip';
+export * from './tree-view';
 export * from './utils';
 export * from './validators';
 export * from './window-ref';

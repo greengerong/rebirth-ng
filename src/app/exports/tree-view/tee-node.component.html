@@ -1,0 +1,16 @@
+<div class="node-item">
+  <i class="glyphicon"
+     [ngClass]="{'glyphicon-chevron-down': node.$$expend, 'glyphicon-chevron-right': !node.$$expend, 'glyphicon-leaf': isLeaf()}"
+     (click)="onExpendedIconClick($event)"></i>
+  <div class="node-item-content" (click)="onNodeItemClick($event)"><span   class="node-text">{{node.name}}</span></div>
+
+  <re-tree-view *ngIf="node.children && node.children.length && node.$$expend"
+                class="children-view"
+                [treeData]="node.children"
+                [textField]="textField"
+                [valueFeild]="valueFeild"
+                [iconField]="valueFeild"
+                [checkable]="checkable"
+                [nodeItemTemplate]="nodeItemTemplate"
+  ></re-tree-view>
+</div>

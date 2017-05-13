@@ -1,0 +1,35 @@
+.node-item {
+  position: relative;
+}
+
+.node-item-content {
+  display: inline-block;
+  .node-text {
+    cursor: pointer;
+    padding: 2px;
+    &:hover {
+      border: 1px dashed #ddd;
+      border-radius: 4px;
+    }
+  }
+}
+
+.children-view {
+  display: block;
+  padding: 10px 1.5rem;
+  border-left: 1px dashed #ddd;
+  margin-left: 5px;
+  .node-item {
+    position: relative;
+    &:before {
+      content: ' ';
+      position: absolute;
+      left: -1.5rem;
+      border-top: 1px dashed #ddd;
+      display: inline-block;
+      width: 1.5rem;
+      height: 1px;
+      top: 10px;
+    }
+  }
+}

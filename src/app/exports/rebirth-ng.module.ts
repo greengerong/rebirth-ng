@@ -35,6 +35,7 @@ import { RadioGroupModule } from './radio-group';
 import { CheckboxGroupModule } from './checkbox-group';
 import { RebirthValidatorsModule } from './validators';
 import { NotifyModule, NotifyService } from './notify';
+import { TreeViewModule } from './tree-view';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { NotifyModule, NotifyService } from './notify';
     RadioGroupModule,
     CheckboxGroupModule,
     RebirthValidatorsModule,
-    NotifyModule
+    NotifyModule,
+    TreeViewModule
   ],
   exports: [
     RebirthCommonModule,
@@ -105,7 +107,8 @@ import { NotifyModule, NotifyService } from './notify';
     RadioGroupModule,
     CheckboxGroupModule,
     RebirthValidatorsModule,
-    NotifyModule
+    NotifyModule,
+    TreeViewModule
   ],
   declarations: [],
   providers: [],
