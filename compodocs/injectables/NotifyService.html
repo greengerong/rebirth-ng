@@ -1331,7 +1331,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/exports/notify/notify.service.ts:9</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/exports/notify/notify.service.ts:10</a></div>
                                     </td>
                                 </tr>
             
@@ -1353,13 +1353,13 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>placement(placement: "top" | "top-right" | "bottom" | "bottom-right")</code>
+            <code>placement(placement: "top" | "top-right" | "bottom" | "bottom-right" | "center")</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/notify/notify.service.ts:16</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/exports/notify/notify.service.ts:17</a></div>
                                     </td>
                                 </tr>
             
@@ -1389,7 +1389,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/notify/notify.service.ts:22</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/exports/notify/notify.service.ts:24</a></div>
                                     </td>
                                 </tr>
             
@@ -1419,7 +1419,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/exports/notify/notify.service.ts:38</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/exports/notify/notify.service.ts:43</a></div>
                                     </td>
                                 </tr>
             
@@ -1449,7 +1449,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/exports/notify/notify.service.ts:43</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/notify/notify.service.ts:48</a></div>
                                     </td>
                                 </tr>
             
@@ -1471,6 +1471,26 @@
                     <h3 id="inputs">
                         Properties
                     </h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b><span class="modifier">Private</span> _placement</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-lock"></span><code>_placement:     <code>&quot;top&quot; | &quot;top-right&quot; | &quot;bottom&quot; | &quot;bottom-right&quot; | &quot;center&quot;</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/exports/notify/notify.service.ts:10</a></div>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
@@ -1503,16 +1523,18 @@ import { NotifyModel } from &#x27;./notify.model&#x27;;
 export class NotifyService {
 
   private panelRef: ComponentRef&lt;NotifyComponent&gt;;
+  private _placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27;| &#x27;center&#x27;;
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private componentFactoryResolver: ComponentFactoryResolver) {
 
   }
 
-  placement(placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27;) {
+  placement(placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27;| &#x27;center&#x27;) {
     if (this.panelRef) {
       this.panelRef.instance.placement &#x3D; placement;
     }
+    this._placement &#x3D; placement;
   }
 
   open(notify: NotifyModel, duration?: number) {
@@ -1520,6 +1542,9 @@ export class NotifyService {
       const rootContainer &#x3D; this.rebirthNGConfig.rootContainer;
       const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(NotifyComponent);
       this.panelRef &#x3D; rootContainer .createComponent(componentFactory, rootContainer.length);
+      if (this.placement) {
+        this.panelRef.instance.placement &#x3D; this._placement;
+      }
     }
 
     this.panelRef.instance.notifies &#x3D; [...this.panelRef.instance.notifies, notify];

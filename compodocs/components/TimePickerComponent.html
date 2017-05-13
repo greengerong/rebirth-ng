@@ -1537,14 +1537,7 @@ const SUPPORTED_KEY_CODE &#x3D; [
   TAB_KEY_CODE
 ];
 
-
-export enum TIME {
-  HOUR,
-  MINUTE,
-  SECOND,
-}
-
-export const TIME_KEY &#x3D; {
+export const TIME_UNIT &#x3D; {
   HOUR: &#x27;hour&#x27;,
   MINUTE: &#x27;minute&#x27;,
   SECOND: &#x27;second&#x27;,
@@ -1555,7 +1548,6 @@ export const MAX_TIME_RANGE &#x3D; {
   minute: 59,
   second: 59,
 };
-
 
 @Component({
   selector: &#x27;re-time-picker&#x27;,
@@ -1579,7 +1571,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   minute &#x3D; &#x27;00&#x27;;
   second &#x3D; &#x27;00&#x27;;
 
-  timeType &#x3D; TIME;
+  timeUnit &#x3D; TIME_UNIT;
   minDate: Date;
   maxDate: Date;
 
@@ -1603,12 +1595,19 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     return new Date((new Date()).setHours(time.hour || 0, time.minute || 0, time.second || 0));
   }
 
+  getValue(value, defaultValue) {
+    if (value || value &#x3D;&#x3D;&#x3D; 0) {
+      return value;
+    }
+    return defaultValue;
+  }
+
   getCurrentTimestamp(time): number {
-    return (new Date()).setHours(
-      time.hour || parseInt(this.hour, 10),
-      time.minute || parseInt(this.minute, 10),
-      time.second || parseInt(this.second, 10)
-    );
+    const hour  &#x3D; this.getValue(time.hour, parseInt(this.hour, 10));
+    const minute &#x3D; this.getValue(time.minute, parseInt(this.minute, 10));
+    const second &#x3D; this.getValue(time.second, parseInt(this.second, 10));
+
+    return (new Date()).setHours(hour, minute, second);
   }
 
   writeValue(value: TimePickerModel) {
@@ -1635,21 +1634,21 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   updateTimeByMargin(key: string, marginDate) {
     switch (key) {
-      case TIME_KEY.HOUR:
-        this.hour &#x3D; fillLeft(marginDate[TIME_KEY.HOUR]);
-        this.minute &#x3D; fillLeft(marginDate[TIME_KEY.MINUTE]);
-        if (marginDate[TIME_KEY.SECOND]) {
-          this.second &#x3D; fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.HOUR:
+        this.hour &#x3D; fillLeft(marginDate[TIME_UNIT.HOUR]);
+        this.minute &#x3D; fillLeft(marginDate[TIME_UNIT.MINUTE]);
+        if (marginDate[TIME_UNIT.SECOND]) {
+          this.second &#x3D; fillLeft(marginDate[TIME_UNIT.SECOND]);
         }
         break;
-      case TIME_KEY.MINUTE:
-        this.minute &#x3D; fillLeft(marginDate[TIME_KEY.MINUTE]);
-        if (marginDate[TIME_KEY.SECOND]) {
-          this.second &#x3D; fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.MINUTE:
+        this.minute &#x3D; fillLeft(marginDate[TIME_UNIT.MINUTE]);
+        if (marginDate[TIME_UNIT.SECOND]) {
+          this.second &#x3D; fillLeft(marginDate[TIME_UNIT.SECOND]);
         }
         break;
-      case TIME_KEY.SECOND:
-        this.second &#x3D; fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.SECOND:
+        this.second &#x3D; fillLeft(marginDate[TIME_UNIT.SECOND]);
         break;
     }
   }
@@ -1658,9 +1657,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     if (isNaN(value)) {
       if (this.getCurrentTimestamp({ [key]: 0 }) &lt; this.minDate.getTime()) {
         this.updateTimeByMargin(key, this.minTime);
-      }
-      if (this.getCurrentTimestamp({ [key]: 0 }) &gt; this.maxDate.getTime()) {
+      } else if (this.getCurrentTimestamp({ [key]: 0 }) &gt; this.maxDate.getTime()) {
         this.updateTimeByMargin(key, this.maxTime);
+      } else {
+        this.updateTimeByMargin(key, this.minTime);
       }
     } else if (value &lt; 0) {
       this[key] &#x3D; fillLeft(0) || fillLeft(this.minTime[key]);
@@ -1673,25 +1673,9 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  onHoursChange() {
+  onTimeChange(key: string) {
     this.onTouched();
-    const hour &#x3D; parseInt(this.hour, 10);
-    this.modifyTimeByKey(hour, TIME_KEY.HOUR);
-    this.onModelChange();
-  }
-
-  onMinutesChange() {
-    this.onTouched();
-    const minute &#x3D; parseInt(this.minute, 10);
-    this.modifyTimeByKey(minute, TIME_KEY.MINUTE);
-    this.onModelChange();
-  }
-
-  onSecondsChange() {
-    this.onTouched();
-    const second &#x3D; parseInt(this.second, 10);
-    this.modifyTimeByKey(second, TIME_KEY.SECOND);
-
+    this.modifyTimeByKey(parseInt(this[key], 10), key);
     this.onModelChange();
   }
 
@@ -1711,10 +1695,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     const parsedTarget &#x3D; parseInt(target, 10);
     return !(keyType &#x3D;&#x3D;&#x3D; ARROW_DOWN &amp;&amp; parsedTarget &lt; 1) &amp;&amp;
       (
-        (keyType &#x3D;&#x3D;&#x3D; ARROW_DOWN &amp;&amp; key &#x3D;&#x3D;&#x3D; TIME_KEY.HOUR &amp;&amp; parsedTarget &lt;&#x3D; MAX_TIME_RANGE.hour) ||
-        (keyType &#x3D;&#x3D;&#x3D; ARROW_DOWN &amp;&amp; (key &#x3D;&#x3D;&#x3D; TIME_KEY.MINUTE || key &#x3D;&#x3D;&#x3D; TIME_KEY.SECOND) &amp;&amp; parsedTarget &lt;&#x3D; MAX_TIME_RANGE.minute) ||
-        (keyType &#x3D;&#x3D;&#x3D; ARROW_UP &amp;&amp; key &#x3D;&#x3D;&#x3D; TIME_KEY.HOUR &amp;&amp; parsedTarget &lt; MAX_TIME_RANGE.hour) ||
-        (keyType &#x3D;&#x3D;&#x3D; ARROW_UP &amp;&amp; (key &#x3D;&#x3D;&#x3D; TIME_KEY.MINUTE || key &#x3D;&#x3D;&#x3D; TIME_KEY.SECOND) &amp;&amp; parsedTarget &lt; MAX_TIME_RANGE.minute)
+        (keyType &#x3D;&#x3D;&#x3D; ARROW_DOWN &amp;&amp; key &#x3D;&#x3D;&#x3D; TIME_UNIT.HOUR &amp;&amp; parsedTarget &lt;&#x3D; MAX_TIME_RANGE.hour) ||
+        (keyType &#x3D;&#x3D;&#x3D; ARROW_DOWN &amp;&amp; (key &#x3D;&#x3D;&#x3D; TIME_UNIT.MINUTE || key &#x3D;&#x3D;&#x3D; TIME_UNIT.SECOND) &amp;&amp; parsedTarget &lt;&#x3D; MAX_TIME_RANGE.minute) ||
+        (keyType &#x3D;&#x3D;&#x3D; ARROW_UP &amp;&amp; key &#x3D;&#x3D;&#x3D; TIME_UNIT.HOUR &amp;&amp; parsedTarget &lt; MAX_TIME_RANGE.hour) ||
+        (keyType &#x3D;&#x3D;&#x3D; ARROW_UP &amp;&amp; (key &#x3D;&#x3D;&#x3D; TIME_UNIT.MINUTE || key &#x3D;&#x3D;&#x3D; TIME_UNIT.SECOND) &amp;&amp; parsedTarget &lt; MAX_TIME_RANGE.minute)
       );
   }
 
@@ -1741,20 +1725,20 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  modifyTimeByKeyPressEvent(type: number, keyEventType: string) {
+  modifyTimeByKeyPressEvent(type: string, keyEventType: string) {
     let step &#x3D; 1;
     if (keyEventType &#x3D;&#x3D;&#x3D; ARROW_DOWN) {
       step &#x3D; -1;
     }
     switch (type) {
-      case this.timeType.HOUR:
-        this.modifyTimeByKeyPress(TIME_KEY.HOUR, keyEventType, step);
+      case this.timeUnit.HOUR:
+        this.modifyTimeByKeyPress(TIME_UNIT.HOUR, keyEventType, step);
         break;
-      case this.timeType.MINUTE:
-        this.modifyTimeByKeyPress(TIME_KEY.MINUTE, keyEventType, step);
+      case this.timeUnit.MINUTE:
+        this.modifyTimeByKeyPress(TIME_UNIT.MINUTE, keyEventType, step);
         break;
-      case this.timeType.SECOND:
-        this.modifyTimeByKeyPress(TIME_KEY.SECOND, keyEventType, step);
+      case this.timeUnit.SECOND:
+        this.modifyTimeByKeyPress(TIME_UNIT.SECOND, keyEventType, step);
         break;
     }
   }
@@ -1776,8 +1760,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
            min&#x3D;&quot;0&quot;
            autocomplete&#x3D;&quot;off&quot;
            [(ngModel)]&#x3D;&quot;hour&quot;
-           (keydown)&#x3D;&quot;handleKeyEvent($event, timeType.HOUR)&quot;
-           (blur)&#x3D;&quot;onHoursChange()&quot;&gt;
+           (keydown)&#x3D;&quot;handleKeyEvent($event, timeUnit.HOUR)&quot;
+           (blur)&#x3D;&quot;onTimeChange(timeUnit.HOUR)&quot;&gt;
   &lt;/div&gt;
   &lt;span&gt;:&lt;/span&gt;
   &lt;div class&#x3D;&quot;form-group&quot;&gt;
@@ -1791,8 +1775,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
            min&#x3D;&quot;0&quot;
            autocomplete&#x3D;&quot;off&quot;
            [(ngModel)]&#x3D;&quot;minute&quot;
-           (keydown)&#x3D;&quot;handleKeyEvent($event, timeType.MINUTE)&quot;
-           (blur)&#x3D;&quot;onMinutesChange()&quot;&gt;
+           (keydown)&#x3D;&quot;handleKeyEvent($event, timeUnit.MINUTE)&quot;
+           (blur)&#x3D;&quot;onTimeChange(timeUnit.MINUTE)&quot;&gt;
   &lt;/div&gt;
   &lt;ng-container *ngIf&#x3D;&quot;showSeconds&quot;&gt;
     &lt;span&gt;:&lt;/span&gt;
@@ -1807,8 +1791,8 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
              maxlength&#x3D;&quot;2&quot;
              autocomplete&#x3D;&quot;off&quot;
              [(ngModel)]&#x3D;&quot;second&quot;
-             (keydown)&#x3D;&quot;handleKeyEvent($event, timeType.SECOND)&quot;
-             (blur)&#x3D;&quot;onSecondsChange()&quot;&gt;
+             (keydown)&#x3D;&quot;handleKeyEvent($event, timeUnit.SECOND)&quot;
+             (blur)&#x3D;&quot;onTimeChange(timeUnit.SECOND)&quot;&gt;
     &lt;/div&gt;
   &lt;/ng-container&gt;
 &lt;/form&gt;
@@ -1838,7 +1822,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form class="form-inline time-picker">  <div class="form-group">    <input type="text"           #hours           [disabled]="disabled"           name="hours"           class="form-control"           maxlength="2"           max="23"           min="0"           autocomplete="off"           [(ngModel)]="hour"           (keydown)="handleKeyEvent($event, timeType.HOUR)"           (blur)="onHoursChange()">  </div>  <span>:</span>  <div class="form-group">    <input type="text"           #minutes           [disabled]="disabled"           name="minutes"           class="form-control"           maxlength="2"           max="59"           min="0"           autocomplete="off"           [(ngModel)]="minute"           (keydown)="handleKeyEvent($event, timeType.MINUTE)"           (blur)="onMinutesChange()">  </div>  <ng-container *ngIf="showSeconds">    <span>:</span>    <div class="form-group">      <input type="text"             #seconds             [disabled]="disabled"             name="seconds"             class="form-control"             max="59"             min="0"             maxlength="2"             autocomplete="off"             [(ngModel)]="second"             (keydown)="handleKeyEvent($event, timeType.SECOND)"             (blur)="onSecondsChange()">    </div>  </ng-container></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form class="form-inline time-picker">  <div class="form-group">    <input type="text"           #hours           [disabled]="disabled"           name="hours"           class="form-control"           maxlength="2"           max="23"           min="0"           autocomplete="off"           [(ngModel)]="hour"           (keydown)="handleKeyEvent($event, timeUnit.HOUR)"           (blur)="onTimeChange(timeUnit.HOUR)">  </div>  <span>:</span>  <div class="form-group">    <input type="text"           #minutes           [disabled]="disabled"           name="minutes"           class="form-control"           maxlength="2"           max="59"           min="0"           autocomplete="off"           [(ngModel)]="minute"           (keydown)="handleKeyEvent($event, timeUnit.MINUTE)"           (blur)="onTimeChange(timeUnit.MINUTE)">  </div>  <ng-container *ngIf="showSeconds">    <span>:</span>    <div class="form-group">      <input type="text"             #seconds             [disabled]="disabled"             name="seconds"             class="form-control"             max="59"             min="0"             maxlength="2"             autocomplete="off"             [(ngModel)]="second"             (keydown)="handleKeyEvent($event, timeUnit.SECOND)"             (blur)="onTimeChange(timeUnit.SECOND)">    </div>  </ng-container></form></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DataTableBodyComponent', 'selector': 're-data-table-body,[reDataTableBody]'},{'name': 'DataTableCellComponent', 'selector': 're-data-table-cell,[reDataTableCell]'},{'name': 'DataTableCellEditTmplComponent', 'selector': 're-cell-edit'},{'name': 'DataTableCellFilterTmplComponent', 'selector': 're-cell-filter'},{'name': 'DataTableCellTmplComponent', 'selector': 're-cell-template'},{'name': 'DataTableCellViewTmplComponent', 'selector': 're-cell'},{'name': 'DataTableColumnTmplComponent', 'selector': 're-column'},{'name': 'DataTableComponent', 'selector': 're-data-table'},{'name': 'DataTableFootComponent', 'selector': 're-data-table-foot,[reDataTableFoot]'},{'name': 'DataTableFootTmplComponent', 'selector': 're-foot'},{'name': 'DataTableHeadComponent', 'selector': 're-data-table-head,[reDataTableHead]'},{'name': 'DataTableHeadTmplComponent', 'selector': 're-head'},{'name': 'DataTablePagerComponent', 'selector': 're-data-table-pager,[reDataTablePager]'},{'name': 'DataTablePagerTmplComponent', 'selector': 're-pager-panel'},{'name': 'DataTableRowComponent', 'selector': 're-data-table-row,[reDataTableRow]'},{'name': 'DataTableTmplsComponent', 'selector': 're-data-table-templates'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'TimePickerComponent'};

@@ -1423,7 +1423,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>&quot;top&quot; | &quot;top-right&quot; | &quot;bottom&quot; | &quot;bottom-right&quot;</code>
+                                <em>Type:</em>    <code>&quot;top&quot; | &quot;top-right&quot; | &quot;bottom&quot; | &quot;bottom-right&quot; | &quot;center&quot;</code>
 
                               </p>
                         </td>
@@ -1539,7 +1539,7 @@ export class NotifyComponent {
   @Input() notifies: NotifyModel[] &#x3D; [];
   @Input() width: string;
   @Input() cssClass: string;
-  @Input() placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27;;
+  @Input() placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27; | &#x27;center&#x27;;
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.placement &#x3D; &lt;any&gt;rebirthNGConfig.alertBoxPanel.placement;
