@@ -43,6 +43,7 @@
 - [x] Data Table
 - [x] TimePicker
 - [x] Validators
+- [x] Notify
 
 ## Advance Components
 - [ ] Editor([]())
