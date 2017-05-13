@@ -200,6 +200,9 @@
                                     <a href="../components/CarouselComponent.html" >CarouselComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/CheckboxComponent.html" >CheckboxComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/CheckboxGroupComponent.html" >CheckboxGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -823,6 +826,9 @@
                                            <a href="../components/CarouselComponent.html" >CarouselComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/CheckboxComponent.html" >CheckboxComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/CheckboxGroupComponent.html" >CheckboxGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -1344,24 +1350,6 @@
             </section>
 
 
-            <section>
-                <h3 id="constructor">Constructor</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <code>constructor()</code>
-                                </td>
-                            </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:31</a></div>
-                                    </td>
-                                </tr>
-            
-                        </tbody>
-                    </table>
-            </section>
 
             <section>
                 
@@ -1383,7 +1371,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:36</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:33</a></div>
                                     </td>
                                 </tr>
             
@@ -1435,9 +1423,6 @@ export class RangeLengthDirective implements Validator {
 
   @Input() reRangeLength: number[];
 
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors | any {
     return rangeLengthValidator(this.reRangeLength)(control);
   }
@@ -1450,9 +1435,6 @@ export class RangeLengthDirective implements Validator {
 export class MinDirective implements Validator {
 
   @Input() reMin: number;
-
-  constructor() {
-  }
 
   validate(control: AbstractControl): ValidationErrors | any {
     return minValidator(this.reMin)(control);
@@ -1467,9 +1449,6 @@ export class MaxDirective implements Validator {
 
   @Input() reMax: number;
 
-  constructor() {
-  }
-
   validate(control: AbstractControl): ValidationErrors | any {
     return maxValidator(this.reMax)(control);
   }
@@ -1482,9 +1461,6 @@ export class MaxDirective implements Validator {
 export class RangeDirective implements Validator {
 
   @Input() reRange: number[];
-
-  constructor() {
-  }
 
   validate(control: AbstractControl): ValidationErrors | any {
     return rangeValidator(this.reRange)(control);
