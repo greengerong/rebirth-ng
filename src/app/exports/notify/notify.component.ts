@@ -15,7 +15,7 @@ export class NotifyComponent {
   @Input() notifies: NotifyModel[] = [];
   @Input() width: string;
   @Input() cssClass: string;
-  @Input() placement: 'top' | 'top-right' | 'bottom' | 'bottom-right';
+  @Input() placement: 'top' | 'top-right' | 'bottom' | 'bottom-right' | 'center';
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.placement = <any>rebirthNGConfig.alertBoxPanel.placement;

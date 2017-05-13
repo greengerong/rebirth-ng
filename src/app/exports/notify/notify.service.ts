@@ -7,16 +7,18 @@ import { NotifyModel } from './notify.model';
 export class NotifyService {
 
   private panelRef: ComponentRef<NotifyComponent>;
+  private _placement: 'top' | 'top-right' | 'bottom' | 'bottom-right'| 'center';
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private componentFactoryResolver: ComponentFactoryResolver) {
 
   }
 
-  placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right') {
+  placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right'| 'center') {
     if (this.panelRef) {
       this.panelRef.instance.placement = placement;
     }
+    this._placement = placement;
   }
 
   open(notify: NotifyModel, duration?: number) {
@@ -24,6 +26,9 @@ export class NotifyService {
       const rootContainer = this.rebirthNGConfig.rootContainer;
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(NotifyComponent);
       this.panelRef = rootContainer .createComponent(componentFactory, rootContainer.length);
+      if (this.placement) {
+        this.panelRef.instance.placement = this._placement;
+      }
     }
 
     this.panelRef.instance.notifies = [...this.panelRef.instance.notifies, notify];

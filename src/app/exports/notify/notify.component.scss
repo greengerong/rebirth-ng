@@ -27,6 +27,13 @@
     right: 10px;
     bottom: 10px;
   }
+
+  &.alert-center {
+    width: 40%;
+    min-width: 200px;
+    left: 30%;
+    top: 20%;
+  }
 }
 
 :host {
