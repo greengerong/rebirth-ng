@@ -47,9 +47,10 @@
 
 
   <section>
+    <h4>Alert message:</h4>
     <ng-template #alertTemplate let-alert="">
       This is from template: {{alert.html}}
     </ng-template>
-    <re-alert-box-panel [alerts]="alerts" type="bottom-right"></re-alert-box-panel>
+    <button class="btn btn-primary" (click)="showAlertMessage()">Alert message</button>
   </section>
 </div>

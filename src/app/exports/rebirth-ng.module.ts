@@ -5,7 +5,7 @@ import { PagerModule } from './pager';
 import { RebirthNGConfig } from './rebirth-ng.config';
 import { PaginationModule } from './pagination';
 import { COMMON_SERVICES } from './window-ref';
-import { AlertBoxModule } from './alert-box';
+import { AlertBoxModule, AlertBoxService } from './alert-box';
 import { BadgeModule } from './badge';
 import { PanelModule } from './panel';
 import { AccordionModule } from './accordion';
@@ -120,7 +120,8 @@ export class RebirthNGModule {
         { provide: DialogService, useClass: DialogService },
         { provide: PositionService, useClass: PositionService },
         { provide: OverlayService, useClass: OverlayService },
-        { provide: AssetsLoader, useClass: AssetsLoader }
+        { provide: AssetsLoader, useClass: AssetsLoader },
+        { provide: AlertBoxService, useClass: AlertBoxService }
       ]
     };
   }

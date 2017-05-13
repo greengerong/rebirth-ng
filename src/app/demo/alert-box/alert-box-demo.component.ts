@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
-import { AlertBoxModel } from '../../exports';
+import { AlertBoxModel, AlertBoxService } from '../../exports';
 
 @Component({
   selector: 're-alert-box-demo',
@@ -12,6 +12,7 @@ export class AlertBoxDemoComponent implements OnInit {
   @ViewChild('alertTemplate') alertTemplate: TemplateRef<any>;
   closed = false;
   autoDisappear = false;
+  alertIndex = 0;
   alerts: AlertBoxModel[] = [
     {
       type: 'success',
@@ -23,7 +24,7 @@ export class AlertBoxDemoComponent implements OnInit {
     }
   ];
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, private alertBoxService: AlertBoxService) {
   }
 
   ngOnInit(): void {
@@ -44,5 +45,10 @@ export class AlertBoxDemoComponent implements OnInit {
         this.changeDetectorRef.markForCheck();
       }, 2 * 1000);
     }
+  }
+
+  showAlertMessage() {
+    const index = this.alertIndex++ % 2;
+    this.alertBoxService.show({ ...this.alerts[index] }, index === 1 ? 2 * 1000 : 0);
   }
 }
