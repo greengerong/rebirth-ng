@@ -102,12 +102,19 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     return new Date((new Date()).setHours(time.hour || 0, time.minute || 0, time.second || 0));
   }
 
+  getValue(value, defaultValue) {
+    if (value || value === 0) {
+      return value;
+    }
+    return defaultValue;
+  }
+
   getCurrentTimestamp(time): number {
-    return (new Date()).setHours(
-      time.hour || parseInt(this.hour, 10),
-      time.minute || parseInt(this.minute, 10),
-      time.second || parseInt(this.second, 10)
-    );
+    const hour  = this.getValue(time.hour, parseInt(this.hour, 10));
+    const minute = this.getValue(time.minute, parseInt(this.minute, 10));
+    const second = this.getValue(time.second, parseInt(this.second, 10));
+
+    return (new Date()).setHours(hour, minute, second);
   }
 
   writeValue(value: TimePickerModel) {
@@ -157,9 +164,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     if (isNaN(value)) {
       if (this.getCurrentTimestamp({ [key]: 0 }) < this.minDate.getTime()) {
         this.updateTimeByMargin(key, this.minTime);
-      }
-      if (this.getCurrentTimestamp({ [key]: 0 }) > this.maxDate.getTime()) {
+      } else if (this.getCurrentTimestamp({ [key]: 0 }) > this.maxDate.getTime()) {
         this.updateTimeByMargin(key, this.maxTime);
+      } else {
+        this.updateTimeByMargin(key, this.minTime);
       }
     } else if (value < 0) {
       this[key] = fillLeft(0) || fillLeft(this.minTime[key]);
