@@ -44,14 +44,7 @@ const SUPPORTED_KEY_CODE = [
   TAB_KEY_CODE
 ];
 
-
-export enum TIME {
-  HOUR,
-  MINUTE,
-  SECOND,
-}
-
-export const TIME_KEY = {
+export const TIME_UNIT = {
   HOUR: 'hour',
   MINUTE: 'minute',
   SECOND: 'second',
@@ -62,7 +55,6 @@ export const MAX_TIME_RANGE = {
   minute: 59,
   second: 59,
 };
-
 
 @Component({
   selector: 're-time-picker',
@@ -86,7 +78,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   minute = '00';
   second = '00';
 
-  timeType = TIME;
+  timeUnit = TIME_UNIT;
   minDate: Date;
   maxDate: Date;
 
@@ -142,21 +134,21 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
 
   updateTimeByMargin(key: string, marginDate) {
     switch (key) {
-      case TIME_KEY.HOUR:
-        this.hour = fillLeft(marginDate[TIME_KEY.HOUR]);
-        this.minute = fillLeft(marginDate[TIME_KEY.MINUTE]);
-        if (marginDate[TIME_KEY.SECOND]) {
-          this.second = fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.HOUR:
+        this.hour = fillLeft(marginDate[TIME_UNIT.HOUR]);
+        this.minute = fillLeft(marginDate[TIME_UNIT.MINUTE]);
+        if (marginDate[TIME_UNIT.SECOND]) {
+          this.second = fillLeft(marginDate[TIME_UNIT.SECOND]);
         }
         break;
-      case TIME_KEY.MINUTE:
-        this.minute = fillLeft(marginDate[TIME_KEY.MINUTE]);
-        if (marginDate[TIME_KEY.SECOND]) {
-          this.second = fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.MINUTE:
+        this.minute = fillLeft(marginDate[TIME_UNIT.MINUTE]);
+        if (marginDate[TIME_UNIT.SECOND]) {
+          this.second = fillLeft(marginDate[TIME_UNIT.SECOND]);
         }
         break;
-      case TIME_KEY.SECOND:
-        this.second = fillLeft(marginDate[TIME_KEY.SECOND]);
+      case TIME_UNIT.SECOND:
+        this.second = fillLeft(marginDate[TIME_UNIT.SECOND]);
         break;
     }
   }
@@ -183,21 +175,21 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   onHoursChange() {
     this.onTouched();
     const hour = parseInt(this.hour, 10);
-    this.modifyTimeByKey(hour, TIME_KEY.HOUR);
+    this.modifyTimeByKey(hour, TIME_UNIT.HOUR);
     this.onModelChange();
   }
 
   onMinutesChange() {
     this.onTouched();
     const minute = parseInt(this.minute, 10);
-    this.modifyTimeByKey(minute, TIME_KEY.MINUTE);
+    this.modifyTimeByKey(minute, TIME_UNIT.MINUTE);
     this.onModelChange();
   }
 
   onSecondsChange() {
     this.onTouched();
     const second = parseInt(this.second, 10);
-    this.modifyTimeByKey(second, TIME_KEY.SECOND);
+    this.modifyTimeByKey(second, TIME_UNIT.SECOND);
 
     this.onModelChange();
   }
@@ -218,10 +210,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     const parsedTarget = parseInt(target, 10);
     return !(keyType === ARROW_DOWN && parsedTarget < 1) &&
       (
-        (keyType === ARROW_DOWN && key === TIME_KEY.HOUR && parsedTarget <= MAX_TIME_RANGE.hour) ||
-        (keyType === ARROW_DOWN && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget <= MAX_TIME_RANGE.minute) ||
-        (keyType === ARROW_UP && key === TIME_KEY.HOUR && parsedTarget < MAX_TIME_RANGE.hour) ||
-        (keyType === ARROW_UP && (key === TIME_KEY.MINUTE || key === TIME_KEY.SECOND) && parsedTarget < MAX_TIME_RANGE.minute)
+        (keyType === ARROW_DOWN && key === TIME_UNIT.HOUR && parsedTarget <= MAX_TIME_RANGE.hour) ||
+        (keyType === ARROW_DOWN && (key === TIME_UNIT.MINUTE || key === TIME_UNIT.SECOND) && parsedTarget <= MAX_TIME_RANGE.minute) ||
+        (keyType === ARROW_UP && key === TIME_UNIT.HOUR && parsedTarget < MAX_TIME_RANGE.hour) ||
+        (keyType === ARROW_UP && (key === TIME_UNIT.MINUTE || key === TIME_UNIT.SECOND) && parsedTarget < MAX_TIME_RANGE.minute)
       );
   }
 
@@ -248,20 +240,20 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
     }
   }
 
-  modifyTimeByKeyPressEvent(type: number, keyEventType: string) {
+  modifyTimeByKeyPressEvent(type: string, keyEventType: string) {
     let step = 1;
     if (keyEventType === ARROW_DOWN) {
       step = -1;
     }
     switch (type) {
-      case this.timeType.HOUR:
-        this.modifyTimeByKeyPress(TIME_KEY.HOUR, keyEventType, step);
+      case this.timeUnit.HOUR:
+        this.modifyTimeByKeyPress(TIME_UNIT.HOUR, keyEventType, step);
         break;
-      case this.timeType.MINUTE:
-        this.modifyTimeByKeyPress(TIME_KEY.MINUTE, keyEventType, step);
+      case this.timeUnit.MINUTE:
+        this.modifyTimeByKeyPress(TIME_UNIT.MINUTE, keyEventType, step);
         break;
-      case this.timeType.SECOND:
-        this.modifyTimeByKeyPress(TIME_KEY.SECOND, keyEventType, step);
+      case this.timeUnit.SECOND:
+        this.modifyTimeByKeyPress(TIME_UNIT.SECOND, keyEventType, step);
         break;
     }
   }

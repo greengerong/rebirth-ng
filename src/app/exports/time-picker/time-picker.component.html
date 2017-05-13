@@ -10,7 +10,7 @@
            min="0"
            autocomplete="off"
            [(ngModel)]="hour"
-           (keydown)="handleKeyEvent($event, timeType.HOUR)"
+           (keydown)="handleKeyEvent($event, timeUnit.HOUR)"
            (blur)="onHoursChange()">
   </div>
   <span>:</span>
@@ -25,7 +25,7 @@
            min="0"
            autocomplete="off"
            [(ngModel)]="minute"
-           (keydown)="handleKeyEvent($event, timeType.MINUTE)"
+           (keydown)="handleKeyEvent($event, timeUnit.MINUTE)"
            (blur)="onMinutesChange()">
   </div>
   <ng-container *ngIf="showSeconds">
@@ -41,7 +41,7 @@
              maxlength="2"
              autocomplete="off"
              [(ngModel)]="second"
-             (keydown)="handleKeyEvent($event, timeType.SECOND)"
+             (keydown)="handleKeyEvent($event, timeUnit.SECOND)"
              (blur)="onSecondsChange()">
     </div>
   </ng-container>
