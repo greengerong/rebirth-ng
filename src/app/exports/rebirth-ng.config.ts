@@ -18,7 +18,8 @@ export class RebirthNGConfig {
 
   alertBoxPanel = {
     placement: 'top-right',
-    cssClass: ''
+    cssClass: '',
+    width: '',
   };
 
   autoComplete = {

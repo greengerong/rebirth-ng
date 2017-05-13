@@ -16,11 +16,11 @@ export class AlertBoxDemoComponent implements OnInit {
   alerts: AlertBoxModel[] = [
     {
       type: 'success',
-      html: 'heelo message'
+      html: 'Save order success!'
     },
     {
-      type: 'info',
-      html: '2222222222'
+      type: 'danger',
+      html: 'Get error: babababababa!'
     }
   ];
 

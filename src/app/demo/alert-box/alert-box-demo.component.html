@@ -49,8 +49,8 @@
   <section>
     <h4>Alert message:</h4>
     <ng-template #alertTemplate let-alert="">
-      This is from template: {{alert.html}}
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{alert.html}}
     </ng-template>
-    <button class="btn btn-primary" (click)="showAlertMessage()">Alert message</button>
+    <button class="btn btn-primary" (click)="showAlertMessage()">Save orders</button>
   </section>
 </div>

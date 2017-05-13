@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AlertBoxModel } from './alert-box.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -19,7 +19,8 @@ export class AlertBoxPanelComponent {
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.placement = <any>rebirthNGConfig.alertBoxPanel.placement;
-    this.cssClass = <any>rebirthNGConfig.alertBoxPanel.cssClass;
+    this.cssClass = rebirthNGConfig.alertBoxPanel.cssClass;
+    this.width = rebirthNGConfig.alertBoxPanel.width;
   }
 
   close(item) {

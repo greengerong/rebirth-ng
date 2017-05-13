@@ -24,8 +24,18 @@ export class AlertBoxService {
     if (duration) {
       const timeout = setTimeout(() => {
         clearTimeout(timeout);
-        this.panelRef.instance.alerts = this.panelRef.instance.alerts.filter((alert) => alert !== alertModel);
+        this.close(alertModel);
       }, duration);
     }
+  }
+
+  close(alertModel: AlertBoxModel) {
+    this.panelRef.instance.alerts = this.panelRef.instance.alerts.filter((alert) => alert !== alertModel);
+    this.panelRef.changeDetectorRef.markForCheck();
+  }
+
+  closeAll() {
+    this.panelRef.instance.alerts = [];
+    this.panelRef.changeDetectorRef.markForCheck();
   }
 }
