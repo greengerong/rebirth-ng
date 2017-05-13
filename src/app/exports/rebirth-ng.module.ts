@@ -5,7 +5,7 @@ import { PagerModule } from './pager';
 import { RebirthNGConfig } from './rebirth-ng.config';
 import { PaginationModule } from './pagination';
 import { COMMON_SERVICES } from './window-ref';
-import { AlertBoxModule, AlertBoxService } from './alert-box';
+import { AlertBoxModule } from './alert-box';
 import { BadgeModule } from './badge';
 import { PanelModule } from './panel';
 import { AccordionModule } from './accordion';
@@ -34,6 +34,7 @@ import { TimePickerModule } from './time-picker';
 import { RadioGroupModule } from './radio-group';
 import { CheckboxGroupModule } from './checkbox-group';
 import { RebirthValidatorsModule } from './validators';
+import { NotifyModule, NotifyService } from './notify';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { RebirthValidatorsModule } from './validators';
     TimePickerModule,
     RadioGroupModule,
     CheckboxGroupModule,
-    RebirthValidatorsModule
+    RebirthValidatorsModule,
+    NotifyModule
   ],
   exports: [
     RebirthCommonModule,
@@ -102,7 +104,8 @@ import { RebirthValidatorsModule } from './validators';
     TimePickerModule,
     RadioGroupModule,
     CheckboxGroupModule,
-    RebirthValidatorsModule
+    RebirthValidatorsModule,
+    NotifyModule
   ],
   declarations: [],
   providers: [],
@@ -121,7 +124,7 @@ export class RebirthNGModule {
         { provide: PositionService, useClass: PositionService },
         { provide: OverlayService, useClass: OverlayService },
         { provide: AssetsLoader, useClass: AssetsLoader },
-        { provide: AlertBoxService, useClass: AlertBoxService }
+        { provide: NotifyService, useClass: NotifyService }
       ]
     };
   }

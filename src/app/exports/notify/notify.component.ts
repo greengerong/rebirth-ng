@@ -1,18 +1,18 @@
 import { Component, Input } from '@angular/core';
-import { AlertBoxModel } from './alert-box.model';
+import { NotifyModel } from './notify.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
-  selector: 're-alert-box-panel',
-  templateUrl: './alert-box-panel.component.html',
-  styleUrls: ['./alert-box-panel.component.scss'],
+  selector: 're-notify',
+  templateUrl: './notify.component.html',
+  styleUrls: ['./notify.component.scss'],
   host: {
     '[style.width]': 'width',
     '[class]': '(placement ? "alert-" + placement : "") + " " + (cssClass || "")',
   }
 })
-export class AlertBoxPanelComponent {
-  @Input() alerts: AlertBoxModel[] = [];
+export class NotifyComponent {
+  @Input() notifies: NotifyModel[] = [];
   @Input() width: string;
   @Input() cssClass: string;
   @Input() placement: 'top' | 'top-right' | 'bottom' | 'bottom-right';
@@ -24,6 +24,6 @@ export class AlertBoxPanelComponent {
   }
 
   close(item) {
-    this.alerts = this.alerts.filter((box) => box !== item);
+    this.notifies = this.notifies.filter((box) => box !== item);
   }
 }

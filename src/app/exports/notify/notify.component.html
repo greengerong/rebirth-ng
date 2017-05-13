@@ -1,4 +1,4 @@
-<re-alert-box *ngFor="let item of alerts" [type]="item.type" [closable]="true" (close)="close(item)">
+<re-alert-box *ngFor="let item of notifies" [type]="item.type" [closable]="true" (close)="close(item)">
 
   <div *ngIf="!item.template" [innerHTML]="item.html"></div>
 

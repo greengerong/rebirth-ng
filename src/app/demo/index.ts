@@ -16,6 +16,7 @@ export * from './infinite-scroll';
 export * from './menu-bar';
 export * from './alert-box';
 export * from './badge';
+export * from './notify';
 export * from './pager';
 export * from './pagination';
 export * from './panel';

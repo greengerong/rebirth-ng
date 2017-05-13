@@ -1,5 +1,4 @@
-import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
-import { AlertBoxModel, AlertBoxService } from '../../exports';
+import { Component, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 're-alert-box-demo',
@@ -7,28 +6,12 @@ import { AlertBoxModel, AlertBoxService } from '../../exports';
   changeDetection: ChangeDetectionStrategy.OnPush
 
 })
-export class AlertBoxDemoComponent implements OnInit {
+export class AlertBoxDemoComponent {
 
-  @ViewChild('alertTemplate') alertTemplate: TemplateRef<any>;
   closed = false;
   autoDisappear = false;
-  alertIndex = 0;
-  alerts: AlertBoxModel[] = [
-    {
-      type: 'success',
-      html: 'Save order success!'
-    },
-    {
-      type: 'danger',
-      html: 'Get error: babababababa!'
-    }
-  ];
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private alertBoxService: AlertBoxService) {
-  }
-
-  ngOnInit(): void {
-    this.alerts[1].template = this.alertTemplate;
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
   }
 
   close() {
@@ -45,14 +28,5 @@ export class AlertBoxDemoComponent implements OnInit {
         this.changeDetectorRef.markForCheck();
       }, 2 * 1000);
     }
-  }
-
-  placementChange(placement) {
-    this.alertBoxService.placement(placement);
-  }
-
-  showAlertMessage() {
-    const index = this.alertIndex++ % 2;
-    this.alertBoxService.show({ ...this.alerts[index] }, index === 1 ? 2 * 1000 : 0);
   }
 }

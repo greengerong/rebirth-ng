@@ -1,12 +1,12 @@
 import { Injectable, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { AlertBoxPanelComponent } from './alert-box-panel.component';
-import { AlertBoxModel } from './alert-box.model';
+import { NotifyComponent } from './notify.component';
+import { NotifyModel } from './notify.model';
 
 @Injectable()
-export class AlertBoxService {
+export class NotifyService {
 
-  private panelRef: ComponentRef<AlertBoxPanelComponent>;
+  private panelRef: ComponentRef<NotifyComponent>;
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private componentFactoryResolver: ComponentFactoryResolver) {
@@ -19,29 +19,29 @@ export class AlertBoxService {
     }
   }
 
-  show(alertModel: AlertBoxModel, duration?: number) {
+  open(notify: NotifyModel, duration?: number) {
     if (!this.panelRef) {
       const rootContainer = this.rebirthNGConfig.rootContainer;
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(AlertBoxPanelComponent);
+      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(NotifyComponent);
       this.panelRef = rootContainer .createComponent(componentFactory, rootContainer.length);
     }
 
-    this.panelRef.instance.alerts = [...this.panelRef.instance.alerts, alertModel];
+    this.panelRef.instance.notifies = [...this.panelRef.instance.notifies, notify];
     if (duration) {
       const timeout = setTimeout(() => {
         clearTimeout(timeout);
-        this.close(alertModel);
+        this.close(notify);
       }, duration);
     }
   }
 
-  close(alertModel: AlertBoxModel) {
-    this.panelRef.instance.alerts = this.panelRef.instance.alerts.filter((alert) => alert !== alertModel);
+  close(alertModel: NotifyModel) {
+    this.panelRef.instance.notifies = this.panelRef.instance.notifies.filter((alert) => alert !== alertModel);
     this.panelRef.changeDetectorRef.markForCheck();
   }
 
   closeAll() {
-    this.panelRef.instance.alerts = [];
+    this.panelRef.instance.notifies = [];
     this.panelRef.changeDetectorRef.markForCheck();
   }
 }

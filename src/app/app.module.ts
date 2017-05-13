@@ -34,7 +34,8 @@ import {
   TimePickerDemoModule,
   RadioGroupDemoModule,
   CheckboxGroupDemoModule,
-  ValidatorsDemoModule
+  ValidatorsDemoModule,
+  NotifyDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouterModule } from '@angular/router';
@@ -86,7 +87,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     TimePickerDemoModule,
     RadioGroupDemoModule,
     CheckboxGroupDemoModule,
-    ValidatorsDemoModule
+    ValidatorsDemoModule,
+    NotifyDemoModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
