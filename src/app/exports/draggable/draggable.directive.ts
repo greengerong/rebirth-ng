@@ -12,11 +12,12 @@ export class DraggableHandleDirective {
 @Directive({
   selector: '[reDraggable]',
   host: {
-    '[draggable]': 'true'
+    '[draggable]': '!disabled'
   }
 })
 export class DraggableDirective {
   static DRAGGABLE_DATA_KEY = 'text';
+  @Input() disabled = false;
   @Input('reDraggable') group: string;
   @Input() dragData: any;
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/effectAllowed
@@ -32,6 +33,7 @@ export class DraggableDirective {
   @HostListener('dragstart', ['$event'])
   dragStart($event) {
     if (!this.draggableHandle || this.draggableHandle.elementRef.nativeElement === this.handle) {
+      $event.stopPropagation();
       $event.dataTransfer.effectAllowed = this.dragEffect;
       $event.dataTransfer.setData(DraggableDirective.DRAGGABLE_DATA_KEY, JSON.stringify({
         group: this.group,

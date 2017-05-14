@@ -5,21 +5,26 @@ import { TreeViewComponent } from './tree-view.component';
 import { TreeNodeComponent } from './tree-node.component';
 import { CheckboxGroupModule } from '../checkbox-group';
 import { FormsModule } from '@angular/forms';
+import { DraggableModule } from '../draggable';
+import { TreePanelComponent } from './tree-panel.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    CheckboxGroupModule
+    CheckboxGroupModule,
+    DraggableModule
   ],
   providers: [],
   declarations: [
     TreeViewComponent,
-    TreeNodeComponent
+    TreeNodeComponent,
+    TreePanelComponent
   ],
   exports: [
     TreeViewComponent,
-    TreeNodeComponent
+    TreeNodeComponent,
+    TreePanelComponent
   ],
 })
 export class TreeViewModule {

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { TreeViewComponent } from './tree-view.component';
+import { DraggableDirective } from '../draggable';
+import { TreePanelComponent } from './tree-panel.component';
 
 @Component({
   selector: 're-tree-node,[reTreeNode]',
@@ -14,14 +16,19 @@ export class TreeNodeComponent {
   @Input() textField: string;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
   @Input() expendIcon;
   @Input() unExpendIcon;
+  @ViewChild('nodeItemContent') nodeItemContent: ElementRef;
 
-  constructor(private treeViewComponent: TreeViewComponent) {
+  constructor(private treeViewComponent: TreeViewComponent,
+              private treePanelComponent: TreePanelComponent,
+              private renderer: Renderer2) {
+
   }
 
 
@@ -55,27 +62,37 @@ export class TreeNodeComponent {
 
   nodeItemCheckedChange(checked) {
     this.changeChildrenChecked(this.node.children, checked);
-    this.treeViewComponent.onNodeItemCheckedChanged(this.node);
+    this.treePanelComponent.onNodeItemCheckedChanged(this.node);
   }
 
   onChildrenNodeCheckedChange(node) {
     this.node.$$check = !this.node.children.some((item) => !item.$$check);
-    this.treeViewComponent.nodeItemCheckedChanged.emit(node);
+    this.treePanelComponent.onNodeItemCheckedChanged(node);
   }
 
-  onChildrenNodeItemClicked(node) {
-    this.treeViewComponent.onNodeItemClicked(node);
+  isLeaf() {
+    return !this.node.children || !this.node.children.length;
   }
 
-  onChildrenNodeItemDbClicked(node) {
-    this.treeViewComponent.onNodeItemDbClicked(node);
+  onDragEnter() {
+    this.renderer.addClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
   }
 
-  onChildrenNodeItemExpended(node) {
-    this.treeViewComponent.onNodeItemExpended(node);
+  onDragLeave() {
+    setTimeout(() => {
+      this.renderer.removeClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
+    });
   }
 
-  changeChildrenChecked(nodes: any[], checked) {
+  onDropNodeItem($event) {
+    const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
+    this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
+    setTimeout(() => {
+      this.renderer.removeClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
+    });
+  }
+
+  private changeChildrenChecked(nodes: any[], checked) {
     if (!nodes) {
       return;
     }
@@ -86,7 +103,4 @@ export class TreeNodeComponent {
     });
   }
 
-  isLeaf() {
-    return !this.node.children || !this.node.children.length;
-  }
 }

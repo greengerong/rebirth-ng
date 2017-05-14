@@ -5,6 +5,8 @@
 
 ## Features
 
+* (Notify) Add Notify service
+* (TreeView) Add TreeView component
 
 
 # 0.0.9(2017-05-12)

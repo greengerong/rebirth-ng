@@ -1,7 +1,9 @@
-<div class="node-item">
+<div class="node-item {{node.name}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"
+     [dragData]="{node: node, parent: parentNode}">
   <i class="expend-icon {{getNodeExpendIcon()}}"
      (click)="onExpendedIconClick($event)"></i>
-  <div class="node-item-content">
+  <div class="node-item-content" #nodeItemContent reDroppable="re:node-item-drop" (onDrop)="onDropNodeItem($event)"
+       (onDragEnter)="onDragEnter($event)" (onDragLeave)="onDragLeave($event)">
     <div class="node-check-box">
       <re-checkbox *ngIf="checkable" [(ngModel)]="node.$$check" label=""
                    (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>
@@ -22,23 +24,21 @@
     </ng-container>
   </div>
 
-  <re-tree-view *ngIf="node.children && node.children.length && node.$$expend"
-                class="children-view"
-                [treeData]="node.children"
-                [textField]="textField"
-                [valueField]="valueField"
-                [iconField]="iconField"
-                [checkable]="checkable"
-                [allowMutipleSelected]="allowMutipleSelected"
-                [parentNode]="parentNode"
-                [nodeItemTemplate]="nodeItemTemplate"
-                [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
-                (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"
-                (nodeItemClicked)="onChildrenNodeItemClicked($event)"
-                (nodeItemDbClicked)="onChildrenNodeItemDbClicked($event)"
-                (nodeItemExpended)="onChildrenNodeItemExpended($event)"
-                [leafIcon]="leafIcon"
-                [expendIcon]="expendIcon"
-                [unExpendIcon]="unExpendIcon"
-  ></re-tree-view>
+  <re-tree-panel *ngIf="node.children && node.children.length && node.$$expend"
+                 class="children-view"
+                 [treeData]="node.children"
+                 [textField]="textField"
+                 [valueField]="valueField"
+                 [iconField]="iconField"
+                 [checkable]="checkable"
+                 [allowDraggable]="allowDraggable"
+                 [allowMutipleSelected]="allowMutipleSelected"
+                 [parentNode]="node"
+                 [nodeItemTemplate]="nodeItemTemplate"
+                 [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
+                 [leafIcon]="leafIcon"
+                 [expendIcon]="expendIcon"
+                 [unExpendIcon]="unExpendIcon"
+                 (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"
+  ></re-tree-panel>
 </div>

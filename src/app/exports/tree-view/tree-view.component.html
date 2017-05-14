@@ -1,8 +1,7 @@
-<ul class="list-unstyled">
-  <li reTreeNode *ngFor="let node of treeData" [node]="node" [textField]="textField" [valueField]="valueField"
-      [iconField]="iconField" [checkable]="checkable" [nodeItemTemplate]="nodeItemTemplate"
-      [nodeItemToolbarTemplate]="nodeItemToolbarTemplate" [leafIcon]="leafIcon" [expendIcon]="expendIcon"
-      [unExpendIcon]="unExpendIcon" [allowMutipleSelected]="allowMutipleSelected"
-  >
-  </li>
-</ul>
+<re-tree-panel [treeData]="treeData" [textField]="textField" [valueField]="valueField"
+               [iconField]="iconField" [checkable]="checkable" [allowDraggable]="allowDraggable"
+               [nodeItemTemplate]="nodeItemTemplate"
+               [nodeItemToolbarTemplate]="nodeItemToolbarTemplate" [leafIcon]="leafIcon" [expendIcon]="expendIcon"
+               [unExpendIcon]="unExpendIcon" [allowMutipleSelected]="allowMutipleSelected"
+               (nodeItemCheckedChanged)="onNodeItemCheckedChanged($event)">
+</re-tree-panel>

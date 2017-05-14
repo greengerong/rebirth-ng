@@ -11,6 +11,7 @@ export class TreeViewDemoComponent {
   treeData2 = this.clone(treeData);
   treeData3 = this.clone(treeData);
   treeData4 = this.clone(treeData);
+  treeData5 = this.clone(treeData);
 
   clone(data) {
     return JSON.parse(JSON.stringify(data));

@@ -9,11 +9,11 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 })
 export class TreeViewComponent {
   @Input() treeData: any[];
-  @Input() parentNode: any;
   @Input() valueField;
   @Input() textField;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
@@ -21,6 +21,7 @@ export class TreeViewComponent {
   @Input() expendIcon;
   @Input() unExpendIcon;
   @Output() nodeItemClicked = new EventEmitter<any>();
+  @Output() nodeItemDroped = new EventEmitter<any>();
   @Output() nodeItemDbClicked = new EventEmitter<any>();
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
   @Output() nodeItemExpended = new EventEmitter<any>();
@@ -56,12 +57,49 @@ export class TreeViewComponent {
     this.nodeItemCheckedChanged.emit(node);
   }
 
+  onNodeItemDroped($event) {
+    const target = $event.target;
+    const source = $event.data.data.node;
+    const sourceParent = $event.data.data.parent;
+    if (sourceParent && sourceParent[this.valueField]) {
+      const matchNode = this.getTreeNodeById(this.treeData, sourceParent[this.valueField]);
+      if (matchNode) {
+        matchNode.children = matchNode.children.filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
+      }
+    } else {
+      if (this.treeData.length < 2) {
+        return;
+      }
+      this.treeData = this.treeData.filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
+    }
+    target.children = target.children || [];
+    target.children.push(source);
+    this.nodeItemDroped.emit($event);
+  }
+
   getSelectNode() {
     return this.getMatchedItems(this.treeData, '$$select');
   }
 
   getCheckedNodes() {
     return this.getMatchedItems(this.treeData, '$$check');
+  }
+
+  private getTreeNodeById(items: any[], id) {
+    if (!items) {
+      return;
+    }
+
+    for (let i = 0; i < items.length; i++) {
+      const nodeItem = items[i];
+      if (nodeItem[this.valueField] === id) {
+        return nodeItem;
+      }
+      const matchNode = this.getTreeNodeById(nodeItem.children, id);
+      if (matchNode) {
+        return matchNode;
+      }
+    }
   }
 
   private getMatchedItems(items: any[], field) {
