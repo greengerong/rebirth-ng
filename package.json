@@ -59,6 +59,7 @@
     "core-js": "^2.4.1",
     "cross-env": "^4.0.0",
     "del": "^2.2.2",
+    "drag-drop-webkit-mobile": "^1.4.1",
     "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",

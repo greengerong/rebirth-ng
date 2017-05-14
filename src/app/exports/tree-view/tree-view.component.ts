@@ -59,6 +59,9 @@ export class TreeViewComponent {
 
   onNodeItemDroped($event) {
     const target = $event.target;
+    if (!target) {
+      return;
+    }
     const source = $event.data.data.node;
     const sourceParent = $event.data.data.parent;
     if (sourceParent && sourceParent[this.valueField]) {

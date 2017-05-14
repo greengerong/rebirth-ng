@@ -70,3 +70,12 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'intl';  // Run `npm install --save intl`.
 
 import 'intl/locale-data/jsonp/en';
+
+import * as iosDragDropShim from 'drag-drop-webkit-mobile';
+
+iosDragDropShim({
+  enableEnterLeave: true,
+  holdToDrag: 300,
+  simulateAnchorClick: false,
+  requireExplicitDraggable: true
+});
