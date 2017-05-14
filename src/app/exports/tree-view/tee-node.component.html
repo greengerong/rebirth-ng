@@ -2,7 +2,19 @@
   <i class="glyphicon"
      [ngClass]="{'glyphicon-chevron-down': node.$$expend, 'glyphicon-chevron-right': !node.$$expend, 'glyphicon-leaf': isLeaf()}"
      (click)="onExpendedIconClick($event)"></i>
-  <div class="node-item-content" (click)="onNodeItemClick($event)"><span   class="node-text">{{node.name}}</span></div>
+  <div class="node-item-content" (click)="onNodeItemClick($event)">
+    <ng-container *ngIf="!nodeItemTemplate">
+      <span class="node-text">{{node.name}}</span>
+      <div class="toolbar">
+        <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
+                     [ngOutletContext]="{ $implicit: node }"></ng-template>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="nodeItemTemplate">
+      <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"
+                   [ngOutletContext]="{ $implicit: node }"></ng-template>
+    </ng-container>
+  </div>
 
   <re-tree-view *ngIf="node.children && node.children.length && node.$$expend"
                 class="children-view"

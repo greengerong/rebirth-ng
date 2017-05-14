@@ -1,8 +1,28 @@
 <div class="tree-view-demo">
 
   <section>
-    <h4>Demo:</h4>
+    <h4>Normal:</h4>
     <re-tree-view [treeData]="treeData"></re-tree-view>
   </section>
+
+  <section>
+    <h4>Toolbar:</h4>
+    <ng-template #toolbar let-node="">
+      <i class="glyphicon glyphicon-plus"></i> <i class="glyphicon glyphicon-remove"></i>
+    </ng-template>
+    <re-tree-view [treeData]="treeData" [nodeItemToolbarTemplate]="toolbar"></re-tree-view>
+  </section>
+
+
+  <section>
+    <h4>Customise template:</h4>
+    <ng-template #nodeItemTemplate let-node="">
+      <span class="node-text">{{node.id}}: {{node.name}}</span>
+      <i class="glyphicon glyphicon-plus"></i>
+      <i class="glyphicon glyphicon-remove"></i>
+    </ng-template>
+    <re-tree-view [treeData]="treeData" [nodeItemTemplate]="nodeItemTemplate"></re-tree-view>
+  </section>
+
 
 </div>

@@ -14,6 +14,7 @@ export class TreeViewComponent {
   @Input() iconField: 'label';
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
+  @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Output() nodeItemClicked = new EventEmitter<any>();
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
   @Output() nodeItemExpended = new EventEmitter<any>();
