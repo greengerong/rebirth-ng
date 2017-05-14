@@ -86,7 +86,9 @@ export class TreeNodeComponent {
 
   onDropNodeItem($event) {
     const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
-    this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
+    if (dropData.data.node && this.node[this.valueField] !== dropData.data.node[this.valueField]) {
+      this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
+    }
     setTimeout(() => {
       this.renderer.removeClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
     });
