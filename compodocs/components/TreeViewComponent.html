@@ -1907,7 +1907,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="83" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:83</a></div>
                             </td>
                         </tr>
     
@@ -1937,7 +1937,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:84</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="87" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:87</a></div>
                             </td>
                         </tr>
     
@@ -1970,7 +1970,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:88</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:91</a></div>
                             </td>
                         </tr>
     
@@ -2003,7 +2003,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:105</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:108</a></div>
                             </td>
                         </tr>
     
@@ -2115,6 +2115,9 @@ export class TreeViewComponent {
 
   onNodeItemDroped($event) {
     const target &#x3D; $event.target;
+    if (!target) {
+      return;
+    }
     const source &#x3D; $event.data.data.node;
     const sourceParent &#x3D; $event.data.data.parent;
     if (sourceParent &amp;&amp; sourceParent[this.valueField]) {
