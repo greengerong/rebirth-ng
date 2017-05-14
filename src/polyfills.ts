@@ -79,3 +79,7 @@ iosDragDropShim({
   simulateAnchorClick: false,
   requireExplicitDraggable: true
 });
+
+window.addEventListener("touchmove", function () {
+  //
+});
