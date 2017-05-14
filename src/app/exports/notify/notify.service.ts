@@ -16,7 +16,7 @@ export class NotifyService {
 
   placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right'| 'center') {
     if (this.panelRef) {
-      this.panelRef.instance.placement = placement;
+      this.panelRef.instance.placement = placement || 'top-right';
     }
     this._placement = placement;
   }
