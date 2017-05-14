@@ -74,6 +74,23 @@ export class TreeNodeComponent {
     return !this.node.children || !this.node.children.length;
   }
 
+  isAcceptDrop($event) {
+    const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
+    if (!dropData.data.node) {
+      return false;
+    }
+
+    if (this.isNodeMyself(dropData)) {
+      return false;
+    }
+
+    if (this.isDescendant(dropData.data.node, this.node)) {
+      return false;
+    }
+
+    return true;
+  }
+
   onDragEnter() {
     this.renderer.addClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
   }
@@ -86,11 +103,25 @@ export class TreeNodeComponent {
 
   onDropNodeItem($event) {
     const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
-    if (dropData.data.node && this.node[this.valueField] !== dropData.data.node[this.valueField]) {
+    if (dropData.data.node && !this.isNodeMyself(dropData)) {
       this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
     }
     setTimeout(() => {
       this.renderer.removeClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
+    });
+  }
+
+  private isNodeMyself(dropData: any) {
+    return this.node[this.valueField] === dropData.data.node[this.valueField];
+  }
+
+  private isDescendant(parent, target) {
+    if (!parent) {
+      return false;
+    }
+
+    return (parent.children || []).some((nodeItem) => {
+      return nodeItem[this.valueField] === target[this.valueField] || this.isDescendant(nodeItem, target);
     });
   }
 

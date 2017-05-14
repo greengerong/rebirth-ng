@@ -7,6 +7,7 @@ import { DraggableDirective } from './draggable.directive';
 export class DroppableDirective {
 
   @Input('reDroppable') group: string;
+  @Input() acceptDrop: ($event) => boolean;
 
   // https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer/dropEffect
   @Input() dropEffect: 'copy' | 'move' | 'link' | 'none' = 'move';
@@ -22,10 +23,8 @@ export class DroppableDirective {
 
   @HostListener('drop', ['$event'])
   drop($event) {
-    if (!this.group || this.isDropGroup($event)) {
-      $event.preventDefault();
-      $event.stopPropagation();
-      this.onDrop.emit($event);
+    if ((!this.group || this.isDropGroup($event)) && (!this.acceptDrop || this.acceptDrop($event))) {
+      this.startDrop($event);
     }
   }
 
@@ -51,11 +50,17 @@ export class DroppableDirective {
     this.onDragOver.emit($event);
   }
 
-  isDropGroup($event): boolean {
+  private isDropGroup($event): boolean {
     const contextData = $event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY);
     if (contextData) {
       const draggableData = JSON.parse(contextData);
       return this.group === draggableData.group;
     }
+  }
+
+  private startDrop($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.onDrop.emit($event);
   }
 }

@@ -75,11 +75,5 @@ import * as iosDragDropShim from 'drag-drop-webkit-mobile';
 
 iosDragDropShim({
   enableEnterLeave: true,
-  holdToDrag: 300,
-  simulateAnchorClick: false,
-  requireExplicitDraggable: true
-});
-
-window.addEventListener('touchmove', function () {
-  //
+  holdToDrag: 300
 });
