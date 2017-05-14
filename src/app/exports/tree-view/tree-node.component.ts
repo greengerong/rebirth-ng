@@ -10,8 +10,8 @@ import { TreeViewComponent } from './tree-view.component';
 export class TreeNodeComponent {
   @Input() node: any;
   @Input() parentNode: any;
-  @Input() valueField = 'id';
-  @Input() textField = 'label';
+  @Input() valueField: string;
+  @Input() textField: string;
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;

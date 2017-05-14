@@ -144,6 +144,8 @@ export class RebirthNGConfig {
   };
 
   treeView = {
+    textField: 'label',
+    valueField: 'id',
     leafIcon: 'glyphicon glyphicon-leaf',
     expendIcon: 'glyphicon glyphicon-chevron-down',
     unExpendIcon: 'glyphicon glyphicon-chevron-right'

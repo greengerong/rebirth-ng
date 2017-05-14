@@ -9,9 +9,9 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 })
 export class TreeViewComponent {
   @Input() treeData: any[];
-  @Input() valueField = 'id';
   @Input() parentNode: any;
-  @Input() textField = 'label';
+  @Input() valueField;
+  @Input() textField;
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
@@ -25,6 +25,8 @@ export class TreeViewComponent {
   @Output() nodeItemExpended = new EventEmitter<any>();
 
   constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.valueField = rebirthNGConfig.treeView.valueField;
+    this.textField = rebirthNGConfig.treeView.textField;
     this.leafIcon = rebirthNGConfig.treeView.leafIcon;
     this.expendIcon = rebirthNGConfig.treeView.expendIcon;
     this.unExpendIcon = rebirthNGConfig.treeView.unExpendIcon;
