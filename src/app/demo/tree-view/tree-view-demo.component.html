@@ -42,4 +42,23 @@
     <re-tree-view [treeData]="treeData5" textField="name" valueFeild="id" [allowDraggable]="true"></re-tree-view>
   </section>
 
+  <section>
+    <h4>Big data:</h4>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" id="amount" name="amount" [(ngModel)]="treeNodeCount">
+      </div>
+      <div class="form-group">
+        <re-checkbox name="largeTreeCheckable" [(ngModel)]="largeTreeCheckable" label="Checkable"></re-checkbox>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
+      <button type="submit" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
+    </form>
+    <hr>
+
+    <re-tree-view [treeData]="largeNodes" textField="name" valueFeild="id"
+                  [checkable]="largeTreeCheckable"></re-tree-view>
+  </section>
+
 </div>
