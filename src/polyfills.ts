@@ -80,6 +80,6 @@ iosDragDropShim({
   requireExplicitDraggable: true
 });
 
-window.addEventListener("touchmove", function () {
+window.addEventListener('touchmove', function () {
   //
 });
