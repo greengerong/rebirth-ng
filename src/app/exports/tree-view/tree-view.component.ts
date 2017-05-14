@@ -1,10 +1,9 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 're-tree-view',
   templateUrl: './tree-view.component.html',
   styleUrls: ['./tree-view.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'treeView'
 })
 export class TreeViewComponent {

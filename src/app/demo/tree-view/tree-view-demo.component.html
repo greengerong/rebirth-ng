@@ -2,7 +2,12 @@
 
   <section>
     <h4>Normal:</h4>
-    <re-tree-view [treeData]="treeData" textField="name" valueFeild="id"></re-tree-view>
+    <re-tree-view [treeData]="treeData1" textField="name" valueFeild="id"></re-tree-view>
+  </section>
+
+  <section>
+    <h4>Checked:</h4>
+    <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"></re-tree-view>
   </section>
 
   <section>
@@ -10,7 +15,7 @@
     <ng-template #toolbar let-node="">
       <i class="glyphicon glyphicon-plus"></i> <i class="glyphicon glyphicon-remove"></i>
     </ng-template>
-    <re-tree-view [treeData]="treeData" textField="name" valueFeild="id" iconField="icon"
+    <re-tree-view [treeData]="treeData3" textField="name" valueFeild="id" iconField="icon"
                   [nodeItemToolbarTemplate]="toolbar"></re-tree-view>
   </section>
 
@@ -22,7 +27,7 @@
       <i class="glyphicon glyphicon-plus"></i>
       <i class="glyphicon glyphicon-remove"></i>
     </ng-template>
-    <re-tree-view [treeData]="treeData" textField="name" valueFeild="id"
+    <re-tree-view [treeData]="treeData4" textField="name" valueFeild="id"
                   [nodeItemTemplate]="nodeItemTemplate"></re-tree-view>
   </section>
 

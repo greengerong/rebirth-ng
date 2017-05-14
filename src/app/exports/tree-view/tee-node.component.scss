@@ -17,8 +17,14 @@
   }
 }
 
-.toolbar {
+.toolbar, .node-check-box {
   display: inline-block;
+}
+
+.node-check-box {
+  .checkbox {
+    margin: 0px;
+  }
 }
 
 .children-view {

@@ -4,15 +4,19 @@
      (click)="onExpendedIconClick($event)"></i>
   <div class="node-item-content">
     <ng-container *ngIf="!nodeItemTemplate" (click)="onNodeItemClick($event)" (dblclick)="onNodeItemDbClicked($event)">
+      <div class="node-check-box">
+        <re-checkbox *ngIf="checkable" [(ngModel)]="node.$$check" label=""
+                     (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>
+      </div>
       <span class="node-text"><i *ngIf="iconField && node[iconField]" class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}}</span>
       <div class="toolbar">
         <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
-                     [ngOutletContext]="{ $implicit: node }"></ng-template>
+                     [ngOutletContext]="{$implicit: node}"></ng-template>
       </div>
     </ng-container>
     <ng-container *ngIf="nodeItemTemplate">
       <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"
-                   [ngOutletContext]="{ $implicit: node }"></ng-template>
+                   [ngOutletContext]="{$implicit: node,  parentNode:parentNode }"></ng-template>
     </ng-container>
   </div>
 
@@ -25,5 +29,9 @@
                 [checkable]="checkable"
                 [nodeItemTemplate]="nodeItemTemplate"
                 [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
+                (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"
+                (nodeItemClicked)="onChildrenNodeItemClicked($event)"
+                (nodeItemDbClicked)="onChildrenNodeItemDbClicked($event)"
+                (nodeItemExpended)="onChildrenNodeItemExpended($event)"
   ></re-tree-view>
 </div>

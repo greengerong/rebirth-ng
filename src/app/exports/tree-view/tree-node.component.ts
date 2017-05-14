@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { TreeViewComponent } from './tree-view.component';
 
 @Component({
@@ -16,7 +16,7 @@ export class TreeNodeComponent implements OnInit {
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
 
-  constructor(private treeViewComponent: TreeViewComponent) {
+  constructor(private treeViewComponent: TreeViewComponent, private changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit() {
@@ -39,6 +39,39 @@ export class TreeNodeComponent implements OnInit {
 
   onNodeItemDbClicked() {
     this.treeViewComponent.onNodeItemDbClicked(this.node);
+  }
+
+  nodeItemCheckedChange(checked) {
+    this.changeChildrenChecked(this.node.children, checked);
+    this.treeViewComponent.onNodeItemCheckedChanged(this.node);
+  }
+
+  onChildrenNodeCheckedChange(node) {
+    this.node.$$check = !this.node.children.some((node) => !node.$$check);
+    this.treeViewComponent.nodeItemCheckedChanged.emit(node);
+  }
+
+  onChildrenNodeItemClicked(node) {
+    this.treeViewComponent.onNodeItemClicked(node);
+  }
+
+  onChildrenNodeItemDbClicked(node) {
+    this.treeViewComponent.onNodeItemDbClicked(node);
+  }
+
+  onChildrenNodeItemExpended(node) {
+    this.treeViewComponent.onNodeItemExpended(node);
+  }
+
+  changeChildrenChecked(nodes: any[], checked) {
+    if (!nodes) {
+      return;
+    }
+
+    nodes.forEach((node) => {
+      node.$$check = checked;
+      this.changeChildrenChecked(node.children, checked);
+    });
   }
 
   isLeaf() {
