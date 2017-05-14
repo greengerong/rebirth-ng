@@ -2,17 +2,13 @@
 
   <section>
     <h4>Normal:</h4>
-    <re-tree-view [treeData]="treeData1" textField="name" valueFeild="id"></re-tree-view>
+    <re-tree-view [treeData]="treeData1" textField="name" valueFeild="id" [allowMutipleSelected]="false"></re-tree-view>
   </section>
 
   <section>
     <h4>Checked:</h4>
-    <button class="btn btn-primary" (click)="allowMutipleSelected = !allowMutipleSelected">
-      {{allowMutipleSelected? "Single select" : "Mutiple select"}}
-    </button>
-    <hr>
     <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
-                  #treeView="treeView" [allowMutipleSelected]="allowMutipleSelected"></re-tree-view>
+                  #treeView="treeView" [allowMutipleSelected]="true"></re-tree-view>
 
     Selected Node ID:
     <pre>{{treeView.getSelectNode()}}</pre>

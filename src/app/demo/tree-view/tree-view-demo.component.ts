@@ -7,7 +7,6 @@ const treeData = require('./data.json');
   templateUrl: './tree-view-demo.component.html'
 })
 export class TreeViewDemoComponent {
-  allowMutipleSelected = false;
   treeData1 = this.clone(treeData);
   treeData2 = this.clone(treeData);
   treeData3 = this.clone(treeData);
