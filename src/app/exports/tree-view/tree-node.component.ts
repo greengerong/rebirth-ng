@@ -16,8 +16,20 @@ export class TreeNodeComponent {
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
+  @Input() leafIcon;
+  @Input() expendIcon;
+  @Input() unExpendIcon;
 
   constructor(private treeViewComponent: TreeViewComponent) {
+  }
+
+
+  getNodeExpendIcon() {
+    if (this.isLeaf()) {
+      return this.leafIcon;
+    }
+
+    return this.node.$$expend ? this.expendIcon : this.unExpendIcon;
   }
 
   onExpendedIconClick($event) {

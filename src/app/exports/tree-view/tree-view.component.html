@@ -1,7 +1,8 @@
 <ul class="list-unstyled">
   <li reTreeNode *ngFor="let node of treeData" [node]="node" [textField]="textField" [valueField]="valueField"
       [iconField]="iconField" [checkable]="checkable" [nodeItemTemplate]="nodeItemTemplate"
-      [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
+      [nodeItemToolbarTemplate]="nodeItemToolbarTemplate" [leafIcon]="leafIcon" [expendIcon]="expendIcon"
+      [unExpendIcon]="unExpendIcon"
   >
   </li>
 </ul>

@@ -143,6 +143,11 @@ export class RebirthNGConfig {
     vertical: false
   };
 
+  treeView = {
+    leafIcon: 'glyphicon glyphicon-leaf',
+    expendIcon: 'glyphicon glyphicon-chevron-down',
+    unExpendIcon: 'glyphicon glyphicon-chevron-right'
+  };
   // constructor(@Inject(LOCALE_ID) private locale: string) {
   // }
 

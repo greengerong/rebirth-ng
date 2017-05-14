@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({
   selector: 're-tree-view',
@@ -15,10 +16,19 @@ export class TreeViewComponent {
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
+  @Input() leafIcon;
+  @Input() expendIcon;
+  @Input() unExpendIcon;
   @Output() nodeItemClicked = new EventEmitter<any>();
   @Output() nodeItemDbClicked = new EventEmitter<any>();
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
   @Output() nodeItemExpended = new EventEmitter<any>();
+
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.leafIcon = rebirthNGConfig.treeView.leafIcon;
+    this.expendIcon = rebirthNGConfig.treeView.expendIcon;
+    this.unExpendIcon = rebirthNGConfig.treeView.unExpendIcon;
+  }
 
   onNodeItemExpended(node) {
     this.nodeItemExpended.emit(node);
