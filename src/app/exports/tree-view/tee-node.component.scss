@@ -2,8 +2,11 @@
   position: relative;
 }
 
-.node-item-content {
+.node-item-content /deep/ {
   display: inline-block;
+  .node-icon {
+    margin-right: 2px;
+  }
   .node-text {
     cursor: pointer;
     padding: 2px;

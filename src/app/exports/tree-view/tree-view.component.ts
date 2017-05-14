@@ -10,12 +10,29 @@ import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, Templa
 export class TreeViewComponent {
   @Input() treeData: any[];
   @Input() valueFeild = 'id';
-  @Input() textField: 'label';
-  @Input() iconField: 'label';
+  @Input() textField = 'label';
+  @Input() iconField: string;
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Output() nodeItemClicked = new EventEmitter<any>();
+  @Output() nodeItemDbClicked = new EventEmitter<any>();
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
   @Output() nodeItemExpended = new EventEmitter<any>();
+
+  onNodeItemExpended(node) {
+    this.nodeItemExpended.emit(node);
+  }
+
+  onNodeItemClicked(node) {
+    this.nodeItemClicked.emit(node);
+  }
+
+  onNodeItemDbClicked(node) {
+    this.nodeItemDbClicked.emit(node);
+  }
+
+  onNodeItemCheckedChanged(node) {
+    this.nodeItemCheckedChanged.emit(node);
+  }
 }
