@@ -1,6 +1,6 @@
 {
   "name": "rebirth-ng",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "angular-cli": {},
   "main": "index.js",
