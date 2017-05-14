@@ -76,6 +76,7 @@ export class TreeViewComponent {
       this.treeData = this.treeData.filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
     }
     target.children = target.children || [];
+    source.$$select = false;
     target.children.push(source);
     this.nodeItemDroped.emit($event);
   }
