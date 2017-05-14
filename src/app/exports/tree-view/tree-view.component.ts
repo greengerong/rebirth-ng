@@ -14,6 +14,7 @@ export class TreeViewComponent {
   @Input() textField;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
@@ -38,10 +39,12 @@ export class TreeViewComponent {
   }
 
   onNodeItemClicked(node) {
-    if (this.selectNode && this.selectNode !== node) {
-      this.selectNode.$$select = false;
+    if (!this.allowMutipleSelected) {
+      if (this.selectNode && this.selectNode !== node) {
+        this.selectNode.$$select = false;
+      }
+      this.selectNode = node;
     }
-    this.selectNode = node;
     this.nodeItemClicked.emit(node);
   }
 

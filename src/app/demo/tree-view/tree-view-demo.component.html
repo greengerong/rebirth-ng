@@ -7,8 +7,12 @@
 
   <section>
     <h4>Checked:</h4>
+    <button class="btn btn-primary" (click)="allowMutipleSelected = !allowMutipleSelected">
+      {{allowMutipleSelected? "Single select" : "Mutiple select"}}
+    </button>
+    <hr>
     <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
-                  #treeView="treeView"></re-tree-view>
+                  #treeView="treeView" [allowMutipleSelected]="allowMutipleSelected"></re-tree-view>
 
     Selected Node ID:
     <pre>{{treeView.getSelectNode()}}</pre>

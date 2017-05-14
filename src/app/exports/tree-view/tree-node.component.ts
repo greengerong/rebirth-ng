@@ -14,6 +14,7 @@ export class TreeNodeComponent {
   @Input() textField: string;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
