@@ -20,7 +20,7 @@ export class TreeViewDemoComponent {
     return JSON.parse(JSON.stringify(data));
   }
 
-  private  generateTreeData() {
+  generateTreeData() {
     this.largeNodes = this.dataMaker(this.treeNodeCount);
     console.log('tree data generate finish!');
   }
