@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, TemplateRef, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { TreeViewComponent } from './tree-view.component';
 
 @Component({
@@ -10,14 +10,14 @@ import { TreeViewComponent } from './tree-view.component';
 export class TreeNodeComponent implements OnInit {
   @Input() node: any;
   @Input() parentNode: any;
-  @Input() valueFeild = 'id';
+  @Input() valueField = 'id';
   @Input() textField = 'label';
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
 
-  constructor(private treeViewComponent: TreeViewComponent, private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private treeViewComponent: TreeViewComponent) {
   }
 
   ngOnInit() {

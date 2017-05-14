@@ -8,7 +8,7 @@ import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/co
 })
 export class TreeViewComponent {
   @Input() treeData: any[];
-  @Input() valueFeild = 'id';
+  @Input() valueField = 'id';
   @Input() parentNode: any;
   @Input() textField = 'label';
   @Input() iconField: string;
