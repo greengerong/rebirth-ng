@@ -7,7 +7,13 @@
 
   <section>
     <h4>Checked:</h4>
-    <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"></re-tree-view>
+    <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
+                  #treeView="treeView"></re-tree-view>
+
+    Selected Node ID:
+    <pre>{{treeView.getSelectNode()}}</pre>
+    Checked Nodes ID:
+    <pre>[{{treeView.getCheckedNodes()}}]</pre>
   </section>
 
   <section>

@@ -23,6 +23,7 @@ export class TreeViewComponent {
   @Output() nodeItemDbClicked = new EventEmitter<any>();
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
   @Output() nodeItemExpended = new EventEmitter<any>();
+  private selectNode: any;
 
   constructor(rebirthNGConfig: RebirthNGConfig) {
     this.valueField = rebirthNGConfig.treeView.valueField;
@@ -37,6 +38,10 @@ export class TreeViewComponent {
   }
 
   onNodeItemClicked(node) {
+    if (this.selectNode) {
+      this.selectNode.$$select = false;
+    }
+    this.selectNode = node;
     this.nodeItemClicked.emit(node);
   }
 
@@ -46,5 +51,29 @@ export class TreeViewComponent {
 
   onNodeItemCheckedChanged(node) {
     this.nodeItemCheckedChanged.emit(node);
+  }
+
+  getSelectNode() {
+    return this.getMatchedItems(this.treeData, '$$select');
+  }
+
+  getCheckedNodes() {
+    return this.getMatchedItems(this.treeData, '$$check');
+  }
+
+  private getMatchedItems(items: any[], field) {
+    if (!items) {
+      return [];
+    }
+
+    const nodes = [];
+    items.forEach((nodeItem) => {
+      if (nodeItem[field]) {
+        nodes.push(nodeItem[this.valueField]);
+      }
+      nodes.push(...this.getMatchedItems(nodeItem.children, field));
+    });
+
+    return nodes;
   }
 }

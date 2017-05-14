@@ -2,20 +2,23 @@
   <i class="expend-icon {{getNodeExpendIcon()}}"
      (click)="onExpendedIconClick($event)"></i>
   <div class="node-item-content">
-    <ng-container *ngIf="!nodeItemTemplate" (click)="onNodeItemClick($event)" (dblclick)="onNodeItemDbClicked($event)">
-      <div class="node-check-box">
-        <re-checkbox *ngIf="checkable" [(ngModel)]="node.$$check" label=""
-                     (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>
-      </div>
-      <span class="node-text"><i *ngIf="iconField && node[iconField]" class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}}</span>
+    <div class="node-check-box">
+      <re-checkbox *ngIf="checkable" [(ngModel)]="node.$$check" label=""
+                   (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>
+    </div>
+    <ng-container *ngIf="!nodeItemTemplate">
+      <span class="node-text" [ngClass]="{'bg-primary': node.$$select}" (click)="onNodeItemClick($event)"
+            (dblclick)="onNodeItemDbClicked($event)">
+        <i *ngIf="iconField && node[iconField]"
+           class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}}</span>
       <div class="toolbar">
         <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
-                     [ngOutletContext]="{$implicit: node, parentNode:parentNode}"></ng-template>
+                     [ngOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>
       </div>
     </ng-container>
     <ng-container *ngIf="nodeItemTemplate">
       <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"
-                   [ngOutletContext]="{$implicit: node,  parentNode:parentNode }"></ng-template>
+                   [ngOutletContext]="{$implicit: node,  parentNode:parentNode, tree: this }"></ng-template>
     </ng-container>
   </div>
 

@@ -10,9 +10,9 @@
   .node-text {
     cursor: pointer;
     padding: 2px;
-    &:hover {
+    border-radius: 4px;
+    &:not(.bg-primary):hover {
       border: 1px dashed #ddd;
-      border-radius: 4px;
     }
   }
 }
