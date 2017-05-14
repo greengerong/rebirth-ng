@@ -7,7 +7,7 @@ import { TreeViewComponent } from './tree-view.component';
   styleUrls: ['./tee-node.component.scss'],
   exportAs: 'treeNode'
 })
-export class TreeNodeComponent implements OnInit {
+export class TreeNodeComponent {
   @Input() node: any;
   @Input() parentNode: any;
   @Input() valueField = 'id';
@@ -18,9 +18,6 @@ export class TreeNodeComponent implements OnInit {
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
 
   constructor(private treeViewComponent: TreeViewComponent) {
-  }
-
-  ngOnInit() {
   }
 
   onExpendedIconClick($event) {
@@ -48,7 +45,7 @@ export class TreeNodeComponent implements OnInit {
   }
 
   onChildrenNodeCheckedChange(node) {
-    this.node.$$check = !this.node.children.some((node) => !node.$$check);
+    this.node.$$check = !this.node.children.some((item) => !item.$$check);
     this.treeViewComponent.nodeItemCheckedChanged.emit(node);
   }
 
