@@ -1995,7 +1995,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/exports/tree-view/tree-node.component.ts:95</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/exports/tree-view/tree-node.component.ts:97</a></div>
                             </td>
                         </tr>
     
@@ -2134,7 +2134,9 @@ export class TreeNodeComponent {
 
   onDropNodeItem($event) {
     const dropData &#x3D; JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
-    this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
+    if (dropData.data.node &amp;&amp; this.node[this.valueField] !&#x3D;&#x3D; dropData.data.node[this.valueField]) {
+      this.treeViewComponent.onNodeItemDroped({ target: this.node, data: dropData });
+    }
     setTimeout(() &#x3D;&gt; {
       this.renderer.removeClass(this.nodeItemContent.nativeElement, &#x27;drop-node-enter&#x27;);
     });
