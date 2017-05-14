@@ -164,6 +164,9 @@
                                 <li class="link">
                                     <a href="../modules/TooltipModule.html" >TooltipModule</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../modules/TreeViewModule.html" >TreeViewModule</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -357,6 +360,12 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TreeNodeComponent.html" >TreeNodeComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TreeViewComponent.html" >TreeViewComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
@@ -618,6 +627,9 @@
                                 <li class="link">
                                     <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
                                 </li>
+                                <li class="link">
+                                    <a href="../interfaces/TreeViewModel.html" >TreeViewModel</a>
+                                </li>
                         </ul>
                     </li>
             
@@ -801,6 +813,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/TooltipModule.html" >TooltipModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/TreeViewModule.html" >TreeViewModule</a>
                                        </li>
                                </ul>
                            </li>
@@ -995,6 +1010,12 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/TooltipPopupComponent.html" >TooltipPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TreeNodeComponent.html" >TreeNodeComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TreeViewComponent.html" >TreeViewComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/UploadFileTmplComponent.html" >UploadFileTmplComponent</a>
@@ -1255,6 +1276,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../interfaces/SortChangeEventArg.html" >SortChangeEventArg</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../interfaces/TreeViewModel.html" >TreeViewModel</a>
                                        </li>
                                </ul>
                            </li>
@@ -1532,7 +1556,7 @@ export class NotifyService {
 
   placement(placement: &#x27;top&#x27; | &#x27;top-right&#x27; | &#x27;bottom&#x27; | &#x27;bottom-right&#x27;| &#x27;center&#x27;) {
     if (this.panelRef) {
-      this.panelRef.instance.placement &#x3D; placement;
+      this.panelRef.instance.placement &#x3D; placement || &#x27;top-right&#x27;;
     }
     this._placement &#x3D; placement;
   }
