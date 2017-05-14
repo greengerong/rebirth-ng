@@ -9,6 +9,7 @@ import { TreeViewComponent } from './tree-view.component';
 })
 export class TreeNodeComponent implements OnInit {
   @Input() node: any;
+  @Input() parentNode: any;
   @Input() valueFeild = 'id';
   @Input() textField = 'label';
   @Input() iconField: string;

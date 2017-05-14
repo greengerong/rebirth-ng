@@ -11,7 +11,7 @@
       <span class="node-text"><i *ngIf="iconField && node[iconField]" class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}}</span>
       <div class="toolbar">
         <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
-                     [ngOutletContext]="{$implicit: node}"></ng-template>
+                     [ngOutletContext]="{$implicit: node, parentNode:parentNode}"></ng-template>
       </div>
     </ng-container>
     <ng-container *ngIf="nodeItemTemplate">
@@ -27,6 +27,7 @@
                 [valueFeild]="valueFeild"
                 [iconField]="iconField"
                 [checkable]="checkable"
+                [parentNode]="parentNode"
                 [nodeItemTemplate]="nodeItemTemplate"
                 [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
                 (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"
