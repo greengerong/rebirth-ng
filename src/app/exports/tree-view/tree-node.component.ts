@@ -44,8 +44,7 @@ export class TreeNodeComponent {
 
   onNodeItemClick($event) {
     $event.stopPropagation();
-    this.node.$$select = true;
-    // this.node.$$select = !this.node.$$select;
+    this.node.$$select = !this.node.$$select;
     this.treeViewComponent.onNodeItemClicked(this.node);
   }
 

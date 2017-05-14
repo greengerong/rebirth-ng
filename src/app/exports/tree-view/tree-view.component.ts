@@ -38,7 +38,7 @@ export class TreeViewComponent {
   }
 
   onNodeItemClicked(node) {
-    if (this.selectNode) {
+    if (this.selectNode && this.selectNode !== node) {
       this.selectNode.$$select = false;
     }
     this.selectNode = node;
