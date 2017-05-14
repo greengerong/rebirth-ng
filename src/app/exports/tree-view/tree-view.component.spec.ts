@@ -2,12 +2,13 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { TreeViewComponent } from './tree-view.component';
+import { TreeViewModule } from './tree-view.module';
 
 describe('TreeView', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        TreeViewComponent
+      imports: [
+        TreeViewModule
       ],
     });
     TestBed.compileComponents();

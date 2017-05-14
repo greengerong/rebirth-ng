@@ -6,8 +6,8 @@ import { <%= componentName %>Component } from './<%= componentSelector %>.compon
 describe('<%= componentName %>', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        <%= componentName %>Component
+      imports: [
+        <%= componentName %>Module
       ],
     });
     TestBed.compileComponents();
