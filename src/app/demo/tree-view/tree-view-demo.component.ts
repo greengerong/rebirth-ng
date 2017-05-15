@@ -14,19 +14,19 @@ export class TreeViewDemoComponent {
   treeData4 = this.clone(treeData);
   treeData5 = this.clone(treeData);
   lazyLoadTreeData = [{
-    "id": "1",
-    "pid": "0",
-    "name": "Lazyload node 1",
+    'id': '1',
+    'pid': '0',
+    'name': 'Lazyload node 1',
   },
     {
-      "id": "2",
-      "pid": "0",
-      "name": "Lazyload node 2",
+      'id': '2',
+      'pid': '0',
+      'name': 'Lazyload node 2',
     },
     {
-      "id": "3",
-      "pid": "0",
-      "name": "Lazyload node 3",
+      'id': '3',
+      'pid': '0',
+      'name': 'Lazyload node 3',
     }];
 
   treeNodeCount = 500;

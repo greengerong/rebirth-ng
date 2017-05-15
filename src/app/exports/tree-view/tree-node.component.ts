@@ -4,7 +4,7 @@ import { DraggableDirective } from '../draggable';
 import { TreePanelComponent } from './tree-panel.component';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import  'rxjs/add/operator/map';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 're-tree-node,[reTreeNode]',
