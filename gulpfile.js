@@ -12,6 +12,7 @@ var swPrecache = require('sw-precache');
 var clean = require('gulp-clean');
 var ejs = require('gulp-ejs');
 var insertLines = require('gulp-insert-lines');
+var optimizejs = require('gulp-optimize-js');
 
 var cmpGenConfig = {
   componentSelector: '',
@@ -131,4 +132,12 @@ gulp.task('sw:gen', function (callback) {
     staticFileGlobs: [config.dest + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
     stripPrefixMulti: stripPrefixMulti
   }, callback);
+});
+
+gulp.task('optimize', function () {
+  gulp.src(`${config.dest}/**.js`)
+    .pipe(optimizejs({
+      sourceMap: false
+    }))
+    .pipe(gulp.dest(`${config.dest}`))
 });
