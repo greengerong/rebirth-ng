@@ -39,6 +39,7 @@ export class TreeViewDemoComponent {
 
   loadChildren(parent) {
     const pid = parent.id;
+    console.log(`Load children for parent ${pid}`);
     if (pid.split('-').length > 3) {
       return of([]).delay(300);
     }

@@ -53,7 +53,7 @@ export class TreeNodeComponent {
     }
 
     let loadObservable = of(null);
-    if (this.lazyLoad) {
+    if (this.lazyLoad && !this.node.$$loaded) {
       loadObservable = this.loadChildren(this.node)
         .map((children) => {
           this.node.children = children || [];
