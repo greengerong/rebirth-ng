@@ -1,4 +1,5 @@
 import { Component, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 're-tree-panel',
@@ -11,6 +12,8 @@ export class TreePanelComponent {
   @Input() textField;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() lazyLoad = false;
+  @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { TreeViewModel } from '../../exports';
+import { of } from 'rxjs/observable/of';
+import 'rxjs/add/operator/delay';
 
 const treeData = require('./data.json');
 @Component({
@@ -12,12 +13,51 @@ export class TreeViewDemoComponent {
   treeData3 = this.clone(treeData);
   treeData4 = this.clone(treeData);
   treeData5 = this.clone(treeData);
+  lazyLoadTreeData = [{
+    "id": "1",
+    "pid": "0",
+    "name": "Lazyload node 1",
+  },
+    {
+      "id": "2",
+      "pid": "0",
+      "name": "Lazyload node 2",
+    },
+    {
+      "id": "3",
+      "pid": "0",
+      "name": "Lazyload node 3",
+    }];
+
   treeNodeCount = 500;
   largeNodes: any[];
   largeTreeCheckable: boolean;
 
   clone(data) {
     return JSON.parse(JSON.stringify(data));
+  }
+
+  loadChildren(parent) {
+    const pid = parent.id;
+    if (pid.split('-').length > 3) {
+      return of([]).delay(300);
+    }
+
+    return of([
+      {
+        id: `${pid}-1`,
+        name: `Lazyload node ${pid}-1`
+      },
+      {
+        id: `${pid}-2`,
+        name: `Lazyload node ${pid}-3`
+      },
+      {
+        id: `${pid}-3`,
+        name: `Lazyload node ${pid}-3`
+      }
+    ])
+      .delay(300);
   }
 
   generateTreeData() {

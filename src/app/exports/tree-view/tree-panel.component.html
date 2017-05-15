@@ -1,9 +1,20 @@
 <ul class="list-unstyled">
-  <li reTreeNode *ngFor="let node of treeData" [node]="node" [textField]="textField" [valueField]="valueField"
-      [iconField]="iconField" [checkable]="checkable" [allowDraggable]="allowDraggable"
+  <li reTreeNode *ngFor="let node of treeData"
+      [node]="node"
+      [textField]="textField"
+      [valueField]="valueField"
+      [iconField]="iconField"
+      [checkable]="checkable"
+      [lazyLoad]="lazyLoad"
+      [loadChildren]="loadChildren"
+      [allowDraggable]="allowDraggable"
       [nodeItemTemplate]="nodeItemTemplate"
-      [nodeItemToolbarTemplate]="nodeItemToolbarTemplate" [leafIcon]="leafIcon" [expendIcon]="expendIcon"
-      [unExpendIcon]="unExpendIcon" [allowMutipleSelected]="allowMutipleSelected" [parentNode]="parentNode"
+      [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"
+      [leafIcon]="leafIcon"
+      [expendIcon]="expendIcon"
+      [unExpendIcon]="unExpendIcon"
+      [allowMutipleSelected]="allowMutipleSelected"
+      [parentNode]="parentNode"
   >
   </li>
 </ul>

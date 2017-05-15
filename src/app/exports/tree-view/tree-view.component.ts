@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 're-tree-view',
@@ -13,6 +14,8 @@ export class TreeViewComponent {
   @Input() textField;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() lazyLoad = false;
+  @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;

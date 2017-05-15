@@ -2,6 +2,9 @@ import { Component, Input, TemplateRef, ViewChild, ElementRef, Renderer2 } from 
 import { TreeViewComponent } from './tree-view.component';
 import { DraggableDirective } from '../draggable';
 import { TreePanelComponent } from './tree-panel.component';
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import  'rxjs/add/operator/map';
 
 @Component({
   selector: 're-tree-node,[reTreeNode]',
@@ -16,6 +19,8 @@ export class TreeNodeComponent {
   @Input() textField: string;
   @Input() iconField: string;
   @Input() checkable = false;
+  @Input() lazyLoad = false;
+  @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
   @Input() nodeItemTemplate: TemplateRef<any>;
@@ -46,8 +51,20 @@ export class TreeNodeComponent {
     if (this.isLeaf()) {
       return;
     }
-    this.node.$$expend = !this.node.$$expend;
-    this.treeViewComponent.onNodeItemExpended(this.node);
+
+    let loadObservable = of(null);
+    if (this.lazyLoad) {
+      loadObservable = this.loadChildren(this.node)
+        .map((children) => {
+          this.node.children = children || [];
+          this.node.$$loaded = true;
+        });
+    }
+
+    loadObservable.subscribe(() => {
+      this.node.$$expend = !this.node.$$expend;
+      this.treeViewComponent.onNodeItemExpended(this.node);
+    });
   }
 
   onNodeItemClick($event) {
@@ -71,6 +88,10 @@ export class TreeNodeComponent {
   }
 
   isLeaf() {
+    if (this.lazyLoad && !this.node.$$loaded) {
+      return false;
+    }
+
     return !this.node.children || !this.node.children.length;
   }
 

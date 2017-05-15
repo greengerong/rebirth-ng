@@ -43,6 +43,14 @@
   </section>
 
   <section>
+    <h4>Lazyload:</h4>
+
+    <re-tree-view [treeData]="lazyLoadTreeData" textField="name" valueFeild="id" [lazyLoad]="true"
+                  [loadChildren]="loadChildren.bind(this)"></re-tree-view>
+  </section>
+
+
+  <section>
     <h4>Big data:</h4>
     <form class="form-inline">
       <div class="form-group">
