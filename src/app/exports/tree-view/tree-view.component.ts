@@ -70,9 +70,10 @@ export class TreeViewComponent {
     const source = $event.data.data.node;
     const sourceParent = $event.data.data.parent;
     if (sourceParent && sourceParent[this.valueField]) {
-      const matchNode = this.getTreeNodeById(this.treeData, sourceParent[this.valueField]);
+      const matchNode = this.getTreeNodeByValue(sourceParent[this.valueField]);
       if (matchNode) {
-        matchNode.children = matchNode.children.filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
+        matchNode.node.children = matchNode.node.children
+          .filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
       }
     } else {
       if (this.treeData.length < 2) {
@@ -87,43 +88,57 @@ export class TreeViewComponent {
   }
 
   getSelectNode() {
-    return this.getMatchedItems(this.treeData, '$$select');
+    const matchedItems = this.innerGetMatchedItems(null, this.treeData, (node) => node.$$select);
+    return matchedItems.map((item) => item.node[this.valueField]);
   }
 
   getCheckedNodes() {
-    return this.getMatchedItems(this.treeData, '$$check');
+    const matchedItems = this.innerGetMatchedItems(null, this.treeData, (node) => node.$$check);
+    return matchedItems.map((item) => item.node[this.valueField]);
   }
 
-  private getTreeNodeById(items: any[], id) {
-    if (!items) {
-      return;
-    }
-
-    for (let i = 0; i < items.length; i++) {
-      const nodeItem = items[i];
-      if (nodeItem[this.valueField] === id) {
-        return nodeItem;
-      }
-      const matchNode = this.getTreeNodeById(nodeItem.children, id);
-      if (matchNode) {
-        return matchNode;
-      }
-    }
+  getMatchedItems(match: (node: any) => boolean) {
+    return this.innerGetMatchedItems(null, this.treeData, match);
   }
 
-  private getMatchedItems(items: any[], field) {
+  getFirstMatchedItem(match: (node: any) => boolean) {
+    return this.innerGetFirstMatchedItem(null, this.treeData, match);
+  }
+
+  getTreeNodeByValue(value) {
+    return this.innerGetFirstMatchedItem(null, this.treeData, (node) => node[this.valueField] === value);
+  }
+
+  private innerGetMatchedItems(parent, items: any[], match: (node: any) => boolean) {
     if (!items) {
       return [];
     }
 
     const nodes = [];
     items.forEach((nodeItem) => {
-      if (nodeItem[field]) {
-        nodes.push(nodeItem[this.valueField]);
+      if (match(nodeItem)) {
+        nodes.push({ node: nodeItem, parent: parent });
       }
-      nodes.push(...this.getMatchedItems(nodeItem.children, field));
+      nodes.push(...this.innerGetMatchedItems(nodeItem, nodeItem.children, match));
     });
 
     return nodes;
+  }
+
+  private innerGetFirstMatchedItem(parent, items: any[], match: (node: any) => boolean) {
+    if (!items) {
+      return;
+    }
+
+    for (let i = 0; i < items.length; i++) {
+      const nodeItem = items[i];
+      if (match(nodeItem)) {
+        return { node: nodeItem, parent: parent };
+      }
+      const matchNode = this.innerGetFirstMatchedItem(nodeItem, nodeItem.children, match);
+      if (matchNode) {
+        return matchNode;
+      }
+    }
   }
 }
