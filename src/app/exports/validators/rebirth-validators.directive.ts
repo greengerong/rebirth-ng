@@ -254,7 +254,7 @@ export class BeforeDateDirective implements Validator {
 export class AfterDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reBeforeDate(target: string | Date | number) {
+  @Input() set reAfterDate(target: string | Date | number) {
     this.validatorFn = afterDateValidator(target);
   };
 
