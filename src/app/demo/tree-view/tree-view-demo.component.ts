@@ -51,7 +51,7 @@ export class TreeViewDemoComponent {
       },
       {
         id: `${pid}-2`,
-        name: `Lazyload node ${pid}-3`
+        name: `Lazyload node ${pid}-2`
       },
       {
         id: `${pid}-3`,
