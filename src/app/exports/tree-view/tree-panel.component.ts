@@ -10,6 +10,7 @@ export class TreePanelComponent {
   @Input() parentNode: any;
   @Input() valueField;
   @Input() textField;
+  @Input() nodeCssClass: string;
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;

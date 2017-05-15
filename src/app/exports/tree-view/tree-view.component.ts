@@ -12,6 +12,8 @@ export class TreeViewComponent {
   @Input() treeData: any[];
   @Input() valueField;
   @Input() textField;
+  @Input() cssClass: string;
+  @Input() nodeCssClass: string;
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;

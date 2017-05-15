@@ -1,4 +1,4 @@
-<div class="node-item {{node.name}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"
+<div class="node-item {{nodeCssClass}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"
      [dragData]="{node: node, parent: parentNode}">
   <i class="expend-icon {{getNodeExpendIcon()}}"
      (click)="onExpendedIconClick($event)"></i>

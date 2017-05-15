@@ -17,6 +17,7 @@ export class TreeNodeComponent {
   @Input() parentNode: any;
   @Input() valueField: string;
   @Input() textField: string;
+  @Input() nodeCssClass: string;
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;
