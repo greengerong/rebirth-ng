@@ -109,6 +109,50 @@ export class TreeViewComponent {
     return this.innerGetFirstMatchedItem(null, this.treeData, (node) => node[this.valueField] === value);
   }
 
+  expendAllNodes() {
+    this.innerLookNode(null, this.treeData, (node) => {
+      node.$$expend = true;
+    });
+  }
+
+  checkAllNodes() {
+    this.innerLookNode(null, this.treeData, (node) => {
+      node.$$check = true;
+    });
+  }
+
+
+  appendNodes(parentId, nodes: any[]) {
+    const parentNode = this.getTreeNodeByValue(parentId);
+    parentNode.node.children = parentNode.node.children || [];
+    parentNode.node.children.push(...nodes);
+    return parentNode;
+  }
+
+  removeNode(value: any) {
+    const node = this.getTreeNodeByValue(value);
+    if (node.parent) {
+      node.parent.children = node.parent.children.filter((nodeItem) => nodeItem[this.valueField] !== value);
+    } else {
+      this.treeData = this.treeData.filter((nodeItem) => nodeItem[this.valueField] !== value);
+    }
+    return node;
+  }
+
+  private innerLookNode(parent, items: any[], action: (node: any, parent: any) => void) {
+    if (!items) {
+      return;
+    }
+
+    const nodes = [];
+    items.forEach((nodeItem) => {
+      action(nodeItem, parent);
+      this.innerLookNode(nodeItem, nodeItem.children, action);
+    });
+
+    return nodes;
+  }
+
   private innerGetMatchedItems(parent, items: any[], match: (node: any) => boolean) {
     if (!items) {
       return [];
