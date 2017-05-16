@@ -68,9 +68,9 @@
 
   <section>
     <h4>Dynamic Data table</h4>
-    <re-data-table [dataSource]="dataSource" (sortChange)="sortChange($event)" [selectable]="true">
+    <re-data-table [dataSource]="dataSource" type="bordered" (sortChange)="sortChange($event)" [selectable]="true">
       <re-column field="$index" header="#"></re-column>
-      <re-column *ngFor="let colOption of dataTableOptions.columns" [field]="colOption.field"
+      <re-column *ngFor="let colOption of dataTableOptions.columns" [resizeable]="true" [field]="colOption.field"
                  [header]="colOption.header" [sortable]="colOption.sortable"
                  [editable]="colOption.editable" [fieldType]="colOption.fieldType"
                  [formatter]="colOption.formatter">

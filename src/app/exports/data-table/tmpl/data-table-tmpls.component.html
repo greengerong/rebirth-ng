@@ -12,17 +12,19 @@
         </div>
       </form>
     </th>
-    <th *ngFor="let column of head.columns" [ngClass]="{'sorting-header': column.sortable}"
+    <th *ngFor="let column of head.columns" [reResizeable]="column.resizeable"
+        [ngClass]="{'sorting-header': column.sortable}"
         (click)="head.onHeadClick(column)" [style.width]="column.width || ''">
-      {{column.header}}
-      <ng-container *ngIf="column.sortable">
-        <i class="glyphicon sorting-icon"
-           [ngClass]="{
+      <div class="head-cell">{{column.header}}
+        <ng-container *ngIf="column.sortable">
+          <i class="glyphicon sorting-icon"
+             [ngClass]="{
            'glyphicon-triangle-bottom': head.sortField == column.field && head.sortDirection == 'DESC',
            'glyphicon-triangle-top': head.sortField == column.field && head.sortDirection == 'ASC',
            'sorting-default': head.sortField != column.field
            }"></i>
-      </ng-container>
+        </ng-container>
+      </div>
     </th>
   </tr>
 </ng-template>

@@ -19,6 +19,7 @@ export class DataTableColumnTmplComponent {
   @Input() filterable: boolean;
   @Input() cellClass: string;
   @Input() width: string;
+  @Input() resizeable: boolean;
   @Input() extraOptions: any;
   @ContentChild(DataTableCellViewTmplComponent) cellCmp: DataTableCellViewTmplComponent;
   @ContentChild(DataTableCellEditTmplComponent) cellEditCmp: DataTableCellEditTmplComponent;
