@@ -29,7 +29,7 @@ export class TreeNodeComponent {
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
   @Input() expendIcon;
-  @Input() unExpendIcon;
+  @Input() collapseIcon;
   @ViewChild('nodeItemContent') nodeItemContent: ElementRef;
   isLoading: boolean;
 
@@ -45,7 +45,7 @@ export class TreeNodeComponent {
       return this.leafIcon;
     }
 
-    return this.node.$$expend ? this.expendIcon : this.unExpendIcon;
+    return this.node.$$expend ? this.expendIcon : this.collapseIcon;
   }
 
   onExpendedIconClick($event) {

@@ -22,7 +22,7 @@ export class TreePanelComponent {
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
   @Input() expendIcon;
-  @Input() unExpendIcon;
+  @Input() collapseIcon;
   @Output() nodeItemCheckedChanged = new EventEmitter<any>();
 
 

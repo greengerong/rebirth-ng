@@ -26,7 +26,7 @@ export class TreeViewComponent {
   @Input() nodeItemToolbarTemplate: TemplateRef<any>;
   @Input() leafIcon;
   @Input() expendIcon;
-  @Input() unExpendIcon;
+  @Input() collapseIcon;
   @Output() nodeItemClicked = new EventEmitter<any>();
   @Output() nodeItemDroped = new EventEmitter<any>();
   @Output() nodeItemDbClicked = new EventEmitter<any>();
@@ -39,7 +39,7 @@ export class TreeViewComponent {
     this.textField = rebirthNGConfig.treeView.textField;
     this.leafIcon = rebirthNGConfig.treeView.leafIcon;
     this.expendIcon = rebirthNGConfig.treeView.expendIcon;
-    this.unExpendIcon = rebirthNGConfig.treeView.unExpendIcon;
+    this.collapseIcon = rebirthNGConfig.treeView.collapseIcon;
     this.loadingIcon = rebirthNGConfig.treeView.loadingIcon;
   }
 
