@@ -35,7 +35,7 @@ import { RadioGroupModule } from './radio-group';
 import { CheckboxGroupModule } from './checkbox-group';
 import { RebirthValidatorsModule } from './validators';
 import { NotifyModule, NotifyService } from './notify';
-import { TreeViewModule } from './tree-view';
+import { TreeViewModule, TreeViewService } from './tree-view';
 
 
 @NgModule({
@@ -127,7 +127,8 @@ export class RebirthNGModule {
         { provide: PositionService, useClass: PositionService },
         { provide: OverlayService, useClass: OverlayService },
         { provide: AssetsLoader, useClass: AssetsLoader },
-        { provide: NotifyService, useClass: NotifyService }
+        { provide: NotifyService, useClass: NotifyService },
+        { provide: TreeViewService, useClass: TreeViewService }
       ]
     };
   }
