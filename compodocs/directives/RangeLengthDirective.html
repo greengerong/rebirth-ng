@@ -469,6 +469,9 @@
                                     <a href="../directives/RangeLengthDirective.html"  class="active" >RangeLengthDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="../directives/SlideDirective.html" >SlideDirective</a>
                                 </li>
                                 <li class="link">
@@ -1122,6 +1125,9 @@
                                            <a href="../directives/RangeLengthDirective.html"  class="active" >RangeLengthDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../directives/SlideDirective.html" >SlideDirective</a>
                                        </li>
                                        <li class="link">
@@ -1701,7 +1707,7 @@ export class BeforeDateDirective implements Validator {
 export class AfterDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reBeforeDate(target: string | Date | number) {
+  @Input() set reAfterDate(target: string | Date | number) {
     this.validatorFn &#x3D; afterDateValidator(target);
   };
 
