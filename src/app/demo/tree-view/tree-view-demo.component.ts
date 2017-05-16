@@ -5,7 +5,19 @@ import 'rxjs/add/operator/delay';
 const treeData = require('./data.json');
 @Component({
   selector: 're-tree-view-demo',
-  templateUrl: './tree-view-demo.component.html'
+  templateUrl: './tree-view-demo.component.html',
+  styles: [`
+        :host /deep/ .glyphicon-file{
+          color: #FF9800;
+        } 
+        
+        :host /deep/ .glyphicon-folder-close{
+          color: #FF9800;
+        } 
+        :host /deep/ .glyphicon-folder-open{
+          color: #FF9800;
+        }
+    `]
 })
 export class TreeViewDemoComponent {
   treeData1 = this.clone(treeData);

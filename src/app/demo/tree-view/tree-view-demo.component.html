@@ -46,7 +46,9 @@
     <h4>Lazyload:</h4>
 
     <re-tree-view [treeData]="lazyLoadTreeData" textField="name" valueFeild="id" [lazyLoad]="true"
-                  [loadChildren]="loadChildren.bind(this)"></re-tree-view>
+                  [loadChildren]="loadChildren.bind(this)"
+                  leafIcon="glyphicon glyphicon-file" unExpendIcon="glyphicon glyphicon-folder-close"
+                  expendIcon="glyphicon glyphicon-folder-open"></re-tree-view>
   </section>
 
 

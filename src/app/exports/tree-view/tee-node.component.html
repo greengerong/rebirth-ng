@@ -1,7 +1,7 @@
 <div class="node-item {{nodeCssClass}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"
      [dragData]="{node: node, parent: parentNode}">
   <div class="node-item-panel">
-    <i class="expend-icon {{getNodeExpendIcon()}}"
+    <i class="node-expend-icon {{getNodeExpendIcon()}}"
        (click)="onExpendedIconClick($event)"></i>
     <div class="node-item-content" #nodeItemContent reDroppable="re:node-item-drop" (onDrop)="onDropNodeItem($event)"
          (onDragEnter)="onDragEnter()" (onDragLeave)="onDragLeave()" [acceptDrop]="isAcceptDrop.bind(this)">
