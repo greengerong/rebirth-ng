@@ -7,7 +7,12 @@
 
   <section>
     <h4>Checked:</h4>
-    <re-tree-view [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
+    <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendAllNodes()">Expend All</button>
+    <button type="button" class="btn btn-info" (click)="checkedTreeView.collapseAllNodes()">Collapse All</button>
+    <button type="button" class="btn btn-warning" (click)="checkedTreeView.checkAllNodes()">Chceck All</button>
+    <button type="button" class="btn btn-danger" (click)="checkedTreeView.unCheckAllNodes()">UnChceck All</button>
+    <hr>
+    <re-tree-view #checkedTreeView [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
                   #treeView="treeView" [allowMutipleSelected]="true"></re-tree-view>
 
     Selected Node ID:
@@ -62,8 +67,8 @@
       <div class="form-group">
         <re-checkbox name="largeTreeCheckable" [(ngModel)]="largeTreeCheckable" label="Checkable"></re-checkbox>
       </div>
-      <button type="submit" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
-      <button type="submit" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
+      <button type="button" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
+      <button type="button" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
     </form>
     <hr>
 

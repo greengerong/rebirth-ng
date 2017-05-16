@@ -117,9 +117,21 @@ export class TreeViewComponent {
     });
   }
 
+  collapseAllNodes() {
+    this.innerLookNode(null, this.treeData, (node) => {
+      node.$$expend = false;
+    });
+  }
+
   checkAllNodes() {
     this.innerLookNode(null, this.treeData, (node) => {
       node.$$check = true;
+    });
+  }
+
+  unCheckAllNodes() {
+    this.innerLookNode(null, this.treeData, (node) => {
+      node.$$check = false;
     });
   }
 
