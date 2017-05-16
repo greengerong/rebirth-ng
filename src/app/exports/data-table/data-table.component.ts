@@ -8,7 +8,9 @@ import {
   ContentChild,
   ViewChild,
   HostListener,
-  QueryList
+  QueryList,
+  AfterContentInit,
+  ChangeDetectorRef
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import {
@@ -30,8 +32,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
   changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'dataTable'
 })
-export class DataTableComponent {
-
+export class DataTableComponent implements AfterContentInit {
   @Input() _dataSource: any[] = [];
   @Input() emptyRowText: string;
   @Input() checkable: boolean;
@@ -55,13 +56,14 @@ export class DataTableComponent {
   @Output() checkAllChange = new EventEmitter<boolean>();
   @Output() searchQueryChange = new EventEmitter<{ [key: string]: any; }>();
   @Output() pageIndexChange = new EventEmitter<number>();
-  @ContentChildren(DataTableColumnTmplComponent) columns: QueryList<DataTableColumnTmplComponent>;
+  @ContentChildren(DataTableColumnTmplComponent) columnTemplates: QueryList<DataTableColumnTmplComponent>;
 
   @ContentChild(DataTableHeadTmplComponent) headTemplate: DataTableHeadTmplComponent;
   @ContentChild(DataTableFootTmplComponent) footTemplate: DataTableFootTmplComponent;
   @ContentChild(DataTablePagerTmplComponent) pagerTemplate: DataTablePagerTmplComponent;
   @ViewChild(DataTableTmplsComponent) dataTableTemplates: DataTableTmplsComponent;
   selectedRowItem: any;
+  columns: DataTableColumnTmplComponent[];
 
   pager: DataTablePager = { total: 0, pageIndex: 1, pageSize: 10 };
   selectedColumnItem: any;
@@ -69,7 +71,7 @@ export class DataTableComponent {
   editRowItem: any;
   documentClickEvent = new EventEmitter<Event>();
 
-  constructor(private rebirthNGConfig: RebirthNGConfig) {
+  constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.emptyRowText = rebirthNGConfig.datatable.emptyRowText;
   }
 
@@ -96,6 +98,14 @@ export class DataTableComponent {
 
   get dataSource(): any[] {
     return this._dataSource;
+  }
+
+  ngAfterContentInit(): void {
+    this.columns = this.columnTemplates.toArray();
+    this.columnTemplates.changes.subscribe(() => {
+      this.columns = this.columnTemplates.toArray();
+      this.changeDetectorRef.markForCheck();
+    });
   }
 
   @HostListener('document:click', ['$event'])
