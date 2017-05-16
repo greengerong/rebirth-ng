@@ -17,6 +17,7 @@ export class TreeViewComponent {
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;
+  @Input() loadingIcon: string;
   @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
@@ -38,6 +39,7 @@ export class TreeViewComponent {
     this.leafIcon = rebirthNGConfig.treeView.leafIcon;
     this.expendIcon = rebirthNGConfig.treeView.expendIcon;
     this.unExpendIcon = rebirthNGConfig.treeView.unExpendIcon;
+    this.loadingIcon = rebirthNGConfig.treeView.loadingIcon;
   }
 
   onNodeItemExpended(node) {

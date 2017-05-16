@@ -54,3 +54,20 @@
     }
   }
 }
+
+.loading {
+  -webkit-animation: loadingAnimation 1.5s infinite alternate;
+  -moz-animation: loadingAnimation 1.5s infinite alternate;
+  -ms-animation: loadingAnimation 1.5s infinite alternate;
+  -o-animation: loadingAnimation 1.5s infinite alternate;
+  animation: loadingAnimation 1.5s infinite alternate;
+}
+
+@-webkit-keyframes loadingAnimation {
+  50% {
+    color: #FF9800;
+  }
+  100% {
+    color: #4CAF50;
+  }
+}

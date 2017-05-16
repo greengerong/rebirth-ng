@@ -21,6 +21,7 @@ export class TreeNodeComponent {
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;
+  @Input() loadingIcon: string;
   @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
@@ -30,6 +31,7 @@ export class TreeNodeComponent {
   @Input() expendIcon;
   @Input() unExpendIcon;
   @ViewChild('nodeItemContent') nodeItemContent: ElementRef;
+  isLoading: boolean;
 
   constructor(private treeViewComponent: TreeViewComponent,
               private treePanelComponent: TreePanelComponent,
@@ -55,6 +57,7 @@ export class TreeNodeComponent {
 
     let loadObservable = of(null);
     if (this.lazyLoad && !this.node.$$loaded) {
+      this.isLoading = true;
       loadObservable = this.loadChildren(this.node)
         .map((children) => {
           this.node.children = children || [];
@@ -63,8 +66,11 @@ export class TreeNodeComponent {
     }
 
     loadObservable.subscribe(() => {
+      this.isLoading = false;
       this.node.$$expend = !this.node.$$expend;
       this.treeViewComponent.onNodeItemExpended(this.node);
+    }, () => {
+      this.isLoading = false;
     });
   }
 

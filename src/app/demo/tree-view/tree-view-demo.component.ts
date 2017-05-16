@@ -41,7 +41,7 @@ export class TreeViewDemoComponent {
     const pid = parent.id;
     console.log(`Load children for parent ${pid}`);
     if (pid.split('-').length > 3) {
-      return of([]).delay(300);
+      return of([]).delay(5 * 1000);
     }
 
     return of([
@@ -58,7 +58,7 @@ export class TreeViewDemoComponent {
         name: `Lazyload node ${pid}-3`
       }
     ])
-      .delay(300);
+      .delay(5 * 1000);
   }
 
   generateTreeData() {

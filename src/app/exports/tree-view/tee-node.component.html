@@ -13,7 +13,10 @@
       <span class="node-text" [ngClass]="{'bg-primary': node.$$select}" (click)="onNodeItemClick($event)"
             (dblclick)="onNodeItemDbClicked($event)">
         <i *ngIf="iconField && node[iconField]"
-           class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}}</span>
+           class="node-icon {{node[iconField]}}"></i> {{node[textField] || ''}} <span
+        class="loading" *ngIf="isLoading">
+        <i class="{{loadingIcon}}"></i></span>
+      </span>
         <div class="toolbar">
           <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
                        [ngOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>
@@ -33,6 +36,7 @@
                  [iconField]="iconField"
                  [checkable]="checkable"
                  [lazyLoad]="lazyLoad"
+                 [loadingIcon]="loadingIcon"
                  [loadChildren]="loadChildren"
                  [allowDraggable]="allowDraggable && !isInDraggle"
                  [allowMutipleSelected]="allowMutipleSelected"

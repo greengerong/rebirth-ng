@@ -148,7 +148,8 @@ export class RebirthNGConfig {
     valueField: 'id',
     leafIcon: 'glyphicon glyphicon-leaf',
     expendIcon: 'glyphicon glyphicon-chevron-down',
-    unExpendIcon: 'glyphicon glyphicon-chevron-right'
+    unExpendIcon: 'glyphicon glyphicon-chevron-right',
+    loadingIcon: 'glyphicon glyphicon-cloud-download',
   };
   // constructor(@Inject(LOCALE_ID) private locale: string) {
   // }

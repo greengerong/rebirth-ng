@@ -14,6 +14,7 @@ export class TreePanelComponent {
   @Input() iconField: string;
   @Input() checkable = false;
   @Input() lazyLoad = false;
+  @Input() loadingIcon: string;
   @Input() loadChildren: (parent: any) => Observable<any[]>;
   @Input() allowDraggable = false;
   @Input() allowMutipleSelected = false;
