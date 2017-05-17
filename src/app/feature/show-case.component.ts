@@ -34,8 +34,7 @@ export class ShowcaseComponent implements OnInit {
   }
 
 
-  private
-  fixTSModuleImport(code): string {
+  private fixTSModuleImport(code): string {
     return code.replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
   }
 

@@ -66,7 +66,10 @@ export class TreeViewService {
     if (node.parent) {
       node.parent.children = node.parent.children.filter((nodeItem) => nodeItem[valueField] !== value);
     } else {
-      treeData = treeData.filter((nodeItem) => nodeItem[valueField] !== value);
+      const index = treeData.indexOf(node.node);
+      if (index !== -1) {
+        treeData.splice(index, 1);
+      }
     }
     return node;
   }

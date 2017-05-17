@@ -12,9 +12,9 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 @Component({
   selector: 're-doc',
   templateUrl: './doc.component.html',
-  styleUrls: ['./doc.component.scss'],
+  styleUrls: ['./doc.component.scss']
 })
-export class DocComponent implements AfterViewInit,OnInit {
+export class DocComponent implements AfterViewInit, OnInit {
 
 
   @ViewChildren('html') html: QueryList<ElementRef>;
@@ -29,11 +29,11 @@ export class DocComponent implements AfterViewInit,OnInit {
 
   ngOnInit(): void {
     const url = `/rebirth-ng/compodocs/modules/${this.component.name}Module.html`;
-    this.apiHref = this.domSanitizer.bypassSecurityTrustResourceUrl(url)
+    this.apiHref = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   activeTabChange(id) {
-    if (id == 'html') {
+    if (id === 'html') {
       setTimeout(() => {
         hljs.highlightBlock(this.html.last.nativeElement);
       }, 0);

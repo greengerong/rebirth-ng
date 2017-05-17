@@ -13,15 +13,15 @@ import 'rxjs/add/operator/takeUntil';
 })
 export class ResizeableDirective implements OnDestroy, AfterViewInit {
 
-  @Input('reResizeable') resizeEnabled: boolean = true;
+  @Input('reResizeable') resizeEnabled = true;
   @Input() minWidth: number;
   @Input() maxWidth: number;
 
-  @Output() resize: EventEmitter<any> = new EventEmitter();
+  @Output() resize = new EventEmitter<any>();
 
   element: HTMLElement;
   subscription: Subscription;
-  resizing: boolean = false;
+  resizing = false;
 
   constructor(element: ElementRef, private renderer: Renderer2) {
     this.element = element.nativeElement;
@@ -90,3 +90,4 @@ export class ResizeableDirective implements OnDestroy, AfterViewInit {
   }
 
 }
+
