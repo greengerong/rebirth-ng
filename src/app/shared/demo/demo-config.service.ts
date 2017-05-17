@@ -42,7 +42,7 @@ export class DemoConfigService {
     readMe: require('!html-loader!markdown-loader!../../exports/README.md')
   };
 
-  components: { name: string, cmp: Type<any>, directory?: string, readMe?: any, html?: string, ts?: string }[] = [
+  components: { name: string, cmp: Type<any>, directory?: string, readMe?: any, html?: string, ts?: string, data?: any }[] = [
     {
       name: 'Modal',
       directory: 'modal',
@@ -307,6 +307,7 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/tree-view/README.md'),
       html: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.html'),
       ts: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.ts'),
+      data: require('!raw-loader!../../demo/tree-view/data.json'),
     },
     // component declare
   ];

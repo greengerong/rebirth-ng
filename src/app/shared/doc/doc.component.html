@@ -2,7 +2,7 @@
   <h2><a [routerLink]="['/component', component.name]">{{component.name}}</a>
     <small class="meta-data">
       (<a class="" target="_blank"
-          [href]="'/rebirth-ng/compodocs/modules/' + component.name +'Module.html'">API Docs
+          [href]="apiHref">API Docs
     </a>, <a class="" target="_blank"
              [href]="'https://github.com/greengerong/rebirth-ng/tree/master/src/app/exports/' + component.directory">
       Github Source</a>)
@@ -10,7 +10,7 @@
   </h2>
   <re-doc-content [component]="component.cmp"></re-doc-content>
   <hr/>
-  <re-tabs class="code-tabs" (activeTabChange)="activeTabChange()">
+  <re-tabs class="code-tabs" (activeTabChange)="activeTabChange($event)">
     <re-tab id="html" title="HTML">
       <ng-template reTabContent>
         <div class="html" #html>
@@ -25,7 +25,26 @@
         </div>
       </ng-template>
     </re-tab>
+    <re-tab id="data" title="Data" *ngIf="component.data">
+      <ng-template reTabContent>
+        <div class="data" #data>
+          <pre>{{component.data}}</pre>
+        </div>
+      </ng-template>
+    </re-tab>
+    <re-tab id="document" title="Document">
+      <ng-template reTabContent>
+        <div>
+          <div class="markdown" [innerHTML]="component.readMe"></div>
+        </div>
+      </ng-template>
+    </re-tab>
+    <re-tab id="api" title="API">
+      <ng-template reTabContent>
+        <div class="api-container">
+          <iframe class="api-frame" [src]="apiHref" frameborder="0"></iframe>
+        </div>
+      </ng-template>
+    </re-tab>
   </re-tabs>
-
-  <div class="markdown" [innerHTML]="component.readMe"></div>
 </section>
