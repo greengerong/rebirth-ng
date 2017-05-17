@@ -560,6 +560,9 @@
                                     <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../injectables/TreeViewService.html" >TreeViewService</a>
+                                </li>
+                                <li class="link">
                                     <a href="../injectables/WindowRef.html" >WindowRef</a>
                                 </li>
                         </ul>
@@ -1214,6 +1217,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/TreeViewService.html" >TreeViewService</a>
                                        </li>
                                        <li class="link">
                                            <a href="../injectables/WindowRef.html" >WindowRef</a>
@@ -2466,7 +2472,7 @@ import { RadioGroupModule } from &#x27;./radio-group&#x27;;
 import { CheckboxGroupModule } from &#x27;./checkbox-group&#x27;;
 import { RebirthValidatorsModule } from &#x27;./validators&#x27;;
 import { NotifyModule, NotifyService } from &#x27;./notify&#x27;;
-import { TreeViewModule } from &#x27;./tree-view&#x27;;
+import { TreeViewModule, TreeViewService } from &#x27;./tree-view&#x27;;
 
 
 @NgModule({
@@ -2558,7 +2564,8 @@ export class RebirthNGModule {
         { provide: PositionService, useClass: PositionService },
         { provide: OverlayService, useClass: OverlayService },
         { provide: AssetsLoader, useClass: AssetsLoader },
-        { provide: NotifyService, useClass: NotifyService }
+        { provide: NotifyService, useClass: NotifyService },
+        { provide: TreeViewService, useClass: TreeViewService }
       ]
     };
   }

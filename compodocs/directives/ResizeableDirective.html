@@ -560,6 +560,9 @@
                                     <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../injectables/TreeViewService.html" >TreeViewService</a>
+                                </li>
+                                <li class="link">
                                     <a href="../injectables/WindowRef.html" >WindowRef</a>
                                 </li>
                         </ul>
@@ -1216,6 +1219,9 @@
                                            <a href="../injectables/RebirthNGConfig.html" >RebirthNGConfig</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../injectables/TreeViewService.html" >TreeViewService</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../injectables/WindowRef.html" >WindowRef</a>
                                        </li>
                                </ul>
@@ -1427,10 +1433,6 @@
                                     <code>reResizeable</code>
                                 </td>
                                 <td class="col-md-10">
-                                      <p>
-                                        <em>Type:</em>    <code>boolean</code>
-
-                                      </p>
                                     <p>
                                       <em>Default value: </em><code>true</code>
                                     </p>
@@ -1454,7 +1456,7 @@
                                     <code>resize</code>
                                 </td>
                                 <td class="col-md-10">
-                                    <em><code>$event</code> type:</em>    <code>EventEmitter&lt;any&gt;</code>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
                                 </td>
                             </tr>
@@ -1765,15 +1767,15 @@ import &#x27;rxjs/add/operator/takeUntil&#x27;;
 })
 export class ResizeableDirective implements OnDestroy, AfterViewInit {
 
-  @Input(&#x27;reResizeable&#x27;) resizeEnabled: boolean &#x3D; true;
+  @Input(&#x27;reResizeable&#x27;) resizeEnabled &#x3D; true;
   @Input() minWidth: number;
   @Input() maxWidth: number;
 
-  @Output() resize: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+  @Output() resize &#x3D; new EventEmitter&lt;any&gt;();
 
   element: HTMLElement;
   subscription: Subscription;
-  resizing: boolean &#x3D; false;
+  resizing &#x3D; false;
 
   constructor(element: ElementRef, private renderer: Renderer2) {
     this.element &#x3D; element.nativeElement;
@@ -1842,6 +1844,7 @@ export class ResizeableDirective implements OnDestroy, AfterViewInit {
   }
 
 }
+
 </code></pre>
     </div>
 </div>
