@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DemoConfigService } from '../shared/demo/demo-config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
+import { DocumentRef } from '../exports';
 
 @Component({
   selector: 're-show-case',
@@ -12,12 +13,13 @@ export class ShowcaseComponent implements OnInit {
 
   constructor(private demoConfigService: DemoConfigService,
               private domSanitizer: DomSanitizer,
+              private documentRef: DocumentRef,
               private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params: Params) => {
-
+      this.documentRef.body.scrollTop = 0;
       this.components = this.demoConfigService.components.filter(cmp => {
         return cmp.name === params.name;
       })
@@ -32,7 +34,8 @@ export class ShowcaseComponent implements OnInit {
   }
 
 
-  private fixTSModuleImport(code): string {
+  private
+  fixTSModuleImport(code): string {
     return code.replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
   }
 
