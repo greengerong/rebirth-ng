@@ -10,7 +10,7 @@ import {
   HostListener,
   QueryList,
   AfterContentInit,
-  ChangeDetectorRef
+  ChangeDetectorRef, TemplateRef
 } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import {
@@ -35,6 +35,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 export class DataTableComponent implements AfterContentInit {
   @Input() _dataSource: any[] = [];
   @Input() emptyRowText: string;
+  @Input() emptyRowTemplate: TemplateRef<any>; // change to <re-empty-row></re-empty-row>
   @Input() checkable: boolean;
   @Input() selectable: boolean;
   @Input() scrollable: boolean;

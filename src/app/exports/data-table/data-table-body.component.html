@@ -3,5 +3,9 @@
     [editModel]="editModel" [dataTableTemplates]="dataTableTemplates" [allChecked]="allChecked">
 </tr>
 <tr *ngIf="isEmpty(dataSource)">
-  <td [attr.colspan]="columns.length" class="text-center">{{emptyRowText}}</td>
+  <td [attr.colspan]="columns.length" class="text-center">
+    <span *ngIf="!emptyRowTemplate">{{emptyRowText}}</span>
+    <ng-template *ngIf="emptyRowTemplate" [ngTemplateOutlet]="emptyRowTemplate"
+                 [ngOutletContext]="{ $implicit: this }"></ng-template>
+  </td>
 </tr>

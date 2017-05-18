@@ -9,14 +9,29 @@
     </table>
   </div>
 
-  <div class="table-view" [ngClass]="{'scroll-view': scrollable}" [style.max-height]="maxHeight" [style.width]="tableWidth">
+  <div class="table-view" [ngClass]="{'scroll-view': scrollable}" [style.max-height]="maxHeight"
+       [style.width]="tableWidth">
     <table class="table {{type ? 'table-' + type : ''}} {{ hover ? 'table-hover': ''}}">
-      <thead *ngIf="!scrollable" reDataTableHead [dataTableTemplates]="dataTableTemplates" [columns]="columns"
-             [headTemplate]="headTemplate" [checkable]="checkable" [allChecked]="allChecked"></thead>
+      <thead *ngIf="!scrollable"
+             reDataTableHead
+             [dataTableTemplates]="dataTableTemplates"
+             [columns]="columns"
+             [headTemplate]="headTemplate"
+             [checkable]="checkable"
+             [allChecked]="allChecked"></thead>
 
-      <tbody reDataTableBody [dataTableTemplates]="dataTableTemplates" [dataSource]="dataSource" [columns]="columns"
-             [checkable]="checkable" [allChecked]="allChecked" [selectable]="selectable" [emptyRowText]="emptyRowText"
-             [editModel]="editModel" [editRowItem]="editRowItem"></tbody>
+      <tbody reDataTableBody
+             [dataTableTemplates]="dataTableTemplates"
+             [dataSource]="dataSource"
+             [columns]="columns"
+             [checkable]="checkable"
+             [allChecked]="allChecked"
+             [selectable]="selectable"
+             [emptyRowText]="emptyRowText"
+             [emptyRowTemplate]="emptyRowTemplate"
+             [editModel]="editModel"
+             [editRowItem]="editRowItem">
+      </tbody>
       <tfoot *ngIf="footTemplate" reDataTableFoot [footTemplate]="footTemplate"></tfoot>
     </table>
   </div>

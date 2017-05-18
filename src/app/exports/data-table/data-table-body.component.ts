@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, TemplateRef } from '@angular/core';
 import { DataTableColumnTmplComponent } from './tmpl/data-table-column-tmpl.component';
 import { DataTableComponent } from './data-table.component';
 import { DataTableTmplsComponent } from './tmpl/data-table-tmpls.component';
@@ -18,6 +18,7 @@ export class DataTableBodyComponent {
   @Input() editRowItem: any;
   @Input() dataSource: any;
   @Input() emptyRowText: string;
+  @Input() emptyRowTemplate: TemplateRef<any>;
   @Input() columns: DataTableColumnTmplComponent[];
   @Input() dataTableTemplates: DataTableTmplsComponent;
   isEmpty: (data) => boolean;
