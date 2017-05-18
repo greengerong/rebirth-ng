@@ -83,11 +83,12 @@ nav.sidebar {
       .navbar-collapse, .container-fluid {
         padding: 0px;
       }
+
+      .forAnimate {
+        opacity: 0;
+      }
     }
 
-    .forAnimate {
-      opacity: 0;
-    }
   }
 }
 
@@ -113,9 +114,11 @@ nav.sidebar {
     background-color: transparent;
   }
 
-  nav:hover {
-    .forAnimate {
-      opacity: 1;
+  nav.sidebar {
+    nav:hover {
+      .forAnimate {
+        opacity: 1;
+      }
     }
   }
 }

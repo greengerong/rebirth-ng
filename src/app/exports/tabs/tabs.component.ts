@@ -17,12 +17,12 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 })
 export class TabsComponent implements AfterContentInit {
   @Input() type: 'tabs' | 'pills' = 'tabs';
-  @Input() activeTab: number |string;
+  @Input() activeTab: number | string;
   @Input() vertical: boolean;
   @Input() justified: boolean;
   @Input() cssClass: string;
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
-  @Output() activeTabChange = new EventEmitter<number| string>();
+  @Output() activeTabChange = new EventEmitter<number | string>();
 
   constructor(rebirthUIConfig: RebirthNGConfig) {
     this.type = <any>rebirthUIConfig.tabs.type;
@@ -31,7 +31,7 @@ export class TabsComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    if (this.activeTab === undefined && this.tabs.length) {
+    if (!this.activeTab && this.tabs.length) {
       this.select(this.tabs.first.id);
     }
   }
