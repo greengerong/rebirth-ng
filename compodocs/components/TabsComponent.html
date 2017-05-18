@@ -1678,12 +1678,12 @@ import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 })
 export class TabsComponent implements AfterContentInit {
   @Input() type: &#x27;tabs&#x27; | &#x27;pills&#x27; &#x3D; &#x27;tabs&#x27;;
-  @Input() activeTab: number |string;
+  @Input() activeTab: number | string;
   @Input() vertical: boolean;
   @Input() justified: boolean;
   @Input() cssClass: string;
   @ContentChildren(TabComponent) tabs: QueryList&lt;TabComponent&gt;;
-  @Output() activeTabChange &#x3D; new EventEmitter&lt;number| string&gt;();
+  @Output() activeTabChange &#x3D; new EventEmitter&lt;number | string&gt;();
 
   constructor(rebirthUIConfig: RebirthNGConfig) {
     this.type &#x3D; &lt;any&gt;rebirthUIConfig.tabs.type;
@@ -1692,7 +1692,7 @@ export class TabsComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    if (this.activeTab &#x3D;&#x3D;&#x3D; undefined &amp;&amp; this.tabs.length) {
+    if (!this.activeTab &amp;&amp; this.tabs.length) {
       this.select(this.tabs.first.id);
     }
   }
