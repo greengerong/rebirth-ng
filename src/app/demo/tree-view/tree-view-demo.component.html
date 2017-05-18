@@ -14,11 +14,6 @@
     <hr>
     <re-tree-view #checkedTreeView [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
                   #treeView="treeView" [allowMutipleSelected]="true"></re-tree-view>
-
-    Selected Node ID:
-    <pre>{{treeView.getSelectNodes()}}</pre>
-    Checked Nodes ID:
-    <pre>[{{treeView.getCheckedNodes()}}]</pre>
   </section>
 
   <section>
