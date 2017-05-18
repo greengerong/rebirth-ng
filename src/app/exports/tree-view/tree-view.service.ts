@@ -3,18 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class TreeViewService {
 
-  // constructor() {
-  //
-  // }
-
-  getSelectNodes(treeData: any[], valueField: string) {
-    const matchedItems = this.innerGetMatchedItems(null, treeData, (node) => node.$$select);
-    return matchedItems.map((item) => item.node[valueField]);
+  getSelectNodes(treeData: any[]) {
+    return this.innerGetMatchedItems(null, treeData, (node) => node.$$select);
   }
 
-  getCheckedNodes(treeData: any[], valueField: string) {
-    const matchedItems = this.innerGetMatchedItems(null, treeData, (node) => node.$$check);
-    return matchedItems.map((item) => item.node[valueField]);
+  getCheckedNodes(treeData: any[]) {
+    return this.innerGetMatchedItems(null, treeData, (node) => node.$$check);
   }
 
   getMatchedItems(treeData: any[], match: (node: any) => boolean) {

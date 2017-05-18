@@ -91,11 +91,11 @@ export class TreeViewComponent {
   }
 
   getSelectNodes() {
-    return this.treeViewService.getSelectNodes(this.treeData, this.valueField);
+    return this.treeViewService.getSelectNodes(this.treeData);
   }
 
   getCheckedNodes() {
-    return this.treeViewService.getCheckedNodes(this.treeData, this.valueField);
+    return this.treeViewService.getCheckedNodes(this.treeData);
   }
 
   getMatchedItems(match: (node: any) => boolean) {
