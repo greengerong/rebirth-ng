@@ -10,7 +10,6 @@ import { SelectDateChangeEventArgs, SelectDateChangeReason } from './date-change
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { DateConverter } from '../utils/date-converter';
 import { DefaultDateConverter } from '../utils/default-date-converter';
-import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
   selector: '[reDatePicker]',
@@ -38,6 +37,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   private cmpRef: ComponentRef<DatePickerPopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
+  private lastEventTarget: any;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
@@ -133,7 +133,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   }
 
   toggle($event: Event) {
-    stopPropagationIfExist($event);
+    this.lastEventTarget = $event.target;
     if (this.isOpen) {
       this.hide();
       return;
@@ -145,7 +145,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   @HostListener('document:click', ['$event'])
   onDocumentClick($event: Event) {
     const hostElement = this.elementRef.nativeElement;
-    if ($event.target !== hostElement) {
+    if ([hostElement, this.lastEventTarget].indexOf($event.target) === -1) {
       this.hide();
     }
   }

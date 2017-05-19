@@ -15,12 +15,11 @@ import {
 } from '@angular/core';
 import { PositionService } from '../position/positioning.service';
 import { TooltipPopup } from './tooltip-popup';
-import { stopPropagationIfExist } from '../utils/dom-utils';
 
 export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestroy {
   @Input() context: any;
   @Input() cssClass: string;
-  @Input() trigger: 'hover'|'click' | 'manual' = 'hover';
+  @Input() trigger: 'hover' | 'click' | 'manual' = 'hover';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   popupRef: ComponentRef<T>;
   triggers = {
@@ -59,7 +58,7 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
   onDocumentClick($event: Event) {
     if (this.trigger !== 'manual') {
       const hostElement = this.elementRef.nativeElement;
-      if ($event.target !== hostElement) {
+      if (!hostElement.contains($event.target)) {
         this.hide();
       }
     }
@@ -112,13 +111,11 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
     const trigger = this.triggers[this.trigger];
     if (trigger[0]) {
       this.listens.push(this.renderer.listen(hostElement, trigger[0], (event) => {
-        stopPropagationIfExist(event);
         this.show();
       }));
     }
     if (trigger[1]) {
       this.listens.push(this.renderer.listen(hostElement, trigger[1], ($event) => {
-        stopPropagationIfExist($event);
         this.hide();
       }));
     }

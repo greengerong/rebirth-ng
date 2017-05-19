@@ -1,5 +1,15 @@
 
 
+# 0.0.11()
+
+## Bug Fixes
+
+## Features
+
+* (Menubar, DatePicker, ActionButton) Allow event propagation.
+
+
+
 # 0.0.11(2017-05-18)
 
 ## Bug Fixes

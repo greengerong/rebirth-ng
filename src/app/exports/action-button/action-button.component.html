@@ -9,7 +9,7 @@
           class="btn {{action.type? 'btn-' + action.type : ''}} {{action.btnSize? 'btn-' + action.btnSize : ''}} dropdown-toggle"
           aria-haspopup="true"
           [attr.aria-expanded]="true"
-          (click)="action.toggle($event)" [disabled]="action.disabled">
+          (click)="action.toggle()" [disabled]="action.disabled">
     <span class="caret"></span>
     <span class="sr-only">|</span>
   </button>

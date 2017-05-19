@@ -1,6 +1,5 @@
-import { Component, Input, EventEmitter, HostListener, Output, TemplateRef } from '@angular/core';
+import { Component, Input, EventEmitter, HostListener, Output, TemplateRef, ElementRef } from '@angular/core';
 import { ActionItem } from './action-item.model';
-import { stopPropagationIfExist } from '../utils/dom-utils';
 import { trigger, state, style, animate, transition, AnimationEvent } from '@angular/animations';
 
 @Component({
@@ -33,8 +32,11 @@ export class ActionButtonComponent {
   animateState = 'initial';
   isOpen = false;
 
-  toggle($event?: MouseEvent) {
-    stopPropagationIfExist($event);
+  constructor(private elementRef: ElementRef) {
+
+  }
+
+  toggle() {
     if (!this.isOpen) {
       this.show();
     } else {
@@ -50,6 +52,12 @@ export class ActionButtonComponent {
   }
 
   @HostListener('document:click', ['$event'])
+  onDocumentClick($event) {
+    if (!this.elementRef.nativeElement.contains($event.target)) {
+      this.close();
+    }
+  }
+
   close() {
     if (this.isOpen) {
       this.hide();
