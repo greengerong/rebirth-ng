@@ -42,11 +42,15 @@ export class DocComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     this.html.changes.subscribe((html) => {
-      hljs.highlightBlock(html.last.nativeElement);
+      if (html.last) {
+        hljs.highlightBlock(html.last.nativeElement);
+      }
     });
 
     this.typescript.changes.subscribe((typescript) => {
-      hljs.highlightBlock(typescript.last.nativeElement);
+      if (typescript.last) {
+        hljs.highlightBlock(typescript.last.nativeElement);
+      }
     });
 
 
