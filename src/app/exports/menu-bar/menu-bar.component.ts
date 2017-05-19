@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import { MenuBar } from './menu-bar.model';
-import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Component({
   selector: 're-menu-bar',
@@ -19,14 +18,18 @@ export class MenuBarComponent {
   showNavBar: boolean;
   sidebarOpen: boolean;
 
-  toggle($event?: Event) {
-    stopPropagationIfExist($event);
+  constructor(private elementRef: ElementRef) {
+
+  }
+
+  toggle() {
     this.onShowNavBarChange(!this.showNavBar);
   }
 
   hide($event?: Event) {
-    stopPropagationIfExist($event);
-    this.onShowNavBarChange(false);
+    if (!this.elementRef.nativeElement.contains($event.target)) {
+      this.onShowNavBarChange(false);
+    }
   }
 
   onShowNavBarChange(showNavBar: boolean) {

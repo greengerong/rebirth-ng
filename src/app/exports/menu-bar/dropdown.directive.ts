@@ -1,5 +1,4 @@
 import { Directive, HostListener, Output, Input, EventEmitter, Renderer2, ElementRef, } from '@angular/core';
-import { stopPropagationIfExist } from '../utils/dom-utils';
 
 @Directive({
   selector: '[reDropdown]',
@@ -16,16 +15,15 @@ export class DropdownDirective {
   }
 
   @HostListener('document:click', ['$event'])
-  onDocumentClick() {
-    this.active = false;
-    this.updateHostStatus();
+  onDocumentClick($event) {
+    if (!this.elementRef.nativeElement.contains($event.target)) {
+      this.active = false;
+      this.updateHostStatus();
+    }
   }
 
   @HostListener('click', ['$event'])
-  onHostClick($event: Event) {
-    if (!this.active) {
-      stopPropagationIfExist($event);
-    }
+  onHostClick() {
     this.toggle();
   }
 
