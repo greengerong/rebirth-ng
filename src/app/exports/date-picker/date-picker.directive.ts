@@ -34,10 +34,10 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   private _dateFormat: string;
   private _maxDate: Date;
   private _minDate: Date;
+  private lastEventTarget: any;
   private cmpRef: ComponentRef<DatePickerPopupComponent>;
   private onChange = (_: any) => null;
   private onTouched = () => null;
-  private lastEventTarget: any;
 
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
