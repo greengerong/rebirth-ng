@@ -51,7 +51,7 @@ export class TreeNodeComponent {
   onExpendedIconClick($event) {
     $event.stopPropagation();
 
-    if (this.isLeaf()) {
+    if (this.isLeaf() || this.isLoading) {
       return;
     }
 
