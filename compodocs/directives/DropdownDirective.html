@@ -1393,7 +1393,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-2" colspan="2">
-                                        <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:12</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:11</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1413,7 +1413,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-2" colspan="2">
-                                        <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:13</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:12</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1435,7 +1435,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-2" colspan="2">
-                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:11</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:10</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1453,7 +1453,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:13</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:12</a></div>
                                     </td>
                                 </tr>
             
@@ -1475,13 +1475,13 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>onDocumentClick()</code>
+            <code>onDocumentClick($event: any)</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:19</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:18</a></div>
                                     </td>
                                 </tr>
             
@@ -1505,13 +1505,13 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>onHostClick($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+            <code>onHostClick()</code>
                                 </td>
                             </tr>
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:25</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:26</a></div>
                                     </td>
                                 </tr>
             
@@ -1541,7 +1541,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:32</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:30</a></div>
                                     </td>
                                 </tr>
             
@@ -1571,7 +1571,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:37</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:35</a></div>
                                     </td>
                                 </tr>
             
@@ -1613,7 +1613,7 @@
                                 </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:10</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/exports/menu-bar/dropdown.directive.ts:9</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1623,7 +1623,6 @@
     </div>
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Directive, HostListener, Output, Input, EventEmitter, Renderer2, ElementRef, } from &#x27;@angular/core&#x27;;
-import { stopPropagationIfExist } from &#x27;../utils/dom-utils&#x27;;
 
 @Directive({
   selector: &#x27;[reDropdown]&#x27;,
@@ -1640,16 +1639,15 @@ export class DropdownDirective {
   }
 
   @HostListener(&#x27;document:click&#x27;, [&#x27;$event&#x27;])
-  onDocumentClick() {
-    this.active &#x3D; false;
-    this.updateHostStatus();
+  onDocumentClick($event) {
+    if (!this.elementRef.nativeElement.contains($event.target)) {
+      this.active &#x3D; false;
+      this.updateHostStatus();
+    }
   }
 
   @HostListener(&#x27;click&#x27;, [&#x27;$event&#x27;])
-  onHostClick($event: Event) {
-    if (!this.active) {
-      stopPropagationIfExist($event);
-    }
+  onHostClick() {
     this.toggle();
   }
 
