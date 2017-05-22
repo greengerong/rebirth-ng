@@ -36,6 +36,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.setupScrollEvent();
+    setTimeout(_ => this.onWinScroll(null));
   }
 
   loadFinish(complete: boolean) {
