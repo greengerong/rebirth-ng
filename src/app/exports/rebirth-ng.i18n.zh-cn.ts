@@ -1,9 +1,5 @@
 export const REBIRTH_NG_I18N_ZHCN = {
 
-    datatable: {
-      emptyRowText: '没有相关数据'
-    },
-
     datePicker: {
       locale: 'zh-CN',
       today: '今天',

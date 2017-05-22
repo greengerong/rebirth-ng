@@ -43,10 +43,6 @@ export class RebirthNGConfig {
     valueParser: (item) => item
   };
 
-  datatable = {
-    emptyRowText: 'Data source is empty!'
-  };
-
   datePicker = {
     locale: 'en-US',
     today: 'Today',
