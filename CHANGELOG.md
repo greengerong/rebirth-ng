@@ -1,12 +1,13 @@
 
 
-# 0.0.11()
+# 0.0.12(2017-05-22)
 
 ## Bug Fixes
 
 ## Features
 
 * (Menubar, DatePicker, ActionButton) Allow event propagation.
+* (InfiniteScroll) InfiniteScroll first load.
 
 
 
