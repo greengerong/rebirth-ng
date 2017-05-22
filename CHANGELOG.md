@@ -1,4 +1,13 @@
 
+# 0.0.13()
+
+## Bug Fixes
+
+## Features
+
+* (DataTable) Remove DataTable component.
+
+
 
 # 0.0.12(2017-05-22)
 
