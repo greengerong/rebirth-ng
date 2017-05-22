@@ -25,7 +25,6 @@ import { SwitchModule } from './switch/switch.module';
 import { MenuBarModule } from './menu-bar/menu-bar.module';
 import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
-import { DataTableModule } from './data-table';
 import { InfiniteScrollModule } from './infinite-scroll';
 import { RebirthCommonModule, AssetsLoader } from './common';
 import { DraggableModule } from './draggable';
@@ -65,7 +64,6 @@ import { TreeViewModule, TreeViewService } from './tree-view';
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule,
     FileUploadModule,
     TimePickerModule,
     RadioGroupModule,
@@ -100,7 +98,6 @@ import { TreeViewModule, TreeViewService } from './tree-view';
     AutoCompleteModule,
     FlowStepModule,
     InfiniteScrollModule,
-    DataTableModule,
     DraggableModule,
     FileUploadModule,
     TimePickerModule,

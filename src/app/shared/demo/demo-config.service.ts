@@ -239,7 +239,7 @@ export class DemoConfigService {
       name: 'DataTable',
       directory: 'data-table',
       cmp: DataTableDemoComponent,
-      readMe: require('!html-loader!markdown-loader!../../exports/data-table/README.md'),
+      readMe: '',
       html: require('!raw-loader!../../demo/data-table/data-table-demo.component.html'),
       ts: require('!raw-loader!../../demo/data-table/data-table-demo.component.ts'),
     },
