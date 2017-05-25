@@ -5,10 +5,13 @@ import { CommonModule } from '@angular/common';
 import { ModalContentComponent } from './modal-content.component';
 import { ModalBackdropComponent } from './modal-backdrop.component';
 import { ModalWindowComponent } from './modal-window.component';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
+import { ModalService } from './modal.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [ModalBackdropComponent],
   declarations: [
@@ -24,4 +27,11 @@ import { ModalWindowComponent } from './modal-window.component';
   ]
 })
 export class ModalModule {
+  constructor(router: Router, modalService: ModalService) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        modalService.closeAll();
+      }
+    })
+  }
 }

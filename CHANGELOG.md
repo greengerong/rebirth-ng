@@ -6,7 +6,8 @@
 ## Features
 
 * (DataTable) Remove DataTable component.
-* (Tooltip & Popover) append to body.
+* (Tooltip & Popover) Append to body.
+* (Modal) Close modal when navigation end;
 
 
 
