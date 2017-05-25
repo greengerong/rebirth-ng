@@ -6,6 +6,7 @@
 ## Features
 
 * (DataTable) Remove DataTable component.
+* (Tooltip & Popover) append to body.
 
 
 
