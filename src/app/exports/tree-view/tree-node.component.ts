@@ -47,7 +47,7 @@ export class TreeNodeComponent {
     }
 
     return true;
-  };
+  }
 
   constructor(private treeViewComponent: TreeViewComponent,
               private treePanelComponent: TreePanelComponent,

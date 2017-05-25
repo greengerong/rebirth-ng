@@ -23,13 +23,13 @@ export class AutoCompleteDemoComponent {
     'LiveScript', 'CoffeeScript'];
 
   onSearchLocal = (term) => of(this.languages
-    .filter(lang => lang.toLowerCase().indexOf(term.toLowerCase()) !== -1))
+    .filter(lang => lang.toLowerCase().indexOf(term.toLowerCase()) !== -1));
 
 
   onSearchObject = (term) => of(this.languages
     .map((lang, index) => ({ label: lang, id: index }))
     .filter(lang => lang.label.toLowerCase().indexOf(term.toLowerCase()) !== -1)
-  );
+  )
 
 
   searchWiki = (term) => {
@@ -42,11 +42,11 @@ export class AutoCompleteDemoComponent {
     return this.jsonp
       .get('https://en.wikipedia.org/w/api.php', { search: params })
       .map(response => <string[]> response.json()[1]);
-  };
+  }
 
   onSearch = (term) => {
     return this.searchWiki(term);
-  };
+  }
 
   constructor(private jsonp: Jsonp) {
 
@@ -55,6 +55,5 @@ export class AutoCompleteDemoComponent {
   getIcon(index) {
     return this.icons[index % this.icons.length];
   }
-
 
 }

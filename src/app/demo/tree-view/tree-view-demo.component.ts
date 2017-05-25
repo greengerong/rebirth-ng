@@ -68,7 +68,7 @@ export class TreeViewDemoComponent {
       }
     ])
       .delay(5 * 1000);
-  };
+  }
 
   clone(data) {
     return JSON.parse(JSON.stringify(data));
