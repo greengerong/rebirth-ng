@@ -1262,7 +1262,7 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-2" colspan="2">
-                                        <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:20</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:21</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1276,12 +1276,12 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>)</code>
+                                    <code>constructor(viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:20</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:21</a></div>
                                     </td>
                                 </tr>
             
@@ -1309,7 +1309,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:32</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/exports/tooltip/tooltip.directive.ts:34</a></div>
                                     </td>
                                 </tr>
             
@@ -1342,6 +1342,7 @@
 import { PositionService } from &#x27;../position/positioning.service&#x27;;
 import { Tooltip } from &#x27;./tooltip&#x27;;
 import { TooltipPopupComponent } from &#x27;./tooltip-popup.component&#x27;;
+import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
 @Directive({
   selector: &#x27;[reTooltip]&#x27;,
@@ -1355,12 +1356,13 @@ export class TooltipDirective extends Tooltip&lt;TooltipPopupComponent&gt; {
               componentFactoryResolver: ComponentFactoryResolver,
               injector: Injector,
               positionService: PositionService,
-              renderer: Renderer2) {
-    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer);
+              renderer: Renderer2,
+              rebirthUIConfig: RebirthNGConfig) {
+    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthUIConfig);
     this.tooltipPopupType &#x3D; TooltipPopupComponent;
   }
 
-  getContent(): string|TemplateRef&lt;any&gt; {
+  getContent(): string | TemplateRef&lt;any&gt; {
     return this.content;
   }
 
