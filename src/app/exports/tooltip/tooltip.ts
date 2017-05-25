@@ -15,10 +15,12 @@ import {
 } from '@angular/core';
 import { PositionService } from '../position/positioning.service';
 import { TooltipPopup } from './tooltip-popup';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestroy {
   @Input() context: any;
   @Input() cssClass: string;
+  @Input() appendBody = false;
   @Input() trigger: 'hover' | 'click' | 'manual' = 'hover';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right' = 'top';
   popupRef: ComponentRef<T>;
@@ -37,21 +39,32 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
               protected componentFactoryResolver: ComponentFactoryResolver,
               protected injector: Injector,
               protected positionService: PositionService,
-              protected renderer: Renderer2) {
+              protected renderer: Renderer2,
+              protected rebirthUIConfig: RebirthNGConfig) {
   }
 
   abstract getContent(): string | TemplateRef<any>;
 
   ngOnInit() {
     const factory = this.componentFactoryResolver.resolveComponentFactory<T>(this.tooltipPopupType);
-    this.popupRef = this.viewContainerRef.createComponent(factory, 0, this.injector);
-    this.fillPopup();
-    this.registerTriggers();
-    this.positionChange
-      .filter(() => this.popupRef && this.popupRef.instance.isOpen)
-      .debounceTime(100)
-      .distinctUntilChanged()
-      .subscribe(() => this.positionTooltip());
+    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    // EXCEPTION: Expression has changed after it was checked when append to body;
+
+    setTimeout(() => {
+      this.popupRef = viewContainerRef.createComponent(factory, 0, this.injector);
+      this.fillPopup();
+      this.registerTriggers();
+      this.positionChange
+        .filter(() => this.popupRef && this.popupRef.instance.isOpen)
+        .debounceTime(100)
+        .distinctUntilChanged()
+        .subscribe(() => this.positionTooltip());
+    });
+
+    this.listens.push(this.renderer.listen('window', 'resize', ($event) => this.positionChange.emit($event)));
+    if (this.appendBody) {
+      this.listens.push(this.renderer.listen('window', 'scroll', ($event) => this.positionChange.emit($event)));
+    }
   }
 
   @HostListener('document:click', ['$event'])
@@ -63,16 +76,6 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
       }
     }
   }
-
-  @HostListener('window:resize', ['$event'])
-  onWindowResize($event: Event) {
-    this.positionChange.emit($event);
-  }
-
-  // @HostListener('document:scroll', ['$event'])
-  // onDocumentScroll($event: Event) {
-  //   this.positionChange.emit($event);
-  // }
 
   ngOnDestroy(): void {
     this.listens.forEach(unregister => unregister());
@@ -124,7 +127,7 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
   private positionTooltip() {
     const hostElement = this.elementRef.nativeElement;
     const targetElement = this.popupRef.location.nativeElement;
-    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, false);
+    const clientRect = this.positionService.positionElements(hostElement, targetElement, this.placement, this.appendBody);
     this.renderer.setStyle(targetElement, 'left', `${clientRect.left}px`);
     this.renderer.setStyle(targetElement, 'top', `${clientRect.top}px`);
   }

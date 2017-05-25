@@ -26,6 +26,16 @@
   </section>
 
   <section>
+    <h4>Append to body tooltip:</h4>
+    <div style="padding: 10px 100px;">
+      <button class="btn btn-danger" [appendBody]="true" [trigger]="'click'" reTooltip="I am a rebirth tooltip!"
+              placement="right">Tooltip
+        on right
+      </button>
+    </div>
+  </section>
+
+  <section>
     <h4>Manual tooltip:</h4>
     <div style="padding: 10px 100px;">
       <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'"

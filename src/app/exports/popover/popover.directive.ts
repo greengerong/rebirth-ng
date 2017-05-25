@@ -11,6 +11,7 @@ import {
 import { PopoverPopupComponent } from './popover-popup.component';
 import { PositionService } from '../position/positioning.service';
 import { Tooltip } from '../tooltip/tooltip';
+import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Directive({
   selector: '[rePopover]',
@@ -25,8 +26,9 @@ export class PopoverDirective extends Tooltip<PopoverPopupComponent> {
               componentFactoryResolver: ComponentFactoryResolver,
               injector: Injector,
               positionService: PositionService,
-              renderer: Renderer2) {
-    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer);
+              renderer: Renderer2,
+              rebirthUIConfig: RebirthNGConfig) {
+    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthUIConfig);
     this.tooltipPopupType = PopoverPopupComponent;
     this.trigger = 'click';
   }
@@ -37,7 +39,7 @@ export class PopoverDirective extends Tooltip<PopoverPopupComponent> {
     return popupComponent;
   }
 
-  getContent(): string|TemplateRef<any> {
+  getContent(): string | TemplateRef<any> {
     return this.content;
   }
 
