@@ -22,46 +22,17 @@ export class AutoCompleteDemoComponent {
   languages = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
     'LiveScript', 'CoffeeScript'];
 
-  constructor(private jsonp: Jsonp) {
-
-  }
-
-  getIcon(index) {
-    return this.icons[index % this.icons.length];
-  }
+  onSearchLocal = (term) => of(this.languages
+    .filter(lang => lang.toLowerCase().indexOf(term.toLowerCase()) !== -1))
 
 
-  onSearchLocal(term) {
-    return of(this.languages.filter(lang => lang.toLowerCase().indexOf(term.toLowerCase()) !== -1));
-  }
+  onSearchObject = (term) => of(this.languages
+    .map((lang, index) => ({ label: lang, id: index }))
+    .filter(lang => lang.label.toLowerCase().indexOf(term.toLowerCase()) !== -1)
+  );
 
-  onSearchObject(term) {
-    return of(this.languages
-      .map((lang, index) => ({ label: lang, id: index }))
-      .filter(lang => lang.label.toLowerCase().indexOf(term.toLowerCase()) !== -1)
-    );
-  }
 
-  onMutipleSearch() {
-    console.log(this.selectItem5);
-    if (this.mutipleItems.indexOf(this.selectItem5) === -1) {
-      this.mutipleItems.push(this.selectItem5);
-    }
-
-    this.selectItem5 = '';
-  }
-
-  removeLabel(label) {
-    if (this.mutipleItems.indexOf(label) !== -1) {
-      this.mutipleItems = this.mutipleItems.filter(item => item !== label);
-    }
-  }
-
-  onSearch(term) {
-    return this.searchWiki(term);
-  }
-
-  searchWiki(term) {
+  searchWiki = (term) => {
     const params = new URLSearchParams();
     params.set('search', term);
     params.set('action', 'opensearch');
@@ -71,12 +42,19 @@ export class AutoCompleteDemoComponent {
     return this.jsonp
       .get('https://en.wikipedia.org/w/api.php', { search: params })
       .map(response => <string[]> response.json()[1]);
+  };
+
+  onSearch = (term) => {
+    return this.searchWiki(term);
+  };
+
+  constructor(private jsonp: Jsonp) {
+
   }
 
-  onMmutipleSearchBoxBackspace($event: Event, autoComplete: AutoCompleteDirective) {
-    if (!(<any>$event.target).value && this.mutipleItems.length) {
-      this.mutipleItems.pop();
-      setTimeout(() => autoComplete.positionPopup(), 0);
-    }
+  getIcon(index) {
+    return this.icons[index % this.icons.length];
   }
+
+
 }

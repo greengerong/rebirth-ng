@@ -32,6 +32,22 @@ export class TreeNodeComponent {
   @Input() collapseIcon;
   @ViewChild('nodeItemContent') nodeItemContent: ElementRef;
   isLoading: boolean;
+  isAcceptDrop = ($event) => {
+    const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
+    if (!dropData.data.node) {
+      return false;
+    }
+
+    if (this.isNodeMyself(dropData)) {
+      return false;
+    }
+
+    if (this.isDescendant(dropData.data.node, this.node)) {
+      return false;
+    }
+
+    return true;
+  };
 
   constructor(private treeViewComponent: TreeViewComponent,
               private treePanelComponent: TreePanelComponent,
@@ -100,23 +116,6 @@ export class TreeNodeComponent {
     }
 
     return !this.node.children || !this.node.children.length;
-  }
-
-  isAcceptDrop($event) {
-    const dropData = JSON.parse($event.dataTransfer.getData(DraggableDirective.DRAGGABLE_DATA_KEY));
-    if (!dropData.data.node) {
-      return false;
-    }
-
-    if (this.isNodeMyself(dropData)) {
-      return false;
-    }
-
-    if (this.isDescendant(dropData.data.node, this.node)) {
-      return false;
-    }
-
-    return true;
   }
 
   onDragEnter() {

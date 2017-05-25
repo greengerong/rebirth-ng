@@ -7,17 +7,18 @@ const treeData = require('./data.json');
   selector: 're-tree-view-demo',
   templateUrl: './tree-view-demo.component.html',
   styles: [`
-        :host /deep/ .glyphicon-file{
-          color: #FF9800;
-        } 
-        
-        :host /deep/ .glyphicon-folder-close{
-          color: #FF9800;
-        } 
-        :host /deep/ .glyphicon-folder-open{
-          color: #FF9800;
-        }
-    `]
+    :host /deep/ .glyphicon-file {
+      color: #FF9800;
+    }
+
+    :host /deep/ .glyphicon-folder-close {
+      color: #FF9800;
+    }
+
+    :host /deep/ .glyphicon-folder-open {
+      color: #FF9800;
+    }
+  `]
 })
 export class TreeViewDemoComponent {
   treeData1 = this.clone(treeData);
@@ -45,11 +46,7 @@ export class TreeViewDemoComponent {
   largeNodes: any[];
   largeTreeCheckable: boolean;
 
-  clone(data) {
-    return JSON.parse(JSON.stringify(data));
-  }
-
-  loadChildren(parent) {
+  loadChildren = (parent) => {
     const pid = parent.id;
     console.log(`Load children for parent ${pid}`);
     if (pid.split('-').length > 3) {
@@ -71,6 +68,10 @@ export class TreeViewDemoComponent {
       }
     ])
       .delay(5 * 1000);
+  };
+
+  clone(data) {
+    return JSON.parse(JSON.stringify(data));
   }
 
   generateTreeData() {
