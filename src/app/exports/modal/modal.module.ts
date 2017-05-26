@@ -32,6 +32,6 @@ export class ModalModule {
       if (event instanceof NavigationEnd) {
         modalService.closeAll();
       }
-    })
+    });
   }
 }
