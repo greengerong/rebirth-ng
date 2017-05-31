@@ -14,6 +14,7 @@ var ejs = require('gulp-ejs');
 var insertLines = require('gulp-insert-lines');
 var optimizejs = require('gulp-optimize-js');
 var cleanCSS = require('gulp-clean-css');
+var htmlmin = require('gulp-html-minifier');
 
 var cmpGenConfig = {
   componentSelector: '',
@@ -41,6 +42,12 @@ gulp.task('copy:exports', ['clean:dist'], function () {
   return gulp.src([config.src + '/**/*.*'])
     .pipe(gulpif(/.+\.scss/g, sass({outputStyle: 'compressed'}).on('error', sass.logError)))
     .pipe(gulpif(/.+\.css/g, cleanCSS({compatibility: 'ie9'})))
+    .pipe(gulpif(/.+\.html/g, htmlmin({
+      collapseWhitespace: true,
+      caseSensitive: true,
+      removeComments: true,
+      removeRedundantAttributes: true
+    })))
     .pipe(rename(function (path) {
       if (path.extname === '.css') {
         path.extname = '.scss';

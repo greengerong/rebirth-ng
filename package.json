@@ -65,6 +65,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.4.0",
     "gulp-ejs": "^3.0.0",
+    "gulp-html-minifier": "^0.1.8",
     "gulp-if": "^2.0.2",
     "gulp-ignore": "^2.0.2",
     "gulp-inline-ng2-template": "^4.0.0",
