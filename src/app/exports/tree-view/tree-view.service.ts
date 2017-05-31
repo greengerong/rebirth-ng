@@ -49,10 +49,14 @@ export class TreeViewService {
 
 
   appendNodes(treeData: any[], valueField: any, parentId, nodes: any[]) {
-    const parentNode = this.getTreeNodeByValue(treeData, valueField, parentId);
-    parentNode.node.children = parentNode.node.children || [];
-    parentNode.node.children.push(...nodes);
-    return parentNode;
+    if (parentId) {
+      const parentNode = this.getTreeNodeByValue(treeData, valueField, parentId);
+      parentNode.node.children = parentNode.node.children || [];
+      parentNode.node.children.push(...nodes);
+      return parentNode;
+    }
+
+    treeData.push(...nodes);
   }
 
   removeNode(treeData: any[], valueField: string, value: any) {
