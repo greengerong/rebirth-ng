@@ -1473,8 +1473,8 @@ export class PositionService {
         parentOffset &#x3D; this.offset(offsetParentEl, false);
       }
 
-      parentOffset.top +&#x3D; offsetParentEl.clientTop;
-      parentOffset.left +&#x3D; offsetParentEl.clientLeft;
+      parentOffset.top +&#x3D; offsetParentEl.clientTop - offsetParentEl.scrollTop;
+      parentOffset.left +&#x3D; offsetParentEl.clientLeft - offsetParentEl.scrollLeft;
     }
 
     elPosition.top -&#x3D; parentOffset.top;
