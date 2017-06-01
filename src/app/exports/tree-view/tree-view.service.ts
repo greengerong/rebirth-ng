@@ -23,6 +23,41 @@ export class TreeViewService {
     return this.innerGetFirstMatchedItem(null, treeData, (node) => node[valueField] === value);
   }
 
+  expendNodesByLevel(treeData: any[], level: number) {
+    if (!treeData || !level) {
+      return;
+    }
+
+    treeData.forEach((nodeItem) => {
+      nodeItem.$$expend = true;
+      this.expendNodesByLevel(nodeItem.children, level - 1);
+    });
+  }
+
+  expendNodesByValue(treeData: any[], valueField: string, value: any) {
+    const paths = this.getNodePathByValue(treeData, valueField, value);
+    if (paths) {
+      paths.forEach((nodeItem) => nodeItem.$$expend = true);
+    }
+  }
+
+  getNodePathByValue(treeData: any[], valueField: string, value: any) {
+    if (!treeData) {
+      return;
+    }
+
+    for (let i = 0; i < treeData.length; i++) {
+      const nodeItem = treeData[i];
+      if (nodeItem[valueField] === value) {
+        return [nodeItem];
+      }
+      const matchNode = this.getNodePathByValue(nodeItem.children, valueField, value);
+      if (matchNode && matchNode.length) {
+        return [nodeItem, ...matchNode];
+      }
+    }
+  }
+
   expendAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) => {
       node.$$expend = true;

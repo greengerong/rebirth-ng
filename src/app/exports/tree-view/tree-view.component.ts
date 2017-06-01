@@ -118,6 +118,18 @@ export class TreeViewComponent {
     return this.treeViewService.collapseAllNodes(this.treeData);
   }
 
+  expendNodesByLevel(level: number) {
+    this.treeViewService.expendNodesByLevel(this.treeData, level);
+  }
+
+  expendNodesByValue(value: any) {
+    this.treeViewService.expendNodesByValue(this.treeData, this.valueField, value);
+  }
+
+  getNodePathByValue(value: any) {
+    return this.treeViewService.getNodePathByValue(this.treeData, this.valueField, value);
+  }
+
   checkAllNodes() {
     return this.treeViewService.checkAllNodes(this.treeData);
   }

@@ -1,5 +1,5 @@
 
-# 0.0.13()
+# 0.0.13(2017-06-01)
 
 ## Bug Fixes
 
@@ -8,6 +8,7 @@
 * (DataTable) Remove DataTable component.
 * (Tooltip & Popover) Append to body.
 * (Modal) Close modal when navigation end;
+* (TreeView) Expend by level & node value utils method;
 
 
 
