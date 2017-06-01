@@ -2085,6 +2085,96 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
+                            <b> expendNodesByLevel</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>expendNodesByLevel(level: number)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:121</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> expendNodesByValue</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>expendNodesByValue(value: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:125</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> getNodePathByValue</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>getNodePathByValue(value: any)</code>
+                        </td>
+                    </tr>
+    
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:129</a></div>
+                            </td>
+                        </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
                             <b> checkAllNodes</b>
                         </td>
                     </tr>
@@ -2096,7 +2186,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:121</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:133</a></div>
                             </td>
                         </tr>
     
@@ -2126,7 +2216,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:125</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:137</a></div>
                             </td>
                         </tr>
     
@@ -2156,7 +2246,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:129</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:141</a></div>
                             </td>
                         </tr>
     
@@ -2186,7 +2276,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="133" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:133</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="145" class="link-to-prism">src/app/exports/tree-view/tree-view.component.ts:145</a></div>
                             </td>
                         </tr>
     
@@ -2355,6 +2445,18 @@ export class TreeViewComponent {
 
   collapseAllNodes() {
     return this.treeViewService.collapseAllNodes(this.treeData);
+  }
+
+  expendNodesByLevel(level: number) {
+    this.treeViewService.expendNodesByLevel(this.treeData, level);
+  }
+
+  expendNodesByValue(value: any) {
+    this.treeViewService.expendNodesByValue(this.treeData, this.valueField, value);
+  }
+
+  getNodePathByValue(value: any) {
+    return this.treeViewService.getNodePathByValue(this.treeData, this.valueField, value);
   }
 
   checkAllNodes() {
