@@ -135,7 +135,7 @@ export class TreeNodeComponent {
     }
     setTimeout(() => {
       this.renderer.removeClass(this.nodeItemContent.nativeElement, 'drop-node-enter');
-    });
+    }, 0);
   }
 
   private isNodeMyself(dropData: any) {
