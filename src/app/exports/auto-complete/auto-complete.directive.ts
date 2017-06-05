@@ -113,6 +113,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private setupArraySource() {
+    if (this.popupRef) {
+      this.popupRef.instance.source = this.arraySource;
+    }
+
     this.onSearch = (term) => {
       return of(
         this.arraySource
