@@ -2379,7 +2379,7 @@ export class TreeViewComponent {
   onNodeItemClicked(node) {
     if (!this.allowMutipleSelected) {
       if (this.selectNode &amp;&amp; this.selectNode !&#x3D;&#x3D; node) {
-        this.selectNode.$$select &#x3D; false;
+        this.selectNode.$select &#x3D; false;
       }
       this.selectNode &#x3D; node;
     }
@@ -2414,7 +2414,7 @@ export class TreeViewComponent {
       this.treeData &#x3D; this.treeData.filter((nodeItem) &#x3D;&gt; nodeItem[this.valueField] !&#x3D;&#x3D; source[this.valueField]);
     }
     target.children &#x3D; target.children || [];
-    source.$$select &#x3D; false;
+    source.$select &#x3D; false;
     target.children.push(source);
     this.nodeItemDroped.emit($event);
   }

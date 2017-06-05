@@ -1765,11 +1765,11 @@
 export class TreeViewService {
 
   getSelectNodes(treeData: any[]) {
-    return this.innerGetMatchedItems(null, treeData, (node) &#x3D;&gt; node.$$select);
+    return this.innerGetMatchedItems(null, treeData, (node) &#x3D;&gt; node.$select);
   }
 
   getCheckedNodes(treeData: any[]) {
-    return this.innerGetMatchedItems(null, treeData, (node) &#x3D;&gt; node.$$check);
+    return this.innerGetMatchedItems(null, treeData, (node) &#x3D;&gt; node.$check);
   }
 
   getMatchedItems(treeData: any[], match: (node: any) &#x3D;&gt; boolean) {
@@ -1790,7 +1790,7 @@ export class TreeViewService {
     }
 
     treeData.forEach((nodeItem) &#x3D;&gt; {
-      nodeItem.$$expend &#x3D; true;
+      nodeItem.$expend &#x3D; true;
       this.expendNodesByLevel(nodeItem.children, level - 1);
     });
   }
@@ -1798,7 +1798,7 @@ export class TreeViewService {
   expendNodesByValue(treeData: any[], valueField: string, value: any) {
     const paths &#x3D; this.getNodePathByValue(treeData, valueField, value);
     if (paths) {
-      paths.forEach((nodeItem) &#x3D;&gt; nodeItem.$$expend &#x3D; true);
+      paths.forEach((nodeItem) &#x3D;&gt; nodeItem.$expend &#x3D; true);
     }
   }
 
@@ -1821,25 +1821,25 @@ export class TreeViewService {
 
   expendAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) &#x3D;&gt; {
-      node.$$expend &#x3D; true;
+      node.$expend &#x3D; true;
     });
   }
 
   collapseAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) &#x3D;&gt; {
-      node.$$expend &#x3D; false;
+      node.$expend &#x3D; false;
     });
   }
 
   checkAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) &#x3D;&gt; {
-      node.$$check &#x3D; true;
+      node.$check &#x3D; true;
     });
   }
 
   unCheckAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) &#x3D;&gt; {
-      node.$$check &#x3D; false;
+      node.$check &#x3D; false;
     });
   }
 

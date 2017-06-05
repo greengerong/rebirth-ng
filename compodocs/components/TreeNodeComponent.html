@@ -2174,7 +2174,7 @@ export class TreeNodeComponent {
       return this.leafIcon;
     }
 
-    return this.node.$$expend ? this.expendIcon : this.collapseIcon;
+    return this.node.$expend ? this.expendIcon : this.collapseIcon;
   }
 
   onExpendedIconClick($event) {
@@ -2185,18 +2185,18 @@ export class TreeNodeComponent {
     }
 
     let loadObservable &#x3D; of(null);
-    if (this.lazyLoad &amp;&amp; !this.node.$$loaded) {
+    if (this.lazyLoad &amp;&amp; !this.node.$loaded) {
       this.isLoading &#x3D; true;
       loadObservable &#x3D; this.loadChildren(this.node)
         .map((children) &#x3D;&gt; {
           this.node.children &#x3D; children || [];
-          this.node.$$loaded &#x3D; true;
+          this.node.$loaded &#x3D; true;
         });
     }
 
     loadObservable.subscribe(() &#x3D;&gt; {
       this.isLoading &#x3D; false;
-      this.node.$$expend &#x3D; !this.node.$$expend;
+      this.node.$expend &#x3D; !this.node.$expend;
       this.treeViewComponent.onNodeItemExpended(this.node);
     }, () &#x3D;&gt; {
       this.isLoading &#x3D; false;
@@ -2205,7 +2205,7 @@ export class TreeNodeComponent {
 
   onNodeItemClick($event) {
     $event.stopPropagation();
-    this.node.$$select &#x3D; !this.node.$$select;
+    this.node.$select &#x3D; !this.node.$select;
     this.treeViewComponent.onNodeItemClicked(this.node);
   }
 
@@ -2219,12 +2219,12 @@ export class TreeNodeComponent {
   }
 
   onChildrenNodeCheckedChange(node) {
-    this.node.$$check &#x3D; !this.node.children.some((item) &#x3D;&gt; !item.$$check);
+    this.node.$check &#x3D; !this.node.children.some((item) &#x3D;&gt; !item.$check);
     this.treePanelComponent.onNodeItemCheckedChanged(node);
   }
 
   isLeaf() {
-    if (this.lazyLoad &amp;&amp; !this.node.$$loaded) {
+    if (this.lazyLoad &amp;&amp; !this.node.$loaded) {
       return false;
     }
 
@@ -2271,7 +2271,7 @@ export class TreeNodeComponent {
     }
 
     nodes.forEach((node) &#x3D;&gt; {
-      node.$$check &#x3D; checked;
+      node.$check &#x3D; checked;
       this.changeChildrenChecked(node.children, checked);
     });
   }
@@ -2289,11 +2289,11 @@ export class TreeNodeComponent {
     &lt;div class&#x3D;&quot;node-item-content&quot; #nodeItemContent reDroppable&#x3D;&quot;re:node-item-drop&quot; (onDrop)&#x3D;&quot;onDropNodeItem($event)&quot;
          (onDragEnter)&#x3D;&quot;onDragEnter()&quot; (onDragLeave)&#x3D;&quot;onDragLeave()&quot; [acceptDrop]&#x3D;&quot;isAcceptDrop&quot;&gt;
       &lt;div class&#x3D;&quot;node-check-box&quot;&gt;
-        &lt;re-checkbox *ngIf&#x3D;&quot;checkable&quot; [(ngModel)]&#x3D;&quot;node.$$check&quot; label&#x3D;&quot;&quot;
+        &lt;re-checkbox *ngIf&#x3D;&quot;checkable&quot; [(ngModel)]&#x3D;&quot;node.$check&quot; label&#x3D;&quot;&quot;
                      (valueChange)&#x3D;&quot;nodeItemCheckedChange($event)&quot;&gt;&lt;/re-checkbox&gt;
       &lt;/div&gt;
       &lt;ng-container *ngIf&#x3D;&quot;!nodeItemTemplate&quot;&gt;
-      &lt;span class&#x3D;&quot;node-text&quot; [ngClass]&#x3D;&quot;{&#x27;bg-primary&#x27;: node.$$select}&quot; (click)&#x3D;&quot;onNodeItemClick($event)&quot;
+      &lt;span class&#x3D;&quot;node-text&quot; [ngClass]&#x3D;&quot;{&#x27;bg-primary&#x27;: node.$select}&quot; (click)&#x3D;&quot;onNodeItemClick($event)&quot;
             (dblclick)&#x3D;&quot;onNodeItemDbClicked($event)&quot;&gt;
         &lt;i *ngIf&#x3D;&quot;iconField &amp;&amp; node[iconField]&quot;
            class&#x3D;&quot;node-icon {{node[iconField]}}&quot;&gt;&lt;/i&gt; {{node[textField] || &#x27;&#x27;}} &lt;span
@@ -2311,7 +2311,7 @@ export class TreeNodeComponent {
       &lt;/ng-container&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-  &lt;re-tree-panel *ngIf&#x3D;&quot;node.children &amp;&amp; node.children.length &amp;&amp; node.$$expend&quot;
+  &lt;re-tree-panel *ngIf&#x3D;&quot;node.children &amp;&amp; node.children.length &amp;&amp; node.$expend&quot;
                  class&#x3D;&quot;children-view&quot;
                  [treeData]&#x3D;&quot;node.children&quot;
                  [textField]&#x3D;&quot;textField&quot;
@@ -2358,7 +2358,7 @@ export class TreeNodeComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="node-item {{nodeCssClass}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"     [dragData]="{node: node, parent: parentNode}">  <div class="node-item-panel">    <i class="node-expend-icon {{getNodeExpendIcon()}}"       (click)="onExpendedIconClick($event)"></i>    <div class="node-item-content" #nodeItemContent reDroppable="re:node-item-drop" (onDrop)="onDropNodeItem($event)"         (onDragEnter)="onDragEnter()" (onDragLeave)="onDragLeave()" [acceptDrop]="isAcceptDrop">      <div class="node-check-box">        <re-checkbox *ngIf="checkable" [(ngModel)]="node.$$check" label=""                     (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>      </div>      <ng-container *ngIf="!nodeItemTemplate">      <span class="node-text" [ngClass]="{\'bg-primary\': node.$$select}" (click)="onNodeItemClick($event)"            (dblclick)="onNodeItemDbClicked($event)">        <i *ngIf="iconField && node[iconField]"           class="node-icon {{node[iconField]}}"></i> {{node[textField] || \'\'}} <span        class="loading" *ngIf="isLoading">        <i class="{{loadingIcon}}"></i></span>      </span>        <div class="toolbar">          <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"                       [ngOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>        </div>      </ng-container>      <ng-container *ngIf="nodeItemTemplate">        <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"                     [ngOutletContext]="{$implicit: node,  parentNode:parentNode, tree: this }"></ng-template>      </ng-container>    </div>  </div>  <re-tree-panel *ngIf="node.children && node.children.length && node.$$expend"                 class="children-view"                 [treeData]="node.children"                 [textField]="textField"                 [valueField]="valueField"                 [iconField]="iconField"                 [checkable]="checkable"                 [lazyLoad]="lazyLoad"                 [loadingIcon]="loadingIcon"                 [loadChildren]="loadChildren"                 [allowDraggable]="allowDraggable && !isInDraggle"                 [allowMutipleSelected]="allowMutipleSelected"                 [parentNode]="node"                 [nodeItemTemplate]="nodeItemTemplate"                 [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"                 [leafIcon]="leafIcon"                 [expendIcon]="expendIcon"                 [collapseIcon]="collapseIcon"                 (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"  ></re-tree-panel></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="node-item {{nodeCssClass}}" reDraggable="re:node-item-drop" [disabled]="!allowDraggable"     [dragData]="{node: node, parent: parentNode}">  <div class="node-item-panel">    <i class="node-expend-icon {{getNodeExpendIcon()}}"       (click)="onExpendedIconClick($event)"></i>    <div class="node-item-content" #nodeItemContent reDroppable="re:node-item-drop" (onDrop)="onDropNodeItem($event)"         (onDragEnter)="onDragEnter()" (onDragLeave)="onDragLeave()" [acceptDrop]="isAcceptDrop">      <div class="node-check-box">        <re-checkbox *ngIf="checkable" [(ngModel)]="node.$check" label=""                     (valueChange)="nodeItemCheckedChange($event)"></re-checkbox>      </div>      <ng-container *ngIf="!nodeItemTemplate">      <span class="node-text" [ngClass]="{\'bg-primary\': node.$select}" (click)="onNodeItemClick($event)"            (dblclick)="onNodeItemDbClicked($event)">        <i *ngIf="iconField && node[iconField]"           class="node-icon {{node[iconField]}}"></i> {{node[textField] || \'\'}} <span        class="loading" *ngIf="isLoading">        <i class="{{loadingIcon}}"></i></span>      </span>        <div class="toolbar">          <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"                       [ngOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>        </div>      </ng-container>      <ng-container *ngIf="nodeItemTemplate">        <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"                     [ngOutletContext]="{$implicit: node,  parentNode:parentNode, tree: this }"></ng-template>      </ng-container>    </div>  </div>  <re-tree-panel *ngIf="node.children && node.children.length && node.$expend"                 class="children-view"                 [treeData]="node.children"                 [textField]="textField"                 [valueField]="valueField"                 [iconField]="iconField"                 [checkable]="checkable"                 [lazyLoad]="lazyLoad"                 [loadingIcon]="loadingIcon"                 [loadChildren]="loadChildren"                 [allowDraggable]="allowDraggable && !isInDraggle"                 [allowMutipleSelected]="allowMutipleSelected"                 [parentNode]="node"                 [nodeItemTemplate]="nodeItemTemplate"                 [nodeItemToolbarTemplate]="nodeItemToolbarTemplate"                 [leafIcon]="leafIcon"                 [expendIcon]="expendIcon"                 [collapseIcon]="collapseIcon"                 (nodeItemCheckedChanged)="onChildrenNodeCheckedChange($event)"  ></re-tree-panel></div></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'TreeNodeComponent'};
