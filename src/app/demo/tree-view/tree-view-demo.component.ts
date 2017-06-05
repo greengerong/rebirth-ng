@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
-import { timer } from 'rxjs/observable/timer'
+import { timer } from 'rxjs/observable/timer';
 const treeData = require('./data.json');
 @Component({
   selector: 're-tree-view-demo',
@@ -27,6 +27,9 @@ export class TreeViewDemoComponent implements OnInit {
   treeData4: any;
   treeData5: any;
   lazyLoadTreeData: any;
+  treeNodeCount = 500;
+  largeNodes: any[];
+  largeTreeCheckable: boolean;
 
   ngOnInit(): void {
     timer(1000 * 1)
@@ -54,10 +57,6 @@ export class TreeViewDemoComponent implements OnInit {
       });
 
   }
-
-  treeNodeCount = 500;
-  largeNodes: any[];
-  largeTreeCheckable: boolean;
 
   loadChildren = (parent) => {
     const pid = parent.id;
