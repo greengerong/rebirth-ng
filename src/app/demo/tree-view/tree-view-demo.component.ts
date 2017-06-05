@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/delay';
-
+import { timer } from 'rxjs/observable/timer'
 const treeData = require('./data.json');
 @Component({
   selector: 're-tree-view-demo',
@@ -20,27 +20,40 @@ const treeData = require('./data.json');
     }
   `]
 })
-export class TreeViewDemoComponent {
-  treeData1 = this.clone(treeData);
-  treeData2 = this.clone(treeData);
-  treeData3 = this.clone(treeData);
-  treeData4 = this.clone(treeData);
-  treeData5 = this.clone(treeData);
-  lazyLoadTreeData = [{
-    'id': '1',
-    'pid': '0',
-    'name': 'Lazyload node 1',
-  },
-    {
-      'id': '2',
-      'pid': '0',
-      'name': 'Lazyload node 2',
-    },
-    {
-      'id': '3',
-      'pid': '0',
-      'name': 'Lazyload node 3',
-    }];
+export class TreeViewDemoComponent implements OnInit {
+  treeData1: any;
+  treeData2: any;
+  treeData3: any;
+  treeData4: any;
+  treeData5: any;
+  lazyLoadTreeData: any;
+
+  ngOnInit(): void {
+    timer(1000 * 1)
+      .subscribe(() => {
+        this.treeData1 = this.clone(treeData);
+        this.treeData2 = this.clone(treeData);
+        this.treeData3 = this.clone(treeData);
+        this.treeData4 = this.clone(treeData);
+        this.treeData5 = this.clone(treeData);
+        this.lazyLoadTreeData = [{
+          'id': '1',
+          'pid': '0',
+          'name': 'Lazyload node 1',
+        },
+          {
+            'id': '2',
+            'pid': '0',
+            'name': 'Lazyload node 2',
+          },
+          {
+            'id': '3',
+            'pid': '0',
+            'name': 'Lazyload node 3',
+          }];
+      });
+
+  }
 
   treeNodeCount = 500;
   largeNodes: any[];
