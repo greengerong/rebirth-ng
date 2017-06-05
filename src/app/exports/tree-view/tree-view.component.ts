@@ -50,7 +50,7 @@ export class TreeViewComponent {
   onNodeItemClicked(node) {
     if (!this.allowMutipleSelected) {
       if (this.selectNode && this.selectNode !== node) {
-        this.selectNode.$$select = false;
+        this.selectNode.$select = false;
       }
       this.selectNode = node;
     }
@@ -85,7 +85,7 @@ export class TreeViewComponent {
       this.treeData = this.treeData.filter((nodeItem) => nodeItem[this.valueField] !== source[this.valueField]);
     }
     target.children = target.children || [];
-    source.$$select = false;
+    source.$select = false;
     target.children.push(source);
     this.nodeItemDroped.emit($event);
   }

@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
 export class TreeViewService {
 
   getSelectNodes(treeData: any[]) {
-    return this.innerGetMatchedItems(null, treeData, (node) => node.$$select);
+    return this.innerGetMatchedItems(null, treeData, (node) => node.$select);
   }
 
   getCheckedNodes(treeData: any[]) {
-    return this.innerGetMatchedItems(null, treeData, (node) => node.$$check);
+    return this.innerGetMatchedItems(null, treeData, (node) => node.$check);
   }
 
   getMatchedItems(treeData: any[], match: (node: any) => boolean) {
@@ -29,7 +29,7 @@ export class TreeViewService {
     }
 
     treeData.forEach((nodeItem) => {
-      nodeItem.$$expend = true;
+      nodeItem.$expend = true;
       this.expendNodesByLevel(nodeItem.children, level - 1);
     });
   }
@@ -37,7 +37,7 @@ export class TreeViewService {
   expendNodesByValue(treeData: any[], valueField: string, value: any) {
     const paths = this.getNodePathByValue(treeData, valueField, value);
     if (paths) {
-      paths.forEach((nodeItem) => nodeItem.$$expend = true);
+      paths.forEach((nodeItem) => nodeItem.$expend = true);
     }
   }
 
@@ -60,25 +60,25 @@ export class TreeViewService {
 
   expendAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) => {
-      node.$$expend = true;
+      node.$expend = true;
     });
   }
 
   collapseAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) => {
-      node.$$expend = false;
+      node.$expend = false;
     });
   }
 
   checkAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) => {
-      node.$$check = true;
+      node.$check = true;
     });
   }
 
   unCheckAllNodes(treeData: any[]) {
     this.innerLookNode(null, treeData, (node) => {
-      node.$$check = false;
+      node.$check = false;
     });
   }
 

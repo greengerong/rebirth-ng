@@ -61,7 +61,7 @@ export class TreeNodeComponent {
       return this.leafIcon;
     }
 
-    return this.node.$$expend ? this.expendIcon : this.collapseIcon;
+    return this.node.$expend ? this.expendIcon : this.collapseIcon;
   }
 
   onExpendedIconClick($event) {
@@ -72,18 +72,18 @@ export class TreeNodeComponent {
     }
 
     let loadObservable = of(null);
-    if (this.lazyLoad && !this.node.$$loaded) {
+    if (this.lazyLoad && !this.node.$loaded) {
       this.isLoading = true;
       loadObservable = this.loadChildren(this.node)
         .map((children) => {
           this.node.children = children || [];
-          this.node.$$loaded = true;
+          this.node.$loaded = true;
         });
     }
 
     loadObservable.subscribe(() => {
       this.isLoading = false;
-      this.node.$$expend = !this.node.$$expend;
+      this.node.$expend = !this.node.$expend;
       this.treeViewComponent.onNodeItemExpended(this.node);
     }, () => {
       this.isLoading = false;
@@ -92,7 +92,7 @@ export class TreeNodeComponent {
 
   onNodeItemClick($event) {
     $event.stopPropagation();
-    this.node.$$select = !this.node.$$select;
+    this.node.$select = !this.node.$select;
     this.treeViewComponent.onNodeItemClicked(this.node);
   }
 
@@ -106,12 +106,12 @@ export class TreeNodeComponent {
   }
 
   onChildrenNodeCheckedChange(node) {
-    this.node.$$check = !this.node.children.some((item) => !item.$$check);
+    this.node.$check = !this.node.children.some((item) => !item.$check);
     this.treePanelComponent.onNodeItemCheckedChanged(node);
   }
 
   isLeaf() {
-    if (this.lazyLoad && !this.node.$$loaded) {
+    if (this.lazyLoad && !this.node.$loaded) {
       return false;
     }
 
@@ -158,7 +158,7 @@ export class TreeNodeComponent {
     }
 
     nodes.forEach((node) => {
-      node.$$check = checked;
+      node.$check = checked;
       this.changeChildrenChecked(node.children, checked);
     });
   }

@@ -1,4 +1,13 @@
 
+# 0.0.14(2017-06-05)
+
+## Bug Fixes
+
+* (TreeView): fix private view(`$$`); Angular AOT will change `$$` to `$`;
+
+## Features
+
+
 # 0.0.13(2017-06-01)
 
 ## Bug Fixes
