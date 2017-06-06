@@ -1231,6 +1231,13 @@
             <code>src/app/exports/common/router-reuse-strategy.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Register on AppModule: {provide: RouteReuseStrategy, useClass: RebirthRouterReuseStrategy};<br>Put {data: {reusable: true}} on reuse router config.</p>
+
+            </p>
 
 
             <p class="comment">
@@ -1261,7 +1268,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:7</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:19</a></div>
                                     </td>
                                 </tr>
             
@@ -1291,7 +1298,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:11</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:23</a></div>
                                     </td>
                                 </tr>
             
@@ -1321,7 +1328,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:15</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:27</a></div>
                                     </td>
                                 </tr>
             
@@ -1351,7 +1358,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:19</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:31</a></div>
                                     </td>
                                 </tr>
             
@@ -1381,7 +1388,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:23</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:35</a></div>
                                     </td>
                                 </tr>
             
@@ -1390,39 +1397,6 @@
             
                                         <div class="io-description">
                                             <b>Returns: </b>    <code>boolean</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Private</span> isReusable</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock">
-                                            <span class="fa fa-lock"></span>
-                                        </span>
-                                    <code>isReusable(route: <a href="https://angular.io/docs/ts/latest/api/router/index/ActivatedRouteSnapshot-interface.html" target="_blank">ActivatedRouteSnapshot</a>)</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:27</a></div>
-                                    </td>
-                                </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
             
                                         </div>
                                 </td>
@@ -1441,6 +1415,26 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <b> getReusableKey</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>getReusableKey:     <code>(route: ActivatedRouteSnapshot) &#x3D;&gt; string</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:15</a></div>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
                                     <b> handlers</b>
                                 </td>
                             </tr>
@@ -1452,7 +1446,27 @@
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:5</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:9</a></div>
+                                    </td>
+                                </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <b> isReusable</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>isReusable:     <code>(route: ActivatedRouteSnapshot) &#x3D;&gt; boolean</code>
+            </bcode>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/common/router-reuse-strategy.ts:11</a></div>
                                     </td>
                                 </tr>
                         </tbody>
@@ -1462,32 +1476,40 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { RouteReuseStrategy, DetachedRouteHandle, ActivatedRouteSnapshot } from &#x27;@angular/router&#x27;;
 
+/**
+ * Register on AppModule: {provide: RouteReuseStrategy, useClass: RebirthRouterReuseStrategy};
+ * Put {data: {reusable: true}} on reuse router config.
+ */
 export class RebirthRouterReuseStrategy implements RouteReuseStrategy {
 
   handlers: { [key: string]: DetachedRouteHandle } &#x3D; {};
+
+  isReusable &#x3D; (route: ActivatedRouteSnapshot): boolean &#x3D;&gt; {
+    return route.data &amp;&amp; route.data.reusable;
+  }
+
+  getReusableKey &#x3D; (route: ActivatedRouteSnapshot): string &#x3D;&gt; {
+    return route.url.join(&#x27;/&#x27;);
+  }
 
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
     return this.isReusable(route);
   }
 
   store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
-    this.handlers[route.routeConfig.path] &#x3D; handle;
+    this.handlers[this.getReusableKey(route)] &#x3D; handle;
   }
 
   shouldAttach(route: ActivatedRouteSnapshot): boolean {
-    return !!route.routeConfig &amp;&amp; !!this.handlers[route.routeConfig.path];
+    return !!route.routeConfig &amp;&amp; !!this.handlers[this.getReusableKey(route)];
   }
 
   retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle {
-    return this.isReusable(route) &amp;&amp; route.routeConfig ? this.handlers[route.routeConfig.path] : null;
+    return this.isReusable(route) &amp;&amp; route.routeConfig ? this.handlers[this.getReusableKey(route)] : null;
   }
 
   shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
     return future.routeConfig &#x3D;&#x3D;&#x3D; curr.routeConfig &amp;&amp; this.isReusable(future);
-  }
-
-  private isReusable(route: ActivatedRouteSnapshot) {
-    return route.data &amp;&amp; route.data.reusable;
   }
 
 }
