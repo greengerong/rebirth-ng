@@ -39,12 +39,13 @@ import {
   TreeViewDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
-import { RouterModule } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 // NoopAnimationsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ROUTER_CONFIG } from './app.route';
 import { GettingStartedComponent, ShowcaseComponent } from './feature';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { RebirthRouterReuseStrategy } from './exports';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     TreeViewDemoModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: RouteReuseStrategy, useClass: RebirthRouterReuseStrategy }
   ],
   bootstrap: [AppComponent]
 })
