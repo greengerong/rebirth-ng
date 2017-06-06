@@ -1,5 +1,9 @@
 import { RouteReuseStrategy, DetachedRouteHandle, ActivatedRouteSnapshot } from '@angular/router';
 
+/**
+ * Register on AppModule: {provide: RouteReuseStrategy, useClass: RebirthRouterReuseStrategy};
+ * Put {data: {reusable: true}} on reuse router config.
+ */
 export class RebirthRouterReuseStrategy implements RouteReuseStrategy {
 
   handlers: { [key: string]: DetachedRouteHandle } = {};
