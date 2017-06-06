@@ -1,4 +1,12 @@
 
+# 0.0.15()
+
+## Bug Fixes
+
+## Features
+
+* (RebirthRouterReuseStrategy): RebirthRouterReuseStrategy can be override.
+
 # 0.0.14(2017-06-05)
 
 ## Bug Fixes
