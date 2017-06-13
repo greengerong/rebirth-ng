@@ -1,7 +1,9 @@
 
-# 0.0.15()
+# 0.0.15(2017-06-13)
 
 ## Bug Fixes
+
+* (DatePicker): DatePicker button with `button`
 
 ## Features
 

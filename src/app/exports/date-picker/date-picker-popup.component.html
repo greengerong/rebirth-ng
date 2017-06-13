@@ -52,7 +52,7 @@
           </select>
         </div>
 
-        <button class="btn btn-sm btn-primary pull-right" [disabled]="todayIsOutOfRange()" (click)="today($event)">
+        <button type="button" class="btn btn-sm btn-primary pull-right" [disabled]="todayIsOutOfRange()" (click)="today($event)">
           {{dateConfig.today}}
         </button>
       </td>
