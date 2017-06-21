@@ -95,6 +95,14 @@ export class TreeViewDemoComponent implements OnInit {
     this.largeNodes = [];
   }
 
+  addNode(node, parentNode) {
+    console.log('add node', `node= ${node.name}; parent= ${parentNode && parentNode.name}`);
+  }
+
+  removeNode(node, parentNode) {
+    console.log('remove node', `node= ${node.name}; parent= ${parentNode && parentNode.name}`);
+  }
+
   private dataMaker(count) {
     const nodes = [];
     let i = 0;

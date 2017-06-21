@@ -32,10 +32,10 @@
 
   <section>
     <h4>Customise template:</h4>
-    <ng-template #nodeItemTemplate let-node="">
+    <ng-template #nodeItemTemplate let-node="" let-parentNode="parentNode">
       <span class="node-text">{{node.id}}: {{node.name}}</span>
-      <i class="glyphicon glyphicon-plus"></i>
-      <i class="glyphicon glyphicon-remove"></i>
+      <i class="glyphicon glyphicon-plus" (click)="addNode(node,parentNode)"></i>
+      <i class="glyphicon glyphicon-remove" (click)="removeNode(node,parentNode)"></i>
     </ng-template>
     <re-tree-view [treeData]="treeData4" textField="name" valueFeild="id"
                   [nodeItemTemplate]="nodeItemTemplate"></re-tree-view>
