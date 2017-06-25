@@ -17,10 +17,10 @@ export class ProgressBarComponent {
   @Input() value: number;
   @Input() cssClass: string;
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
-    this.type = <any>rebirthUIConfig.progressBar.type;
-    this.animate = rebirthUIConfig.progressBar.animate;
-    this.striped = rebirthUIConfig.progressBar.striped;
-    this.max = rebirthUIConfig.progressBar.max;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.type = <any>rebirthNGConfig.progressBar.type;
+    this.animate = rebirthNGConfig.progressBar.animate;
+    this.striped = rebirthNGConfig.progressBar.striped;
+    this.max = rebirthNGConfig.progressBar.max;
   }
 }

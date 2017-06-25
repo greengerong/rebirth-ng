@@ -24,10 +24,10 @@ export class PanelComponent implements OnInit, OnDestroy {
   @ContentChild(PanelBodyComponent) panelBody;
   @ContentChild(PanelFooterComponent) panelFooter;
 
-  constructor(@Optional() @Host() private  panelGroup: PanelGroup, rebirthUIConfig: RebirthNGConfig) {
-    this.type = <any>rebirthUIConfig.panel.type;
-    this.closable = rebirthUIConfig.panel.closable;
-    this.collapsable = rebirthUIConfig.panel.collapsable;
+  constructor(@Optional() @Host() private  panelGroup: PanelGroup, rebirthNGConfig: RebirthNGConfig) {
+    this.type = <any>rebirthNGConfig.panel.type;
+    this.closable = rebirthNGConfig.panel.closable;
+    this.collapsable = rebirthNGConfig.panel.collapsable;
   }
 
   ngOnInit(): void {

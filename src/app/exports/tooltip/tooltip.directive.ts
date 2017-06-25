@@ -26,8 +26,8 @@ export class TooltipDirective extends Tooltip<TooltipPopupComponent> {
               injector: Injector,
               positionService: PositionService,
               renderer: Renderer2,
-              rebirthUIConfig: RebirthNGConfig) {
-    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthUIConfig);
+              rebirthNGConfig: RebirthNGConfig) {
+    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthNGConfig);
     this.tooltipPopupType = TooltipPopupComponent;
   }
 

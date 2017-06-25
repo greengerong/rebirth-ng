@@ -58,13 +58,13 @@ export class DatePickerPopupComponent implements OnInit, ControlValueAccessor {
 
   constructor(private elementRef: ElementRef,
               private renderer: Renderer2,
-              private rebirthUIConfig: RebirthNGConfig,
+              private rebirthNGConfig: RebirthNGConfig,
               private changeDetectorRef: ChangeDetectorRef) {
 
-    this.locale = this.rebirthUIConfig.datePicker.locale;
-    this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
-    this.dateConfig = rebirthUIConfig.datePicker;
-    this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
+    this.locale = this.rebirthNGConfig.datePicker.locale;
+    this.dateConverter = rebirthNGConfig.datePicker.dateConverter || new DefaultDateConverter();
+    this.dateConfig = rebirthNGConfig.datePicker;
+    this.showTimePicker = rebirthNGConfig.datePicker.timePicker;
     this._minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
     this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
     this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'inline-block');

@@ -46,8 +46,8 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
-    this.formatter = rebirthUIConfig.autoComplete.formatter;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.formatter = rebirthNGConfig.autoComplete.formatter;
   }
 
   writeValue(obj: any): void {

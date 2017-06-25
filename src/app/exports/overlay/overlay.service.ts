@@ -10,7 +10,7 @@ export class OverlayService {
   private overlayRef: ComponentRef<OverlayComponent>;
   private overlayCount = 0;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private rebirthNGConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector, private domSanitizer: DomSanitizer) {
   }
 
@@ -21,7 +21,7 @@ export class OverlayService {
   }
 
   private createOverlay(options: OverlayOptions) {
-    const rootContainer = options.rootContainer || this.rebirthUIConfig.rootContainer;
+    const rootContainer = options.rootContainer || this.rebirthNGConfig.rootContainer;
     if (!rootContainer) {
       throw new Error('Should setup ViewContainerRef on modal overlay or rebirth config service!');
     }

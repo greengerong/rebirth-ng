@@ -28,11 +28,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   reflowDuration: number;
   animationDuration: number;
 
-  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig) {
-    this.reflowDuration = rebirthUIConfig.carousel.reflowDuration;
-    this.animationDuration = rebirthUIConfig.carousel.animationDuration;
-    this.animate = rebirthUIConfig.carousel.animate;
-    this.interval = rebirthUIConfig.carousel.interval;
+  constructor(private  renderer: Renderer2, private rebirthNGConfig: RebirthNGConfig) {
+    this.reflowDuration = rebirthNGConfig.carousel.reflowDuration;
+    this.animationDuration = rebirthNGConfig.carousel.animationDuration;
+    this.animate = rebirthNGConfig.carousel.animate;
+    this.interval = rebirthNGConfig.carousel.interval;
   }
 
   ngAfterContentInit(): void {

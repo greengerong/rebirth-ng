@@ -14,9 +14,9 @@ export class ConfirmDialogComponent implements Modal {
   btnYes: string;
   btnNo: string;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
-    this.btnYes = rebirthUIConfig.dialog.button.yes;
-    this.btnNo = rebirthUIConfig.dialog.button.no;
+  constructor(private rebirthNGConfig: RebirthNGConfig) {
+    this.btnYes = rebirthNGConfig.dialog.button.yes;
+    this.btnNo = rebirthNGConfig.dialog.button.no;
   }
 
   yes() {

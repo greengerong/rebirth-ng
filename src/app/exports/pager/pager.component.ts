@@ -24,11 +24,11 @@ export class PagerComponent implements OnChanges {
   @Input() cssClass: string;
   totalPage = 0;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
-    this.aligned = rebirthUIConfig.pager.aligned;
-    this.pageSize = rebirthUIConfig.pager.pageSize;
-    this.previousText = rebirthUIConfig.pager.button.previous;
-    this.nextText = rebirthUIConfig.pager.button.next;
+  constructor(private rebirthNGConfig: RebirthNGConfig) {
+    this.aligned = rebirthNGConfig.pager.aligned;
+    this.pageSize = rebirthNGConfig.pager.pageSize;
+    this.previousText = rebirthNGConfig.pager.button.previous;
+    this.nextText = rebirthNGConfig.pager.button.next;
   }
 
   prev(): void {

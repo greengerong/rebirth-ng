@@ -42,12 +42,12 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthNGConfig) {
+              private rebirthNGConfig: RebirthNGConfig) {
 
-    this.dateConfig = rebirthUIConfig.datePicker;
-    this.dateConverter = rebirthUIConfig.datePicker.dateConverter || new DefaultDateConverter();
-    this.showTimePicker = rebirthUIConfig.datePicker.timePicker;
-    this.locale = rebirthUIConfig.datePicker.locale;
+    this.dateConfig = rebirthNGConfig.datePicker;
+    this.dateConverter = rebirthNGConfig.datePicker.dateConverter || new DefaultDateConverter();
+    this.showTimePicker = rebirthNGConfig.datePicker.timePicker;
+    this.locale = rebirthNGConfig.datePicker.locale;
     this._minDate = new Date(this.dateConfig.min, 0, 1, 0, 0, 0);
     this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
   }
@@ -87,7 +87,7 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
 
   ngOnInit() {
     const factory = this.componentFactoryResolver.resolveComponentFactory(DatePickerPopupComponent);
-    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    const viewContainerRef = this.appendBody ? this.rebirthNGConfig.rootContainer : this.viewContainerRef;
     // EXCEPTION: Expression has changed after it was checked when append to body;
     setTimeout(() => {
       this.cmpRef = viewContainerRef.createComponent(factory, viewContainerRef.length, this.injector);

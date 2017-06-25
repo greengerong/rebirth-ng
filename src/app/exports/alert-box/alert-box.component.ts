@@ -13,9 +13,9 @@ export class AlertBoxComponent {
   @Input() closable: boolean;
   @Output() close = new EventEmitter<any>();
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
-    this.type = <any>rebirthUIConfig.alertBox.type;
-    this.closable = rebirthUIConfig.alertBox.closable;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.type = <any>rebirthNGConfig.alertBox.type;
+    this.closable = rebirthNGConfig.alertBox.closable;
   }
 
   closeBox() {

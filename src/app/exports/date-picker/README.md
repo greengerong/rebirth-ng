@@ -3,17 +3,17 @@
 
 * `DatePicker` component use [`dateFns`](https://date-fns.org/) to parse & format Date by default. 
 
-* `appendBody` to append popup to `document.body`. Make sure you have setup `RebirthUIConfig.rootContainer` when application bootstrap.
+* `appendBody` to append popup to `document.body`. Make sure you have setup `RebirthNGConfig.rootContainer` when application bootstrap.
 
 
     export class AppComponent {
-      constructor(private rebirthConfig: RebirthUIConfig, ...) {
-        this.rebirthConfig.rootContainer = this.viewContainerRef; // setup root container for all append body component.
+      constructor(private rebirthNGConfig: RebirthNGConfig, ...) {
+        this.rebirthNGConfig.rootContainer = this.viewContainerRef; // setup root container for all append body component.
       }
     }
 
 
-* If you want to setup a new date converter, you can pass `dateConverter` to each `DatePicker` component or override in `RebirthUIConfig.datePicker.dateConverter`.  Date converter
+* If you want to setup a new date converter, you can pass `dateConverter` to each `DatePicker` component or override in `RebirthNGConfig.datePicker.dateConverter`.  Date converter
   should implements interface [`DateConverter`](https://greengerong.github.io/rebirth-ng/compodocs/interfaces/DateConverter.html).
 
 * [`dateFns`](https://date-fns.org/) format accepted tokens [https://date-fns.org/docs/format](https://date-fns.org/docs/format):

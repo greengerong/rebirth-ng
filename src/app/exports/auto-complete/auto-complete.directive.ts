@@ -71,14 +71,14 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+              private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges = this.registerInputEvent(elementRef);
-    this.delay = rebirthUIConfig.autoComplete.delay;
-    this.minLength = rebirthUIConfig.autoComplete.minLength;
-    this.itemTemplate = rebirthUIConfig.autoComplete.itemTemplate;
-    this.noResultItemTemplate = rebirthUIConfig.autoComplete.noResultItemTemplate;
-    this.formatter = rebirthUIConfig.autoComplete.formatter;
-    this.valueParser = rebirthUIConfig.autoComplete.valueParser;
+    this.delay = rebirthNGConfig.autoComplete.delay;
+    this.minLength = rebirthNGConfig.autoComplete.minLength;
+    this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
+    this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
+    this.formatter = rebirthNGConfig.autoComplete.formatter;
+    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
   }
 
   ngOnInit() {
@@ -87,7 +87,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
     const factory = this.componentFactoryResolver.resolveComponentFactory(AutoCompletePopupComponent);
 
-    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    const viewContainerRef = this.appendBody ? this.rebirthNGConfig.rootContainer : this.viewContainerRef;
     // EXCEPTION: Expression has changed after it was checked when append to body;
 
     setTimeout(() => {

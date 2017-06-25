@@ -40,14 +40,14 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
               protected injector: Injector,
               protected positionService: PositionService,
               protected renderer: Renderer2,
-              protected rebirthUIConfig: RebirthNGConfig) {
+              protected rebirthNGConfig: RebirthNGConfig) {
   }
 
   abstract getContent(): string | TemplateRef<any>;
 
   ngOnInit() {
     const factory = this.componentFactoryResolver.resolveComponentFactory<T>(this.tooltipPopupType);
-    const viewContainerRef = this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    const viewContainerRef = this.appendBody ? this.rebirthNGConfig.rootContainer : this.viewContainerRef;
     // EXCEPTION: Expression has changed after it was checked when append to body;
 
     setTimeout(() => {

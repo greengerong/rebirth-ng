@@ -36,13 +36,13 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @ViewChild(AutoCompleteDirective) autoCompleteDirective: AutoCompleteDirective;
   private onChange = (_: any) => null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.delay = rebirthUIConfig.autoComplete.delay;
-    this.minLength = rebirthUIConfig.autoComplete.minLength;
-    this.itemTemplate = rebirthUIConfig.autoComplete.itemTemplate;
-    this.noResultItemTemplate = rebirthUIConfig.autoComplete.noResultItemTemplate;
-    this.formatter = rebirthUIConfig.autoComplete.formatter;
-    this.valueParser = rebirthUIConfig.autoComplete.valueParser;
+  constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.delay = rebirthNGConfig.autoComplete.delay;
+    this.minLength = rebirthNGConfig.autoComplete.minLength;
+    this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
+    this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
+    this.formatter = rebirthNGConfig.autoComplete.formatter;
+    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
     this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
 

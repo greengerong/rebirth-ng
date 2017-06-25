@@ -13,11 +13,11 @@ export class AccordionComponent extends PanelGroup {
   @Input() closable: boolean;
   @Output() close = new EventEmitter<PanelComponent>();
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
+  constructor(rebirthNGConfig: RebirthNGConfig) {
     super();
-    this.keepOneItem = rebirthUIConfig.accordion.keepOneItem;
-    this.closable = rebirthUIConfig.accordion.closable;
-    this.type = <any>rebirthUIConfig.accordion.type;
+    this.keepOneItem = rebirthNGConfig.accordion.keepOneItem;
+    this.closable = rebirthNGConfig.accordion.closable;
+    this.type = <any>rebirthNGConfig.accordion.type;
   }
 
   protected initPanel(panel: PanelComponent) {

@@ -27,8 +27,8 @@ export class PopoverDirective extends Tooltip<PopoverPopupComponent> {
               injector: Injector,
               positionService: PositionService,
               renderer: Renderer2,
-              rebirthUIConfig: RebirthNGConfig) {
-    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthUIConfig);
+              rebirthNGConfig: RebirthNGConfig) {
+    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthNGConfig);
     this.tooltipPopupType = PopoverPopupComponent;
     this.trigger = 'click';
   }

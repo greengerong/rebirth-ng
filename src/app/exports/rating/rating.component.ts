@@ -28,9 +28,9 @@ export class RatingComponent implements ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.icons = rebirthUIConfig.rating.icons;
-    this.ratingRanges = this.fillRatingRange(rebirthUIConfig.rating.max);
+  constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.icons = rebirthNGConfig.rating.icons;
+    this.ratingRanges = this.fillRatingRange(rebirthNGConfig.rating.max);
   }
 
   @Input()

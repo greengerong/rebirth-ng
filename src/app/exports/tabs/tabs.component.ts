@@ -24,10 +24,10 @@ export class TabsComponent implements AfterContentInit {
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() activeTabChange = new EventEmitter<number | string>();
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
-    this.type = <any>rebirthUIConfig.tabs.type;
-    this.justified = rebirthUIConfig.tabs.justified;
-    this.vertical = rebirthUIConfig.tabs.vertical;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.type = <any>rebirthNGConfig.tabs.type;
+    this.justified = rebirthNGConfig.tabs.justified;
+    this.vertical = rebirthNGConfig.tabs.vertical;
   }
 
   ngAfterContentInit(): void {

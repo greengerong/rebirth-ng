@@ -29,15 +29,15 @@ export class PaginationComponent implements OnChanges {
   showPages = [];
   totalPage = 0;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig) {
-    this.boundary = rebirthUIConfig.pagination.boundary;
-    this.pageSize = rebirthUIConfig.pagination.pageSize;
-    this.maxItems = rebirthUIConfig.pagination.maxItems;
-    this.firstLink = rebirthUIConfig.pagination.button.first;
-    this.lastLink = rebirthUIConfig.pagination.button.last;
-    this.preLink = rebirthUIConfig.pagination.button.pre;
-    this.nextLink = rebirthUIConfig.pagination.button.next;
-    this.size = <any>rebirthUIConfig.pagination.size;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.boundary = rebirthNGConfig.pagination.boundary;
+    this.pageSize = rebirthNGConfig.pagination.pageSize;
+    this.maxItems = rebirthNGConfig.pagination.maxItems;
+    this.firstLink = rebirthNGConfig.pagination.button.first;
+    this.lastLink = rebirthNGConfig.pagination.button.last;
+    this.preLink = rebirthNGConfig.pagination.button.pre;
+    this.nextLink = rebirthNGConfig.pagination.button.next;
+    this.size = <any>rebirthNGConfig.pagination.size;
   }
 
   first() {
