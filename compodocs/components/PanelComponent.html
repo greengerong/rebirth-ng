@@ -1451,7 +1451,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(panelGroup: <a href="../classes/PanelGroup.html">PanelGroup</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                            <code>constructor(panelGroup: <a href="../classes/PanelGroup.html">PanelGroup</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1687,10 +1687,10 @@ export class PanelComponent implements OnInit, OnDestroy {
   @ContentChild(PanelBodyComponent) panelBody;
   @ContentChild(PanelFooterComponent) panelFooter;
 
-  constructor(@Optional() @Host() private  panelGroup: PanelGroup, rebirthUIConfig: RebirthNGConfig) {
-    this.type &#x3D; &lt;any&gt;rebirthUIConfig.panel.type;
-    this.closable &#x3D; rebirthUIConfig.panel.closable;
-    this.collapsable &#x3D; rebirthUIConfig.panel.collapsable;
+  constructor(@Optional() @Host() private  panelGroup: PanelGroup, rebirthNGConfig: RebirthNGConfig) {
+    this.type &#x3D; &lt;any&gt;rebirthNGConfig.panel.type;
+    this.closable &#x3D; rebirthNGConfig.panel.closable;
+    this.collapsable &#x3D; rebirthNGConfig.panel.collapsable;
   }
 
   ngOnInit(): void {

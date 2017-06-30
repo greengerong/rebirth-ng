@@ -1541,7 +1541,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -2024,13 +2024,13 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @ViewChild(AutoCompleteDirective) autoCompleteDirective: AutoCompleteDirective;
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.delay &#x3D; rebirthUIConfig.autoComplete.delay;
-    this.minLength &#x3D; rebirthUIConfig.autoComplete.minLength;
-    this.itemTemplate &#x3D; rebirthUIConfig.autoComplete.itemTemplate;
-    this.noResultItemTemplate &#x3D; rebirthUIConfig.autoComplete.noResultItemTemplate;
-    this.formatter &#x3D; rebirthUIConfig.autoComplete.formatter;
-    this.valueParser &#x3D; rebirthUIConfig.autoComplete.valueParser;
+  constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.delay &#x3D; rebirthNGConfig.autoComplete.delay;
+    this.minLength &#x3D; rebirthNGConfig.autoComplete.minLength;
+    this.itemTemplate &#x3D; rebirthNGConfig.autoComplete.itemTemplate;
+    this.noResultItemTemplate &#x3D; rebirthNGConfig.autoComplete.noResultItemTemplate;
+    this.formatter &#x3D; rebirthNGConfig.autoComplete.formatter;
+    this.valueParser &#x3D; rebirthNGConfig.autoComplete.valueParser;
     this.id &#x3D; MutipleAutoCompleteComponent.ID_SEED++;
   }
 

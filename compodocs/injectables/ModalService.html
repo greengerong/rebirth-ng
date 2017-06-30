@@ -1236,7 +1236,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>)</code>
+                                    <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>)</code>
                                 </td>
                             </tr>
                                 <tr>
@@ -1391,13 +1391,13 @@ export class ModalService {
 
   private instances &#x3D; [];
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
+  constructor(private rebirthNGConfig: RebirthNGConfig, private componentFactoryResolver: ComponentFactoryResolver,
               private injector: Injector) {
   }
 
 
   open&lt;T&gt;(options: ModalOptions): Observable&lt;T&gt; {
-    const rootContainer &#x3D; options.rootContainer || this.rebirthUIConfig.rootContainer;
+    const rootContainer &#x3D; options.rootContainer || this.rebirthNGConfig.rootContainer;
     if (!rootContainer) {
       throw new Error(&#x27;Should setup ViewContainerRef on modal options or rebirth config service!&#x27;);
     }

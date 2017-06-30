@@ -1425,7 +1425,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1691,10 +1691,10 @@ export class SwitchComponent implements ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.onText &#x3D; rebirthUIConfig.switchBtn.onText;
-    this.offText &#x3D; rebirthUIConfig.switchBtn.offText;
-    this.type &#x3D; &lt;any&gt;rebirthUIConfig.switchBtn.type;
+  constructor(rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.onText &#x3D; rebirthNGConfig.switchBtn.onText;
+    this.offText &#x3D; rebirthNGConfig.switchBtn.offText;
+    this.type &#x3D; &lt;any&gt;rebirthNGConfig.switchBtn.type;
   }
 
   toggle() {

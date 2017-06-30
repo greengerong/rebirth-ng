@@ -1375,7 +1375,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1477,9 +1477,9 @@ export class AlertBoxComponent {
   @Input() closable: boolean;
   @Output() close &#x3D; new EventEmitter&lt;any&gt;();
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
-    this.type &#x3D; &lt;any&gt;rebirthUIConfig.alertBox.type;
-    this.closable &#x3D; rebirthUIConfig.alertBox.closable;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.type &#x3D; &lt;any&gt;rebirthNGConfig.alertBox.type;
+    this.closable &#x3D; rebirthNGConfig.alertBox.closable;
   }
 
   closeBox() {

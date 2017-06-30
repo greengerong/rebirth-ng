@@ -1528,7 +1528,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
+                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                                 </td>
                             </tr>
                                 <tr>
@@ -2509,14 +2509,14 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   constructor(private elementRef: ElementRef, private viewContainerRef: ViewContainerRef,
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
-              private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+              private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.valueChanges &#x3D; this.registerInputEvent(elementRef);
-    this.delay &#x3D; rebirthUIConfig.autoComplete.delay;
-    this.minLength &#x3D; rebirthUIConfig.autoComplete.minLength;
-    this.itemTemplate &#x3D; rebirthUIConfig.autoComplete.itemTemplate;
-    this.noResultItemTemplate &#x3D; rebirthUIConfig.autoComplete.noResultItemTemplate;
-    this.formatter &#x3D; rebirthUIConfig.autoComplete.formatter;
-    this.valueParser &#x3D; rebirthUIConfig.autoComplete.valueParser;
+    this.delay &#x3D; rebirthNGConfig.autoComplete.delay;
+    this.minLength &#x3D; rebirthNGConfig.autoComplete.minLength;
+    this.itemTemplate &#x3D; rebirthNGConfig.autoComplete.itemTemplate;
+    this.noResultItemTemplate &#x3D; rebirthNGConfig.autoComplete.noResultItemTemplate;
+    this.formatter &#x3D; rebirthNGConfig.autoComplete.formatter;
+    this.valueParser &#x3D; rebirthNGConfig.autoComplete.valueParser;
   }
 
   ngOnInit() {
@@ -2525,7 +2525,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
     const factory &#x3D; this.componentFactoryResolver.resolveComponentFactory(AutoCompletePopupComponent);
 
-    const viewContainerRef &#x3D; this.appendBody ? this.rebirthUIConfig.rootContainer : this.viewContainerRef;
+    const viewContainerRef &#x3D; this.appendBody ? this.rebirthNGConfig.rootContainer : this.viewContainerRef;
     // EXCEPTION: Expression has changed after it was checked when append to body;
 
     setTimeout(() &#x3D;&gt; {

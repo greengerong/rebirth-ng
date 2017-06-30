@@ -1451,7 +1451,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1488,11 +1488,11 @@ export class ProgressBarComponent {
   @Input() value: number;
   @Input() cssClass: string;
 
-  constructor(rebirthUIConfig: RebirthNGConfig) {
-    this.type &#x3D; &lt;any&gt;rebirthUIConfig.progressBar.type;
-    this.animate &#x3D; rebirthUIConfig.progressBar.animate;
-    this.striped &#x3D; rebirthUIConfig.progressBar.striped;
-    this.max &#x3D; rebirthUIConfig.progressBar.max;
+  constructor(rebirthNGConfig: RebirthNGConfig) {
+    this.type &#x3D; &lt;any&gt;rebirthNGConfig.progressBar.type;
+    this.animate &#x3D; rebirthNGConfig.progressBar.animate;
+    this.striped &#x3D; rebirthNGConfig.progressBar.striped;
+    this.max &#x3D; rebirthNGConfig.progressBar.max;
   }
 }
 </code></pre>

@@ -1296,7 +1296,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                                    <code>constructor(viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                                 </td>
                             </tr>
                                 <tr>
@@ -1411,8 +1411,8 @@ export class PopoverDirective extends Tooltip&lt;PopoverPopupComponent&gt; {
               injector: Injector,
               positionService: PositionService,
               renderer: Renderer2,
-              rebirthUIConfig: RebirthNGConfig) {
-    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthUIConfig);
+              rebirthNGConfig: RebirthNGConfig) {
+    super(viewContainerRef, elementRef, componentFactoryResolver, injector, positionService, renderer, rebirthNGConfig);
     this.tooltipPopupType &#x3D; PopoverPopupComponent;
     this.trigger &#x3D; &#x27;click&#x27;;
   }

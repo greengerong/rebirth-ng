@@ -1444,7 +1444,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                            <code>constructor(changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1813,10 +1813,10 @@ export class SelectButtonComponent implements ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, rebirthUIConfig: RebirthNGConfig) {
-    this.type &#x3D; &lt;any&gt;rebirthUIConfig.selectButton.type;
-    this.justified &#x3D; rebirthUIConfig.selectButton.justified;
-    this.multiple &#x3D; rebirthUIConfig.selectButton.multiple;
+  constructor(private changeDetectorRef: ChangeDetectorRef, rebirthNGConfig: RebirthNGConfig) {
+    this.type &#x3D; &lt;any&gt;rebirthNGConfig.selectButton.type;
+    this.justified &#x3D; rebirthNGConfig.selectButton.justified;
+    this.multiple &#x3D; rebirthNGConfig.selectButton.multiple;
   }
 
   writeValue(obj: any): void {

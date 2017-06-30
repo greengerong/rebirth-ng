@@ -1378,7 +1378,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
+                            <code>constructor(renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1844,11 +1844,11 @@ export class CarouselComponent implements AfterContentInit, OnDestroy {
   reflowDuration: number;
   animationDuration: number;
 
-  constructor(private  renderer: Renderer2, private rebirthUIConfig: RebirthNGConfig) {
-    this.reflowDuration &#x3D; rebirthUIConfig.carousel.reflowDuration;
-    this.animationDuration &#x3D; rebirthUIConfig.carousel.animationDuration;
-    this.animate &#x3D; rebirthUIConfig.carousel.animate;
-    this.interval &#x3D; rebirthUIConfig.carousel.interval;
+  constructor(private  renderer: Renderer2, private rebirthNGConfig: RebirthNGConfig) {
+    this.reflowDuration &#x3D; rebirthNGConfig.carousel.reflowDuration;
+    this.animationDuration &#x3D; rebirthNGConfig.carousel.animationDuration;
+    this.animate &#x3D; rebirthNGConfig.carousel.animate;
+    this.interval &#x3D; rebirthNGConfig.carousel.interval;
   }
 
   ngAfterContentInit(): void {

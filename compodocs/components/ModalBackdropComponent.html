@@ -1349,14 +1349,14 @@
     <div class="tab-pane fade" id="readme">
         <p><h4 id="notices">Notices</h4>
 <ul>
-<li>Shoulde pass <code>rebirthUIConfig.rootContainer</code> in your <code>AppComponent</code> when you did not pass <code>rootContainer</code> parameters to <code>ModalService</code>.</li>
+<li>Shoulde pass <code>RebirthNGConfig.rootContainer</code> in your <code>AppComponent</code> when you did not pass <code>rootContainer</code> parameters to <code>ModalService</code>.</li>
 </ul>
 <pre class="line-numbers"><code class="language-none">export class AppComponent implements OnInit {
-  constructor(private rebirthConfig: RebirthUIConfig,
+  constructor(private rebirthNGConfig: RebirthNGConfig,
               private viewContainerRef: ViewContainerRef) {
 
-    this.rebirthConfig.rootContainer = this.viewContainerRef; // default container for append body component(Modal, DatePicker...)
-    // this.rebirthConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
+    this.rebirthNGConfig.rootContainer = this.viewContainerRef; // default container for append body component(Modal, DatePicker...)
+    // this.rebirthNGConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
   }</code></pre><ul>
 <li>Make sure put your modal component to <code>entryComponents</code> of your module! Example with <code>ModalTestComponent</code>: </li>
 </ul>

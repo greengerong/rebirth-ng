@@ -1384,7 +1384,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthUIConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                         <tr>
@@ -1847,9 +1847,9 @@ export class RatingComponent implements ControlValueAccessor {
   private onChange &#x3D; (_: any) &#x3D;&gt; null;
   private onTouched &#x3D; () &#x3D;&gt; null;
 
-  constructor(private rebirthUIConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.icons &#x3D; rebirthUIConfig.rating.icons;
-    this.ratingRanges &#x3D; this.fillRatingRange(rebirthUIConfig.rating.max);
+  constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
+    this.icons &#x3D; rebirthNGConfig.rating.icons;
+    this.ratingRanges &#x3D; this.fillRatingRange(rebirthNGConfig.rating.max);
   }
 
   @Input()
