@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TemplateLoaderComponent } from './template-loader.component';
 import { TrustHtmlPipe } from './trust-html.pipe';
 import { ResizeableDirective } from './resizeable.directive';
+import { DropdownDirective } from './dropdown.directive';
 
 @NgModule({
   imports: [CommonModule],
@@ -12,13 +13,15 @@ import { ResizeableDirective } from './resizeable.directive';
     AutoFocusDirective,
     TemplateLoaderComponent,
     TrustHtmlPipe,
-    ResizeableDirective
+    ResizeableDirective,
+    DropdownDirective
   ],
   declarations: [
     AutoFocusDirective,
     TemplateLoaderComponent,
     TrustHtmlPipe,
-    ResizeableDirective
+    ResizeableDirective,
+    DropdownDirective
   ],
   providers: [],
 })

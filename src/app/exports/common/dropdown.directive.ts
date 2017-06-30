@@ -2,7 +2,10 @@ import { Directive, HostListener, Output, Input, EventEmitter, Renderer2, Elemen
 
 @Directive({
   selector: '[reDropdown]',
-  host: { '[class]': '"drop" + (direction?  direction : "down")' },
+  host: {
+    '[class.dropdown]': 'direction !== "up"',
+    '[class.dropup]': 'direction === "up"'
+  },
   exportAs: 'dropdown'
 })
 export class DropdownDirective {

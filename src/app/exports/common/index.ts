@@ -1,4 +1,5 @@
 export * from './auto-focus.directive';
+export * from './dropdown.directive';
 export * from './router-reuse-strategy';
 export * from './assets-loader.service';
 export * from './resizeable.directive';
