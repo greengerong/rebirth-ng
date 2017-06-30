@@ -1,4 +1,14 @@
 
+# 0.0.16(2017-06-30)
+
+## Bug Fixes
+
+
+## Features
+
+* (DropdownDirective): Dropdown directive move to RebirthCommonModule.
+
+
 # 0.0.15(2017-06-13)
 
 ## Bug Fixes
