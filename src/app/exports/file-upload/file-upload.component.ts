@@ -99,10 +99,10 @@ export class FileUploadComponent implements AfterViewInit {
     }
   }
 
-  addNewFile(fileInput: HTMLInputElement, $event) {
+  addNewFile($event) {
     $event.stopPropagation();
-    fileInput.value = null;
-    fileInput.click(); // simulate file input event
+    this.fileInput.nativeElement.value = null;
+    this.fileInput.nativeElement.click(); // simulate file input event
   }
 
   newFileChoose(fileInput: HTMLInputElement) {

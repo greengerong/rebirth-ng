@@ -15,4 +15,19 @@
                     [previewWidth]="'50px'" uploadParamName="files"
                     uploadUrl="http://localhost:3000/upload"></re-file-upload>
   </section>
+
+  <section>
+    <h4>With Custorm Toolbar:</h4>
+    <re-file-upload [autoUpload]="true" [accept]="'image/*'" uploadParamName="files"
+                    [toolbarTemplate]="toolbarTemplate"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
+    <ng-template #toolbarTemplate let-toolbar="">
+      <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"
+            [disabled]="toolbar.isMoreThanMaxItems()">
+        <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
+      </button>
+    </ng-template>
+  </section>
+
+
 </div>
