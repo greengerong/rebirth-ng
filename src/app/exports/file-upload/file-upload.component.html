@@ -1,7 +1,8 @@
+<input #file type="file" (change)="newFileChoose(file)" style="display: none">
+
 <ng-template #defaultToolbarTemplate let-toolbar="">
   <div class="file-upload-toolbar">
-    <input #file type="file" (change)="toolbar.newFileChoose(file)" style="display: none">
-    <button class="btn btn-primary" (click)="toolbar.addNewFile(file, $event)"
+    <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"
             [disabled]="toolbar.isMoreThanMaxItems()">
       <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
     </button>
