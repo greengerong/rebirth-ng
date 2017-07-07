@@ -1,3 +1,11 @@
+# 0.0.16(2017-06-30)
+
+## Bug Fixes
+
+* (FileUpload): Customise file upload template with file input.
+
+## Features
+
 
 # 0.0.16(2017-06-30)
 
