@@ -1,3 +1,12 @@
+# 0.0.18(2017-07-24)
+
+## Bug Fixes
+
+* (OverlayService): OverlayService overlayCount should >= 0;
+
+## Features
+
+
 # 0.0.17(2017-07-07)
 
 ## Bug Fixes

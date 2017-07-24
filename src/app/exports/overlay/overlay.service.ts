@@ -37,7 +37,7 @@ export class OverlayService {
   }
 
   close(): void {
-    this.overlayCount--;
+    this.overlayCount = this.overlayCount > 0 ? this.overlayCount - 1 : 0;
     if (this.overlayCount < 1 && this.overlayRef) {
       this.overlayRef.destroy();
     }
