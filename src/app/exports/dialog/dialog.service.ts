@@ -27,6 +27,11 @@ export class DialogService {
       modalClass: dialogOptions.cssClass,
       injector: dialogOptions.injector,
       rootContainer: dialogOptions.rootContainer,
+      backdrop: dialogOptions.backdrop,
+      backdropClass: dialogOptions.backdropClass,
+      modal: dialogOptions.modal,
+      keyboard: dialogOptions.keyboard,
+
     });
   }
 
@@ -41,6 +46,10 @@ export class DialogService {
       modalClass: dialogOptions.cssClass,
       injector: dialogOptions.injector,
       rootContainer: dialogOptions.rootContainer,
+      backdrop: dialogOptions.backdrop,
+      backdropClass: dialogOptions.backdropClass,
+      modal: dialogOptions.modal,
+      keyboard: dialogOptions.keyboard,
     });
   }
 }

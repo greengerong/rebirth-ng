@@ -9,6 +9,10 @@ export interface DialogOptions {
   no?: string;
   icon?: string;
   cssClass?: string;
+  backdrop?: boolean;
+  backdropClass?: string;
+  keyboard?: boolean;
+  modal?: boolean;
   componentFactoryResolver?: ComponentFactoryResolver;
   injector?: Injector;
   rootContainer?: ViewContainerRef;

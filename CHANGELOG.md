@@ -1,3 +1,11 @@
+# 0.0.18(2017-07-25)
+
+## Bug Fixes
+
+* (DialogService): Add dialog input: backdrop、backdropClass、keyboard、modal;
+
+## Features
+
 # 0.0.18(2017-07-24)
 
 ## Bug Fixes
