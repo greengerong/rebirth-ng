@@ -120,7 +120,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     this.onSearch = (term) => {
       return of(
         this.arraySource
-          .filter(item => this.formatter(item).toLowerCase().indexOf(term.toLowerCase()) !== -1)
+          .filter(item => this.formatter(item).toLowerCase().indexOf((term || '').toLowerCase()) !== -1)
       );
     };
   }
@@ -203,7 +203,11 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     }
   }
 
-  onSourceChange(source) {
+  onSourceChange(source, term?: string) {
+    if (term !== undefined) {
+      this.value = term;
+    }
+
     const pop = this.popupRef.instance;
     pop.reset();
     this.fillPopup(source, this.value);
@@ -255,7 +259,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(value || ''));
+    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(value || '') || '');
   }
 
   private unSubscription() {

@@ -1,3 +1,12 @@
+# 0.0.20(2017-08-02)
+
+## Bug Fixes
+
+## Features
+
+* (AutoCompleteDirective): AutoCompleteDirective allow manual trigger `onSourceChange`;
+
+
 # 0.0.19(2017-07-25)
 
 ## Bug Fixes
