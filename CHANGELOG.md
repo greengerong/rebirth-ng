@@ -1,4 +1,13 @@
-# 0.0.20(2017-08-02)
+
+# 0.0.21 (2017-08-28)
+
+## Bug Fixes
+
+## Features
+
+* (TimePicker): support small number keyboard;
+
+# 0.0.20 (2017-08-02)
 
 ## Bug Fixes
 
