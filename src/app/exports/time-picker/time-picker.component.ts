@@ -196,7 +196,10 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   isSupportedKeyPress(event): boolean {
-    return SUPPORTED_KEY_CODE.indexOf(event.keyCode) > -1 || keyBoardHelper.numberKeyBoard(event) || keyBoardHelper.smallKeyBoard(event) || keyBoardHelper.arrowKeyBoard(event);
+    return SUPPORTED_KEY_CODE.indexOf(event.keyCode) > -1 ||
+      keyBoardHelper.numberKeyBoard(event) ||
+      keyBoardHelper.smallKeyBoard(event) ||
+      keyBoardHelper.arrowKeyBoard(event);
   }
 
   handleKeyEvent(event, type) {

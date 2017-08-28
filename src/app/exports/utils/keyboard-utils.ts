@@ -25,7 +25,8 @@ const numberKeyBoard = function (event) {
 
 const functionKeyBoard = function (event) {
   const which = event.which;
-  return (which <= 40) || (navigator.platform.indexOf("Mac") > -1 && event.metaKey) || (navigator.platform.indexOf("Win") > -1 && event.ctrlKey);
+  return (which <= 40) || (navigator.platform.indexOf('Mac') > -1 && event.metaKey) ||
+    (navigator.platform.indexOf('Win') > -1 && event.ctrlKey);
 };
 
 const currencyKeyBoard = function (event, viewValue) {
@@ -35,7 +36,8 @@ const currencyKeyBoard = function (event, viewValue) {
 
 const floatKeyBoard = function (event, viewValue) {
   const which = event.which;
-  return [188].indexOf(which) != -1 || (which === 190 || which === 110) && viewValue.toString().indexOf('.') === -1;
+  return [188].indexOf(which) !== -1 || (which === 190 || which === 110) &&
+    viewValue.toString().indexOf('.') === -1;
 };
 
 const tabKeyBoard = function (event) {
