@@ -1981,7 +1981,7 @@
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>onSourceChange(source: any)</code>
+            <code>onSourceChange(source: any, term: string)</code>
                                 </td>
                             </tr>
             
@@ -2020,7 +2020,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="217" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:217</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:221</a></div>
                                     </td>
                                 </tr>
             
@@ -2050,7 +2050,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="224" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:224</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="228" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:228</a></div>
                                     </td>
                                 </tr>
             
@@ -2080,7 +2080,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="237" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:237</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="241" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:241</a></div>
                                     </td>
                                 </tr>
             
@@ -2113,7 +2113,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="245" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:245</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="249" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:249</a></div>
                                     </td>
                                 </tr>
             
@@ -2146,7 +2146,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="257" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:257</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="261" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:261</a></div>
                                     </td>
                                 </tr>
             
@@ -2179,7 +2179,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="261" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:261</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="265" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:265</a></div>
                                     </td>
                                 </tr>
             
@@ -2212,7 +2212,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="268" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:268</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="272" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:272</a></div>
                                     </td>
                                 </tr>
             
@@ -2245,7 +2245,7 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="276" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:276</a></div>
+                                        <div class="io-line">Defined in <a href="" data-line="280" class="link-to-prism">src/app/exports/auto-complete/auto-complete.directive.ts:280</a></div>
                                     </td>
                                 </tr>
             
@@ -2558,7 +2558,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     this.onSearch &#x3D; (term) &#x3D;&gt; {
       return of(
         this.arraySource
-          .filter(item &#x3D;&gt; this.formatter(item).toLowerCase().indexOf(term.toLowerCase()) !&#x3D;&#x3D; -1)
+          .filter(item &#x3D;&gt; this.formatter(item).toLowerCase().indexOf((term || &#x27;&#x27;).toLowerCase()) !&#x3D;&#x3D; -1)
       );
     };
   }
@@ -2641,7 +2641,11 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     }
   }
 
-  onSourceChange(source) {
+  onSourceChange(source, term?: string) {
+    if (term !&#x3D;&#x3D; undefined) {
+      this.value &#x3D; term;
+    }
+
     const pop &#x3D; this.popupRef.instance;
     pop.reset();
     this.fillPopup(source, this.value);
@@ -2693,7 +2697,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setProperty(this.elementRef.nativeElement, &#x27;value&#x27;, this.formatter(value || &#x27;&#x27;));
+    this.renderer.setProperty(this.elementRef.nativeElement, &#x27;value&#x27;, this.formatter(value || &#x27;&#x27;) || &#x27;&#x27;);
   }
 
   private unSubscription() {

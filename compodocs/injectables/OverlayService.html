@@ -1441,7 +1441,7 @@ export class OverlayService {
   }
 
   close(): void {
-    this.overlayCount--;
+    this.overlayCount &#x3D; this.overlayCount &gt; 0 ? this.overlayCount - 1 : 0;
     if (this.overlayCount &lt; 1 &amp;&amp; this.overlayRef) {
       this.overlayRef.destroy();
     }

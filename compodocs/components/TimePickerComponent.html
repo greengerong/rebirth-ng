@@ -1301,7 +1301,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:13</a></div>
                             </td>
                         </tr>
     
@@ -1329,7 +1329,7 @@
     
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/time-picker/time-picker.component.ts:19</a></div>
                             </td>
                         </tr>
     
@@ -1403,16 +1403,7 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { ChangeDetectorRef, Component, forwardRef, Input, OnInit } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
-
-function range(start: number, end: number) {
-  const result &#x3D; [];
-  let index &#x3D; start;
-  while (index &lt; end) {
-    result.push(index);
-    index++;
-  }
-  return result;
-}
+import { keyBoardHelper } from &#x27;../utils/keyboard-utils&#x27;;
 
 function fillLeft(num: number) {
   return (num || 0) &lt; 10 ? &#x60;0${num}&#x60; : &#x60;${num}&#x60;;
@@ -1433,15 +1424,10 @@ export class TimePickerModel {
   }
 }
 
-
-const NUMBER_KEY_CODE_RANGE &#x3D; range(48, 58);
-const ARROW_KEY_CODE_RANGE &#x3D; range(37, 41);
 const BACKSPACE_KEY_CODE &#x3D; 8;
 const ENTER_KEY_CODE &#x3D; 13;
 const TAB_KEY_CODE &#x3D; 9;
 const SUPPORTED_KEY_CODE &#x3D; [
-  ...NUMBER_KEY_CODE_RANGE,
-  ...ARROW_KEY_CODE_RANGE,
   BACKSPACE_KEY_CODE,
   ENTER_KEY_CODE,
   TAB_KEY_CODE
@@ -1513,7 +1499,7 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   getCurrentTimestamp(time): number {
-    const hour  &#x3D; this.getValue(time.hour, parseInt(this.hour, 10));
+    const hour &#x3D; this.getValue(time.hour, parseInt(this.hour, 10));
     const minute &#x3D; this.getValue(time.minute, parseInt(this.minute, 10));
     const second &#x3D; this.getValue(time.second, parseInt(this.second, 10));
 
@@ -1613,12 +1599,14 @@ export class TimePickerComponent implements OnInit, ControlValueAccessor {
   }
 
   isSupportedKeyPress(event): boolean {
-    return SUPPORTED_KEY_CODE.indexOf(event.keyCode) &#x3D;&#x3D;&#x3D; -1 ||
-      (event.shiftKey &amp;&amp; NUMBER_KEY_CODE_RANGE.indexOf(event.keyCode) !&#x3D;&#x3D; -1);
+    return SUPPORTED_KEY_CODE.indexOf(event.keyCode) &gt; -1 ||
+      keyBoardHelper.numberKeyBoard(event) ||
+      keyBoardHelper.smallKeyBoard(event) ||
+      keyBoardHelper.arrowKeyBoard(event);
   }
 
   handleKeyEvent(event, type) {
-    if (this.isSupportedKeyPress(event)) {
+    if (!this.isSupportedKeyPress(event)) {
       event.preventDefault();
       return;
     }

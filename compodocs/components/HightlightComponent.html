@@ -1478,10 +1478,14 @@ export class HightlightComponent implements OnChanges {
   }
 
   hightlight(value: string, term: string) {
-    const regExp &#x3D; new RegExp(term.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, &#x27;\\$&amp;&#x27;), &#x27;gi&#x27;);
-    return value.replace(regExp, function (match) {
-      return &#x60;&lt;b class&#x3D;&quot;re-hightlight&quot;&gt;${match}&lt;/b&gt;&#x60;;
-    });
+    const termValue &#x3D; term || &#x27;&#x27;;
+    if (termValue.replace) {
+      const regExp &#x3D; new RegExp(termValue.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, &#x27;\\$&amp;&#x27;), &#x27;gi&#x27;);
+      return value.replace(regExp, function (match) {
+        return &#x60;&lt;b class&#x3D;&quot;re-hightlight&quot;&gt;${match}&lt;/b&gt;&#x60;;
+      });
+    }
+    return value;
   }
 }
 </code></pre>
