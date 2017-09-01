@@ -1,4 +1,15 @@
 
+# 0.0.22 ()
+
+## Bug Fixes
+
+## Features
+
+* (Ellipsis): new component with text ellipsis;
+* (Prompt): new dialog service with prompt;
+* (DatePipe): new date pipe. It is due to Angular's date pipe has format issue on IE11;
+* (noop): noop utils function;
+
 # 0.0.21 (2017-08-28)
 
 ## Bug Fixes
