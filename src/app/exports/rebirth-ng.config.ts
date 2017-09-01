@@ -61,8 +61,15 @@ export class RebirthNGConfig {
   dialog = {
     button: {
       yes: 'Yes',
-      no: 'No'
+      btnYesType: 'primary',
+      no: 'No',
+      btnNoType: 'warning'
     }
+  };
+
+  ellipsis = {
+    length: 60,
+    placement: 'top'
   };
 
   fileUpload = {

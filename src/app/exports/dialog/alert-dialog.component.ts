@@ -12,9 +12,11 @@ export class AlertDialogComponent implements Modal {
   context: DialogOptions;
   dismiss: EventEmitter<any>;
   btnYes: string;
+  btnYesType: string;
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.btnYes = rebirthNGConfig.dialog.button.yes;
+    this.btnYesType = rebirthNGConfig.dialog.button.btnYesType;
   }
 
   yes() {

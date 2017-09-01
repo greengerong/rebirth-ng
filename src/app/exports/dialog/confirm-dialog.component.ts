@@ -13,10 +13,14 @@ export class ConfirmDialogComponent implements Modal {
   dismiss: EventEmitter<any>;
   btnYes: string;
   btnNo: string;
+  btnYesType: string;
+  btnNoType: string;
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
     this.btnYes = rebirthNGConfig.dialog.button.yes;
+    this.btnYesType = rebirthNGConfig.dialog.button.btnYesType;
     this.btnNo = rebirthNGConfig.dialog.button.no;
+    this.btnNoType = rebirthNGConfig.dialog.button.btnNoType;
   }
 
   yes() {
