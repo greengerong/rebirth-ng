@@ -27,7 +27,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
   @Input() scrollDelay = 300;
   @Input() spinnerTemplate: TemplateRef<any>;
   @Output() loadMore = new EventEmitter<InfiniteScrollComponent>();
-  scrollStream = new EventEmitter<Event>();
+  scrollStream = new EventEmitter<any>();
   subscription: Subscription;
 
   constructor(private windowRef: WindowRef, private elementRef: ElementRef) {

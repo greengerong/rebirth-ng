@@ -24,7 +24,8 @@ export class ModalService {
     }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector = options.injector || this.injector;
-    const modalRef = rootContainer.createComponent(componentFactory, rootContainer.length, injector);
+    const modalRef = <ComponentRef<ModalComponent>>rootContainer
+      .createComponent(componentFactory, rootContainer.length, injector);
     this.instances.push(modalRef);
     const instance: ModalComponent = modalRef.instance;
     const dismissResult = instance.addContent(options, this.instances.length)
