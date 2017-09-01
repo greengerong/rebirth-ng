@@ -24,19 +24,19 @@
 <title>cluster_InfiniteScrollModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="152,-70 152,-268 344,-268 344,-70 152,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_InfiniteScrollModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_InfiniteScrollModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="162,-78 162,-130 334,-130 334,-78 162,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_InfiniteScrollModule_exports</title>
 <polygon fill="none" stroke="#000000" points="160,-208 160,-260 336,-260 336,-208 160,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- InfiniteScrollComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>InfiniteScrollComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="325.979,-122 170.021,-122 170.021,-86 325.979,-86 325.979,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">InfiniteScrollComponent</text>
 </g>
 <!-- InfiniteScrollModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="315.1965,-187 312.1965,-191 291.1965,-191 288.1965,-187 180.8035,-187 180.8035,-151 315.1965,-151 315.1965,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">InfiniteScrollModule</text>
 </g>
-<!-- CommonModule&#45;&gt;InfiniteScrollModule -->
+<!-- InfiniteScrollComponent&#45;&gt;InfiniteScrollModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;InfiniteScrollModule</title>
+<title>InfiniteScrollComponent&#45;&gt;InfiniteScrollModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

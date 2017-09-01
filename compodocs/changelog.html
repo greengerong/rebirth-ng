@@ -36,9 +36,6 @@
                         <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
                                     <a 
                                         
                                          href="./overview.html" 
@@ -47,19 +44,30 @@
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
+                                <li class="link">
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                            <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
-                            ></span>
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
                         </a>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-modules-links"
                             >
                                 <li class="link">
@@ -94,6 +102,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./modules/EllipsisModule.html" >EllipsisModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
@@ -168,14 +179,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
                             <span class="fa fa-cogs"></span>
                             <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-components-links"
                             >
                                 <li class="link">
@@ -213,6 +224,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/EllipsisComponent.html" >EllipsisComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -284,6 +298,9 @@
                                     <a href="./components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -332,14 +349,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
@@ -442,14 +459,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
                             <span class="fa fa-file-code-o"></span>
                             <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-classes-links"
                             >
                                 <li class="link">
@@ -474,14 +491,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
                             <span class="fa fa-long-arrow-down"></span>
                             <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
@@ -518,14 +535,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
@@ -562,6 +579,9 @@
                                     <a href="./interfaces/OverlayOptions.html" >OverlayOptions</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./interfaces/PromptContent.html" >PromptContent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                 </li>
                                 <li class="link">
@@ -577,26 +597,48 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
                             <span class="fa fa-plus"></span>
                             <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="./pipes/DatePipe.html" >DatePipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="./pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                 </li>
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./miscellaneous.html"  class="active" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -629,9 +671,6 @@
                                <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
                                            <a 
                                                
                                                 href="./overview.html" 
@@ -640,19 +679,30 @@
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
+                                       <li class="link">
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                   <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
-                                   ></span>
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
                                </a>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="modules-links"
                    >
                                        <li class="link">
@@ -687,6 +737,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./modules/EllipsisModule.html" >EllipsisModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
@@ -761,14 +814,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
                                    <span class="fa fa-cogs"></span>
                                    <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="components-links"
                    >
                                        <li class="link">
@@ -806,6 +859,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/EllipsisComponent.html" >EllipsisComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -877,6 +933,9 @@
                                            <a href="./components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -925,14 +984,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
@@ -1035,14 +1094,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
                                    <span class="fa fa-file-code-o"></span>
                                    <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="classes-links"
                    >
                                        <li class="link">
@@ -1067,14 +1126,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
                                    <span class="fa fa-long-arrow-down"></span>
                                    <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="injectables-links"
                    >
                                        <li class="link">
@@ -1111,14 +1170,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
@@ -1155,6 +1214,9 @@
                                            <a href="./interfaces/OverlayOptions.html" >OverlayOptions</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./interfaces/PromptContent.html" >PromptContent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                        </li>
                                        <li class="link">
@@ -1170,26 +1232,48 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
                                    <span class="fa fa-plus"></span>
                                    <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="./pipes/DatePipe.html" >DatePipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="./pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                        </li>
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./miscellaneous.html"  class="active" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -1200,9 +1284,119 @@
                    
                    </nav>
                </div>
-               <div class="content miscellaneous">
+               <div class="content getting-started">
                    <div class="content-data">
 
+<h1 id="0-0-22-">0.0.22 ()</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(Ellipsis): new component with text ellipsis;</li>
+<li>(Prompt): new dialog service with prompt;</li>
+<li>(DatePipe): new date pipe. It is due to Angular&#39;s date pipe has format issue on IE11;</li>
+<li>(noop): noop utils function;</li>
+</ul>
+<h1 id="0-0-21-2017-08-28-">0.0.21 (2017-08-28)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(TimePicker): support small number keyboard;</li>
+</ul>
+<h1 id="0-0-20-2017-08-02-">0.0.20 (2017-08-02)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(AutoCompleteDirective): AutoCompleteDirective allow manual trigger <code>onSourceChange</code>;</li>
+</ul>
+<h1 id="0-0-19-2017-07-25-">0.0.19(2017-07-25)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(DialogService): Add dialog input: backdrop、backdropClass、keyboard、modal;</li>
+</ul>
+<h2 id="features">Features</h2>
+<h1 id="0-0-18-2017-07-24-">0.0.18(2017-07-24)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(OverlayService): OverlayService overlayCount should &gt;= 0;</li>
+</ul>
+<h2 id="features">Features</h2>
+<h1 id="0-0-17-2017-07-07-">0.0.17(2017-07-07)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(FileUpload): Customise file upload template with file input.</li>
+</ul>
+<h2 id="features">Features</h2>
+<h1 id="0-0-16-2017-06-30-">0.0.16(2017-06-30)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(DropdownDirective): Dropdown directive move to RebirthCommonModule.</li>
+</ul>
+<h1 id="0-0-15-2017-06-13-">0.0.15(2017-06-13)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(DatePicker): DatePicker button with <code>button</code></li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>(RebirthRouterReuseStrategy): RebirthRouterReuseStrategy can be override.</li>
+</ul>
+<h1 id="0-0-14-2017-06-05-">0.0.14(2017-06-05)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(TreeView): fix private view(<code>$$</code>); Angular AOT will change <code>$$</code> to <code>$</code>;</li>
+</ul>
+<h2 id="features">Features</h2>
+<h1 id="0-0-13-2017-06-01-">0.0.13(2017-06-01)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(DataTable) Remove DataTable component.</li>
+<li>(Tooltip &amp; Popover) Append to body.</li>
+<li>(Modal) Close modal when navigation end;</li>
+<li>(TreeView) Expend by level &amp; node value utils method;</li>
+</ul>
+<h1 id="0-0-12-2017-05-22-">0.0.12(2017-05-22)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(Menubar, DatePicker, ActionButton) Allow event propagation.</li>
+<li>(InfiniteScroll) InfiniteScroll first load.</li>
+</ul>
+<h1 id="0-0-11-2017-05-18-">0.0.11(2017-05-18)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(TreeView) TreeView select/check API.</li>
+</ul>
+<h1 id="0-0-10-2017-05-14-">0.0.10(2017-05-14)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(Notify) Add Notify service</li>
+<li>(TreeView) Add TreeView component</li>
+</ul>
+<h1 id="0-0-9-2017-05-12-">0.0.9(2017-05-12)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<h2 id="features">Features</h2>
+<ul>
+<li>(CheckboxGroup) Add CheckboxGroup component</li>
+<li>(RadioGroup) Add RadioGroup component</li>
+<li>(TimePicker) TimePicker keyboard</li>
+<li>(AssetsLoader) Add AssetsLoader to load javascript &amp; css file</li>
+</ul>
+<h1 id="0-0-8-2017-05-02-">0.0.8(2017-05-02)</h1>
+<h2 id="bug-fixes">Bug Fixes</h2>
+<ul>
+<li>(Menubar) Menu bar routerLinkActive for active router</li>
+</ul>
+<h2 id="features">Features</h2>
+<ul>
+<li>(FileUpload) Add File upload component</li>
+<li>(Breadcrumbs, Menubar) support routerLink</li>
+<li>(DataTable) DataTable pager change to <code>totalRecord</code>, <code>pageIndex</code>... @Input</li>
+<li>(TimePicker) Add TimePicker</li>
+</ul>
 
 
 
@@ -1211,1078 +1405,8 @@
 
 
 
-<ol class="breadcrumb">
-  <li>Miscellaneous</li>
-</ol>
 
-    <h2 id="inputs"><b>Variables</b></h2>
-        <h4><code>src/app/exports/rebirth-ng.i18n.zh-cn.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> REBIRTH_NG_I18N_ZHCN</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>REBIRTH_NG_I18N_ZHCN:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/time-picker/time-picker.component.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> ARROW_DOWN</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>ARROW_DOWN:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>ArrowDown</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> ARROW_UP</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>ARROW_UP:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>ArrowUp</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> supportKeyType</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>supportKeyType:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> BACKSPACE_KEY_CODE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>BACKSPACE_KEY_CODE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>8</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> ENTER_KEY_CODE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>ENTER_KEY_CODE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>13</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> TAB_KEY_CODE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>TAB_KEY_CODE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>9</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> SUPPORTED_KEY_CODE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>SUPPORTED_KEY_CODE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> TIME_UNIT</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>TIME_UNIT:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> MAX_TIME_RANGE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>MAX_TIME_RANGE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/animation-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> TRANSITION_END_EVENT</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>TRANSITION_END_EVENT:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/keyboard-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> TAB_KEY_CODE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>TAB_KEY_CODE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                    <i>Default value: </i><code>9</code>
-                                </td>
-                            </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> ARROW_KEY_CODE_RANGE</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>ARROW_KEY_CODE_RANGE:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> smallKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>smallKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> numberKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>numberKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> functionKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>functionKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> currencyKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>currencyKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> floatKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>floatKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> tabKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>tabKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> arrowKeyBoard</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>arrowKeyBoard:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> keyBoardHelper</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>keyBoardHelper:     <code></code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/window-ref/index.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> COMMON_SERVICES</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <code>COMMON_SERVICES:     <code>any[]</code>
-        </bcode>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-        </section>
 
-    <h2 id="inputs"><b>Functions</b></h2>
-        <h4><code>src/app/exports/time-picker/time-picker.component.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> fillLeft</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>fillLeft(num: Number)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/animation-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> getSupportTransitionEndEvent</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>getSupportTransitionEndEvent(elementRef: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> animation</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>animation(renderer: undefined, elementRef: undefined, duration: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> animationTimeout</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>animationTimeout(duration: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/date-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> isValidDate</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>isValidDate(date: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> parseDate</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>parseDate(date: Any)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> formatDate</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>formatDate(date: undefined, pattern: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/dom-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> centerWindowPosition</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>centerWindowPosition(elementRef: undefined, windowRef: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> stopPropagationIfExist</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>stopPropagationIfExist($event: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> readFileAsDataURL</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>readFileAsDataURL(file: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> getScrollBarWidth</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>getScrollBarWidth(renderer: undefined, documentRef: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/keyboard-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> range</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>range(start: Number, end: Number)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/utils/lange-utils.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> formatFileSize</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>formatFileSize(bytes: Number)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> formatString</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>formatString(input: undefined, args: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> deepValueGetter</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>deepValueGetter(obj: Any, path: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> isImmutableEmpty</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>isImmutableEmpty(array: Any)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/validators/rebirth-validators.ts</code></h4>
-        <section>
-                    <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> isPresent</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>isPresent(obj: Any)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> isNumber</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>isNumber(value: Any)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> rangeLengthValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>rangeLengthValidator(rangeLength: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> minValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>minValidator(min: Number)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> maxValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>maxValidator(max: Number)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> rangeValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>rangeValidator(range: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> digitsValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>digitsValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> numberValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>numberValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> urlValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>urlValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> emailValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>emailValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> dateValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>dateValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> dateISOValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>dateISOValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> jsonValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>jsonValidator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> base64Validator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>base64Validator()</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> phoneValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>phoneValidator(locale: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> uuidValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>uuidValidator(version: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> equalValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>equalValidator(val: Any)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> equalToValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>equalToValidator(target: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> includesValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>includesValidator(optionalValue: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> beforeDateValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>beforeDateValidator(target: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                        <tr>
-                            <td class="col-md-4">
-                                <b> afterDateValidator</b>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-        <code>afterDateValidator(target: undefined)</code>
-                            </td>
-                        </tr>
-        
-        
-                    </tbody>
-                </table>
-        </section>
-
-    <h2 id="inputs"><b>Enumerations</b></h2>
-        <h4><code>src/app/exports/carousel/carousel.component.ts</code></h4>
-        <section>
-                <h3 id="inputs">
-                    CarouselDirection
-                </h3>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>NEXT</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>PREV</b>
-                                    </td>
-                                </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/date-picker/date-change-event-args.model.ts</code></h4>
-        <section>
-                <h3 id="inputs">
-                    SelectDateChangeReason
-                </h3>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>date</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>time</b>
-                                    </td>
-                                </tr>
-                    </tbody>
-                </table>
-        </section>
-        <h4><code>src/app/exports/modal/modal-dismiss-reasons.model.ts</code></h4>
-        <section>
-                <h3 id="inputs">
-                    ModalDismissReasons
-                </h3>
-                <table class="table table-sm table-bordered">
-                    <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>CUSTOMISE</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>BACKDROP_CLICK</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>ESC_KEY</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>YES</b>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <b>NO</b>
-                                    </td>
-                                </tr>
-                    </tbody>
-                </table>
-        </section>
 
 
 

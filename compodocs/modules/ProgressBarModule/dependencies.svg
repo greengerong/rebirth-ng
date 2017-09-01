@@ -24,19 +24,19 @@
 <title>cluster_ProgressBarModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="155,-70 155,-268 341,-268 341,-70 155,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_ProgressBarModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_ProgressBarModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="165,-78 165,-130 331,-130 331,-78 165,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_ProgressBarModule_exports</title>
 <polygon fill="none" stroke="#000000" points="163,-208 163,-260 333,-260 333,-208 163,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- ProgressBarComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>ProgressBarComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="322.752,-122 173.248,-122 173.248,-86 322.752,-86 322.752,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProgressBarComponent</text>
 </g>
 <!-- ProgressBarModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="311.9692,-187 308.9692,-191 287.9692,-191 284.9692,-187 184.0308,-187 184.0308,-151 311.9692,-151 311.9692,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ProgressBarModule</text>
 </g>
-<!-- CommonModule&#45;&gt;ProgressBarModule -->
+<!-- ProgressBarComponent&#45;&gt;ProgressBarModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;ProgressBarModule</title>
+<title>ProgressBarComponent&#45;&gt;ProgressBarModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

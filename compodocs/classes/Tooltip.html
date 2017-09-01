@@ -36,9 +36,6 @@
                         <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
                                     <a 
                                         
                                          href="../overview.html" 
@@ -47,19 +44,30 @@
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                            <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
-                            ></span>
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
                         </a>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-modules-links"
                             >
                                 <li class="link">
@@ -94,6 +102,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/FileUploadModule.html" >FileUploadModule</a>
@@ -168,14 +179,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
                             <span class="fa fa-cogs"></span>
                             <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-components-links"
                             >
                                 <li class="link">
@@ -213,6 +224,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -284,6 +298,9 @@
                                     <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -332,14 +349,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
@@ -442,14 +459,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
                             <span class="fa fa-file-code-o"></span>
                             <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-classes-links"
                             >
                                 <li class="link">
@@ -465,7 +482,7 @@
                                     <a href="../classes/TimePickerModel.html" >TimePickerModel</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../classes/Tooltip.html"  class="active" >Tooltip</a>
+                                    <a href="../classes/Tooltip.html"  data-type="entity-link" class="active" >Tooltip</a>
                                 </li>
                                 <li class="link">
                                     <a href="../classes/TooltipPopup.html" >TooltipPopup</a>
@@ -474,14 +491,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
                             <span class="fa fa-long-arrow-down"></span>
                             <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
@@ -518,14 +535,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
@@ -562,6 +579,9 @@
                                     <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                 </li>
                                 <li class="link">
@@ -577,26 +597,48 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
                             <span class="fa fa-plus"></span>
                             <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                 </li>
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -629,9 +671,6 @@
                                <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
                                            <a 
                                                
                                                 href="../overview.html" 
@@ -640,19 +679,30 @@
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                   <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
-                                   ></span>
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
                                </a>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="modules-links"
                    >
                                        <li class="link">
@@ -687,6 +737,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/FileUploadModule.html" >FileUploadModule</a>
@@ -761,14 +814,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
                                    <span class="fa fa-cogs"></span>
                                    <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="components-links"
                    >
                                        <li class="link">
@@ -806,6 +859,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -877,6 +933,9 @@
                                            <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -925,14 +984,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
@@ -1035,14 +1094,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
                                    <span class="fa fa-file-code-o"></span>
                                    <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="classes-links"
                    >
                                        <li class="link">
@@ -1058,7 +1117,7 @@
                                            <a href="../classes/TimePickerModel.html" >TimePickerModel</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../classes/Tooltip.html"  class="active" >Tooltip</a>
+                                           <a href="../classes/Tooltip.html"  data-type="entity-link" class="active" >Tooltip</a>
                                        </li>
                                        <li class="link">
                                            <a href="../classes/TooltipPopup.html" >TooltipPopup</a>
@@ -1067,14 +1126,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
                                    <span class="fa fa-long-arrow-down"></span>
                                    <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="injectables-links"
                    >
                                        <li class="link">
@@ -1111,14 +1170,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
@@ -1155,6 +1214,9 @@
                                            <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                        </li>
                                        <li class="link">
@@ -1170,26 +1232,48 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
                                    <span class="fa fa-plus"></span>
                                    <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                        </li>
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -1208,6 +1292,8 @@
 
 
 
+
+
 <ol class="breadcrumb">
   <li>Classes</li>
   <li>Tooltip</li>
@@ -1215,15 +1301,17 @@
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
     </li>
+
+
     <li>
         <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1241,6 +1329,85 @@
                         <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
             </p>
 
+
+            <section>
+                <h3 id="index">Index</h3>
+                <table class="table table-sm table-bordered index-table">
+                    <tbody>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Properties</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                         <a href="#listens">listens</a>
+                                    </li>
+                                    <li>
+                                         <a href="#popupRef">popupRef</a>
+                                    </li>
+                                    <li>
+                                         <a href="#positionChange">positionChange</a>
+                                    </li>
+                                    <li>
+                                         <a href="#tooltipPopupType">tooltipPopupType</a>
+                                    </li>
+                                    <li>
+                                         <a href="#triggers">triggers</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Methods</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <span class="modifier">Protected</span> <a href="#fillPopup">fillPopup</a>
+                                    </li>
+                                    <li>
+                                        <span class="modifier"></span> <a href="#getContent">getContent</a>
+                                    </li>
+                                    <li>
+                                         <a href="#hide">hide</a>
+                                    </li>
+                                    <li>
+                                         <a href="#ngOnDestroy">ngOnDestroy</a>
+                                    </li>
+                                    <li>
+                                         <a href="#ngOnInit">ngOnInit</a>
+                                    </li>
+                                    <li>
+                                         <a href="#onDocumentClick">onDocumentClick</a>
+                                    </li>
+                                    <li>
+                                        <span class="modifier">Private</span> <a href="#positionTooltip">positionTooltip</a>
+                                    </li>
+                                    <li>
+                                        <span class="modifier">Private</span> <a href="#registerTriggers">registerTriggers</a>
+                                    </li>
+                                    <li>
+                                        <span class="modifier">Private</span> <a href="#removePopView">removePopView</a>
+                                    </li>
+                                    <li>
+                                         <a href="#show">show</a>
+                                    </li>
+                                    <li>
+                                         <a href="#toggle">toggle</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
             <section>
                 <h3 id="constructor">Constructor</h3>
                     <table class="table table-sm table-bordered">
@@ -1250,11 +1417,11 @@
                                     <code>constructor(viewContainerRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank">ViewContainerRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, componentFactoryResolver: <a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank">ComponentFactoryResolver</a>, injector: <a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank">Injector</a>, positionService: <a href="../injectables/PositionService.html">PositionService</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>)</code>
                                 </td>
                             </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:35</a></div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:35</a></div>
+                                        </td>
+                                    </tr>
             
                         </tbody>
                     </table>
@@ -1269,29 +1436,29 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b><span class="modifier"></span> getContent</b>
+                                    <a name="fillPopup"></a>
+                                    <b><span class="modifier">Protected</span> fillPopup</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play ">
-                                            <span class="fa fa-"></span>
-                                        </span>
-                                    <code>getContent()</code>
+                                        <span class="modifier-icon method fa fa-play circle"></span>
+                                    <code>fillPopup()</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:46</a></div>
-                                    </td>
-                                </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:135</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>string | TemplateRef&lt;any&gt;</code>
+                                            <b>Returns : </b>    <code>T</code>
             
                                         </div>
                                 </td>
@@ -1302,6 +1469,104 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="getContent"></a>
+                                    <b><span class="modifier"></span> getContent</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play "></span>
+                                    <code>getContent()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:46</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code>string|</code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="hide"></a>
+                                    <b> hide</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>hide()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:105</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="ngOnDestroy"></a>
+                                    <b> ngOnDestroy</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>ngOnDestroy()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:80</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="ngOnInit"></a>
                                     <b> ngOnInit</b>
                                 </td>
                             </tr>
@@ -1311,17 +1576,18 @@
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:48</a></div>
-                                    </td>
-                                </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:48</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1332,6 +1598,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="onDocumentClick"></a>
                                     <b> onDocumentClick</b>
                                 </td>
                             </tr>
@@ -1343,15 +1610,21 @@
             
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:71</a></div>
+                                        <i>Decorators : </i><code>HostListener</code>
                                     </td>
                                 </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:71</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1362,26 +1635,29 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> ngOnDestroy</b>
+                                    <a name="positionTooltip"></a>
+                                    <b><span class="modifier">Private</span> positionTooltip</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>ngOnDestroy()</code>
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>positionTooltip()</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:80</a></div>
-                                    </td>
-                                </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:127</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1392,29 +1668,62 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="registerTriggers"></a>
+                                    <b><span class="modifier">Private</span> registerTriggers</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                    <code>registerTriggers()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:112</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+            
+                                        <div class="io-description">
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+            
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="removePopView"></a>
                                     <b><span class="modifier">Private</span> removePopView</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock">
-                                            <span class="fa fa-lock"></span>
-                                        </span>
+                                        <span class="modifier-icon method fa fa-play lock"></span>
                                     <code>removePopView()</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:85</a></div>
-                                    </td>
-                                </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:85</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1425,36 +1734,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> toggle</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>toggle()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:91</a></div>
-                                    </td>
-                                </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
+                                    <a name="show"></a>
                                     <b> show</b>
                                 </td>
                             </tr>
@@ -1464,17 +1744,18 @@
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:99</a></div>
-                                    </td>
-                                </tr>
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:99</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1485,125 +1766,28 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <b> hide</b>
+                                    <a name="toggle"></a>
+                                    <b> toggle</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>hide()</code>
+            <code>toggle()</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:105</a></div>
-                                    </td>
-                                </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Private</span> registerTriggers</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock">
-                                            <span class="fa fa-lock"></span>
-                                        </span>
-                                    <code>registerTriggers()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:112</a></div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:91</a></div>
+                                        </td>
+                                    </tr>
             
                             <tr>
                                 <td class="col-md-4">
             
                                         <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Private</span> positionTooltip</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock">
-                                            <span class="fa fa-lock"></span>
-                                        </span>
-                                    <code>positionTooltip()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="127" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:127</a></div>
-                                    </td>
-                                </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>void</code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <b><span class="modifier">Protected</span> fillPopup</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock">
-                                            <span class="fa fa-lock"></span>
-                                        </span>
-                                    <code>fillPopup()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:135</a></div>
-                                    </td>
-                                </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns: </b>    <code>T</code>
+                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
                                 </td>
@@ -1622,104 +1806,139 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="listens"></a>
                                     <b> listens</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>listens:     <code>Function[]</code>
-            </bcode>
+                                    <code>listens:     <code>[]</code>
+            </code>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:33</a></div>
+                                        <i>Type : </i>    <code>[]</code>
+            
                                     </td>
                                 </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:33</a></div>
+                                        </td>
+                                    </tr>
+            
+            
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="popupRef"></a>
                                     <b> popupRef</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <code>popupRef:     <code>ComponentRef&lt;T&gt;</code>
-            </bcode>
+            </code>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:26</a></div>
+                                        <i>Type : </i>    <code>ComponentRef&lt;T&gt;</code>
+            
                                     </td>
                                 </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:26</a></div>
+                                        </td>
+                                    </tr>
+            
+            
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="positionChange"></a>
                                     <b> positionChange</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>positionChange:     <code>EventEmitter&lt;any&gt;</code>
-            </bcode>
+                                    <code>positionChange:     <code></code>
+            </code>
                                 </td>
                             </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:35</a></div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:35</a></div>
+                                        </td>
+                                    </tr>
+            
+            
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="tooltipPopupType"></a>
                                     <b> tooltipPopupType</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <code>tooltipPopupType:     <code>Type&lt;T&gt;</code>
-            </bcode>
+            </code>
                                 </td>
                             </tr>
                                 <tr>
                                     <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:34</a></div>
+                                        <i>Type : </i>    <code>Type&lt;T&gt;</code>
+            
                                     </td>
                                 </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:34</a></div>
+                                        </td>
+                                    </tr>
+            
+            
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
+                                    <a name="triggers"></a>
                                     <b> triggers</b>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>triggers:     <code>{ hover: string[]; focus: string[]; click: string[]; manual: any[]; }</code>
-            </bcode>
+                                    <code>triggers:     <code></code>
+            </code>
                                 </td>
                             </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:27</a></div>
-                                    </td>
-                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/exports/tooltip/tooltip.ts:27</a></div>
+                                        </td>
+                                    </tr>
+            
+            
                         </tbody>
                     </table>
             </section>
     </div>
+
+
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {
   OnInit,

@@ -22,45 +22,37 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_NotifyModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="111,-70 111,-268 385,-268 385,-70 111,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="105,-70 105,-268 391,-268 391,-70 105,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_NotifyModule_imports</title>
-<polygon fill="none" stroke="#000000" points="119,-78 119,-130 377,-130 377,-78 119,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_NotifyModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="249,-78 249,-130 383,-130 383,-78 249,-78"/>
 </g>
 <g id="clust4" class="cluster">
+<title>cluster_NotifyModule_imports</title>
+<polygon fill="none" stroke="#000000" points="113,-78 113,-130 241,-130 241,-78 113,-78"/>
+</g>
+<g id="clust5" class="cluster">
 <title>cluster_NotifyModule_exports</title>
 <polygon fill="none" stroke="#000000" points="179,-208 179,-260 317,-260 317,-208 179,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- NotifyComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="368.6681,-122 365.6681,-126 344.6681,-126 341.6681,-122 257.3319,-122 257.3319,-86 368.6681,-86 368.6681,-122"/>
-<text text-anchor="middle" x="313" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>NotifyComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="374.8809,-122 257.1191,-122 257.1191,-86 374.8809,-86 374.8809,-122"/>
+<text text-anchor="middle" x="316" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">NotifyComponent</text>
 </g>
 <!-- NotifyModule -->
-<g id="node3" class="node">
+<g id="node2" class="node">
 <title>NotifyModule</title>
 <polygon fill="#8dd3c7" stroke="#000000" points="296.0983,-187 293.0983,-191 272.0983,-191 269.0983,-187 199.9017,-187 199.9017,-151 296.0983,-151 296.0983,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">NotifyModule</text>
 </g>
-<!-- CommonModule&#45;&gt;NotifyModule -->
+<!-- NotifyComponent&#45;&gt;NotifyModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;NotifyModule</title>
-<path fill="none" stroke="#000000" d="M276.6077,-122.1061C276.6077,-122.1061 276.6077,-140.991 276.6077,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.1077,-140.9909 276.6077,-150.991 280.1077,-140.991 273.1077,-140.9909"/>
-</g>
-<!-- AlertBoxModule -->
-<g id="node2" class="node">
-<title>AlertBoxModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="238.6499,-122 235.6499,-126 214.6499,-126 211.6499,-122 127.3501,-122 127.3501,-86 238.6499,-86 238.6499,-122"/>
-<text text-anchor="middle" x="183" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
-</g>
-<!-- AlertBoxModule&#45;&gt;NotifyModule -->
-<g id="edge2" class="edge">
-<title>AlertBoxModule&#45;&gt;NotifyModule</title>
-<path fill="none" stroke="#000000" d="M219.3878,-122.1061C219.3878,-122.1061 219.3878,-140.991 219.3878,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="215.8879,-140.9909 219.3878,-150.991 222.8879,-140.991 215.8879,-140.9909"/>
+<title>NotifyComponent&#45;&gt;NotifyModule</title>
+<path fill="none" stroke="#000000" d="M276.5544,-122.1061C276.5544,-122.1061 276.5544,-140.991 276.5544,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="273.0544,-140.9909 276.5544,-150.991 280.0544,-140.991 273.0544,-140.9909"/>
 </g>
 <!-- NotifyComponent  -->
 <g id="node4" class="node">
@@ -73,6 +65,18 @@
 <title>NotifyModule&#45;&gt;NotifyComponent </title>
 <path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
+</g>
+<!-- AlertBoxModule -->
+<g id="node3" class="node">
+<title>AlertBoxModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="232.6499,-122 229.6499,-126 208.6499,-126 205.6499,-122 121.3501,-122 121.3501,-86 232.6499,-86 232.6499,-122"/>
+<text text-anchor="middle" x="177" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
+</g>
+<!-- AlertBoxModule&#45;&gt;NotifyModule -->
+<g id="edge2" class="edge">
+<title>AlertBoxModule&#45;&gt;NotifyModule</title>
+<path fill="none" stroke="#000000" d="M216.3878,-122.1061C216.3878,-122.1061 216.3878,-140.991 216.3878,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="212.8879,-140.9909 216.3878,-150.991 219.8879,-140.991 212.8879,-140.9909"/>
 </g>
 </g>
 </svg>

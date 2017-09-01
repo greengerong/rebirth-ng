@@ -36,9 +36,6 @@
                         <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
                                     <a 
                                         
                                          href="../overview.html" 
@@ -47,19 +44,30 @@
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                            <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
-                            ></span>
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
                         </a>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-modules-links"
                             >
                                 <li class="link">
@@ -96,6 +104,9 @@
                                     <a href="../modules/DraggableModule.html" >DraggableModule</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/FileUploadModule.html" >FileUploadModule</a>
                                 </li>
                                 <li class="link">
@@ -105,7 +116,7 @@
                                     <a href="../modules/InfiniteScrollModule.html" >InfiniteScrollModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/MenuBarModule.html"  class="active" >MenuBarModule</a>
+                                    <a href="../modules/MenuBarModule.html"  data-type="entity-link" class="active" >MenuBarModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/ModalModule.html" >ModalModule</a>
@@ -168,14 +179,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
                             <span class="fa fa-cogs"></span>
                             <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-components-links"
                             >
                                 <li class="link">
@@ -213,6 +224,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -284,6 +298,9 @@
                                     <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -332,14 +349,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
@@ -442,14 +459,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
                             <span class="fa fa-file-code-o"></span>
                             <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-classes-links"
                             >
                                 <li class="link">
@@ -474,14 +491,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
                             <span class="fa fa-long-arrow-down"></span>
                             <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
@@ -518,14 +535,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
@@ -562,6 +579,9 @@
                                     <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                 </li>
                                 <li class="link">
@@ -577,26 +597,48 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
                             <span class="fa fa-plus"></span>
                             <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                 </li>
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -629,9 +671,6 @@
                                <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
                                            <a 
                                                
                                                 href="../overview.html" 
@@ -640,19 +679,30 @@
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                   <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
-                                   ></span>
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
                                </a>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="modules-links"
                    >
                                        <li class="link">
@@ -689,6 +739,9 @@
                                            <a href="../modules/DraggableModule.html" >DraggableModule</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/FileUploadModule.html" >FileUploadModule</a>
                                        </li>
                                        <li class="link">
@@ -698,7 +751,7 @@
                                            <a href="../modules/InfiniteScrollModule.html" >InfiniteScrollModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/MenuBarModule.html"  class="active" >MenuBarModule</a>
+                                           <a href="../modules/MenuBarModule.html"  data-type="entity-link" class="active" >MenuBarModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/ModalModule.html" >ModalModule</a>
@@ -761,14 +814,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
                                    <span class="fa fa-cogs"></span>
                                    <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="components-links"
                    >
                                        <li class="link">
@@ -806,6 +859,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -877,6 +933,9 @@
                                            <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -925,14 +984,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
@@ -1035,14 +1094,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
                                    <span class="fa fa-file-code-o"></span>
                                    <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="classes-links"
                    >
                                        <li class="link">
@@ -1067,14 +1126,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
                                    <span class="fa fa-long-arrow-down"></span>
                                    <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="injectables-links"
                    >
                                        <li class="link">
@@ -1111,14 +1170,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
@@ -1155,6 +1214,9 @@
                                            <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                        </li>
                                        <li class="link">
@@ -1170,26 +1232,48 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
                                    <span class="fa fa-plus"></span>
                                    <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                        </li>
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -1203,125 +1287,134 @@
                <div class="content module">
                    <div class="content-data">
 
+
+
 <ol class="breadcrumb">
   <li>Modules</li>
   <li>MenuBarModule</li>
 </ol>
 
-<div class="text-center">
-    <div id="module-graph-svg">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <div class="text-center">
+          <div id="module-graph-svg">
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: dependencies Pages: 1 -->
-<svg width="504pt" height="284pt"
- viewBox="0.00 0.00 504.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="516pt" height="284pt"
+ viewBox="0.00 0.00 516.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
 <title>dependencies</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 500,-280 500,4 -4,4"/>
-<text text-anchor="start" x="227.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
-<polygon fill="#ffffb3" stroke="transparent" points="14,-10 14,-30 34,-30 34,-10 14,-10"/>
-<text text-anchor="start" x="37.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
-<polygon fill="#8dd3c7" stroke="transparent" points="127,-10 127,-30 147,-30 147,-10 127,-10"/>
-<text text-anchor="start" x="150.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
-<polygon fill="#80b1d3" stroke="transparent" points="213,-10 213,-30 233,-30 233,-10 213,-10"/>
-<text text-anchor="start" x="236.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
-<polygon fill="#fdb462" stroke="transparent" points="310,-10 310,-30 330,-30 330,-10 310,-10"/>
-<text text-anchor="start" x="333.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
-<polygon fill="#fb8072" stroke="transparent" points="406,-10 406,-30 426,-30 426,-10 406,-10"/>
-<text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 512,-280 512,4 -4,4"/>
+<text text-anchor="start" x="233.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="20,-10 20,-30 40,-30 40,-10 20,-10"/>
+<text text-anchor="start" x="43.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="133,-10 133,-30 153,-30 153,-10 133,-10"/>
+<text text-anchor="start" x="156.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="219,-10 219,-30 239,-30 239,-10 219,-10"/>
+<text text-anchor="start" x="242.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="316,-10 316,-30 336,-30 336,-10 316,-10"/>
+<text text-anchor="start" x="339.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="412,-10 412,-30 432,-30 432,-10 412,-10"/>
+<text text-anchor="start" x="435.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_MenuBarModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="32,-70 32,-268 464,-268 464,-70 32,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 500,-268 500,-70 8,-70"/>
 </g>
-<g id="clust3" class="cluster">
+<g id="clust2" class="cluster">
+<title>cluster_MenuBarModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="194,-78 194,-130 492,-130 492,-78 194,-78"/>
+</g>
+<g id="clust5" class="cluster">
 <title>cluster_MenuBarModule_imports</title>
-<polygon fill="none" stroke="#000000" points="40,-78 40,-130 456,-130 456,-78 40,-78"/>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 186,-130 186,-78 16,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust6" class="cluster">
 <title>cluster_MenuBarModule_exports</title>
-<polygon fill="none" stroke="#000000" points="192,-208 192,-260 346,-260 346,-208 192,-208"/>
+<polygon fill="none" stroke="#000000" points="190,-208 190,-260 344,-260 344,-208 190,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- MenuBarComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="447.6681,-122 444.6681,-126 423.6681,-126 420.6681,-122 336.3319,-122 336.3319,-86 447.6681,-86 447.6681,-122"/>
-<text text-anchor="middle" x="392" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>MenuBarComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="484.2036,-122 349.7964,-122 349.7964,-86 484.2036,-86 484.2036,-122"/>
+<text text-anchor="middle" x="417" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuBarComponent</text>
 </g>
 <!-- MenuBarModule -->
-<g id="node4" class="node">
-<title>MenuBarModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="325.4216,-187 322.4216,-191 301.4216,-191 298.4216,-187 212.5784,-187 212.5784,-151 325.4216,-151 325.4216,-187"/>
-<text text-anchor="middle" x="269" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuBarModule</text>
-</g>
-<!-- CommonModule&#45;&gt;MenuBarModule -->
-<g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;MenuBarModule</title>
-<path fill="none" stroke="#000000" d="M336.1221,-104C327.5677,-104 321.5182,-104 321.5182,-104 321.5182,-104 321.5182,-140.8939 321.5182,-140.8939"/>
-<polygon fill="#000000" stroke="#000000" points="318.0183,-140.8938 321.5182,-150.8939 325.0183,-140.8939 318.0183,-140.8938"/>
-</g>
-<!-- RouterModule -->
-<g id="node2" class="node">
-<title>RouterModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="317.6528,-122 314.6528,-126 293.6528,-126 290.6528,-122 220.3472,-122 220.3472,-86 317.6528,-86 317.6528,-122"/>
-<text text-anchor="middle" x="269" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RouterModule</text>
-</g>
-<!-- RouterModule&#45;&gt;MenuBarModule -->
-<g id="edge2" class="edge">
-<title>RouterModule&#45;&gt;MenuBarModule</title>
-<path fill="none" stroke="#000000" d="M269,-122.1061C269,-122.1061 269,-140.991 269,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="265.5001,-140.9909 269,-150.991 272.5001,-140.991 265.5001,-140.9909"/>
-</g>
-<!-- RebirthCommonModule -->
 <g id="node3" class="node">
-<title>RebirthCommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="201.661,-122 198.661,-126 177.661,-126 174.661,-122 48.339,-122 48.339,-86 201.661,-86 201.661,-122"/>
-<text text-anchor="middle" x="125" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RebirthCommonModule</text>
+<title>MenuBarModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="323.4216,-187 320.4216,-191 299.4216,-191 296.4216,-187 210.5784,-187 210.5784,-151 323.4216,-151 323.4216,-187"/>
+<text text-anchor="middle" x="267" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuBarModule</text>
 </g>
-<!-- RebirthCommonModule&#45;&gt;MenuBarModule -->
-<g id="edge3" class="edge">
-<title>RebirthCommonModule&#45;&gt;MenuBarModule</title>
-<path fill="none" stroke="#000000" d="M201.7836,-104C210.5841,-104 216.4818,-104 216.4818,-104 216.4818,-104 216.4818,-140.8939 216.4818,-140.8939"/>
-<polygon fill="#000000" stroke="#000000" points="212.9818,-140.8938 216.4818,-150.8939 219.9818,-140.8939 212.9818,-140.8938"/>
+<!-- MenuBarComponent&#45;&gt;MenuBarModule -->
+<g id="edge1" class="edge">
+<title>MenuBarComponent&#45;&gt;MenuBarModule</title>
+<path fill="none" stroke="#000000" d="M417,-122.1061C417,-141.3391 417,-169 417,-169 417,-169 333.2812,-169 333.2812,-169"/>
+<polygon fill="#000000" stroke="#000000" points="333.2813,-165.5001 323.2812,-169 333.2812,-172.5001 333.2813,-165.5001"/>
+</g>
+<!-- NavItemComponent -->
+<g id="node2" class="node">
+<title>NavItemComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="332.3104,-122 201.6896,-122 201.6896,-86 332.3104,-86 332.3104,-122"/>
+<text text-anchor="middle" x="267" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">NavItemComponent</text>
+</g>
+<!-- NavItemComponent&#45;&gt;MenuBarModule -->
+<g id="edge2" class="edge">
+<title>NavItemComponent&#45;&gt;MenuBarModule</title>
+<path fill="none" stroke="#000000" d="M267,-122.1061C267,-122.1061 267,-140.991 267,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="263.5001,-140.9909 267,-150.991 270.5001,-140.991 263.5001,-140.9909"/>
 </g>
 <!-- MenuBarComponent  -->
 <g id="node5" class="node">
 <title>MenuBarComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="337.7037,-252 200.2963,-252 200.2963,-216 337.7037,-216 337.7037,-252"/>
-<text text-anchor="middle" x="269" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuBarComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="335.7037,-252 198.2963,-252 198.2963,-216 335.7037,-216 335.7037,-252"/>
+<text text-anchor="middle" x="267" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">MenuBarComponent </text>
 </g>
 <!-- MenuBarModule&#45;&gt;MenuBarComponent  -->
 <g id="edge4" class="edge">
 <title>MenuBarModule&#45;&gt;MenuBarComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M269,-187.1061C269,-187.1061 269,-205.991 269,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="265.5001,-205.9909 269,-215.991 272.5001,-205.991 265.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M267,-187.1061C267,-187.1061 267,-205.991 267,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="263.5001,-205.9909 267,-215.991 270.5001,-205.991 263.5001,-205.9909"/>
+</g>
+<!-- RebirthCommonModule -->
+<g id="node4" class="node">
+<title>RebirthCommonModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="177.661,-122 174.661,-126 153.661,-126 150.661,-122 24.339,-122 24.339,-86 177.661,-86 177.661,-122"/>
+<text text-anchor="middle" x="101" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">RebirthCommonModule</text>
+</g>
+<!-- RebirthCommonModule&#45;&gt;MenuBarModule -->
+<g id="edge3" class="edge">
+<title>RebirthCommonModule&#45;&gt;MenuBarModule</title>
+<path fill="none" stroke="#000000" d="M101,-122.1061C101,-141.3391 101,-169 101,-169 101,-169 200.3365,-169 200.3365,-169"/>
+<polygon fill="#000000" stroke="#000000" points="200.3365,-172.5001 210.3365,-169 200.3365,-165.5001 200.3365,-172.5001"/>
 </g>
 </g>
 </svg>
 
-    </div>
-    <div class="btn-group">
-        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-        <button id="reset" class="btn btn-default btn-sm">Reset</button>
-        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-    </div>
-</div>
-<script src="../js/libs/svg-pan-zoom.min.js"></script>
-<script src="../js/svg-pan-zoom.controls.js"></script>
+          </div>
+          <div class="btn-group">
+              <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+              <button id="reset" class="btn btn-default btn-sm">Reset</button>
+              <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+          </div>
+      </div>
+      <script src="../js/libs/svg-pan-zoom.min.js"></script>
+      <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
     </li>
+
+
     <li>
         <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="info">
+
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1362,6 +1455,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;

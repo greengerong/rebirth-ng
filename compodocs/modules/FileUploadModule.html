@@ -36,9 +36,6 @@
                         <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
                                     <a 
                                         
                                          href="../overview.html" 
@@ -47,19 +44,30 @@
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                            <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
-                            ></span>
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
                         </a>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-modules-links"
                             >
                                 <li class="link">
@@ -96,7 +104,10 @@
                                     <a href="../modules/DraggableModule.html" >DraggableModule</a>
                                 </li>
                                 <li class="link">
-                                    <a href="../modules/FileUploadModule.html"  class="active" >FileUploadModule</a>
+                                    <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/FileUploadModule.html"  data-type="entity-link" class="active" >FileUploadModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/FlowStepModule.html" >FlowStepModule</a>
@@ -168,14 +179,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
                             <span class="fa fa-cogs"></span>
                             <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-components-links"
                             >
                                 <li class="link">
@@ -213,6 +224,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -284,6 +298,9 @@
                                     <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -332,14 +349,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
@@ -442,14 +459,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
                             <span class="fa fa-file-code-o"></span>
                             <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-classes-links"
                             >
                                 <li class="link">
@@ -474,14 +491,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
                             <span class="fa fa-long-arrow-down"></span>
                             <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
@@ -518,14 +535,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
@@ -562,6 +579,9 @@
                                     <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                </li>
+                                <li class="link">
                                     <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                 </li>
                                 <li class="link">
@@ -577,26 +597,48 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
                             <span class="fa fa-plus"></span>
                             <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                 </li>
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -629,9 +671,6 @@
                                <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
                                            <a 
                                                
                                                 href="../overview.html" 
@@ -640,19 +679,30 @@
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                   <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
-                                   ></span>
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
                                </a>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="modules-links"
                    >
                                        <li class="link">
@@ -689,7 +739,10 @@
                                            <a href="../modules/DraggableModule.html" >DraggableModule</a>
                                        </li>
                                        <li class="link">
-                                           <a href="../modules/FileUploadModule.html"  class="active" >FileUploadModule</a>
+                                           <a href="../modules/EllipsisModule.html" >EllipsisModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/FileUploadModule.html"  data-type="entity-link" class="active" >FileUploadModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/FlowStepModule.html" >FlowStepModule</a>
@@ -761,14 +814,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
                                    <span class="fa fa-cogs"></span>
                                    <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="components-links"
                    >
                                        <li class="link">
@@ -806,6 +859,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/EllipsisComponent.html" >EllipsisComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -877,6 +933,9 @@
                                            <a href="../components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -925,14 +984,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
@@ -1035,14 +1094,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
                                    <span class="fa fa-file-code-o"></span>
                                    <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="classes-links"
                    >
                                        <li class="link">
@@ -1067,14 +1126,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
                                    <span class="fa fa-long-arrow-down"></span>
                                    <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="injectables-links"
                    >
                                        <li class="link">
@@ -1111,14 +1170,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
@@ -1155,6 +1214,9 @@
                                            <a href="../interfaces/OverlayOptions.html" >OverlayOptions</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../interfaces/PromptContent.html" >PromptContent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                        </li>
                                        <li class="link">
@@ -1170,26 +1232,48 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
                                    <span class="fa fa-plus"></span>
                                    <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="../pipes/DatePipe.html" >DatePipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="../pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                        </li>
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -1203,185 +1287,230 @@
                <div class="content module">
                    <div class="content-data">
 
+
+
 <ol class="breadcrumb">
   <li>Modules</li>
   <li>FileUploadModule</li>
 </ol>
 
-<div class="text-center">
-    <div id="module-graph-svg">
-        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      <div class="text-center">
+          <div id="module-graph-svg">
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.40.1 (20161225.0304)
  -->
 <!-- Title: dependencies Pages: 1 -->
-<svg width="1050pt" height="284pt"
- viewBox="0.00 0.00 1050.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1305pt" height="284pt"
+ viewBox="0.00 0.00 1305.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
 <title>dependencies</title>
-<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 1046,-280 1046,4 -4,4"/>
-<text text-anchor="start" x="500.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
-<polygon fill="#ffffb3" stroke="transparent" points="287,-10 287,-30 307,-30 307,-10 287,-10"/>
-<text text-anchor="start" x="310.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
-<polygon fill="#8dd3c7" stroke="transparent" points="400,-10 400,-30 420,-30 420,-10 400,-10"/>
-<text text-anchor="start" x="423.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
-<polygon fill="#80b1d3" stroke="transparent" points="486,-10 486,-30 506,-30 506,-10 486,-10"/>
-<text text-anchor="start" x="509.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
-<polygon fill="#fdb462" stroke="transparent" points="583,-10 583,-30 603,-30 603,-10 583,-10"/>
-<text text-anchor="start" x="606.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
-<polygon fill="#fb8072" stroke="transparent" points="679,-10 679,-30 699,-30 699,-10 679,-10"/>
-<text text-anchor="start" x="702.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 1301,-280 1301,4 -4,4"/>
+<text text-anchor="start" x="627.5091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="414.5,-10 414.5,-30 434.5,-30 434.5,-10 414.5,-10"/>
+<text text-anchor="start" x="438.129" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="527.5,-10 527.5,-30 547.5,-30 547.5,-10 527.5,-10"/>
+<text text-anchor="start" x="551.2251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="613.5,-10 613.5,-30 633.5,-30 633.5,-10 613.5,-10"/>
+<text text-anchor="start" x="637.2812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="710.5,-10 710.5,-30 730.5,-30 730.5,-10 710.5,-10"/>
+<text text-anchor="start" x="734.1732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="806.5,-10 806.5,-30 826.5,-30 826.5,-10 806.5,-10"/>
+<text text-anchor="start" x="830.2258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_FileUploadModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 1034,-268 1034,-70 8,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 1289,-268 1289,-70 8,-70"/>
 </g>
-<g id="clust3" class="cluster">
+<g id="clust2" class="cluster">
+<title>cluster_FileUploadModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="288,-78 288,-130 1281,-130 1281,-78 288,-78"/>
+</g>
+<g id="clust8" class="cluster">
 <title>cluster_FileUploadModule_imports</title>
-<polygon fill="none" stroke="#000000" points="282,-78 282,-130 778,-130 778,-78 282,-78"/>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 280,-130 280,-78 16,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust9" class="cluster">
 <title>cluster_FileUploadModule_exports</title>
-<polygon fill="none" stroke="#000000" points="16,-208 16,-260 1026,-260 1026,-208 16,-208"/>
+<polygon fill="none" stroke="#000000" points="64,-208 64,-260 1074,-260 1074,-208 64,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- FileUploadComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="769.6681,-122 766.6681,-126 745.6681,-126 742.6681,-122 658.3319,-122 658.3319,-86 769.6681,-86 769.6681,-122"/>
-<text text-anchor="middle" x="714" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>FileUploadComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1273.323,-122 1128.677,-122 1128.677,-86 1273.323,-86 1273.323,-122"/>
+<text text-anchor="middle" x="1201" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadComponent</text>
 </g>
 <!-- FileUploadModule -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>FileUploadModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="601.0409,-187 598.0409,-191 577.0409,-191 574.0409,-187 478.9591,-187 478.9591,-151 601.0409,-151 601.0409,-187"/>
-<text text-anchor="middle" x="540" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="649.0409,-187 646.0409,-191 625.0409,-191 622.0409,-187 526.9591,-187 526.9591,-151 649.0409,-151 649.0409,-187"/>
+<text text-anchor="middle" x="588" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadModule</text>
 </g>
-<!-- CommonModule&#45;&gt;FileUploadModule -->
+<!-- FileUploadComponent&#45;&gt;FileUploadModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;FileUploadModule</title>
-<path fill="none" stroke="#000000" d="M732.6113,-122.027C732.6113,-138.3976 732.6113,-160 732.6113,-160 732.6113,-160 611.2081,-160 611.2081,-160"/>
-<polygon fill="#000000" stroke="#000000" points="611.2081,-156.5001 601.2081,-160 611.208,-163.5001 611.2081,-156.5001"/>
+<title>FileUploadComponent&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M1201,-122.1061C1201,-141.3391 1201,-169 1201,-169 1201,-169 659.3004,-169 659.3004,-169"/>
+<polygon fill="#000000" stroke="#000000" points="659.3004,-165.5001 649.3004,-169 659.3004,-172.5001 659.3004,-165.5001"/>
 </g>
-<!-- HttpModule -->
+<!-- FileUploadPreviewComponent -->
 <g id="node2" class="node">
-<title>HttpModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="640.4387,-122 637.4387,-126 616.4387,-126 613.4387,-122 555.5613,-122 555.5613,-86 640.4387,-86 640.4387,-122"/>
-<text text-anchor="middle" x="598" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">HttpModule</text>
+<title>FileUploadPreviewComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1111.1923,-122 920.8077,-122 920.8077,-86 1111.1923,-86 1111.1923,-122"/>
+<text text-anchor="middle" x="1016" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadPreviewComponent</text>
 </g>
-<!-- HttpModule&#45;&gt;FileUploadModule -->
+<!-- FileUploadPreviewComponent&#45;&gt;FileUploadModule -->
 <g id="edge2" class="edge">
-<title>HttpModule&#45;&gt;FileUploadModule</title>
-<path fill="none" stroke="#000000" d="M578.5256,-122.1061C578.5256,-122.1061 578.5256,-140.991 578.5256,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="575.0257,-140.9909 578.5256,-150.991 582.0257,-140.991 575.0257,-140.9909"/>
+<title>FileUploadPreviewComponent&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M969.2397,-122.0225C969.2397,-139.3734 969.2397,-163 969.2397,-163 969.2397,-163 659.2528,-163 659.2528,-163"/>
+<polygon fill="#000000" stroke="#000000" points="659.2528,-159.5001 649.2528,-163 659.2527,-166.5001 659.2528,-159.5001"/>
 </g>
-<!-- AlertBoxModule -->
+<!-- UploadToolbarTmplComponent -->
 <g id="node3" class="node">
-<title>AlertBoxModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="537.6499,-122 534.6499,-126 513.6499,-126 510.6499,-122 426.3501,-122 426.3501,-86 537.6499,-86 537.6499,-122"/>
-<text text-anchor="middle" x="482" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
+<title>UploadToolbarTmplComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="902.6965,-122 705.3035,-122 705.3035,-86 902.6965,-86 902.6965,-122"/>
+<text text-anchor="middle" x="804" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadToolbarTmplComponent</text>
 </g>
-<!-- AlertBoxModule&#45;&gt;FileUploadModule -->
+<!-- UploadToolbarTmplComponent&#45;&gt;FileUploadModule -->
 <g id="edge3" class="edge">
-<title>AlertBoxModule&#45;&gt;FileUploadModule</title>
-<path fill="none" stroke="#000000" d="M508.2774,-122.1061C508.2774,-122.1061 508.2774,-140.991 508.2774,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="504.7774,-140.9909 508.2774,-150.991 511.7774,-140.991 504.7774,-140.9909"/>
+<title>UploadToolbarTmplComponent&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M770.718,-122.2396C770.718,-137.5706 770.718,-157 770.718,-157 770.718,-157 659.0965,-157 659.0965,-157"/>
+<polygon fill="#000000" stroke="#000000" points="659.0965,-153.5001 649.0965,-157 659.0964,-160.5001 659.0965,-153.5001"/>
 </g>
-<!-- DraggableModule -->
+<!-- UploadPreviewTmplComponent -->
 <g id="node4" class="node">
-<title>DraggableModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="407.8515,-122 404.8515,-126 383.8515,-126 380.8515,-122 290.1485,-122 290.1485,-86 407.8515,-86 407.8515,-122"/>
-<text text-anchor="middle" x="349" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DraggableModule</text>
+<title>UploadPreviewTmplComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="687.2478,-122 488.7522,-122 488.7522,-86 687.2478,-86 687.2478,-122"/>
+<text text-anchor="middle" x="588" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadPreviewTmplComponent</text>
 </g>
-<!-- DraggableModule&#45;&gt;FileUploadModule -->
+<!-- UploadPreviewTmplComponent&#45;&gt;FileUploadModule -->
 <g id="edge4" class="edge">
-<title>DraggableModule&#45;&gt;FileUploadModule</title>
-<path fill="none" stroke="#000000" d="M349,-122.027C349,-138.3976 349,-160 349,-160 349,-160 468.7783,-160 468.7783,-160"/>
-<polygon fill="#000000" stroke="#000000" points="468.7783,-163.5001 478.7783,-160 468.7783,-156.5001 468.7783,-163.5001"/>
+<title>UploadPreviewTmplComponent&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M588,-122.1061C588,-122.1061 588,-140.991 588,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="584.5001,-140.9909 588,-150.991 591.5001,-140.991 584.5001,-140.9909"/>
+</g>
+<!-- UploadFileTmplComponent -->
+<g id="node5" class="node">
+<title>UploadFileTmplComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="470.1567,-122 295.8433,-122 295.8433,-86 470.1567,-86 470.1567,-122"/>
+<text text-anchor="middle" x="383" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadFileTmplComponent</text>
+</g>
+<!-- UploadFileTmplComponent&#45;&gt;FileUploadModule -->
+<g id="edge5" class="edge">
+<title>UploadFileTmplComponent&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M411.9731,-122.2396C411.9731,-137.5706 411.9731,-157 411.9731,-157 411.9731,-157 516.9284,-157 516.9284,-157"/>
+<polygon fill="#000000" stroke="#000000" points="516.9284,-160.5001 526.9284,-157 516.9283,-153.5001 516.9284,-160.5001"/>
 </g>
 <!-- FileUploadComponent  -->
-<g id="node6" class="node">
+<g id="node9" class="node">
 <title>FileUploadComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="1017.8227,-252 870.1773,-252 870.1773,-216 1017.8227,-216 1017.8227,-252"/>
-<text text-anchor="middle" x="944" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="1065.8227,-252 918.1773,-252 918.1773,-216 1065.8227,-216 1065.8227,-252"/>
+<text text-anchor="middle" x="992" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadComponent </text>
 </g>
 <!-- FileUploadModule&#45;&gt;FileUploadComponent  -->
-<g id="edge5" class="edge">
+<g id="edge8" class="edge">
 <title>FileUploadModule&#45;&gt;FileUploadComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M601.3589,-169C714.3766,-169 944,-169 944,-169 944,-169 944,-205.8939 944,-205.8939"/>
-<polygon fill="#000000" stroke="#000000" points="940.5001,-205.8938 944,-215.8939 947.5001,-205.8939 940.5001,-205.8938"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M649.0915,-175C767.6897,-175 1017.5755,-175 1017.5755,-175 1017.5755,-175 1017.5755,-205.9775 1017.5755,-205.9775"/>
+<polygon fill="#000000" stroke="#000000" points="1014.0756,-205.9774 1017.5755,-215.9775 1021.0756,-205.9775 1014.0756,-205.9774"/>
 </g>
 <!-- FileUploadPreviewComponent  -->
-<g id="node7" class="node">
+<g id="node10" class="node">
 <title>FileUploadPreviewComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="851.6924,-252 658.3076,-252 658.3076,-216 851.6924,-216 851.6924,-252"/>
-<text text-anchor="middle" x="755" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadPreviewComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="899.6924,-252 706.3076,-252 706.3076,-216 899.6924,-216 899.6924,-252"/>
+<text text-anchor="middle" x="803" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">FileUploadPreviewComponent </text>
 </g>
 <!-- FileUploadModule&#45;&gt;FileUploadPreviewComponent  -->
-<g id="edge6" class="edge">
+<g id="edge9" class="edge">
 <title>FileUploadModule&#45;&gt;FileUploadPreviewComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M601.4137,-178C644.8476,-178 695.3887,-178 695.3887,-178 695.3887,-178 695.3887,-205.973 695.3887,-205.973"/>
-<polygon fill="#000000" stroke="#000000" points="691.8888,-205.973 695.3887,-215.973 698.8888,-205.973 691.8888,-205.973"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M649.1259,-181C722.3532,-181 835.282,-181 835.282,-181 835.282,-181 835.282,-205.7604 835.282,-205.7604"/>
+<polygon fill="#000000" stroke="#000000" points="831.7821,-205.7604 835.282,-215.7604 838.7821,-205.7604 831.7821,-205.7604"/>
 </g>
 <!-- UploadToolbarTmplComponent  -->
-<g id="node8" class="node">
+<g id="node11" class="node">
 <title>UploadToolbarTmplComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="640.1966,-252 439.8034,-252 439.8034,-216 640.1966,-216 640.1966,-252"/>
-<text text-anchor="middle" x="540" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadToolbarTmplComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="688.1966,-252 487.8034,-252 487.8034,-216 688.1966,-216 688.1966,-252"/>
+<text text-anchor="middle" x="588" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadToolbarTmplComponent </text>
 </g>
 <!-- FileUploadModule&#45;&gt;UploadToolbarTmplComponent  -->
-<g id="edge7" class="edge">
+<g id="edge10" class="edge">
 <title>FileUploadModule&#45;&gt;UploadToolbarTmplComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M540,-187.1061C540,-187.1061 540,-205.991 540,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="536.5001,-205.9909 540,-215.991 543.5001,-205.991 536.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M588,-187.1061C588,-187.1061 588,-205.991 588,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="584.5001,-205.9909 588,-215.991 591.5001,-205.991 584.5001,-205.9909"/>
 </g>
 <!-- UploadPreviewTmplComponent  -->
-<g id="node9" class="node">
+<g id="node12" class="node">
 <title>UploadPreviewTmplComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="422.2478,-252 219.7522,-252 219.7522,-216 422.2478,-216 422.2478,-252"/>
-<text text-anchor="middle" x="321" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadPreviewTmplComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="470.2478,-252 267.7522,-252 267.7522,-216 470.2478,-216 470.2478,-252"/>
+<text text-anchor="middle" x="369" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadPreviewTmplComponent </text>
 </g>
 <!-- FileUploadModule&#45;&gt;UploadPreviewTmplComponent  -->
-<g id="edge8" class="edge">
+<g id="edge11" class="edge">
 <title>FileUploadModule&#45;&gt;UploadPreviewTmplComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M478.6107,-178C447.0051,-178 415.0248,-178 415.0248,-178 415.0248,-178 415.0248,-205.973 415.0248,-205.973"/>
-<polygon fill="#000000" stroke="#000000" points="411.5248,-205.973 415.0248,-215.973 418.5248,-205.973 411.5248,-205.973"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M526.7785,-181C457.3938,-181 353.8225,-181 353.8225,-181 353.8225,-181 353.8225,-205.7604 353.8225,-205.7604"/>
+<polygon fill="#000000" stroke="#000000" points="350.3226,-205.7604 353.8225,-215.7604 357.3226,-205.7604 350.3226,-205.7604"/>
 </g>
 <!-- UploadFileTmplComponent  -->
-<g id="node10" class="node">
+<g id="node13" class="node">
 <title>UploadFileTmplComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="202.1565,-252 23.8435,-252 23.8435,-216 202.1565,-216 202.1565,-252"/>
-<text text-anchor="middle" x="113" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadFileTmplComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="250.1565,-252 71.8435,-252 71.8435,-216 250.1565,-216 250.1565,-252"/>
+<text text-anchor="middle" x="161" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">UploadFileTmplComponent </text>
 </g>
 <!-- FileUploadModule&#45;&gt;UploadFileTmplComponent  -->
-<g id="edge9" class="edge">
+<g id="edge12" class="edge">
 <title>FileUploadModule&#45;&gt;UploadFileTmplComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M478.8213,-169C360.752,-169 113,-169 113,-169 113,-169 113,-205.8939 113,-205.8939"/>
-<polygon fill="#000000" stroke="#000000" points="109.5001,-205.8938 113,-215.8939 116.5001,-205.8939 109.5001,-205.8938"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M526.9092,-175C418.8137,-175 205.1268,-175 205.1268,-175 205.1268,-175 205.1268,-205.9775 205.1268,-205.9775"/>
+<polygon fill="#000000" stroke="#000000" points="201.6268,-205.9774 205.1267,-215.9775 208.6268,-205.9775 201.6268,-205.9774"/>
+</g>
+<!-- AlertBoxModule -->
+<g id="node7" class="node">
+<title>AlertBoxModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="271.6499,-122 268.6499,-126 247.6499,-126 244.6499,-122 160.3501,-122 160.3501,-86 271.6499,-86 271.6499,-122"/>
+<text text-anchor="middle" x="216" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
+</g>
+<!-- AlertBoxModule&#45;&gt;FileUploadModule -->
+<g id="edge6" class="edge">
+<title>AlertBoxModule&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M258.9772,-122.0225C258.9772,-139.3734 258.9772,-163 258.9772,-163 258.9772,-163 516.8844,-163 516.8844,-163"/>
+<polygon fill="#000000" stroke="#000000" points="516.8845,-166.5001 526.8844,-163 516.8844,-159.5001 516.8845,-166.5001"/>
+</g>
+<!-- DraggableModule -->
+<g id="node8" class="node">
+<title>DraggableModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="141.8515,-122 138.8515,-126 117.8515,-126 114.8515,-122 24.1485,-122 24.1485,-86 141.8515,-86 141.8515,-122"/>
+<text text-anchor="middle" x="83" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DraggableModule</text>
+</g>
+<!-- DraggableModule&#45;&gt;FileUploadModule -->
+<g id="edge7" class="edge">
+<title>DraggableModule&#45;&gt;FileUploadModule</title>
+<path fill="none" stroke="#000000" d="M106.9238,-122.1061C106.9238,-141.3391 106.9238,-169 106.9238,-169 106.9238,-169 516.5827,-169 516.5827,-169"/>
+<polygon fill="#000000" stroke="#000000" points="516.5828,-172.5001 526.5827,-169 516.5827,-165.5001 516.5828,-172.5001"/>
 </g>
 </g>
 </svg>
 
-    </div>
-    <div class="btn-group">
-        <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
-        <button id="reset" class="btn btn-default btn-sm">Reset</button>
-        <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
-    </div>
-</div>
-<script src="../js/libs/svg-pan-zoom.min.js"></script>
-<script src="../js/svg-pan-zoom.controls.js"></script>
+          </div>
+          <div class="btn-group">
+              <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+              <button id="reset" class="btn btn-default btn-sm">Reset</button>
+              <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+          </div>
+      </div>
+      <script src="../js/libs/svg-pan-zoom.min.js"></script>
+      <script src="../js/svg-pan-zoom.controls.js"></script>
 
 <ul class="nav nav-tabs" role="tablist">
     <li class="active">
-        <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
     </li>
+
+
     <li>
         <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="infos">
+    <div class="tab-pane fade active in" id="info">
+
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1446,6 +1575,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 

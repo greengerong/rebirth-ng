@@ -24,19 +24,19 @@
 <title>cluster_BadgeModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="172,-70 172,-268 324,-268 324,-70 172,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_BadgeModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_BadgeModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="181,-78 181,-130 315,-130 315,-78 181,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_BadgeModule_exports</title>
 <polygon fill="none" stroke="#000000" points="180,-208 180,-260 316,-260 316,-208 180,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- BadgeComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>BadgeComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="306.5982,-122 189.4018,-122 189.4018,-86 306.5982,-86 306.5982,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BadgeComponent</text>
 </g>
 <!-- BadgeModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="295.8161,-187 292.8161,-191 271.8161,-191 268.8161,-187 200.1839,-187 200.1839,-151 295.8161,-151 295.8161,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">BadgeModule</text>
 </g>
-<!-- CommonModule&#45;&gt;BadgeModule -->
+<!-- BadgeComponent&#45;&gt;BadgeModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;BadgeModule</title>
+<title>BadgeComponent&#45;&gt;BadgeModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

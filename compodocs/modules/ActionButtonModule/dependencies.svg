@@ -24,19 +24,19 @@
 <title>cluster_ActionButtonModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="151,-70 151,-268 345,-268 345,-70 151,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_ActionButtonModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_ActionButtonModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="161,-78 161,-130 335,-130 335,-78 161,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_ActionButtonModule_exports</title>
 <polygon fill="none" stroke="#000000" points="159,-208 159,-260 337,-260 337,-208 159,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- ActionButtonComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>ActionButtonComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="326.5532,-122 169.4468,-122 169.4468,-86 326.5532,-86 326.5532,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionButtonComponent</text>
 </g>
 <!-- ActionButtonModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="315.7702,-187 312.7702,-191 291.7702,-191 288.7702,-187 180.2298,-187 180.2298,-151 315.7702,-151 315.7702,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ActionButtonModule</text>
 </g>
-<!-- CommonModule&#45;&gt;ActionButtonModule -->
+<!-- ActionButtonComponent&#45;&gt;ActionButtonModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;ActionButtonModule</title>
+<title>ActionButtonComponent&#45;&gt;ActionButtonModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

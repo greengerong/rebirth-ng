@@ -24,19 +24,19 @@
 <title>cluster_PagerModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="174,-70 174,-268 322,-268 322,-70 174,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_PagerModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_PagerModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="183,-78 183,-130 313,-130 313,-78 183,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_PagerModule_exports</title>
 <polygon fill="none" stroke="#000000" points="182,-208 182,-260 314,-260 314,-208 182,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- PagerComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>PagerComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="304.705,-122 191.295,-122 191.295,-86 304.705,-86 304.705,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PagerComponent</text>
 </g>
 <!-- PagerModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="293.9232,-187 290.9232,-191 269.9232,-191 266.9232,-187 202.0768,-187 202.0768,-151 293.9232,-151 293.9232,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PagerModule</text>
 </g>
-<!-- CommonModule&#45;&gt;PagerModule -->
+<!-- PagerComponent&#45;&gt;PagerModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;PagerModule</title>
+<title>PagerComponent&#45;&gt;PagerModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

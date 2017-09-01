@@ -22,57 +22,73 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_OverlayModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="119,-70 119,-268 377,-268 377,-70 119,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="14.5,-70 14.5,-268 481.5,-268 481.5,-70 14.5,-70"/>
 </g>
-<g id="clust3" class="cluster">
+<g id="clust2" class="cluster">
+<title>cluster_OverlayModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="142.5,-78 142.5,-130 473.5,-130 473.5,-78 142.5,-78"/>
+</g>
+<g id="clust5" class="cluster">
 <title>cluster_OverlayModule_imports</title>
-<polygon fill="none" stroke="#000000" points="127,-78 127,-130 369,-130 369,-78 127,-78"/>
+<polygon fill="none" stroke="#000000" points="22.5,-78 22.5,-130 134.5,-130 134.5,-78 22.5,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust6" class="cluster">
 <title>cluster_OverlayModule_exports</title>
-<polygon fill="none" stroke="#000000" points="175,-208 175,-260 321,-260 321,-208 175,-208"/>
+<polygon fill="none" stroke="#000000" points="162.5,-208 162.5,-260 308.5,-260 308.5,-208 162.5,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- OverlayComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="360.6681,-122 357.6681,-126 336.6681,-126 333.6681,-122 249.3319,-122 249.3319,-86 360.6681,-86 360.6681,-122"/>
-<text text-anchor="middle" x="305" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>OverlayComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="465.9201,-122 339.0799,-122 339.0799,-86 465.9201,-86 465.9201,-122"/>
+<text text-anchor="middle" x="402.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayComponent</text>
 </g>
 <!-- OverlayModule -->
 <g id="node3" class="node">
 <title>OverlayModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="300.1374,-187 297.1374,-191 276.1374,-191 273.1374,-187 195.8626,-187 195.8626,-151 300.1374,-151 300.1374,-187"/>
-<text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="287.6374,-187 284.6374,-191 263.6374,-191 260.6374,-187 183.3626,-187 183.3626,-151 287.6374,-151 287.6374,-187"/>
+<text text-anchor="middle" x="235.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayModule</text>
 </g>
-<!-- CommonModule&#45;&gt;OverlayModule -->
+<!-- OverlayComponent&#45;&gt;OverlayModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;OverlayModule</title>
-<path fill="none" stroke="#000000" d="M274.7423,-122.1061C274.7423,-122.1061 274.7423,-140.991 274.7423,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="271.2424,-140.9909 274.7423,-150.991 278.2424,-140.991 271.2424,-140.9909"/>
+<title>OverlayComponent&#45;&gt;OverlayModule</title>
+<path fill="none" stroke="#000000" d="M402.5,-122.1061C402.5,-141.3391 402.5,-169 402.5,-169 402.5,-169 297.8816,-169 297.8816,-169"/>
+<polygon fill="#000000" stroke="#000000" points="297.8817,-165.5001 287.8816,-169 297.8816,-172.5001 297.8817,-165.5001"/>
 </g>
-<!-- ModalModule -->
+<!-- OverlayContentComponent -->
 <g id="node2" class="node">
-<title>ModalModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="231.0997,-122 228.0997,-126 207.0997,-126 204.0997,-122 134.9003,-122 134.9003,-86 231.0997,-86 231.0997,-122"/>
-<text text-anchor="middle" x="183" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalModule</text>
+<title>OverlayContentComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="320.752,-122 150.248,-122 150.248,-86 320.752,-86 320.752,-122"/>
+<text text-anchor="middle" x="235.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayContentComponent</text>
 </g>
-<!-- ModalModule&#45;&gt;OverlayModule -->
+<!-- OverlayContentComponent&#45;&gt;OverlayModule -->
 <g id="edge2" class="edge">
-<title>ModalModule&#45;&gt;OverlayModule</title>
-<path fill="none" stroke="#000000" d="M213.3657,-122.1061C213.3657,-122.1061 213.3657,-140.991 213.3657,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="209.8658,-140.9909 213.3657,-150.991 216.8658,-140.991 209.8658,-140.9909"/>
+<title>OverlayContentComponent&#45;&gt;OverlayModule</title>
+<path fill="none" stroke="#000000" d="M235.5,-122.1061C235.5,-122.1061 235.5,-140.991 235.5,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="232.0001,-140.9909 235.5,-150.991 239.0001,-140.991 232.0001,-140.9909"/>
 </g>
 <!-- OverlayComponent  -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>OverlayComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="312.9194,-252 183.0806,-252 183.0806,-216 312.9194,-216 312.9194,-252"/>
-<text text-anchor="middle" x="248" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="300.4194,-252 170.5806,-252 170.5806,-216 300.4194,-216 300.4194,-252"/>
+<text text-anchor="middle" x="235.5" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">OverlayComponent </text>
 </g>
 <!-- OverlayModule&#45;&gt;OverlayComponent  -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>OverlayModule&#45;&gt;OverlayComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M248,-187.1061C248,-187.1061 248,-205.991 248,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="244.5001,-205.9909 248,-215.991 251.5001,-205.991 244.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M235.5,-187.1061C235.5,-187.1061 235.5,-205.991 235.5,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="232.0001,-205.9909 235.5,-215.991 239.0001,-205.991 232.0001,-205.9909"/>
+</g>
+<!-- ModalModule -->
+<g id="node4" class="node">
+<title>ModalModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="126.5997,-122 123.5997,-126 102.5997,-126 99.5997,-122 30.4003,-122 30.4003,-86 126.5997,-86 126.5997,-122"/>
+<text text-anchor="middle" x="78.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalModule</text>
+</g>
+<!-- ModalModule&#45;&gt;OverlayModule -->
+<g id="edge3" class="edge">
+<title>ModalModule&#45;&gt;OverlayModule</title>
+<path fill="none" stroke="#000000" d="M78.5,-122.1061C78.5,-141.3391 78.5,-169 78.5,-169 78.5,-169 173.2213,-169 173.2213,-169"/>
+<polygon fill="#000000" stroke="#000000" points="173.2213,-172.5001 183.2213,-169 173.2212,-165.5001 173.2213,-172.5001"/>
 </g>
 </g>
 </svg>

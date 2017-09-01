@@ -24,55 +24,67 @@
 <title>cluster_CarouselModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="106,-70 106,-268 390,-268 390,-70 106,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_CarouselModule_imports</title>
-<polygon fill="none" stroke="#000000" points="178,-78 178,-130 306,-130 306,-78 178,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_CarouselModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="117,-78 117,-130 379,-130 379,-78 117,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust6" class="cluster">
 <title>cluster_CarouselModule_exports</title>
 <polygon fill="none" stroke="#000000" points="114,-208 114,-260 382,-260 382,-208 114,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- CarouselComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="297.6681,-122 294.6681,-126 273.6681,-126 270.6681,-122 186.3319,-122 186.3319,-86 297.6681,-86 297.6681,-122"/>
-<text text-anchor="middle" x="242" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>CarouselComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="370.594,-122 239.406,-122 239.406,-86 370.594,-86 370.594,-122"/>
+<text text-anchor="middle" x="305" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CarouselComponent</text>
 </g>
 <!-- CarouselModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>CarouselModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="296.8118,-187 293.8118,-191 272.8118,-191 269.8118,-187 187.1882,-187 187.1882,-151 296.8118,-151 296.8118,-187"/>
-<text text-anchor="middle" x="242" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CarouselModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="228.8118,-187 225.8118,-191 204.8118,-191 201.8118,-187 119.1882,-187 119.1882,-151 228.8118,-151 228.8118,-187"/>
+<text text-anchor="middle" x="174" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CarouselModule</text>
 </g>
-<!-- CommonModule&#45;&gt;CarouselModule -->
+<!-- CarouselComponent&#45;&gt;CarouselModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;CarouselModule</title>
-<path fill="none" stroke="#000000" d="M242,-122.1061C242,-122.1061 242,-140.991 242,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="238.5001,-140.9909 242,-150.991 245.5001,-140.991 238.5001,-140.9909"/>
+<title>CarouselComponent&#45;&gt;CarouselModule</title>
+<path fill="none" stroke="#000000" d="M239.3378,-104C230.8518,-104 225.0432,-104 225.0432,-104 225.0432,-104 225.0432,-140.8939 225.0432,-140.8939"/>
+<polygon fill="#000000" stroke="#000000" points="221.5432,-140.8938 225.0432,-150.8939 228.5432,-140.8939 221.5432,-140.8938"/>
+</g>
+<!-- SlideDirective -->
+<g id="node2" class="node">
+<title>SlideDirective</title>
+<polygon fill="#ffffb3" stroke="#000000" points="221.3613,-122 124.6387,-122 124.6387,-86 221.3613,-86 221.3613,-122"/>
+<text text-anchor="middle" x="173" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SlideDirective</text>
+</g>
+<!-- SlideDirective&#45;&gt;CarouselModule -->
+<g id="edge2" class="edge">
+<title>SlideDirective&#45;&gt;CarouselModule</title>
+<path fill="none" stroke="#000000" d="M173,-122.1061C173,-122.1061 173,-140.991 173,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="169.5001,-140.9909 173,-150.991 176.5001,-140.991 169.5001,-140.9909"/>
 </g>
 <!-- CarouselComponent  -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>CarouselComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="374.0946,-252 239.9054,-252 239.9054,-216 374.0946,-216 374.0946,-252"/>
 <text text-anchor="middle" x="307" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">CarouselComponent </text>
 </g>
 <!-- CarouselModule&#45;&gt;CarouselComponent  -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>CarouselModule&#45;&gt;CarouselComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M268.1794,-187.1061C268.1794,-187.1061 268.1794,-205.991 268.1794,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="264.6794,-205.9909 268.1794,-215.991 271.6794,-205.991 264.6794,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M228.849,-169C264.7807,-169 305.125,-169 305.125,-169 305.125,-169 305.125,-205.8939 305.125,-205.8939"/>
+<polygon fill="#000000" stroke="#000000" points="301.6251,-205.8938 305.125,-215.8939 308.6251,-205.8939 301.6251,-205.8938"/>
 </g>
 <!-- SlideDirective  -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>SlideDirective </title>
 <polygon fill="#fb8072" stroke="#000000" points="222.3619,-252 121.6381,-252 121.6381,-216 222.3619,-216 222.3619,-252"/>
 <text text-anchor="middle" x="172" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">SlideDirective </text>
 </g>
 <!-- CarouselModule&#45;&gt;SlideDirective  -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>CarouselModule&#45;&gt;SlideDirective </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M204.7625,-187.1061C204.7625,-187.1061 204.7625,-205.991 204.7625,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="201.2625,-205.9909 204.7625,-215.991 208.2625,-205.991 201.2625,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M172,-187.1061C172,-187.1061 172,-205.991 172,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="168.5001,-205.9909 172,-215.991 175.5001,-205.991 168.5001,-205.9909"/>
 </g>
 </g>
 </svg>

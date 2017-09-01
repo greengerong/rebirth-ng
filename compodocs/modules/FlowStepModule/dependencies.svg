@@ -24,19 +24,19 @@
 <title>cluster_FlowStepModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="163,-70 163,-268 333,-268 333,-70 163,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_FlowStepModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_FlowStepModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="172,-78 172,-130 324,-130 324,-78 172,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_FlowStepModule_exports</title>
 <polygon fill="none" stroke="#000000" points="171,-208 171,-260 325,-260 325,-208 171,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- FlowStepComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>FlowStepComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="315.5,-122 180.5,-122 180.5,-86 315.5,-86 315.5,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FlowStepComponent</text>
 </g>
 <!-- FlowStepModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="304.7176,-187 301.7176,-191 280.7176,-191 277.7176,-187 191.2824,-187 191.2824,-151 304.7176,-151 304.7176,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">FlowStepModule</text>
 </g>
-<!-- CommonModule&#45;&gt;FlowStepModule -->
+<!-- FlowStepComponent&#45;&gt;FlowStepModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;FlowStepModule</title>
+<title>FlowStepComponent&#45;&gt;FlowStepModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

@@ -24,79 +24,115 @@
 <title>cluster_PanelModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 664,-268 664,-70 8,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_PanelModule_imports</title>
-<polygon fill="none" stroke="#000000" points="287,-78 287,-130 415,-130 415,-78 287,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_PanelModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="24,-78 24,-130 651,-130 651,-78 24,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust8" class="cluster">
 <title>cluster_PanelModule_exports</title>
 <polygon fill="none" stroke="#000000" points="16,-208 16,-260 656,-260 656,-208 16,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- PanelComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="406.6681,-122 403.6681,-126 382.6681,-126 379.6681,-122 295.3319,-122 295.3319,-86 406.6681,-86 406.6681,-122"/>
-<text text-anchor="middle" x="351" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>PanelComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="643.4356,-122 530.5644,-122 530.5644,-86 643.4356,-86 643.4356,-122"/>
+<text text-anchor="middle" x="587" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelComponent</text>
 </g>
 <!-- PanelModule -->
-<g id="node2" class="node">
+<g id="node5" class="node">
 <title>PanelModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="396.1529,-187 393.1529,-191 372.1529,-191 369.1529,-187 305.8471,-187 305.8471,-151 396.1529,-151 396.1529,-187"/>
-<text text-anchor="middle" x="351" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="317.1529,-187 314.1529,-191 293.1529,-191 290.1529,-187 226.8471,-187 226.8471,-151 317.1529,-151 317.1529,-187"/>
+<text text-anchor="middle" x="272" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelModule</text>
 </g>
-<!-- CommonModule&#45;&gt;PanelModule -->
+<!-- PanelComponent&#45;&gt;PanelModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;PanelModule</title>
-<path fill="none" stroke="#000000" d="M351,-122.1061C351,-122.1061 351,-140.991 351,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="347.5001,-140.9909 351,-150.991 354.5001,-140.991 347.5001,-140.9909"/>
+<title>PanelComponent&#45;&gt;PanelModule</title>
+<path fill="none" stroke="#000000" d="M606.1558,-122.2667C606.1558,-140.5552 606.1558,-166 606.1558,-166 606.1558,-166 327.4135,-166 327.4135,-166"/>
+<polygon fill="#000000" stroke="#000000" points="327.4135,-162.5001 317.4135,-166 327.4135,-169.5001 327.4135,-162.5001"/>
+</g>
+<!-- PanelHeaderComponent -->
+<g id="node2" class="node">
+<title>PanelHeaderComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="512.3459,-122 359.6541,-122 359.6541,-86 512.3459,-86 512.3459,-122"/>
+<text text-anchor="middle" x="436" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelHeaderComponent</text>
+</g>
+<!-- PanelHeaderComponent&#45;&gt;PanelModule -->
+<g id="edge2" class="edge">
+<title>PanelHeaderComponent&#45;&gt;PanelModule</title>
+<path fill="none" stroke="#000000" d="M461.4743,-122.0091C461.4743,-138.0494 461.4743,-159 461.4743,-159 461.4743,-159 327.3838,-159 327.3838,-159"/>
+<polygon fill="#000000" stroke="#000000" points="327.3839,-155.5001 317.3838,-159 327.3838,-162.5001 327.3839,-155.5001"/>
+</g>
+<!-- PanelBodyComponent -->
+<g id="node3" class="node">
+<title>PanelBodyComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="341.2716,-122 198.7284,-122 198.7284,-86 341.2716,-86 341.2716,-122"/>
+<text text-anchor="middle" x="270" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelBodyComponent</text>
+</g>
+<!-- PanelBodyComponent&#45;&gt;PanelModule -->
+<g id="edge3" class="edge">
+<title>PanelBodyComponent&#45;&gt;PanelModule</title>
+<path fill="none" stroke="#000000" d="M272,-122.1061C272,-122.1061 272,-140.991 272,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="268.5001,-140.9909 272,-150.991 275.5001,-140.991 268.5001,-140.9909"/>
+</g>
+<!-- PanelFooterComponent -->
+<g id="node4" class="node">
+<title>PanelFooterComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="180.4832,-122 31.5168,-122 31.5168,-86 180.4832,-86 180.4832,-122"/>
+<text text-anchor="middle" x="106" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelFooterComponent</text>
+</g>
+<!-- PanelFooterComponent&#45;&gt;PanelModule -->
+<g id="edge4" class="edge">
+<title>PanelFooterComponent&#45;&gt;PanelModule</title>
+<path fill="none" stroke="#000000" d="M127.9972,-122.0225C127.9972,-139.3734 127.9972,-163 127.9972,-163 127.9972,-163 216.8317,-163 216.8317,-163"/>
+<polygon fill="#000000" stroke="#000000" points="216.8318,-166.5001 226.8317,-163 216.8317,-159.5001 216.8318,-166.5001"/>
 </g>
 <!-- PanelComponent  -->
-<g id="node3" class="node">
+<g id="node6" class="node">
 <title>PanelComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="647.9348,-252 532.0652,-252 532.0652,-216 647.9348,-216 647.9348,-252"/>
 <text text-anchor="middle" x="590" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelComponent </text>
 </g>
 <!-- PanelModule&#45;&gt;PanelComponent  -->
-<g id="edge2" class="edge">
+<g id="edge5" class="edge">
 <title>PanelModule&#45;&gt;PanelComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M396.235,-169C465.5236,-169 590,-169 590,-169 590,-169 590,-205.8939 590,-205.8939"/>
-<polygon fill="#000000" stroke="#000000" points="586.5001,-205.8938 590,-215.8939 593.5001,-205.8939 586.5001,-205.8938"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M317.4456,-173C400.6706,-173 569.0942,-173 569.0942,-173 569.0942,-173 569.0942,-205.698 569.0942,-205.698"/>
+<polygon fill="#000000" stroke="#000000" points="565.5943,-205.698 569.0942,-215.698 572.5943,-205.698 565.5943,-205.698"/>
 </g>
 <!-- PanelHeaderComponent  -->
-<g id="node4" class="node">
+<g id="node7" class="node">
 <title>PanelHeaderComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="514.3462,-252 357.6538,-252 357.6538,-216 514.3462,-216 514.3462,-252"/>
 <text text-anchor="middle" x="436" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelHeaderComponent </text>
 </g>
 <!-- PanelModule&#45;&gt;PanelHeaderComponent  -->
-<g id="edge3" class="edge">
+<g id="edge6" class="edge">
 <title>PanelModule&#45;&gt;PanelHeaderComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M377.0766,-187.1061C377.0766,-187.1061 377.0766,-205.991 377.0766,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="373.5767,-205.9909 377.0766,-215.991 380.5767,-205.991 373.5767,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M317.3585,-180C357.7584,-180 410.5257,-180 410.5257,-180 410.5257,-180 410.5257,-205.7181 410.5257,-205.7181"/>
+<polygon fill="#000000" stroke="#000000" points="407.0258,-205.718 410.5257,-215.7181 414.0258,-205.7181 407.0258,-205.718"/>
 </g>
 <!-- PanelBodyComponent  -->
-<g id="node5" class="node">
+<g id="node8" class="node">
 <title>PanelBodyComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="340.2717,-252 193.7283,-252 193.7283,-216 340.2717,-216 340.2717,-252"/>
 <text text-anchor="middle" x="267" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelBodyComponent </text>
 </g>
 <!-- PanelModule&#45;&gt;PanelBodyComponent  -->
-<g id="edge4" class="edge">
+<g id="edge7" class="edge">
 <title>PanelModule&#45;&gt;PanelBodyComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M322.9048,-187.1061C322.9048,-187.1061 322.9048,-205.991 322.9048,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="319.4049,-205.9909 322.9048,-215.991 326.4049,-205.991 319.4049,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M272,-187.1061C272,-187.1061 272,-205.991 272,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="268.5001,-205.9909 272,-215.991 275.5001,-205.991 268.5001,-205.9909"/>
 </g>
 <!-- PanelFooterComponent  -->
-<g id="node6" class="node">
+<g id="node9" class="node">
 <title>PanelFooterComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="176.484,-252 23.516,-252 23.516,-216 176.484,-216 176.484,-252"/>
 <text text-anchor="middle" x="100" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">PanelFooterComponent </text>
 </g>
 <!-- PanelModule&#45;&gt;PanelFooterComponent  -->
-<g id="edge5" class="edge">
+<g id="edge8" class="edge">
 <title>PanelModule&#45;&gt;PanelFooterComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M305.8363,-169C233.5719,-169 100,-169 100,-169 100,-169 100,-205.8939 100,-205.8939"/>
-<polygon fill="#000000" stroke="#000000" points="96.5001,-205.8938 100,-215.8939 103.5001,-205.8939 96.5001,-205.8938"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M226.4401,-175C169.59,-175 79.7528,-175 79.7528,-175 79.7528,-175 79.7528,-205.9775 79.7528,-205.9775"/>
+<polygon fill="#000000" stroke="#000000" points="76.2527,-205.9775 79.7528,-215.9775 83.2527,-205.9774 76.2527,-205.9775"/>
 </g>
 </g>
 </svg>

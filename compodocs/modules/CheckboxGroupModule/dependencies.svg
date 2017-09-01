@@ -24,55 +24,67 @@
 <title>cluster_CheckboxGroupModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="63.5,-70 63.5,-268 432.5,-268 432.5,-70 63.5,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_CheckboxGroupModule_imports</title>
-<polygon fill="none" stroke="#000000" points="174.5,-78 174.5,-130 302.5,-130 302.5,-78 174.5,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_CheckboxGroupModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="75.5,-78 75.5,-130 421.5,-130 421.5,-78 75.5,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust6" class="cluster">
 <title>cluster_CheckboxGroupModule_exports</title>
 <polygon fill="none" stroke="#000000" points="71.5,-208 71.5,-260 424.5,-260 424.5,-208 71.5,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- CheckboxGroupComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="294.1681,-122 291.1681,-126 270.1681,-126 267.1681,-122 182.8319,-122 182.8319,-86 294.1681,-86 294.1681,-122"/>
-<text text-anchor="middle" x="238.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>CheckboxGroupComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="413.3655,-122 239.6345,-122 239.6345,-86 413.3655,-86 413.3655,-122"/>
+<text text-anchor="middle" x="326.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxGroupComponent</text>
 </g>
 <!-- CheckboxGroupModule -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>CheckboxGroupModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="314.5828,-187 311.5828,-191 290.5828,-191 287.5828,-187 162.4172,-187 162.4172,-151 314.5828,-151 314.5828,-187"/>
-<text text-anchor="middle" x="238.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxGroupModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="229.5828,-187 226.5828,-191 205.5828,-191 202.5828,-187 77.4172,-187 77.4172,-151 229.5828,-151 229.5828,-187"/>
+<text text-anchor="middle" x="153.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxGroupModule</text>
 </g>
-<!-- CommonModule&#45;&gt;CheckboxGroupModule -->
+<!-- CheckboxGroupComponent&#45;&gt;CheckboxGroupModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;CheckboxGroupModule</title>
-<path fill="none" stroke="#000000" d="M238.5,-122.1061C238.5,-122.1061 238.5,-140.991 238.5,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="235.0001,-140.9909 238.5,-150.991 242.0001,-140.991 235.0001,-140.9909"/>
+<title>CheckboxGroupComponent&#45;&gt;CheckboxGroupModule</title>
+<path fill="none" stroke="#000000" d="M239.5826,-104C231.0909,-104 225.5453,-104 225.5453,-104 225.5453,-104 225.5453,-140.8939 225.5453,-140.8939"/>
+<polygon fill="#000000" stroke="#000000" points="222.0453,-140.8938 225.5453,-150.8939 229.0453,-140.8939 222.0453,-140.8938"/>
+</g>
+<!-- CheckboxComponent -->
+<g id="node2" class="node">
+<title>CheckboxComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="221.5982,-122 83.4018,-122 83.4018,-86 221.5982,-86 221.5982,-122"/>
+<text text-anchor="middle" x="152.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxComponent</text>
+</g>
+<!-- CheckboxComponent&#45;&gt;CheckboxGroupModule -->
+<g id="edge2" class="edge">
+<title>CheckboxComponent&#45;&gt;CheckboxGroupModule</title>
+<path fill="none" stroke="#000000" d="M152.5,-122.1061C152.5,-122.1061 152.5,-140.991 152.5,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="149.0001,-140.9909 152.5,-150.991 156.0001,-140.991 149.0001,-140.9909"/>
 </g>
 <!-- CheckboxGroupComponent  -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>CheckboxGroupComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="416.3658,-252 238.6342,-252 238.6342,-216 416.3658,-216 416.3658,-252"/>
 <text text-anchor="middle" x="327.5" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxGroupComponent </text>
 </g>
 <!-- CheckboxGroupModule&#45;&gt;CheckboxGroupComponent  -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>CheckboxGroupModule&#45;&gt;CheckboxGroupComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M276.6794,-187.1061C276.6794,-187.1061 276.6794,-205.991 276.6794,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="273.1794,-205.9909 276.6794,-215.991 280.1794,-205.991 273.1794,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M225.4203,-187.1061C225.4203,-206.3391 225.4203,-234 225.4203,-234 225.4203,-234 228.7654,-234 228.7654,-234"/>
+<polygon fill="#000000" stroke="#000000" points="228.7654,-237.5001 238.7654,-234 228.7654,-230.5001 228.7654,-237.5001"/>
 </g>
 <!-- CheckboxComponent  -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>CheckboxComponent </title>
 <polygon fill="#fb8072" stroke="#000000" points="221.0988,-252 79.9012,-252 79.9012,-216 221.0988,-216 221.0988,-252"/>
 <text text-anchor="middle" x="150.5" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">CheckboxComponent </text>
 </g>
 <!-- CheckboxGroupModule&#45;&gt;CheckboxComponent  -->
-<g id="edge3" class="edge">
+<g id="edge4" class="edge">
 <title>CheckboxGroupModule&#45;&gt;CheckboxComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M191.8789,-187.1061C191.8789,-187.1061 191.8789,-205.991 191.8789,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="188.3789,-205.9909 191.8789,-215.991 195.3789,-205.991 188.3789,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M150.5,-187.1061C150.5,-187.1061 150.5,-205.991 150.5,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="147.0001,-205.9909 150.5,-215.991 154.0001,-205.991 147.0001,-205.9909"/>
 </g>
 </g>
 </svg>

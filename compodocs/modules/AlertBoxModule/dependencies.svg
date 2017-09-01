@@ -24,19 +24,19 @@
 <title>cluster_AlertBoxModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="164,-70 164,-268 332,-268 332,-70 164,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_AlertBoxModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_AlertBoxModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="173,-78 173,-130 323,-130 323,-78 173,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_AlertBoxModule_exports</title>
 <polygon fill="none" stroke="#000000" points="172,-208 172,-260 324,-260 324,-208 172,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- AlertBoxComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>AlertBoxComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="314.9327,-122 181.0673,-122 181.0673,-86 314.9327,-86 314.9327,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxComponent</text>
 </g>
 <!-- AlertBoxModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="303.6499,-187 300.6499,-191 279.6499,-191 276.6499,-187 192.3501,-187 192.3501,-151 303.6499,-151 303.6499,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AlertBoxModule</text>
 </g>
-<!-- CommonModule&#45;&gt;AlertBoxModule -->
+<!-- AlertBoxComponent&#45;&gt;AlertBoxModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;AlertBoxModule</title>
+<title>AlertBoxComponent&#45;&gt;AlertBoxModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>

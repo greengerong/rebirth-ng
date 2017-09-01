@@ -36,9 +36,6 @@
                         <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                         <ul class="links">
                                 <li class="link">
-                                    <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                </li>
-                                <li class="link">
                                     <a 
                                         
                                          href="./overview.html" 
@@ -47,19 +44,30 @@
                                         <span class="fa fa-th"></span>Overview
                                     </a>
                                 </li>
+                                <li class="link">
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./changelog.html"
+                                        >
+                                        <span class="fa fa-file-text-o"></span>CHANGELOG
+                                    </a>
+                                </li>
                         </ul>
                     </li>
             
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="./modules.html" >
-                            <span class="fa fa-archive"></span>
-                            <span>Modules</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                            <div class="menu-toggler linked" data-toggle="collapse"
                                     data-target="#xs-modules-links"
-                            ></span>
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
                         </a>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-modules-links"
                             >
                                 <li class="link">
@@ -94,6 +102,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./modules/EllipsisModule.html" >EllipsisModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
@@ -168,14 +179,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
                             <span class="fa fa-cogs"></span>
                             <span>Components</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-components-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-components-links"
                             >
                                 <li class="link">
@@ -213,6 +224,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/EllipsisComponent.html" >EllipsisComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -284,6 +298,9 @@
                                     <a href="./components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                 </li>
                                 <li class="link">
@@ -332,14 +349,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-directives-links"
+                            >
                             <span class="fa fa-code"></span>
                             <span>Directives</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-directives-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-directives-links"
                             >
                                 <li class="link">
@@ -442,14 +459,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-classes-links"
+                            >
                             <span class="fa fa-file-code-o"></span>
                             <span>Classes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-classes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-classes-links"
                             >
                                 <li class="link">
@@ -474,14 +491,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
                             <span class="fa fa-long-arrow-down"></span>
                             <span>Injectables</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-injectables-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-injectables-links"
                             >
                                 <li class="link">
@@ -518,14 +535,14 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-interfaces-links"
+                            >
                             <span class="fa fa-info"></span>
                             <span>Interfaces</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-interfaces-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-interfaces-links"
                             >
                                 <li class="link">
@@ -562,6 +579,9 @@
                                     <a href="./interfaces/OverlayOptions.html" >OverlayOptions</a>
                                 </li>
                                 <li class="link">
+                                    <a href="./interfaces/PromptContent.html" >PromptContent</a>
+                                </li>
+                                <li class="link">
                                     <a href="./interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                 </li>
                                 <li class="link">
@@ -577,26 +597,48 @@
                     </li>
             
                     <li class="chapter">
-                        <div class="simple">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
                             <span class="fa fa-plus"></span>
                             <span>Pipes</span>
-                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                    data-target="#xs-pipes-links"
-                                ></span>
+                            <span class="fa fa-angle-down"></span>
                         </div>
-                        <ul class="links collapse in"
+                        <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
+                                <li class="link">
+                                    <a href="./pipes/DatePipe.html" >DatePipe</a>
+                                </li>
                                 <li class="link">
                                     <a href="./pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                 </li>
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
-                        <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                </li>
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
                     </li>
+            
             
                     <li class="chapter">
                         <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -629,9 +671,6 @@
                                <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
                                <ul class="links">
                                        <li class="link">
-                                           <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
-                                       </li>
-                                       <li class="link">
                                            <a 
                                                
                                                 href="./overview.html" 
@@ -640,19 +679,30 @@
                                                <span class="fa fa-th"></span>Overview
                                            </a>
                                        </li>
+                                       <li class="link">
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./changelog.html"
+                                               >
+                                               <span class="fa fa-file-text-o"></span>CHANGELOG
+                                           </a>
+                                       </li>
                                </ul>
                            </li>
                    
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="./modules.html" >
-                                   <span class="fa fa-archive"></span>
-                                   <span>Modules</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                   <div class="menu-toggler linked" data-toggle="collapse"
                                            data-target="#modules-links"
-                                   ></span>
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
                                </a>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="modules-links"
                    >
                                        <li class="link">
@@ -687,6 +737,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./modules/DraggableModule.html" >DraggableModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./modules/EllipsisModule.html" >EllipsisModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="./modules/FileUploadModule.html" >FileUploadModule</a>
@@ -761,14 +814,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
                                    <span class="fa fa-cogs"></span>
                                    <span>Components</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#components-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="components-links"
                    >
                                        <li class="link">
@@ -806,6 +859,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="./components/DatePickerPopupComponent.html" >DatePickerPopupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/EllipsisComponent.html" >EllipsisComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="./components/FileUploadComponent.html" >FileUploadComponent</a>
@@ -877,6 +933,9 @@
                                            <a href="./components/ProgressBarComponent.html" >ProgressBarComponent</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./components/PromptDialogComponent.html" >PromptDialogComponent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./components/RadioGroupComponent.html" >RadioGroupComponent</a>
                                        </li>
                                        <li class="link">
@@ -925,14 +984,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#directives-links"
+                   >
                                    <span class="fa fa-code"></span>
                                    <span>Directives</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#directives-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="directives-links"
                    >
                                        <li class="link">
@@ -1035,14 +1094,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#classes-links"
+                   >
                                    <span class="fa fa-file-code-o"></span>
                                    <span>Classes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#classes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="classes-links"
                    >
                                        <li class="link">
@@ -1067,14 +1126,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
                                    <span class="fa fa-long-arrow-down"></span>
                                    <span>Injectables</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#injectables-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="injectables-links"
                    >
                                        <li class="link">
@@ -1111,14 +1170,14 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#interfaces-links"
+                   >
                                    <span class="fa fa-info"></span>
                                    <span>Interfaces</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#interfaces-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="interfaces-links"
                    >
                                        <li class="link">
@@ -1155,6 +1214,9 @@
                                            <a href="./interfaces/OverlayOptions.html" >OverlayOptions</a>
                                        </li>
                                        <li class="link">
+                                           <a href="./interfaces/PromptContent.html" >PromptContent</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="./interfaces/SelectButtonItem.html" >SelectButtonItem</a>
                                        </li>
                                        <li class="link">
@@ -1170,26 +1232,48 @@
                            </li>
                    
                            <li class="chapter">
-                               <div class="simple">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
                                    <span class="fa fa-plus"></span>
                                    <span>Pipes</span>
-                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
-                                           data-target="#pipes-links"
-                   ></span>
+                                   <span class="fa fa-angle-down"></span>
                                </div>
-                               <ul class="links collapse in"
+                               <ul class="links collapse "
                                        id="pipes-links"
                    >
+                                       <li class="link">
+                                           <a href="./pipes/DatePipe.html" >DatePipe</a>
+                                       </li>
                                        <li class="link">
                                            <a href="./pipes/TrustHtmlPipe.html" >TrustHtmlPipe</a>
                                        </li>
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
-                               <a data-type="chapter-link" href="./miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/enumerations.html" data-type="entity-link" >Enums</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/functions.html" data-type="entity-link" >Functions</a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
                            </li>
+                   
                    
                            <li class="chapter">
                                <a data-type="chapter-link" href="./coverage.html"  class="active" ><span class="fa fa-tasks"></span>Documentation coverage</a>
@@ -1202,6 +1286,8 @@
                </div>
                <div class="content coverage">
                    <div class="content-data">
+
+
 
 
 
@@ -1240,7 +1326,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/8)</span>
+                <span class="coverage-count">(0/9)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1255,7 +1341,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/20)</span>
+                <span class="coverage-count">(0/22)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1269,8 +1355,8 @@
                 ActionItem
             </td>
             <td align="right">
-                <span class="coverage-percent">14 %</span>
-                <span class="coverage-count">(1/7)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1285,7 +1371,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1300,7 +1386,22 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/25)</span>
+                <span class="coverage-count">(0/28)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/AutoCompleteDirective.html">src/app/exports/auto-complete/auto-complete.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                AutoCompleteDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/46)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1330,7 +1431,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/28)</span>
+                <span class="coverage-count">(0/30)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1374,8 +1475,8 @@
                 Breadcrumb
             </td>
             <td align="right">
-                <span class="coverage-percent">11 %</span>
-                <span class="coverage-count">(1/9)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1390,7 +1491,22 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/19)</span>
+                <span class="coverage-count">(0/21)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/SlideDirective.html">src/app/exports/carousel/slide.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                SlideDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1405,7 +1521,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/19)</span>
+                <span class="coverage-count">(0/21)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1420,7 +1536,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/15)</span>
+                <span class="coverage-count">(0/17)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1435,7 +1551,67 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/AutoFocusDirective.html">src/app/exports/common/auto-focus.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                AutoFocusDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
                 <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./pipes/DatePipe.html">src/app/exports/common/date.pipe.ts</a>
+            </td>
+            <td>
+                pipe
+            </td>
+            <td>
+                DatePipe
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DropdownDirective.html">src/app/exports/common/dropdown.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DropdownDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/ResizeableDirective.html">src/app/exports/common/resizeable.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                ResizeableDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/15)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1464,8 +1640,8 @@
                 TemplateLoaderComponent
             </td>
             <td align="right">
-                <span class="coverage-percent">11 %</span>
-                <span class="coverage-count">(1/9)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1483,7 +1659,7 @@
                 <span class="coverage-count">(0/1)</span>
             </td>
         </tr>
-        <tr class="medium">
+        <tr class="low">
             <td>
                 <a href="./interfaces/SelectDateChangeEventArgs.html">src/app/exports/date-picker/date-change-event-args.model.ts</a>
             </td>
@@ -1494,8 +1670,8 @@
                 SelectDateChangeEventArgs
             </td>
             <td align="right">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(1/3)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1510,7 +1686,22 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/44)</span>
+                <span class="coverage-count">(0/51)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DatePickerDirective.html">src/app/exports/date-picker/date-picker.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DatePickerDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/43)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1525,7 +1716,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1540,7 +1731,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/8)</span>
+                <span class="coverage-count">(0/10)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1554,8 +1745,23 @@
                 DialogOptions
             </td>
             <td align="right">
-                <span class="coverage-percent">6 %</span>
-                <span class="coverage-count">(1/15)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./interfaces/PromptContent.html">src/app/exports/dialog/dialog-options.model.ts</a>
+            </td>
+            <td>
+                interface
+            </td>
+            <td>
+                PromptContent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1570,7 +1776,82 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/PromptDialogComponent.html">src/app/exports/dialog/prompt-dialog.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                PromptDialogComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/16)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DraggableDirective.html">src/app/exports/draggable/draggable.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DraggableDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/16)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DraggableHandleDirective.html">src/app/exports/draggable/draggable.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DraggableHandleDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DroppableDirective.html">src/app/exports/draggable/droppable.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DroppableDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/14)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./components/EllipsisComponent.html">src/app/exports/ellipsis/ellipsis.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                EllipsisComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/9)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1645,7 +1926,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/41)</span>
+                <span class="coverage-count">(0/44)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1659,8 +1940,8 @@
                 SelectFileModel
             </td>
             <td align="right">
-                <span class="coverage-percent">16 %</span>
-                <span class="coverage-count">(1/6)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1689,8 +1970,8 @@
                 FlowStep
             </td>
             <td align="right">
-                <span class="coverage-percent">25 %</span>
-                <span class="coverage-count">(1/4)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1705,7 +1986,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/17)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1734,8 +2015,8 @@
                 MenuBar
             </td>
             <td align="right">
-                <span class="coverage-percent">14 %</span>
-                <span class="coverage-count">(1/7)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1749,8 +2030,8 @@
                 MenuItem
             </td>
             <td align="right">
-                <span class="coverage-percent">7 %</span>
-                <span class="coverage-count">(1/14)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/14)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1795,7 +2076,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/5)</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1809,8 +2090,8 @@
                 ModalOptions
             </td>
             <td align="right">
-                <span class="coverage-percent">8 %</span>
-                <span class="coverage-count">(1/12)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/12)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1840,10 +2121,10 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/12)</span>
+                <span class="coverage-count">(0/13)</span>
             </td>
         </tr>
-        <tr class="medium">
+        <tr class="low">
             <td>
                 <a href="./interfaces/Modal.html">src/app/exports/modal/modal.model.ts</a>
             </td>
@@ -1854,8 +2135,8 @@
                 Modal
             </td>
             <td align="right">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(1/3)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1870,7 +2151,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1899,8 +2180,8 @@
                 NotifyModel
             </td>
             <td align="right">
-                <span class="coverage-percent">25 %</span>
-                <span class="coverage-count">(1/4)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1915,7 +2196,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/6)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1944,8 +2225,8 @@
                 OverlayOptions
             </td>
             <td align="right">
-                <span class="coverage-percent">14 %</span>
-                <span class="coverage-count">(1/7)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1960,7 +2241,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/7)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1975,7 +2256,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/4)</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -1990,7 +2271,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/19)</span>
+                <span class="coverage-count">(0/20)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2005,7 +2286,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/27)</span>
+                <span class="coverage-count">(0/30)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2049,8 +2330,8 @@
                 PanelGroup
             </td>
             <td align="right">
-                <span class="coverage-percent">16 %</span>
-                <span class="coverage-count">(1/6)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2100,6 +2381,21 @@
         </tr>
         <tr class="low">
             <td>
+                <a href="./directives/PopoverDirective.html">src/app/exports/popover/popover.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                PopoverDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
                 <a href="./injectables/PositionService.html">src/app/exports/position/positioning.service.ts</a>
             </td>
             <td>
@@ -2110,7 +2406,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/5)</span>
+                <span class="coverage-count">(0/8)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2140,7 +2436,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/18)</span>
+                <span class="coverage-count">(0/20)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2155,7 +2451,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/18)</span>
+                <span class="coverage-count">(0/21)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2170,7 +2466,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/22)</span>
+                <span class="coverage-count">(0/23)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2184,8 +2480,8 @@
                 SelectButtonItem
             </td>
             <td align="right">
-                <span class="coverage-percent">25 %</span>
-                <span class="coverage-count">(1/4)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2200,7 +2496,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/16)</span>
+                <span class="coverage-count">(0/20)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2215,7 +2511,37 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/14)</span>
+                <span class="coverage-count">(0/16)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/TabContentDirective.html">src/app/exports/tabs/tab-content.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                TabContentDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/TabTitleDirective.html">src/app/exports/tabs/tab-title.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                TabTitleDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2248,7 +2574,22 @@
                 <span class="coverage-count">(0/11)</span>
             </td>
         </tr>
-        <tr class="good">
+        <tr class="low">
+            <td>
+                <a href="./components/TimePickerComponent.html">src/app/exports/time-picker/time-picker.component.ts</a>
+            </td>
+            <td>
+                component
+            </td>
+            <td>
+                TimePickerComponent
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/33)</span>
+            </td>
+        </tr>
+        <tr class="low">
             <td>
                 <a href="./classes/TimePickerModel.html">src/app/exports/time-picker/time-picker.component.ts</a>
             </td>
@@ -2259,8 +2600,8 @@
                 TimePickerModel
             </td>
             <td align="right">
-                <span class="coverage-percent">66 %</span>
-                <span class="coverage-count">(4/6)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/6)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2289,8 +2630,23 @@
                 TooltipPopup
             </td>
             <td align="right">
-                <span class="coverage-percent">10 %</span>
-                <span class="coverage-count">(1/10)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/10)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/TooltipDirective.html">src/app/exports/tooltip/tooltip.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                TooltipDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2304,8 +2660,8 @@
                 Tooltip
             </td>
             <td align="right">
-                <span class="coverage-percent">6 %</span>
-                <span class="coverage-count">(1/15)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/18)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2320,7 +2676,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/32)</span>
+                <span class="coverage-count">(0/35)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2350,7 +2706,7 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/43)</span>
+                <span class="coverage-count">(0/44)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2364,8 +2720,8 @@
                 TreeViewModel
             </td>
             <td align="right">
-                <span class="coverage-percent">20 %</span>
-                <span class="coverage-count">(1/5)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
             </td>
         </tr>
         <tr class="low">
@@ -2380,10 +2736,10 @@
             </td>
             <td align="right">
                 <span class="coverage-percent">0 %</span>
-                <span class="coverage-count">(0/15)</span>
+                <span class="coverage-count">(0/18)</span>
             </td>
         </tr>
-        <tr class="medium">
+        <tr class="low">
             <td>
                 <a href="./interfaces/DateConverter.html">src/app/exports/utils/date-converter.ts</a>
             </td>
@@ -2394,11 +2750,11 @@
                 DateConverter
             </td>
             <td align="right">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(1/3)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
             </td>
         </tr>
-        <tr class="medium">
+        <tr class="low">
             <td>
                 <a href="./classes/DefaultDateConverter.html">src/app/exports/utils/default-date-converter.ts</a>
             </td>
@@ -2409,8 +2765,293 @@
                 DefaultDateConverter
             </td>
             <td align="right">
-                <span class="coverage-percent">33 %</span>
-                <span class="coverage-count">(1/3)</span>
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/AfterDateDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                AfterDateDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/Base64Directive.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                Base64Directive
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/BeforeDateDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                BeforeDateDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DateDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DateDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DateISODirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DateISODirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/DigitsDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                DigitsDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/EmailDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                EmailDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/EqualDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                EqualDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/EqualToDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                EqualToDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/IncludesDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                IncludesDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/JsonDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                JsonDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/MaxDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                MaxDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/MinDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                MinDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/NumberDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                NumberDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/PhoneDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                PhoneDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/RangeDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                RangeDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/RangeLengthDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                RangeLengthDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/UUIDDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                UUIDDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <a href="./directives/UrlDirective.html">src/app/exports/validators/rebirth-validators.directive.ts</a>
+            </td>
+            <td>
+                directive
+            </td>
+            <td>
+                UrlDirective
+            </td>
+            <td align="right">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
             </td>
         </tr>
         <tr class="low">

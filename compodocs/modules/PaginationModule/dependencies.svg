@@ -24,19 +24,19 @@
 <title>cluster_PaginationModule</title>
 <polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="160,-70 160,-268 336,-268 336,-70 160,-70"/>
 </g>
-<g id="clust3" class="cluster">
-<title>cluster_PaginationModule_imports</title>
-<polygon fill="none" stroke="#000000" points="184,-78 184,-130 312,-130 312,-78 184,-78"/>
+<g id="clust2" class="cluster">
+<title>cluster_PaginationModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="169,-78 169,-130 327,-130 327,-78 169,-78"/>
 </g>
-<g id="clust4" class="cluster">
+<g id="clust5" class="cluster">
 <title>cluster_PaginationModule_exports</title>
 <polygon fill="none" stroke="#000000" points="168,-208 168,-260 328,-260 328,-208 168,-208"/>
 </g>
-<!-- CommonModule -->
+<!-- PaginationComponent -->
 <g id="node1" class="node">
-<title>CommonModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="303.6681,-122 300.6681,-126 279.6681,-126 276.6681,-122 192.3319,-122 192.3319,-86 303.6681,-86 303.6681,-122"/>
-<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CommonModule</text>
+<title>PaginationComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="318.7162,-122 177.2838,-122 177.2838,-86 318.7162,-86 318.7162,-122"/>
+<text text-anchor="middle" x="248" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">PaginationComponent</text>
 </g>
 <!-- PaginationModule -->
 <g id="node2" class="node">
@@ -44,9 +44,9 @@
 <polygon fill="#8dd3c7" stroke="#000000" points="307.9342,-187 304.9342,-191 283.9342,-191 280.9342,-187 188.0658,-187 188.0658,-151 307.9342,-151 307.9342,-187"/>
 <text text-anchor="middle" x="248" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">PaginationModule</text>
 </g>
-<!-- CommonModule&#45;&gt;PaginationModule -->
+<!-- PaginationComponent&#45;&gt;PaginationModule -->
 <g id="edge1" class="edge">
-<title>CommonModule&#45;&gt;PaginationModule</title>
+<title>PaginationComponent&#45;&gt;PaginationModule</title>
 <path fill="none" stroke="#000000" d="M248,-122.1061C248,-122.1061 248,-140.991 248,-140.991"/>
 <polygon fill="#000000" stroke="#000000" points="244.5001,-140.9909 248,-150.991 251.5001,-140.991 244.5001,-140.9909"/>
 </g>
