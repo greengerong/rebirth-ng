@@ -1964,7 +1964,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
   @Input() scrollDelay &#x3D; 300;
   @Input() spinnerTemplate: TemplateRef&lt;any&gt;;
   @Output() loadMore &#x3D; new EventEmitter&lt;InfiniteScrollComponent&gt;();
-  scrollStream &#x3D; new EventEmitter&lt;Event&gt;();
+  scrollStream &#x3D; new EventEmitter&lt;any&gt;();
   subscription: Subscription;
 
   constructor(private windowRef: WindowRef, private elementRef: ElementRef) {

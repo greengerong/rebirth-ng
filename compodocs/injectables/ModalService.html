@@ -1403,7 +1403,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/exports/modal/modal.service.ts:44</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/exports/modal/modal.service.ts:45</a></div>
                                         </td>
                                     </tr>
             
@@ -1435,7 +1435,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/exports/modal/modal.service.ts:40</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/exports/modal/modal.service.ts:41</a></div>
                                         </td>
                                     </tr>
             
@@ -1543,7 +1543,8 @@ export class ModalService {
     }
     const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector &#x3D; options.injector || this.injector;
-    const modalRef &#x3D; rootContainer.createComponent(componentFactory, rootContainer.length, injector);
+    const modalRef &#x3D; &lt;ComponentRef&lt;ModalComponent&gt;&gt;rootContainer
+      .createComponent(componentFactory, rootContainer.length, injector);
     this.instances.push(modalRef);
     const instance: ModalComponent &#x3D; modalRef.instance;
     const dismissResult &#x3D; instance.addContent(options, this.instances.length)
