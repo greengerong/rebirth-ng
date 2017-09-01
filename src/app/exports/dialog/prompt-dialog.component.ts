@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, TemplateRef, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, ValidatorFn, FormControl } from '@angular/forms';
 import { Modal, ModalDismissReasons } from '../modal';
 import { DialogOptions, PromptContent } from './dialog-options.model';
@@ -22,7 +22,9 @@ export class PromptDialogComponent implements Modal, OnInit {
   validators: { [key: string]: { validator: ValidatorFn, message: string } };
   @ViewChild('defaultTemplate') defaultTemplate: TemplateRef<any>;
 
-  constructor(private rebirthNGConfig: RebirthNGConfig, private formBuilder: FormBuilder) {
+  constructor(private rebirthNGConfig: RebirthNGConfig,
+              private formBuilder: FormBuilder,
+              private changeDetectorRef: ChangeDetectorRef) {
     this.btnYes = rebirthNGConfig.dialog.button.yes;
     this.btnYesType = rebirthNGConfig.dialog.button.btnYesType;
     this.btnNo = rebirthNGConfig.dialog.button.no;
@@ -31,12 +33,14 @@ export class PromptDialogComponent implements Modal, OnInit {
 
   ngOnInit(): void {
     const content = this.context.content as PromptContent;
-    const label = content.label;
     this.validators = content.validators || {};
 
     const validatorFns = Object.keys(this.validators).map((key) => this.validators[key].validator);
     this.form = this.formBuilder.group({
       promptValue: [content.defaultValue || '', validatorFns]
+    });
+    this.form.valueChanges.subscribe(() => {
+      this.changeDetectorRef.markForCheck();
     });
   }
 

@@ -63,9 +63,9 @@ export class DialogDemoComponent {
 
   promptWithTemplate() {
     this.dialogService.prompt({
-      title: 'Name',
+      title: 'Country',
       content: {
-        label: 'Name',
+        label: 'Country',
         template: this.selectPromptTemplate,
         validators: { required: { validator: Validators.required, message: 'Please choose your country!' } }
       }
