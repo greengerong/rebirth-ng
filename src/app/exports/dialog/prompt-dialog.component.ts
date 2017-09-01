@@ -13,6 +13,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 export class PromptDialogComponent implements Modal, OnInit {
 
   context: DialogOptions;
+  content: PromptContent;
   dismiss: EventEmitter<any>;
   btnYes: string;
   btnNo: string;
@@ -32,12 +33,12 @@ export class PromptDialogComponent implements Modal, OnInit {
   }
 
   ngOnInit(): void {
-    const content = this.context.content as PromptContent;
-    this.validators = content.validators || {};
+    this.content = this.context.content as PromptContent;
+    this.validators = this.content.validators || {};
 
     const validatorFns = Object.keys(this.validators).map((key) => this.validators[key].validator);
     this.form = this.formBuilder.group({
-      promptValue: [content.defaultValue || '', validatorFns]
+      promptValue: [this.content.defaultValue || '', validatorFns]
     });
     this.form.valueChanges.subscribe(() => {
       this.changeDetectorRef.markForCheck();
