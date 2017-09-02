@@ -83,6 +83,10 @@ export class RebirthNGConfig {
     cancelButton: 'Cancel'
   };
 
+  modal = {
+    animation: true
+  };
+  
   pager = {
     pageSize: 10,
     aligned: true,

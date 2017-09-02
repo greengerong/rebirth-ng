@@ -24,7 +24,7 @@ export class ModalService {
       throw new Error('Should setup ViewContainerRef on modal options or rebirth config service!');
     }
     if (options.animation === undefined || options.animation === null) {
-      options.animation = true;
+      options.animation = this.rebirthNGConfig.modal.animation;
     }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector = options.injector || this.injector;
