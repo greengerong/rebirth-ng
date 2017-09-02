@@ -1,5 +1,20 @@
 <div class="validators-demo">
   <section>
+    <h4>Required with trim:</h4>
+    <form>
+      <div class="form-group">
+        <label for="firstNameWithRequired">First name</label>
+        <input type="text" id="firstNameWithRequired" name="firstNameWithRequired" class="form-control"
+               [(ngModel)]="model['firstNameWithRequired']" reRequiredWithTrim
+               #firstNameWithRequired="ngModel"/>
+
+        <re-alert-box *ngIf="firstNameWithRequired.errors &&  firstNameWithRequired.touched" type="danger">
+          <div *ngIf="firstNameWithRequired.errors.requiredWithTrim">First name should be not empty.</div>
+        </re-alert-box>
+      </div>
+    </form>
+  </section>
+  <section>
     <h4>Range Length:</h4>
     <form>
       <div class="form-group">
