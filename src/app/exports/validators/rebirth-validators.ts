@@ -1,8 +1,15 @@
-import { ValidatorFn, AbstractControl, Validators } from '@angular/forms';
+import { ValidatorFn, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
 import { parseDate } from '../utils';
 
 export function isPresent(obj: any): boolean {
   return obj !== undefined && obj !== null;
+}
+
+function isEmptyInputValue(value: any): boolean {
+  if (value && typeof value === 'string') {
+    return !value.trim();
+  }
+  return value == null || value.length === 0;
 }
 
 function isNumber(value: any): boolean {
@@ -20,6 +27,10 @@ function isNumber(value: any): boolean {
 }
 
 /* tslint:disable:max-line-length */
+
+export function requiredWithTrim(control: AbstractControl): ValidationErrors | null {
+  return isEmptyInputValue(control.value) ? { 'requiredWithTrim': true } : null;
+}
 
 /**
  * Validator that requires controls to have a value of a range length.
