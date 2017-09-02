@@ -435,6 +435,9 @@
                                     <a href="../directives/RangeLengthDirective.html" >RangeLengthDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../directives/RequiredWithTrimDirective.html" >RequiredWithTrimDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
                                 </li>
                                 <li class="link">
@@ -1070,6 +1073,9 @@
                                            <a href="../directives/RangeLengthDirective.html" >RangeLengthDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../directives/RequiredWithTrimDirective.html" >RequiredWithTrimDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
                                        </li>
                                        <li class="link">
@@ -1395,7 +1401,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="187" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:187</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="199" class="link-to-prism">src/app/exports/validators/rebirth-validators.directive.ts:199</a></div>
                                         </td>
                                     </tr>
             
@@ -1438,8 +1444,20 @@ import {
   uuidValidator,
   equalValidator,
   beforeDateValidator,
-  afterDateValidator
+  afterDateValidator,
+  requiredWithTrim
 } from &#x27;./rebirth-validators&#x27;;
+
+@Directive({
+  selector: &#x27;[reRequiredWithTrim]&#x27;,
+  providers: [{ provide: NG_VALIDATORS, useExisting: RequiredWithTrimDirective, multi: true }]
+})
+export class RequiredWithTrimDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors | any {
+    return requiredWithTrim(control);
+  }
+}
 
 @Directive({
   selector: &#x27;[reRangeLength]&#x27;,
@@ -1641,7 +1659,8 @@ export class IncludesDirective implements Validator {
 export class EqualToDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reEqualTo(target: AbstractControl | string) {
+  @Input()
+  set reEqualTo(target: AbstractControl | string) {
     this.validatorFn &#x3D; equalToValidator(target);
   };
 
@@ -1657,7 +1676,8 @@ export class EqualToDirective implements Validator {
 export class BeforeDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reBeforeDate(target: string | Date | number) {
+  @Input()
+  set reBeforeDate(target: string | Date | number) {
     this.validatorFn &#x3D; beforeDateValidator(target);
   };
 
@@ -1673,7 +1693,8 @@ export class BeforeDateDirective implements Validator {
 export class AfterDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reAfterDate(target: string | Date | number) {
+  @Input()
+  set reAfterDate(target: string | Date | number) {
     this.validatorFn &#x3D; afterDateValidator(target);
   };
 

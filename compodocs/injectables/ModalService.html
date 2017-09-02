@@ -435,6 +435,9 @@
                                     <a href="../directives/RangeLengthDirective.html" >RangeLengthDirective</a>
                                 </li>
                                 <li class="link">
+                                    <a href="../directives/RequiredWithTrimDirective.html" >RequiredWithTrimDirective</a>
+                                </li>
+                                <li class="link">
                                     <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
                                 </li>
                                 <li class="link">
@@ -1070,6 +1073,9 @@
                                            <a href="../directives/RangeLengthDirective.html" >RangeLengthDirective</a>
                                        </li>
                                        <li class="link">
+                                           <a href="../directives/RequiredWithTrimDirective.html" >RequiredWithTrimDirective</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../directives/ResizeableDirective.html" >ResizeableDirective</a>
                                        </li>
                                        <li class="link">
@@ -1543,7 +1549,7 @@ export class ModalService {
       throw new Error(&#x27;Should setup ViewContainerRef on modal options or rebirth config service!&#x27;);
     }
     if (options.animation &#x3D;&#x3D;&#x3D; undefined || options.animation &#x3D;&#x3D;&#x3D; null) {
-      options.animation &#x3D; true;
+      options.animation &#x3D; this.rebirthNGConfig.modal.animation;
     }
     const componentFactory &#x3D; this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector &#x3D; options.injector || this.injector;
