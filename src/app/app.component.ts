@@ -55,11 +55,11 @@ export class AppComponent implements OnInit {
     this.menus = {
       logo: 'https://greengerong.github.io/rebirth/assets/img/wolf2.png',
       title: '破狼博客',
-      home: ['./'],
+      home: ['/gettingStarted'],
       menus: [
         {
           text: '@Rebirth/NG',
-          router: ['./'],
+          router: ['/gettingStarted'],
           icon: 'glyphicon glyphicon-home'
         },
         {
