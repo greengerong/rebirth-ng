@@ -9,6 +9,7 @@
 * (Prompt): new dialog service with prompt;
 * (DatePipe): new date pipe. It is due to Angular's date pipe has format issue on IE11;
 * (noop): noop utils function;
+* (Modal): Modal animation feature toggle;
 
 # 0.0.21 (2017-08-28)
 

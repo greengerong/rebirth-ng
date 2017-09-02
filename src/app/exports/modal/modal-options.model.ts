@@ -10,6 +10,7 @@ export interface ModalOptions {
   keyboard?: boolean;
   modal?: boolean;
   modalClass?: string;
+  animation?: boolean;
   size?: 'lg' | 'sm';
   rootContainer?: ViewContainerRef;
 

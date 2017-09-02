@@ -6,6 +6,7 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { _throw } from 'rxjs/observable/throw';
 import { Observable } from 'rxjs/Observable';
+import { underline } from 'chalk';
 
 @Injectable()
 export class ModalService {
@@ -21,6 +22,9 @@ export class ModalService {
     const rootContainer = options.rootContainer || this.rebirthNGConfig.rootContainer;
     if (!rootContainer) {
       throw new Error('Should setup ViewContainerRef on modal options or rebirth config service!');
+    }
+    if (options.animation === undefined || options.animation === null) {
+      options.animation = true;
     }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
     const injector = options.injector || this.injector;

@@ -22,7 +22,8 @@ export class DialogDemoComponent {
       content: 'This is <strong>rebirth alert</strong> content.',
       // yes: '确定',
       icon: 'icon-success',
-      html: true
+      html: true,
+      animation: false
     })
       .subscribe(
         data => console.log('Rebirth alert get yes result:', data),

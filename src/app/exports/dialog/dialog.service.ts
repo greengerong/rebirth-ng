@@ -32,6 +32,7 @@ export class DialogService {
       backdropClass: dialogOptions.backdropClass,
       modal: dialogOptions.modal,
       keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
 
     });
   }
@@ -51,6 +52,7 @@ export class DialogService {
       backdropClass: dialogOptions.backdropClass,
       modal: dialogOptions.modal,
       keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
     });
   }
 
@@ -66,6 +68,7 @@ export class DialogService {
       backdropClass: dialogOptions.backdropClass,
       modal: dialogOptions.modal,
       keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
     });
   }
 }

@@ -22,6 +22,7 @@ export interface DialogOptions {
   backdropClass?: string;
   keyboard?: boolean;
   modal?: boolean;
+  animation?: boolean;
   componentFactoryResolver?: ComponentFactoryResolver;
   injector?: Injector;
   rootContainer?: ViewContainerRef;
