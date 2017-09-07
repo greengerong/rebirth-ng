@@ -12,6 +12,7 @@ import { ModalOptions } from './modal-options.model';
 import { ModalDismissReasons } from './modal-dismiss-reasons.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { timer } from 'rxjs/observable/timer';
+import { noop } from '../utils/lange-utils';
 
 @Component({
   selector: 're-modal-window',
@@ -55,7 +56,9 @@ export class ModalWindowComponent {
       this.animateState = 'void';
       return this.animationDone;
     }
-    return timer(0);
+
+    setTimeout(() => this.onAnimationDone(null));
+    return this.animationDone;
   }
 
 
