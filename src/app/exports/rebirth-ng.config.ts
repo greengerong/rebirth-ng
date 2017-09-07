@@ -86,7 +86,7 @@ export class RebirthNGConfig {
   modal = {
     animation: true
   };
-  
+
   pager = {
     pageSize: 10,
     aligned: true,

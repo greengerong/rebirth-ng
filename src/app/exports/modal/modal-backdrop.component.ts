@@ -3,10 +3,11 @@ import { ModalOptions } from './modal-options.model';
 
 @Component({
   selector: 're-modal-backdrop',
+  /* tslint:disable */
   template: `<div class="modal-backdrop fade {{modalOptions?.backdropClass || ''}}" 
-                [ngStyle]="{'z-index': 1040 + instanceCount * 10 +1}"
-                 [ngClass]="{'in': isOpen}">
+                  [ngStyle]="{'z-index': 1040 + instanceCount * 10 +1}" [ngClass]="{'in': isOpen}">
              </div>`,
+  /* tslint:enable */
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalBackdropComponent {
