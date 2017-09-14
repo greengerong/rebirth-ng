@@ -19,12 +19,12 @@
       </span>
         <div class="toolbar">
           <ng-template *ngIf="nodeItemToolbarTemplate" [ngTemplateOutlet]="nodeItemToolbarTemplate"
-                       [ngOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>
+                       [ngTemplateOutletContext]="{$implicit: node, parentNode:parentNode, tree: this}"></ng-template>
         </div>
       </ng-container>
       <ng-container *ngIf="nodeItemTemplate">
         <ng-template *ngIf="nodeItemTemplate" [ngTemplateOutlet]="nodeItemTemplate"
-                     [ngOutletContext]="{$implicit: node,  parentNode:parentNode, tree: this }"></ng-template>
+                     [ngTemplateOutletContext]="{$implicit: node,  parentNode:parentNode, tree: this }"></ng-template>
       </ng-container>
     </div>
   </div>

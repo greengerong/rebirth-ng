@@ -17,7 +17,7 @@
 
     <li *ngIf="!menu.children?.length" class="{{menu.cssClass}}">
       <ng-template *ngIf="menu.itemTemplate" [ngTemplateOutlet]="menu.itemTemplate"
-                   [ngOutletContext]="{ menu: menu }">
+                   [ngTemplateOutletContext]="{ menu: menu }">
       </ng-template>
 
       <ng-container *ngIf="!menu.itemTemplate">
@@ -44,7 +44,7 @@
         <ng-container *ngFor="let child of menu?.children">
 
           <ng-template *ngIf="child.itemTemplate" [ngTemplateOutlet]="child.itemTemplate"
-                       [ngOutletContext]="{ menu: child }">
+                       [ngTemplateOutletContext]="{ menu: child }">
           </ng-template>
 
           <ng-container *ngIf="!child.itemTemplate">

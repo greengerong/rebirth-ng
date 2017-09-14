@@ -30,7 +30,7 @@
 <div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
 
   <ng-template [ngTemplateOutlet]="toolbarTemplate || defaultToolbarTemplate"
-               [ngOutletContext]="{ $implicit: this}"></ng-template>
+               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template>
 
 
   <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
@@ -41,6 +41,6 @@
   </re-alert-box>
 
   <ng-template [ngTemplateOutlet]="previewTemplate || defaultPreviewTemplate"
-               [ngOutletContext]="{ $implicit: this}"></ng-template>
+               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template>
 
 </div>

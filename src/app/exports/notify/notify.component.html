@@ -3,6 +3,6 @@
   <div *ngIf="!item.template" [innerHTML]="item.html"></div>
 
   <ng-template *ngIf="item.template" [ngTemplateOutlet]="item.template"
-               [ngOutletContext]="{ $implicit: item }"></ng-template>
+               [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
 
 </re-alert-box>

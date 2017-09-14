@@ -18,7 +18,7 @@
 <div class="btn-group {{direction? 'drop' + direction : '' }} {{cssClass}}" [ngClass]="{open: isOpen}">
 
   <ng-template [ngTemplateOutlet]="buttonTemplate || defaultButtonTemplate"
-               [ngOutletContext]="{ $implicit: this}"></ng-template>
+               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template>
 
   <ul class="dropdown-menu" role="menu" [@state]="animateState" (@state.done)="afterVisibilityAnimation($event)">
     <ng-container *ngFor="let item of actions">
