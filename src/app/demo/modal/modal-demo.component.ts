@@ -2,32 +2,6 @@ import { Component, EventEmitter, ComponentFactoryResolver, ChangeDetectionStrat
 import { Modal, ModalService } from '../../exports';
 
 @Component({
-  selector: 're-modal-demo',
-  templateUrl: 'modal-demo.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
-})
-export class ModalDemoComponent {
-
-  constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
-  }
-
-  openModal() {
-    this.modalService.open<string>({
-      component: ModalTestComponent,
-      componentFactoryResolver: this.componentFactoryResolver,
-      resolve: {
-        text: 'I am from resolve data!'
-      }
-    })
-      .subscribe(data => {
-        console.log('Rebirth Modal -> Get ok with result:', data);
-      }, error => {
-        console.error('Rebirth Modal -> Get cancel with result:', error);
-      });
-  }
-}
-
-@Component({
   selector: 're-modal-test',
   template: `
   <div class="modal-header">
@@ -88,5 +62,32 @@ export class ModalTestComponent implements Modal, OnInit {
 
   cancel() {
     this.dismiss.error(this.context.text);
+  }
+}
+
+
+@Component({
+  selector: 're-modal-demo',
+  templateUrl: 'modal-demo.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class ModalDemoComponent {
+
+  constructor(private modalService: ModalService, private componentFactoryResolver: ComponentFactoryResolver) {
+  }
+
+  openModal() {
+    this.modalService.open<string>({
+      component: ModalTestComponent,
+      componentFactoryResolver: this.componentFactoryResolver,
+      resolve: {
+        text: 'I am from resolve data!'
+      }
+    })
+      .subscribe(data => {
+        console.log('Rebirth Modal -> Get ok with result:', data);
+      }, error => {
+        console.error('Rebirth Modal -> Get cancel with result:', error);
+      });
   }
 }

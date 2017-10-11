@@ -9,7 +9,7 @@
          [class.has-error]="form.controls.promptValue.touched && form.controls.promptValue.invalid">
       <label for="promptValue" class="control-label">{{content?.label}}</label>
       <ng-template [ngTemplateOutlet]="content.template || defaultTemplate"
-                   [ngOutletContext]="{ $implicit: this, option: context, formGroup:form }"></ng-template>
+                   [ngTemplateOutletContext]="{ $implicit: this, option: context, formGroup:form }"></ng-template>
 
       <ng-container *ngIf="form.controls.promptValue.touched">
         <div class="help-block" *ngFor="let key of getFieldErrors(form.controls.promptValue)">
