@@ -12,6 +12,7 @@ import { AutoCompletePopupComponent } from './auto-complete-popup.component';
 
 const allSource = ['C#', 'C', 'C++', 'CPython', 'Java', 'JavaScript', 'Go', 'Python', 'Ruby', 'F#', 'TypeScript', 'SQL',
   'LiveScript', 'CoffeeScript'].toString();
+
 @Component({ selector: 're-test-cmp', template: '' })
 class TestComponent {
   selectItem1 = 'C#';
@@ -42,10 +43,9 @@ describe('AutoComplete', () => {
     TestBed.overrideComponent(TestComponent, {
       set: {
         template: `<input type="text" class="form-control" [delay]="0" name="language" id="languageFromSource" [minLength]="0"
-                 [(ngModel)]="selectItem1" reAutoComplete [dataSource]="languages" #autoComplete1="autoComplete"/> 
-                 <div class="input-group-addon" (click)="autoComplete1.toggle($event)">
-                      <i class="glyphicon glyphicon-menu-down"></i>
-                 </div>`
+                 [(ngModel)]="selectItem1" reAutoComplete [dataSource]="languages" #autoComplete1="autoComplete"
+                 /><div class="input-group-addon" (click)="autoComplete1.toggle($event)"
+                 ><i class="glyphicon glyphicon-menu-down"></i></div>`
       }
     });
 

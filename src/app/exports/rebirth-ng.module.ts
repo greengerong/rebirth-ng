@@ -35,6 +35,7 @@ import { CheckboxGroupModule } from './checkbox-group';
 import { RebirthValidatorsModule } from './validators';
 import { NotifyModule, NotifyService } from './notify';
 import { TreeViewModule, TreeViewService } from './tree-view';
+import { EllipsisModule } from './ellipsis';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { TreeViewModule, TreeViewService } from './tree-view';
     CheckboxGroupModule,
     RebirthValidatorsModule,
     NotifyModule,
-    TreeViewModule
+    TreeViewModule,
+    EllipsisModule
   ],
   exports: [
     RebirthCommonModule,
@@ -105,7 +107,8 @@ import { TreeViewModule, TreeViewService } from './tree-view';
     CheckboxGroupModule,
     RebirthValidatorsModule,
     NotifyModule,
-    TreeViewModule
+    TreeViewModule,
+    EllipsisModule
   ],
   declarations: [],
   providers: [],

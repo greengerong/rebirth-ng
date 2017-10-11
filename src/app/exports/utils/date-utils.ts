@@ -14,8 +14,8 @@ export function parseDate(date: any): Date {
   if (isDate(date)) {
     return date;
   }
-  const parseDate = dateParse(date);
-  return isValidDate(parseDate) ? parseDate : null;
+  const parsedDate = dateParse(date);
+  return isValidDate(parsedDate) ? parsedDate : null;
 }
 
 export function formatDate(date: Date, pattern = 'YYYY-MM-DD HH:mm:ss'): string {

@@ -19,8 +19,20 @@ import {
   uuidValidator,
   equalValidator,
   beforeDateValidator,
-  afterDateValidator
+  afterDateValidator,
+  requiredWithTrim
 } from './rebirth-validators';
+
+@Directive({
+  selector: '[reRequiredWithTrim]',
+  providers: [{ provide: NG_VALIDATORS, useExisting: RequiredWithTrimDirective, multi: true }]
+})
+export class RequiredWithTrimDirective implements Validator {
+
+  validate(control: AbstractControl): ValidationErrors | any {
+    return requiredWithTrim(control);
+  }
+}
 
 @Directive({
   selector: '[reRangeLength]',
@@ -222,7 +234,8 @@ export class IncludesDirective implements Validator {
 export class EqualToDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reEqualTo(target: AbstractControl | string) {
+  @Input()
+  set reEqualTo(target: AbstractControl | string) {
     this.validatorFn = equalToValidator(target);
   };
 
@@ -238,7 +251,8 @@ export class EqualToDirective implements Validator {
 export class BeforeDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reBeforeDate(target: string | Date | number) {
+  @Input()
+  set reBeforeDate(target: string | Date | number) {
     this.validatorFn = beforeDateValidator(target);
   };
 
@@ -254,7 +268,8 @@ export class BeforeDateDirective implements Validator {
 export class AfterDateDirective implements Validator {
   private validatorFn: ValidatorFn;
 
-  @Input() set reAfterDate(target: string | Date | number) {
+  @Input()
+  set reAfterDate(target: string | Date | number) {
     this.validatorFn = afterDateValidator(target);
   };
 

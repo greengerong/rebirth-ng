@@ -1,4 +1,26 @@
-# 0.0.20(2017-08-02)
+
+# 0.0.22 (2017-09-07)
+
+## Bug Fixes
+
+## Features
+
+* (Ellipsis): new component with text ellipsis;
+* (Prompt): new dialog service with prompt;
+* (DatePipe): new date pipe. It is due to Angular's date pipe has format issue on IE11;
+* (noop): noop utils function;
+* (Modal): Modal animation feature toggle;
+* (RequiredWithTrim): Required validation for trim value;
+
+# 0.0.21 (2017-08-28)
+
+## Bug Fixes
+
+## Features
+
+* (TimePicker): support small number keyboard;
+
+# 0.0.20 (2017-08-02)
 
 ## Bug Fixes
 

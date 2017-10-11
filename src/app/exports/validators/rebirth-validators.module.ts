@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import {
+  RequiredWithTrimDirective,
   Base64Directive,
   DateDirective,
   DateISODirective,
@@ -26,6 +27,7 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [CommonModule],
   exports: [
+    RequiredWithTrimDirective,
     RangeLengthDirective,
     MinDirective,
     RangeDirective,
@@ -47,6 +49,7 @@ import { CommonModule } from '@angular/common';
     AfterDateDirective
   ],
   declarations: [
+    RequiredWithTrimDirective,
     RangeLengthDirective,
     MinDirective,
     RangeDirective,

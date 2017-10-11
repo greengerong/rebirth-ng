@@ -52,7 +52,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
     this._maxDate = new Date(this.dateConfig.max, 11, 31, 23, 59, 59);
   }
 
-  @Input() set maxDate(date: Date | any) {
+  @Input()
+  set maxDate(date: Date | any) {
     const parseDate = this.dateConverter.parse(date, this.getDateFormat(), this.locale);
     if (parseDate) {
       this._maxDate = parseDate;
@@ -63,7 +64,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
     return this._maxDate;
   }
 
-  @Input() set minDate(date: Date | any) {
+  @Input()
+  set minDate(date: Date | any) {
     const parseDate = this.dateConverter.parse(date, this.getDateFormat(), this.locale);
     if (parseDate) {
       this._minDate = parseDate;
@@ -74,7 +76,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
     return this._minDate;
   }
 
-  @Input() set dateFormat(dateFormat: string) {
+  @Input()
+  set dateFormat(dateFormat: string) {
     if (dateFormat && this._dateFormat !== dateFormat) {
       this._dateFormat = dateFormat;
       this.writeModelValue(this.selectedDate);
@@ -90,7 +93,8 @@ export class DatePickerDirective implements OnInit, ControlValueAccessor, OnDest
     const viewContainerRef = this.appendBody ? this.rebirthNGConfig.rootContainer : this.viewContainerRef;
     // EXCEPTION: Expression has changed after it was checked when append to body;
     setTimeout(() => {
-      this.cmpRef = viewContainerRef.createComponent(factory, viewContainerRef.length, this.injector);
+      this.cmpRef = <ComponentRef<DatePickerPopupComponent>>viewContainerRef
+        .createComponent(factory, viewContainerRef.length, this.injector);
       this.applyPopupStyling(this.cmpRef.location.nativeElement);
       const component = this.cmpRef.instance;
       this.hide();

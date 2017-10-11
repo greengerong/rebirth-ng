@@ -1,4 +1,16 @@
 <div class="dialog-demo">
-  <button class="btn btn-default" (click)="alert();">Alert</button>
-  <button class="btn btn-default" (click)="confirm();">Confirm</button>
+  <button class="btn btn-default" (click)="alert()">Alert</button>
+  <button class="btn btn-default" (click)="confirm()">Confirm</button>
+  <button class="btn btn-default" (click)="prompt()">Prompt</button>
+  <button class="btn btn-default" (click)="promptWithTemplate()">Prompt with template</button>
 </div>
+<ng-template #selectPromptTemplate let-option="option" let-formGroup="formGroup">
+  <select type="text" class="form-control" id="promptValue" name="promptValue"
+          [formControl]="formGroup.controls.promptValue">
+    <option value="">Please select</option>
+    <option value="ZH-CN">China</option>
+    <option value="EN-US">America</option>
+    <option value="EN">England</option>
+  </select>
+</ng-template>
+

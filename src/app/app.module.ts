@@ -36,7 +36,8 @@ import {
   CheckboxGroupDemoModule,
   ValidatorsDemoModule,
   NotifyDemoModule,
-  TreeViewDemoModule
+  TreeViewDemoModule,
+  EllipsisDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -91,7 +92,8 @@ import { RebirthRouterReuseStrategy } from './exports';
     CheckboxGroupDemoModule,
     ValidatorsDemoModule,
     NotifyDemoModule,
-    TreeViewDemoModule
+    TreeViewDemoModule,
+    EllipsisDemoModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

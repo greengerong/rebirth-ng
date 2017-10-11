@@ -40,3 +40,5 @@ export function deepValueGetter(obj: any, path: string) {
 export function isImmutableEmpty(array: any): boolean {
   return !array || !(array.length || array.size);
 }
+
+export const noop = () => null;

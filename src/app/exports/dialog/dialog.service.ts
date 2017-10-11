@@ -5,6 +5,7 @@ import { DialogOptions } from './dialog-options.model';
 import { AlertDialogComponent } from './alert-dialog.component';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { PromptDialogComponent } from './prompt-dialog.component';
 
 @Injectable()
 export class DialogService {
@@ -31,6 +32,7 @@ export class DialogService {
       backdropClass: dialogOptions.backdropClass,
       modal: dialogOptions.modal,
       keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
 
     });
   }
@@ -50,6 +52,23 @@ export class DialogService {
       backdropClass: dialogOptions.backdropClass,
       modal: dialogOptions.modal,
       keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
+    });
+  }
+
+  prompt<T>(dialogOptions: DialogOptions): Observable<T> {
+    return this.modalService.open({
+      component: PromptDialogComponent,
+      componentFactoryResolver: this.componentFactoryResolver,
+      resolve: dialogOptions,
+      modalClass: dialogOptions.cssClass,
+      injector: dialogOptions.injector,
+      rootContainer: dialogOptions.rootContainer,
+      backdrop: dialogOptions.backdrop,
+      backdropClass: dialogOptions.backdropClass,
+      modal: dialogOptions.modal,
+      keyboard: dialogOptions.keyboard,
+      animation: dialogOptions.animation
     });
   }
 }

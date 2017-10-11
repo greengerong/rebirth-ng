@@ -6,6 +6,7 @@ import { TemplateLoaderComponent } from './template-loader.component';
 import { TrustHtmlPipe } from './trust-html.pipe';
 import { ResizeableDirective } from './resizeable.directive';
 import { DropdownDirective } from './dropdown.directive';
+import { DatePipe } from './date.pipe';
 
 @NgModule({
   imports: [CommonModule],
@@ -14,14 +15,16 @@ import { DropdownDirective } from './dropdown.directive';
     TemplateLoaderComponent,
     TrustHtmlPipe,
     ResizeableDirective,
-    DropdownDirective
+    DropdownDirective,
+    DatePipe
   ],
   declarations: [
     AutoFocusDirective,
     TemplateLoaderComponent,
     TrustHtmlPipe,
     ResizeableDirective,
-    DropdownDirective
+    DropdownDirective,
+    DatePipe
   ],
   providers: [],
 })

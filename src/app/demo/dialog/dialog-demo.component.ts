@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
 import { DialogService } from '../../exports';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 're-dialog-demo',
@@ -10,6 +11,8 @@ import { DialogService } from '../../exports';
 })
 export class DialogDemoComponent {
 
+  @ViewChild('selectPromptTemplate') selectPromptTemplate: TemplateRef<any>;
+
   constructor(private dialogService: DialogService) {
   }
 
@@ -19,7 +22,7 @@ export class DialogDemoComponent {
       content: 'This is <strong>rebirth alert</strong> content.',
       // yes: '确定',
       icon: 'icon-success',
-      html: true
+      html: true,
     })
       .subscribe(
         data => console.log('Rebirth alert get yes result:', data),
@@ -36,6 +39,36 @@ export class DialogDemoComponent {
       // yes: '确定',
       // no: '取消',
       // rootContainer: this.viewContainerRef
+    })
+      .subscribe(
+        data => console.log('Rebirth confirm get yes result:', data),
+        error => console.error('Rebirth confirm get no result:', error)
+      );
+  }
+
+  prompt() {
+    this.dialogService.prompt({
+      title: 'Name',
+      content: {
+        label: 'Name',
+        placeholder: 'Input your name',
+        validators: { required: { validator: Validators.required, message: 'Please input your name!' } }
+      }
+    })
+      .subscribe(
+        data => console.log('Rebirth confirm get yes result:', data),
+        error => console.error('Rebirth confirm get no result:', error)
+      );
+  }
+
+  promptWithTemplate() {
+    this.dialogService.prompt({
+      title: 'Country',
+      content: {
+        label: 'Country',
+        template: this.selectPromptTemplate,
+        validators: { required: { validator: Validators.required, message: 'Please choose your country!' } }
+      }
     })
       .subscribe(
         data => console.log('Rebirth confirm get yes result:', data),

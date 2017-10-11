@@ -30,10 +30,11 @@ import {
   CheckboxGroupDemoComponent,
   ValidatorsDemoComponent,
   NotifyDemoComponent,
-  TreeViewDemoComponent
+  TreeViewDemoComponent,
+  BreadcrumbsDemoComponent,
+  TimePickerDemoComponent,
+  EllipsisDemoComponent
 } from '../../demo';
-import { BreadcrumbsDemoComponent } from '../../demo/breadcrumbs/breadcrumbs-demo.component';
-import { TimePickerDemoComponent } from '../../demo/time-picker/time-picker-demo.component';
 
 @Injectable()
 export class DemoConfigService {
@@ -308,6 +309,14 @@ export class DemoConfigService {
       html: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.html'),
       ts: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.ts'),
       data: require('!raw-loader!../../demo/tree-view/data.json'),
+    },
+    {
+      name: 'Ellipsis',
+      directory: 'ellipsis',
+      cmp: EllipsisDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/ellipsis/README.md'),
+      html: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.html'),
+      ts: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.ts'),
     },
     // component declare
   ];
