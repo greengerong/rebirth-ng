@@ -13,9 +13,9 @@ import {
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
-import { Http, Response, RequestOptions } from '@angular/http';
 import { formatFileSize, formatString } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 're-file-upload',
@@ -33,7 +33,7 @@ export class FileUploadComponent implements AfterViewInit {
   @Input() maxFileSize: number; // bytes
   @Input() uploadUrl: string;
   @Input() uploadParamName: string;
-  @Input() uploadRequestOptions: RequestOptions;
+  @Input() uploadRequestOptions: any;
   @Input() imgPreview: boolean;
   @Input() previewWidth: string;
   @Input() cssClass: string;
@@ -56,7 +56,7 @@ export class FileUploadComponent implements AfterViewInit {
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private renderer: Renderer2,
-              private http: Http,
+              private http: HttpClient,
               private changeDetectorRef: ChangeDetectorRef) {
 
     this.fileSizeErrorMessage = this.rebirthNGConfig.fileUpload.fileSizeErrorMessage;
@@ -135,9 +135,7 @@ export class FileUploadComponent implements AfterViewInit {
     const formData = new FormData();
     formData.append(this.uploadParamName, fileItem.file);
     return this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
-      .map(res => res.json())
-      .subscribe(
-        (res: Response) => {
+      .subscribe((res) => {
           fileItem.uploadResponse = res;
           this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
           this.uploadFiles = [...this.uploadFiles, fileItem];

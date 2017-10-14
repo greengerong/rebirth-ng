@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { of } from 'rxjs/observable/of';
-import { URLSearchParams, Jsonp } from '@angular/http';
 import { AutoCompleteDirective } from '../../exports';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -33,22 +33,17 @@ export class AutoCompleteDemoComponent {
 
 
   searchWiki = (term) => {
-    const params = new URLSearchParams();
-    params.set('search', term);
-    params.set('action', 'opensearch');
-    params.set('format', 'json');
-    params.set('callback', 'JSONP_CALLBACK');
-
-    return this.jsonp
-      .get('https://en.wikipedia.org/w/api.php', { search: params })
-      .map(response => <string[]> response.json()[1]);
+    return this.httpClient
+      .jsonp(`https://en.wikipedia.org/w/api.php?search=${term}&action=opensearch&format=json`,
+        'callback')
+      .map(response => <string[]> response[1]);
   }
 
   onSearch = (term) => {
     return this.searchWiki(term);
   }
 
-  constructor(private jsonp: Jsonp) {
+  constructor(private httpClient: HttpClient) {
 
   }
 

@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { AutoCompleteDemoComponent } from './auto-complete-demo.component';
 import { RebirthNGModule } from '../../exports';
-import { HttpModule } from '@angular/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  imports: [CommonModule, RebirthNGModule, FormsModule, HttpModule],
+  imports: [CommonModule, RebirthNGModule, FormsModule, HttpClientModule, HttpClientJsonpModule],
   exports: [AutoCompleteDemoComponent],
   declarations: [AutoCompleteDemoComponent],
   providers: [],

@@ -5,17 +5,17 @@ import { CommonModule } from '@angular/common';
 import { FileUploadPreviewComponent } from './file-upload-preview.component';
 import { AlertBoxModule } from '../alert-box/alert-box.module';
 import { DraggableModule } from '../draggable/draggable.module';
-import { HttpModule } from '@angular/http';
 import {
   UploadToolbarTmplComponent,
   UploadPreviewTmplComponent,
   UploadFileTmplComponent
 } from './file-upload-tmpl.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     AlertBoxModule,
     DraggableModule
   ],
