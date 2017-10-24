@@ -16,15 +16,6 @@ module.exports = function (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
-    files: [
-      {pattern: './src/test.ts', watched: false}
-    ],
-    preprocessors: {
-      './src/test.ts': ['@angular/cli']
-    },
-    mime: {
-      'text/x-typescript': ['ts', 'tsx']
-    },
     coverageIstanbulReporter: {
       reports: ['html', 'json'],
       fixWebpackSourcePaths: true
@@ -55,7 +46,7 @@ module.exports = function (config) {
       : ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_ERROR,
+    logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false
