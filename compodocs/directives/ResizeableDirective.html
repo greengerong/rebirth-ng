@@ -1392,9 +1392,6 @@
                                          <a href="#ngOnDestroy">ngOnDestroy</a>
                                     </li>
                                     <li>
-                                         <a href="#onMousedown">onMousedown</a>
-                                    </li>
-                                    <li>
                                          <a href="#onMouseup">onMouseup</a>
                                     </li>
                                 </ul>
@@ -1420,6 +1417,34 @@
                                 </ul>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Outputs</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#resize">resize</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>HostListeners</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#mousedown">mousedown</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -1439,6 +1464,43 @@
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div>
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>element</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>renderer</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -1532,6 +1594,38 @@
                     </table>
             </section>
 
+
+            <section>
+                <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="mousedown"></a>
+                                    <span class="name"><b> mousedown</b><a href="#mousedown"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>mousedown(event: MouseEvent)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/exports/common/resizeable.directive.ts:52</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
             <section>
                 
                     <h3 id="methods">
@@ -1542,12 +1636,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="_destroySubscription"></a>
-                                    <b><span class="modifier">Private</span> _destroySubscription</b>
+                                    <span class="name"><b><span class="modifier">Private</span> _destroySubscription</b><a href="#_destroySubscription"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>_destroySubscription()</code>
                                 </td>
                             </tr>
@@ -1575,7 +1669,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="move"></a>
-                                    <b> move</b>
+                                    <span class="name"><b> move</b><a href="#move"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1595,9 +1689,56 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>event</td>
+                                                              <td>
+                                                                      <code>MouseEvent</code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>initialWidth</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>mouseDownScreenX</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1607,7 +1748,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="ngAfterViewInit"></a>
-                                    <b> ngAfterViewInit</b>
+                                    <span class="name"><b> ngAfterViewInit</b><a href="#ngAfterViewInit"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1639,7 +1780,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="ngOnDestroy"></a>
-                                    <b> ngOnDestroy</b>
+                                    <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1670,45 +1811,8 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="onMousedown"></a>
-                                    <b> onMousedown</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onMousedown(event: MouseEvent)</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/exports/common/resizeable.directive.ts:52</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
                                     <a name="onMouseup"></a>
-                                    <b> onMouseup</b>
+                                    <span class="name"><b> onMouseup</b><a href="#onMouseup"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1747,7 +1851,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="element"></a>
-                                    <b> element</b>
+                                    <span class="name"><b> element</b><a href="#element"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1776,7 +1880,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="resizing"></a>
-                                    <b> resizing</b>
+                                    <span class="name"><b> resizing</b><a href="#resizing"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1804,7 +1908,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="subscription"></a>
-                                    <b> subscription</b>
+                                    <span class="name"><b> subscription</b><a href="#subscription"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>

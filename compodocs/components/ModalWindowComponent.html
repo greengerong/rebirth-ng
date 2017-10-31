@@ -1413,12 +1413,6 @@
                                  <a href="#onAnimationDone">onAnimationDone</a>
                             </li>
                             <li>
-                                 <a href="#onBackdropClick">onBackdropClick</a>
-                            </li>
-                            <li>
-                                 <a href="#onEscKeyUp">onEscKeyUp</a>
-                            </li>
-                            <li>
                                  <a href="#open">open</a>
                             </li>
                         </ul>
@@ -1455,6 +1449,23 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click">click</a>
+                            </li>
+                            <li>
+                                <a href="#keyup.esc">keyup.esc</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -1474,6 +1485,34 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>elementRef</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -1545,6 +1584,66 @@
             </table>
     </section>
 
+
+    <section>
+        <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="click"></a>
+                            <span class="name"><b> click</b><a href="#click"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Arguments : </i><code>'$event' </code>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>click($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/exports/modal/modal-window.component.ts:70</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="keyup.esc"></a>
+                            <span class="name"><b> keyup.esc</b><a href="#keyup.esc"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Arguments : </i><code>'$event' </code>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>keyup.esc($event: KeyboardEvent)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/exports/modal/modal-window.component.ts:77</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
     <section>
         
             <h3 id="methods">
@@ -1555,7 +1654,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="addContent"></a>
-                            <b> addContent</b>
+                            <span class="name"><b> addContent</b><a href="#addContent"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1575,9 +1674,47 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>options</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/ModalOptions.html" target="_self" >ModalOptions</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>dismiss</td>
+                                                      <td>
+                                                              <code>EventEmitter&lt;T&gt;</code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code>EventEmitter&lt;&gt;</code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1587,7 +1724,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="close"></a>
-                            <b> close</b>
+                            <span class="name"><b> close</b><a href="#close"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1619,7 +1756,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onAnimationDone"></a>
-                            <b> onAnimationDone</b>
+                            <span class="name"><b> onAnimationDone</b><a href="#onAnimationDone"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1639,83 +1776,37 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>$event</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
                                 </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="onBackdropClick"></a>
-                            <b> onBackdropClick</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onBackdropClick($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Decorators : </i><code>HostListener</code>
-                            </td>
-                        </tr>
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/exports/modal/modal-window.component.ts:70</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
+                                <div>
+                                </div>
                                 <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="onEscKeyUp"></a>
-                            <b> onEscKeyUp</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onEscKeyUp($event: KeyboardEvent)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Decorators : </i><code>HostListener</code>
-                            </td>
-                        </tr>
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="77" class="link-to-prism">src/app/exports/modal/modal-window.component.ts:77</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1725,7 +1816,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="open"></a>
-                            <b> open</b>
+                            <span class="name"><b> open</b><a href="#open"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1764,7 +1855,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="animateState"></a>
-                            <b> animateState</b>
+                            <span class="name"><b> animateState</b><a href="#animateState"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1793,7 +1884,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="dismiss"></a>
-                            <b> dismiss</b>
+                            <span class="name"><b> dismiss</b><a href="#dismiss"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1822,7 +1913,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="modalContent"></a>
-                            <b> modalContent</b>
+                            <span class="name"><b> modalContent</b><a href="#modalContent"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1856,7 +1947,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="modalOptions"></a>
-                            <b> modalOptions</b>
+                            <span class="name"><b> modalOptions</b><a href="#modalOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>

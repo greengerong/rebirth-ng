@@ -1403,9 +1403,6 @@
                             <li>
                                 <span class="modifier">Private</span> <a href="#adjustOverlayPosition">adjustOverlayPosition</a>
                             </li>
-                            <li>
-                                 <a href="#onWinResize">onWinResize</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -1419,6 +1416,20 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#overlayOptions">overlayOptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:resize">window:resize</a>
                             </li>
                         </ul>
                     </td>
@@ -1442,6 +1453,43 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>windowRef</td>
+                                                      <td>
+                                                                <code><a href="../injectables/WindowRef.html" target="_self" >WindowRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>renderer</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -1472,6 +1520,33 @@
     </section>
 
 
+
+    <section>
+        <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="window:resize"></a>
+                            <span class="name"><b> window:resize</b><a href="#window:resize"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>window:resize()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/exports/overlay/overlay.component.ts:38</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
     <section>
         
             <h3 id="methods">
@@ -1482,7 +1557,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="addContent"></a>
-                            <b> addContent</b>
+                            <span class="name"><b> addContent</b><a href="#addContent"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1502,9 +1577,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>options</td>
+                                                      <td>
+                                                              <code><a href="../interfaces/OverlayOptions.html" target="_self" >OverlayOptions</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1514,12 +1618,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="adjustOverlayPosition"></a>
-                            <b><span class="modifier">Private</span> adjustOverlayPosition</b>
+                            <span class="name"><b><span class="modifier">Private</span> adjustOverlayPosition</b><a href="#adjustOverlayPosition"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>adjustOverlayPosition()</code>
                         </td>
                     </tr>
@@ -1528,43 +1632,6 @@
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/exports/overlay/overlay.component.ts:42</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="onWinResize"></a>
-                            <b> onWinResize</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onWinResize()</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Decorators : </i><code>HostListener</code>
-                            </td>
-                        </tr>
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/exports/overlay/overlay.component.ts:38</a></div>
                                 </td>
                             </tr>
     
@@ -1591,7 +1658,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="overlayBody"></a>
-                            <b> overlayBody</b>
+                            <span class="name"><b> overlayBody</b><a href="#overlayBody"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1625,7 +1692,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="overlayContent"></a>
-                            <b> overlayContent</b>
+                            <span class="name"><b> overlayContent</b><a href="#overlayContent"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>

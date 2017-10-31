@@ -1492,9 +1492,6 @@
                                  <a href="#onDisplayWeeksChange">onDisplayWeeksChange</a>
                             </li>
                             <li>
-                                 <a href="#onHostClick">onHostClick</a>
-                            </li>
-                            <li>
                                  <a href="#onNextMonth">onNextMonth</a>
                             </li>
                             <li>
@@ -1582,6 +1579,20 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#click">click</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -1601,6 +1612,61 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>elementRef</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>renderer</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>rebirthNGConfig</td>
+                                                      <td>
+                                                                <code><a href="../injectables/RebirthNGConfig.html" target="_self" >RebirthNGConfig</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>changeDetectorRef</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -1791,6 +1857,38 @@
             </table>
     </section>
 
+
+    <section>
+        <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="click"></a>
+                            <span class="name"><b> click</b><a href="#click"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Arguments : </i><code>'$event' </code>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>click($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">src/app/exports/date-picker/date-picker-popup.component.ts:234</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
     <section>
         
             <h3 id="methods">
@@ -1801,12 +1899,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="fillLeft"></a>
-                            <b><span class="modifier">Private</span> fillLeft</b>
+                            <span class="name"><b><span class="modifier">Private</span> fillLeft</b><a href="#fillLeft"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>fillLeft(num: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                         </td>
                     </tr>
@@ -1822,9 +1920,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>num</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1834,12 +1961,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="fillRange"></a>
-                            <b><span class="modifier">Private</span> fillRange</b>
+                            <span class="name"><b><span class="modifier">Private</span> fillRange</b><a href="#fillRange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>fillRange(number: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                         </td>
                     </tr>
@@ -1855,9 +1982,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>number</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1867,7 +2023,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="hasNextMonth"></a>
-                            <b> hasNextMonth</b>
+                            <span class="name"><b> hasNextMonth</b><a href="#hasNextMonth"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1899,7 +2055,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="hasPreMonth"></a>
-                            <b> hasPreMonth</b>
+                            <span class="name"><b> hasPreMonth</b><a href="#hasPreMonth"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1931,7 +2087,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="isDisabledDay"></a>
-                            <b> isDisabledDay</b>
+                            <span class="name"><b> isDisabledDay</b><a href="#isDisabledDay"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1951,9 +2107,37 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>date</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1963,7 +2147,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="isSelectDay"></a>
-                            <b> isSelectDay</b>
+                            <span class="name"><b> isSelectDay</b><a href="#isSelectDay"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1983,9 +2167,37 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>date</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1995,7 +2207,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <b> ngOnInit</b>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2027,7 +2239,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onDisplayWeeksChange"></a>
-                            <b> onDisplayWeeksChange</b>
+                            <span class="name"><b> onDisplayWeeksChange</b><a href="#onDisplayWeeksChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2058,45 +2270,8 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="onHostClick"></a>
-                            <b> onHostClick</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onHostClick($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Decorators : </i><code>HostListener</code>
-                            </td>
-                        </tr>
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="234" class="link-to-prism">src/app/exports/date-picker/date-picker-popup.component.ts:234</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <a name="onNextMonth"></a>
-                            <b> onNextMonth</b>
+                            <span class="name"><b> onNextMonth</b><a href="#onNextMonth"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2128,7 +2303,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onPreMonth"></a>
-                            <b> onPreMonth</b>
+                            <span class="name"><b> onPreMonth</b><a href="#onPreMonth"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2160,7 +2335,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onSelectDate"></a>
-                            <b> onSelectDate</b>
+                            <span class="name"><b> onSelectDate</b><a href="#onSelectDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2180,9 +2355,45 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>$event</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>date</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2192,12 +2403,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onSelectDateChanged"></a>
-                            <b><span class="modifier">Private</span> onSelectDateChanged</b>
+                            <span class="name"><b><span class="modifier">Private</span> onSelectDateChanged</b><a href="#onSelectDateChanged"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>onSelectDateChanged()</code>
                         </td>
                     </tr>
@@ -2225,7 +2436,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onTimeChange"></a>
-                            <b> onTimeChange</b>
+                            <span class="name"><b> onTimeChange</b><a href="#onTimeChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2257,7 +2468,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onYearRangeChange"></a>
-                            <b> onYearRangeChange</b>
+                            <span class="name"><b> onYearRangeChange</b><a href="#onYearRangeChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2289,7 +2500,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnChange"></a>
-                            <b> registerOnChange</b>
+                            <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2309,9 +2520,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>fn</td>
+                                                      <td>
+                                                              <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2321,7 +2561,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnTouched"></a>
-                            <b> registerOnTouched</b>
+                            <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2341,9 +2581,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>fn</td>
+                                                      <td>
+                                                              <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2353,7 +2622,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setDisabledState"></a>
-                            <b> setDisabledState</b>
+                            <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2373,9 +2642,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>isDisabled</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2385,7 +2683,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="today"></a>
-                            <b> today</b>
+                            <span class="name"><b> today</b><a href="#today"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2405,9 +2703,37 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>$event</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2417,7 +2743,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="todayIsOutOfRange"></a>
-                            <b> todayIsOutOfRange</b>
+                            <span class="name"><b> todayIsOutOfRange</b><a href="#todayIsOutOfRange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2449,7 +2775,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="writeValue"></a>
-                            <b> writeValue</b>
+                            <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2469,9 +2795,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>obj</td>
+                                                      <td>
+                                                              <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -2488,7 +2843,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="_maxDate"></a>
-                            <b><span class="modifier">Private</span> _maxDate</b>
+                            <span class="name"><b><span class="modifier">Private</span> _maxDate</b><a href="#_maxDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2517,7 +2872,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="_minDate"></a>
-                            <b><span class="modifier">Private</span> _minDate</b>
+                            <span class="name"><b><span class="modifier">Private</span> _minDate</b><a href="#_minDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2546,7 +2901,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="currentHour"></a>
-                            <b> currentHour</b>
+                            <span class="name"><b> currentHour</b><a href="#currentHour"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2575,7 +2930,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="currentMinute"></a>
-                            <b> currentMinute</b>
+                            <span class="name"><b> currentMinute</b><a href="#currentMinute"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2604,7 +2959,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="currentMonth"></a>
-                            <b> currentMonth</b>
+                            <span class="name"><b> currentMonth</b><a href="#currentMonth"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2633,7 +2988,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="currentSecond"></a>
-                            <b> currentSecond</b>
+                            <span class="name"><b> currentSecond</b><a href="#currentSecond"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2662,7 +3017,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="currentYear"></a>
-                            <b> currentYear</b>
+                            <span class="name"><b> currentYear</b><a href="#currentYear"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2691,7 +3046,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="dateConfig"></a>
-                            <b> dateConfig</b>
+                            <span class="name"><b> dateConfig</b><a href="#dateConfig"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2720,12 +3075,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="DAY_DURATION"></a>
-                            <b><span class="modifier">Static</span> DAY_DURATION</b>
+                            <span class="name"><b><span class="modifier">Static</span> DAY_DURATION</b><a href="#DAY_DURATION"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-export"></span><code>DAY_DURATION:     <code></code>
+                            <span class="modifier-icon fa fa-reset"></span><code>DAY_DURATION:     <code></code>
     </code>
                         </td>
                     </tr>
@@ -2743,7 +3098,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="displayWeeks"></a>
-                            <b> displayWeeks</b>
+                            <span class="name"><b> displayWeeks</b><a href="#displayWeeks"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2772,7 +3127,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="hourOptions"></a>
-                            <b> hourOptions</b>
+                            <span class="name"><b> hourOptions</b><a href="#hourOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2801,7 +3156,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="maxDate"></a>
-                            <b> maxDate</b>
+                            <span class="name"><b> maxDate</b><a href="#maxDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2824,7 +3179,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="minDate"></a>
-                            <b> minDate</b>
+                            <span class="name"><b> minDate</b><a href="#minDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2847,7 +3202,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="minuteOptions"></a>
-                            <b> minuteOptions</b>
+                            <span class="name"><b> minuteOptions</b><a href="#minuteOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2876,7 +3231,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onChange"></a>
-                            <b><span class="modifier">Private</span> onChange</b>
+                            <span class="name"><b><span class="modifier">Private</span> onChange</b><a href="#onChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2899,7 +3254,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onTouched"></a>
-                            <b><span class="modifier">Private</span> onTouched</b>
+                            <span class="name"><b><span class="modifier">Private</span> onTouched</b><a href="#onTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2922,7 +3277,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="secondOptions"></a>
-                            <b> secondOptions</b>
+                            <span class="name"><b> secondOptions</b><a href="#secondOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2951,7 +3306,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="selectedDate"></a>
-                            <b> selectedDate</b>
+                            <span class="name"><b> selectedDate</b><a href="#selectedDate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2980,7 +3335,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="yearOptions"></a>
-                            <b> yearOptions</b>
+                            <span class="name"><b> yearOptions</b><a href="#yearOptions"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>

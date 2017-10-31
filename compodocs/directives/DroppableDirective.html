@@ -1353,18 +1353,6 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                         <a href="#dragEnter">dragEnter</a>
-                                    </li>
-                                    <li>
-                                         <a href="#dragLeave">dragLeave</a>
-                                    </li>
-                                    <li>
-                                         <a href="#dragOver">dragOver</a>
-                                    </li>
-                                    <li>
-                                         <a href="#drop">drop</a>
-                                    </li>
-                                    <li>
                                         <span class="modifier">Private</span> <a href="#isDropGroup">isDropGroup</a>
                                     </li>
                                     <li>
@@ -1389,6 +1377,52 @@
                                     </li>
                                     <li>
                                         <a href="#reDroppable">reDroppable</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Outputs</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#onDragEnter">onDragEnter</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onDragLeave">onDragLeave</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onDragOver">onDragOver</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onDrop">onDrop</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>HostListeners</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#dragenter">dragenter</a>
+                                    </li>
+                                    <li>
+                                        <a href="#dragleave">dragleave</a>
+                                    </li>
+                                    <li>
+                                        <a href="#dragover">dragover</a>
+                                    </li>
+                                    <li>
+                                        <a href="#drop">drop</a>
                                     </li>
                                 </ul>
                             </td>
@@ -1430,7 +1464,7 @@
                                 </td>
                                 <td class="col-md-10">
                                       <p>
-                                        <em>Type:</em>    <code>|||</code>
+                                        <em>Type:</em>    <code>&quot;copy&quot; | &quot;move&quot; | &quot;link&quot; | &quot;none&quot;</code>
 
                                       </p>
                                     <p>
@@ -1548,6 +1582,122 @@
                     </table>
             </section>
 
+
+            <section>
+                <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="dragenter"></a>
+                                    <span class="name"><b> dragenter</b><a href="#dragenter"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>dragenter($event: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:32</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="dragleave"></a>
+                                    <span class="name"><b> dragleave</b><a href="#dragleave"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>dragleave($event: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:42</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="dragover"></a>
+                                    <span class="name"><b> dragover</b><a href="#dragover"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>dragover($event: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:48</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="drop"></a>
+                                    <span class="name"><b> drop</b><a href="#drop"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>drop($event: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:25</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
             <section>
                 
                     <h3 id="methods">
@@ -1557,161 +1707,13 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="dragEnter"></a>
-                                    <b> dragEnter</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>dragEnter($event: )</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:32</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="dragLeave"></a>
-                                    <b> dragLeave</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>dragLeave($event: )</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:42</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="dragOver"></a>
-                                    <b> dragOver</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>dragOver($event: )</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:48</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="drop"></a>
-                                    <b> drop</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>drop($event: )</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/exports/draggable/droppable.directive.ts:25</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
                                     <a name="isDropGroup"></a>
-                                    <b><span class="modifier">Private</span> isDropGroup</b>
+                                    <span class="name"><b><span class="modifier">Private</span> isDropGroup</b><a href="#isDropGroup"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>isDropGroup($event: )</code>
                                 </td>
                             </tr>
@@ -1727,9 +1729,37 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>$event</td>
+                                                              <td>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1739,12 +1769,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="startDrop"></a>
-                                    <b><span class="modifier">Private</span> startDrop</b>
+                                    <span class="name"><b><span class="modifier">Private</span> startDrop</b><a href="#startDrop"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>startDrop($event: )</code>
                                 </td>
                             </tr>
@@ -1760,9 +1790,37 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>$event</td>
+                                                              <td>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>

@@ -1434,18 +1434,6 @@
                                          <a href="#ngOnInit">ngOnInit</a>
                                     </li>
                                     <li>
-                                         <a href="#onBlur">onBlur</a>
-                                    </li>
-                                    <li>
-                                         <a href="#onChangeFromInput">onChangeFromInput</a>
-                                    </li>
-                                    <li>
-                                         <a href="#onDocumentClick">onDocumentClick</a>
-                                    </li>
-                                    <li>
-                                         <a href="#onEscKeyup">onEscKeyup</a>
-                                    </li>
-                                    <li>
                                          <a href="#registerOnChange">registerOnChange</a>
                                     </li>
                                     <li>
@@ -1516,6 +1504,29 @@
                                 </ul>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>HostListeners</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#blur">blur</a>
+                                    </li>
+                                    <li>
+                                        <a href="#change">change</a>
+                                    </li>
+                                    <li>
+                                        <a href="#document:click">document:click</a>
+                                    </li>
+                                    <li>
+                                        <a href="#keyup.esc">keyup.esc</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </section>
@@ -1535,6 +1546,88 @@
                                         </td>
                                     </tr>
             
+                            <tr>
+                                <td class="col-md-4">
+                                        <div>
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>elementRef</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>viewContainerRef</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/ViewContainerRef-class.html" target="_blank" >ViewContainerRef</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>componentFactoryResolver</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/ComponentFactoryResolver-class.html" target="_blank" >ComponentFactoryResolver</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>renderer</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>injector</td>
+                                                              <td>
+                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/Injector-class.html" target="_blank" >Injector</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>positionService</td>
+                                                              <td>
+                                                                        <code><a href="../injectables/PositionService.html" target="_self" >PositionService</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                              <td>rebirthNGConfig</td>
+                                                              <td>
+                                                                        <code><a href="../injectables/RebirthNGConfig.html" target="_self" >RebirthNGConfig</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -1704,7 +1797,7 @@
                                 </td>
                                 <td class="col-md-10">
                                       <p>
-                                        <em>Type:</em>    <code>|||||</code>
+                                        <em>Type:</em>    <code>&quot;top&quot; | &quot;top-left&quot; | &quot;top-right&quot; | &quot;bottom&quot; | &quot;bottom-left&quot; | &quot;bottom-right&quot;</code>
 
                                       </p>
                                     <p>
@@ -1764,6 +1857,122 @@
             </section>
 
 
+
+            <section>
+                <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="blur"></a>
+                                    <span class="name"><b> blur</b><a href="#blur"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>blur()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:179</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="change"></a>
+                                    <span class="name"><b> change</b><a href="#change"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>change($event: )</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:184</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="document:click"></a>
+                                    <span class="name"><b> document:click</b><a href="#document:click"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>document:click($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:150</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="keyup.esc"></a>
+                                    <span class="name"><b> keyup.esc</b><a href="#keyup.esc"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
+                            <tr>
+                                <td class="col-md-4">
+            <code>keyup.esc()</code>
+                                </td>
+                            </tr>
+            
+            
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:202</a></div>
+                                        </td>
+                                    </tr>
+            
+                        </tbody>
+                    </table>
+            </section>
+
             <section>
                 
                     <h3 id="methods">
@@ -1774,12 +1983,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="applyPopupStyling"></a>
-                                    <b><span class="modifier">Private</span> applyPopupStyling</b>
+                                    <span class="name"><b><span class="modifier">Private</span> applyPopupStyling</b><a href="#applyPopupStyling"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>applyPopupStyling(nativeElement: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
                                 </td>
                             </tr>
@@ -1795,9 +2004,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>nativeElement</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -1807,12 +2045,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="fillPopupData"></a>
-                                    <b><span class="modifier">Private</span> fillPopupData</b>
+                                    <span class="name"><b><span class="modifier">Private</span> fillPopupData</b><a href="#fillPopupData"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>fillPopupData()</code>
                                 </td>
                             </tr>
@@ -1840,12 +2078,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="getDateFormat"></a>
-                                    <b><span class="modifier">Private</span> getDateFormat</b>
+                                    <span class="name"><b><span class="modifier">Private</span> getDateFormat</b><a href="#getDateFormat"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>getDateFormat()</code>
                                 </td>
                             </tr>
@@ -1873,7 +2111,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="hide"></a>
-                                    <b> hide</b>
+                                    <span class="name"><b> hide</b><a href="#hide"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1905,7 +2143,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="ngOnDestroy"></a>
-                                    <b> ngOnDestroy</b>
+                                    <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1937,7 +2175,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="ngOnInit"></a>
-                                    <b> ngOnInit</b>
+                                    <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1968,156 +2206,8 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="onBlur"></a>
-                                    <b> onBlur</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onBlur()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="179" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:179</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="onChangeFromInput"></a>
-                                    <b> onChangeFromInput</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onChangeFromInput($event: )</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="184" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:184</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="onDocumentClick"></a>
-                                    <b> onDocumentClick</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onDocumentClick($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="150" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:150</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
-                                    <a name="onEscKeyup"></a>
-                                    <b> onEscKeyup</b>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-4">
-            <code>onEscKeyup()</code>
-                                </td>
-                            </tr>
-            
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
-            
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="202" class="link-to-prism">src/app/exports/date-picker/date-picker.directive.ts:202</a></div>
-                                        </td>
-                                    </tr>
-            
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                            <tr>
-                                <td class="col-md-4">
                                     <a name="registerOnChange"></a>
-                                    <b> registerOnChange</b>
+                                    <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2137,9 +2227,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>fn</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2149,7 +2268,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="registerOnTouched"></a>
-                                    <b> registerOnTouched</b>
+                                    <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2169,9 +2288,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>fn</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2181,12 +2329,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="removePopView"></a>
-                                    <b><span class="modifier">Private</span> removePopView</b>
+                                    <span class="name"><b><span class="modifier">Private</span> removePopView</b><a href="#removePopView"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>removePopView()</code>
                                 </td>
                             </tr>
@@ -2214,7 +2362,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="setDisabledState"></a>
-                                    <b> setDisabledState</b>
+                                    <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2234,9 +2382,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>isDisabled</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2246,7 +2423,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="show"></a>
-                                    <b> show</b>
+                                    <span class="name"><b> show</b><a href="#show"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2278,7 +2455,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="toggle"></a>
-                                    <b> toggle</b>
+                                    <span class="name"><b> toggle</b><a href="#toggle"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2298,9 +2475,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>$event</td>
+                                                              <td>
+                                                                      <code><a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2310,12 +2516,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="writeModelValue"></a>
-                                    <b><span class="modifier">Private</span> writeModelValue</b>
+                                    <span class="name"><b><span class="modifier">Private</span> writeModelValue</b><a href="#writeModelValue"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                        <span class="modifier-icon method fa fa-play lock"></span>
+                                        <span class="modifier-icon fa fa-lock"></span>
                                     <code>writeModelValue(selectDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
                                 </td>
                             </tr>
@@ -2331,9 +2537,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>selectDate</td>
+                                                              <td>
+                                                                      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2343,7 +2578,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="writeValue"></a>
-                                    <b> writeValue</b>
+                                    <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2363,9 +2598,38 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>obj</td>
+                                                              <td>
+                                                                      <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                        <div>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -2382,7 +2646,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="_dateFormat"></a>
-                                    <b><span class="modifier">Private</span> _dateFormat</b>
+                                    <span class="name"><b><span class="modifier">Private</span> _dateFormat</b><a href="#_dateFormat"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2411,7 +2675,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="_maxDate"></a>
-                                    <b><span class="modifier">Private</span> _maxDate</b>
+                                    <span class="name"><b><span class="modifier">Private</span> _maxDate</b><a href="#_maxDate"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2440,7 +2704,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="_minDate"></a>
-                                    <b><span class="modifier">Private</span> _minDate</b>
+                                    <span class="name"><b><span class="modifier">Private</span> _minDate</b><a href="#_minDate"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2469,7 +2733,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="cmpRef"></a>
-                                    <b><span class="modifier">Private</span> cmpRef</b>
+                                    <span class="name"><b><span class="modifier">Private</span> cmpRef</b><a href="#cmpRef"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2498,7 +2762,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="dateConfig"></a>
-                                    <b> dateConfig</b>
+                                    <span class="name"><b> dateConfig</b><a href="#dateConfig"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2527,7 +2791,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="dateFormat"></a>
-                                    <b> dateFormat</b>
+                                    <span class="name"><b> dateFormat</b><a href="#dateFormat"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2550,7 +2814,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="isOpen"></a>
-                                    <b> isOpen</b>
+                                    <span class="name"><b> isOpen</b><a href="#isOpen"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2578,7 +2842,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="lastEventTarget"></a>
-                                    <b><span class="modifier">Private</span> lastEventTarget</b>
+                                    <span class="name"><b><span class="modifier">Private</span> lastEventTarget</b><a href="#lastEventTarget"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2607,7 +2871,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="maxDate"></a>
-                                    <b> maxDate</b>
+                                    <span class="name"><b> maxDate</b><a href="#maxDate"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2630,7 +2894,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="minDate"></a>
-                                    <b> minDate</b>
+                                    <span class="name"><b> minDate</b><a href="#minDate"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2653,7 +2917,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="onChange"></a>
-                                    <b><span class="modifier">Private</span> onChange</b>
+                                    <span class="name"><b><span class="modifier">Private</span> onChange</b><a href="#onChange"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -2676,7 +2940,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="onTouched"></a>
-                                    <b><span class="modifier">Private</span> onTouched</b>
+                                    <span class="name"><b><span class="modifier">Private</span> onTouched</b><a href="#onTouched"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>

@@ -1366,32 +1366,6 @@
                         </tr>
                         <tr>
                             <td class="col-md-4">
-                                <h6><b>Methods</b></h6>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <ul class="index-list">
-                                    <li>
-                                         <a href="#drag">drag</a>
-                                    </li>
-                                    <li>
-                                         <a href="#dragEnd">dragEnd</a>
-                                    </li>
-                                    <li>
-                                         <a href="#dragStart">dragStart</a>
-                                    </li>
-                                    <li>
-                                         <a href="#mouseleave">mouseleave</a>
-                                    </li>
-                                    <li>
-                                         <a href="#mouseover">mouseover</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="col-md-4">
                                 <h6><b>Inputs</b></h6>
                             </td>
                         </tr>
@@ -1409,6 +1383,52 @@
                                     </li>
                                     <li>
                                         <a href="#reDraggable">reDraggable</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>Outputs</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#onDragEnd">onDragEnd</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onDragging">onDragging</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onDragStart">onDragStart</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <h6><b>HostListeners</b></h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <ul class="index-list">
+                                    <li>
+                                        <a href="#drag">drag</a>
+                                    </li>
+                                    <li>
+                                        <a href="#dragend">dragend</a>
+                                    </li>
+                                    <li>
+                                        <a href="#dragstart">dragstart</a>
+                                    </li>
+                                    <li>
+                                        <a href="#mouseleave">mouseleave</a>
+                                    </li>
+                                    <li>
+                                        <a href="#mouseover">mouseover</a>
                                     </li>
                                 </ul>
                             </td>
@@ -1470,7 +1490,7 @@
                                 </td>
                                 <td class="col-md-10">
                                       <p>
-                                        <em>Type:</em>    <code>||||||||</code>
+                                        <em>Type:</em>    <code>&quot;none&quot; | &quot;copy&quot; | &quot;copyLink&quot; | &quot;copyMove&quot; | &quot;link&quot; | &quot;linkMove&quot; | &quot;move&quot; | &quot;all&quot; | &quot;uninitialized&quot;</code>
 
                                       </p>
                                     <p>
@@ -1569,30 +1589,27 @@
                     </table>
             </section>
 
+
             <section>
-                
-                    <h3 id="methods">
-                        Methods
-                    </h3>
-                    <table class="table table-sm table-bordered">
+                <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
                                     <a name="drag"></a>
-                                    <b> drag</b>
+                                    <span class="name"><b> drag</b><a href="#drag"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
                             <tr>
                                 <td class="col-md-4">
             <code>drag($event: )</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
             
                                     <tr>
                                         <td class="col-md-4">
@@ -1600,36 +1617,27 @@
                                         </td>
                                     </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="dragEnd"></a>
-                                    <b> dragEnd</b>
+                                    <a name="dragend"></a>
+                                    <span class="name"><b> dragend</b><a href="#dragend"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>dragEnd($event: )</code>
+            <code>dragend($event: )</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
             
                                     <tr>
                                         <td class="col-md-4">
@@ -1637,36 +1645,27 @@
                                         </td>
                                     </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <a name="dragStart"></a>
-                                    <b> dragStart</b>
+                                    <a name="dragstart"></a>
+                                    <span class="name"><b> dragstart</b><a href="#dragstart"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>dragStart($event: )</code>
+            <code>dragstart($event: )</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
             
                                     <tr>
                                         <td class="col-md-4">
@@ -1674,15 +1673,6 @@
                                         </td>
                                     </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -1690,20 +1680,20 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="mouseleave"></a>
-                                    <b> mouseleave</b>
+                                    <span class="name"><b> mouseleave</b><a href="#mouseleave"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
                             <tr>
                                 <td class="col-md-4">
             <code>mouseleave(event: )</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
             
                                     <tr>
                                         <td class="col-md-4">
@@ -1711,15 +1701,6 @@
                                         </td>
                                     </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -1727,20 +1708,20 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="mouseover"></a>
-                                    <b> mouseover</b>
+                                    <span class="name"><b> mouseover</b><a href="#mouseover"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Arguments : </i><code>'$event' </code>
+                                    </td>
+                                </tr>
                             <tr>
                                 <td class="col-md-4">
             <code>mouseover(event: )</code>
                                 </td>
                             </tr>
             
-                                <tr>
-                                    <td class="col-md-4">
-                                        <i>Decorators : </i><code>HostListener</code>
-                                    </td>
-                                </tr>
             
                                     <tr>
                                         <td class="col-md-4">
@@ -1748,18 +1729,10 @@
                                         </td>
                                     </tr>
             
-                            <tr>
-                                <td class="col-md-4">
-            
-                                        <div class="io-description">
-                                            <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-            
-                                        </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
             </section>
+
 
             <section>
                 
@@ -1771,12 +1744,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="DRAGGABLE_DATA_KEY"></a>
-                                    <b><span class="modifier">Static</span> DRAGGABLE_DATA_KEY</b>
+                                    <span class="name"><b><span class="modifier">Static</span> DRAGGABLE_DATA_KEY</b><a href="#DRAGGABLE_DATA_KEY"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <span class="modifier-icon fa fa-export"></span><code>DRAGGABLE_DATA_KEY:     <code></code>
+                                    <span class="modifier-icon fa fa-reset"></span><code>DRAGGABLE_DATA_KEY:     <code></code>
             </code>
                                 </td>
                             </tr>
@@ -1799,7 +1772,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="draggableHandle"></a>
-                                    <b> draggableHandle</b>
+                                    <span class="name"><b> draggableHandle</b><a href="#draggableHandle"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1833,7 +1806,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="handle"></a>
-                                    <b> handle</b>
+                                    <span class="name"><b> handle</b><a href="#handle"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>

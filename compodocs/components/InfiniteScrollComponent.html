@@ -1425,9 +1425,6 @@
                                  <a href="#onScrollChange">onScrollChange</a>
                             </li>
                             <li>
-                                 <a href="#onWinScroll">onWinScroll</a>
-                            </li>
-                            <li>
                                 <span class="modifier">Private</span> <a href="#registerOnScrollStream">registerOnScrollStream</a>
                             </li>
                             <li>
@@ -1476,6 +1473,20 @@
                         </ul>
                     </td>
                 </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll">window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </section>
@@ -1495,6 +1506,43 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>windowRef</td>
+                                                      <td>
+                                                                <code><a href="../injectables/WindowRef.html" target="_self" >WindowRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td>elementRef</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -1608,6 +1656,38 @@
             </table>
     </section>
 
+
+    <section>
+        <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="window:scroll"></a>
+                            <span class="name"><b> window:scroll</b><a href="#window:scroll"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Arguments : </i><code>'$event' </code>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>window:scroll($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/exports/infinite-scroll/infinite-scroll.component.ts:67</a></div>
+                                </td>
+                            </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
     <section>
         
             <h3 id="methods">
@@ -1618,7 +1698,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="loadFinish"></a>
-                            <b> loadFinish</b>
+                            <span class="name"><b> loadFinish</b><a href="#loadFinish"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1638,9 +1718,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>complete</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1650,7 +1759,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnDestroy"></a>
-                            <b> ngOnDestroy</b>
+                            <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1682,7 +1791,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <b> ngOnInit</b>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1714,7 +1823,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onScrollChange"></a>
-                            <b> onScrollChange</b>
+                            <span class="name"><b> onScrollChange</b><a href="#onScrollChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1745,50 +1854,13 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <a name="onWinScroll"></a>
-                            <b> onWinScroll</b>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-    <code>onWinScroll($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
-                        </td>
-                    </tr>
-    
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Decorators : </i><code>HostListener</code>
-                            </td>
-                        </tr>
-    
-                            <tr>
-                                <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/exports/infinite-scroll/infinite-scroll.component.ts:67</a></div>
-                                </td>
-                            </tr>
-    
-                    <tr>
-                        <td class="col-md-4">
-    
-                                <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-    
-                                </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
                             <a name="registerOnScrollStream"></a>
-                            <b><span class="modifier">Private</span> registerOnScrollStream</b>
+                            <span class="name"><b><span class="modifier">Private</span> registerOnScrollStream</b><a href="#registerOnScrollStream"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>registerOnScrollStream(scrollStream: EventEmitter<UIEvent>)</code>
                         </td>
                     </tr>
@@ -1804,9 +1876,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>scrollStream</td>
+                                                      <td>
+                                                              <code>EventEmitter&lt;UIEvent&gt;</code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1816,12 +1917,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setupScrollEvent"></a>
-                            <b><span class="modifier">Private</span> setupScrollEvent</b>
+                            <span class="name"><b><span class="modifier">Private</span> setupScrollEvent</b><a href="#setupScrollEvent"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>setupScrollEvent()</code>
                         </td>
                     </tr>
@@ -1849,12 +1950,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="unSubscription"></a>
-                            <b><span class="modifier">Private</span> unSubscription</b>
+                            <span class="name"><b><span class="modifier">Private</span> unSubscription</b><a href="#unSubscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon method fa fa-play lock"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>unSubscription()</code>
                         </td>
                     </tr>
@@ -1889,7 +1990,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="scrollStream"></a>
-                            <b> scrollStream</b>
+                            <span class="name"><b> scrollStream</b><a href="#scrollStream"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1912,7 +2013,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="subscription"></a>
-                            <b> subscription</b>
+                            <span class="name"><b> subscription</b><a href="#subscription"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2040,7 +2141,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
   &lt;/div&gt;
  &lt;/ng-template&gt;
 
-&lt;ng-template [ngTemplateOutlet]&#x3D;&quot;spinnerTemplate || defaultTemplate&quot; [ngOutletContext]&#x3D;&quot;{ $implicit: this }&quot;&gt; &lt;/ng-template&gt;
+&lt;ng-template [ngTemplateOutlet]&#x3D;&quot;spinnerTemplate || defaultTemplate&quot; [ngTemplateOutletContext]&#x3D;&quot;{ $implicit: this }&quot;&gt; &lt;/ng-template&gt;
 </code></pre>
     </div>
 
@@ -2067,7 +2168,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ng-template #defaultTemplate let-spinner="">  <div class="spinner">    <div class="bounce bounce1"></div>    <div class="bounce bounce2"></div>    <div class="bounce bounce3"></div>  </div> </ng-template><ng-template [ngTemplateOutlet]="spinnerTemplate || defaultTemplate" [ngOutletContext]="{ $implicit: this }"> </ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><ng-template #defaultTemplate let-spinner="">  <div class="spinner">    <div class="bounce bounce1"></div>    <div class="bounce bounce2"></div>    <div class="bounce bounce3"></div>  </div> </ng-template><ng-template [ngTemplateOutlet]="spinnerTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: this }"> </ng-template></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'UploadFileTmplComponent', 'selector': 're-upload-file'},{'name': 'UploadPreviewTmplComponent', 'selector': 're-upload-preview'},{'name': 'UploadToolbarTmplComponent', 'selector': 're-upload-toolbar'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'InfiniteScrollComponent'};

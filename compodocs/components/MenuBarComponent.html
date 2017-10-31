@@ -1464,6 +1464,34 @@
                                 </td>
                             </tr>
     
+                    <tr>
+                        <td class="col-md-4">
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>elementRef</td>
+                                                      <td>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
     </section>
@@ -1479,7 +1507,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>|</code>
+                                <em>Type:</em>    <code>&quot;container-fluid&quot; | &quot;container&quot;</code>
 
                               </p>
                             <p>
@@ -1524,7 +1552,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>|</code>
+                                <em>Type:</em>    <code>&quot;down&quot; | &quot;up&quot;</code>
 
                               </p>
                         </td>
@@ -1586,7 +1614,7 @@
                         </td>
                         <td class="col-md-10">
                               <p>
-                                <em>Type:</em>    <code>||||||</code>
+                                <em>Type:</em>    <code>&quot;navbar-fixed-top&quot; | &quot;navbar-fixed-bottom&quot; | &quot;container-fluid&quot; | &quot;navbar-static-top&quot; | &quot;navbar-static-bottom&quot; | &quot;navbar-form&quot; | &quot;sidebar&quot;</code>
 
                               </p>
                         </td>
@@ -1601,6 +1629,8 @@
     </section>
 
 
+
+
     <section>
         
             <h3 id="methods">
@@ -1611,12 +1641,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="hide"></a>
-                            <b> hide</b>
+                            <span class="name"><b> hide</b><a href="#hide"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>hide($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+    <code>hide($event?: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1631,9 +1661,39 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>$event</td>
+                                                      <td>
+                                                              <code><a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank" >Event</a></code>
+                                                      </td>
+                                                      <td>
+                                                          true
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1643,7 +1703,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="isRouter"></a>
-                            <b> isRouter</b>
+                            <span class="name"><b> isRouter</b><a href="#isRouter"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1663,9 +1723,37 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>url</td>
+                                                      <td>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1675,7 +1763,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onShowNavBarChange"></a>
-                            <b> onShowNavBarChange</b>
+                            <span class="name"><b> onShowNavBarChange</b><a href="#onShowNavBarChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1695,9 +1783,38 @@
                         <td class="col-md-4">
     
                                 <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>showNavBar</td>
+                                                      <td>
+                                                              <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
                                     <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
     
                                 </div>
+                                    <div class="io-description">
+                                        
+                                    </div>
                         </td>
                     </tr>
                 </tbody>
@@ -1707,7 +1824,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="toggle"></a>
-                            <b> toggle</b>
+                            <span class="name"><b> toggle</b><a href="#toggle"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1746,7 +1863,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="showNavBar"></a>
-                            <b> showNavBar</b>
+                            <span class="name"><b> showNavBar</b><a href="#showNavBar"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1775,7 +1892,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="sidebarOpen"></a>
-                            <b> sidebarOpen</b>
+                            <span class="name"><b> sidebarOpen</b><a href="#sidebarOpen"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
