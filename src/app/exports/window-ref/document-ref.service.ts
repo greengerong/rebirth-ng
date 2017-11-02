@@ -4,7 +4,7 @@ import { DOCUMENT } from '@angular/common';
 @Injectable()
 export class DocumentRef {
 
-  constructor(@Inject(DOCUMENT) public document: Document) {
+  constructor(@Inject(DOCUMENT) public document: any) {
 
   }
 
