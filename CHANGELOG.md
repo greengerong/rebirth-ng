@@ -1,4 +1,30 @@
 
+# 0.1.2 (2017-11-2)
+
+## Bug Fixes
+
+## Features
+
+* (feature): upgrade to angular 5.0.0 final release version
+
+# 0.1.1 (2017-10-30)
+
+## Bug Fixes
+
+## Features
+
+* (feature): upgrade to angular 5.0.0-rc9
+
+
+# 0.0.23 (2017-10-01)
+
+## Bug Fixes
+
+## Features
+
+* imporve
+
+
 # 0.0.22 (2017-09-07)
 
 ## Bug Fixes
