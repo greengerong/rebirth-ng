@@ -15,6 +15,7 @@ export class WindowRef {
     return window.pageXOffset;
   }
 
+
   get pageYOffset() {
     return window.pageYOffset;
   }
@@ -34,5 +35,4 @@ export class WindowRef {
   getBoundingClientRect(elementRef: ElementRef) {
     return elementRef.nativeElement && elementRef.nativeElement.getBoundingClientRect();
   }
-
 }

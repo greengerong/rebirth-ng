@@ -6,6 +6,7 @@
 ## Features
 
 * (tabs): change remove tab body to hide tab body
+* (ellipsis): ellipsis with html
 
 # 0.1.2 (2017-11-2)
 
