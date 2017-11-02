@@ -31,7 +31,7 @@
 
 ## Features
 
-* imporve
+* improve
 
 
 # 0.0.22 (2017-09-07)
