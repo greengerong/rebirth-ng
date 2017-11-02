@@ -6,7 +6,6 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { _throw } from 'rxjs/observable/throw';
 import { Observable } from 'rxjs/Observable';
-import { underline } from 'chalk';
 
 @Injectable()
 export class ModalService {
