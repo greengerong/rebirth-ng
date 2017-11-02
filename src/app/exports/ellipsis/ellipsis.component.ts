@@ -1,5 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { DocumentRef } from '../window-ref/document-ref.service';
 
 @Component({
   selector: 're-ellipsis',
@@ -13,8 +14,9 @@ export class EllipsisComponent {
   fullText = '';
   ellipsisText = '';
   @Input() placement: 'top' | 'bottom' | 'left' | 'right';
+  @Input() html = false;
 
-  constructor(rebirthNGConfig: RebirthNGConfig) {
+  constructor(rebirthNGConfig: RebirthNGConfig, private documentRef: DocumentRef) {
     this.length = rebirthNGConfig.ellipsis.length;
     this.placement = <any>rebirthNGConfig.ellipsis.placement;
   }
@@ -32,6 +34,14 @@ export class EllipsisComponent {
   }
 
   private ellipsis() {
-    this.ellipsisText = this.fullText.length > this.length ? this.fullText.substr(0, this.length) : '';
+    const text = this.html ? this.unCodeHtml(this.fullText) : this.fullText;
+    this.ellipsisText = text.length > this.length ? text.substr(0, this.length) : '';
+  }
+
+  private unCodeHtml(text: string) {
+    const $div = this.documentRef.createElement('div');
+    $div.innerHTML = text;
+    text = $div.innerText;
+    return text;
   }
 }

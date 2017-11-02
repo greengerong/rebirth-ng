@@ -1,4 +1,13 @@
 
+# 0.1.4 (2017-11-2)
+
+## Bug Fixes
+
+## Features
+
+* (tabs): change remove tab body to hide tab body
+* (ellipsis): ellipsis with html
+
 # 0.1.2 (2017-11-2)
 
 ## Bug Fixes
@@ -22,7 +31,7 @@
 
 ## Features
 
-* imporve
+* improve
 
 
 # 0.0.22 (2017-09-07)
