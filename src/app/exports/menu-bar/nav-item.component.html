@@ -1,46 +1,32 @@
-<ng-template #defaultMenuTemplate let-menu="menu">
-
-  <a *ngIf="menu.router" [routerLink]="menu.router" routerLinkActive="active" [queryParams]="menu.queryParams"
-     [target]="menu.target || '_self'">
-    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
-
-  <a *ngIf="menu.handler" (click)="menu.handler(menu)">
-    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
-
-  <a *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || '_self'">
-    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
-
-</ng-template>
-
-<ul class="nav navbar-nav" [ngClass]="{'navbar-right': right}">
+<ul class="navbar-nav mr-auto" [ngClass]="{'navbar-right': right}">
   <ng-container *ngFor="let menu of menus">
 
-    <li *ngIf="!menu.children?.length" class="{{menu.cssClass}}">
+    <li *ngIf="!menu.children?.length" class="nav-item {{menu.cssClass}}" routerLinkActive="active">
       <ng-template *ngIf="menu.itemTemplate" [ngTemplateOutlet]="menu.itemTemplate"
                    [ngTemplateOutletContext]="{ menu: menu }">
       </ng-template>
 
       <ng-container *ngIf="!menu.itemTemplate">
-        <a *ngIf="menu.router" [routerLink]="menu.router" routerLinkActive="active" [queryParams]="menu.queryParams"
-           [target]="menu.target || '_self'">
+        <a class="nav-link" *ngIf="menu.router" [routerLink]="menu.router"
+           [queryParams]="menu.queryParams" [target]="menu.target || '_self'">
           <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
 
-        <a *ngIf="menu.handler" (click)="menu.handler(menu)">
+        <a class="nav-link" *ngIf="menu.handler" (click)="menu.handler(menu)">
           <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
 
-        <a *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || '_self'">
+        <a class="nav-link" *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || '_self'">
           <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>
       </ng-container>
     </li>
 
 
     <li *ngIf="menu.children?.length" reDropdown [direction]="direction" routerLinkActive="active"
-        class="dropdown-menu-parent {{menu.cssClass}}">
-      <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
+        class="dropdown-menu-parent nav-item dropdown {{menu.cssClass}}">
+      <a class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">
         <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}
         <span class="caret"></span>
       </a>
-      <ul class="dropdown-menu forAnimate">
+      <div class="dropdown-menu forAnimate" aria-labelledby="navbarDropdown">
         <ng-container *ngFor="let child of menu?.children">
 
           <ng-template *ngIf="child.itemTemplate" [ngTemplateOutlet]="child.itemTemplate"
@@ -48,23 +34,25 @@
           </ng-template>
 
           <ng-container *ngIf="!child.itemTemplate">
-            <li *ngIf="!child.divider && !child.header" role="menuitem" class="{{child.cssClass}}">
-              <a *ngIf="child.router" [routerLink]="child.router" routerLinkActive="active"
-                 [queryParams]="child.queryParams" [target]="child.target || '_self'">
-                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
 
-              <a *ngIf="child.handler" (click)="child.handler(child)">
-                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
+            <a *ngIf="child.router" [routerLink]="child.router" role="menuitem" class="{{child.cssClass}}"
+               routerLinkActive="active" [queryParams]="child.queryParams" [target]="child.target || '_self'">
+              <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
 
-              <a *ngIf="!child.router && !child.handler" [href]="child.url" [target]="child.target || '_self'">
-                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
-            </li>
+            <a *ngIf="child.handler" role="menuitem" class="{{child.cssClass}}"
+               (click)="child.handler(child)">
+              <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
+
+            <a *ngIf="!child.router && !child.handler" role="menuitem" class="{{child.cssClass}}"
+               [href]="child.url" [target]="child.target || '_self'">
+              <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>
+
+            <div *ngIf="child.divider" class="dropdown-divider" role="separator"></div>
+            <div *ngIf="child.header" class="dropdown-header">{{child.text}}</div>
           </ng-container>
-          <li *ngIf="child.divider" role="separator" class="divider"></li>
-          <li *ngIf="child.header" class="dropdown-header">{{child.text}}</li>
         </ng-container>
 
-      </ul>
+      </div>
     </li>
   </ng-container>
 

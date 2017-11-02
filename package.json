@@ -52,7 +52,7 @@
     "angular-ssr": "^0.10.39",
     "angular2-inline-template-style": "^1.0.0",
     "body-parser": "^1.17.1",
-    "bootstrap-sass": "^3.3.7",
+    "bootstrap": "^4.0.0-beta.2",
     "classlist.js": "^1.1.20150312",
     "codelyzer": "^3.1.2",
     "core-js": "^2.5.1",

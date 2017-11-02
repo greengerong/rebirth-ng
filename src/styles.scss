@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 $icon-font-path: "./assets/fonts/";
-//@import "~bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "~bootstrap/scss/bootstrap.scss";
 @import '~highlight.js/styles/github';
 
 .overlay-demo-logo {

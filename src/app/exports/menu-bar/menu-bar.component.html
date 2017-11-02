@@ -1,29 +1,68 @@
-<nav class="menu-bar navbar navbar-{{ inverse ? 'inverse' : 'default'}} {{type}} {{cssClass}}"
-     [ngClass]="{'sidebar-open': sidebarOpen}" (click)="hide($event)">
-  <div class="{{type == 'sidebar' ? 'container-fluid' : contentType}}">
-    <div class="navbar-header collapsed" *ngIf="menuOptions.logo || menuOptions.title">
-      <button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"
-              (click)="toggle($event);">
-        <span class="sr-only">{{menuOptions.title}}</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a *ngIf="!isRouter(menuOptions.home)" class="navbar-brand text-center" [href]="menuOptions.home">
-        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>
-        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>
-      </a>
-      <a *ngIf="isRouter(menuOptions.home)" class="navbar-brand text-center" [routerLink]="menuOptions.home"
-         [queryParams]="menuOptions.homeQueryParams">
-        <img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>
-        <span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>
-      </a>
-    </div>
-    <div #navbarCollapse class="navbar-collapse" [ngClass]="{collapse: !showNavBar, in: showNavBar}"
-         aria-expanded="true">
-      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.menus"></re-nav-item>
-      <re-nav-item class="nav-item" [direction]="direction" [menus]="menuOptions.rightMenus"
-                   [right]="true"></re-nav-item>
-    </div>
+<!--<nav class="menu-bar navbar navbar-expand-lg navbar-light bg-light {{cssClass}}"-->
+     <!--[ngClass]="{'sidebar-open': sidebarOpen}" (click)="hide($event)">-->
+  <!--<div class="{{contentType}}">-->
+    <!--<div class="navbar-header collapsed" *ngIf="menuOptions.logo || menuOptions.title">-->
+      <!--&lt;!&ndash;<button type="button" class="navbar-toggle collapsed" aria-expanded="true" aria-controls="navbar"&ndash;&gt;-->
+              <!--&lt;!&ndash;(click)="toggle($event);">&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="sr-only">{{menuOptions.title}}</span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</button>&ndash;&gt;-->
+      <!--<a *ngIf="!isRouter(menuOptions.home)" class="navbar-brand text-center" [href]="menuOptions.home">-->
+        <!--<img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>-->
+        <!--<span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>-->
+      <!--</a>-->
+      <!--<a *ngIf="isRouter(menuOptions.home)" class="navbar-brand text-center" [routerLink]="menuOptions.home"-->
+         <!--[queryParams]="menuOptions.homeQueryParams">-->
+        <!--<img class="logo" *ngIf="menuOptions.logo" [src]="menuOptions.logo" [attr.alt]="menuOptions.title"/>-->
+        <!--<span *ngIf="!menuOptions.logo">{{menuOptions.title}}</span>-->
+      <!--</a>-->
+      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--<span class="navbar-toggler-icon"></span>-->
+      <!--</button>-->
+    <!--</div>-->
+    <!--<div #navbarCollapse class="navbar-collapse" [ngClass]="{collapse: !showNavBar, in: showNavBar}"-->
+         <!--aria-expanded="true">-->
+      <!--<re-nav-item [direction]="direction" [menus]="menuOptions.menus"></re-nav-item>-->
+      <!--<re-nav-item [direction]="direction" [menus]="menuOptions.rightMenus"-->
+                   <!--[right]="true"></re-nav-item>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>
