@@ -1,4 +1,12 @@
 
+# 0.1.4 (2017-11-2)
+
+## Bug Fixes
+
+## Features
+
+* (tabs): change remove tab body to hide tab body
+
 # 0.1.2 (2017-11-2)
 
 ## Bug Fixes
