@@ -1,4 +1,12 @@
 
+# 0.1.5 (2017-11-06)
+
+## Bug Fixes
+
+## Features
+
+* (FileUpload): remove `HttpClientModule` for lazy load module
+
 # 0.1.4 (2017-11-2)
 
 ## Bug Fixes

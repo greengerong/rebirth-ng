@@ -47,6 +47,7 @@ import { ROUTER_CONFIG } from './app.route';
 import { GettingStartedComponent, ShowcaseComponent } from './feature';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RebirthRouterReuseStrategy } from './exports';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,8 @@ import { RebirthRouterReuseStrategy } from './exports';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
     RouterModule.forRoot(ROUTER_CONFIG),
     SharedModule.forRoot(),
     RebirthNGModule.forRoot(),

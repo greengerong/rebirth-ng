@@ -10,12 +10,10 @@ import {
   UploadPreviewTmplComponent,
   UploadFileTmplComponent
 } from './file-upload-tmpl.directive';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     AlertBoxModule,
     DraggableModule
   ],

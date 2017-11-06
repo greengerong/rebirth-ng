@@ -9,7 +9,8 @@ import {
   Output,
   EventEmitter,
   ChangeDetectorRef,
-  TemplateRef
+  TemplateRef,
+  Optional
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
@@ -56,7 +57,7 @@ export class FileUploadComponent implements AfterViewInit {
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private renderer: Renderer2,
-              private http: HttpClient,
+              @Optional() private http: HttpClient,
               private changeDetectorRef: ChangeDetectorRef) {
 
     this.fileSizeErrorMessage = this.rebirthNGConfig.fileUpload.fileSizeErrorMessage;
