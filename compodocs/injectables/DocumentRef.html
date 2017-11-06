@@ -1341,6 +1341,9 @@
                                          <a href="#body">body</a>
                                     </li>
                                     <li>
+                                        <span class="modifier">Public</span> <a href="#document">document</a>
+                                    </li>
+                                    <li>
                                          <a href="#documentElement">documentElement</a>
                                     </li>
                                 </ul>
@@ -1364,6 +1367,52 @@
                 </table>
             </section>
 
+            <section>
+                <h3 id="constructor">Constructor</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <code>constructor(document: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                                </td>
+                            </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:5</a></div>
+                                        </td>
+                                    </tr>
+            
+                            <tr>
+                                <td class="col-md-4">
+                                        <div>
+                                                <b>Parameters :</b>
+                                                <table class="params">
+                                                    <thead>
+                                                        <tr>
+                                                            <td>Name</td>
+                                                            <td>Type</td>
+                                                            <td>Optional</td>
+                                                            <td>Description</td>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                            <tr>
+                                                              <td>document</td>
+                                                              <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                              </td>
+                                                              <td>
+                                                              </td>
+                                                              <td></td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
+                                        </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
 
             <section>
                 
@@ -1387,7 +1436,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:14</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:19</a></div>
                                         </td>
                                     </tr>
             
@@ -1459,7 +1508,41 @@
                                 </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:6</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:11</a></div>
+                                        </td>
+                                    </tr>
+            
+            
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="col-md-4">
+                                    <a name="document"></a>
+                                    <span class="name"><b><span class="modifier">Public</span> document</b><a href="#document"><span class="fa fa-link"></span></a></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <span class="modifier-icon fa fa-reset"></span><code>document:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            </code>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <i>Decorators : </i><code>Inject</code>
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:7</a></div>
                                         </td>
                                     </tr>
             
@@ -1488,7 +1571,7 @@
                                 </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:10</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/window-ref/document-ref.service.ts:15</a></div>
                                         </td>
                                     </tr>
             
@@ -1500,21 +1583,26 @@
 
 
     <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers"><code class="language-typescript">import { Inject, Injectable } from &#x27;@angular/core&#x27;;
+import { DOCUMENT } from &#x27;@angular/common&#x27;;
 
 @Injectable()
 export class DocumentRef {
 
+  constructor(@Inject(DOCUMENT) public document: any) {
+
+  }
+
   get body(): any {
-    return document.body;
+    return this.document.body;
   }
 
   get documentElement(): any {
-    return document.documentElement;
+    return this.document.documentElement;
   }
 
   createElement(tag) {
-    return document.createElement(tag);
+    return this.document.createElement(tag);
   }
 }
 </code></pre>
