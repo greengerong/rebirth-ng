@@ -1,4 +1,12 @@
 
+# 0.1.5 (2017-11-14)
+
+## Bug Fixes
+
+## Features
+
+* (version): same as angular version: `5.0.0`
+
 # 0.1.5 (2017-11-06)
 
 ## Bug Fixes
