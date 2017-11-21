@@ -7,15 +7,15 @@ const treeData = require('./data.json');
   selector: 're-tree-view-demo',
   templateUrl: './tree-view-demo.component.html',
   styles: [`
-    :host /deep/ .glyphicon-file {
+    :host ::ng-deep .glyphicon-file {
       color: #FF9800;
     }
 
-    :host /deep/ .glyphicon-folder-close {
+    :host ::ng-deep .glyphicon-folder-close {
       color: #FF9800;
     }
 
-    :host /deep/ .glyphicon-folder-open {
+    :host ::ng-deep .glyphicon-folder-open {
       color: #FF9800;
     }
   `]

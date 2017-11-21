@@ -47,7 +47,7 @@ nav.sidebar {
     margin-left: 0px;
   }
 
-  :host /deep/ {
+  :host ::ng-deep {
     nav.sidebar {
       a {
         padding-right: 13px;
@@ -100,7 +100,7 @@ nav.sidebar {
     float: left;
   }
 
-  :host /deep/ {
+  :host ::ng-deep {
     nav.sidebar {
       .forAnimate {
         opacity: 1;
@@ -109,7 +109,7 @@ nav.sidebar {
   }
 }
 
-:host /deep/ {
+:host ::ng-deep {
   nav.sidebar .navbar-nav .open .dropdown-menu > li > a:hover, nav.sidebar .navbar-nav .open .dropdown-menu > li > a:focus {
     background-color: transparent;
   }

@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.node-item-content /deep/ {
+.node-item-content ::ng-deep {
   display: inline-block;
   .node-icon {
     margin-right: 2px;

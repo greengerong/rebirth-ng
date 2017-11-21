@@ -37,13 +37,13 @@
 }
 
 :host {
-  /deep/ .alert {
+  ::ng-deep .alert {
     margin: 0px 0px 5px 0px;
   }
 }
 
 :host.alert-top, :host.alert-bottom {
-  /deep/ .alert {
+  ::ng-deep .alert {
     border-radius: 0px;
   }
 }

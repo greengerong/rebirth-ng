@@ -1,5 +1,13 @@
 
-# 0.1.5 (2017-11-14)
+# 5.0.1(2017-11-21)
+
+## Bug Fixes
+
+## Features
+
+* (version): replace `/deep/` to `::ng-deep`
+
+# 5.0.0 (2017-11-14)
 
 ## Bug Fixes
 
