@@ -1,4 +1,13 @@
 
+# 5.0.2(2017-12-04)
+
+## Bug Fixes
+
+* (AutoComplete): remove `valueParser` from `AutoComplete`;
+
+
+## Features
+
 # 5.0.1(2017-11-21)
 
 ## Bug Fixes

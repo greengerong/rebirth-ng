@@ -28,7 +28,6 @@ export class RebirthNGConfig {
     itemTemplate: null,
     noResultItemTemplate: null,
     formatter: (item) => item ? (item.label || item.toString()) : '',
-    valueParser: (item) => item
   };
 
   carousel = {

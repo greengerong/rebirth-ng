@@ -28,7 +28,6 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
-  @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
 
   selectValue: any;
@@ -42,7 +41,6 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
     this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
     this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
     this.formatter = rebirthNGConfig.autoComplete.formatter;
-    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
     this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
 

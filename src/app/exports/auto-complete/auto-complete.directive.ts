@@ -55,7 +55,6 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
-  @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
   @Output() selectValueChange = new EventEmitter<any>();
   @Input() placementElement: any;
@@ -78,7 +77,6 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
     this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
     this.formatter = rebirthNGConfig.autoComplete.formatter;
-    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
   }
 
   ngOnInit() {
@@ -96,16 +94,17 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.positionPopup();
 
       this.popupRef.instance.registerOnChange(item => {
-        const value = this.valueParser(item);
-        this.writeValue(value);
-        this.onChange(value);
+        this.value = item;
+        this.writeInputValue(item);
+        this.onChange(item);
         this.hidePopup();
         this.selectValueChange.emit(item);
       });
     }, 0);
   }
 
-  @Input() set dataSource(dataSource: any[]) {
+  @Input()
+  set dataSource(dataSource: any[]) {
     if (dataSource) {
       this.arraySource = dataSource;
       this.setupArraySource();
@@ -259,7 +258,8 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(value || '') || '');
+    const formatValue = value || '';
+    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(formatValue) || '');
   }
 
   private unSubscription() {
