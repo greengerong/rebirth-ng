@@ -1,4 +1,10 @@
 
+# 5.0.3(2017-12-07)
+
+## Bug Fixes
+
+* (pagination): pagination with `headTemplate` and `tailTemplate`;
+
 # 5.0.2(2017-12-04)
 
 ## Bug Fixes
