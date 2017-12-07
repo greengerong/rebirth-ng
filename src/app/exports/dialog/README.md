@@ -1,6 +1,6 @@
 ## Dialog
 
-* Shoulde pass `RebirthNGConfig.rootContainer` in your `AppComponent` when you did not pass `rootContainer` parameters to `ModalService`.
+* Shoulde pass `RebirthNGConfig.rootContainer` in your `AppComponent` when you did not pass `rootContainer` parameters to `DialogService`.
 
 
     export class AppComponent implements OnInit {
