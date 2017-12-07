@@ -1,0 +1,25 @@
+.goto-input {
+  max-width: 2.5em;
+}
+
+.head {
+  margin-right: 1rem;
+}
+
+.tail {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form-control {
+    text-align: center;
+  }
+}
+
+:host ::ng-deep {
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

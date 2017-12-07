@@ -1,6 +1,6 @@
 import {
   Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy,
-  SimpleChanges
+  SimpleChanges, TemplateRef
 } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -26,6 +26,8 @@ export class PaginationComponent implements OnChanges {
   @Input() nextLink: string;
   @Input() size: '' | 'lg' | 'sm';
   @Input() cssClass: string;
+  @Input() headTemplate: TemplateRef<any>;
+  @Input() tailTemplate: TemplateRef<any>;
   showPages = [];
   totalPage = 0;
 

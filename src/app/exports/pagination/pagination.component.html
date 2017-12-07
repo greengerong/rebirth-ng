@@ -1,4 +1,7 @@
 <nav aria-label="Pagination" class="{{cssClass}}">
+  <ng-template *ngIf="headTemplate" [ngTemplateOutlet]="headTemplate"
+               [ngTemplateOutletContext]="{ $implicit: this }"></ng-template>
+
   <ul class="pagination {{size? 'pagination-' + size: ''}}">
     <li *ngIf="boundary" [ngClass]="{disabled: pageIndex == 1}">
       <a [attr.aria-label]="firstLink" (click)="first()"><span aria-hidden="true">{{firstLink}}</span></a>
@@ -22,4 +25,6 @@
       <a [attr.aria-label]="lastLink" (click)="last()"><span aria-hidden="true">{{lastLink}}</span></a>
     </li>
   </ul>
+  <ng-template *ngIf="tailTemplate" [ngTemplateOutlet]="tailTemplate"
+               [ngTemplateOutletContext]="{ $implicit: this }"></ng-template>
 </nav>
