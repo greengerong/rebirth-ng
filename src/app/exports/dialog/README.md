@@ -11,18 +11,3 @@
         // this.rebirthNGConfig.extend(REBIRTH_UI_I18N_ZHCN); i18n
       }
 
-* Make sure put your modal component to `entryComponents` of your module! Example with `ModalTestComponent`: 
-
-    
-    @NgModule({
-      ...
-      declarations: [
-        ModalTestComponent
-      ],
-      entryComponents: [
-        ModalTestComponent
-      ]
-    })
-    export class ModalDemoModule {
-    }
-
