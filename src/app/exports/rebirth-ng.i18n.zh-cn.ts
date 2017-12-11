@@ -54,7 +54,11 @@ export const REBIRTH_NG_I18N_ZHCN = {
       first: '首页',
       last: '尾页',
       pre: '前一页',
-      next: '下一页'
+      next: '下一页',
+      firstLinkCssClass: 'firstLink',
+      preLinkCssClass: 'preLink',
+      nextLinkCssClass: 'nextLink',
+      lastLinkCssClass: 'lastLink'
     }
   }
   ,

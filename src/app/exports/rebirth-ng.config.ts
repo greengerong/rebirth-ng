@@ -1,4 +1,4 @@
-import { Inject, Injectable, LOCALE_ID, ViewContainerRef } from '@angular/core';
+import { Inject, Injectable, Input, LOCALE_ID, ViewContainerRef } from '@angular/core';
 
 @Injectable()
 export class RebirthNGConfig {
@@ -104,7 +104,11 @@ export class RebirthNGConfig {
       first: 'First',
       last: 'Last',
       pre: 'Previous',
-      next: 'Next'
+      next: 'Next',
+      firstLinkCssClass: 'firstLink',
+      preLinkCssClass: 'preLink',
+      nextLinkCssClass: 'nextLink',
+      lastLinkCssClass: 'lastLink'
     }
   };
 
