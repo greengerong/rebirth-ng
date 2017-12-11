@@ -34,6 +34,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   mutipleItems: any[];
   @ViewChild(AutoCompleteDirective) autoCompleteDirective: AutoCompleteDirective;
   private onChange = (_: any) => null;
+  private onTouched = () => null;
 
   constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.delay = rebirthNGConfig.autoComplete.delay;
@@ -44,7 +45,7 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
     this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
 
-  private onTouched = () => null;
+
 
   writeValue(obj: any): void {
     this.mutipleItems = obj || [];

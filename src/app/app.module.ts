@@ -37,7 +37,8 @@ import {
   ValidatorsDemoModule,
   NotifyDemoModule,
   TreeViewDemoModule,
-  EllipsisDemoModule
+  EllipsisDemoModule,
+  TagsDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -99,7 +100,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ValidatorsDemoModule,
     NotifyDemoModule,
     TreeViewDemoModule,
-    EllipsisDemoModule
+    EllipsisDemoModule,
+    TagsDemoModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

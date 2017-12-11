@@ -28,6 +28,7 @@ export * from './radio-group';
 export * from './rating';
 export * from './select-button';
 export * from './switch';
+export * from './tags';
 export * from './tabs';
 export * from './time-picker';
 export * from './tooltip';

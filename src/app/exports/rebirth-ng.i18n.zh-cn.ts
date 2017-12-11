@@ -67,6 +67,13 @@ export const REBIRTH_NG_I18N_ZHCN = {
     onText: '开启',
     offText: '关闭',
     type: 'primary'
-  }
+  },
 
+  tags: {
+    newTagText: '添加标签',
+    plusIcon: 'glyphicon glyphicon-plus',
+    removeIcon: 'glyphicon glyphicon-remove',
+    maxlength: 20,
+    maxSize: 0
+  }
 };

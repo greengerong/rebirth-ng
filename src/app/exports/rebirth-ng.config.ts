@@ -153,6 +153,14 @@ export class RebirthNGConfig {
     vertical: false
   };
 
+  tags = {
+    newTagText: 'NEW TAG',
+    plusIcon: 'glyphicon glyphicon-plus',
+    removeIcon: 'glyphicon glyphicon-remove',
+    maxlength: 20,
+    maxSize: 0
+  };
+
   treeView = {
     textField: 'label',
     valueField: 'id',
@@ -165,7 +173,12 @@ export class RebirthNGConfig {
   // }
 
   extend(obj: any): this {
-    Object.assign(this, obj);
+    Object.keys(obj || {})
+      .reduce((target, key) => {
+        target[key] = obj[key];
+        return target;
+      }, this);
+
     return this;
   }
 }

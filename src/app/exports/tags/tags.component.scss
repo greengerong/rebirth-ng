@@ -1,0 +1,19 @@
+.tags {
+  padding: 0px;
+  font-weight: normal;
+  ul {
+    display: block;
+    list-style: none;
+    width: 100%;
+    padding: 2px;
+
+    li {
+      display: inline-block;
+      margin: 5px;
+      .label-btn {
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+  }
+}

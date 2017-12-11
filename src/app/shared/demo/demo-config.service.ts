@@ -33,7 +33,8 @@ import {
   TreeViewDemoComponent,
   BreadcrumbsDemoComponent,
   TimePickerDemoComponent,
-  EllipsisDemoComponent
+  EllipsisDemoComponent,
+  TagsDemoComponent
 } from '../../demo';
 
 @Injectable()
@@ -317,6 +318,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/ellipsis/README.md'),
       html: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.html'),
       ts: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.ts'),
+    },
+    {
+      name: 'Tags',
+      directory: 'tags',
+      cmp: TagsDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/tags/README.md'),
+      html: require('!raw-loader!../../demo/tags/tags-demo.component.html'),
+      ts: require('!raw-loader!../../demo/tags/tags-demo.component.ts'),
     },
     // component declare
   ];

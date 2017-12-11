@@ -1,0 +1,21 @@
+<div class="tags {{cssClass}}">
+  <ul>
+    <li *ngFor="let item of mutipleItems">
+              <span class="label label-info" [ngClass]="{disabled: disabled}">{{item}}<i
+                aria-hidden="true" class="label-btn label-remove {{removeIcon}}" *ngIf="!disabled"
+                (click)="removeLabel(item)"></i>
+              </span>
+    </li>
+    <li *ngIf="!disabled && !isTyping" (click)="newTag()" class="new-tag-btn">
+      <button class="btn label label-info" [disabled]="!canAddMore()">{{newTagText}}<i
+        aria-hidden="true" class="label-btn label-plus {{plusIcon}}"></i>
+      </button>
+    </li>
+    <li *ngIf="!disabled && isTyping">
+      <input type="text" name="tagsInput" class="form-control tags-input-control"
+             [maxlength]="maxlength"
+             [(ngModel)]="selectValue" (keydown.enter)="addLabel(selectValue)" (blur)="boxBlur()">
+    </li>
+  </ul>
+</div>
+

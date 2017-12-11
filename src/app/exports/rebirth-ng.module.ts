@@ -36,6 +36,7 @@ import { RebirthValidatorsModule } from './validators';
 import { NotifyModule, NotifyService } from './notify';
 import { TreeViewModule, TreeViewService } from './tree-view';
 import { EllipsisModule } from './ellipsis';
+import { TagsModule } from './tags';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { EllipsisModule } from './ellipsis';
     RebirthValidatorsModule,
     NotifyModule,
     TreeViewModule,
-    EllipsisModule
+    EllipsisModule,
+    TagsModule
   ],
   exports: [
     RebirthCommonModule,
@@ -108,7 +110,8 @@ import { EllipsisModule } from './ellipsis';
     RebirthValidatorsModule,
     NotifyModule,
     TreeViewModule,
-    EllipsisModule
+    EllipsisModule,
+    TagsModule
   ],
   declarations: [],
   providers: [],
