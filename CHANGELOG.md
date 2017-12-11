@@ -1,4 +1,12 @@
 
+# 5.0.4(2017-12-11)
+
+## Bug Fixes
+
+* (Tags): Add tags component;
+* (Tooltip): Tooltip scroll issue;
+
+
 # 5.0.3(2017-12-07)
 
 ## Bug Fixes
