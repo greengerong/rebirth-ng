@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { TagsComponent } from './tags.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RebirthCommonModule } from '../common';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RebirthCommonModule
   ],
   providers: [],
   declarations: [
