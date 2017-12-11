@@ -70,6 +70,7 @@ export const REBIRTH_NG_I18N_ZHCN = {
   },
 
   tags: {
+    type: 'primary',
     newTagText: '添加标签',
     plusIcon: 'glyphicon glyphicon-plus',
     removeIcon: 'glyphicon glyphicon-remove',

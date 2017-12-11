@@ -154,6 +154,7 @@ export class RebirthNGConfig {
   };
 
   tags = {
+    type: 'primary',
     newTagText: 'NEW TAG',
     plusIcon: 'glyphicon glyphicon-plus',
     removeIcon: 'glyphicon glyphicon-remove',

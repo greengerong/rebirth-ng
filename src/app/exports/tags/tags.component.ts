@@ -20,6 +20,7 @@ export class TagsComponent implements ControlValueAccessor {
   @Input() removeIcon: string;
   @Input() maxlength: number;
   @Input() maxSize: number;
+  @Input() type: '' | 'default' | 'primary' | 'success' | 'info' | 'warning' | 'danger';
   mutipleItems: string[] = [];
   disabled: boolean;
   selectValue: string;
@@ -28,6 +29,7 @@ export class TagsComponent implements ControlValueAccessor {
   private onTouched = () => null;
 
   constructor(private rebirthNGConfig: RebirthNGConfig) {
+    this.type = this.rebirthNGConfig.tags.type as any;
     this.newTagText = this.rebirthNGConfig.tags.newTagText;
     this.plusIcon = this.rebirthNGConfig.tags.plusIcon;
     this.removeIcon = this.rebirthNGConfig.tags.removeIcon;
