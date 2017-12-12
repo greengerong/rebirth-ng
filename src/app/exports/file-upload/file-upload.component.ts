@@ -80,10 +80,11 @@ export class FileUploadComponent implements AfterViewInit {
   }
 
   isMoreThanMaxItems() {
+    const fileSize = ((this.selectFiles || []).length + (this.uploadFiles || []).length);
     if (!this.multiple) {
-      return this.selectFiles.length >= 1;
+      return fileSize >= 1;
     }
-    return this.maxItems && (this.selectFiles.length >= this.maxItems);
+    return this.maxItems && (fileSize >= this.maxItems);
   }
 
   clearErrors() {

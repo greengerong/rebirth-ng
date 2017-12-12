@@ -18,7 +18,7 @@
 
   <section>
     <h4>With customise toolbar:</h4>
-    <re-file-upload [autoUpload]="true" [accept]="'image/*'" uploadParamName="files"
+    <re-file-upload [autoUpload]="true" [accept]="'image/*'" uploadParamName="files" [multiple]="false"
                     [toolbarTemplate]="toolbarTemplate"
                     uploadUrl="http://localhost:3000/upload"></re-file-upload>
     <ng-template #toolbarTemplate let-toolbar="">
