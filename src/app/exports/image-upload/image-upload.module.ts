@@ -18,7 +18,8 @@ import { ViewImageModalComponent } from './view-image-modal.component';
     ViewImageModalComponent
   ],
   exports: [
-    ImageUploadComponent
+    ImageUploadComponent,
+    ViewImageModalComponent
   ],
   entryComponents: [ViewImageModalComponent]
 })
