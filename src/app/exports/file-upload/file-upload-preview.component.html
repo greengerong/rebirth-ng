@@ -5,7 +5,7 @@
       <td *ngIf="imgPreview">
         <a [href]="fileItem.dataUrl" target="_blank">
           <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"
-               [style.width]="previewWidth || ''"/>
+               [style.width]="previewWidth"/>
         </a>
       </td>
       <td>
