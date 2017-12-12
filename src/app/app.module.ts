@@ -38,7 +38,8 @@ import {
   NotifyDemoModule,
   TreeViewDemoModule,
   EllipsisDemoModule,
-  TagsDemoModule
+  TagsDemoModule,
+  ImageUploadDemoModule
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -101,7 +102,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NotifyDemoModule,
     TreeViewDemoModule,
     EllipsisDemoModule,
-    TagsDemoModule
+    TagsDemoModule,
+    ImageUploadDemoModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

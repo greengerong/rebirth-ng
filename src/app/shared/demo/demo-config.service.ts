@@ -34,7 +34,8 @@ import {
   BreadcrumbsDemoComponent,
   TimePickerDemoComponent,
   EllipsisDemoComponent,
-  TagsDemoComponent
+  TagsDemoComponent,
+  ImageUploadDemoComponent
 } from '../../demo';
 
 @Injectable()
@@ -326,6 +327,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/tags/README.md'),
       html: require('!raw-loader!../../demo/tags/tags-demo.component.html'),
       ts: require('!raw-loader!../../demo/tags/tags-demo.component.ts'),
+    },
+    {
+      name: 'ImageUpload',
+      directory: 'image-upload',
+      cmp: ImageUploadDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/image-upload/README.md'),
+      html: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.html'),
+      ts: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.ts'),
     },
     // component declare
   ];
