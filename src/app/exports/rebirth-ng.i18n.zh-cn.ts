@@ -32,7 +32,14 @@ export const REBIRTH_NG_I18N_ZHCN = {
     fileTypeErrorMessage: '{0}文件类型必须满足{1};',
     chooseButton: '浏览',
     uploadButton: '上传',
-    cancelButton: '取消'
+    cancelButton: '取消',
+    plusIcon: 'glyphicon glyphicon-plus',
+    uploadIcon: 'glyphicon glyphicon-upload',
+    removeIcon: 'glyphicon glyphicon-trash'
+  },
+
+  imageUpload: {
+    viewIcon: 'glyphicon glyphicon-eye-open'
   },
 
   pager: {

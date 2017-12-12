@@ -1,5 +1,5 @@
 import {
-  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2
+  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2, Input
 } from '@angular/core';
 import { FileUpload } from '../file-upload/file-upload';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -18,12 +18,16 @@ import { ViewImageModalComponent } from './view-image-modal.component';
 })
 export class ImageUploadComponent extends FileUpload {
 
+  @Input() viewIcon: string;
+
   constructor(rebirthNGConfig: RebirthNGConfig,
               renderer: Renderer2,
               @Optional()  http: HttpClient,
               changeDetectorRef: ChangeDetectorRef,
               private modalService: ModalService) {
     super(rebirthNGConfig, renderer, http, changeDetectorRef);
+    this.viewIcon = this.rebirthNGConfig.imageUpload.viewIcon;
+    this.imgPreview = true;
     this.autoUpload = true;
     this.accept = 'image/*';
   }

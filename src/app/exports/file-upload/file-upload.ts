@@ -34,6 +34,9 @@ export class FileUpload implements AfterViewInit {
   @Input() chooseButton: string;
   @Input() uploadButton: string;
   @Input() cancelButton: string;
+  @Input() plusIcon: string;
+  @Input() uploadIcon: string;
+  @Input() removeIcon: string;
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
@@ -59,6 +62,9 @@ export class FileUpload implements AfterViewInit {
     this.chooseButton = this.rebirthNGConfig.fileUpload.chooseButton;
     this.uploadButton = this.rebirthNGConfig.fileUpload.uploadButton;
     this.cancelButton = this.rebirthNGConfig.fileUpload.cancelButton;
+    this.plusIcon = this.rebirthNGConfig.fileUpload.plusIcon;
+    this.uploadIcon = this.rebirthNGConfig.fileUpload.uploadIcon;
+    this.removeIcon = this.rebirthNGConfig.fileUpload.removeIcon;
 
   }
 

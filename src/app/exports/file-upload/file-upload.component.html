@@ -4,13 +4,13 @@
   <div class="file-upload-toolbar">
     <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"
             [disabled]="toolbar.isMoreThanMaxItems()">
-      <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
+      <i class="file-upload-toolbar-choose {{plusIcon}}"></i> {{toolbar.chooseButton}}
     </button>
     <button class="btn btn-info" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.uploadAllFiles()">
-      <i class="glyphicon glyphicon-upload"></i> {{toolbar.uploadButton}}
+      <i class="file-upload-toolbar-upload {{uploadIcon}}"></i> {{toolbar.uploadButton}}
     </button>
     <button class="btn btn-danger" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.removeAllSelectedFiles()">
-      <i class="glyphicon glyphicon-trash"></i> {{toolbar.cancelButton}}
+      <i class="file-upload-toolbar-remove {{removeIcon}}"></i> {{toolbar.cancelButton}}
     </button>
   </div>
 

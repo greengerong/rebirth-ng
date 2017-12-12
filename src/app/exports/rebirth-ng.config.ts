@@ -79,7 +79,14 @@ export class RebirthNGConfig {
     fileTypeErrorMessage: '{0}: file type is invalid, allowed file type is {1};',
     chooseButton: 'Choose',
     uploadButton: 'Upload',
-    cancelButton: 'Cancel'
+    cancelButton: 'Cancel',
+    plusIcon: 'glyphicon glyphicon-plus',
+    uploadIcon: 'glyphicon glyphicon-upload',
+    removeIcon: 'glyphicon glyphicon-trash',
+  };
+
+  imageUpload = {
+    viewIcon: 'glyphicon glyphicon-eye-open'
   };
 
   modal = {

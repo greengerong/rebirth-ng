@@ -6,20 +6,20 @@
        [style.height]="previewWidth || ''">
 
     <div class="image-upload-toolbar">
-      <i class="image-upload-toolbar-item image-upload-toolbar-view glyphicon glyphicon-eye-open"
+      <i class="image-upload-toolbar-item image-upload-toolbar-view {{viewIcon}}"
          (click)="viewImage(fileItem)"></i>
-      <i class="image-upload-toolbar-item image-upload-toolbar-remove glyphicon glyphicon-trash"
+      <i class="image-upload-toolbar-item image-upload-toolbar-remove {{removeIcon}}"
          (click)="onRemoveUploadFile(fileItem)"></i>
     </div>
     <div class="image-upload-item-info">
       <img class="preview-image img-responsive" [src]="fileItem.dataUrl"
-           [attr.alt]="fileItem.file.name">
+           [attr.alt]="fileItem.file?.name">
     </div>
   </div>
   <div class="image-upload-item image-upload-btn" [style.width]="previewWidth || ''"
        [style.height]="previewWidth || ''" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems()">
     <div class="image-upload-item-info">
-      <i class="image-upload-btn-icon glyphicon glyphicon-plus"></i>
+      <i class="image-upload-btn-icon {{plusIcon}}"></i>
       <div class="image-upload-btn-text">{{uploadButton}}</div>
     </div>
   </div>
