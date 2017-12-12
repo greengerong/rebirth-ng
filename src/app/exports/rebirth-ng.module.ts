@@ -26,7 +26,7 @@ import { MenuBarModule } from './menu-bar/menu-bar.module';
 import { AutoCompleteModule } from './auto-complete';
 import { FlowStepModule } from './flow-step';
 import { InfiniteScrollModule } from './infinite-scroll';
-import { RebirthCommonModule, AssetsLoader } from './common';
+import { RebirthCommonModule, AssetsLoader, ComponentDeactivateGuard } from './common';
 import { DraggableModule } from './draggable';
 import { FileUploadModule } from './file-upload';
 import { TimePickerModule } from './time-picker';
@@ -133,7 +133,8 @@ export class RebirthNGModule {
         { provide: OverlayService, useClass: OverlayService },
         { provide: AssetsLoader, useClass: AssetsLoader },
         { provide: NotifyService, useClass: NotifyService },
-        { provide: TreeViewService, useClass: TreeViewService }
+        { provide: TreeViewService, useClass: TreeViewService },
+        { provide: ComponentDeactivateGuard, useClass: ComponentDeactivateGuard }
       ]
     };
   }

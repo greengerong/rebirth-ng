@@ -1,4 +1,5 @@
 export * from './auto-focus.directive';
+export * from './component.deactivate';
 export * from './dropdown.directive';
 export * from './date.pipe';
 export * from './router-reuse-strategy';
