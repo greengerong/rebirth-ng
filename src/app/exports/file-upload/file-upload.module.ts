@@ -5,11 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FileUploadPreviewComponent } from './file-upload-preview.component';
 import { AlertBoxModule } from '../alert-box/alert-box.module';
 import { DraggableModule } from '../draggable/draggable.module';
-import {
-  UploadToolbarTmplComponent,
-  UploadPreviewTmplComponent,
-  UploadFileTmplComponent
-} from './file-upload-tmpl.directive';
 
 @NgModule({
   imports: [
@@ -20,17 +15,11 @@ import {
   providers: [],
   declarations: [
     FileUploadComponent,
-    FileUploadPreviewComponent,
-    UploadToolbarTmplComponent,
-    UploadPreviewTmplComponent,
-    UploadFileTmplComponent
+    FileUploadPreviewComponent
   ],
   exports: [
     FileUploadComponent,
-    FileUploadPreviewComponent,
-    UploadToolbarTmplComponent,
-    UploadPreviewTmplComponent,
-    UploadFileTmplComponent
+    FileUploadPreviewComponent
   ],
 })
 export class FileUploadModule {

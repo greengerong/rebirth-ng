@@ -9,14 +9,13 @@
         </a>
       </td>
       <td>
-        {{fileItem.name}}
+        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i> {{fileItem.name}}
       </td>
       <td>
         {{fileItem.displaySize}}
       </td>
       <td>
-        <i *ngIf="!uploaded" class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>
-        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i>
+        <i class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>
       </td>
     </tr>
     </tbody>

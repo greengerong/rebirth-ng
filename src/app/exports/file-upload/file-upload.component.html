@@ -24,6 +24,7 @@
 
   <re-file-upload-preview [selectFiles]="preview.uploadFiles" [imgPreview]="preview.imgPreview"
                           [previewWidth]="preview.previewWidth"
+                          (removeFile)="preview.onRemoveUploadFile($event)"
                           [uploaded]="true"></re-file-upload-preview>
 </ng-template>
 

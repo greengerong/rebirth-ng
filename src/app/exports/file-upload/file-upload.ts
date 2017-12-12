@@ -126,6 +126,7 @@ export class FileUpload implements AfterViewInit {
   onRemoveUploadFile(fileItem) {
     this.uploadFiles = this.uploadFiles.filter(item => item !== fileItem);
     this.removeFiles.emit([fileItem]);
+    this.uploadFilesChange.emit(this.uploadFiles);
   }
 
   uploadAllFiles() {
@@ -142,7 +143,7 @@ export class FileUpload implements AfterViewInit {
       .subscribe((res) => {
           fileItem.uploadResponse = res;
           this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-          this.uploadFiles = [...this.uploadFiles, fileItem];
+          this.uploadFiles = [...(this.uploadFiles || []), fileItem];
           this.fileUploadSuccess.emit(fileItem);
           this.uploadFilesChange.emit(this.uploadFiles);
           this.changeDetectorRef.markForCheck();
