@@ -192,6 +192,11 @@ export class FileUpload implements AfterViewInit {
     }
 
     this.errors.push(...errors);
+    this.fileUploadError.emit({
+      name: file.name,
+      file: file,
+      uploadResponse: this.errors
+    });
     return !errors.length;
   }
 
