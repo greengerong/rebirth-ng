@@ -35,7 +35,7 @@
 
   <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
                 *ngIf="errors.length">
-    <ul>
+    <ul *ngIf="showErrors">
       <li *ngFor="let error of errors">{{error}}</li>
     </ul>
   </re-alert-box>

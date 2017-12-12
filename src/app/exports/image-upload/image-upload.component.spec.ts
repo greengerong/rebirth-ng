@@ -1,12 +1,14 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
-import { ImageUploadComponent } from './image-upload.component';
+import { ImageUploadModule } from './image-upload.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ImageUpload', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
+        HttpClientModule,
         ImageUploadModule
       ],
     });
