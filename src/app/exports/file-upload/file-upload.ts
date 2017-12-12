@@ -18,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
 export class FileUpload implements AfterViewInit {
 
   @Input() accept: string;
-  @Input() multiple: boolean;
+  @Input() multiple = true;
   @Input() autoUpload: boolean;
   @Input() showErrors = true;
   @Input() maxItems: number;
@@ -114,6 +114,11 @@ export class FileUpload implements AfterViewInit {
 
   onRemoveFile(fileItem) {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+    this.removeFiles.emit([fileItem]);
+  }
+
+  onRemoveUploadFile(fileItem) {
+    this.uploadFiles = this.uploadFiles.filter(item => item !== fileItem);
     this.removeFiles.emit([fileItem]);
   }
 
