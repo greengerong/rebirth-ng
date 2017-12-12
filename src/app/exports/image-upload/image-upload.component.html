@@ -24,3 +24,10 @@
     </div>
   </div>
 </div>
+
+<re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"
+              *ngIf="showErrors && errors.length">
+  <ul>
+    <li *ngFor="let error of errors">{{error}}</li>
+  </ul>
+</re-alert-box>
