@@ -19,7 +19,7 @@
     "typedoc": "typedoc",
     "typedocs": "npm run typedoc -- --options typedoc.json  --exclude '**/*.spec.ts' ./src/app/exports/",
     "compodocs:serve": "compodoc ./src/app/exports/ -p ./src/tsconfig.json -b / -d ./compodocs/ --hideGenerator -s",
-    "compodocs:gen": "compodoc ./src/app/exports/ -p ./src/tsconfig.app.json -b /rebirth-ng/compodocs/ -d ./dist/compodocs/ --hideGenerator",
+    "compodocs:gen": "compodoc ./src/app/exports/ -t -p ./src/tsconfig.app.json -b /rebirth-ng/compodocs/ -d ./dist/compodocs/ --hideGenerator",
     "demo:gen": "ng build --prod --aot --base-href=/rebirth-ng/",
     "github-pages:push": "ngh --message \"rebirth ng demo deploy\"",
     "sw:gen": "gulp sw:gen",
