@@ -68,6 +68,40 @@ export class AppComponent implements OnInit {
           icon: 'glyphicon glyphicon-fire'
         },
         {
+          text: 'Advance Components',
+          icon: 'glyphicon glyphicon-fire',
+          children: [
+            {
+              text: 'Rebirth-http',
+              url: 'https://github.com/greengerong/rebirth-http'
+            },
+            {
+              text: 'Rebirth-permission',
+              url: 'https://github.com/greengerong/rebirth-permission'
+            },
+            {
+              text: 'Rebirth-storage',
+              url: 'https://github.com/greengerong/rebirth-storage'
+            },
+            {
+              text: 'Rebirth-event-source',
+              url: 'https://github.com/greengerong/rebirth-event-source'
+            },
+            {
+              text: 'Rebirth-chart(Chartjs)',
+              url: 'https://greengerong.github.io/rebirth-chart/'
+            },
+            {
+              text: 'Rebirth-echarts(ECharts)',
+              url: 'https://greengerong.github.io/rebirth-echarts/'
+            },
+            {
+              text: 'Rebirth seed(rebirth-admin)',
+              url: 'https://github.com/greengerong/rebirth-admin'
+            },
+          ]
+        },
+        {
           text: 'API Docs',
           url: '/rebirth-ng/compodocs/overview.html',
           target: '_blank',
