@@ -14,6 +14,11 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 import { formatFileSize, formatString } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { of } from 'rxjs/observable/of';
+import { forkJoin } from 'rxjs/observable/forkJoin';
+import { noop } from '../utils';
 
 export class FileUpload implements AfterViewInit {
 
@@ -40,6 +45,8 @@ export class FileUpload implements AfterViewInit {
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
+  @Output() fileUploadStart = new EventEmitter<SelectFileModel[]>();
+  @Output() fileUploadCompleted = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadSuccess = new EventEmitter<SelectFileModel>();
   @Output() fileUploadError = new EventEmitter<SelectFileModel>();
   @Output() removeFiles = new EventEmitter<SelectFileModel[]>();
@@ -131,35 +138,41 @@ export class FileUpload implements AfterViewInit {
 
   uploadAllFiles() {
     this.clearErrors();
-    this.selectFiles.map(fileItem => {
-      return this.uploadFile(fileItem);
-    });
+    this.httpUploadAllFile(this.selectFiles);
   }
 
-  private uploadFile(fileItem) {
+  private httpUploadAllFile(files) {
+    this.fileUploadStart.emit(files);
+    const subscriptions = files.map(fileItem => this.httpUploadFile(fileItem));
+    forkJoin(subscriptions)
+      .subscribe(noop, noop, () => this.fileUploadCompleted.emit(files));
+  }
+
+  private httpUploadFile(fileItem) {
     const formData = new FormData();
     formData.append(this.uploadParamName, fileItem.file);
     return this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
-      .subscribe((res) => {
-          fileItem.uploadResponse = res;
-          this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-          this.uploadFiles = [...(this.uploadFiles || []), fileItem];
-          this.fileUploadSuccess.emit(fileItem);
-          this.uploadFilesChange.emit(this.uploadFiles);
-          this.changeDetectorRef.markForCheck();
-        },
-        (error) => {
-          this.errors.push(`${fileItem.name}: Upload error: ${error}`);
-          this.fileUploadError.emit({
-            name: fileItem.name,
-            displaySize: fileItem.displaySize,
-            dataUrl: fileItem.dataUrl,
-            file: fileItem.file,
-            uploadResponse: error
-          });
-          this.changeDetectorRef.markForCheck();
-        }
-      );
+      .map((res) => {
+        fileItem.uploadResponse = res;
+        this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+        this.uploadFiles = [...(this.uploadFiles || []), fileItem];
+        this.fileUploadSuccess.emit(fileItem);
+        this.uploadFilesChange.emit(this.uploadFiles);
+        this.changeDetectorRef.markForCheck();
+        return of({ result: res, success: true });
+      })
+      .catch((error) => {
+        this.errors.push(`${fileItem.name}: Upload error: ${error}`);
+        this.fileUploadError.emit({
+          name: fileItem.name,
+          displaySize: fileItem.displaySize,
+          dataUrl: fileItem.dataUrl,
+          file: fileItem.file,
+          uploadResponse: error
+        });
+        this.changeDetectorRef.markForCheck();
+        return of({ error: error, success: false });
+      });
   }
 
   private handleFileChoose(uploadFiles: FileList) {
@@ -173,7 +186,7 @@ export class FileUpload implements AfterViewInit {
       })
       .then((fileModels) => {
         if (this.autoUpload) {
-          return fileModels.map(fileItem => this.uploadFile(fileItem));
+          return this.httpUploadAllFile(fileModels);
         }
       });
   }
