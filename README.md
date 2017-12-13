@@ -46,12 +46,12 @@
 - [x] Validators
 - [x] Notify
 - [x] Tree View
-
+- [x] File Upload
+- [x] Image Upload
 
 ## Advance Components
 - [ ] Editor([]())
 - [ ] Mask([]())
-- [x] File Upload([]())
 - [x] Chartjs([https://greengerong.github.io/rebirth-chart/](https://greengerong.github.io/rebirth-chart/))
 - [x] ECharts([https://greengerong.github.io/rebirth-echarts/](https://greengerong.github.io/rebirth-echarts/))
 
