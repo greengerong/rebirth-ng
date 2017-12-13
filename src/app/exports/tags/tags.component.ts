@@ -34,6 +34,7 @@ export class TagsComponent implements ControlValueAccessor {
     this.plusIcon = this.rebirthNGConfig.tags.plusIcon;
     this.removeIcon = this.rebirthNGConfig.tags.removeIcon;
     this.maxlength = this.rebirthNGConfig.tags.maxlength;
+    this.maxSize = this.rebirthNGConfig.tags.maxSize;
   }
 
   writeValue(obj: any): void {
