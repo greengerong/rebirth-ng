@@ -1,4 +1,12 @@
 
+# 5.0.5(2017-12-xx)
+
+## Features
+
+* (ImageUpload): Refactor `FileUpload` to add new component `ImageUpload`;
+* (FileUpload): Add extend input;
+
+
 # 5.0.4(2017-12-11)
 
 ## Bug Fixes
@@ -9,7 +17,7 @@
 
 # 5.0.3(2017-12-07)
 
-## Bug Fixes
+## Features
 
 * (pagination): pagination with `headTemplate` and `tailTemplate`;
 
