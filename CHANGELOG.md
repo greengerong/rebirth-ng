@@ -5,6 +5,7 @@
 
 * (ImageUpload): Refactor `FileUpload` to add new component `ImageUpload`;
 * (FileUpload): Add extend input;
+* (FileUpload): Add http events;
 
 
 # 5.0.4(2017-12-11)
