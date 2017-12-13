@@ -1,6 +1,6 @@
 <input #file type="file" (change)="newFileChoose(file)" style="display: none">
 
-<div class="image-upload {{cssClass}}">
+<div class="image-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
   <div *ngFor="let fileItem of uploadFiles" class="image-upload-item image-upload-image-view"
        [style.width]="previewWidth"
        [style.height]="previewWidth">

@@ -77,7 +77,7 @@ export class FileUpload implements AfterViewInit {
   }
 
   isMoreThanMaxItems() {
-    const fileSize = ((this.selectFiles || []).length + (this.uploadFiles || []).length);
+    const fileSize = this.getFileCount();
     if (!this.multiple) {
       return fileSize >= 1;
     }
@@ -179,8 +179,9 @@ export class FileUpload implements AfterViewInit {
   }
 
   validFiles(files: File[]): File[] {
-    if (this.maxItems && (this.selectFiles.length + files.length > this.maxItems)) {
-      files = files.slice(0, this.maxItems - this.selectFiles.length);
+    const fileCount = this.getFileCount();
+    if (this.maxItems && (fileCount + files.length > this.maxItems)) {
+      files = files.slice(0, this.maxItems - fileCount);
     }
 
     return files.filter(file => {
@@ -205,6 +206,10 @@ export class FileUpload implements AfterViewInit {
       uploadResponse: this.errors
     });
     return !errors.length;
+  }
+
+  private getFileCount() {
+    return ((this.selectFiles || []).length + (this.uploadFiles || []).length);
   }
 
   private validFileType(file: File) {
