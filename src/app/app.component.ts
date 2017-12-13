@@ -72,6 +72,10 @@ export class AppComponent implements OnInit {
           icon: 'glyphicon glyphicon-fire',
           children: [
             {
+              text: 'Rebirth-ng',
+              url: 'https://greengerong.github.io/rebirth-ng/'
+            },
+            {
               text: 'Rebirth-http',
               url: 'https://github.com/greengerong/rebirth-http'
             },
