@@ -180,8 +180,9 @@ export class FileUpload implements AfterViewInit {
 
   validFiles(files: File[]): File[] {
     const fileCount = this.getFileCount();
-    if (this.maxItems && (fileCount + files.length > this.maxItems)) {
-      files = files.slice(0, this.maxItems - fileCount);
+    const size = this.multiple ? this.maxItems : 1;
+    if (size && (fileCount + files.length > size)) {
+      files = files.slice(0, size - fileCount);
     }
 
     return files.filter(file => {
