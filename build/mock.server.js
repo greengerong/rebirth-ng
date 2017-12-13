@@ -41,7 +41,7 @@ app.post('/upload', upload.single('files'), function (req, res) {
   console.log('原始文件名：%s', file.originalname);
   console.log('文件大小：%s', file.size);
   console.log('文件保存路径：%s', file.path);
-
+  // res.status(400).send("Oh uh, something went wrong");
   res.send({
     fieldname: file.fieldname,
     mimetype: file.mimetype,

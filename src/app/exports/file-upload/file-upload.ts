@@ -98,7 +98,7 @@ export class FileUpload implements AfterViewInit {
   onDropFiles($event) {
     $event.stopPropagation();
     $event.preventDefault();
-
+    this.clearErrors();
     const files = $event.dataTransfer.files;
     if (files && files.length) {
       this.handleFileChoose(files);
@@ -152,27 +152,32 @@ export class FileUpload implements AfterViewInit {
     const formData = new FormData();
     formData.append(this.uploadParamName, fileItem.file);
     return this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
-      .map((res) => {
-        fileItem.uploadResponse = res;
-        this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-        this.uploadFiles = [...(this.uploadFiles || []), fileItem];
-        this.fileUploadSuccess.emit(fileItem);
-        this.uploadFilesChange.emit(this.uploadFiles);
-        this.changeDetectorRef.markForCheck();
-        return of({ result: res, success: true });
-      })
-      .catch((error) => {
-        this.errors.push(`${fileItem.name}: Upload error: ${error}`);
-        this.fileUploadError.emit({
-          name: fileItem.name,
-          displaySize: fileItem.displaySize,
-          dataUrl: fileItem.dataUrl,
-          file: fileItem.file,
-          uploadResponse: error
-        });
-        this.changeDetectorRef.markForCheck();
-        return of({ error: error, success: false });
-      });
+      .map((res) => this.onFileUploadSuccess(fileItem, res))
+      .catch((error) => this.onFileUploadError(fileItem, error));
+  }
+
+  protected onFileUploadSuccess(fileItem, res) {
+    fileItem.uploadResponse = res;
+    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+    this.uploadFiles = [...(this.uploadFiles || []), fileItem];
+    this.fileUploadSuccess.emit(fileItem);
+    this.uploadFilesChange.emit(this.uploadFiles);
+    this.changeDetectorRef.markForCheck();
+    return of({ result: res, success: true });
+  }
+
+  protected onFileUploadError(fileItem, error) {
+    this.errors.push(`${fileItem.name}: ${error.error || error.statusText}`);
+    this.fileUploadError.emit({
+      name: fileItem.name,
+      displaySize: fileItem.displaySize,
+      dataUrl: fileItem.dataUrl,
+      file: fileItem.file,
+      uploadResponse: error
+    });
+
+    this.changeDetectorRef.markForCheck();
+    return of({ error: error, success: false });
   }
 
   private handleFileChoose(uploadFiles: FileList) {

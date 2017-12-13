@@ -38,4 +38,9 @@ export class ImageUploadComponent extends FileUpload {
       resolve: { url: fileItem.dataUrl, name: fileItem.name }
     }).subscribe(noop, noop);
   }
+
+  protected onFileUploadError(fileItem, error) {
+    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+    return super.onFileUploadError(fileItem, error);
+  }
 }
