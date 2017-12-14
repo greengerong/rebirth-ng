@@ -35,7 +35,8 @@ import {
   TimePickerDemoComponent,
   EllipsisDemoComponent,
   TagsDemoComponent,
-  ImageUploadDemoComponent
+  ImageUploadDemoComponent,
+  // component import
 } from '../../demo';
 
 @Injectable()

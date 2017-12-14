@@ -80,15 +80,28 @@ gulp.task('prenpm', ['ng2:aot'], function () {
     .pipe(gulp.dest(config.lib));
 });
 
-gulp.task('new:config', function () {
-  gulp.src('./src/app/shared/demo/demo-config.service.ts')
+function insertLines(src, dest, pattern, text) {
+  gulp.src(src)
     .pipe(insertLines({
-      'before': /\/\/\scomponent\simport/i,
-      'lineBefore': `  ${cmpGenConfig.componentName}DemoComponent,`
+      'before': pattern,
+      'lineBefore': text
     }))
-    .pipe(insertLines({
-      'before': /\/\/\scomponent\sdeclare/i,
-      'lineBefore': `    {
+    .pipe(gulp.dest(dest, {overwrite: true}));
+}
+
+gulp.task('new:config', function () {
+  insertLines(
+    './src/app/shared/demo/demo-config.service.ts',
+    './src/app/shared/demo',
+    /\/\/\scomponent\simport/i,
+    `  ${cmpGenConfig.componentName}DemoComponent,`
+  );
+
+  insertLines(
+    './src/app/shared/demo/demo-config.service.ts',
+    './src/app/shared/demo',
+    /\/\/\scomponent\sdeclare/i,
+    `    {
       name: '${cmpGenConfig.componentName}',
       directory: '${cmpGenConfig.componentSelector}',
       cmp: ${cmpGenConfig.componentName}DemoComponent,
@@ -96,8 +109,43 @@ gulp.task('new:config', function () {
       html: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.html'),
       ts: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.ts'),
     },`
-    }))
-    .pipe(gulp.dest('./src/app/shared/demo', {overwrite: true}));
+  );
+
+  insertLines(
+    './src/app/demo/index.ts',
+    './src/app/demo',
+    /\/\/\scomponent\sexport/i,
+    `export * from './${cmpGenConfig.componentSelector}';`
+  );
+
+  insertLines(
+    './src/app/exports/index.ts',
+    './src/app/exports',
+    /\/\/\scomponent\sexport/i,
+    `export * from './${cmpGenConfig.componentSelector}';`
+  );
+
+  insertLines(
+    './src/app/exports/rebirth-ng.module.ts',
+    './src/app/exports',
+    /\/\/\smodule\simport/gi,
+    `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}';`
+  );
+
+  insertLines(
+    './src/app/exports/rebirth-ng.module.ts',
+    './src/app/exports',
+    /\/\/\smodule\sdeclare/i,
+    `    ${cmpGenConfig.componentName}Module,`
+  );
+
+  insertLines(
+    './src/app/app.module.ts',
+    './src/app',
+    /\/\/\smodule\sdeclare/i,
+    `    ${cmpGenConfig.componentName}DemoModule,`
+  );
+
 });
 
 gulp.task('new:demo', function () {

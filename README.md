@@ -86,6 +86,8 @@
 
 * npm publish `npm run npm:publish` and then `cd .lib && npm publish`
 
+* new component `gulp new:cmp --ComponentName`
+
 ## Get start
 
  [Get start](./src/app/exports)

@@ -34,3 +34,4 @@ export * from './time-picker'
 export * from './tooltip';
 export * from './tree-view';
 export * from './validators';
+// component export

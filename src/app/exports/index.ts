@@ -40,3 +40,4 @@ export * from './tree-view';
 export * from './utils';
 export * from './validators';
 export * from './window-ref';
+// component export
