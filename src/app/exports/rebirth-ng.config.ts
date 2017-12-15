@@ -73,8 +73,8 @@ export class RebirthNGConfig {
 
   fileUpload = {
     imgPreview: false,
-    previewWidth: '50px',
-    previewHeight: '50px',
+    previewWidth: '104px',
+    previewHeight: '104px',
     uploadParamName: 'file',
     fileSizeErrorMessage: '{0}: size is too large, allowed size is {1};',
     fileTypeErrorMessage: '{0}: file type is invalid, allowed file type is {1};',
