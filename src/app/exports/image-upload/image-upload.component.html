@@ -19,9 +19,9 @@
     </div>
   </div>
   <div class="image-upload-item image-upload-btn" [style.width]="previewWidth"
-       [style.height]="previewHeight" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems() || hasUploadingFiles()">
+       [style.height]="previewHeight" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems() || isUploading">
     <div class="image-upload-item-info">
-      <i class="image-upload-btn-icon {{uploadBtnIcon()}}" [ngClass]="{'uploading': hasUploadingFiles()}"></i>
+      <i class="image-upload-btn-icon {{uploadBtnIcon()}}" [ngClass]="{'uploading': isUploading}"></i>
       <div class="image-upload-btn-text">{{uploadButton}}</div>
     </div>
   </div>

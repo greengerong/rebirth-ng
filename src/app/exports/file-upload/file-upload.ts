@@ -56,6 +56,7 @@ export class FileUpload implements AfterViewInit {
   @Input() uploadFiles: SelectFileModel[] = [];
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
+  isUploading: boolean;
   errors: string[] = [];
 
   constructor(protected rebirthNGConfig: RebirthNGConfig,
@@ -76,6 +77,7 @@ export class FileUpload implements AfterViewInit {
     this.uploadIcon = this.rebirthNGConfig.fileUpload.uploadIcon;
     this.loadingIcon = this.rebirthNGConfig.fileUpload.loadingIcon;
     this.removeIcon = this.rebirthNGConfig.fileUpload.removeIcon;
+    this.showErrors = this.rebirthNGConfig.fileUpload.showErrors;
 
   }
 
@@ -148,10 +150,14 @@ export class FileUpload implements AfterViewInit {
   }
 
   private httpUploadAllFile(files) {
+    this.isUploading = true;
     this.fileUploadStart.emit(files);
     const subscriptions = files.map(fileItem => this.httpUploadFile(fileItem));
     forkJoin(subscriptions)
-      .subscribe(noop, noop, () => this.fileUploadCompleted.emit(files));
+      .subscribe(noop, noop, () => {
+        this.isUploading = false;
+        this.fileUploadCompleted.emit(files);
+      });
   }
 
   private httpUploadFile(fileItem) {

@@ -40,16 +40,9 @@ export class ImageUploadComponent extends FileUpload {
   }
 
   public uploadBtnIcon() {
-    if (this.hasUploadingFiles()) {
-      return this.loadingIcon;
-    } else {
-      return this.plusIcon;
-    }
+    return this.isUploading ? this.loadingIcon : this.plusIcon;
   }
 
-  public hasUploadingFiles(): boolean {
-    return this.selectFiles.length > 0;
-  }
 
   protected onFileUploadError(fileItem, error) {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
