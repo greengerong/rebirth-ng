@@ -82,6 +82,7 @@ export class RebirthNGConfig {
     uploadButton: 'Upload',
     cancelButton: 'Cancel',
     plusIcon: 'glyphicon glyphicon-plus',
+    loadingIcon: 'glyphicon glyphicon-refresh',
     uploadIcon: 'glyphicon glyphicon-upload',
     removeIcon: 'glyphicon glyphicon-trash',
   };

@@ -1,3 +1,13 @@
+@keyframes rotate {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .image-upload {
   .image-upload-item {
     border-radius: 4px;
@@ -74,6 +84,12 @@
     text-align: center;
     &:hover {
       border-color: #1890ff;
+    }
+
+    .image-upload-item-info {
+      .uploading {
+        animation: rotate 1s linear infinite;
+      }
     }
   }
 }

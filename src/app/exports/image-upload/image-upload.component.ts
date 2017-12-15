@@ -32,11 +32,23 @@ export class ImageUploadComponent extends FileUpload {
     this.accept = 'image/*';
   }
 
-  viewImage(fileItem: SelectFileModel) {
+  public viewImage(fileItem: SelectFileModel) {
     this.modalService.open({
       component: ViewImageModalComponent,
       resolve: { url: fileItem.dataUrl, name: fileItem.name }
     }).subscribe(noop, noop);
+  }
+
+  public uploadBtnIcon() {
+    if (this.hasUploadingFiles()) {
+      return this.loadingIcon;
+    } else {
+      return this.plusIcon;
+    }
+  }
+
+  public hasUploadingFiles(): boolean {
+    return this.selectFiles.length > 0;
   }
 
   protected onFileUploadError(fileItem, error) {

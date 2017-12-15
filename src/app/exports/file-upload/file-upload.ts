@@ -42,6 +42,7 @@ export class FileUpload implements AfterViewInit {
   @Input() cancelButton: string;
   @Input() plusIcon: string;
   @Input() uploadIcon: string;
+  @Input() loadingIcon: string;
   @Input() removeIcon: string;
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
@@ -73,6 +74,7 @@ export class FileUpload implements AfterViewInit {
     this.cancelButton = this.rebirthNGConfig.fileUpload.cancelButton;
     this.plusIcon = this.rebirthNGConfig.fileUpload.plusIcon;
     this.uploadIcon = this.rebirthNGConfig.fileUpload.uploadIcon;
+    this.loadingIcon = this.rebirthNGConfig.fileUpload.loadingIcon;
     this.removeIcon = this.rebirthNGConfig.fileUpload.removeIcon;
 
   }
@@ -109,8 +111,10 @@ export class FileUpload implements AfterViewInit {
 
   addNewFile($event) {
     $event.stopPropagation();
-    this.fileInput.nativeElement.value = null;
-    this.fileInput.nativeElement.click(); // simulate file input event
+    if (!this.isMoreThanMaxItems()) {
+      this.fileInput.nativeElement.value = null;
+      this.fileInput.nativeElement.click(); // simulate file input event
+    }
   }
 
   newFileChoose(fileInput: HTMLInputElement) {
