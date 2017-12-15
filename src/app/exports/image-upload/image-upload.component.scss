@@ -1,10 +1,13 @@
 @keyframes rotate {
-  0%,
-  100% {
+  0% {
     transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
   }
 }
 
@@ -88,7 +91,10 @@
 
     .image-upload-item-info {
       .uploading {
+        -webkit-animation: rotate 1s linear infinite;
+        -moz-animation: rotate 1s linear infinite;
         animation: rotate 1s linear infinite;
+        display: inline-block;
       }
     }
   }
