@@ -68,6 +68,13 @@
 
       .image-upload-toolbar {
         display: block;
+        .image-upload-toolbar-item {
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
