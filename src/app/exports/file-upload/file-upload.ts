@@ -33,6 +33,7 @@ export class FileUpload implements AfterViewInit {
   @Input() uploadRequestOptions: any;
   @Input() imgPreview: boolean;
   @Input() previewWidth: string;
+  @Input() previewHeight: string;
   @Input() cssClass: string;
   @Input() fileSizeErrorMessage: string;
   @Input() fileTypeErrorMessage: string;
@@ -65,6 +66,7 @@ export class FileUpload implements AfterViewInit {
     this.fileTypeErrorMessage = this.rebirthNGConfig.fileUpload.fileTypeErrorMessage;
     this.uploadParamName = this.rebirthNGConfig.fileUpload.uploadParamName;
     this.previewWidth = this.rebirthNGConfig.fileUpload.previewWidth;
+    this.previewHeight = this.rebirthNGConfig.fileUpload.previewHeight;
     this.imgPreview = this.rebirthNGConfig.fileUpload.imgPreview;
     this.chooseButton = this.rebirthNGConfig.fileUpload.chooseButton;
     this.uploadButton = this.rebirthNGConfig.fileUpload.uploadButton;

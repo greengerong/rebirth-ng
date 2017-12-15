@@ -3,7 +3,7 @@
 <div class="image-upload clearfix {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">
   <div *ngFor="let fileItem of uploadFiles" class="image-upload-item"
        [style.width]="previewWidth"
-       [style.height]="previewWidth">
+       [style.height]="previewHeight">
 
     <div class="image-upload-image-view">
       <div class="image-upload-toolbar">
@@ -19,7 +19,7 @@
     </div>
   </div>
   <div class="image-upload-item image-upload-btn" [style.width]="previewWidth"
-       [style.height]="previewWidth" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems()">
+       [style.height]="previewHeight" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems()">
     <div class="image-upload-item-info">
       <i class="image-upload-btn-icon {{plusIcon}}"></i>
       <div class="image-upload-btn-text">{{uploadButton}}</div>
