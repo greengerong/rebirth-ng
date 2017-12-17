@@ -1428,10 +1428,10 @@
                                 <span class="modifier">Protected</span> <a href="#onFileUploadError">onFileUploadError</a>
                             </li>
                             <li>
-                                <span class="modifier">Public</span> <a href="#uploadBtnIcon">uploadBtnIcon</a>
+                                 <a href="#uploadBtnIcon">uploadBtnIcon</a>
                             </li>
                             <li>
-                                <span class="modifier">Public</span> <a href="#viewImage">viewImage</a>
+                                 <a href="#viewImage">viewImage</a>
                             </li>
                         </ul>
                     </td>
@@ -1465,7 +1465,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:22</a></div>
                                 </td>
                             </tr>
     
@@ -1555,7 +1555,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:22</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -1588,7 +1588,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:48</a></div>
                                 </td>
                             </tr>
     
@@ -1629,7 +1629,7 @@
                                 <div>
                                 </div>
                                 <div class="io-description">
-                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    <b>Returns : </b>    <code>Observable&lt;any&gt;</code>
     
                                 </div>
                                     <div class="io-description">
@@ -1644,20 +1644,19 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="uploadBtnIcon"></a>
-                            <span class="name"><b><span class="modifier">Public</span> uploadBtnIcon</b><a href="#uploadBtnIcon"><span class="fa fa-link"></span></a></span>
+                            <span class="name"><b> uploadBtnIcon</b><a href="#uploadBtnIcon"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-reset"></span>
-                            <code>uploadBtnIcon()</code>
+    <code>uploadBtnIcon()</code>
                         </td>
                     </tr>
     
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:43</a></div>
                                 </td>
                             </tr>
     
@@ -1677,20 +1676,19 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="viewImage"></a>
-                            <span class="name"><b><span class="modifier">Public</span> viewImage</b><a href="#viewImage"><span class="fa fa-link"></span></a></span>
+                            <span class="name"><b> viewImage</b><a href="#viewImage"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-reset"></span>
-                            <code>viewImage(fileItem: <a href="../interfaces/SelectFileModel.html">SelectFileModel</a>)</code>
+    <code>viewImage(fileItem: <a href="../interfaces/SelectFileModel.html">SelectFileModel</a>)</code>
                         </td>
                     </tr>
     
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:36</a></div>
                                 </td>
                             </tr>
     
@@ -1750,6 +1748,7 @@ import { ModalService } from &#x27;../modal&#x27;;
 import { SelectFileModel } from &#x27;../file-upload/file-upload.model&#x27;;
 import { noop } from &#x27;../utils&#x27;;
 import { ViewImageModalComponent } from &#x27;./view-image-modal.component&#x27;;
+import { Observable } from &#x27;rxjs/Observable&#x27;;
 
 @Component({
   selector: &#x27;re-image-upload&#x27;,
@@ -1774,19 +1773,19 @@ export class ImageUploadComponent extends FileUpload {
     this.accept &#x3D; &#x27;image/*&#x27;;
   }
 
-  public viewImage(fileItem: SelectFileModel) {
+  viewImage(fileItem: SelectFileModel) {
     this.modalService.open({
       component: ViewImageModalComponent,
       resolve: { url: fileItem.dataUrl, name: fileItem.name }
     }).subscribe(noop, noop);
   }
 
-  public uploadBtnIcon() {
+  uploadBtnIcon() {
     return this.isUploading ? this.loadingIcon : this.plusIcon;
   }
 
 
-  protected onFileUploadError(fileItem, error) {
+  protected onFileUploadError(fileItem, error): Observable&lt;any&gt; {
     this.selectFiles &#x3D; this.selectFiles.filter(item &#x3D;&gt; item !&#x3D;&#x3D; fileItem);
     return super.onFileUploadError(fileItem, error);
   }
