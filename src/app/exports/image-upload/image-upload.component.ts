@@ -8,6 +8,7 @@ import { ModalService } from '../modal';
 import { SelectFileModel } from '../file-upload/file-upload.model';
 import { noop } from '../utils';
 import { ViewImageModalComponent } from './view-image-modal.component';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 're-image-upload',
@@ -44,7 +45,7 @@ export class ImageUploadComponent extends FileUpload {
   }
 
 
-  onFileUploadError(fileItem, error) {
+  onFileUploadError(fileItem, error): Observable<any> {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     return super.onFileUploadError(fileItem, error);
   }
