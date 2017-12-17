@@ -45,7 +45,7 @@ export class ImageUploadComponent extends FileUpload {
   }
 
 
-  onFileUploadError(fileItem, error): Observable<any> {
+  protected onFileUploadError(fileItem, error): Observable<any> {
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     return super.onFileUploadError(fileItem, error);
   }

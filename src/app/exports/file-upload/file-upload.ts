@@ -169,7 +169,7 @@ export class FileUpload implements AfterViewInit {
       .catch((error) => this.onFileUploadError(fileItem, error));
   }
 
-  onFileUploadSuccess(fileItem, res): Observable<any> {
+  protected onFileUploadSuccess(fileItem, res): Observable<any> {
     fileItem.uploadResponse = res;
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     this.uploadFiles = [...(this.uploadFiles || []), fileItem];
@@ -179,7 +179,7 @@ export class FileUpload implements AfterViewInit {
     return of({ result: res, success: true });
   }
 
-  onFileUploadError(fileItem, error): Observable<any> {
+  protected onFileUploadError(fileItem, error): Observable<any> {
     this.errors.push(`${fileItem.name}: ${error.error || error.statusText}`);
     this.fileUploadError.emit({
       name: fileItem.name,
