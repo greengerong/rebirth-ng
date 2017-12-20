@@ -14,6 +14,7 @@ export class RebirthNGConfig {
   alertBox = {
     type: 'info',
     closable: false,
+    removeIcon: 'glyphicon glyphicon-remove'
   };
 
   alertBoxPanel = {
