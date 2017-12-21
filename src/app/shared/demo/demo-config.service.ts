@@ -36,6 +36,7 @@ import {
   EllipsisDemoComponent,
   TagsDemoComponent,
   ImageUploadDemoComponent,
+  SelectDemoComponent,
   // component import
 } from '../../demo';
 
@@ -336,6 +337,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/image-upload/README.md'),
       html: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.html'),
       ts: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.ts'),
+    },
+    {
+      name: 'Select',
+      directory: 'select',
+      cmp: SelectDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/select/README.md'),
+      html: require('!raw-loader!../../demo/select/select-demo.component.html'),
+      ts: require('!raw-loader!../../demo/select/select-demo.component.ts'),
     },
     // component declare
   ];

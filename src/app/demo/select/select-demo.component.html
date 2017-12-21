@@ -1,0 +1,20 @@
+<div class="select-demo">
+
+  <section>
+    <h4>Demo:</h4>
+    <re-select [options]="options" [(ngModel)]="selectValue" placeholder="Please select value"></re-select>
+    <pre>{{selectValue | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Select Object Demo:</h4>
+    <re-select [options]="objOptions" [(ngModel)]="selectObjValue" placeholder="Please select value"></re-select>
+    <pre>{{selectObjValue | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Disabled Demo:</h4>
+    <re-select [options]="options" placeholder="Please select value" disabled="disabled"></re-select>
+  </section>
+
+</div>

@@ -38,6 +38,7 @@ import { TreeViewModule, TreeViewService } from './tree-view';
 import { EllipsisModule } from './ellipsis';
 import { TagsModule } from './tags';
 import { ImageUploadModule } from './image-upload';
+import { SelectModule } from './select';
 // module import
 
 @NgModule({
@@ -77,6 +78,7 @@ import { ImageUploadModule } from './image-upload';
     EllipsisModule,
     TagsModule,
     ImageUploadModule,
+    SelectModule,
     // module declare
   ],
   exports: [
@@ -116,6 +118,7 @@ import { ImageUploadModule } from './image-upload';
     EllipsisModule,
     TagsModule,
     ImageUploadModule,
+    SelectModule,
     // module declare
   ],
   declarations: [],

@@ -1,0 +1,11 @@
+.select-panel,
+.select-control:not([disabled]) {
+  cursor: pointer;
+}
+
+::ng-deep .dropdown-menu {
+  width: 95%;
+  .dropdown-item {
+    white-space: normal !important;
+  }
+}

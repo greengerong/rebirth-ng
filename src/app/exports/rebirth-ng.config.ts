@@ -146,6 +146,10 @@ export class RebirthNGConfig {
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
   };
 
+  select = {
+    iconDown: 'glyphicon glyphicon-menu-down'
+  };
+
   selectButton = {
     type: 'primary',
     justified: false,

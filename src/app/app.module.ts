@@ -40,6 +40,7 @@ import {
   EllipsisDemoModule,
   TagsDemoModule,
   ImageUploadDemoModule,
+    SelectDemoModule,
   // module declare
 } from './demo';
 import { RebirthNGModule } from './exports';
@@ -105,6 +106,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     EllipsisDemoModule,
     TagsDemoModule,
     ImageUploadDemoModule,
+    SelectDemoModule,
     // module declare
   ],
   providers: [
