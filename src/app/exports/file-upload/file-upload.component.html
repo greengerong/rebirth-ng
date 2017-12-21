@@ -3,13 +3,15 @@
 <ng-template #defaultToolbarTemplate let-toolbar="">
   <div class="file-upload-toolbar">
     <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"
-            [disabled]="toolbar.isMoreThanMaxItems()">
+            [disabled]="toolbar.disabled || toolbar.isMoreThanMaxItems()">
       <i class="file-upload-toolbar-choose {{plusIcon}}"></i> {{toolbar.chooseButton}}
     </button>
-    <button class="btn btn-info" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.uploadAllFiles()">
+    <button class="btn btn-info" [disabled]="toolbar.disabled || !toolbar.selectFiles?.length"
+            (click)="toolbar.uploadAllFiles()">
       <i class="file-upload-toolbar-upload {{uploadIcon}}"></i> {{toolbar.uploadButton}}
     </button>
-    <button class="btn btn-danger" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.removeAllSelectedFiles()">
+    <button class="btn btn-danger" [disabled]="toolbar.disabled || !toolbar.selectFiles?.length"
+            (click)="toolbar.removeAllSelectedFiles()">
       <i class="file-upload-toolbar-remove {{removeIcon}}"></i> {{toolbar.cancelButton}}
     </button>
   </div>
@@ -20,12 +22,14 @@
 
   <re-file-upload-preview [selectFiles]="preview.selectFiles" [imgPreview]="preview.imgPreview"
                           [previewWidth]="preview.previewWidth"
+                          [disabled]="preview.disabled"
                           (removeFile)="preview.onRemoveFile($event)"></re-file-upload-preview>
 
   <re-file-upload-preview [selectFiles]="preview.uploadFiles" [imgPreview]="preview.imgPreview"
                           [previewWidth]="preview.previewWidth"
                           (removeFile)="preview.onRemoveUploadFile($event)"
-                          [uploaded]="true"></re-file-upload-preview>
+                          [uploaded]="true"
+                          [disabled]="preview.disabled"></re-file-upload-preview>
 </ng-template>
 
 <div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">

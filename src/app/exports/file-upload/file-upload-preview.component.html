@@ -16,7 +16,8 @@
         {{fileItem.displaySize}}
       </td>
       <td>
-        <i class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>
+        <i class="glyphicon glyphicon-trash text-danger" [ngClass]="{disabled: disabled}"
+           (click)="onRemoveFile(fileItem)"></i>
       </td>
     </tr>
     </tbody>

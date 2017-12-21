@@ -40,6 +40,9 @@ export class ImageUploadComponent extends FileUpload {
   }
 
   viewImage(fileItem: SelectFileModel) {
+    if (this.disabled) {
+      return;
+    }
     this.modalService.open({
       component: ViewImageModalComponent,
       resolve: { url: fileItem.dataUrl, name: fileItem.name }

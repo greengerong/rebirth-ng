@@ -61,8 +61,8 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   selectFiles: SelectFileModel[] = [];
   isUploading: boolean;
   errors: string[] = [];
-  private onChange: (_: any) => null;
-  private onTouched: () => null;
+  protected onChange = (_: any) => null;
+  protected onTouched = () => null;
 
   constructor(protected rebirthNGConfig: RebirthNGConfig,
               protected renderer: Renderer2,
@@ -107,7 +107,6 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    console.log('set disabled state', isDisabled);
     this.disabled = isDisabled;
   }
 
@@ -124,6 +123,9 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   onDropFiles($event) {
+    if (this.disabled) {
+      return;
+    }
     $event.stopPropagation();
     $event.preventDefault();
     this.clearErrors();
@@ -135,6 +137,9 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   addNewFile($event) {
+    if (this.disabled) {
+      return;
+    }
     $event.stopPropagation();
     if (!this.isMoreThanMaxItems()) {
       this.fileInput.nativeElement.value = null;
@@ -159,12 +164,18 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   onRemoveFile(fileItem) {
+    if (this.disabled) {
+      return;
+    }
     this.onTouched();
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     this.removeFiles.emit([fileItem]);
   }
 
   onRemoveUploadFile(fileItem) {
+    if (this.disabled) {
+      return;
+    }
     this.onTouched();
     this.onUploadFileChange(this.uploadFiles.filter(item => item !== fileItem));
     this.removeFiles.emit([fileItem]);

@@ -26,8 +26,8 @@ export class SelectComponent implements ControlValueAccessor {
 
   selectedItem: any;
 
-  private onChange: (_: any) => null;
-  private onTouched: () => null;
+  private onChange = (_: any) => null;
+  private onTouched = () => null;
 
   constructor(rebirthNgConfig: RebirthNGConfig) {
     this.iconDown = rebirthNgConfig.select.iconDown;
@@ -47,7 +47,6 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    console.log('set disabled state', isDisabled);
     this.disabled = isDisabled;
   }
 
