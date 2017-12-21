@@ -1400,6 +1400,14 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                    <code>
+                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
+                    </code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -1477,7 +1485,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:28</a></div>
                                 </td>
                             </tr>
     
@@ -1567,7 +1575,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:28</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -1600,7 +1608,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:48</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:57</a></div>
                                 </td>
                             </tr>
     
@@ -1668,7 +1676,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:43</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:52</a></div>
                                 </td>
                             </tr>
     
@@ -1700,7 +1708,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/exports/image-upload/image-upload.component.ts:42</a></div>
                                 </td>
                             </tr>
     
@@ -1751,7 +1759,7 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {
-  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2, Input
+  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2, Input, forwardRef
 } from &#x27;@angular/core&#x27;;
 import { FileUpload } from &#x27;../file-upload/file-upload&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
@@ -1761,13 +1769,19 @@ import { SelectFileModel } from &#x27;../file-upload/file-upload.model&#x27;;
 import { noop } from &#x27;../utils&#x27;;
 import { ViewImageModalComponent } from &#x27;./view-image-modal.component&#x27;;
 import { Observable } from &#x27;rxjs/Observable&#x27;;
+import { NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 
 @Component({
   selector: &#x27;re-image-upload&#x27;,
   templateUrl: &#x27;./image-upload.component.html&#x27;,
   styleUrls: [&#x27;./image-upload.component.scss&#x27;],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  exportAs: &#x27;imageUpload&#x27;
+  exportAs: &#x27;imageUpload&#x27;,
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() &#x3D;&gt; ImageUploadComponent),
+    multi: true
+  }]
 })
 export class ImageUploadComponent extends FileUpload {
 
@@ -1786,6 +1800,9 @@ export class ImageUploadComponent extends FileUpload {
   }
 
   viewImage(fileItem: SelectFileModel) {
+    if (this.disabled) {
+      return;
+    }
     this.modalService.open({
       component: ViewImageModalComponent,
       resolve: { url: fileItem.dataUrl, name: fileItem.name }
@@ -1815,19 +1832,20 @@ export class ImageUploadComponent extends FileUpload {
 
     &lt;div class&#x3D;&quot;image-upload-image-view&quot;&gt;
       &lt;div class&#x3D;&quot;image-upload-toolbar&quot;&gt;
-        &lt;i class&#x3D;&quot;image-upload-toolbar-item image-upload-toolbar-view {{viewIcon}}&quot;
+        &lt;i [ngClass]&#x3D;&quot;{disabled: disabled}&quot; class&#x3D;&quot;image-upload-toolbar-item image-upload-toolbar-view {{viewIcon}}&quot;
            (click)&#x3D;&quot;viewImage(fileItem)&quot;&gt;&lt;/i&gt;
-        &lt;i class&#x3D;&quot;image-upload-toolbar-item image-upload-toolbar-remove {{removeIcon}}&quot;
+        &lt;i [ngClass]&#x3D;&quot;{disabled: disabled}&quot; class&#x3D;&quot;image-upload-toolbar-item image-upload-toolbar-remove {{removeIcon}}&quot;
            (click)&#x3D;&quot;onRemoveUploadFile(fileItem)&quot;&gt;&lt;/i&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;image-upload-item-info&quot;&gt;
         &lt;img class&#x3D;&quot;preview-image img-responsive&quot; [src]&#x3D;&quot;fileItem.dataUrl&quot;
-             [attr.alt]&#x3D;&quot;fileItem.file?.name&quot;&gt;
+             [attr.alt]&#x3D;&quot;fileItem?.name&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;image-upload-item image-upload-btn&quot; [style.width]&#x3D;&quot;previewWidth&quot;
-       [style.height]&#x3D;&quot;previewHeight&quot; (click)&#x3D;&quot;addNewFile($event)&quot; *ngIf&#x3D;&quot;!isMoreThanMaxItems() || isUploading&quot;&gt;
+       [style.height]&#x3D;&quot;previewHeight&quot; (click)&#x3D;&quot;addNewFile($event)&quot;
+       *ngIf&#x3D;&quot;!disabled &amp;&amp; (!isMoreThanMaxItems() || isUploading)&quot;&gt;
     &lt;div class&#x3D;&quot;image-upload-item-info&quot;&gt;
       &lt;i class&#x3D;&quot;image-upload-btn-icon {{uploadBtnIcon()}}&quot; [ngClass]&#x3D;&quot;{&#x27;uploading&#x27;: isUploading}&quot;&gt;&lt;/i&gt;
       &lt;div class&#x3D;&quot;image-upload-btn-text&quot;&gt;{{uploadButton}}&lt;/div&gt;
@@ -1867,7 +1885,7 @@ export class ImageUploadComponent extends FileUpload {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><input #file type="file" (change)="newFileChoose(file)" style="display: none"><div class="image-upload clearfix {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">  <div *ngFor="let fileItem of uploadFiles" class="image-upload-item"       [style.width]="previewWidth"       [style.height]="previewHeight">    <div class="image-upload-image-view">      <div class="image-upload-toolbar">        <i class="image-upload-toolbar-item image-upload-toolbar-view {{viewIcon}}"           (click)="viewImage(fileItem)"></i>        <i class="image-upload-toolbar-item image-upload-toolbar-remove {{removeIcon}}"           (click)="onRemoveUploadFile(fileItem)"></i>      </div>      <div class="image-upload-item-info">        <img class="preview-image img-responsive" [src]="fileItem.dataUrl"             [attr.alt]="fileItem.file?.name">      </div>    </div>  </div>  <div class="image-upload-item image-upload-btn" [style.width]="previewWidth"       [style.height]="previewHeight" (click)="addNewFile($event)" *ngIf="!isMoreThanMaxItems() || isUploading">    <div class="image-upload-item-info">      <i class="image-upload-btn-icon {{uploadBtnIcon()}}" [ngClass]="{\'uploading\': isUploading}"></i>      <div class="image-upload-btn-text">{{uploadButton}}</div>    </div>  </div></div><re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"              *ngIf="showErrors && errors.length">  <ul>    <li *ngFor="let error of errors">{{error}}</li>  </ul></re-alert-box></div>'
+        var COMPONENT_TEMPLATE = '<div><input #file type="file" (change)="newFileChoose(file)" style="display: none"><div class="image-upload clearfix {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">  <div *ngFor="let fileItem of uploadFiles" class="image-upload-item"       [style.width]="previewWidth"       [style.height]="previewHeight">    <div class="image-upload-image-view">      <div class="image-upload-toolbar">        <i [ngClass]="{disabled: disabled}" class="image-upload-toolbar-item image-upload-toolbar-view {{viewIcon}}"           (click)="viewImage(fileItem)"></i>        <i [ngClass]="{disabled: disabled}" class="image-upload-toolbar-item image-upload-toolbar-remove {{removeIcon}}"           (click)="onRemoveUploadFile(fileItem)"></i>      </div>      <div class="image-upload-item-info">        <img class="preview-image img-responsive" [src]="fileItem.dataUrl"             [attr.alt]="fileItem?.name">      </div>    </div>  </div>  <div class="image-upload-item image-upload-btn" [style.width]="previewWidth"       [style.height]="previewHeight" (click)="addNewFile($event)"       *ngIf="!disabled && (!isMoreThanMaxItems() || isUploading)">    <div class="image-upload-item-info">      <i class="image-upload-btn-icon {{uploadBtnIcon()}}" [ngClass]="{\'uploading\': isUploading}"></i>      <div class="image-upload-btn-text">{{uploadButton}}</div>    </div>  </div></div><re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"              *ngIf="showErrors && errors.length">  <ul>    <li *ngFor="let error of errors">{{error}}</li>  </ul></re-alert-box></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'ImageUploadComponent'};

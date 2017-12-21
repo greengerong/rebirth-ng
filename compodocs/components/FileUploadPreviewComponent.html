@@ -1441,6 +1441,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#disabled">disabled</a>
+                            </li>
+                            <li>
                                 <a href="#imgPreview">imgPreview</a>
                             </li>
                             <li>
@@ -1476,6 +1479,27 @@
 
     <section>
         <h3 id="inputs">Inputs</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-2">
+                            <a name="disabled"></a>
+                            <code>disabled</code>
+                        </td>
+                        <td class="col-md-10">
+                              <p>
+                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                              </p>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:15</a></div>
+                                </td>
+                            </tr>
+                </tbody>
+            </table>
             <table class="table table-sm table-bordered">
                 <tbody>
                     <tr>
@@ -1534,7 +1558,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:16</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -1578,7 +1602,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:17</a></div>
                                 </td>
                             </tr>
                 </tbody>
@@ -1609,7 +1633,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/file-upload/file-upload-preview.component.ts:19</a></div>
                                 </td>
                             </tr>
     
@@ -1672,11 +1696,14 @@ export class FileUploadPreviewComponent {
   @Input() imgPreview: boolean;
   @Input() previewWidth: string;
   @Input() uploaded: boolean;
+  @Input() disabled: boolean;
   @Input() selectFiles: SelectFileModel[] &#x3D; [];
   @Output() removeFile &#x3D; new EventEmitter&lt;SelectFileModel&gt;();
 
   onRemoveFile(fileItem) {
-    this.removeFile.emit(fileItem);
+    if (!this.disabled) {
+      this.removeFile.emit(fileItem);
+    }
   }
 }
 </code></pre>
@@ -1689,7 +1716,8 @@ export class FileUploadPreviewComponent {
     &lt;tr *ngFor&#x3D;&quot;let fileItem of selectFiles&quot;&gt;
       &lt;td *ngIf&#x3D;&quot;imgPreview&quot;&gt;
         &lt;a [href]&#x3D;&quot;fileItem.dataUrl&quot; target&#x3D;&quot;_blank&quot;&gt;
-          &lt;img *ngIf&#x3D;&quot;fileItem.dataUrl&quot; class&#x3D;&quot;img-responsive&quot; [src]&#x3D;&quot;fileItem.dataUrl&quot; [attr.alt]&#x3D;&quot;fileItem.file.name&quot;
+          &lt;img *ngIf&#x3D;&quot;fileItem.dataUrl&quot; class&#x3D;&quot;img-responsive&quot; [src]&#x3D;&quot;fileItem.dataUrl&quot;
+               [attr.alt]&#x3D;&quot;fileItem.name&quot;
                [style.width]&#x3D;&quot;previewWidth&quot;/&gt;
         &lt;/a&gt;
       &lt;/td&gt;
@@ -1700,7 +1728,8 @@ export class FileUploadPreviewComponent {
         {{fileItem.displaySize}}
       &lt;/td&gt;
       &lt;td&gt;
-        &lt;i class&#x3D;&quot;glyphicon glyphicon-trash text-danger&quot; (click)&#x3D;&quot;onRemoveFile(fileItem)&quot;&gt;&lt;/i&gt;
+        &lt;i class&#x3D;&quot;glyphicon glyphicon-trash text-danger&quot; [ngClass]&#x3D;&quot;{disabled: disabled}&quot;
+           (click)&#x3D;&quot;onRemoveFile(fileItem)&quot;&gt;&lt;/i&gt;
       &lt;/td&gt;
     &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -1732,7 +1761,7 @@ export class FileUploadPreviewComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="file-upload-preview">  <table class="table">    <tbody>    <tr *ngFor="let fileItem of selectFiles">      <td *ngIf="imgPreview">        <a [href]="fileItem.dataUrl" target="_blank">          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl" [attr.alt]="fileItem.file.name"               [style.width]="previewWidth"/>        </a>      </td>      <td>        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i> {{fileItem.name}}      </td>      <td>        {{fileItem.displaySize}}      </td>      <td>        <i class="glyphicon glyphicon-trash text-danger" (click)="onRemoveFile(fileItem)"></i>      </td>    </tr>    </tbody>  </table></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="file-upload-preview">  <table class="table">    <tbody>    <tr *ngFor="let fileItem of selectFiles">      <td *ngIf="imgPreview">        <a [href]="fileItem.dataUrl" target="_blank">          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl"               [attr.alt]="fileItem.name"               [style.width]="previewWidth"/>        </a>      </td>      <td>        <i *ngIf="uploaded" class="glyphicon glyphicon-ok text-success"></i> {{fileItem.name}}      </td>      <td>        {{fileItem.displaySize}}      </td>      <td>        <i class="glyphicon glyphicon-trash text-danger" [ngClass]="{disabled: disabled}"           (click)="onRemoveFile(fileItem)"></i>      </td>    </tr>    </tbody>  </table></div></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'FileUploadPreviewComponent'};

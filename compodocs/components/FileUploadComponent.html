@@ -1400,6 +1400,14 @@
 
 
 
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                    <code>
+                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
+                    </code>
+                </td>
+            </tr>
 
 
             <tr>
@@ -1436,7 +1444,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exports/file-upload/file-upload.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/file-upload/file-upload.component.ts:26</a></div>
                                 </td>
                             </tr>
     
@@ -1513,18 +1521,25 @@
   ChangeDetectionStrategy,
   Renderer2,
   ChangeDetectorRef,
-  Optional
+  Optional,
+  forwardRef
 } from &#x27;@angular/core&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { FileUpload } from &#x27;./file-upload&#x27;;
+import { NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 
 @Component({
   selector: &#x27;re-file-upload&#x27;,
   templateUrl: &#x27;./file-upload.component.html&#x27;,
   styleUrls: [&#x27;./file-upload.component.scss&#x27;],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  exportAs: &#x27;fileUpload&#x27;
+  exportAs: &#x27;fileUpload&#x27;,
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() &#x3D;&gt; FileUploadComponent),
+    multi: true
+  }]
 })
 export class FileUploadComponent extends FileUpload {
 
@@ -1545,13 +1560,15 @@ export class FileUploadComponent extends FileUpload {
 &lt;ng-template #defaultToolbarTemplate let-toolbar&#x3D;&quot;&quot;&gt;
   &lt;div class&#x3D;&quot;file-upload-toolbar&quot;&gt;
     &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;toolbar.addNewFile($event)&quot;
-            [disabled]&#x3D;&quot;toolbar.isMoreThanMaxItems()&quot;&gt;
+            [disabled]&#x3D;&quot;toolbar.disabled || toolbar.isMoreThanMaxItems()&quot;&gt;
       &lt;i class&#x3D;&quot;file-upload-toolbar-choose {{plusIcon}}&quot;&gt;&lt;/i&gt; {{toolbar.chooseButton}}
     &lt;/button&gt;
-    &lt;button class&#x3D;&quot;btn btn-info&quot; [disabled]&#x3D;&quot;!toolbar.selectFiles?.length&quot; (click)&#x3D;&quot;toolbar.uploadAllFiles()&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-info&quot; [disabled]&#x3D;&quot;toolbar.disabled || !toolbar.selectFiles?.length&quot;
+            (click)&#x3D;&quot;toolbar.uploadAllFiles()&quot;&gt;
       &lt;i class&#x3D;&quot;file-upload-toolbar-upload {{uploadIcon}}&quot;&gt;&lt;/i&gt; {{toolbar.uploadButton}}
     &lt;/button&gt;
-    &lt;button class&#x3D;&quot;btn btn-danger&quot; [disabled]&#x3D;&quot;!toolbar.selectFiles?.length&quot; (click)&#x3D;&quot;toolbar.removeAllSelectedFiles()&quot;&gt;
+    &lt;button class&#x3D;&quot;btn btn-danger&quot; [disabled]&#x3D;&quot;toolbar.disabled || !toolbar.selectFiles?.length&quot;
+            (click)&#x3D;&quot;toolbar.removeAllSelectedFiles()&quot;&gt;
       &lt;i class&#x3D;&quot;file-upload-toolbar-remove {{removeIcon}}&quot;&gt;&lt;/i&gt; {{toolbar.cancelButton}}
     &lt;/button&gt;
   &lt;/div&gt;
@@ -1562,12 +1579,14 @@ export class FileUploadComponent extends FileUpload {
 
   &lt;re-file-upload-preview [selectFiles]&#x3D;&quot;preview.selectFiles&quot; [imgPreview]&#x3D;&quot;preview.imgPreview&quot;
                           [previewWidth]&#x3D;&quot;preview.previewWidth&quot;
+                          [disabled]&#x3D;&quot;preview.disabled&quot;
                           (removeFile)&#x3D;&quot;preview.onRemoveFile($event)&quot;&gt;&lt;/re-file-upload-preview&gt;
 
   &lt;re-file-upload-preview [selectFiles]&#x3D;&quot;preview.uploadFiles&quot; [imgPreview]&#x3D;&quot;preview.imgPreview&quot;
                           [previewWidth]&#x3D;&quot;preview.previewWidth&quot;
                           (removeFile)&#x3D;&quot;preview.onRemoveUploadFile($event)&quot;
-                          [uploaded]&#x3D;&quot;true&quot;&gt;&lt;/re-file-upload-preview&gt;
+                          [uploaded]&#x3D;&quot;true&quot;
+                          [disabled]&#x3D;&quot;preview.disabled&quot;&gt;&lt;/re-file-upload-preview&gt;
 &lt;/ng-template&gt;
 
 &lt;div class&#x3D;&quot;file-upload {{cssClass}}&quot; reDroppable (onDrop)&#x3D;&quot;onDropFiles($event)&quot;&gt;
@@ -1613,7 +1632,7 @@ export class FileUploadComponent extends FileUpload {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><input #file type="file" (change)="newFileChoose(file)" style="display: none"><ng-template #defaultToolbarTemplate let-toolbar="">  <div class="file-upload-toolbar">    <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"            [disabled]="toolbar.isMoreThanMaxItems()">      <i class="file-upload-toolbar-choose {{plusIcon}}"></i> {{toolbar.chooseButton}}    </button>    <button class="btn btn-info" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.uploadAllFiles()">      <i class="file-upload-toolbar-upload {{uploadIcon}}"></i> {{toolbar.uploadButton}}    </button>    <button class="btn btn-danger" [disabled]="!toolbar.selectFiles?.length" (click)="toolbar.removeAllSelectedFiles()">      <i class="file-upload-toolbar-remove {{removeIcon}}"></i> {{toolbar.cancelButton}}    </button>  </div></ng-template><ng-template #defaultPreviewTemplate let-preview="">  <re-file-upload-preview [selectFiles]="preview.selectFiles" [imgPreview]="preview.imgPreview"                          [previewWidth]="preview.previewWidth"                          (removeFile)="preview.onRemoveFile($event)"></re-file-upload-preview>  <re-file-upload-preview [selectFiles]="preview.uploadFiles" [imgPreview]="preview.imgPreview"                          [previewWidth]="preview.previewWidth"                          (removeFile)="preview.onRemoveUploadFile($event)"                          [uploaded]="true"></re-file-upload-preview></ng-template><div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">  <ng-template [ngTemplateOutlet]="toolbarTemplate || defaultToolbarTemplate"               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template>  <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"                *ngIf="showErrors && errors.length">    <ul>      <li *ngFor="let error of errors">{{error}}</li>    </ul>  </re-alert-box>  <ng-template [ngTemplateOutlet]="previewTemplate || defaultPreviewTemplate"               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template></div></div>'
+        var COMPONENT_TEMPLATE = '<div><input #file type="file" (change)="newFileChoose(file)" style="display: none"><ng-template #defaultToolbarTemplate let-toolbar="">  <div class="file-upload-toolbar">    <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"            [disabled]="toolbar.disabled || toolbar.isMoreThanMaxItems()">      <i class="file-upload-toolbar-choose {{plusIcon}}"></i> {{toolbar.chooseButton}}    </button>    <button class="btn btn-info" [disabled]="toolbar.disabled || !toolbar.selectFiles?.length"            (click)="toolbar.uploadAllFiles()">      <i class="file-upload-toolbar-upload {{uploadIcon}}"></i> {{toolbar.uploadButton}}    </button>    <button class="btn btn-danger" [disabled]="toolbar.disabled || !toolbar.selectFiles?.length"            (click)="toolbar.removeAllSelectedFiles()">      <i class="file-upload-toolbar-remove {{removeIcon}}"></i> {{toolbar.cancelButton}}    </button>  </div></ng-template><ng-template #defaultPreviewTemplate let-preview="">  <re-file-upload-preview [selectFiles]="preview.selectFiles" [imgPreview]="preview.imgPreview"                          [previewWidth]="preview.previewWidth"                          [disabled]="preview.disabled"                          (removeFile)="preview.onRemoveFile($event)"></re-file-upload-preview>  <re-file-upload-preview [selectFiles]="preview.uploadFiles" [imgPreview]="preview.imgPreview"                          [previewWidth]="preview.previewWidth"                          (removeFile)="preview.onRemoveUploadFile($event)"                          [uploaded]="true"                          [disabled]="preview.disabled"></re-file-upload-preview></ng-template><div class="file-upload {{cssClass}}" reDroppable (onDrop)="onDropFiles($event)">  <ng-template [ngTemplateOutlet]="toolbarTemplate || defaultToolbarTemplate"               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template>  <re-alert-box class="file-upload-error-box" type="danger" [closable]="true" (close)="clearErrors()"                *ngIf="showErrors && errors.length">    <ul>      <li *ngFor="let error of errors">{{error}}</li>    </ul>  </re-alert-box>  <ng-template [ngTemplateOutlet]="previewTemplate || defaultPreviewTemplate"               [ngTemplateOutletContext]="{ $implicit: this}"></ng-template></div></div>'
     var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'FileUploadComponent'};
