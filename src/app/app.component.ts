@@ -100,6 +100,10 @@ export class AppComponent implements OnInit {
               url: 'https://greengerong.github.io/rebirth-echarts/'
             },
             {
+              text: 'rebirth-medium-editor(MediumEditor)',
+              url: 'https://greengerong.github.io/rebirth-medium-editor/'
+            },
+            {
               text: 'Rebirth seed(rebirth-admin)',
               url: 'https://github.com/greengerong/rebirth-admin'
             },

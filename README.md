@@ -50,10 +50,10 @@
 - [x] Image Upload
 
 ## Advance Components
-- [ ] Editor([]())
-- [ ] Mask([]())
+- [x] Editor([https://greengerong.github.io/rebirth-medium-editor/](https://greengerong.github.io/rebirth-medium-editor/))
 - [x] Chartjs([https://greengerong.github.io/rebirth-chart/](https://greengerong.github.io/rebirth-chart/))
 - [x] ECharts([https://greengerong.github.io/rebirth-echarts/](https://greengerong.github.io/rebirth-echarts/))
+- [ ] Mask([]())
 
 
 ## Themes
