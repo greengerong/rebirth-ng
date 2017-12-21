@@ -1,4 +1,10 @@
 
+# 5.0.6(2017-12-xx)
+
+## Features
+
+* (Select): Select component;
+
 # 5.0.5(2017-12-17)
 
 ## Features
