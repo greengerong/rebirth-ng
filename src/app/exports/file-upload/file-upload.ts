@@ -20,8 +20,9 @@ import { of } from 'rxjs/observable/of';
 import { forkJoin } from 'rxjs/observable/forkJoin';
 import { noop } from '../utils';
 import { Observable } from 'rxjs/Observable';
+import { ControlValueAccessor } from '@angular/forms';
 
-export class FileUpload implements AfterViewInit {
+export class FileUpload implements AfterViewInit, ControlValueAccessor {
 
   @Input() accept: string;
   @Input() multiple = true;
@@ -47,6 +48,7 @@ export class FileUpload implements AfterViewInit {
   @Input() removeIcon: string;
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
+  @Input() disabled: boolean;
   @Output() selectFilesChange = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadStart = new EventEmitter<SelectFileModel[]>();
   @Output() fileUploadCompleted = new EventEmitter<SelectFileModel[]>();
@@ -59,6 +61,8 @@ export class FileUpload implements AfterViewInit {
   selectFiles: SelectFileModel[] = [];
   isUploading: boolean;
   errors: string[] = [];
+  private onChange: (_: any) => null;
+  private onTouched: () => null;
 
   constructor(protected rebirthNGConfig: RebirthNGConfig,
               protected renderer: Renderer2,
@@ -90,6 +94,23 @@ export class FileUpload implements AfterViewInit {
     this.renderer.setProperty(this.fileInput.nativeElement, 'multiple', this.multiple);
   }
 
+  writeValue(value: any): void {
+    this.uploadFiles = value || [];
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    console.log('set disabled state', isDisabled);
+    this.disabled = isDisabled;
+  }
+
   isMoreThanMaxItems() {
     const fileSize = this.getFileCount();
     if (!this.multiple) {
@@ -106,6 +127,7 @@ export class FileUpload implements AfterViewInit {
     $event.stopPropagation();
     $event.preventDefault();
     this.clearErrors();
+    this.onTouched();
     const files = $event.dataTransfer.files;
     if (files && files.length) {
       this.handleFileChoose(files);
@@ -121,6 +143,7 @@ export class FileUpload implements AfterViewInit {
   }
 
   newFileChoose(fileInput: HTMLInputElement) {
+    this.onTouched();
     this.clearErrors();
     if (fileInput.files && fileInput.files.length) {
       this.handleFileChoose(fileInput.files);
@@ -128,6 +151,7 @@ export class FileUpload implements AfterViewInit {
   }
 
   removeAllSelectedFiles() {
+    this.onTouched();
     const files = this.selectFiles;
     this.selectFiles = [];
     this.clearErrors();
@@ -135,17 +159,19 @@ export class FileUpload implements AfterViewInit {
   }
 
   onRemoveFile(fileItem) {
+    this.onTouched();
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     this.removeFiles.emit([fileItem]);
   }
 
   onRemoveUploadFile(fileItem) {
-    this.uploadFiles = this.uploadFiles.filter(item => item !== fileItem);
+    this.onTouched();
+    this.onUploadFileChange(this.uploadFiles.filter(item => item !== fileItem));
     this.removeFiles.emit([fileItem]);
-    this.uploadFilesChange.emit(this.uploadFiles);
   }
 
   uploadAllFiles() {
+    this.onTouched();
     this.clearErrors();
     this.httpUploadAllFile(this.selectFiles);
   }
@@ -171,12 +197,17 @@ export class FileUpload implements AfterViewInit {
 
   protected onFileUploadSuccess(fileItem, res): Observable<any> {
     fileItem.uploadResponse = res;
-    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-    this.uploadFiles = [...(this.uploadFiles || []), fileItem];
     this.fileUploadSuccess.emit(fileItem);
-    this.uploadFilesChange.emit(this.uploadFiles);
+    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
+    this.onUploadFileChange([...(this.uploadFiles || []), fileItem]);
     this.changeDetectorRef.markForCheck();
     return of({ result: res, success: true });
+  }
+
+  private onUploadFileChange(uploadFiles) {
+    this.uploadFiles = uploadFiles;
+    this.uploadFilesChange.emit(uploadFiles);
+    this.onChange(uploadFiles);
   }
 
   protected onFileUploadError(fileItem, error): Observable<any> {

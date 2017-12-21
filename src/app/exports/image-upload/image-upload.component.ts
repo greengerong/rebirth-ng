@@ -1,5 +1,5 @@
 import {
-  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2, Input
+  Component, ChangeDetectionStrategy, Optional, ChangeDetectorRef, Renderer2, Input, forwardRef
 } from '@angular/core';
 import { FileUpload } from '../file-upload/file-upload';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -9,13 +9,19 @@ import { SelectFileModel } from '../file-upload/file-upload.model';
 import { noop } from '../utils';
 import { ViewImageModalComponent } from './view-image-modal.component';
 import { Observable } from 'rxjs/Observable';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 're-image-upload',
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  exportAs: 'imageUpload'
+  exportAs: 'imageUpload',
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => ImageUploadComponent),
+    multi: true
+  }]
 })
 export class ImageUploadComponent extends FileUpload {
 

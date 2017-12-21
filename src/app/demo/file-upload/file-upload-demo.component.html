@@ -3,7 +3,7 @@
   <section>
     <h4>Basic:</h4>
     <re-file-upload [multiple]="true" (removeFiles)="onRemoveDone($event)" uploadParamName="files"
-                    [(uploadFiles)]="uploadFiles"
+                    [(ngModel)]="uploadFiles"
                     uploadUrl="http://localhost:3000/upload"></re-file-upload>
 
     <pre>{{uploadFiles | json}}</pre>

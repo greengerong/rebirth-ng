@@ -26,8 +26,8 @@ export class SelectComponent implements ControlValueAccessor {
 
   selectedItem: any;
 
-  private onChange = (_: any) => null;
-  private onTouched = () => null;
+  private onChange: (_: any) => null;
+  private onTouched: () => null;
 
   constructor(rebirthNgConfig: RebirthNGConfig) {
     this.iconDown = rebirthNgConfig.select.iconDown;
