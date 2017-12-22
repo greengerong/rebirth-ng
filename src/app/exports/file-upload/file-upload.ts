@@ -129,7 +129,6 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     $event.stopPropagation();
     $event.preventDefault();
     this.clearErrors();
-    this.onTouched();
     const files = $event.dataTransfer.files;
     if (files && files.length) {
       this.handleFileChoose(files);
@@ -148,7 +147,6 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   newFileChoose(fileInput: HTMLInputElement) {
-    this.onTouched();
     this.clearErrors();
     if (fileInput.files && fileInput.files.length) {
       this.handleFileChoose(fileInput.files);
@@ -182,7 +180,6 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   }
 
   uploadAllFiles() {
-    this.onTouched();
     this.clearErrors();
     this.httpUploadAllFile(this.selectFiles);
   }
@@ -195,6 +192,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
       .subscribe(noop, noop, () => {
         this.isUploading = false;
         this.fileUploadCompleted.emit(files);
+        this.onTouched();
       });
   }
 
