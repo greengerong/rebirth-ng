@@ -1,7 +1,9 @@
 <div class="input-group select-panel" (click)="popup($event)">
-  <input type="text" class="form-control select-control" [minLength]="0" [disabled]="disabled" [readonly]="readonly" [placeholder]="placeholder"
-    [(ngModel)]="selectedItem" (ngModelChange)="onSelectedChange($event)" reAutoComplete [dataSource]="options" [formatter]="formatter" />
-  <div class="input-group-addon">
+  <input type="text" class="form-control select-control" [minLength]="0" [disabled]="disabled" [readonly]="readonly"
+         [placeholder]="placeholder"
+         [(ngModel)]="selectedItem" (ngModelChange)="onSelectedChange($event)" reAutoComplete [dataSource]="options"
+         [formatter]="formatter"/>
+  <div class="input-group-addon" [ngClass]="{disabled: disabled}">
     <i class="select-down-icon {{iconDown}}"></i>
   </div>
 </div>

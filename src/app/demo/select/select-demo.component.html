@@ -3,12 +3,14 @@
   <section>
     <h4>Demo:</h4>
     <re-select [options]="options" [(ngModel)]="selectValue" placeholder="Please select value"></re-select>
+    <br>
     <pre>{{selectValue | json}}</pre>
   </section>
 
   <section>
     <h4>Select Object Demo:</h4>
     <re-select [options]="objOptions" [(ngModel)]="selectObjValue" placeholder="Please select value"></re-select>
+    <br>
     <pre>{{selectObjValue | json}}</pre>
   </section>
 

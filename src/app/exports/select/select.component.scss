@@ -1,6 +1,21 @@
 .select-panel,
 .select-control:not([disabled]) {
   cursor: pointer;
+  background: #fff;
+}
+
+.input-group {
+  .select-control {
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.input-group-addon {
+  &:not(.disabled) {
+    background: #fff;
+  }
+  border: none;
 }
 
 ::ng-deep .dropdown-menu {
