@@ -5,7 +5,7 @@
 [![dev dependcy](https://david-dm.org/greengerong/rebirth-ng/dev-status.svg)](https://david-dm.org/greengerong/rebirth-ng?type=dev)
 [![npm version](https://img.shields.io/npm/v/rebirth-ng.svg)](https://www.npmjs.com/package/rebirth-ng)
 
-> Angular4 UI plugin with bootstrap;
+> Angular UI plugin with bootstrap;
 
 
 
