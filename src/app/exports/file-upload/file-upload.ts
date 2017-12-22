@@ -272,11 +272,13 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     }
 
     this.errors.push(...errors);
-    this.fileUploadError.emit({
-      name: file.name,
-      file: file,
-      uploadResponse: this.errors
-    });
+    if (this.errors.length) {
+      this.fileUploadError.emit({
+        name: file.name,
+        file: file,
+        uploadResponse: this.errors
+      });
+    }
     return !errors.length;
   }
 
