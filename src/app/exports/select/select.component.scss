@@ -1,3 +1,7 @@
+.select-container {
+  position: relative;
+}
+
 .select-panel,
 .select-control:not([disabled]) {
   cursor: pointer;
@@ -19,8 +23,19 @@
 }
 
 ::ng-deep .dropdown-menu {
-  width: 95%;
+  border: none;
+  padding: 0;
+  width: 100%;
+
+  .popup-list {
+    margin-bottom: 0;
+  }
   .dropdown-item {
+    padding: 8px 1rem;
     white-space: normal !important;
+
+    &.selected {
+      font-weight: bold;
+    }
   }
 }

@@ -147,7 +147,8 @@ export class RebirthNGConfig {
   };
 
   select = {
-    iconDown: 'glyphicon glyphicon-menu-down'
+    iconDown: 'glyphicon glyphicon-menu-down',
+    formatter: (item) => item ? (item.label || item.toString()) : '',
   };
 
   selectButton = {
