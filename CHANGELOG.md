@@ -1,4 +1,10 @@
 
+# 5.0.7(2017-12-xx)
+
+## Features
+
+* (FileUpload): FileUpload emit error issue;
+
 # 5.0.6(2017-12-22)
 
 ## Features
