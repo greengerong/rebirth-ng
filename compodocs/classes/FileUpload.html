@@ -1690,7 +1690,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="283" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:283</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="285" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:285</a></div>
                                         </td>
                                     </tr>
             
@@ -1938,7 +1938,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="293" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:293</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="295" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:295</a></div>
                                         </td>
                                     </tr>
             
@@ -2841,7 +2841,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="287" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:287</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="289" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:289</a></div>
                                         </td>
                                     </tr>
             
@@ -3400,11 +3400,13 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     }
 
     this.errors.push(...errors);
-    this.fileUploadError.emit({
-      name: file.name,
-      file: file,
-      uploadResponse: this.errors
-    });
+    if (this.errors.length) {
+      this.fileUploadError.emit({
+        name: file.name,
+        file: file,
+        uploadResponse: this.errors
+      });
+    }
     return !errors.length;
   }
 
