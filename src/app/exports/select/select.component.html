@@ -2,9 +2,9 @@
   {{formatter(item)}}
 </ng-template>
 
-<div class="select-container">
+<div class="drop{{direction}} select-container">
   <div class="input-group select-panel" (click)="onPopupToggle()">
-    <input type="text" class="form-control select-control" [minLength]="0" [disabled]="disabled" [readonly]="readonly" [placeholder]="placeholder"
+    <input type="text" class="form-control select-control" [minLength]="0" [disabled]="disabled" readonly="readonly" [placeholder]="placeholder"
       [(ngModel)]="selectedText" (ngModelChange)="onSelectedChange($event)" />
     <div class="input-group-addon">
       <i class="select-down-icon {{iconDown}}" [@arrowState]="arrowState"></i>

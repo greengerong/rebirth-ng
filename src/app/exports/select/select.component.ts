@@ -5,12 +5,19 @@ import {
   ViewChild,
   HostListener,
   ElementRef,
-  TemplateRef
+  TemplateRef,
+  OnInit
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { AutoCompleteDirective } from '../auto-complete';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { trigger, state, transition, animate, style } from '@angular/animations';
+import {
+  trigger,
+  state,
+  transition,
+  animate,
+  style
+} from '@angular/animations';
 
 @Component({
   selector: 're-select',
@@ -26,23 +33,29 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
   ],
   animations: [
     trigger('arrowState', [
-      state('down', style({
-        transform: 'rotate(0deg)'
-      })),
-      state('up',   style({
-        transform: 'rotate(180deg)'
-      })),
+      state(
+        'down',
+        style({
+          transform: 'rotate(0deg)'
+        })
+      ),
+      state(
+        'up',
+        style({
+          transform: 'rotate(180deg)'
+        })
+      ),
       transition('down => up', animate('200ms ease-in')),
       transition('up => down', animate('200ms ease-out'))
     ])
   ]
 })
-export class SelectComponent implements ControlValueAccessor {
-  @Input() readonly = true;
+export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() placeholder: string;
   @Input() options: string[];
   @Input() iconDown: string;
+  @Input() direction: 'down' | 'up' = 'down';
   @Input() itemTemplate: TemplateRef<any>;
   @Input() formatter: (obj: any) => string;
 
@@ -61,6 +74,10 @@ export class SelectComponent implements ControlValueAccessor {
   ) {
     this.iconDown = rebirthNgConfig.select.iconDown;
     this.formatter = rebirthNgConfig.select.formatter;
+  }
+
+  ngOnInit(): void {
+    this.arrowState = this.direction;
   }
 
   writeValue(value: any): void {
@@ -85,7 +102,12 @@ export class SelectComponent implements ControlValueAccessor {
         isPopup = !this.isPopup;
       }
       this.isPopup = isPopup;
-      this.arrowState = isPopup ? 'up' : 'down';
+
+      let status = { false: 'down', true: 'up' };
+      if (this.direction === 'up') {
+        status = { false: 'up', true: 'down' };
+      }
+      this.arrowState = status[isPopup.toString()];
       this.updateActiveIndex();
     }
   }
@@ -98,7 +120,39 @@ export class SelectComponent implements ControlValueAccessor {
   }
 
   onActiveIndexChange(index) {
-    this.activeIndex = index;
+    this.activeIndex = (index + this.options.length) % this.options.length;
+  }
+
+  @HostListener('keydown.esc', ['$event'])
+  onEscKeyup($event) {
+    this.onPopupToggle(false);
+  }
+
+  @HostListener('keydown.Enter', ['$event'])
+  onEnterKeyDown($event) {
+    if (this.isPopup) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      this.onSelectedChange(this.options[this.activeIndex]);
+    }
+  }
+
+  @HostListener('keydown.ArrowUp', ['$event'])
+  onArrowUpKeyDown($event) {
+    if (this.isPopup) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      this.onActiveIndexChange(this.activeIndex - 1);
+    }
+  }
+
+  @HostListener('keydown.ArrowDown', ['$event'])
+  onArrowDownKeyDown($event) {
+    if (this.isPopup) {
+      $event.preventDefault();
+      $event.stopPropagation();
+      this.onActiveIndexChange(this.activeIndex + 1);
+    }
   }
 
   @HostListener('document:click', ['$event'])
@@ -111,13 +165,13 @@ export class SelectComponent implements ControlValueAccessor {
 
   private changeValue(value: any) {
     this.selectedItem = value;
-    this.selectedText = this.formatter(value);
+    this.selectedText = value ? this.formatter(value) : '';
     this.updateActiveIndex();
   }
 
   private updateActiveIndex() {
     if (this.options && this.selectedItem) {
-      this.activeIndex = this.options.findIndex((item) => this.selectedItem === item)
+      this.activeIndex = this.options.indexOf(this.selectedItem);
     }
   }
 }
