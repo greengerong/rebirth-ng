@@ -53,7 +53,7 @@ import {
 export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() placeholder: string;
-  @Input() options: string[];
+  @Input() options: any[];
   @Input() iconDown: string;
   @Input() direction: 'down' | 'up' = 'down';
   @Input() itemTemplate: TemplateRef<any>;
@@ -68,10 +68,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(
-    private elementRef: ElementRef,
-    rebirthNgConfig: RebirthNGConfig
-  ) {
+  constructor(private elementRef: ElementRef,
+              rebirthNgConfig: RebirthNGConfig) {
     this.iconDown = rebirthNgConfig.select.iconDown;
     this.formatter = rebirthNgConfig.select.formatter;
   }

@@ -4,8 +4,8 @@
 
 <div class="drop{{direction}} select-container">
   <div class="input-group select-panel" (click)="onPopupToggle()">
-    <input type="text" class="form-control select-control" [minLength]="0" [disabled]="disabled" readonly="readonly" [placeholder]="placeholder"
-      [(ngModel)]="selectedText" (ngModelChange)="onSelectedChange($event)" />
+    <input type="text" class="form-control select-control" [disabled]="disabled" readonly="readonly"
+           [placeholder]="placeholder" [(ngModel)]="selectedText" (ngModelChange)="onSelectedChange($event)"/>
     <div class="input-group-addon">
       <i class="select-down-icon {{iconDown}}" [@arrowState]="arrowState"></i>
     </div>
@@ -13,10 +13,11 @@
   <div class="dropdown-menu" [style.display]="isPopup ? 'block' : 'none'">
     <ul class="list-unstyled popup-list">
       <li *ngFor="let item of options; let $index = index;" class="dropdown-item"
-          [ngClass]="{'item-hoverd bg-primary': $index == activeIndex, selected: selectedItem == item}" (click)="onSelectedChange(item)"
+          [ngClass]="{'item-hoverd bg-primary': $index == activeIndex, selected: selectedItem == item}"
+          (click)="onSelectedChange(item)"
           (mouseenter)="onActiveIndexChange($index)">
         <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
-                  [ngTemplateOutletContext]="{ formatter: formatter, selectedItem:selectedItem, selectedText:selectedText, options:options, item:item, $index:$index}"></ng-template>
+                     [ngTemplateOutletContext]="{ formatter: formatter, selectedItem:selectedItem, selectedText:selectedText, options:options, item:item, $index:$index}"></ng-template>
       </li>
     </ul>
   </div>
