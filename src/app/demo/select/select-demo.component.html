@@ -15,6 +15,14 @@
   </section>
 
   <section>
+    <h4>Group select:</h4>
+    <re-select [groupOptions]="groupOptions" [(ngModel)]="selectGroupValue"
+               placeholder="Please select value"></re-select>
+    <br>
+    <pre>{{selectGroupValue | json}}</pre>
+  </section>
+
+  <section>
     <h4>Disabled Demo:</h4>
     <re-select [options]="options" placeholder="Please select value" disabled="disabled"></re-select>
   </section>

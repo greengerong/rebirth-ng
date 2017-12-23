@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GroupOption } from '../../exports/select';
 
 @Component({
   selector: 're-select-demo',
@@ -11,4 +12,16 @@ export class SelectDemoComponent {
     id, label
   }));
   selectObjValue = this.objOptions[2];
+  selectGroupValue: any;
+  groupOptions: GroupOption[] = [
+    {
+      group: 'Manager',
+      options: ['Tyler']
+    },
+    {
+      group: 'Engineer',
+      options: ['Lucy', 'Jack']
+    }
+  ]
+  ;
 }

@@ -12,13 +12,17 @@
   </div>
   <div class="dropdown-menu" [style.display]="isPopup ? 'block' : 'none'">
     <ul class="list-unstyled popup-list">
-      <li *ngFor="let item of options; let $index = index;" class="dropdown-item"
-          [ngClass]="{'item-hoverd bg-primary': $index == activeIndex, selected: selectedItem == item}"
-          (click)="onSelectedChange(item)"
-          (mouseenter)="onActiveIndexChange($index)">
-        <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
-                     [ngTemplateOutletContext]="{ formatter: formatter, selectedItem:selectedItem, selectedText:selectedText, options:options, item:item, $index:$index}"></ng-template>
-      </li>
+
+      <ng-container *ngFor="let item of options; let $index = index;">
+        <li *ngIf="item.group" class="dropdown-header">{{item.group?.group}}</li>
+        <li *ngIf="!item.group" class="dropdown-item"
+            [ngClass]="{'item-hoverd bg-primary': $index == activeIndex, selected: selectedItem == item}"
+            (click)="onSelectedChange(item)"
+            (mouseenter)="onActiveIndexChange($index)">
+          <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"
+                       [ngTemplateOutletContext]="{ formatter: formatter, selectedItem:selectedItem, selectedText:selectedText, options:options, item:item, $index:$index}"></ng-template>
+        </li>
+      </ng-container>
     </ul>
   </div>
 </div>

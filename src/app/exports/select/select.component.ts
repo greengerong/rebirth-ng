@@ -18,6 +18,7 @@ import {
   animate,
   style
 } from '@angular/animations';
+import { GroupOption } from './select.model';
 
 @Component({
   selector: 're-select',
@@ -67,11 +68,25 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   private onChange = (_: any) => null;
   private onTouched = () => null;
+  private _groupOptions: GroupOption[];
 
   constructor(private elementRef: ElementRef,
               rebirthNgConfig: RebirthNGConfig) {
     this.iconDown = rebirthNgConfig.select.iconDown;
     this.formatter = rebirthNgConfig.select.formatter;
+  }
+
+  @Input()
+  set groupOptions(group: GroupOption[]) {
+    if (group && this._groupOptions !== group) {
+      this.options = group.reduce((opts, item) => {
+        if (item.options && item.options.length) {
+          opts.push({ group: item }, ...item.options);
+        }
+        return opts;
+      }, []);
+    }
+    this._groupOptions = group;
   }
 
   ngOnInit(): void {
@@ -119,6 +134,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   onActiveIndexChange(index) {
     this.activeIndex = (index + this.options.length) % this.options.length;
+    return this.activeIndex;
   }
 
   @HostListener('keydown.esc', ['$event'])
@@ -140,7 +156,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     if (this.isPopup) {
       $event.preventDefault();
       $event.stopPropagation();
-      this.onActiveIndexChange(this.activeIndex - 1);
+      const index = this.onActiveIndexChange(this.activeIndex - 1);
+      if (this.isGroupItem(this.options[index])) {
+        this.onActiveIndexChange(this.activeIndex - 1);
+      }
     }
   }
 
@@ -149,7 +168,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     if (this.isPopup) {
       $event.preventDefault();
       $event.stopPropagation();
-      this.onActiveIndexChange(this.activeIndex + 1);
+      const index = this.onActiveIndexChange(this.activeIndex + 1);
+      if (this.isGroupItem(this.options[index])) {
+        this.onActiveIndexChange(this.activeIndex + 1);
+      }
     }
   }
 
@@ -159,6 +181,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     if (!hostElement.contains($event.target)) {
       this.onPopupToggle(false);
     }
+  }
+
+  isGroupItem(item: any): boolean {
+    return item.group;
   }
 
   private changeValue(value: any) {
