@@ -37,6 +37,8 @@
 
   .popup-list {
     margin-bottom: 0;
+    max-height: 250px;
+    overflow: auto;
   }
   .dropdown-header {
     padding: 3px 0.5rem;
