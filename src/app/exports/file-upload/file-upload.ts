@@ -46,6 +46,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   @Input() uploadIcon: string;
   @Input() loadingIcon: string;
   @Input() removeIcon: string;
+  @Input() canRetry = true;
   @Input() toolbarTemplate: TemplateRef<any>;
   @Input() previewTemplate: TemplateRef<any>;
   @Input() disabled: boolean;
@@ -228,6 +229,10 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
       file: fileItem.file,
       uploadResponse: error
     });
+
+    if (!this.canRetry) {
+      this.onRemoveFile(fileItem);
+    }
 
     this.changeDetectorRef.markForCheck();
     return of({ error: error, success: false });

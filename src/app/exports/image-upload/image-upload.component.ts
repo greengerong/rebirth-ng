@@ -37,6 +37,7 @@ export class ImageUploadComponent extends FileUpload {
     this.imgPreview = true;
     this.autoUpload = true;
     this.accept = 'image/*';
+    this.canRetry = false;
   }
 
   viewImage(fileItem: SelectFileModel) {
@@ -51,11 +52,5 @@ export class ImageUploadComponent extends FileUpload {
 
   uploadBtnIcon() {
     return this.isUploading ? this.loadingIcon : this.plusIcon;
-  }
-
-
-  protected onFileUploadError(fileItem, error): Observable<any> {
-    this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
-    return super.onFileUploadError(fileItem, error);
   }
 }
