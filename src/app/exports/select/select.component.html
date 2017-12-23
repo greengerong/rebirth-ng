@@ -3,10 +3,10 @@
 </ng-template>
 
 <div class="drop{{direction}} select-container">
-  <div class="input-group select-panel" (click)="onPopupToggle()">
+  <div class="input-group select-panel" [ngClass]="{disabled: disabled}" (click)="onPopupToggle()">
     <input type="text" class="form-control select-control" [disabled]="disabled" readonly="readonly"
            [placeholder]="placeholder" [(ngModel)]="selectedText" (ngModelChange)="onSelectedChange($event)"/>
-    <div class="input-group-addon">
+    <div class="input-group-addon" [ngClass]="{disabled: disabled}">
       <i class="select-down-icon {{iconDown}}" [@arrowState]="arrowState"></i>
     </div>
   </div>
