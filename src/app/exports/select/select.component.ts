@@ -2,14 +2,12 @@ import {
   Component,
   Input,
   forwardRef,
-  ViewChild,
   HostListener,
   ElementRef,
   TemplateRef,
   OnInit
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { AutoCompleteDirective } from '../auto-complete';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import {
   trigger,
@@ -66,9 +64,9 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   selectedText: string;
   isPopup = false;
 
+  private _groupOptions: GroupOption[];
   private onChange = (_: any) => null;
   private onTouched = () => null;
-  private _groupOptions: GroupOption[];
 
   constructor(private elementRef: ElementRef,
               rebirthNgConfig: RebirthNGConfig) {
