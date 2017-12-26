@@ -97,6 +97,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
 
   writeValue(value: any): void {
     this.uploadFiles = value || [];
+    this.changeDetectorRef.markForCheck();
   }
 
   registerOnChange(fn: any): void {
