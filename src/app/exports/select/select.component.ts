@@ -127,7 +127,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     this.onTouched();
     this.changeValue(value);
     this.onChange(value);
-    this.onPopupToggle();
+    this.onPopupToggle(false);
   }
 
   onActiveIndexChange(index) {
