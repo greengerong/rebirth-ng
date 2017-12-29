@@ -58,6 +58,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   @Output() removeFiles = new EventEmitter<SelectFileModel[]>();
   @Output() uploadFilesChange = new EventEmitter<SelectFileModel[]>();
   @Input() uploadFiles: SelectFileModel[] = [];
+  @Input() transformResponseUrl: (res: any) => string;
   @ViewChild('file') fileInput: ElementRef;
   selectFiles: SelectFileModel[] = [];
   isUploading: boolean;
@@ -84,6 +85,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     this.loadingIcon = this.rebirthNGConfig.fileUpload.loadingIcon;
     this.removeIcon = this.rebirthNGConfig.fileUpload.removeIcon;
     this.showErrors = this.rebirthNGConfig.fileUpload.showErrors;
+    this.transformResponseUrl = this.rebirthNGConfig.fileUpload.transformResponseUrl;
 
   }
 
@@ -208,6 +210,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
 
   protected onFileUploadSuccess(fileItem, res): Observable<any> {
     fileItem.uploadResponse = res;
+    fileItem.url = this.transformResponseUrl(res);
     this.fileUploadSuccess.emit(fileItem);
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     this.onUploadFileChange([...(this.uploadFiles || []), fileItem]);
@@ -226,7 +229,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     this.fileUploadError.emit({
       name: fileItem.name,
       displaySize: fileItem.displaySize,
-      dataUrl: fileItem.dataUrl,
+      url: fileItem.url,
       file: fileItem.file,
       uploadResponse: error
     });
@@ -301,7 +304,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   mapFileModel(files: File[]): Promise<SelectFileModel[]> {
     return Promise.all(files.map(file => {
       return readFileAsDataURL(file)
-        .then(dataUrl => ({ dataUrl, name: file.name, file, displaySize: formatFileSize(file.size) }));
+        .then(url => ({ url, name: file.name, file, displaySize: formatFileSize(file.size) }));
     }));
 
   }

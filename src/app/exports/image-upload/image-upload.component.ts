@@ -8,7 +8,6 @@ import { ModalService } from '../modal';
 import { SelectFileModel } from '../file-upload/file-upload.model';
 import { noop } from '../utils';
 import { ViewImageModalComponent } from './view-image-modal.component';
-import { Observable } from 'rxjs/Observable';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -46,7 +45,7 @@ export class ImageUploadComponent extends FileUpload {
     }
     this.modalService.open({
       component: ViewImageModalComponent,
-      resolve: { url: fileItem.dataUrl, name: fileItem.name }
+      resolve: { url: fileItem.url, name: fileItem.name }
     }).subscribe(noop, noop);
   }
 

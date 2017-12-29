@@ -87,6 +87,7 @@ export class RebirthNGConfig {
     loadingIcon: 'glyphicon glyphicon-refresh',
     uploadIcon: 'glyphicon glyphicon-upload',
     removeIcon: 'glyphicon glyphicon-trash',
+    transformResponseUrl: (res) => res.url
   };
 
   imageUpload = {

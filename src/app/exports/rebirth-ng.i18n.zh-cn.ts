@@ -35,7 +35,8 @@ export const REBIRTH_NG_I18N_ZHCN = {
     cancelButton: '取消',
     plusIcon: 'glyphicon glyphicon-plus',
     uploadIcon: 'glyphicon glyphicon-upload',
-    removeIcon: 'glyphicon glyphicon-trash'
+    removeIcon: 'glyphicon glyphicon-trash',
+    transformResponseUrl: (res) => res.url
   },
 
   imageUpload: {

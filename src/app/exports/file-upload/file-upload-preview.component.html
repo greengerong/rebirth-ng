@@ -3,8 +3,8 @@
     <tbody>
     <tr *ngFor="let fileItem of selectFiles">
       <td *ngIf="imgPreview">
-        <a [href]="fileItem.dataUrl" target="_blank">
-          <img *ngIf="fileItem.dataUrl" class="img-responsive" [src]="fileItem.dataUrl"
+        <a [href]="fileItem.url" target="_blank">
+          <img *ngIf="fileItem.url" class="img-responsive" [src]="fileItem.url"
                [attr.alt]="fileItem.name"
                [style.width]="previewWidth"/>
         </a>
