@@ -1,9 +1,11 @@
 
-# 5.0.7(2017-12-xx)
+# 5.0.7(2017-12-29)
 
 ## Features
 
 * (FileUpload): FileUpload emit error issue;
+* (FileUpload): FileUpload add @Input `transformResponseUrl`;
+* (Select): Select add @Input `groupOptions`;
 
 # 5.0.6(2017-12-22)
 
