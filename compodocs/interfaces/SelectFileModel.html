@@ -1389,9 +1389,6 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                        <a href="#dataUrl">dataUrl</a>
-                                </li>
-                                <li>
                                         <a href="#displaySize">displaySize</a>
                                 </li>
                                 <li>
@@ -1402,6 +1399,9 @@
                                 </li>
                                 <li>
                                         <a href="#uploadResponse">uploadResponse</a>
+                                </li>
+                                <li>
+                                        <a href="#url">url</a>
                                 </li>
                             </ul>
                         </td>
@@ -1414,39 +1414,6 @@
 
             <section>
                 <h3 id="inputs">Properties</h3>
-                    <table class="table table-sm table-bordered">
-                        <tbody>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <a name="dataUrl"></a>
-                                        <span class="name"><b>dataUrl</b><a href="#dataUrl"><span class="fa fa-link"></span></a></span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <code>dataUrl:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
-                                    </td>
-                                </tr>
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                                        </td>
-                                    </tr>
-
-
-
-                                    <tr>
-                                        <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/exports/file-upload/file-upload.model.ts:4</a></div>
-                                        </td>
-                                    </tr>
-
-                        </tbody>
-                    </table>
                     <table class="table table-sm table-bordered">
                         <tbody>
                                 <tr>
@@ -1579,6 +1546,39 @@
 
                         </tbody>
                     </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="url"></a>
+                                        <span class="name"><b>url</b><a href="#url"><span class="fa fa-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>url:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/app/exports/file-upload/file-upload.model.ts:4</a></div>
+                                        </td>
+                                    </tr>
+
+                        </tbody>
+                    </table>
             </section>
     </div>
 
@@ -1587,7 +1587,7 @@
         <pre class="line-numbers"><code class="language-typescript">export interface SelectFileModel {
   name: string;
   displaySize?: string;
-  dataUrl?: string;
+  url?: string;
   file?: File;
   uploadResponse?: any;
 }
