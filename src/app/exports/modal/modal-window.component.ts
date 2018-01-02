@@ -53,7 +53,7 @@ export class ModalWindowComponent {
       setTimeout(() => this.onAnimationDone({ toState: 'in' }));
     }
     return this.animationDone
-      .filter(event => event.toState == 'in');
+      .filter(event => event.toState === 'in');
   }
 
   close(): Observable<any> {
@@ -64,7 +64,7 @@ export class ModalWindowComponent {
       setTimeout(() => this.onAnimationDone({ toState: 'void' }));
     }
     return this.animationDone
-      .filter(event => event.toState == 'void');
+      .filter(event => event.toState === 'void');
   }
 
   onAnimationStart($event) {
