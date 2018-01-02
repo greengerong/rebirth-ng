@@ -22,8 +22,8 @@ export class ModalComponent {
   }
 
   open() {
-    this.isOpen = true;
     this.modalWindowComponent.open();
+    this.isOpen = true;
     this.toggleBodyClass(true);
   }
 
