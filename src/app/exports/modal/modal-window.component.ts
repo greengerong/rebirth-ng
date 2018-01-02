@@ -12,6 +12,7 @@ import { ModalOptions } from './modal-options.model';
 import { ModalDismissReasons } from './modal-dismiss-reasons.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import 'rxjs/add/operator/filter';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 're-modal-window',
@@ -44,7 +45,7 @@ export class ModalWindowComponent {
 
   }
 
-  open() {
+  open(): Observable<any> {
     this.isOpen = true;
     if (this.modalOptions.animation) {
       this.animateState = 'in';
@@ -55,7 +56,7 @@ export class ModalWindowComponent {
       .filter(event => event.toState == 'in');
   }
 
-  close() {
+  close(): Observable<any> {
     this.isOpen = false;
     if (this.modalOptions.animation) {
       this.animateState = 'void';
