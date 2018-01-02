@@ -1,4 +1,10 @@
 
+# 5.0.8(2018-01-02)
+
+## Features
+
+* (Modal): Modal animate delay;
+
 # 5.0.7(2017-12-29)
 
 ## Features
