@@ -211,8 +211,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
   protected onFileUploadSuccess(fileItem, res): Observable<any> {
     fileItem.uploadResponse = res;
     const responseUrl = this.transformResponseUrl(res) || '';
-    const url = responseUrl.length ? responseUrl[0] : responseUrl;
-    fileItem.url = url || fileItem.url;
+    fileItem.url = responseUrl || fileItem.url;
     this.fileUploadSuccess.emit(fileItem);
     this.selectFiles = this.selectFiles.filter(item => item !== fileItem);
     this.onUploadFileChange([...(this.uploadFiles || []), fileItem]);
