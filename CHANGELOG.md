@@ -1,4 +1,10 @@
 
+# 5.0.8(2018-01-10)
+
+## Features
+
+* (AutoComplete): AutoComplete debounce delay;
+
 # 5.0.8(2018-01-02)
 
 ## Features
