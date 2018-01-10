@@ -72,7 +72,6 @@ export class ModalWindowComponent {
   }
 
   onAnimationDone($event) {
-    console.log($event, 'onAnimationDone');
     this.isInAnimationDone = false;
     this.animationDone.emit($event);
   }
