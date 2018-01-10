@@ -71,8 +71,8 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
               private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.valueChanges = this.registerInputEvent(elementRef);
     this.delay = rebirthNGConfig.autoComplete.delay;
+    this.valueChanges = this.registerInputEvent(elementRef);
     this.minLength = rebirthNGConfig.autoComplete.minLength;
     this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
     this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
