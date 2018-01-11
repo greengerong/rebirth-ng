@@ -1696,7 +1696,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="296" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:296</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="294" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:294</a></div>
                                         </td>
                                     </tr>
             
@@ -1729,7 +1729,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="247" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:247</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="245" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:245</a></div>
                                         </td>
                                     </tr>
             
@@ -1944,7 +1944,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="306" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:306</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="304" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:304</a></div>
                                         </td>
                                     </tr>
             
@@ -2159,7 +2159,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="229" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:229</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="227" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:227</a></div>
                                         </td>
                                     </tr>
             
@@ -2417,7 +2417,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="223" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:223</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="221" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:221</a></div>
                                         </td>
                                     </tr>
             
@@ -2724,7 +2724,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="275" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:275</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="273" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:273</a></div>
                                         </td>
                                     </tr>
             
@@ -2785,7 +2785,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="263" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:263</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="261" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:261</a></div>
                                         </td>
                                     </tr>
             
@@ -2847,7 +2847,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="300" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:300</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="298" class="link-to-prism">src/app/exports/file-upload/file-upload.ts:298</a></div>
                                         </td>
                                     </tr>
             
@@ -3344,9 +3344,7 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
 
   protected onFileUploadSuccess(fileItem, res): Observable&lt;any&gt; {
     fileItem.uploadResponse &#x3D; res;
-    const responseUrl &#x3D; this.transformResponseUrl(res) || &#x27;&#x27;;
-    const url &#x3D; responseUrl.length ? responseUrl[0] : responseUrl;
-    fileItem.url &#x3D; url || fileItem.url;
+    fileItem.url &#x3D; this.transformResponseUrl(res) || fileItem.url;
     this.fileUploadSuccess.emit(fileItem);
     this.selectFiles &#x3D; this.selectFiles.filter(item &#x3D;&gt; item !&#x3D;&#x3D; fileItem);
     this.onUploadFileChange([...(this.uploadFiles || []), fileItem]);
