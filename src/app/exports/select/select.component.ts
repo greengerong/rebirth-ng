@@ -5,7 +5,10 @@ import {
   HostListener,
   ElementRef,
   TemplateRef,
-  OnInit
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+  SimpleChange
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -49,7 +52,7 @@ import { GroupOption } from './select.model';
     ])
   ]
 })
-export class SelectComponent implements OnInit, ControlValueAccessor {
+export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() placeholder: string;
   @Input() options: any[];
@@ -89,6 +92,13 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   ngOnInit(): void {
     this.arrowState = this.direction;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const options: SimpleChange = changes.options;
+    if (this.selectedItem && options.currentValue.indexOf(this.selectedItem) === -1) {
+      this.onSelectedChange(options.currentValue[0]);
+    }
   }
 
   writeValue(value: any): void {
