@@ -6,7 +6,6 @@ import {
   ElementRef,
   TemplateRef,
   OnInit,
-  OnChanges,
   SimpleChanges,
   SimpleChange
 } from '@angular/core';
@@ -52,10 +51,9 @@ import { GroupOption } from './select.model';
     ])
   ]
 })
-export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor {
+export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() placeholder: string;
-  @Input() options: any[];
   @Input() iconDown: string;
   @Input() direction: 'down' | 'up' = 'down';
   @Input() itemTemplate: TemplateRef<any>;
@@ -68,6 +66,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
   isPopup = false;
 
   private _groupOptions: GroupOption[];
+  private _options: any[];
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
@@ -80,7 +79,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
   @Input()
   set groupOptions(group: GroupOption[]) {
     if (group && this._groupOptions !== group) {
-      this.options = group.reduce((opts, item) => {
+      this._options = group.reduce((opts, item) => {
         if (item.options && item.options.length) {
           opts.push({ group: item }, ...item.options);
         }
@@ -90,15 +89,19 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     this._groupOptions = group;
   }
 
-  ngOnInit(): void {
-    this.arrowState = this.direction;
+  @Input()
+  set options(options: any[]) {
+    this._options = options;
+    console.log(options);
+    if (this.selectedItem && options.indexOf(this.selectedItem) === -1) {
+      this.onSelectedChange('');
+    }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    const options: SimpleChange = changes.options;
-    if (this.selectedItem && options.currentValue.indexOf(this.selectedItem) === -1) {
-      this.onSelectedChange(options.currentValue[0]);
-    }
+  get options(): any[] { return this._options; }
+
+  ngOnInit(): void {
+    this.arrowState = this.direction;
   }
 
   writeValue(value: any): void {
@@ -141,7 +144,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
   }
 
   onActiveIndexChange(index) {
-    this.activeIndex = (index + this.options.length) % this.options.length;
+    this.activeIndex = (index + this._options.length) % this._options.length;
     return this.activeIndex;
   }
 
@@ -155,7 +158,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
     if (this.isPopup) {
       $event.preventDefault();
       $event.stopPropagation();
-      this.onSelectedChange(this.options[this.activeIndex]);
+      this.onSelectedChange(this._options[this.activeIndex]);
     }
   }
 
@@ -165,7 +168,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
       $event.preventDefault();
       $event.stopPropagation();
       const index = this.onActiveIndexChange(this.activeIndex - 1);
-      if (this.isGroupItem(this.options[index])) {
+      if (this.isGroupItem(this._options[index])) {
         this.onActiveIndexChange(this.activeIndex - 1);
       }
     }
@@ -177,7 +180,7 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
       $event.preventDefault();
       $event.stopPropagation();
       const index = this.onActiveIndexChange(this.activeIndex + 1);
-      if (this.isGroupItem(this.options[index])) {
+      if (this.isGroupItem(this._options[index])) {
         this.onActiveIndexChange(this.activeIndex + 1);
       }
     }
@@ -202,8 +205,8 @@ export class SelectComponent implements OnInit, OnChanges, ControlValueAccessor 
   }
 
   private updateActiveIndex() {
-    if (this.options && this.selectedItem) {
-      this.activeIndex = this.options.indexOf(this.selectedItem);
+    if (this._options && this.selectedItem) {
+      this.activeIndex = this._options.indexOf(this.selectedItem);
     }
   }
 }
