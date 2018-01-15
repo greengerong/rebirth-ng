@@ -92,7 +92,6 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input()
   set options(options: any[]) {
     this._options = options;
-    console.log(options);
     if (this.selectedItem && options.indexOf(this.selectedItem) === -1) {
       this.onSelectedChange('');
     }
