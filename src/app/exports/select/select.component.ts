@@ -1,13 +1,17 @@
 import {
   Component,
   Input,
+  Output,
   forwardRef,
+  EventEmitter,
   HostListener,
   ElementRef,
   TemplateRef,
   OnInit,
   SimpleChanges,
-  SimpleChange
+  SimpleChange,
+  ChangeDetectorRef,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
@@ -24,6 +28,7 @@ import { GroupOption } from './select.model';
   selector: 're-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   exportAs: 'select',
   providers: [
     {
@@ -58,6 +63,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input() direction: 'down' | 'up' = 'down';
   @Input() itemTemplate: TemplateRef<any>;
   @Input() formatter: (obj: any) => string;
+  @Output() onSelect = new EventEmitter<any>();
 
   arrowState = 'down';
   activeIndex = 0;
@@ -70,7 +76,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private elementRef: ElementRef,
+  constructor(private changeDetectorRef: ChangeDetectorRef, private elementRef: ElementRef,
               rebirthNgConfig: RebirthNGConfig) {
     this.iconDown = rebirthNgConfig.select.iconDown;
     this.formatter = rebirthNgConfig.select.formatter;
@@ -83,6 +89,10 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
         if (item.options && item.options.length) {
           opts.push({ group: item }, ...item.options);
         }
+
+        if (this.selectedItem) {
+          setTimeout(() => this.changeValue(null));
+        }
         return opts;
       }, []);
     }
@@ -92,8 +102,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   @Input()
   set options(options: any[]) {
     this._options = options;
-    if (this.selectedItem && options.indexOf(this.selectedItem) === -1) {
-      this.onSelectedChange('');
+    if (this.selectedItem) {
+      setTimeout(() => this.changeValue(null));
     }
   }
 
@@ -138,8 +148,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   onSelectedChange(value: any) {
     this.onTouched();
     this.changeValue(value);
-    this.onChange(value);
     this.onPopupToggle(false);
+    this.onSelect.emit(value);
   }
 
   onActiveIndexChange(index) {
@@ -201,6 +211,8 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
     this.selectedItem = value;
     this.selectedText = value ? this.formatter(value) : '';
     this.updateActiveIndex();
+    this.onChange(value);
+    this.changeDetectorRef.markForCheck();
   }
 
   private updateActiveIndex() {
