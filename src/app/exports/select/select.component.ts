@@ -103,7 +103,9 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   set options(options: any[]) {
     this._options = options;
     if (this.selectedItem) {
-      setTimeout(() => this.changeValue(null));
+      if (options.indexOf(this.selectedItem) !== -1) {
+        setTimeout(() => this.changeValue(null));
+      }
     }
   }
 
