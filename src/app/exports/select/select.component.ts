@@ -1,4 +1,3 @@
-import find from 'lodash-es/find';
 import {
   Component,
   Input,
@@ -77,8 +76,11 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   private onChange = (_: any) => null;
   private onTouched = () => null;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private elementRef: ElementRef,
-              rebirthNgConfig: RebirthNGConfig) {
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private elementRef: ElementRef,
+    rebirthNgConfig: RebirthNGConfig
+  ) {
     this.iconDown = rebirthNgConfig.select.iconDown;
     this.formatter = rebirthNgConfig.select.formatter;
   }
@@ -102,15 +104,17 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
 
   @Input()
   set options(options: any[]) {
-    this._options = options;
-    if (this.selectedItem) {
-      if (!find(options, this.selectedItem)) {
+    if (options !== this._options) {
+      this._options = options;
+      if (this.selectedItem) {
         setTimeout(() => this.changeValue(null));
       }
     }
   }
 
-  get options(): any[] { return this._options; }
+  get options(): any[] {
+    return this._options;
+  }
 
   ngOnInit(): void {
     this.arrowState = this.direction;
