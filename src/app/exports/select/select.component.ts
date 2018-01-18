@@ -1,3 +1,4 @@
+import find from 'lodash/find';
 import {
   Component,
   Input,
@@ -103,7 +104,7 @@ export class SelectComponent implements OnInit, ControlValueAccessor {
   set options(options: any[]) {
     this._options = options;
     if (this.selectedItem) {
-      if (options.indexOf(this.selectedItem) !== -1) {
+      if (!find(options, this.selectedItem)) {
         setTimeout(() => this.changeValue(null));
       }
     }
