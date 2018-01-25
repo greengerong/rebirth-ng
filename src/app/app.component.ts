@@ -2,9 +2,9 @@ import { Component, OnInit, ViewContainerRef, Renderer2, ElementRef } from '@ang
 import { RebirthNGConfig } from './exports/rebirth-ng.config';
 import { DemoConfigService } from './shared/demo/demo-config.service';
 import { MenuBar } from './exports/menu-bar/menu-bar.model';
-// import { REBIRTH_NG_I18N_ZHCN } from './exports/rebirth-ng.i18n.zh-cn';
 import { ThemeService } from './shared';
 import { DomSanitizer } from '@angular/platform-browser';
+// import { REBIRTH_NG_I18N_ZHCN } from './exports';
 
 @Component({
   selector: 're-app',

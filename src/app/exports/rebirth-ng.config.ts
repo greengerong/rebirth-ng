@@ -191,12 +191,20 @@ export class RebirthNGConfig {
   // }
 
   extend(obj: any): this {
+    this.extendConfig(obj, this);
+    return this;
+  }
+
+  private extendConfig(obj: any, targetObj: any) {
     Object.keys(obj || {})
       .reduce((target, key) => {
-        target[key] = obj[key];
+        const value = obj[key];
+        if (value instanceof Object) {
+          this.extendConfig(value, target[key])
+        } else {
+          target[key] = value;
+        }
         return target;
-      }, this);
-
-    return this;
+      }, targetObj);
   }
 }
