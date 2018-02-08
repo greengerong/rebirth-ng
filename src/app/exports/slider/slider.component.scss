@@ -1,12 +1,10 @@
-//@import '../../../styles/common';
-
 $sliderHeight: 30px;
 
 :host {
   display: block;
   position: relative;
   overflow: hidden;
-  width: 300px;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -24,7 +22,7 @@ $sliderHeight: 30px;
   width: 100%;
   height: 100%;
   user-select: none;
-  z-index: 100;
+  z-index: 1;
 }
 
 .slider {
@@ -37,7 +35,7 @@ $sliderHeight: 30px;
   height: 6px;
   width: 100%;
   border-radius: 3px;
-  background-color: #f9e1e2;
+  background-color: #dddddd;
   position: absolute;
   left: 0;
   top: 50%;
@@ -48,13 +46,13 @@ $sliderHeight: 30px;
 .active-line {
   height: 100%;
   width: 0;
-  background-color: #ea4444;
+  background-color: #2196f3;
   position: relative;
   left: 0;
 }
 
 .handle {
-  background-color: #ea4444;
+  background-color: #2196f3;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -68,9 +66,14 @@ $sliderHeight: 30px;
 }
 
 .slider-operator-container {
-  color: #f07271;
+  color: #2196f3;
 
   .btn {
+
+    &:hover, &:focus {
+      color: #2196f3;
+    }
+
     position: absolute;
     outline: none;
     box-shadow: none;
