@@ -1,4 +1,10 @@
 
+# 5.0.10(2018-02-xx)
+
+## Features
+
+* (Slider): Slider;
+
 # 5.0.9(2018-01-10)
 
 ## Features

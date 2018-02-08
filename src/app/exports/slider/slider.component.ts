@@ -147,8 +147,8 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
   }
 
   writeValue(value: number) {
-    const inSideValue = value - this.min;
-    this.operateValue(inSideValue);
+    const sideValue = value ? value - this.min : this.min;
+    this.operateValue(sideValue);
     this.changeDetectorRef.markForCheck();
   }
 
