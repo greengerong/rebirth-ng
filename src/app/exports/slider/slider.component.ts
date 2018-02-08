@@ -71,12 +71,9 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
   }
 
   ngAfterViewInit() {
-    const handleDom: HTMLElement = this.dot.nativeElement;
-    const sliderWidth = this.windowRef.getOffsetWidth(this.slider);
-    this.stepWidth = sliderWidth / this.offset;
+    this.stepWidth = this.windowRef.getOffsetWidth(this.slider) / this.offset;
 
-
-    const mousedown$ = Observable.fromEvent(handleDom, 'mousedown');
+    const mousedown$ = Observable.fromEvent(this.dot.nativeElement, 'mousedown');
     const mousemove$ = Observable.fromEvent(this.documentRef.document, 'mousemove');
     const mouseup$ = Observable.fromEvent(this.documentRef.document, 'mouseup');
 
@@ -88,7 +85,7 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
       .takeUntil(this.complete$)
       .subscribe((event: MouseEvent) => {
         event.preventDefault();
-        this.caluValueWhenMove(event);
+        this.calcValueWhenMove(event);
         this.changeDetectorRef.markForCheck();
       });
 
@@ -100,7 +97,7 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
       .takeUntil(this.complete$)
       .subscribe((event: MouseEvent) => {
         event.preventDefault();
-        this.caluValueWhenMove(event);
+        this.calcValueWhenMove(event);
 
         this.calcHandleOffset();
         this.changeDetectorRef.markForCheck();
@@ -108,7 +105,7 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
   }
 
   public onSliderClick(event) {
-    this.caluValueWhenMove(event);
+    this.calcValueWhenMove(event);
   }
 
   public onOperateValue(value: number): void {
@@ -125,7 +122,7 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
     this.handleOffset = this.value * this.stepWidth;
   }
 
-  private caluValueWhenMove(event: MouseEvent): void {
+  private calcValueWhenMove(event: MouseEvent): void {
     const rect = this.windowRef.getBoundingClientRect(this.slider)// IE >= 9
     const mouseRelativeSliderOffsetX = event.clientX - rect.left;
     const fixedOffsetX = Math.max(Math.min(mouseRelativeSliderOffsetX, rect.width), 0);
