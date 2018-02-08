@@ -35,4 +35,5 @@ export * from './tooltip';
 export * from './tree-view';
 export * from './validators';
 export * from './select';
+export * from './slider';
 // component export

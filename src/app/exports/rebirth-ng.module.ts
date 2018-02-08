@@ -39,6 +39,7 @@ import { EllipsisModule } from './ellipsis';
 import { TagsModule } from './tags';
 import { ImageUploadModule } from './image-upload';
 import { SelectModule } from './select';
+import { SliderModule } from './slider';
 // module import
 
 @NgModule({
@@ -79,6 +80,7 @@ import { SelectModule } from './select';
     TagsModule,
     ImageUploadModule,
     SelectModule,
+    SliderModule,
     // module declare
   ],
   exports: [
@@ -119,6 +121,7 @@ import { SelectModule } from './select';
     TagsModule,
     ImageUploadModule,
     SelectModule,
+    SliderModule,
     // module declare
   ],
   declarations: [],

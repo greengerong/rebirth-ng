@@ -41,4 +41,5 @@ export * from './utils';
 export * from './validators';
 export * from './window-ref';
 export * from './select';
+export * from './slider';
 // component export

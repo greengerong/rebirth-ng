@@ -164,6 +164,11 @@ export class RebirthNGConfig {
     type: 'primary'
   };
 
+  slider = {
+    max: 100,
+    min: 0
+  };
+
   tabs = {
     type: 'tabs', // 'tabs' | 'pills'
     justified: false,

@@ -37,6 +37,7 @@ import {
   TagsDemoComponent,
   ImageUploadDemoComponent,
   SelectDemoComponent,
+  SliderDemoComponent,
   // component import
 } from '../../demo';
 
@@ -345,6 +346,14 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/select/README.md'),
       html: require('!raw-loader!../../demo/select/select-demo.component.html'),
       ts: require('!raw-loader!../../demo/select/select-demo.component.ts'),
+    },
+    {
+      name: 'Slider',
+      directory: 'slider',
+      cmp: SliderDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/slider/README.md'),
+      html: require('!raw-loader!../../demo/slider/slider-demo.component.html'),
+      ts: require('!raw-loader!../../demo/slider/slider-demo.component.ts'),
     },
     // component declare
   ];

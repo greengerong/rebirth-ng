@@ -41,6 +41,7 @@ import {
   TagsDemoModule,
   ImageUploadDemoModule,
     SelectDemoModule,
+    SliderDemoModule,
   // module declare
 } from './demo';
 import { RebirthNGModule } from './exports';
@@ -107,6 +108,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TagsDemoModule,
     ImageUploadDemoModule,
     SelectDemoModule,
+    SliderDemoModule,
     // module declare
   ],
   providers: [
