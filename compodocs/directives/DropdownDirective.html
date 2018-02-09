@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -165,6 +165,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SelectModule.html" >SelectModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SliderModule.html" >SliderModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -323,6 +326,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SliderComponent.html" >SliderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -555,6 +561,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -710,8 +717,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -827,6 +834,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SelectModule.html" >SelectModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SliderModule.html" >SliderModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -985,6 +995,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SliderComponent.html" >SliderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -1217,6 +1230,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1363,7 +1377,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
+    <div class="tab-pane fade active in" id="c-info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1401,7 +1415,7 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                         <a href="#active">active</a>
+                                        <a href="#active">active</a>
                                     </li>
                                 </ul>
                             </td>
@@ -1415,10 +1429,10 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                         <a href="#toggle">toggle</a>
+                                        <a href="#toggle">toggle</a>
                                     </li>
                                     <li>
-                                         <a href="#updateHostStatus">updateHostStatus</a>
+                                        <a href="#updateHostStatus">updateHostStatus</a>
                                     </li>
                                 </ul>
                             </td>
@@ -1481,7 +1495,7 @@
                         <tbody>
                             <tr>
                                 <td class="col-md-4">
-                                    <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>)</code>
+                                    <code>constructor(elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>)</code>
                                 </td>
                             </tr>
                                     <tr>
@@ -1507,7 +1521,7 @@
                                                             <tr>
                                                               <td>elementRef</td>
                                                               <td>
-                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                                        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
                                                               </td>
                                                               <td>
                                                               </td>
@@ -1516,7 +1530,7 @@
                                                             <tr>
                                                               <td>renderer</td>
                                                               <td>
-                                                                        <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
                                                               </td>
                                                               <td>
                                                               </td>
@@ -1542,7 +1556,7 @@
                                 </td>
                                 <td class="col-md-10">
                                     <p>
-                                      <em>Default value: </em><code>open</code>
+                                      <em>Default value: </em><code>&#x27;open&#x27;</code>
                                     </p>
                                 </td>
                             </tr>
@@ -1586,7 +1600,7 @@
                                     <code>dropdownStatusChange</code>
                                 </td>
                                 <td class="col-md-10">
-                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
+                                    <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                                 </td>
                             </tr>
@@ -1606,7 +1620,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="click"></a>
-                                    <span class="name"><b> click</b><a href="#click"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        click
+                                        </b>
+                                        <a href="#click"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                                 <tr>
@@ -1634,7 +1653,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="document:click"></a>
-                                    <span class="name"><b> document:click</b><a href="#document:click"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        document:click
+                                        </b>
+                                        <a href="#document:click"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                                 <tr>
@@ -1669,7 +1693,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="toggle"></a>
-                                    <span class="name"><b> toggle</b><a href="#toggle"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        toggle
+                                        </b>
+                                        <a href="#toggle"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -1701,7 +1730,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="updateHostStatus"></a>
-                                    <span class="name"><b> updateHostStatus</b><a href="#updateHostStatus"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        updateHostStatus
+                                        </b>
+                                        <a href="#updateHostStatus"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -1740,7 +1774,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="active"></a>
-                                    <span class="name"><b> active</b><a href="#active"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        active
+                                        </b>
+                                        <a href="#active"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -1765,10 +1804,11 @@
                     </table>
             </section>
 
+
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Directive, HostListener, Output, Input, EventEmitter, Renderer2, ElementRef, } from &#x27;@angular/core&#x27;;
 
 @Directive({
@@ -1819,6 +1859,7 @@ export class DropdownDirective {
     </div>
 
 </div>
+
 
 
 

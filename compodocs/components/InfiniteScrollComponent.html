@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -165,6 +165,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SelectModule.html" >SelectModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SliderModule.html" >SliderModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -323,6 +326,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SliderComponent.html" >SliderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -555,6 +561,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -710,8 +717,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -827,6 +834,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SelectModule.html" >SelectModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SliderModule.html" >SliderModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -985,6 +995,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SliderComponent.html" >SliderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -1217,6 +1230,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1367,7 +1381,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1380,8 +1394,8 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnInit-interface.html" target="_blank" >OnInit</a></code>
-                <code><a href="https://angular.io/docs/ts/latest/api/core/index/OnDestroy-interface.html" target="_blank" >OnDestroy</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
     </p>
 
 
@@ -1444,10 +1458,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#scrollStream">scrollStream</a>
+                                <a href="#scrollStream">scrollStream</a>
                             </li>
                             <li>
-                                 <a href="#subscription">subscription</a>
+                                <a href="#subscription">subscription</a>
                             </li>
                         </ul>
                     </td>
@@ -1461,25 +1475,28 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#loadFinish">loadFinish</a>
+                                <a href="#loadFinish">loadFinish</a>
                             </li>
                             <li>
-                                 <a href="#ngOnDestroy">ngOnDestroy</a>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
-                                 <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#ngOnInit">ngOnInit</a>
                             </li>
                             <li>
-                                 <a href="#onScrollChange">onScrollChange</a>
+                                <a href="#onScrollChange">onScrollChange</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#registerOnScrollStream">registerOnScrollStream</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#registerOnScrollStream">registerOnScrollStream</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#setupScrollEvent">setupScrollEvent</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#setupScrollEvent">setupScrollEvent</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#unSubscription">unSubscription</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#unSubscription">unSubscription</a>
                             </li>
                         </ul>
                     </td>
@@ -1545,7 +1562,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(windowRef: <a href="../injectables/WindowRef.html">WindowRef</a>, elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>)</code>
+                            <code>constructor(windowRef: <a href="../injectables/WindowRef.html">WindowRef</a>, elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>)</code>
                         </td>
                     </tr>
                             <tr>
@@ -1580,7 +1597,7 @@
                                                     <tr>
                                                       <td>elementRef</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
+                                                                <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1691,7 +1708,7 @@
                             <code>loadMore</code>
                         </td>
                         <td class="col-md-10">
-                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                         </td>
                     </tr>
@@ -1711,7 +1728,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="window:scroll"></a>
-                            <span class="name"><b> window:scroll</b><a href="#window:scroll"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                window:scroll
+                                </b>
+                                <a href="#window:scroll"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                         <tr>
@@ -1721,7 +1743,7 @@
                         </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>window:scroll($event: <a href="https://angular.io/docs/ts/latest/api/router/index/Event-type-alias.html" target="_blank">Event</a>)</code>
+    <code>window:scroll($event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
                         </td>
                     </tr>
     
@@ -1746,7 +1768,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="loadFinish"></a>
-                            <span class="name"><b> loadFinish</b><a href="#loadFinish"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                loadFinish
+                                </b>
+                                <a href="#loadFinish"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1807,7 +1834,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnDestroy"></a>
-                            <span class="name"><b> ngOnDestroy</b><a href="#ngOnDestroy"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                ngOnDestroy
+                                </b>
+                                <a href="#ngOnDestroy"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1839,7 +1871,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                ngOnInit
+                                </b>
+                                <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1871,7 +1908,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onScrollChange"></a>
-                            <span class="name"><b> onScrollChange</b><a href="#onScrollChange"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                onScrollChange
+                                </b>
+                                <a href="#onScrollChange"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1903,12 +1945,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnScrollStream"></a>
-                            <span class="name"><b><span class="modifier">Private</span> registerOnScrollStream</b><a href="#registerOnScrollStream"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                registerOnScrollStream
+                                </b>
+                                <a href="#registerOnScrollStream"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-lock"></span>
+                                <span class="modifier-icon fa fa-reset"></span>
                             <code>registerOnScrollStream(scrollStream: EventEmitter<UIEvent>)</code>
                         </td>
                     </tr>
@@ -1965,12 +2013,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setupScrollEvent"></a>
-                            <span class="name"><b><span class="modifier">Private</span> setupScrollEvent</b><a href="#setupScrollEvent"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                setupScrollEvent
+                                </b>
+                                <a href="#setupScrollEvent"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-lock"></span>
+                                <span class="modifier-icon fa fa-reset"></span>
                             <code>setupScrollEvent()</code>
                         </td>
                     </tr>
@@ -1998,12 +2052,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="unSubscription"></a>
-                            <span class="name"><b><span class="modifier">Private</span> unSubscription</b><a href="#unSubscription"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                unSubscription
+                                </b>
+                                <a href="#unSubscription"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-lock"></span>
+                                <span class="modifier-icon fa fa-reset"></span>
                             <code>unSubscription()</code>
                         </td>
                     </tr>
@@ -2038,7 +2098,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="scrollStream"></a>
-                            <span class="name"><b> scrollStream</b><a href="#scrollStream"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                scrollStream
+                                </b>
+                                <a href="#scrollStream"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2047,6 +2112,11 @@
     </code>
                         </td>
                     </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>new EventEmitter&lt;any&gt;()</code>
+                            </td>
+                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/exports/infinite-scroll/infinite-scroll.component.ts:30</a></div>
@@ -2061,7 +2131,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="subscription"></a>
-                            <span class="name"><b> subscription</b><a href="#subscription"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                subscription
+                                </b>
+                                <a href="#subscription"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2086,10 +2161,11 @@
                 </tbody>
             </table>
     </section>
+
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import {
   Component,
   OnInit,
@@ -2180,7 +2256,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-template #defaultTemplate let-spinner&#x3D;&quot;&quot;&gt;
   &lt;div class&#x3D;&quot;spinner&quot;&gt;
     &lt;div class&#x3D;&quot;bounce bounce1&quot;&gt;&lt;/div&gt;
@@ -2193,7 +2269,7 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -2217,11 +2293,12 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-template #defaultTemplate let-spinner="">  <div class="spinner">    <div class="bounce bounce1"></div>    <div class="bounce bounce2"></div>    <div class="bounce bounce3"></div>  </div> </ng-template><ng-template [ngTemplateOutlet]="spinnerTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: this }"> </ng-template></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SliderComponent', 'selector': 're-slider'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'InfiniteScrollComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
 
 
 

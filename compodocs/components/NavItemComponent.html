@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -165,6 +165,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SelectModule.html" >SelectModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SliderModule.html" >SliderModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -323,6 +326,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SliderComponent.html" >SliderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -555,6 +561,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -710,8 +717,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -827,6 +834,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SelectModule.html" >SelectModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SliderModule.html" >SliderModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -985,6 +995,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SliderComponent.html" >SliderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -1217,6 +1230,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1367,7 +1381,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1480,6 +1494,9 @@
                                 <em>Type:</em>    <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
 
                               </p>
+                            <p>
+                              <em>Default value: </em><code>[]</code>
+                            </p>
                         </td>
                     </tr>
                             <tr>
@@ -1516,10 +1533,11 @@
 
 
 
+
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { MenuItem } from &#x27;./menu-bar.model&#x27;;
 
@@ -1537,7 +1555,7 @@ export class NavItemComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-template #defaultMenuTemplate let-menu&#x3D;&quot;menu&quot;&gt;
 
   &lt;a *ngIf&#x3D;&quot;menu.router&quot; [routerLink]&#x3D;&quot;menu.router&quot; routerLinkActive&#x3D;&quot;active&quot; [queryParams]&#x3D;&quot;menu.queryParams&quot;
@@ -1612,7 +1630,7 @@ export class NavItemComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1636,11 +1654,12 @@ export class NavItemComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-template #defaultMenuTemplate let-menu="menu">  <a *ngIf="menu.router" [routerLink]="menu.router" routerLinkActive="active" [queryParams]="menu.queryParams"     [target]="menu.target || \'_self\'">    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>  <a *ngIf="menu.handler" (click)="menu.handler(menu)">    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>  <a *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || \'_self\'">    <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a></ng-template><ul class="nav navbar-nav" [ngClass]="{\'navbar-right\': right}">  <ng-container *ngFor="let menu of menus">    <li *ngIf="!menu.children?.length" class="{{menu.cssClass}}">      <ng-template *ngIf="menu.itemTemplate" [ngTemplateOutlet]="menu.itemTemplate"                   [ngTemplateOutletContext]="{ menu: menu }">      </ng-template>      <ng-container *ngIf="!menu.itemTemplate">        <a *ngIf="menu.router" [routerLink]="menu.router" routerLinkActive="active" [queryParams]="menu.queryParams"           [target]="menu.target || \'_self\'">          <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>        <a *ngIf="menu.handler" (click)="menu.handler(menu)">          <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>        <a *ngIf="!menu.router && !menu.handler" [href]="menu.url" [target]="menu.target || \'_self\'">          <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}</a>      </ng-container>    </li>    <li *ngIf="menu.children?.length" reDropdown [direction]="direction" routerLinkActive="active"        class="dropdown-menu-parent {{menu.cssClass}}">      <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">        <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}        <span class="caret"></span>      </a>      <ul class="dropdown-menu forAnimate">        <ng-container *ngFor="let child of menu?.children">          <ng-template *ngIf="child.itemTemplate" [ngTemplateOutlet]="child.itemTemplate"                       [ngTemplateOutletContext]="{ menu: child }">          </ng-template>          <ng-container *ngIf="!child.itemTemplate">            <li *ngIf="!child.divider && !child.header" role="menuitem" class="{{child.cssClass}}">              <a *ngIf="child.router" [routerLink]="child.router" routerLinkActive="active"                 [queryParams]="child.queryParams" [target]="child.target || \'_self\'">                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>              <a *ngIf="child.handler" (click)="child.handler(child)">                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>              <a *ngIf="!child.router && !child.handler" [href]="child.url" [target]="child.target || \'_self\'">                <i *ngIf="child.icon" class="menu-icon {{child.icon}}"></i>&nbsp;{{child.text}}</a>            </li>          </ng-container>          <li *ngIf="child.divider" role="separator" class="divider"></li>          <li *ngIf="child.header" class="dropdown-header">{{child.text}}</li>        </ng-container>      </ul>    </li>  </ng-container></ul></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SliderComponent', 'selector': 're-slider'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'NavItemComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
 
 
 

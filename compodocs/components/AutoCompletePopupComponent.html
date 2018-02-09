@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -165,6 +165,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SelectModule.html" >SelectModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SliderModule.html" >SliderModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -323,6 +326,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SliderComponent.html" >SliderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -555,6 +561,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -710,8 +717,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -827,6 +834,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SelectModule.html" >SelectModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SliderModule.html" >SliderModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -985,6 +995,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SliderComponent.html" >SliderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -1217,6 +1230,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1367,7 +1381,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1380,7 +1394,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/forms/index/ControlValueAccessor-interface.html" target="_blank" >ControlValueAccessor</a></code>
+                <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
     </p>
 
 
@@ -1395,7 +1409,7 @@
 
             <tr>
                 <td class="col-md-3">host</td>
-                <td class="col-md-9"><code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"[class]":"\"dropdown-menu \"  +  (cssClass ? cssClass : \"\")",<br>&nbsp;&nbsp;&nbsp;&nbsp;"[style.display]":"isOpen && (source?.length || noResultItemTemplate) ? \"inline-block\" : \"none\"","[@state]":"animateState","(@state.done)":"afterVisibilityAnimation($event)"<br>}</code></td>
+                <td class="col-md-9"><code>{<br>}</code></td>
             </tr>
 
 
@@ -1406,7 +1420,9 @@
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
                     <code>
-                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
+                        {
+    : , : (() &#x3D;&gt; ), : true
+}
                     </code>
                 </td>
             </tr>
@@ -1447,19 +1463,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#activeIndex">activeIndex</a>
+                                <a href="#activeIndex">activeIndex</a>
                             </li>
                             <li>
-                                 <a href="#animateState">animateState</a>
+                                <a href="#animateState">animateState</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#onChange">onChange</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#onChange">onChange</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#onTouched">onTouched</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#onTouched">onTouched</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#value">value</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#value">value</a>
                             </li>
                         </ul>
                     </td>
@@ -1473,43 +1492,43 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#afterVisibilityAnimation">afterVisibilityAnimation</a>
+                                <a href="#afterVisibilityAnimation">afterVisibilityAnimation</a>
                             </li>
                             <li>
-                                 <a href="#hide">hide</a>
+                                <a href="#hide">hide</a>
                             </li>
                             <li>
-                                 <a href="#next">next</a>
+                                <a href="#next">next</a>
                             </li>
                             <li>
-                                 <a href="#onActiveIndexChange">onActiveIndexChange</a>
+                                <a href="#onActiveIndexChange">onActiveIndexChange</a>
                             </li>
                             <li>
-                                 <a href="#onSelect">onSelect</a>
+                                <a href="#onSelect">onSelect</a>
                             </li>
                             <li>
-                                 <a href="#prev">prev</a>
+                                <a href="#prev">prev</a>
                             </li>
                             <li>
-                                 <a href="#registerOnChange">registerOnChange</a>
+                                <a href="#registerOnChange">registerOnChange</a>
                             </li>
                             <li>
-                                 <a href="#registerOnTouched">registerOnTouched</a>
+                                <a href="#registerOnTouched">registerOnTouched</a>
                             </li>
                             <li>
-                                 <a href="#reset">reset</a>
+                                <a href="#reset">reset</a>
                             </li>
                             <li>
-                                 <a href="#selectCurrentItem">selectCurrentItem</a>
+                                <a href="#selectCurrentItem">selectCurrentItem</a>
                             </li>
                             <li>
-                                 <a href="#setDisabledState">setDisabledState</a>
+                                <a href="#setDisabledState">setDisabledState</a>
                             </li>
                             <li>
-                                 <a href="#show">show</a>
+                                <a href="#show">show</a>
                             </li>
                             <li>
-                                 <a href="#writeValue">writeValue</a>
+                                <a href="#writeValue">writeValue</a>
                             </li>
                         </ul>
                     </td>
@@ -1785,12 +1804,17 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="afterVisibilityAnimation"></a>
-                            <span class="name"><b> afterVisibilityAnimation</b><a href="#afterVisibilityAnimation"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                afterVisibilityAnimation
+                                </b>
+                                <a href="#afterVisibilityAnimation"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-    <code>afterVisibilityAnimation(e: <a href="https://angular.io/docs/ts/latest/api/animations/index/AnimationEvent-interface.html" target="_blank">AnimationEvent</a>)</code>
+    <code>afterVisibilityAnimation(e: <a href="https://angular.io/api/animations/AnimationEvent" target="_blank">AnimationEvent</a>)</code>
                         </td>
                     </tr>
     
@@ -1819,7 +1843,7 @@
                                                     <tr>
                                                       <td>e</td>
                                                       <td>
-                                                              <code><a href="https://angular.io/docs/ts/latest/api/animations/index/AnimationEvent-interface.html" target="_blank" >AnimationEvent</a></code>
+                                                              <code><a href="https://angular.io/api/animations/AnimationEvent" target="_blank" >AnimationEvent</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1846,7 +1870,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="hide"></a>
-                            <span class="name"><b> hide</b><a href="#hide"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                hide
+                                </b>
+                                <a href="#hide"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1878,7 +1907,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="next"></a>
-                            <span class="name"><b> next</b><a href="#next"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                next
+                                </b>
+                                <a href="#next"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1910,7 +1944,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onActiveIndexChange"></a>
-                            <span class="name"><b> onActiveIndexChange</b><a href="#onActiveIndexChange"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                onActiveIndexChange
+                                </b>
+                                <a href="#onActiveIndexChange"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1970,7 +2009,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onSelect"></a>
-                            <span class="name"><b> onSelect</b><a href="#onSelect"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                onSelect
+                                </b>
+                                <a href="#onSelect"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2031,7 +2075,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="prev"></a>
-                            <span class="name"><b> prev</b><a href="#prev"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                prev
+                                </b>
+                                <a href="#prev"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2063,7 +2112,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnChange"></a>
-                            <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                registerOnChange
+                                </b>
+                                <a href="#registerOnChange"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2124,7 +2178,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnTouched"></a>
-                            <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                registerOnTouched
+                                </b>
+                                <a href="#registerOnTouched"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2185,7 +2244,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="reset"></a>
-                            <span class="name"><b> reset</b><a href="#reset"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                reset
+                                </b>
+                                <a href="#reset"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2217,7 +2281,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="selectCurrentItem"></a>
-                            <span class="name"><b> selectCurrentItem</b><a href="#selectCurrentItem"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                selectCurrentItem
+                                </b>
+                                <a href="#selectCurrentItem"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2249,7 +2318,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setDisabledState"></a>
-                            <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                setDisabledState
+                                </b>
+                                <a href="#setDisabledState"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2310,7 +2384,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="show"></a>
-                            <span class="name"><b> show</b><a href="#show"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                show
+                                </b>
+                                <a href="#show"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2342,7 +2421,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="writeValue"></a>
-                            <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                writeValue
+                                </b>
+                                <a href="#writeValue"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2410,7 +2494,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="activeIndex"></a>
-                            <span class="name"><b> activeIndex</b><a href="#activeIndex"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                activeIndex
+                                </b>
+                                <a href="#activeIndex"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2438,7 +2527,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="animateState"></a>
-                            <span class="name"><b> animateState</b><a href="#animateState"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                animateState
+                                </b>
+                                <a href="#animateState"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -2449,7 +2543,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                <i>Default value : </i><code>initial</code>
+                                <i>Default value : </i><code>&#x27;initial&#x27;</code>
                             </td>
                         </tr>
                             <tr>
@@ -2466,15 +2560,26 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onChange"></a>
-                            <span class="name"><b><span class="modifier">Private</span> onChange</b><a href="#onChange"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                onChange
+                                </b>
+                                <a href="#onChange"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>onChange:     <code></code>
+                            <span class="modifier-icon fa fa-reset"></span><code>onChange:     <code></code>
     </code>
                         </td>
                     </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>(_: any) &#x3D;&gt; null</code>
+                            </td>
+                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/exports/auto-complete/auto-complete-popup.component.ts:46</a></div>
@@ -2489,15 +2594,26 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onTouched"></a>
-                            <span class="name"><b><span class="modifier">Private</span> onTouched</b><a href="#onTouched"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                onTouched
+                                </b>
+                                <a href="#onTouched"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>onTouched:     <code></code>
+                            <span class="modifier-icon fa fa-reset"></span><code>onTouched:     <code></code>
     </code>
                         </td>
                     </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <i>Default value : </i><code>() &#x3D;&gt; null</code>
+                            </td>
+                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/exports/auto-complete/auto-complete-popup.component.ts:47</a></div>
@@ -2512,12 +2628,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="value"></a>
-                            <span class="name"><b><span class="modifier">Private</span> value</b><a href="#value"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                value
+                                </b>
+                                <a href="#value"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-lock"></span><code>value:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                            <span class="modifier-icon fa fa-reset"></span><code>value:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
     </code>
                         </td>
                     </tr>
@@ -2537,10 +2659,11 @@
                 </tbody>
             </table>
     </section>
+
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input, TemplateRef, forwardRef } from &#x27;@angular/core&#x27;;
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from &#x27;@angular/forms&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
@@ -2671,7 +2794,7 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-template #defaultItemTemplate let-item&#x3D;&quot;item&quot; let-term&#x3D;&quot;term&quot;&gt;
   &lt;re-hightlight [value]&#x3D;&quot;formatter(item)&quot; [term]&#x3D;&quot;term&quot;&gt;&lt;/re-hightlight&gt;
 &lt;/ng-template&gt;
@@ -2691,7 +2814,7 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -2715,11 +2838,12 @@ export class AutoCompletePopupComponent implements ControlValueAccessor {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><ng-template #defaultItemTemplate let-item="item" let-term="term">  <re-hightlight [value]="formatter(item)" [term]="term"></re-hightlight></ng-template><ul class="list-unstyled popup-list">  <li *ngFor="let item of source; let $index = index;" class="dropdown-item"      [ngClass]="{\'bg-primary\': $index == activeIndex}" (click)="onSelect(item)"      (mouseenter)="onActiveIndexChange($index)">    <ng-template [ngTemplateOutlet]="itemTemplate || defaultItemTemplate"              [ngTemplateOutletContext]="{ formatter: formatter, term:term, source:source, item:item, $index:$index}"></ng-template>  </li>  <li class="dropdown-item" *ngIf="!source?.length && noResultItemTemplate != null">    <ng-template [ngTemplateOutlet]="noResultItemTemplate"              [ngTemplateOutletContext]="{ term:term, source:source}"> </ng-template>  </li></ul></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SliderComponent', 'selector': 're-slider'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'AutoCompletePopupComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
 
 
 

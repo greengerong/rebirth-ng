@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                    <a href="./changelog.html"
-                                        >
+                                        <a href="../changelog.html"
+                                    >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -165,6 +165,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SelectModule.html" >SelectModule</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../modules/SliderModule.html" >SliderModule</a>
                                 </li>
                                 <li class="link">
                                     <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -323,6 +326,9 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SliderComponent.html" >SliderComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -555,6 +561,7 @@
                         </ul>
                     </li>
             
+            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -710,8 +717,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                           <a href="./changelog.html"
-                                               >
+                                               <a href="../changelog.html"
+                                           >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -827,6 +834,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SelectModule.html" >SelectModule</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../modules/SliderModule.html" >SliderModule</a>
                                        </li>
                                        <li class="link">
                                            <a href="../modules/SwitchModule.html" >SwitchModule</a>
@@ -985,6 +995,9 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/SelectComponent.html" >SelectComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SliderComponent.html" >SliderComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/SwitchComponent.html" >SwitchComponent</a>
@@ -1217,6 +1230,7 @@
                                </ul>
                            </li>
                    
+                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1367,7 +1381,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1437,10 +1451,11 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#closeBox">closeBox</a>
+                                <a href="#closeBox">closeBox</a>
                             </li>
                             <li>
-                                <span class="modifier">Private</span> <a href="#onCloseBox">onCloseBox</a>
+                                    <span class="modifier">Private</span>
+                                <a href="#onCloseBox">onCloseBox</a>
                             </li>
                         </ul>
                     </td>
@@ -1611,7 +1626,7 @@
 
                               </p>
                             <p>
-                              <em>Default value: </em><code>info</code>
+                              <em>Default value: </em><code>&#x27;info&#x27;</code>
                             </p>
                         </td>
                     </tr>
@@ -1634,7 +1649,7 @@
                             <code>close</code>
                         </td>
                         <td class="col-md-10">
-                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
 
                         </td>
                     </tr>
@@ -1659,7 +1674,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="closeBox"></a>
-                            <span class="name"><b> closeBox</b><a href="#closeBox"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                closeBox
+                                </b>
+                                <a href="#closeBox"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -1691,12 +1711,18 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onCloseBox"></a>
-                            <span class="name"><b><span class="modifier">Private</span> onCloseBox</b><a href="#onCloseBox"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Private</span>
+                                onCloseBox
+                                </b>
+                                <a href="#onCloseBox"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-lock"></span>
+                                <span class="modifier-icon fa fa-reset"></span>
                             <code>onCloseBox()</code>
                         </td>
                     </tr>
@@ -1721,10 +1747,11 @@
             </table>
     </section>
 
+
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
@@ -1759,7 +1786,7 @@ export class AlertBoxComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;alert alert-{{type}} {{cssClass}}&quot; [ngClass]&#x3D;&quot;{&#x27;alert-dismissible&#x27;: closable}&quot; role&#x3D;&quot;alert&quot;&gt;
   &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;alert&quot; aria-label&#x3D;&quot;Close&quot; *ngIf&#x3D;&quot;closable&quot; (click)&#x3D;&quot;closeBox()&quot;&gt;
     &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;alert-remove-icon {{removeIcon}}&quot;&gt;&lt;/span&gt;
@@ -1769,7 +1796,7 @@ export class AlertBoxComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1793,11 +1820,12 @@ export class AlertBoxComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="alert alert-{{type}} {{cssClass}}" [ngClass]="{\'alert-dismissible\': closable}" role="alert">  <button type="button" class="close" data-dismiss="alert" aria-label="Close" *ngIf="closable" (click)="closeBox()">    <span aria-hidden="true" class="alert-remove-icon {{removeIcon}}"></span>  </button>  <ng-content></ng-content></div></div>'
-    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
+    var COMPONENTS = [{'name': 'AccordionComponent', 'selector': 're-accordion'},{'name': 'ActionButtonComponent', 'selector': 're-action-button'},{'name': 'AlertBoxComponent', 'selector': 're-alert-box'},{'name': 'AlertDialogComponent', 'selector': 're-alert-dialog'},{'name': 'AutoCompletePopupComponent', 'selector': 're-auto-complete-popup'},{'name': 'BadgeComponent', 'selector': 're-badge'},{'name': 'BreadcrumbsComponent', 'selector': 're-breadcrumbs'},{'name': 'CarouselComponent', 'selector': 're-carousel'},{'name': 'CheckboxComponent', 'selector': 're-checkbox'},{'name': 'CheckboxGroupComponent', 'selector': 're-checkbox-group'},{'name': 'ConfirmDialogComponent', 'selector': 're-confirm-dialog'},{'name': 'DatePickerPopupComponent', 'selector': 're-date-picker-popup'},{'name': 'EllipsisComponent', 'selector': 're-ellipsis'},{'name': 'FileUploadComponent', 'selector': 're-file-upload'},{'name': 'FileUploadPreviewComponent', 'selector': 're-file-upload-preview'},{'name': 'FlowStepComponent', 'selector': 're-flow-step'},{'name': 'HightlightComponent', 'selector': 're-hightlight'},{'name': 'ImageUploadComponent', 'selector': 're-image-upload'},{'name': 'InfiniteScrollComponent', 'selector': 're-infinite-scroll'},{'name': 'MenuBarComponent', 'selector': 're-menu-bar'},{'name': 'ModalBackdropComponent', 'selector': 're-modal-backdrop'},{'name': 'ModalComponent', 'selector': 're-modal'},{'name': 'ModalContentComponent', 'selector': 're-modal-content'},{'name': 'ModalWindowComponent', 'selector': 're-modal-window'},{'name': 'MutipleAutoCompleteComponent', 'selector': 're-mutiple-auto-complete'},{'name': 'NavItemComponent', 'selector': 're-nav-item'},{'name': 'NotifyComponent', 'selector': 're-notify'},{'name': 'OverlayComponent', 'selector': 're-overlay'},{'name': 'OverlayContentComponent', 'selector': 're-overlay-content'},{'name': 'PagerComponent', 'selector': 're-pager'},{'name': 'PaginationComponent', 'selector': 're-pagination'},{'name': 'PanelBodyComponent', 'selector': 're-panel-body,[re-panel-body],re-accordion-body,[re-accordion-body]'},{'name': 'PanelComponent', 'selector': 're-panel,re-accordion-item'},{'name': 'PanelFooterComponent', 'selector': 're-panel-footer,[re-panel-footer],re-accordion-footer,[re-accordion-footer]'},{'name': 'PanelHeaderComponent', 'selector': 're-panel-header,[re-panel-header],re-accordion-header,[re-accordion-header]'},{'name': 'PopoverPopupComponent', 'selector': 're-popover-popup'},{'name': 'ProgressBarComponent', 'selector': 're-progress-bar'},{'name': 'PromptDialogComponent', 'selector': 're-prompt'},{'name': 'RadioGroupComponent', 'selector': 're-radio-group'},{'name': 'RatingComponent', 'selector': 're-rating'},{'name': 'SelectButtonComponent', 'selector': 're-select-button'},{'name': 'SelectComponent', 'selector': 're-select'},{'name': 'SliderComponent', 'selector': 're-slider'},{'name': 'SwitchComponent', 'selector': 're-switch'},{'name': 'TabComponent', 'selector': 're-tab'},{'name': 'TabsComponent', 'selector': 're-tabs'},{'name': 'TagsComponent', 'selector': 're-tags'},{'name': 'TemplateLoaderComponent', 'selector': 're-template-loader'},{'name': 'TimePickerComponent', 'selector': 're-time-picker'},{'name': 'TooltipPopupComponent', 'selector': 're-tooltip-popup'},{'name': 'TreeNodeComponent', 'selector': 're-tree-node,[reTreeNode]'},{'name': 'TreePanelComponent', 'selector': 're-tree-panel'},{'name': 'TreeViewComponent', 'selector': 're-tree-view'},{'name': 'ViewImageModalComponent', 'selector': './re-view-image-modal'}];
     var DIRECTIVES = [{'name': 'AfterDateDirective', 'selector': '[reAfterDate]'},{'name': 'AutoCompleteDirective', 'selector': '[reAutoComplete]'},{'name': 'AutoFocusDirective', 'selector': '[reAutoFocus]'},{'name': 'Base64Directive', 'selector': '[reBase64]'},{'name': 'BeforeDateDirective', 'selector': '[reBeforeDate]'},{'name': 'DateDirective', 'selector': '[reDate]'},{'name': 'DateISODirective', 'selector': '[reDateISO]'},{'name': 'DatePickerDirective', 'selector': '[reDatePicker]'},{'name': 'DigitsDirective', 'selector': '[reDigits]'},{'name': 'DraggableDirective', 'selector': '[reDraggable]'},{'name': 'DraggableHandleDirective', 'selector': '[reDraggableHandle]'},{'name': 'DropdownDirective', 'selector': '[reDropdown]'},{'name': 'DroppableDirective', 'selector': '[reDroppable]'},{'name': 'EmailDirective', 'selector': '[reEmail]'},{'name': 'EqualDirective', 'selector': '[reEqual]'},{'name': 'EqualToDirective', 'selector': '[reEqualTo]'},{'name': 'IncludesDirective', 'selector': '[reIncludes]'},{'name': 'JsonDirective', 'selector': '[reJson]'},{'name': 'MaxDirective', 'selector': '[reMax]'},{'name': 'MinDirective', 'selector': '[reMin]'},{'name': 'NumberDirective', 'selector': '[reNumber]'},{'name': 'PhoneDirective', 'selector': '[rePhone]'},{'name': 'PopoverDirective', 'selector': '[rePopover]'},{'name': 'RangeDirective', 'selector': '[reRange]'},{'name': 'RangeLengthDirective', 'selector': '[reRangeLength]'},{'name': 'RequiredWithTrimDirective', 'selector': '[reRequiredWithTrim]'},{'name': 'ResizeableDirective', 'selector': '[reResizeable]'},{'name': 'SlideDirective', 'selector': 'ng-template[reSlide]'},{'name': 'TabContentDirective', 'selector': 'ng-template[reTabContent]'},{'name': 'TabTitleDirective', 'selector': 'ng-template[reTabTitle]'},{'name': 'TooltipDirective', 'selector': '[reTooltip]'},{'name': 'UUIDDirective', 'selector': '[reUUID]'},{'name': 'UrlDirective', 'selector': '[reUrl]'}];
     var ACTUAL_COMPONENT = {'name': 'AlertBoxComponent'};
 </script>
 <script src="../js/tree.js"></script>
+
 
 
 
