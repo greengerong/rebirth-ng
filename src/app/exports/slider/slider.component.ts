@@ -10,7 +10,8 @@ import {
   OnInit,
   Input,
   Output,
-  EventEmitter
+  EventEmitter,
+  HostListener
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -102,6 +103,12 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
         this.calcHandleOffset();
         this.changeDetectorRef.markForCheck();
       });
+  }
+
+  @HostListener('window:resize')
+  private onResize() {
+    this.stepWidth = this.windowRef.getOffsetWidth(this.slider) / this.offset;
+    this.calcHandleOffset();
   }
 
   public onSliderClick(event) {
