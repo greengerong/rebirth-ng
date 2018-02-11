@@ -1,7 +1,7 @@
 (function(compodoc) {
 
     function LunrSearchEngine() {
-        this.index = undefined;
+        this.index = null;
         this.store = {};
         this.name = 'LunrSearchEngine';
     }

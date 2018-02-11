@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1664,9 +1662,6 @@
                                 <em>Type:</em>    <code>&quot;&quot; | &quot;success&quot; | &quot;info&quot; | &quot;warning&quot; | &quot;danger&quot;</code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>&#x27;&#x27;</code>
-                            </p>
                         </td>
                     </tr>
                             <tr>
@@ -1703,11 +1698,10 @@
 
 
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input } from &#x27;@angular/core&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
@@ -1737,7 +1731,7 @@ export class ProgressBarComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;progress {{cssClass}}&quot; [ngClass]&#x3D;&quot;{&#x27;thin&#x27;: thin}&quot;&gt;
   &lt;div class&#x3D;&quot;progress-bar  {{ type? &#x27;progress-bar-&#x27; + type : &#x27;&#x27;}}&quot;
        [ngClass]&#x3D;&quot;{active: animate, &#x27;progress-bar-striped&#x27; : striped}&quot;
@@ -1749,7 +1743,7 @@ export class ProgressBarComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1778,7 +1772,6 @@ export class ProgressBarComponent {
     var ACTUAL_COMPONENT = {'name': 'ProgressBarComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

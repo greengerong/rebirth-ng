@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1363,7 +1361,6 @@
 
 
 
-
 <ol class="breadcrumb">
   <li>Interfaces</li>
   <li>DateConverter</li>
@@ -1381,7 +1378,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1404,10 +1401,10 @@
                         <td class="col-md-4">
                             <ul class="index-list">
                                 <li>
-                                    <a href="#format">format</a>
+                                     <a href="#format">format</a>
                                 </li>
                                 <li>
-                                    <a href="#parse">parse</a>
+                                     <a href="#parse">parse</a>
                                 </li>
                             </ul>
                         </td>
@@ -1426,12 +1423,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="format"></a>
-                                    <span class="name">
-                                        <b>
-                                        format
-                                        </b>
-                                        <a href="#format"><span class="fa fa-link"></span></a>
-                                    </span>
+                                    <span class="name"><b> format</b><a href="#format"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1512,12 +1504,7 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="parse"></a>
-                                    <span class="name">
-                                        <b>
-                                        parse
-                                        </b>
-                                        <a href="#parse"><span class="fa fa-link"></span></a>
-                                    </span>
+                                    <span class="name"><b> parse</b><a href="#parse"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
@@ -1599,7 +1586,7 @@
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">export interface DateConverter {
   parse(date: any, pattern?: string, locale?: string): Date ;
   format(date: Date, pattern?: string, locale?: string): string ;

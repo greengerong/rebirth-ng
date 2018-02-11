@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1447,7 +1445,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#itemClick">itemClick</a>
+                                 <a href="#itemClick">itemClick</a>
                             </li>
                         </ul>
                     </td>
@@ -1509,9 +1507,6 @@
                                 <em>Type:</em>    <code><a href="../interfaces/Breadcrumb.html" target="_self" >Breadcrumb[]</a></code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>[]</code>
-                            </p>
                         </td>
                     </tr>
                             <tr>
@@ -1536,12 +1531,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="itemClick"></a>
-                            <span class="name">
-                                <b>
-                                itemClick
-                                </b>
-                                <a href="#itemClick"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> itemClick</b><a href="#itemClick"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1599,11 +1589,10 @@
             </table>
     </section>
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input } from &#x27;@angular/core&#x27;;
 import { Breadcrumb } from &#x27;./breadcrumbs.model&#x27;;
 
@@ -1626,7 +1615,7 @@ export class BreadcrumbsComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ol class&#x3D;&quot;breadcrumb {{cssClass}}&quot;&gt;
   &lt;li *ngFor&#x3D;&quot;let item of items;let $last&#x3D;last&quot; [ngClass]&#x3D;&quot;{&#x27;active&#x27;: $last}&quot;&gt;
     &lt;a *ngIf&#x3D;&quot;!$last &amp;&amp; item.handle&quot; (click)&#x3D;&quot;itemClick(item)&quot;&gt;
@@ -1646,7 +1635,7 @@ export class BreadcrumbsComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1675,7 +1664,6 @@ export class BreadcrumbsComponent {
     var ACTUAL_COMPONENT = {'name': 'BreadcrumbsComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

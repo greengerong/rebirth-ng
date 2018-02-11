@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1394,7 +1392,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/forms/index/ControlValueAccessor-interface.html" target="_blank" >ControlValueAccessor</a></code>
     </p>
 
 
@@ -1417,7 +1415,7 @@
 
             <tr>
                 <td class="col-md-3">host</td>
-                <td class="col-md-9"><code>{<br>}</code></td>
+                <td class="col-md-9"><code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"[class]":"(cssClass ? cssClass : \"\") + \" checkbox\""<br>}</code></td>
             </tr>
 
 
@@ -1428,9 +1426,7 @@
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
                     <code>
-                        {
-    : , : (() &#x3D;&gt; ), : true
-}
+                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
                     </code>
                 </td>
             </tr>
@@ -1471,15 +1467,13 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onChange">onChange</a>
+                                <span class="modifier">Private</span> <a href="#onChange">onChange</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onTouched">onTouched</a>
+                                <span class="modifier">Private</span> <a href="#onTouched">onTouched</a>
                             </li>
                             <li>
-                                <a href="#value">value</a>
+                                 <a href="#value">value</a>
                             </li>
                         </ul>
                     </td>
@@ -1493,22 +1487,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isChecked">isChecked</a>
+                                 <a href="#isChecked">isChecked</a>
                             </li>
                             <li>
-                                <a href="#onCheckBoxChange">onCheckBoxChange</a>
+                                 <a href="#onCheckBoxChange">onCheckBoxChange</a>
                             </li>
                             <li>
-                                <a href="#registerOnChange">registerOnChange</a>
+                                 <a href="#registerOnChange">registerOnChange</a>
                             </li>
                             <li>
-                                <a href="#registerOnTouched">registerOnTouched</a>
+                                 <a href="#registerOnTouched">registerOnTouched</a>
                             </li>
                             <li>
-                                <a href="#setDisabledState">setDisabledState</a>
+                                 <a href="#setDisabledState">setDisabledState</a>
                             </li>
                             <li>
-                                <a href="#writeValue">writeValue</a>
+                                 <a href="#writeValue">writeValue</a>
                             </li>
                         </ul>
                     </td>
@@ -1563,7 +1557,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                             <tr>
@@ -1589,7 +1583,7 @@
                                                     <tr>
                                                       <td>changeDetectorRef</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1728,7 +1722,7 @@
                             <code>valueChange</code>
                         </td>
                         <td class="col-md-10">
-                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
                         </td>
                     </tr>
@@ -1753,12 +1747,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="isChecked"></a>
-                            <span class="name">
-                                <b>
-                                isChecked
-                                </b>
-                                <a href="#isChecked"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> isChecked</b><a href="#isChecked"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1790,12 +1779,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onCheckBoxChange"></a>
-                            <span class="name">
-                                <b>
-                                onCheckBoxChange
-                                </b>
-                                <a href="#onCheckBoxChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> onCheckBoxChange</b><a href="#onCheckBoxChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1855,12 +1839,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnChange"></a>
-                            <span class="name">
-                                <b>
-                                registerOnChange
-                                </b>
-                                <a href="#registerOnChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1921,12 +1900,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnTouched"></a>
-                            <span class="name">
-                                <b>
-                                registerOnTouched
-                                </b>
-                                <a href="#registerOnTouched"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1987,12 +1961,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setDisabledState"></a>
-                            <span class="name">
-                                <b>
-                                setDisabledState
-                                </b>
-                                <a href="#setDisabledState"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2053,12 +2022,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="writeValue"></a>
-                            <span class="name">
-                                <b>
-                                writeValue
-                                </b>
-                                <a href="#writeValue"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2126,26 +2090,15 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onChange"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                onChange
-                                </b>
-                                <a href="#onChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> onChange</b><a href="#onChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-reset"></span><code>onChange:     <code></code>
+                            <span class="modifier-icon fa fa-lock"></span><code>onChange:     <code></code>
     </code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>(_: any) &#x3D;&gt; null</code>
-                            </td>
-                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/checkbox-group/checkbox.component.ts:28</a></div>
@@ -2160,26 +2113,15 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onTouched"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                onTouched
-                                </b>
-                                <a href="#onTouched"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> onTouched</b><a href="#onTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-reset"></span><code>onTouched:     <code></code>
+                            <span class="modifier-icon fa fa-lock"></span><code>onTouched:     <code></code>
     </code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>() &#x3D;&gt; null</code>
-                            </td>
-                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/exports/checkbox-group/checkbox.component.ts:29</a></div>
@@ -2194,12 +2136,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="value"></a>
-                            <span class="name">
-                                <b>
-                                value
-                                </b>
-                                <a href="#value"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> value</b><a href="#value"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2224,11 +2161,10 @@
                 </tbody>
             </table>
     </section>
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {
   Component, ChangeDetectionStrategy, Input, ChangeDetectorRef, forwardRef, Output,
   EventEmitter
@@ -2298,7 +2234,7 @@ export class CheckboxComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;label&gt;
   &lt;input #checkbox type&#x3D;&quot;checkbox&quot; [checked]&#x3D;&quot;isChecked()&quot; [disabled]&#x3D;&quot;disabled&quot;
          (change)&#x3D;&quot;onCheckBoxChange(checkbox)&quot;&gt;{{label}}
@@ -2306,7 +2242,7 @@ export class CheckboxComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -2335,7 +2271,6 @@ export class CheckboxComponent implements ControlValueAccessor {
     var ACTUAL_COMPONENT = {'name': 'CheckboxComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

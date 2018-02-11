@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1394,7 +1392,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                <code><a href="https://angular.io/docs/ts/latest/api/forms/index/ControlValueAccessor-interface.html" target="_blank" >ControlValueAccessor</a></code>
     </p>
 
 
@@ -1424,9 +1422,7 @@
                 <td class="col-md-3">providers</td>
                 <td class="col-md-9">
                     <code>
-                        {
-    : , : (() &#x3D;&gt; ), : true
-}
+                        { provide: NG_VALUE_ACCESSOR, useExisting: , multi:  }
                     </code>
                 </td>
             </tr>
@@ -1467,24 +1463,22 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onChange">onChange</a>
+                                <span class="modifier">Private</span> <a href="#onChange">onChange</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onTouched">onTouched</a>
+                                <span class="modifier">Private</span> <a href="#onTouched">onTouched</a>
                             </li>
                             <li>
-                                <a href="#ratingRanges">ratingRanges</a>
+                                 <a href="#ratingRanges">ratingRanges</a>
                             </li>
                             <li>
-                                <a href="#statValue">statValue</a>
+                                 <a href="#statValue">statValue</a>
                             </li>
                             <li>
-                                <a href="#value">value</a>
+                                 <a href="#value">value</a>
                             </li>
                             <li>
-                                <a href="#valueChange">valueChange</a>
+                                 <a href="#valueChange">valueChange</a>
                             </li>
                         </ul>
                     </td>
@@ -1498,32 +1492,31 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#enter">enter</a>
+                                 <a href="#enter">enter</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#fillRatingRange">fillRatingRange</a>
+                                <span class="modifier">Private</span> <a href="#fillRatingRange">fillRatingRange</a>
                             </li>
                             <li>
-                                <a href="#rate">rate</a>
+                                 <a href="#rate">rate</a>
                             </li>
                             <li>
-                                <a href="#registerOnChange">registerOnChange</a>
+                                 <a href="#registerOnChange">registerOnChange</a>
                             </li>
                             <li>
-                                <a href="#registerOnTouched">registerOnTouched</a>
+                                 <a href="#registerOnTouched">registerOnTouched</a>
                             </li>
                             <li>
-                                <a href="#reset">reset</a>
+                                 <a href="#reset">reset</a>
                             </li>
                             <li>
-                                <a href="#setDisabledState">setDisabledState</a>
+                                 <a href="#setDisabledState">setDisabledState</a>
                             </li>
                             <li>
-                                <a href="#setRatingValue">setRatingValue</a>
+                                 <a href="#setRatingValue">setRatingValue</a>
                             </li>
                             <li>
-                                <a href="#writeValue">writeValue</a>
+                                 <a href="#writeValue">writeValue</a>
                             </li>
                         </ul>
                     </td>
@@ -1551,20 +1544,6 @@
                         </ul>
                     </td>
                 </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Accessors</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#max">max</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
             </tbody>
         </table>
     </section>
@@ -1575,7 +1554,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(rebirthNGConfig: <a href="../injectables/RebirthNGConfig.html">RebirthNGConfig</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                             <tr>
@@ -1610,7 +1589,7 @@
                                                     <tr>
                                                       <td>changeDetectorRef</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1697,10 +1676,6 @@
                             <code>max</code>
                         </td>
                         <td class="col-md-10">
-                              <p>
-                                <em>Type:</em>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-
-                              </p>
                         </td>
                     </tr>
                             <tr>
@@ -1725,12 +1700,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="enter"></a>
-                            <span class="name">
-                                <b>
-                                enter
-                                </b>
-                                <a href="#enter"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> enter</b><a href="#enter"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1791,18 +1761,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="fillRatingRange"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                fillRatingRange
-                                </b>
-                                <a href="#fillRatingRange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> fillRatingRange</b><a href="#fillRatingRange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-reset"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>fillRatingRange(range: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                         </td>
                     </tr>
@@ -1859,12 +1823,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="rate"></a>
-                            <span class="name">
-                                <b>
-                                rate
-                                </b>
-                                <a href="#rate"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> rate</b><a href="#rate"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1925,12 +1884,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnChange"></a>
-                            <span class="name">
-                                <b>
-                                registerOnChange
-                                </b>
-                                <a href="#registerOnChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> registerOnChange</b><a href="#registerOnChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1991,12 +1945,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="registerOnTouched"></a>
-                            <span class="name">
-                                <b>
-                                registerOnTouched
-                                </b>
-                                <a href="#registerOnTouched"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> registerOnTouched</b><a href="#registerOnTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2057,12 +2006,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="reset"></a>
-                            <span class="name">
-                                <b>
-                                reset
-                                </b>
-                                <a href="#reset"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> reset</b><a href="#reset"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2094,12 +2038,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setDisabledState"></a>
-                            <span class="name">
-                                <b>
-                                setDisabledState
-                                </b>
-                                <a href="#setDisabledState"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> setDisabledState</b><a href="#setDisabledState"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2160,12 +2099,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="setRatingValue"></a>
-                            <span class="name">
-                                <b>
-                                setRatingValue
-                                </b>
-                                <a href="#setRatingValue"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> setRatingValue</b><a href="#setRatingValue"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2226,12 +2160,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="writeValue"></a>
-                            <span class="name">
-                                <b>
-                                writeValue
-                                </b>
-                                <a href="#writeValue"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> writeValue</b><a href="#writeValue"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2299,26 +2228,15 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onChange"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                onChange
-                                </b>
-                                <a href="#onChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> onChange</b><a href="#onChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-reset"></span><code>onChange:     <code></code>
+                            <span class="modifier-icon fa fa-lock"></span><code>onChange:     <code></code>
     </code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>(_: any) &#x3D;&gt; null</code>
-                            </td>
-                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/exports/rating/rating.component.ts:28</a></div>
@@ -2333,26 +2251,15 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onTouched"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                onTouched
-                                </b>
-                                <a href="#onTouched"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> onTouched</b><a href="#onTouched"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <span class="modifier-icon fa fa-reset"></span><code>onTouched:     <code></code>
+                            <span class="modifier-icon fa fa-lock"></span><code>onTouched:     <code></code>
     </code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>() &#x3D;&gt; null</code>
-                            </td>
-                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/exports/rating/rating.component.ts:29</a></div>
@@ -2367,12 +2274,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ratingRanges"></a>
-                            <span class="name">
-                                <b>
-                                ratingRanges
-                                </b>
-                                <a href="#ratingRanges"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> ratingRanges</b><a href="#ratingRanges"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2401,12 +2303,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="statValue"></a>
-                            <span class="name">
-                                <b>
-                                statValue
-                                </b>
-                                <a href="#statValue"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> statValue</b><a href="#statValue"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2434,12 +2331,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="value"></a>
-                            <span class="name">
-                                <b>
-                                value
-                                </b>
-                                <a href="#value"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> value</b><a href="#value"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2467,12 +2359,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="valueChange"></a>
-                            <span class="name">
-                                <b>
-                                valueChange
-                                </b>
-                                <a href="#valueChange"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> valueChange</b><a href="#valueChange"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -2481,11 +2368,6 @@
     </code>
                         </td>
                     </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <i>Default value : </i><code>new EventEmitter&lt;number&gt;()</code>
-                            </td>
-                        </tr>
                             <tr>
                                 <td class="col-md-4">
                                     <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/exports/rating/rating.component.ts:26</a></div>
@@ -2496,38 +2378,10 @@
                 </tbody>
             </table>
     </section>
-
-    <section>
-        <h3 id="accessors">
-            Accessors
-        </h3>
-            <table class="table table-sm table-bordered">
-                <tbody>
-                    <tr>
-                        <td class="col-md-4">
-                            <a name="max"></a>
-                            <span class="name"><b>max</b><a href="#max"><span class="fa fa-link"></span></a></span>
-                        </td>
-                    </tr>
-    
-    
-                    <tr>
-                        <td class="col-md-4">
-                            <span class="accessor"><b>set</b><code>max(value: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code></span>
-                        </td>
-                    </tr>
-                                <tr>
-                                    <td class="col-md-4">
-                                        <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/exports/rating/rating.component.ts:37</a></div>
-                                    </td>
-                                </tr>
-                </tbody>
-            </table>
-    </section>
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import {
   Component, Input, EventEmitter, ChangeDetectionStrategy, forwardRef,
   ChangeDetectorRef
@@ -2617,7 +2471,7 @@ export class RatingComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;span aria-labelledby&#x3D;&quot;default-rating&quot; class&#x3D;&quot;rating {{cssClass}}&quot;&gt;
   &lt;span class&#x3D;&quot;slider&quot; (mouseleave)&#x3D;&quot;reset()&quot; tabindex&#x3D;&quot;0&quot; role&#x3D;&quot;slider&quot;
         [attr.aria-valuemin]&#x3D;&quot;0&quot; [attr.aria-valuemax]&#x3D;&quot;ratingRanges.length&quot; [attr.aria-valuenow]&#x3D;&quot;statValue&quot;
@@ -2635,7 +2489,7 @@ export class RatingComponent implements ControlValueAccessor {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -2664,7 +2518,6 @@ export class RatingComponent implements ControlValueAccessor {
     var ACTUAL_COMPONENT = {'name': 'RatingComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

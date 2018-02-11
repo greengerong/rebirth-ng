@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1409,7 +1407,7 @@
 
             <tr>
                 <td class="col-md-3">host</td>
-                <td class="col-md-9"><code>{<br>}</code></td>
+                <td class="col-md-9"><code>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"[class]":"\"tooltip fade  \" + placement",<br>&nbsp;&nbsp;&nbsp;&nbsp;"[style.display]":"\"none\"","role":"tooltip","[@state]":"animateState","(@state.done)":"afterVisibilityAnimation($event)"<br>}</code></td>
             </tr>
 
 
@@ -1447,7 +1445,7 @@
                 <tbody>
                     <tr>
                         <td class="col-md-4">
-                            <code>constructor(elementRef: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, changeDetectorRef: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>)</code>
+                            <code>constructor(elementRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank">ElementRef</a>, renderer: <a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank">Renderer2</a>, changeDetectorRef: <a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank">ChangeDetectorRef</a>)</code>
                         </td>
                     </tr>
                             <tr>
@@ -1473,7 +1471,7 @@
                                                     <tr>
                                                       <td>elementRef</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html" target="_blank" >ElementRef</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1482,7 +1480,7 @@
                                                     <tr>
                                                       <td>renderer</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/Renderer2-class.html" target="_blank" >Renderer2</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1491,7 +1489,7 @@
                                                     <tr>
                                                       <td>changeDetectorRef</td>
                                                       <td>
-                                                                <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                                <code><a href="https://angular.io/docs/ts/latest/api/core/index/ChangeDetectorRef-class.html" target="_blank" >ChangeDetectorRef</a></code>
                                                       </td>
                                                       <td>
                                                       </td>
@@ -1511,11 +1509,10 @@
 
 
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, ElementRef, Renderer2, ChangeDetectorRef } from &#x27;@angular/core&#x27;;
 import { TooltipPopup } from &#x27;./tooltip-popup&#x27;;
 import { trigger, state, style, animate, transition } from &#x27;@angular/animations&#x27;;
@@ -1551,7 +1548,7 @@ export class TooltipPopupComponent extends TooltipPopup {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;tooltip-arrow&quot;&gt;&lt;/div&gt;
 &lt;div class&#x3D;&quot;tooltip-inner&quot; *ngIf&#x3D;&quot;content&quot;&gt;
   &lt;span *ngIf&#x3D;&quot;!isTemplateRef(content)&quot; [innerHTML]&#x3D;&quot;content&quot;&gt;&lt;/span&gt;
@@ -1561,7 +1558,7 @@ export class TooltipPopupComponent extends TooltipPopup {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1590,7 +1587,6 @@ export class TooltipPopupComponent extends TooltipPopup {
     var ACTUAL_COMPONENT = {'name': 'TooltipPopupComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

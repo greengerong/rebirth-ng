@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1451,11 +1449,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#closeBox">closeBox</a>
+                                 <a href="#closeBox">closeBox</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#onCloseBox">onCloseBox</a>
+                                <span class="modifier">Private</span> <a href="#onCloseBox">onCloseBox</a>
                             </li>
                         </ul>
                     </td>
@@ -1626,7 +1623,7 @@
 
                               </p>
                             <p>
-                              <em>Default value: </em><code>&#x27;info&#x27;</code>
+                              <em>Default value: </em><code>info</code>
                             </p>
                         </td>
                     </tr>
@@ -1649,7 +1646,7 @@
                             <code>close</code>
                         </td>
                         <td class="col-md-10">
-                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
                         </td>
                     </tr>
@@ -1674,12 +1671,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="closeBox"></a>
-                            <span class="name">
-                                <b>
-                                closeBox
-                                </b>
-                                <a href="#closeBox"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> closeBox</b><a href="#closeBox"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1711,18 +1703,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="onCloseBox"></a>
-                            <span class="name">
-                                <b>
-                                    <span class="modifier">Private</span>
-                                onCloseBox
-                                </b>
-                                <a href="#onCloseBox"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b><span class="modifier">Private</span> onCloseBox</b><a href="#onCloseBox"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                                <span class="modifier-icon fa fa-reset"></span>
+                                <span class="modifier-icon fa fa-lock"></span>
                             <code>onCloseBox()</code>
                         </td>
                     </tr>
@@ -1747,11 +1733,10 @@
             </table>
     </section>
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from &#x27;@angular/core&#x27;;
 import { RebirthNGConfig } from &#x27;../rebirth-ng.config&#x27;;
 
@@ -1786,7 +1771,7 @@ export class AlertBoxComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;alert alert-{{type}} {{cssClass}}&quot; [ngClass]&#x3D;&quot;{&#x27;alert-dismissible&#x27;: closable}&quot; role&#x3D;&quot;alert&quot;&gt;
   &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;alert&quot; aria-label&#x3D;&quot;Close&quot; *ngIf&#x3D;&quot;closable&quot; (click)&#x3D;&quot;closeBox()&quot;&gt;
     &lt;span aria-hidden&#x3D;&quot;true&quot; class&#x3D;&quot;alert-remove-icon {{removeIcon}}&quot;&gt;&lt;/span&gt;
@@ -1796,7 +1781,7 @@ export class AlertBoxComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1825,7 +1810,6 @@ export class AlertBoxComponent {
     var ACTUAL_COMPONENT = {'name': 'AlertBoxComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

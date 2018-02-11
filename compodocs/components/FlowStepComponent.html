@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1447,7 +1445,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#stepClick">stepClick</a>
+                                 <a href="#stepClick">stepClick</a>
                             </li>
                         </ul>
                     </td>
@@ -1572,7 +1570,7 @@
 
                               </p>
                             <p>
-                              <em>Default value: </em><code>&#x27;arrow&#x27;</code>
+                              <em>Default value: </em><code>arrow</code>
                             </p>
                         </td>
                     </tr>
@@ -1595,7 +1593,7 @@
                             <code>activeChange</code>
                         </td>
                         <td class="col-md-10">
-                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+                            <em><code>$event</code> type:</em>    <code><a href="https://angular.io/docs/ts/latest/api/core/index/EventEmitter-class.html" target="_blank" >EventEmitter</a></code>
 
                         </td>
                     </tr>
@@ -1620,12 +1618,7 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="stepClick"></a>
-                            <span class="name">
-                                <b>
-                                stepClick
-                                </b>
-                                <a href="#stepClick"><span class="fa fa-link"></span></a>
-                            </span>
+                            <span class="name"><b> stepClick</b><a href="#stepClick"><span class="fa fa-link"></span></a></span>
                         </td>
                     </tr>
                     <tr>
@@ -1690,11 +1683,10 @@
             </table>
     </section>
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from &#x27;@angular/core&#x27;;
 import { FlowStep } from &#x27;./flow-step.model&#x27;;
 
@@ -1721,7 +1713,7 @@ export class FlowStepComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ul class&#x3D;&quot;nav nav-tabs step-anchor-{{type}} {{cssClass}}&quot;&gt;
   &lt;li class&#x3D;&quot;step&quot; *ngFor&#x3D;&quot;let step of steps; let $index &#x3D; index&quot;
       [ngClass]&#x3D;&quot;{done: $index &lt; active, &#x27;active&#x27;: $index &#x3D;&#x3D; active}&quot; (click)&#x3D;&quot;stepClick(step,$index)&quot;&gt;
@@ -1733,7 +1725,7 @@ export class FlowStepComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1762,7 +1754,6 @@ export class FlowStepComponent {
     var ACTUAL_COMPONENT = {'name': 'FlowStepComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 

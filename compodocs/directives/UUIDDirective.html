@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1377,7 +1375,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -1390,7 +1388,7 @@
                 <h3>Implements</h3>
             </p>
             <p class="comment">
-                        <code><a href="https://angular.io/api/forms/Validator" target="_blank" >Validator</a></code>
+                        <code><a href="https://angular.io/docs/ts/latest/api/forms/index/Validator-interface.html" target="_blank" >Validator</a></code>
             </p>
 
 
@@ -1402,7 +1400,7 @@
                         <td class="col-md-3">providers</td>
                         <td class="col-md-9">
                             <code>
-                                { : , : , : true }
+                                { provide: NG_VALIDATORS, useExisting: UUIDDirective, multi:  }
                             </code>
                         </td>
                     </tr>
@@ -1429,7 +1427,7 @@
                             <td class="col-md-4">
                                 <ul class="index-list">
                                     <li>
-                                        <a href="#validate">validate</a>
+                                         <a href="#validate">validate</a>
                                     </li>
                                 </ul>
                             </td>
@@ -1453,17 +1451,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="validate"></a>
-                                    <span class="name">
-                                        <b>
-                                        validate
-                                        </b>
-                                        <a href="#validate"><span class="fa fa-link"></span></a>
-                                    </span>
+                                    <span class="name"><b> validate</b><a href="#validate"><span class="fa fa-link"></span></a></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="col-md-4">
-            <code>validate(control: <a href="https://angular.io/api/forms/AbstractControl" target="_blank">AbstractControl</a>)</code>
+            <code>validate(control: <a href="https://angular.io/docs/ts/latest/api/forms/index/AbstractControl-class.html" target="_blank">AbstractControl</a>)</code>
                                 </td>
                             </tr>
             
@@ -1492,7 +1485,7 @@
                                                             <tr>
                                                               <td>control</td>
                                                               <td>
-                                                                      <code><a href="https://angular.io/api/forms/AbstractControl" target="_blank" >AbstractControl</a></code>
+                                                                      <code><a href="https://angular.io/docs/ts/latest/api/forms/index/AbstractControl-class.html" target="_blank" >AbstractControl</a></code>
                                                               </td>
                                                               <td>
                                                               </td>
@@ -1504,7 +1497,7 @@
                                         <div>
                                         </div>
                                         <div class="io-description">
-                                            <b>Returns : </b>    <code>ValidationErrors | any</code>
+                                            <b>Returns : </b>    <code> | any</code>
             
                                         </div>
                                             <div class="io-description">
@@ -1517,11 +1510,10 @@
             </section>
 
 
-
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Directive, Inject, Input, LOCALE_ID } from &#x27;@angular/core&#x27;;
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator, ValidatorFn } from &#x27;@angular/forms&#x27;;
 import {
@@ -1805,7 +1797,6 @@ export class AfterDateDirective implements Validator {
     </div>
 
 </div>
-
 
 
 

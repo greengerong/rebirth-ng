@@ -48,8 +48,8 @@
                                   <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                 </li>
                                 <li class="link">
-                                        <a href="../changelog.html"
-                                    >
+                                    <a href="./changelog.html"
+                                        >
                                         <span class="fa fa-file-text-o"></span>CHANGELOG
                                     </a>
                                 </li>
@@ -561,7 +561,6 @@
                         </ul>
                     </li>
             
-            
                     <li class="chapter">
                         <div class="simple menu-toggler" data-toggle="collapse"
                                 data-target="#xs-interfaces-links"
@@ -717,8 +716,8 @@
                                          <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
                                        </li>
                                        <li class="link">
-                                               <a href="../changelog.html"
-                                           >
+                                           <a href="./changelog.html"
+                                               >
                                                <span class="fa fa-file-text-o"></span>CHANGELOG
                                            </a>
                                        </li>
@@ -1230,7 +1229,6 @@
                                </ul>
                            </li>
                    
-                   
                            <li class="chapter">
                                <div class="simple menu-toggler" data-toggle="collapse"
                                        data-target="#interfaces-links"
@@ -1381,7 +1379,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -1494,9 +1492,6 @@
                                 <em>Type:</em>    <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
 
                               </p>
-                            <p>
-                              <em>Default value: </em><code>[]</code>
-                            </p>
                         </td>
                     </tr>
                             <tr>
@@ -1533,11 +1528,10 @@
 
 
 
-
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="c-source">
+    <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { MenuItem } from &#x27;./menu-bar.model&#x27;;
 
@@ -1555,7 +1549,7 @@ export class NavItemComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-templateData">
+    <div class="tab-pane fade" id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;ng-template #defaultMenuTemplate let-menu&#x3D;&quot;menu&quot;&gt;
 
   &lt;a *ngIf&#x3D;&quot;menu.router&quot; [routerLink]&#x3D;&quot;menu.router&quot; routerLinkActive&#x3D;&quot;active&quot; [queryParams]&#x3D;&quot;menu.queryParams&quot;
@@ -1630,7 +1624,7 @@ export class NavItemComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="c-tree">
+    <div class="tab-pane fade" id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -1659,7 +1653,6 @@ export class NavItemComponent {
     var ACTUAL_COMPONENT = {'name': 'NavItemComponent'};
 </script>
 <script src="../js/tree.js"></script>
-
 
 
 
