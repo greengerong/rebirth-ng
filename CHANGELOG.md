@@ -11,7 +11,7 @@
 
 * (AutoComplete): AutoComplete debounce delay;
 
-# 5.0.8(2018-01-02)
+# 5.0.8(2018-01-02)slider.component.ts
 
 ## Features
 

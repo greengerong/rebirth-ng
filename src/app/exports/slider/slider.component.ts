@@ -41,14 +41,14 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
   @ViewChild('slider') slider: ElementRef;
   @Output() onChange: EventEmitter<number> = new EventEmitter<number>();
 
-  handleOffset: number = 0;
+  handleOffset = 0;
 
   @Input() max;
   @Input() min;
   private offset: number;
   private stepWidth: number;
 
-  value: number = 0;
+  value = 0;
 
   private complete$ = new Subject<void>();
 
