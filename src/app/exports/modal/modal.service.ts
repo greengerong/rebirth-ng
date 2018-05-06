@@ -38,7 +38,7 @@ export class ModalService {
         return _throw(error);
       });
     instance.open();
-    return dismissResult;
+    return dismissResult as any;
   }
 
   closeAll(): void {

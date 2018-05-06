@@ -313,7 +313,7 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/tree-view/README.md'),
       html: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.html'),
       ts: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.ts'),
-      data: require('!raw-loader!../../demo/tree-view/data.json'),
+      data: require('../../demo/tree-view/data.json'),
     },
     {
       name: 'Ellipsis',
