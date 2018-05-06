@@ -8,11 +8,7 @@
       "updateMode": "prefetch",
       "urls": [
         "/rebirth-ng/favicon.ico",
-        "/rebirth-ng/index.html",
-        "/rebirth-ng/inline.09c6999db7a768a71282.bundle.js",
-        "/rebirth-ng/main.43a7099b51c089f2b328.bundle.js",
-        "/rebirth-ng/polyfills.4eaccff00f756d082c8c.bundle.js",
-        "/rebirth-ng/styles.9808b73ced868e0a06e0.bundle.css"
+        "/rebirth-ng/index.html"
       ],
       "patterns": []
     },
@@ -56,17 +52,13 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/rebirth-ng/inline.09c6999db7a768a71282.bundle.js": "47d0d75c5eab43bab2435f2dbab3b8725d734914",
-    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.eot": "86b6f62b7853e67d3e635f6512a5a5efc58ea3c3",
-    "/rebirth-ng/main.43a7099b51c089f2b328.bundle.js": "90b72a65e9dcc463e95ecf6725c24cb33fa84294",
-    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.svg": "de51a8494180a6db074af2dee2383f0a363c5b08",
-    "/rebirth-ng/polyfills.4eaccff00f756d082c8c.bundle.js": "6022b8b33fcfd151267fd6a5c02b949ef7f4a477",
-    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.ttf": "44bc1850f570972267b169ae18f1cb06b611ffa2",
-    "/rebirth-ng/styles.9808b73ced868e0a06e0.bundle.css": "d10ce302d468e1c61cb331fd932b088eff7a41d3",
-    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.woff": "278e49a86e634da6f2a02f3b47dd9d2a8f26210f",
     "/rebirth-ng/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.eot": "86b6f62b7853e67d3e635f6512a5a5efc58ea3c3",
+    "/rebirth-ng/index.html": "b896879bd655bfad164fabbde9284eac44d5d518",
+    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.svg": "de51a8494180a6db074af2dee2383f0a363c5b08",
+    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.ttf": "44bc1850f570972267b169ae18f1cb06b611ffa2",
+    "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.woff": "278e49a86e634da6f2a02f3b47dd9d2a8f26210f",
     "/rebirth-ng/assets/fonts/glyphicons-halflings-regular.woff2": "ca35b697d99cae4d1b60f2d60fcd37771987eb07",
-    "/rebirth-ng/index.html": "59d55e4b781f281c964d027db9bc5db50ee60b6c",
     "/rebirth-ng/assets/images/loading.gif": "c308cb20787fa297485320d62987f07a91b833f5",
     "/rebirth-ng/assets/images/rebirth-home.jpg": "2fefc1177eb9a45976ba570c9fc919f6ed2c4c9e",
     "/rebirth-ng/assets/themes/bootstrap.cosmo.css": "5cb6607fac655610e36570fba2d773210f042001",
@@ -78,5 +70,23 @@
     "/rebirth-ng/assets/themes/bootstrap.readable.css": "8006bf305e07bf48dc85229cc9a0d4e33462434c",
     "/rebirth-ng/assets/themes/bootstrap.sandstone.css": "0876dfb602b75f7bc12eeafbfec1779f8a881b24",
     "/rebirth-ng/assets/themes/bootstrap.united.css": "61a0c72c90a4ab1b2178590502fa35e900e86395"
-  }
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
 }

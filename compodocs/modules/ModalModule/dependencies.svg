@@ -71,8 +71,8 @@
 <!-- ModalBackdropComponent&#45;&gt;ModalModule -->
 <g id="edge3" class="edge">
 <title>ModalBackdropComponent&#45;&gt;ModalModule</title>
-<path fill="none" stroke="#000000" d="M359.0523,-122.1061C359.0523,-122.1061 359.0523,-140.991 359.0523,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="355.5523,-140.9909 359.0523,-150.991 362.5523,-140.991 355.5523,-140.9909"/>
+<path fill="none" stroke="#000000" d="M359.0522,-122.1061C359.0522,-122.1061 359.0522,-140.991 359.0522,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="355.5523,-140.9909 359.0522,-150.991 362.5523,-140.991 355.5523,-140.9909"/>
 </g>
 <!-- ModalWindowComponent -->
 <g id="node4" class="node">

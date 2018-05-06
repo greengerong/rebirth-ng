@@ -23,7 +23,7 @@
             var ctx = this, args = arguments;
             if (!timeout) {
                 timeout = setTimeout(function() {
-                    timeout = null;
+                    timeout = undefined;
                     fn.apply(ctx, args);
                 }, wait);
             }
@@ -58,10 +58,11 @@
                     link = './';
                     break;
                 case 1:
-                    link = '../';
-                    break;
                 case 2:
-                    link = '../../';
+                case 3:
+                case 4:
+                case 5:
+                    link = '../'.repeat(COMPODOC_CURRENT_PAGE_DEPTH);
                     break;
             }
 
