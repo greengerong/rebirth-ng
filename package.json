@@ -46,16 +46,17 @@
     "@angular/router": "^6.0.0",
     "@angular/service-worker": "^6.0.0",
     "@compodoc/compodoc": "^1.0.0-beta.10",
-    "@types/jasmine": "^2.5.54",
     "@types/lodash": "^4.14.74",
-    "@types/node": "^8.0.25",
     "@types/webpack": "^3.0.10",
+    "@types/jasmine": "^2.8.6",
+    "@types/jasminewd2": "^2.0.3",
+    "@types/node": "^8.9.4",
     "angular-cli-ghpages": "^0.5.0",
     "angular2-inline-template-style": "^1.0.0",
     "body-parser": "^1.17.1",
     "bootstrap-sass": "^3.3.7",
     "classlist.js": "^1.1.20150312",
-    "codelyzer": "^3.1.2",
+    "codelyzer": "^4.3.0",
     "core-js": "^2.5.1",
     "cross-env": "^5.0.5",
     "del": "^3.0.0",
@@ -105,6 +106,7 @@
     "@angular-devkit/build-angular": "~0.6.0"
   },
   "dependencies": {
+    "@angular/language-service": "^6.0.0",
     "date-fns": "^1.27.2",
     "rxjs-compat": "^6.1.0"
   },
