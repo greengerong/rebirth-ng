@@ -11,7 +11,9 @@
     <h4>No seconds:</h4>
     <re-time-picker [(ngModel)]="time2" [showSeconds]="false" [disabled]="disabled"></re-time-picker>
 
-    <button class="btn btn-primary" (click)="disabled = !disabled">{{disabled ? 'Enable' : 'Disable'}}</button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="disabled = !disabled">{{disabled ? 'Enable' : 'Disable'}}</button>
+    </div>
   </section>
 
   <hr>

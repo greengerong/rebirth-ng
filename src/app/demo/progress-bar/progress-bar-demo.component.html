@@ -9,6 +9,8 @@
 
   <re-progress-bar type="success" [value]="value" [text]="value + '%'" [thin]="true"></re-progress-bar>
 
-  <button class="btn btn-primary" (click)="value = value + 10">+10</button>
-  <button class="btn btn-primary" (click)="value = value - 10">-10</button>
+  <div class="button-panel">
+    <button class="btn btn-primary" (click)="value = value + 10">+10</button>
+    <button class="btn btn-primary" (click)="value = value - 10">-10</button>
+  </div>
 </div>

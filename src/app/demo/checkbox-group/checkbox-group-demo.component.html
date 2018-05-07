@@ -30,7 +30,7 @@
 
     <re-checkbox-group #checkboxgroup [options]="seasonOptions" [(ngModel)]="seasonValue" [inline]="true"
                        [valueParser]="valueParser"></re-checkbox-group>
-    <div>
+    <div class="button-panel">
       <button class="btn btn-primary" (click)="selectAll(checkboxgroup, true)">Select All</button>
       <button class="btn btn-info" (click)="selectAll(checkboxgroup, false)">Unselect All</button>
       <button class="btn btn-success" (click)="invertAll(checkboxgroup)">Invert Select</button>

@@ -3,7 +3,15 @@
 }
 
 ::ng-deep {
-  re-select-button {
+
+  .button-panel {
+    button {
+      margin: 1rem;
+    }
+  }
+  re-action-button, re-select-button, re-switch {
     padding: 1rem;
   }
 }
+
+

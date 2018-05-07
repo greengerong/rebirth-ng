@@ -1,18 +1,19 @@
 <div class="action-button-demo">
   <h4>Basic:</h4>
-  <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks"
-                    [type]="'primary'"
-                    (actionClick)="onActionClick($event)"></re-action-button>
-  <re-action-button #actionButton="actionButton" [buttonText]="'Dropup action'" direction="up" [actions]="actions"
-                    type="warning"
-                    (actionClick)="onActionClick($event)"></re-action-button>
+  <div>
+    <re-action-button [buttonText]="'Dropdown action'" [actions]="actions" icon="glyphicon glyphicon-tasks"
+                      [type]="'primary'"
+                      (actionClick)="onActionClick($event)"></re-action-button>
+    <re-action-button #actionButton="actionButton" [buttonText]="'Dropup action'" direction="up" [actions]="actions"
+                      type="warning"
+                      (actionClick)="onActionClick($event)"></re-action-button>
 
-  <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
-                    (actionClick)="onActionClick($event)"></re-action-button>
+    <re-action-button [buttonText]="'Default Action'" type="default" [actions]="actions"
+                      (actionClick)="onActionClick($event)"></re-action-button>
 
-  <re-action-button [buttonText]="'Disabled dropdown action'" type="danger" [actions]="actions"
-                    [disabled]="disabledActionOpen" (actionClick)="onActionClick($event)"></re-action-button>
-
+    <re-action-button [buttonText]="'Disabled dropdown action'" type="danger" [actions]="actions"
+                      [disabled]="disabledActionOpen" (actionClick)="onActionClick($event)"></re-action-button>
+  </div>
 
   <h4>Customise button:</h4>
 
@@ -25,7 +26,7 @@
 
 
   <hr>
-  <div>
+  <div class="button-panel">
     <button class="btn btn-success" (click)="actionButton.toggle($event)">Toggle 4th Dropup
       action
     </button>

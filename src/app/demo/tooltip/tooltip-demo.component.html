@@ -1,7 +1,7 @@
 <div class="tooltip-demo">
   <section>
     <h4>Hover tooltip:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip on left</button>
       <button class="btn btn-success" reTooltip="I am a rebirth tooltip!">Tooltip on top</button>
       <button class="btn btn-warning" reTooltip="I am a rebirth tooltip!" placement="bottom">Tooltip on bottom</button>
@@ -11,7 +11,7 @@
 
   <section>
     <h4>Click tooltip:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip
         on left
       </button>
@@ -27,7 +27,7 @@
 
   <section>
     <h4>Append to body tooltip:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-danger" [appendBody]="true" [trigger]="'click'" reTooltip="I am a rebirth tooltip!"
               placement="right">Tooltip
         on right
@@ -37,7 +37,7 @@
 
   <section>
     <h4>Manual tooltip:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'"
               [reTooltip]="'I am a rebirth tooltip! <a href='+github+'>' + github +'</a>.'">
         Tooltip on top
@@ -49,7 +49,7 @@
 
   <section>
     <h4>Customise tooltip:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" [reTooltip]="tipContent" [context]="'button1'">
         Tooltip on top
       </button>

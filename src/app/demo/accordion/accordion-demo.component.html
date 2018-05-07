@@ -2,7 +2,9 @@
 
   <section>
     <h4>Static text</h4>
-    <button class="btn btn-primary" (click)="accordion.toggleById('1')">Toggle panel 1</button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="accordion.toggleById('1')">Toggle panel 1</button>
+    </div>
     <hr>
     <re-accordion type="info" #accordion="accordion">
       <re-accordion-item id="1">
@@ -64,10 +66,12 @@
 
   <section>
     <h4> *ngFor items</h4>
-    <button class="btn btn-primary" (click)="appendItems()">Append more items</button>
-    <button class="btn btn-warning" (click)="removeLastItem()">Remove last
-      {{items.length}}
-    </button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="appendItems()">Append more items</button>
+      <button class="btn btn-warning" (click)="removeLastItem()">Remove last
+        {{items.length}}
+      </button>
+    </div>
     <hr>
     <re-accordion type="success">
       <ng-container *ngFor="let item of items">
