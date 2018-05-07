@@ -7,7 +7,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './popover-popup.component.html',
   host: {
     '[class]': '"popover fade  " + placement',
-    '[style.display]': '"none"',
+    'style': 'display:none;',
     'role': 'tooltip',
     '[@state]': 'animateState',
     '(@state.done)': 'afterVisibilityAnimation($event)'
