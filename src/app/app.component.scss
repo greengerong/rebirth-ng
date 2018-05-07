@@ -1,3 +1,9 @@
 :host ::ng-deep .main {
   margin-top: 80px;
 }
+
+::ng-deep {
+  re-select-button {
+    padding: 1rem;
+  }
+}
