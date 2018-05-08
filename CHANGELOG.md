@@ -1,3 +1,10 @@
+# 6.0.0(2018-05-08)
+
+## Features
+
+* (NG6): Upgrade to ng 6;
+* (CheckBoxGroup): Add @Input disableItems;
+* (RadioGroup): Add @Input disableItems;
 
 # 5.0.10(2018-02-11)
 
