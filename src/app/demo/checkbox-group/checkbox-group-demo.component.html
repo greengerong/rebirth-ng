@@ -20,7 +20,8 @@
 
   <section>
     <h4>Season Object:</h4>
-    <re-checkbox-group [options]="seasonOptions" [(ngModel)]="season"></re-checkbox-group>
+    <re-checkbox-group [disabledItems]="[seasonOptions[0]]" [options]="seasonOptions"
+                       [(ngModel)]="season"></re-checkbox-group>
     <pre>{{season | json}}</pre>
   </section>
 

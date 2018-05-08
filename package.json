@@ -45,6 +45,7 @@
     "@angular/platform-server": "^6.0.0",
     "@angular/router": "^6.0.0",
     "@angular/service-worker": "^6.0.0",
+    "@angular/language-service": "^6.0.0",
     "rxjs": "^6.1.0",
     "rxjs-compat": "^6.1.0",
     "zone.js": "^0.8.26",
@@ -107,7 +108,6 @@
     "web-animations-js": "^2.3.1"
   },
   "dependencies": {
-    "@angular/language-service": "^6.0.0",
     "date-fns": "^1.27.2"
   },
   "description": "> Angular UI plugin with bootstrap;",

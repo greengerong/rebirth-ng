@@ -23,6 +23,7 @@ export class RadioGroupComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() options: any[];
   @Input() inline: boolean;
+  @Input() disabledItems: any[];
   @Input() cssClass: string;
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
@@ -65,4 +66,9 @@ export class RadioGroupComponent implements ControlValueAccessor {
   isChecked(item: any) {
     return this.value === this.valueParser(item);
   }
+
+  isDisabled(item) {
+    return this.disabled || (this.disabledItems || []).some(it => this.valueParser(item) === it);
+  }
+
 }

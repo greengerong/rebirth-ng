@@ -23,6 +23,7 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
   @Input() options: any[];
   @Input() inline: boolean;
   @Input() cssClass: string;
+  @Input() disabledItems: any[];
   @Input() formatter: (item: any) => string;
   @Input() valueParser: (item: any) => any;
   @Output() valueChange = new EventEmitter<any>();
@@ -73,6 +74,9 @@ export class CheckboxGroupComponent implements ControlValueAccessor {
     this.valueChange.emit(this.value);
   }
 
+  isDisabled(item) {
+    return this.disabled || (this.disabledItems || []).some(it => this.valueParser(item) === it);
+  }
 
   onCheckBoxChange(item: any, checkbox) {
     this.onTouched();
