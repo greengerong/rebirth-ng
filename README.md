@@ -11,7 +11,9 @@
 
 * Online Document link: [https://greengerong.github.io/rebirth-ng/](http://greengerong.github.io/rebirth-ng/)
 
-* Angular 4: version <= 0.0.23; Angular 5: version >= 0.1.0 
+* Angular 4: version <= 0.0.23; 
+* Angular 5: version >= 5.0.0 
+* Angular 6: version >= 6.0.0
 
 ## Components
 
