@@ -1,4 +1,14 @@
-# 6.0.0(2018-05-08)
+# 6.0.2(2018-05-16)
+
+## Features
+
+* (AutoComplete): export `term` value;
+
+# 6.0.1(2018-05-09)
+
+## Features
+
+* (NG6): fix typing of `TemplateRef`
 
 ## Features
 

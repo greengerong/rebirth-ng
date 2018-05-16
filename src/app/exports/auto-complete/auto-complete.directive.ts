@@ -58,6 +58,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
   @Output() selectValueChange = new EventEmitter<any>();
   @Input() placementElement: any;
+  term: string;
   private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
@@ -282,6 +283,7 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
     return fromEvent(elementRef.nativeElement, 'input')
       .map((e: any) => e.target.value)
       .do(term => this.onTouched())
+      .do(term => this.term = term)
       .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
       .debounceTime(this.delay)
       // .distinctUntilChanged()
