@@ -59,7 +59,7 @@
     "angular-cli-ghpages": "^0.5.0",
     "angular2-inline-template-style": "^1.0.0",
     "body-parser": "^1.17.1",
-    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap": "^4.1.1",
     "classlist.js": "^1.1.20150312",
     "codelyzer": "^4.3.0",
     "core-js": "^2.5.1",
