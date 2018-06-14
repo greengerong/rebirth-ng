@@ -16,6 +16,7 @@ import {
 import { PositionService } from '../position/positioning.service';
 import { TooltipPopup } from './tooltip-popup';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 
 export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestroy {
   @Input() context: any;
@@ -55,9 +56,11 @@ export abstract class Tooltip<T extends TooltipPopup> implements OnInit, OnDestr
       this.fillPopup();
       this.registerTriggers();
       this.positionChange
-        .filter(() => this.popupRef && this.popupRef.instance.isOpen)
-        .debounceTime(100)
-        .distinctUntilChanged()
+        .pipe(
+          filter(() => this.popupRef && this.popupRef.instance.isOpen),
+          debounceTime(100),
+          distinctUntilChanged()
+        )
         .subscribe(() => this.positionTooltip());
     });
 

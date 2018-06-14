@@ -64,7 +64,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   ],
   imports: [
     BrowserModule,
-    ServiceWorkerModule.register('/rebirth-ng/ngsw-worker.js', { enabled: environment.production }),
+    // ServiceWorkerModule.register('/rebirth-ng/ngsw-worker.js', { enabled: environment.production }),
     HttpClientModule,
     HttpClientJsonpModule,
     RouterModule.forRoot(ROUTER_CONFIG),

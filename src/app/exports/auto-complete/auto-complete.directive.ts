@@ -17,16 +17,11 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/do';
+import { fromEvent } from 'rxjs';
+import { of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { map, filter, debounceTime, switchMap, tap } from 'rxjs/operators';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { PositionService } from '../position/positioning.service';
 import { AutoCompletePopupComponent } from './auto-complete-popup.component';
@@ -281,13 +276,15 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   private registerInputEvent(elementRef: ElementRef) {
     return fromEvent(elementRef.nativeElement, 'input')
-      .map((e: any) => e.target.value)
-      .do(term => this.onTouched())
-      .do(term => this.term = term)
-      .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
-      .debounceTime(this.delay)
-      // .distinctUntilChanged()
-      .do(term => this.onTermChange(term))
-      .switchMap(term => this.onSearch(term, this));
+      .pipe(
+        map((e: any) => e.target.value),
+        tap(term => this.onTouched()),
+        tap(term => this.term = term),
+        filter(term => !this.disabled && this.onSearch && term.length >= this.minLength),
+        debounceTime(this.delay),
+        // distinctUntilChanged(),
+        tap(term => this.onTermChange(term)),
+        switchMap(term => this.onSearch(term, this))
+      );
   }
 }

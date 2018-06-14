@@ -11,7 +11,8 @@ import {
   TemplateRef
 } from '@angular/core';
 import { WindowRef } from '../window-ref/window-ref.service';
-import { Subscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 're-infinite-scroll',
@@ -80,8 +81,9 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
   }
 
   private registerOnScrollStream(scrollStream: EventEmitter<UIEvent>) {
-    return scrollStream
-      .debounceTime(this.scrollDelay)
-      .distinctUntilChanged();
+    return scrollStream.pipe(
+      debounceTime(this.scrollDelay),
+      distinctUntilChanged()
+    );
   }
 }

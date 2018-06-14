@@ -2,9 +2,8 @@ import { Component, Input, TemplateRef, ViewChild, ElementRef, Renderer2 } from 
 import { TreeViewComponent } from './tree-view.component';
 import { DraggableDirective } from '../draggable';
 import { TreePanelComponent } from './tree-panel.component';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/map';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 're-tree-node,[reTreeNode]',
@@ -75,10 +74,10 @@ export class TreeNodeComponent {
     if (this.lazyLoad && !this.node.$loaded) {
       this.isLoading = true;
       loadObservable = this.loadChildren(this.node)
-        .map((children) => {
+        .pipe(map((children) => {
           this.node.children = children || [];
           this.node.$loaded = true;
-        });
+        }));
     }
 
     loadObservable.subscribe(() => {

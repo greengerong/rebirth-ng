@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { of } from 'rxjs/observable/of';
-import { AutoCompleteDirective } from '../../exports';
+import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -35,7 +35,7 @@ export class AutoCompleteDemoComponent {
     return this.httpClient
       .jsonp(`https://en.wikipedia.org/w/api.php?search=${term}&action=opensearch&format=json`,
         'callback')
-      .map(response => <string[]> response[1]);
+      .pipe(map(response => <string[]> response[1]));
   };
 
   onSearch = (term) => {

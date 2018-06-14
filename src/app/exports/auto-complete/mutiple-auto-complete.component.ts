@@ -1,6 +1,6 @@
 import { Component, Input, TemplateRef, forwardRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { AutoCompleteDirective } from './auto-complete.directive';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -44,7 +44,6 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
     this.formatter = rebirthNGConfig.autoComplete.formatter;
     this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
-
 
 
   writeValue(obj: any): void {

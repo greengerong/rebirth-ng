@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { TreeViewService } from './tree-view.service';
 
 @Component({

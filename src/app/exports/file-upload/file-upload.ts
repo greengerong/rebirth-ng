@@ -14,12 +14,9 @@ import { readFileAsDataURL } from '../utils/dom-utils';
 import { formatFileSize, formatString } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import { of } from 'rxjs/observable/of';
-import { forkJoin } from 'rxjs/observable/forkJoin';
+import { map, catchError } from 'rxjs/operators';
+import { Observable, of, forkJoin } from 'rxjs';
 import { noop } from '../utils';
-import { Observable } from 'rxjs/Observable';
 import { ControlValueAccessor } from '@angular/forms';
 
 export class FileUpload implements AfterViewInit, ControlValueAccessor {
@@ -204,8 +201,10 @@ export class FileUpload implements AfterViewInit, ControlValueAccessor {
     const formData = new FormData();
     formData.append(this.uploadParamName, fileItem.file);
     return this.http.post(this.uploadUrl, formData, this.uploadRequestOptions)
-      .map((res) => this.onFileUploadSuccess(fileItem, res))
-      .catch((error) => this.onFileUploadError(fileItem, error));
+      .pipe(
+        map((res) => this.onFileUploadSuccess(fileItem, res)),
+        catchError((error) => this.onFileUploadError(fileItem, error))
+      );
   }
 
   protected onFileUploadSuccess(fileItem, res): Observable<any> {

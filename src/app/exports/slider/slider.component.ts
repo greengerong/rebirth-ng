@@ -13,12 +13,10 @@ import {
   EventEmitter,
   HostListener
 } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/take';
-import { Subject } from 'rxjs/Subject';
+import { Subject, fromEvent } from 'rxjs';
+import { switchMap, take, takeUntil } from 'rxjs/operators';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { DocumentRef, WindowRef } from '../window-ref';
 
@@ -74,16 +72,18 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
   ngAfterViewInit() {
     this.stepWidth = this.windowRef.getOffsetWidth(this.slider) / this.offset;
 
-    const mousedown$ = Observable.fromEvent(this.dot.nativeElement, 'mousedown');
-    const mousemove$ = Observable.fromEvent(this.documentRef.document, 'mousemove');
-    const mouseup$ = Observable.fromEvent(this.documentRef.document, 'mouseup');
+    const mousedown$ = fromEvent(this.dot.nativeElement, 'mousedown');
+    const mousemove$ = fromEvent(this.documentRef.document, 'mousemove');
+    const mouseup$ = fromEvent(this.documentRef.document, 'mouseup');
 
     mousedown$
-      .switchMap(() => {
-        this.onTouched();
-        return mousemove$.takeUntil(mouseup$);
-      })
-      .takeUntil(this.complete$)
+      .pipe(
+        switchMap(() => {
+          this.onTouched();
+          return mousemove$.pipe(takeUntil(mouseup$));
+        }),
+        takeUntil(this.complete$)
+      )
       .subscribe((event: MouseEvent) => {
         event.preventDefault();
         this.calcValueWhenMove(event);
@@ -91,11 +91,13 @@ export class SliderComponent implements AfterViewInit, OnInit, OnDestroy, Contro
       });
 
     mousedown$
-      .switchMap(() => {
-        this.onTouched();
-        return mouseup$.take(1);
-      })
-      .takeUntil(this.complete$)
+      .pipe(
+        switchMap(() => {
+          this.onTouched();
+          return mouseup$.pipe(take(1));
+        }),
+        takeUntil(this.complete$)
+      )
       .subscribe((event: MouseEvent) => {
         event.preventDefault();
         this.calcValueWhenMove(event);
