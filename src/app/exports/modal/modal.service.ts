@@ -2,10 +2,8 @@ import { Injectable, Injector, ComponentFactoryResolver, ComponentRef } from '@a
 import { ModalComponent } from './modal.component';
 import { ModalOptions } from './modal-options.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/catch';
-import { _throw } from 'rxjs/observable/throw';
-import { Observable } from 'rxjs/Observable';
+import { tap, catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
 
 @Injectable()
 export class ModalService {
@@ -32,13 +30,15 @@ export class ModalService {
     this.instances.push(modalRef);
     const instance: ModalComponent = modalRef.instance;
     const dismissResult = instance.addContent(options, this.instances.length)
-      .do(() => this.close(modalRef))
-      .catch(error => {
-        this.close(modalRef);
-        return _throw(error);
-      });
+      .pipe(
+        tap(() => this.close(modalRef)),
+        catchError(error => {
+          this.close(modalRef);
+          return throwError(error);
+        })
+      );
     instance.open();
-    return dismissResult;
+    return dismissResult as any;
   }
 
   closeAll(): void {

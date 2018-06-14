@@ -37,7 +37,12 @@ import {
   ValidatorsDemoModule,
   NotifyDemoModule,
   TreeViewDemoModule,
-  EllipsisDemoModule
+  EllipsisDemoModule,
+  TagsDemoModule,
+  ImageUploadDemoModule,
+    SelectDemoModule,
+    SliderDemoModule,
+  // module declare
 } from './demo';
 import { RebirthNGModule } from './exports';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
@@ -47,6 +52,9 @@ import { ROUTER_CONFIG } from './app.route';
 import { GettingStartedComponent, ShowcaseComponent } from './feature';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RebirthRouterReuseStrategy } from './exports';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -56,6 +64,9 @@ import { RebirthRouterReuseStrategy } from './exports';
   ],
   imports: [
     BrowserModule,
+    // ServiceWorkerModule.register('/rebirth-ng/ngsw-worker.js', { enabled: environment.production }),
+    HttpClientModule,
+    HttpClientJsonpModule,
     RouterModule.forRoot(ROUTER_CONFIG),
     SharedModule.forRoot(),
     RebirthNGModule.forRoot(),
@@ -93,7 +104,12 @@ import { RebirthRouterReuseStrategy } from './exports';
     ValidatorsDemoModule,
     NotifyDemoModule,
     TreeViewDemoModule,
-    EllipsisDemoModule
+    EllipsisDemoModule,
+    TagsDemoModule,
+    ImageUploadDemoModule,
+    SelectDemoModule,
+    SliderDemoModule,
+    // module declare
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

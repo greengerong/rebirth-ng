@@ -1,3 +1,114 @@
+# 6.0.3(2018-06-14)
+
+## Features
+
+* (rxjs): rxjs 6.x;
+
+# 6.0.2(2018-05-16)
+
+## Features
+
+* (AutoComplete): export `term` value;
+
+# 6.0.1(2018-05-09)
+
+## Features
+
+* (NG6): fix typing of `TemplateRef`
+
+## Features
+
+* (NG6): Upgrade to ng 6;
+* (CheckBoxGroup): Add @Input disableItems;
+* (RadioGroup): Add @Input disableItems;
+
+# 5.0.10(2018-02-11)
+
+## Features
+
+* (Slider): Slider;
+
+# 5.0.9(2018-01-10)
+
+## Features
+
+* (AutoComplete): AutoComplete debounce delay;
+
+# 5.0.8(2018-01-02)slider.component.ts
+
+## Features
+
+* (Modal): Modal animate delay;
+
+# 5.0.7(2017-12-29)
+
+## Features
+
+* (FileUpload): FileUpload emit error issue;
+* (FileUpload): FileUpload add @Input `transformResponseUrl`;
+* (Select): Select add @Input `groupOptions`;
+
+# 5.0.6(2017-12-22)
+
+## Features
+
+* (Select): Select component;
+
+# 5.0.5(2017-12-17)
+
+## Features
+
+* (ImageUpload): Refactor `FileUpload` to add new component `ImageUpload`;
+* (FileUpload): Add extend input;
+* (FileUpload): Add http events;
+
+
+# 5.0.4(2017-12-11)
+
+## Bug Fixes
+
+* (Tags): Add tags component;
+* (Tooltip): Tooltip scroll issue;
+
+
+# 5.0.3(2017-12-07)
+
+## Features
+
+* (pagination): pagination with `headTemplate` and `tailTemplate`;
+
+# 5.0.2(2017-12-04)
+
+## Bug Fixes
+
+* (AutoComplete): remove `valueParser` from `AutoComplete`;
+
+
+## Features
+
+# 5.0.1(2017-11-21)
+
+## Bug Fixes
+
+## Features
+
+* (version): replace `/deep/` to `::ng-deep`
+
+# 5.0.0 (2017-11-14)
+
+## Bug Fixes
+
+## Features
+
+* (version): same as angular version: `5.0.0`
+
+# 0.1.5 (2017-11-06)
+
+## Bug Fixes
+
+## Features
+
+* (FileUpload): remove `HttpClientModule` for lazy load module
 
 # 0.1.4 (2017-11-2)
 

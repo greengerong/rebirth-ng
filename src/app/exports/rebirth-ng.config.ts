@@ -1,4 +1,4 @@
-import { Inject, Injectable, LOCALE_ID, ViewContainerRef } from '@angular/core';
+import { Inject, Injectable, Input, LOCALE_ID, ViewContainerRef } from '@angular/core';
 
 @Injectable()
 export class RebirthNGConfig {
@@ -14,6 +14,7 @@ export class RebirthNGConfig {
   alertBox = {
     type: 'info',
     closable: false,
+    removeIcon: 'glyphicon glyphicon-remove'
   };
 
   alertBoxPanel = {
@@ -28,7 +29,6 @@ export class RebirthNGConfig {
     itemTemplate: null,
     noResultItemTemplate: null,
     formatter: (item) => item ? (item.label || item.toString()) : '',
-    valueParser: (item) => item
   };
 
   carousel = {
@@ -74,13 +74,24 @@ export class RebirthNGConfig {
 
   fileUpload = {
     imgPreview: false,
-    previewWidth: '50px',
+    previewWidth: '104px',
+    previewHeight: '104px',
     uploadParamName: 'file',
+    showErrors: true,
     fileSizeErrorMessage: '{0}: size is too large, allowed size is {1};',
     fileTypeErrorMessage: '{0}: file type is invalid, allowed file type is {1};',
     chooseButton: 'Choose',
     uploadButton: 'Upload',
-    cancelButton: 'Cancel'
+    cancelButton: 'Cancel',
+    plusIcon: 'glyphicon glyphicon-plus',
+    loadingIcon: 'glyphicon glyphicon-refresh',
+    uploadIcon: 'glyphicon glyphicon-upload',
+    removeIcon: 'glyphicon glyphicon-trash',
+    transformResponseUrl: (res) => res.url
+  };
+
+  imageUpload = {
+    viewIcon: 'glyphicon glyphicon-eye-open'
   };
 
   modal = {
@@ -105,7 +116,11 @@ export class RebirthNGConfig {
       first: 'First',
       last: 'Last',
       pre: 'Previous',
-      next: 'Next'
+      next: 'Next',
+      firstLinkCssClass: 'firstLink',
+      preLinkCssClass: 'preLink',
+      nextLinkCssClass: 'nextLink',
+      lastLinkCssClass: 'lastLink'
     }
   };
 
@@ -132,6 +147,11 @@ export class RebirthNGConfig {
     icons: { stateOn: 'glyphicon glyphicon-star', stateOff: 'glyphicon glyphicon-star-empty' }
   };
 
+  select = {
+    iconDown: 'glyphicon glyphicon-menu-down',
+    formatter: (item) => item ? (item.label || item.toString()) : '',
+  };
+
   selectButton = {
     type: 'primary',
     justified: false,
@@ -144,10 +164,24 @@ export class RebirthNGConfig {
     type: 'primary'
   };
 
+  slider = {
+    max: 100,
+    min: 0
+  };
+
   tabs = {
     type: 'tabs', // 'tabs' | 'pills'
     justified: false,
     vertical: false
+  };
+
+  tags = {
+    type: 'primary',
+    newTagText: 'NEW TAG',
+    plusIcon: 'glyphicon glyphicon-plus',
+    removeIcon: 'glyphicon glyphicon-remove',
+    maxlength: 20,
+    maxSize: 0
   };
 
   treeView = {
@@ -162,7 +196,20 @@ export class RebirthNGConfig {
   // }
 
   extend(obj: any): this {
-    Object.assign(this, obj);
+    this.extendConfig(obj, this);
     return this;
+  }
+
+  private extendConfig(obj: any, targetObj: any) {
+    Object.keys(obj || {})
+      .reduce((target, key) => {
+        const value = obj[key];
+        if (value instanceof Object) {
+          this.extendConfig(value, target[key])
+        } else {
+          target[key] = value;
+        }
+        return target;
+      }, targetObj);
   }
 }

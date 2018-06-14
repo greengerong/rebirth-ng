@@ -1,21 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { of } from 'rxjs/observable/of';
-import 'rxjs/add/operator/delay';
-import { timer } from 'rxjs/observable/timer';
+import { of } from 'rxjs';
+import { delay } from 'rxjs/operators';
+import { timer } from 'rxjs';
+
 const treeData = require('./data.json');
+
 @Component({
   selector: 're-tree-view-demo',
   templateUrl: './tree-view-demo.component.html',
   styles: [`
-    :host /deep/ .glyphicon-file {
+    :host ::ng-deep .glyphicon-file {
       color: #FF9800;
     }
 
-    :host /deep/ .glyphicon-folder-close {
+    :host ::ng-deep .glyphicon-folder-close {
       color: #FF9800;
     }
 
-    :host /deep/ .glyphicon-folder-open {
+    :host ::ng-deep .glyphicon-folder-open {
       color: #FF9800;
     }
   `]
@@ -62,7 +64,7 @@ export class TreeViewDemoComponent implements OnInit {
     const pid = parent.id;
     console.log(`Load children for parent ${pid}`);
     if (pid.split('-').length > 3) {
-      return of([]).delay(5 * 1000);
+      return of([]).pipe(delay(5 * 1000));
     }
 
     return of([
@@ -79,7 +81,7 @@ export class TreeViewDemoComponent implements OnInit {
         name: `Lazyload node ${pid}-3`
       }
     ])
-      .delay(5 * 1000);
+      .pipe(delay(5 * 1000));
   }
 
   clone(data) {

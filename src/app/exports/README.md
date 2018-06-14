@@ -1,10 +1,10 @@
 # Getting started 
 
-> Angular4 UI plugin with bootstrap
+> Angular UI plugin with bootstrap
 
 ## Welcome
 
-Welcome to `@Rebirth/NG`. This repo is Angular4 ui library for Bootstrap. And it is being built from scratch in Typescript.
+Welcome to `@Rebirth/NG`. This repo is Angular ui library for Bootstrap. And it is being built from scratch in Typescript.
 
 You can check [Demo Showcase](/rebirth-ng) & [API document](/rebirth-ng/compodocs/overview.html).
 

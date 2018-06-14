@@ -7,14 +7,16 @@
 
   <section>
     <h4>Checked:</h4>
-    <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendAllNodes()">Expend All</button>
-    <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByLevel(2)">Expend 2 level
-    </button>
-    <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByValue('4')">Expend node(大家电)
-    </button>
-    <button type="button" class="btn btn-info" (click)="checkedTreeView.collapseAllNodes()">Collapse All</button>
-    <button type="button" class="btn btn-warning" (click)="checkedTreeView.checkAllNodes()">Chceck All</button>
-    <button type="button" class="btn btn-danger" (click)="checkedTreeView.unCheckAllNodes()">UnChceck All</button>
+    <div class="button-panel">
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendAllNodes()">Expend All</button>
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByLevel(2)">Expend 2 level
+      </button>
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByValue('4')">Expend node(大家电)
+      </button>
+      <button type="button" class="btn btn-info" (click)="checkedTreeView.collapseAllNodes()">Collapse All</button>
+      <button type="button" class="btn btn-warning" (click)="checkedTreeView.checkAllNodes()">Chceck All</button>
+      <button type="button" class="btn btn-danger" (click)="checkedTreeView.unCheckAllNodes()">UnChceck All</button>
+    </div>
     <hr>
     <re-tree-view #checkedTreeView [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
                   #treeView="treeView" [allowMutipleSelected]="true"></re-tree-view>
@@ -66,8 +68,10 @@
       <div class="form-group">
         <re-checkbox name="largeTreeCheckable" [(ngModel)]="largeTreeCheckable" label="Checkable"></re-checkbox>
       </div>
-      <button type="button" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
-      <button type="button" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
+      <div class="button-panel">
+        <button type="button" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
+        <button type="button" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
+      </div>
     </form>
     <hr>
 

@@ -33,7 +33,12 @@ import {
   TreeViewDemoComponent,
   BreadcrumbsDemoComponent,
   TimePickerDemoComponent,
-  EllipsisDemoComponent
+  EllipsisDemoComponent,
+  TagsDemoComponent,
+  ImageUploadDemoComponent,
+  SelectDemoComponent,
+  SliderDemoComponent,
+  // component import
 } from '../../demo';
 
 @Injectable()
@@ -308,7 +313,7 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/tree-view/README.md'),
       html: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.html'),
       ts: require('!raw-loader!../../demo/tree-view/tree-view-demo.component.ts'),
-      data: require('!raw-loader!../../demo/tree-view/data.json'),
+      data: require('../../demo/tree-view/data.json'),
     },
     {
       name: 'Ellipsis',
@@ -317,6 +322,38 @@ export class DemoConfigService {
       readMe: require('!html-loader!markdown-loader!../../exports/ellipsis/README.md'),
       html: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.html'),
       ts: require('!raw-loader!../../demo/ellipsis/ellipsis-demo.component.ts'),
+    },
+    {
+      name: 'Tags',
+      directory: 'tags',
+      cmp: TagsDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/tags/README.md'),
+      html: require('!raw-loader!../../demo/tags/tags-demo.component.html'),
+      ts: require('!raw-loader!../../demo/tags/tags-demo.component.ts'),
+    },
+    {
+      name: 'ImageUpload',
+      directory: 'image-upload',
+      cmp: ImageUploadDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/image-upload/README.md'),
+      html: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.html'),
+      ts: require('!raw-loader!../../demo/image-upload/image-upload-demo.component.ts'),
+    },
+    {
+      name: 'Select',
+      directory: 'select',
+      cmp: SelectDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/select/README.md'),
+      html: require('!raw-loader!../../demo/select/select-demo.component.html'),
+      ts: require('!raw-loader!../../demo/select/select-demo.component.ts'),
+    },
+    {
+      name: 'Slider',
+      directory: 'slider',
+      cmp: SliderDemoComponent,
+      readMe: require('!html-loader!markdown-loader!../../exports/slider/README.md'),
+      html: require('!raw-loader!../../demo/slider/slider-demo.component.html'),
+      ts: require('!raw-loader!../../demo/slider/slider-demo.component.ts'),
     },
     // component declare
   ];

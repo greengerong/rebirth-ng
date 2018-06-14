@@ -17,16 +17,11 @@ import {
   ViewContainerRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { fromEvent } from 'rxjs/observable/fromEvent';
-import { of } from 'rxjs/observable/of';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/do';
+import { fromEvent } from 'rxjs';
+import { of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
+import { map, filter, debounceTime, switchMap, tap } from 'rxjs/operators';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { PositionService } from '../position/positioning.service';
 import { AutoCompletePopupComponent } from './auto-complete-popup.component';
@@ -55,10 +50,10 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
-  @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
   @Output() selectValueChange = new EventEmitter<any>();
   @Input() placementElement: any;
+  term: string;
   private valueChanges: Observable<any[]>;
   private value: any;
   private placement = 'bottom-left';
@@ -72,16 +67,16 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
               private componentFactoryResolver: ComponentFactoryResolver, private renderer: Renderer2,
               private injector: Injector, private positionService: PositionService,
               private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
-    this.valueChanges = this.registerInputEvent(elementRef);
     this.delay = rebirthNGConfig.autoComplete.delay;
     this.minLength = rebirthNGConfig.autoComplete.minLength;
     this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
     this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
     this.formatter = rebirthNGConfig.autoComplete.formatter;
-    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
   }
 
   ngOnInit() {
+    this.valueChanges = this.registerInputEvent(this.elementRef);
+
     this.subscription = this.valueChanges
       .subscribe(source => this.onSourceChange(source));
 
@@ -96,16 +91,17 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
       this.positionPopup();
 
       this.popupRef.instance.registerOnChange(item => {
-        const value = this.valueParser(item);
-        this.writeValue(value);
-        this.onChange(value);
+        this.value = item;
+        this.writeInputValue(item);
+        this.onChange(item);
         this.hidePopup();
         this.selectValueChange.emit(item);
       });
     }, 0);
   }
 
-  @Input() set dataSource(dataSource: any[]) {
+  @Input()
+  set dataSource(dataSource: any[]) {
     if (dataSource) {
       this.arraySource = dataSource;
       this.setupArraySource();
@@ -259,7 +255,8 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
   }
 
   private writeInputValue(value: any) {
-    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(value || '') || '');
+    const formatValue = value || '';
+    this.renderer.setProperty(this.elementRef.nativeElement, 'value', this.formatter(formatValue) || '');
   }
 
   private unSubscription() {
@@ -279,12 +276,15 @@ export class AutoCompleteDirective implements OnInit, OnDestroy, ControlValueAcc
 
   private registerInputEvent(elementRef: ElementRef) {
     return fromEvent(elementRef.nativeElement, 'input')
-      .map((e: any) => e.target.value)
-      .do(term => this.onTouched())
-      .filter(term => !this.disabled && this.onSearch && term.length >= this.minLength)
-      .debounceTime(this.delay)
-      // .distinctUntilChanged()
-      .do(term => this.onTermChange(term))
-      .switchMap(term => this.onSearch(term, this));
+      .pipe(
+        map((e: any) => e.target.value),
+        tap(term => this.onTouched()),
+        tap(term => this.term = term),
+        filter(term => !this.disabled && this.onSearch && term.length >= this.minLength),
+        debounceTime(this.delay),
+        // distinctUntilChanged(),
+        tap(term => this.onTermChange(term)),
+        switchMap(term => this.onSearch(term, this))
+      );
   }
 }

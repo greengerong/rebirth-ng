@@ -1,7 +1,7 @@
 export interface SelectFileModel {
   name: string;
-  displaySize: string;
-  dataUrl: string;
-  file: File;
+  displaySize?: string;
+  url?: string;
+  file?: File;
   uploadResponse?: any;
 }

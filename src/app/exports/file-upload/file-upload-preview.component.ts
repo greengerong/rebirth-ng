@@ -12,10 +12,13 @@ export class FileUploadPreviewComponent {
   @Input() imgPreview: boolean;
   @Input() previewWidth: string;
   @Input() uploaded: boolean;
+  @Input() disabled: boolean;
   @Input() selectFiles: SelectFileModel[] = [];
   @Output() removeFile = new EventEmitter<SelectFileModel>();
 
   onRemoveFile(fileItem) {
-    this.removeFile.emit(fileItem);
+    if (!this.disabled) {
+      this.removeFile.emit(fileItem);
+    }
   }
 }

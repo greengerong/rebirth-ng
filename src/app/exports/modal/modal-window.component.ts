@@ -11,14 +11,15 @@ import { ModalContentComponent } from './modal-content.component';
 import { ModalOptions } from './modal-options.model';
 import { ModalDismissReasons } from './modal-dismiss-reasons.model';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { timer } from 'rxjs/observable/timer';
-import { noop } from '../utils/lange-utils';
+import { filter } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 're-modal-window',
   templateUrl: './modal-window.component.html',
   host: {
     '[@flyInOut]': 'animateState',
+    '(@flyInOut.start)': 'onAnimationStart($event)',
     '(@flyInOut.done)': 'onAnimationDone($event)'
   },
   animations: [
@@ -38,37 +39,46 @@ export class ModalWindowComponent {
   dismiss: EventEmitter<any>;
   modalOptions: ModalOptions;
   animateState: string;
+  isInAnimationDone: boolean;
 
   constructor(private elementRef: ElementRef) {
 
   }
 
-  open() {
+  open(): Observable<any> {
     this.isOpen = true;
     if (this.modalOptions.animation) {
       this.animateState = 'in';
+    } else {
+      setTimeout(() => this.onAnimationDone({ toState: 'in' }));
     }
+    return this.animationDone
+      .pipe(filter(event => event.toState === 'in'));
   }
 
-  close() {
+  close(): Observable<any> {
     this.isOpen = false;
     if (this.modalOptions.animation) {
       this.animateState = 'void';
-      return this.animationDone;
+    } else {
+      setTimeout(() => this.onAnimationDone({ toState: 'void' }));
     }
-
-    setTimeout(() => this.onAnimationDone(null));
-    return this.animationDone;
+    return this.animationDone
+      .pipe(filter(event => event.toState === 'void'));
   }
 
+  onAnimationStart($event) {
+    this.isInAnimationDone = true;
+  }
 
   onAnimationDone($event) {
+    this.isInAnimationDone = false;
     this.animationDone.emit($event);
   }
 
   @HostListener('click', ['$event'])
   onBackdropClick($event: Event) {
-    if (!this.modalOptions.modal && this.elementRef.nativeElement === $event.target) {
+    if (!this.modalOptions.modal && !this.isInAnimationDone && this.elementRef.nativeElement === $event.target) {
       this.dismiss.error(ModalDismissReasons.BACKDROP_CLICK);
     }
   }

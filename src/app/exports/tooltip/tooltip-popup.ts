@@ -49,7 +49,7 @@ export class TooltipPopup {
     }
   }
 
-  isTemplateRef(obj) {
-    return obj != null && obj instanceof TemplateRef && obj.elementRef;
+  isTemplateRef(obj): boolean {
+    return obj != null && obj instanceof TemplateRef && !!obj.elementRef;
   }
 }

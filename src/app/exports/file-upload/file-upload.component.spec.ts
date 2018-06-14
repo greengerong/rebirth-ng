@@ -6,10 +6,6 @@ import { CommonModule } from '@angular/common';
 import { AlertBoxModule } from '../alert-box/alert-box.module';
 import { DraggableModule } from '../draggable/draggable.module';
 import { FileUploadPreviewComponent } from './file-upload-preview.component';
-import {
-  UploadFileTmplComponent, UploadPreviewTmplComponent,
-  UploadToolbarTmplComponent
-} from './file-upload-tmpl.directive';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('FileUpload', () => {
@@ -25,9 +21,6 @@ describe('FileUpload', () => {
       declarations: [
         FileUploadComponent,
         FileUploadPreviewComponent,
-        UploadToolbarTmplComponent,
-        UploadPreviewTmplComponent,
-        UploadFileTmplComponent
       ],
     });
     TestBed.compileComponents();

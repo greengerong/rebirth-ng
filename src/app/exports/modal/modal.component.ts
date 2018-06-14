@@ -2,8 +2,8 @@ import { Component, Input, ViewChild, EventEmitter, Output, Renderer2 } from '@a
 import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
 import { DocumentRef } from '../window-ref';
-import 'rxjs/add/operator/do';
-import { Observable } from 'rxjs/Observable';
+import { tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 're-modal',
@@ -22,14 +22,14 @@ export class ModalComponent {
   }
 
   open() {
-    this.isOpen = true;
     this.modalWindowComponent.open();
+    this.isOpen = true;
     this.toggleBodyClass(true);
   }
 
   close(): Observable<any> {
     return this.modalWindowComponent.close()
-      .do(_ => this.isOpen = false);
+      .pipe(tap(_ => this.isOpen = false));
   }
 
   cleanup() {

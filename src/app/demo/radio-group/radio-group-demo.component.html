@@ -8,7 +8,8 @@
 
   <section>
     <h4>Season:</h4>
-    <re-radio-group [options]="seasonOptions" [(ngModel)]="season"></re-radio-group>
+    <re-radio-group [disabledItems]="[seasonOptions[0]]" [options]="seasonOptions"
+                    [(ngModel)]="season"></re-radio-group>
     <pre>{{season | json}}</pre>
   </section>
 

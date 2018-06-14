@@ -1,0 +1,25 @@
+<div class="select-demo">
+
+  <section>
+    <h4>Demo:</h4>
+    <re-select [options]="options" [(ngModel)]="selectValue" placeholder="Please select value"></re-select>
+    <br>
+    <pre>{{selectValue | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Select Object Demo:</h4>
+    <re-select [options]="objOptions" [(ngModel)]="selectObjValue" placeholder="Please select value"></re-select>
+    <br>
+    <pre>{{selectObjValue | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Group select:</h4>
+    <re-select [groupOptions]="groupOptions" [(ngModel)]="selectGroupValue"
+               placeholder="Please select value"></re-select>
+    <br>
+    <pre>{{selectGroupValue | json}}</pre>
+  </section>
+
+</div>

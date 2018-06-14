@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { of } from 'rxjs/observable/of';
-import { AutoCompleteDirective } from '../../exports';
+import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class AutoCompleteDemoComponent {
   selectItem1 = 'C#';
   selectItem2: string;
   selectItem3: string;
-  selectItem4: string;
+  selectItem4: any;
   selectItem5: string;
   mutipleItems: string[] = ['C#', 'C', 'C++', 'CPython', 'Java'];
   isDisabled = false;
@@ -29,19 +29,18 @@ export class AutoCompleteDemoComponent {
   onSearchObject = (term) => of(this.languages
     .map((lang, index) => ({ label: lang, id: index }))
     .filter(lang => lang.label.toLowerCase().indexOf(term.toLowerCase()) !== -1)
-  )
-
+  );
 
   searchWiki = (term) => {
     return this.httpClient
       .jsonp(`https://en.wikipedia.org/w/api.php?search=${term}&action=opensearch&format=json`,
         'callback')
-      .map(response => <string[]> response[1]);
-  }
+      .pipe(map(response => <string[]> response[1]));
+  };
 
   onSearch = (term) => {
     return this.searchWiki(term);
-  }
+  };
 
   constructor(private httpClient: HttpClient) {
 

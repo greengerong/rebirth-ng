@@ -1,6 +1,6 @@
 import { Component, Input, TemplateRef, forwardRef, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { AutoCompleteDirective } from './auto-complete.directive';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -28,13 +28,13 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
   @Input() itemTemplate: TemplateRef<any>;
   @Input() noResultItemTemplate: TemplateRef<any>;
   @Input() formatter: (item: any) => string;
-  @Input() valueParser: (item: any) => any;
   @Input() onSearch: (term: string, target?: AutoCompleteDirective) => Observable<any[]>;
 
   selectValue: any;
   mutipleItems: any[];
   @ViewChild(AutoCompleteDirective) autoCompleteDirective: AutoCompleteDirective;
   private onChange = (_: any) => null;
+  private onTouched = () => null;
 
   constructor(private rebirthNGConfig: RebirthNGConfig, private changeDetectorRef: ChangeDetectorRef) {
     this.delay = rebirthNGConfig.autoComplete.delay;
@@ -42,11 +42,9 @@ export class MutipleAutoCompleteComponent implements AfterViewInit, ControlValue
     this.itemTemplate = rebirthNGConfig.autoComplete.itemTemplate;
     this.noResultItemTemplate = rebirthNGConfig.autoComplete.noResultItemTemplate;
     this.formatter = rebirthNGConfig.autoComplete.formatter;
-    this.valueParser = rebirthNGConfig.autoComplete.valueParser;
     this.id = MutipleAutoCompleteComponent.ID_SEED++;
   }
 
-  private onTouched = () => null;
 
   writeValue(obj: any): void {
     this.mutipleItems = obj || [];

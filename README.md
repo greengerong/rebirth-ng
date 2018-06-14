@@ -5,13 +5,15 @@
 [![dev dependcy](https://david-dm.org/greengerong/rebirth-ng/dev-status.svg)](https://david-dm.org/greengerong/rebirth-ng?type=dev)
 [![npm version](https://img.shields.io/npm/v/rebirth-ng.svg)](https://www.npmjs.com/package/rebirth-ng)
 
-> Angular4 UI plugin with bootstrap;
+> Angular UI plugin with bootstrap;
 
 
 
 * Online Document link: [https://greengerong.github.io/rebirth-ng/](http://greengerong.github.io/rebirth-ng/)
 
-* Angular 4: version <= 0.0.23; Angular 5: version >= 0.1.0 
+* Angular 4: version <= 0.0.23; 
+* Angular 5: version >= 5.0.0 
+* Angular 6: version >= 6.0.0
 
 ## Components
 
@@ -46,14 +48,14 @@
 - [x] Validators
 - [x] Notify
 - [x] Tree View
-
+- [x] File Upload
+- [x] Image Upload
 
 ## Advance Components
-- [ ] Editor([]())
-- [ ] Mask([]())
-- [x] File Upload([]())
+- [x] Editor([https://greengerong.github.io/rebirth-medium-editor/](https://greengerong.github.io/rebirth-medium-editor/))
 - [x] Chartjs([https://greengerong.github.io/rebirth-chart/](https://greengerong.github.io/rebirth-chart/))
 - [x] ECharts([https://greengerong.github.io/rebirth-echarts/](https://greengerong.github.io/rebirth-echarts/))
+- [ ] Mask([]())
 
 
 ## Themes
@@ -85,6 +87,8 @@
 * Docs deploy: `npm run docs:deploy`
 
 * npm publish `npm run npm:publish` and then `cd .lib && npm publish`
+
+* new component `gulp new:cmp --ComponentName`
 
 ## Get start
 

@@ -34,9 +34,11 @@
     </re-carousel>
 
     <hr>
-    <button class="btn btn-primary" (click)="activeSlide = 1">Active second slide</button>
-    <button class="btn btn-primary" (click)="carousel.pauseInterval()">Pause</button>
-    <button class="btn btn-primary" (click)="carousel.startInterval()">Start</button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="activeSlide = 1">Active second slide</button>
+      <button class="btn btn-primary" (click)="carousel.pauseInterval()">Pause</button>
+      <button class="btn btn-primary" (click)="carousel.startInterval()">Start</button>
+    </div>
   </section>
 
 </div>

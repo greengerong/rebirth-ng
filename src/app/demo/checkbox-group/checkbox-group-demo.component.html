@@ -20,7 +20,8 @@
 
   <section>
     <h4>Season Object:</h4>
-    <re-checkbox-group [options]="seasonOptions" [(ngModel)]="season"></re-checkbox-group>
+    <re-checkbox-group [disabledItems]="[seasonOptions[0]]" [options]="seasonOptions"
+                       [(ngModel)]="season"></re-checkbox-group>
     <pre>{{season | json}}</pre>
   </section>
 
@@ -30,7 +31,7 @@
 
     <re-checkbox-group #checkboxgroup [options]="seasonOptions" [(ngModel)]="seasonValue" [inline]="true"
                        [valueParser]="valueParser"></re-checkbox-group>
-    <div>
+    <div class="button-panel">
       <button class="btn btn-primary" (click)="selectAll(checkboxgroup, true)">Select All</button>
       <button class="btn btn-info" (click)="selectAll(checkboxgroup, false)">Unselect All</button>
       <button class="btn btn-success" (click)="invertAll(checkboxgroup)">Invert Select</button>

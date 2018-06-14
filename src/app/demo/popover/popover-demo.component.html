@@ -1,7 +1,7 @@
 <div class="popover-demo">
   <section>
     <h4>Default popover(click):</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" reTitle="Rebirth popover" rePopover="I am a rebirth tooltip!" placement="left">
         Popover on left
       </button>
@@ -18,7 +18,7 @@
 
   <section>
     <h4>Hover popover:</h4>
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" reTitle="Rebirth popover" trigger="hover" rePopover="I am a rebirth tooltip!"
               placement="left">Popover on
         left
@@ -41,7 +41,7 @@
     <h4>Customise popover:</h4>
     Variable name: {{name}}.
 
-    <div style="padding: 10px 100px;">
+    <div class="button-panel">
       <button class="btn btn-primary" [reTitle]="popTitle" [rePopover]="popContent" [context]="{target:'button1'}">
         Popover on top
       </button>

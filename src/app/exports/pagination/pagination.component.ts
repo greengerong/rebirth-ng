@@ -1,6 +1,6 @@
 import {
   Component, Input, Output, EventEmitter, OnChanges, ChangeDetectionStrategy,
-  SimpleChanges
+  SimpleChanges, TemplateRef
 } from '@angular/core';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
@@ -26,6 +26,13 @@ export class PaginationComponent implements OnChanges {
   @Input() nextLink: string;
   @Input() size: '' | 'lg' | 'sm';
   @Input() cssClass: string;
+  @Input() headTemplate: TemplateRef<any>;
+  @Input() tailTemplate: TemplateRef<any>;
+  @Input() firstLinkCssClass: string;
+  @Input() preLinkCssClass: string;
+  @Input() nextLinkCssClass: string;
+  @Input() lastLinkCssClass: string;
+
   showPages = [];
   totalPage = 0;
 
@@ -37,6 +44,10 @@ export class PaginationComponent implements OnChanges {
     this.lastLink = rebirthNGConfig.pagination.button.last;
     this.preLink = rebirthNGConfig.pagination.button.pre;
     this.nextLink = rebirthNGConfig.pagination.button.next;
+    this.firstLinkCssClass = rebirthNGConfig.pagination.button.firstLinkCssClass;
+    this.preLinkCssClass = rebirthNGConfig.pagination.button.preLinkCssClass;
+    this.nextLinkCssClass = rebirthNGConfig.pagination.button.nextLinkCssClass;
+    this.lastLinkCssClass = rebirthNGConfig.pagination.button.lastLinkCssClass;
     this.size = <any>rebirthNGConfig.pagination.size;
   }
 

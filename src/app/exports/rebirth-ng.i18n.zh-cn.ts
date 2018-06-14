@@ -32,7 +32,15 @@ export const REBIRTH_NG_I18N_ZHCN = {
     fileTypeErrorMessage: '{0}文件类型必须满足{1};',
     chooseButton: '浏览',
     uploadButton: '上传',
-    cancelButton: '取消'
+    cancelButton: '取消',
+    plusIcon: 'glyphicon glyphicon-plus',
+    uploadIcon: 'glyphicon glyphicon-upload',
+    removeIcon: 'glyphicon glyphicon-trash',
+    transformResponseUrl: (res) => res.url
+  },
+
+  imageUpload: {
+    viewIcon: 'glyphicon glyphicon-eye-open'
   },
 
   pager: {
@@ -54,7 +62,11 @@ export const REBIRTH_NG_I18N_ZHCN = {
       first: '首页',
       last: '尾页',
       pre: '前一页',
-      next: '下一页'
+      next: '下一页',
+      firstLinkCssClass: 'firstLink',
+      preLinkCssClass: 'preLink',
+      nextLinkCssClass: 'nextLink',
+      lastLinkCssClass: 'lastLink'
     }
   }
   ,
@@ -63,6 +75,14 @@ export const REBIRTH_NG_I18N_ZHCN = {
     onText: '开启',
     offText: '关闭',
     type: 'primary'
-  }
+  },
 
+  tags: {
+    type: 'primary',
+    newTagText: '添加标签',
+    plusIcon: 'glyphicon glyphicon-plus',
+    removeIcon: 'glyphicon glyphicon-remove',
+    maxlength: 20,
+    maxSize: 0
+  }
 };

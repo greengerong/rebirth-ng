@@ -11,8 +11,10 @@
     <re-select-button [(ngModel)]="value" [items]="items" [justified]="true"></re-select-button>
     <hr>
     <pre>{{(value | json) || 'No value select!'}}</pre>
-    <button class="btn btn-primary" (click)="value = 'Middle'">Set to Middle</button>
-    <button class="btn btn-primary" (click)="value = null">Clear value</button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="value = 'Middle'">Set to Middle</button>
+      <button class="btn btn-primary" (click)="value = null">Clear value</button>
+    </div>
   </section>
 
   <section>
@@ -21,8 +23,10 @@
     <re-select-button [(ngModel)]="multipleValue" type="warning" [items]="items" [multiple]="true"></re-select-button>
     <hr>
     <pre>{{(multipleValue | json) || 'No value select!'}}</pre>
-    <button class="btn btn-primary" (click)="multipleValue = ['Middle']">Set to Middle</button>
-    <button class="btn btn-primary" (click)="multipleValue = null">Clear value</button>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="multipleValue = ['Middle']">Set to Middle</button>
+      <button class="btn btn-primary" (click)="multipleValue = null">Clear value</button>
+    </div>
   </section>
 
   <section>

@@ -1,3 +1,17 @@
-:host /deep/ .main {
+:host ::ng-deep .main {
   margin-top: 80px;
 }
+
+::ng-deep {
+
+  .button-panel {
+    button {
+      margin: 1rem;
+    }
+  }
+  re-action-button, re-select-button, re-switch {
+    padding: 1rem;
+  }
+}
+
+

@@ -32,6 +32,10 @@ export class WindowRef {
     return window.getComputedStyle(element);
   }
 
+  getOffsetWidth(elementRef: ElementRef) {
+    return elementRef.nativeElement && elementRef.nativeElement.offsetWidth;
+  }
+
   getBoundingClientRect(elementRef: ElementRef) {
     return elementRef.nativeElement && elementRef.nativeElement.getBoundingClientRect();
   }

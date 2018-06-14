@@ -1,5 +1,5 @@
 import { Component, Input, TemplateRef, Output, EventEmitter } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 're-tree-panel',
