@@ -449,8 +449,11 @@ class AssetGroup {
                 // Figure out if there is a max-age directive in the Cache-Control header.
                 const cacheControl = res.headers.get('Cache-Control');
                 const cacheDirectives = cacheControl
+                    // Directives are comma-separated within the Cache-Control header value.
                     .split(',')
+                    // Make sure each directive doesn't have extraneous whitespace.
                     .map(v => v.trim())
+                    // Some directives have values (like maxage and s-maxage)
                     .map(v => v.split('='));
                 // Lowercase all the directive names.
                 cacheDirectives.forEach(v => v[0] = v[0].toLowerCase());
@@ -543,6 +546,7 @@ class AssetGroup {
             // Start with the set of all cached URLs.
             return (yield cache.keys())
                 .map(request => request.url)
+                // Exclude the URLs which have hashes.
                 .filter(url => !this.hashes.has(url));
         });
     }
@@ -764,8 +768,11 @@ class PrefetchAssetGroup extends AssetGroup {
                 // Select all of the previously cached resources. These are cached unhashed resources
                 // from previous versions of the app, in any asset group.
                 yield (yield updateFrom.previouslyCachedResources())
+                    // First, narrow down the set of resources to those which are handled by this group.
+                    // Either it's a known URL, or it matches a given pattern.
                     .filter(url => this.config.urls.some(cacheUrl => cacheUrl === url) ||
                     this.patterns.some(pattern => pattern.test(url)))
+                    // Finally, process each resource in turn.
                     .reduce((previous, url) => __awaiter$2(this, void 0, void 0, function* () {
                     yield previous;
                     const req = this.adapter.newRequest(url);
@@ -2202,10 +2209,10 @@ class Driver {
      */
     assignVersion(event) {
         return __awaiter(this, void 0, void 0, function* () {
-            // First, check whether the event has a client ID. If it does, the version may
+            // First, check whether the event has a (non empty) client ID. If it does, the version may
             // already be associated.
             const clientId = event.clientId;
-            if (clientId !== null) {
+            if (clientId) {
                 // Check if there is an assigned client id.
                 if (this.clientVersionMap.has(clientId)) {
                     // There is an assignment for this client already.
@@ -2497,7 +2504,14 @@ class Driver {
      */
     lookupResourceWithHash(url, hash) {
         return Array
+            // Scan through the set of all cached versions, valid or otherwise. It's safe to do such
+            // lookups even for invalid versions as the cached version of a resource will have the
+            // same hash regardless.
             .from(this.versions.values())
+            // Reduce the set of versions to a single potential result. At any point along the
+            // reduction, if a response has already been identified, then pass it through, as no
+            // future operation could change the response. If no response has been found yet, keep
+            // checking versions until one is or until all versions have been exhausted.
             .reduce((prev, version) => __awaiter(this, void 0, void 0, function* () {
             // First, check the previous result. If a non-null result has been found already, just
             // return it.

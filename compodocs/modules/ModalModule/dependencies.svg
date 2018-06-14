@@ -30,49 +30,49 @@
 </g>
 <g id="clust8" class="cluster">
 <title>cluster_ModalModule_exports</title>
-<polygon fill="none" stroke="#000000" points="290,-208 290,-260 482,-260 482,-208 290,-208"/>
+<polygon fill="none" stroke="#000000" points="272,-208 272,-260 464,-260 464,-208 272,-208"/>
 </g>
-<!-- ModalComponent -->
+<!-- ModalBackdropComponent -->
 <g id="node1" class="node">
-<title>ModalComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="695.8823,-122 578.1177,-122 578.1177,-86 695.8823,-86 695.8823,-122"/>
-<text text-anchor="middle" x="637" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalComponent</text>
+<title>ModalBackdropComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="696.3089,-122 523.6911,-122 523.6911,-86 696.3089,-86 696.3089,-122"/>
+<text text-anchor="middle" x="610" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalBackdropComponent</text>
 </g>
 <!-- ModalModule -->
 <g id="node5" class="node">
 <title>ModalModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="434.0997,-187 431.0997,-191 410.0997,-191 407.0997,-187 337.9003,-187 337.9003,-151 434.0997,-151 434.0997,-187"/>
-<text text-anchor="middle" x="386" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalModule</text>
-</g>
-<!-- ModalComponent&#45;&gt;ModalModule -->
-<g id="edge1" class="edge">
-<title>ModalComponent&#45;&gt;ModalModule</title>
-<path fill="none" stroke="#000000" d="M637,-122.1061C637,-141.3391 637,-169 637,-169 637,-169 444.0983,-169 444.0983,-169"/>
-<polygon fill="#000000" stroke="#000000" points="444.0984,-165.5001 434.0983,-169 444.0983,-172.5001 444.0984,-165.5001"/>
-</g>
-<!-- ModalContentComponent -->
-<g id="node2" class="node">
-<title>ModalContentComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="560.2147,-122 397.7853,-122 397.7853,-86 560.2147,-86 560.2147,-122"/>
-<text text-anchor="middle" x="479" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalContentComponent</text>
-</g>
-<!-- ModalContentComponent&#45;&gt;ModalModule -->
-<g id="edge2" class="edge">
-<title>ModalContentComponent&#45;&gt;ModalModule</title>
-<path fill="none" stroke="#000000" d="M415.9713,-122.1061C415.9713,-122.1061 415.9713,-140.991 415.9713,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="412.4713,-140.9909 415.9713,-150.991 419.4713,-140.991 412.4713,-140.9909"/>
-</g>
-<!-- ModalBackdropComponent -->
-<g id="node3" class="node">
-<title>ModalBackdropComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="380.3089,-122 207.6911,-122 207.6911,-86 380.3089,-86 380.3089,-122"/>
-<text text-anchor="middle" x="294" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalBackdropComponent</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="416.0997,-187 413.0997,-191 392.0997,-191 389.0997,-187 319.9003,-187 319.9003,-151 416.0997,-151 416.0997,-187"/>
+<text text-anchor="middle" x="368" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalModule</text>
 </g>
 <!-- ModalBackdropComponent&#45;&gt;ModalModule -->
-<g id="edge3" class="edge">
+<g id="edge1" class="edge">
 <title>ModalBackdropComponent&#45;&gt;ModalModule</title>
-<path fill="none" stroke="#000000" d="M359.0522,-122.1061C359.0522,-122.1061 359.0522,-140.991 359.0522,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="355.5523,-140.9909 359.0522,-150.991 362.5523,-140.991 355.5523,-140.9909"/>
+<path fill="none" stroke="#000000" d="M610,-122.1061C610,-141.3391 610,-169 610,-169 610,-169 426.1008,-169 426.1008,-169"/>
+<polygon fill="#000000" stroke="#000000" points="426.1008,-165.5001 416.1008,-169 426.1007,-172.5001 426.1008,-165.5001"/>
+</g>
+<!-- ModalComponent -->
+<g id="node2" class="node">
+<title>ModalComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="505.8823,-122 388.1177,-122 388.1177,-86 505.8823,-86 505.8823,-122"/>
+<text text-anchor="middle" x="447" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalComponent</text>
+</g>
+<!-- ModalComponent&#45;&gt;ModalModule -->
+<g id="edge2" class="edge">
+<title>ModalComponent&#45;&gt;ModalModule</title>
+<path fill="none" stroke="#000000" d="M402.0544,-122.1061C402.0544,-122.1061 402.0544,-140.991 402.0544,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="398.5544,-140.9909 402.0544,-150.991 405.5544,-140.991 398.5544,-140.9909"/>
+</g>
+<!-- ModalContentComponent -->
+<g id="node3" class="node">
+<title>ModalContentComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="370.2147,-122 207.7853,-122 207.7853,-86 370.2147,-86 370.2147,-122"/>
+<text text-anchor="middle" x="289" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalContentComponent</text>
+</g>
+<!-- ModalContentComponent&#45;&gt;ModalModule -->
+<g id="edge3" class="edge">
+<title>ModalContentComponent&#45;&gt;ModalModule</title>
+<path fill="none" stroke="#000000" d="M345.0288,-122.1061C345.0288,-122.1061 345.0288,-140.991 345.0288,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="341.5288,-140.9909 345.0288,-150.991 348.5288,-140.991 341.5288,-140.9909"/>
 </g>
 <!-- ModalWindowComponent -->
 <g id="node4" class="node">
@@ -83,20 +83,20 @@
 <!-- ModalWindowComponent&#45;&gt;ModalModule -->
 <g id="edge4" class="edge">
 <title>ModalWindowComponent&#45;&gt;ModalModule</title>
-<path fill="none" stroke="#000000" d="M107,-122.1061C107,-141.3391 107,-169 107,-169 107,-169 327.7204,-169 327.7204,-169"/>
-<polygon fill="#000000" stroke="#000000" points="327.7205,-172.5001 337.7204,-169 327.7204,-165.5001 327.7205,-172.5001"/>
+<path fill="none" stroke="#000000" d="M107,-122.1061C107,-141.3391 107,-169 107,-169 107,-169 309.8244,-169 309.8244,-169"/>
+<polygon fill="#000000" stroke="#000000" points="309.8244,-172.5001 319.8244,-169 309.8244,-165.5001 309.8244,-172.5001"/>
 </g>
 <!-- ModalBackdropComponent  -->
 <g id="node6" class="node">
 <title>ModalBackdropComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="473.8087,-252 298.1913,-252 298.1913,-216 473.8087,-216 473.8087,-252"/>
-<text text-anchor="middle" x="386" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalBackdropComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="455.8087,-252 280.1913,-252 280.1913,-216 455.8087,-216 455.8087,-252"/>
+<text text-anchor="middle" x="368" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">ModalBackdropComponent </text>
 </g>
 <!-- ModalModule&#45;&gt;ModalBackdropComponent  -->
 <g id="edge5" class="edge">
 <title>ModalModule&#45;&gt;ModalBackdropComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M386,-187.1061C386,-187.1061 386,-205.991 386,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="382.5001,-205.9909 386,-215.991 389.5001,-205.991 382.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M368,-187.1061C368,-187.1061 368,-205.991 368,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="364.5001,-205.9909 368,-215.991 371.5001,-205.991 364.5001,-205.9909"/>
 </g>
 </g>
 </svg>

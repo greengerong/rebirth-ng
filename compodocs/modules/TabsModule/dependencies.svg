@@ -32,107 +32,107 @@
 <title>cluster_TabsModule_exports</title>
 <polygon fill="none" stroke="#000000" points="16,-208 16,-260 562,-260 562,-208 16,-208"/>
 </g>
-<!-- TabsComponent -->
+<!-- TabComponent -->
 <g id="node1" class="node">
-<title>TabsComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="548.0452,-122 439.9548,-122 439.9548,-86 548.0452,-86 548.0452,-122"/>
-<text text-anchor="middle" x="494" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsComponent</text>
+<title>TabComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="547.5996,-122 444.4004,-122 444.4004,-86 547.5996,-86 547.5996,-122"/>
+<text text-anchor="middle" x="496" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabComponent</text>
 </g>
 <!-- TabsModule -->
 <g id="node5" class="node">
 <title>TabsModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="288.2619,-187 285.2619,-191 264.2619,-191 261.2619,-187 201.7381,-187 201.7381,-151 288.2619,-151 288.2619,-187"/>
-<text text-anchor="middle" x="245" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsModule</text>
-</g>
-<!-- TabsComponent&#45;&gt;TabsModule -->
-<g id="edge1" class="edge">
-<title>TabsComponent&#45;&gt;TabsModule</title>
-<path fill="none" stroke="#000000" d="M512.8407,-122.2667C512.8407,-140.5552 512.8407,-166 512.8407,-166 512.8407,-166 298.3309,-166 298.3309,-166"/>
-<polygon fill="#000000" stroke="#000000" points="298.331,-162.5001 288.3309,-166 298.3309,-169.5001 298.331,-162.5001"/>
-</g>
-<!-- TabComponent -->
-<g id="node2" class="node">
-<title>TabComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="421.5996,-122 318.4004,-122 318.4004,-86 421.5996,-86 421.5996,-122"/>
-<text text-anchor="middle" x="370" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabComponent</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="262.2619,-187 259.2619,-191 238.2619,-191 235.2619,-187 175.7381,-187 175.7381,-151 262.2619,-151 262.2619,-187"/>
+<text text-anchor="middle" x="219" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsModule</text>
 </g>
 <!-- TabComponent&#45;&gt;TabsModule -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>TabComponent&#45;&gt;TabsModule</title>
-<path fill="none" stroke="#000000" d="M387.1833,-122.0091C387.1833,-138.0494 387.1833,-159 387.1833,-159 387.1833,-159 298.4322,-159 298.4322,-159"/>
-<polygon fill="#000000" stroke="#000000" points="298.4323,-155.5001 288.4322,-159 298.4322,-162.5001 298.4323,-155.5001"/>
+<path fill="none" stroke="#000000" d="M514.2666,-122.2667C514.2666,-140.5552 514.2666,-166 514.2666,-166 514.2666,-166 272.5676,-166 272.5676,-166"/>
+<polygon fill="#000000" stroke="#000000" points="272.5676,-162.5001 262.5676,-166 272.5676,-169.5001 272.5676,-162.5001"/>
+</g>
+<!-- TabContentDirective -->
+<g id="node2" class="node">
+<title>TabContentDirective</title>
+<polygon fill="#ffffb3" stroke="#000000" points="426.1825,-122 291.8175,-122 291.8175,-86 426.1825,-86 426.1825,-122"/>
+<text text-anchor="middle" x="359" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabContentDirective</text>
+</g>
+<!-- TabContentDirective&#45;&gt;TabsModule -->
+<g id="edge2" class="edge">
+<title>TabContentDirective&#45;&gt;TabsModule</title>
+<path fill="none" stroke="#000000" d="M381.4471,-122.0091C381.4471,-138.0494 381.4471,-159 381.4471,-159 381.4471,-159 272.5328,-159 272.5328,-159"/>
+<polygon fill="#000000" stroke="#000000" points="272.5329,-155.5001 262.5328,-159 272.5328,-162.5001 272.5329,-155.5001"/>
 </g>
 <!-- TabTitleDirective -->
 <g id="node3" class="node">
 <title>TabTitleDirective</title>
-<polygon fill="#ffffb3" stroke="#000000" points="300.2894,-122 183.7106,-122 183.7106,-86 300.2894,-86 300.2894,-122"/>
-<text text-anchor="middle" x="242" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabTitleDirective</text>
+<polygon fill="#ffffb3" stroke="#000000" points="274.2894,-122 157.7106,-122 157.7106,-86 274.2894,-86 274.2894,-122"/>
+<text text-anchor="middle" x="216" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabTitleDirective</text>
 </g>
 <!-- TabTitleDirective&#45;&gt;TabsModule -->
 <g id="edge3" class="edge">
 <title>TabTitleDirective&#45;&gt;TabsModule</title>
-<path fill="none" stroke="#000000" d="M245,-122.1061C245,-122.1061 245,-140.991 245,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="241.5001,-140.9909 245,-150.991 248.5001,-140.991 241.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M219,-122.1061C219,-122.1061 219,-140.991 219,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="215.5001,-140.9909 219,-150.991 222.5001,-140.991 215.5001,-140.9909"/>
 </g>
-<!-- TabContentDirective -->
+<!-- TabsComponent -->
 <g id="node4" class="node">
-<title>TabContentDirective</title>
-<polygon fill="#ffffb3" stroke="#000000" points="166.1825,-122 31.8175,-122 31.8175,-86 166.1825,-86 166.1825,-122"/>
-<text text-anchor="middle" x="99" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabContentDirective</text>
+<title>TabsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="140.0452,-122 31.9548,-122 31.9548,-86 140.0452,-86 140.0452,-122"/>
+<text text-anchor="middle" x="86" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsComponent</text>
 </g>
-<!-- TabContentDirective&#45;&gt;TabsModule -->
+<!-- TabsComponent&#45;&gt;TabsModule -->
 <g id="edge4" class="edge">
-<title>TabContentDirective&#45;&gt;TabsModule</title>
-<path fill="none" stroke="#000000" d="M118.5304,-122.0225C118.5304,-139.3734 118.5304,-163 118.5304,-163 118.5304,-163 191.4763,-163 191.4763,-163"/>
-<polygon fill="#000000" stroke="#000000" points="191.4764,-166.5001 201.4763,-163 191.4763,-159.5001 191.4764,-166.5001"/>
-</g>
-<!-- TabsComponent  -->
-<g id="node6" class="node">
-<title>TabsComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="554.0442,-252 441.9558,-252 441.9558,-216 554.0442,-216 554.0442,-252"/>
-<text text-anchor="middle" x="498" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsComponent </text>
-</g>
-<!-- TabsModule&#45;&gt;TabsComponent  -->
-<g id="edge5" class="edge">
-<title>TabsModule&#45;&gt;TabsComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M288.4418,-173C355.7095,-173 477.4093,-173 477.4093,-173 477.4093,-173 477.4093,-205.698 477.4093,-205.698"/>
-<polygon fill="#000000" stroke="#000000" points="473.9094,-205.698 477.4093,-215.698 480.9094,-205.698 473.9094,-205.698"/>
+<title>TabsComponent&#45;&gt;TabsModule</title>
+<path fill="none" stroke="#000000" d="M101.2574,-122.0225C101.2574,-139.3734 101.2574,-163 101.2574,-163 101.2574,-163 165.4915,-163 165.4915,-163"/>
+<polygon fill="#000000" stroke="#000000" points="165.4915,-166.5001 175.4915,-163 165.4915,-159.5001 165.4915,-166.5001"/>
 </g>
 <!-- TabComponent  -->
-<g id="node7" class="node">
+<g id="node6" class="node">
 <title>TabComponent </title>
-<polygon fill="#fb8072" stroke="#000000" points="424.1003,-252 317.8997,-252 317.8997,-216 424.1003,-216 424.1003,-252"/>
-<text text-anchor="middle" x="371" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabComponent </text>
+<polygon fill="#fb8072" stroke="#000000" points="554.1003,-252 447.8997,-252 447.8997,-216 554.1003,-216 554.1003,-252"/>
+<text text-anchor="middle" x="501" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabComponent </text>
 </g>
 <!-- TabsModule&#45;&gt;TabComponent  -->
-<g id="edge6" class="edge">
+<g id="edge5" class="edge">
 <title>TabsModule&#45;&gt;TabComponent </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M288.5424,-180C318.4655,-180 352.8167,-180 352.8167,-180 352.8167,-180 352.8167,-205.7181 352.8167,-205.7181"/>
-<polygon fill="#000000" stroke="#000000" points="349.3168,-205.718 352.8167,-215.7181 356.3168,-205.7181 349.3168,-205.718"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M262.5553,-173C337.0514,-173 480.9834,-173 480.9834,-173 480.9834,-173 480.9834,-205.698 480.9834,-205.698"/>
+<polygon fill="#000000" stroke="#000000" points="477.4835,-205.698 480.9834,-215.698 484.4835,-205.698 477.4835,-205.698"/>
+</g>
+<!-- TabContentDirective  -->
+<g id="node7" class="node">
+<title>TabContentDirective </title>
+<polygon fill="#fb8072" stroke="#000000" points="429.6828,-252 292.3172,-252 292.3172,-216 429.6828,-216 429.6828,-252"/>
+<text text-anchor="middle" x="361" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabContentDirective </text>
+</g>
+<!-- TabsModule&#45;&gt;TabContentDirective  -->
+<g id="edge6" class="edge">
+<title>TabsModule&#45;&gt;TabContentDirective </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M262.5308,-180C296.0884,-180 336.8029,-180 336.8029,-180 336.8029,-180 336.8029,-205.7181 336.8029,-205.7181"/>
+<polygon fill="#000000" stroke="#000000" points="333.303,-205.718 336.8029,-215.7181 340.303,-205.7181 333.303,-205.718"/>
 </g>
 <!-- TabTitleDirective  -->
 <g id="node8" class="node">
 <title>TabTitleDirective </title>
-<polygon fill="#fb8072" stroke="#000000" points="299.7892,-252 180.2108,-252 180.2108,-216 299.7892,-216 299.7892,-252"/>
-<text text-anchor="middle" x="240" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabTitleDirective </text>
+<polygon fill="#fb8072" stroke="#000000" points="273.7892,-252 154.2108,-252 154.2108,-216 273.7892,-216 273.7892,-252"/>
+<text text-anchor="middle" x="214" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabTitleDirective </text>
 </g>
 <!-- TabsModule&#45;&gt;TabTitleDirective  -->
 <g id="edge7" class="edge">
 <title>TabsModule&#45;&gt;TabTitleDirective </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M245,-187.1061C245,-187.1061 245,-205.991 245,-205.991"/>
-<polygon fill="#000000" stroke="#000000" points="241.5001,-205.9909 245,-215.991 248.5001,-205.991 241.5001,-205.9909"/>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M219,-187.1061C219,-187.1061 219,-205.991 219,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="215.5001,-205.9909 219,-215.991 222.5001,-205.991 215.5001,-205.9909"/>
 </g>
-<!-- TabContentDirective  -->
+<!-- TabsComponent  -->
 <g id="node9" class="node">
-<title>TabContentDirective </title>
-<polygon fill="#fb8072" stroke="#000000" points="161.6828,-252 24.3172,-252 24.3172,-216 161.6828,-216 161.6828,-252"/>
-<text text-anchor="middle" x="93" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabContentDirective </text>
+<title>TabsComponent </title>
+<polygon fill="#fb8072" stroke="#000000" points="136.0442,-252 23.9558,-252 23.9558,-216 136.0442,-216 136.0442,-252"/>
+<text text-anchor="middle" x="80" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">TabsComponent </text>
 </g>
-<!-- TabsModule&#45;&gt;TabContentDirective  -->
+<!-- TabsModule&#45;&gt;TabsComponent  -->
 <g id="edge8" class="edge">
-<title>TabsModule&#45;&gt;TabContentDirective </title>
-<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M201.7179,-175C151.4162,-175 75.2196,-175 75.2196,-175 75.2196,-175 75.2196,-205.9775 75.2196,-205.9775"/>
-<polygon fill="#000000" stroke="#000000" points="71.7197,-205.9774 75.2196,-215.9775 78.7197,-205.9775 71.7197,-205.9774"/>
+<title>TabsModule&#45;&gt;TabsComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="5,2" d="M175.7054,-175C130.6176,-175 66.4926,-175 66.4926,-175 66.4926,-175 66.4926,-205.9775 66.4926,-205.9775"/>
+<polygon fill="#000000" stroke="#000000" points="62.9927,-205.9774 66.4926,-215.9775 69.9927,-205.9775 62.9927,-205.9774"/>
 </g>
 </g>
 </svg>
