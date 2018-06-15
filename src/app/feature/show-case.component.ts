@@ -3,8 +3,7 @@ import { DemoConfigService } from '../shared/demo/demo-config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DocumentRef } from '../exports';
-import * as hljs from 'highlight.js';
-import { Renderer3 } from '@angular/core/src/render3/interfaces/renderer';
+import { fixTSModuleImport, highlightCodeBlock } from '../shared/doc/hightlight';
 
 @Component({
   selector: 're-show-case',
@@ -27,24 +26,15 @@ export class ShowcaseComponent implements OnInit {
         return cmp.name === params.name;
       })
         .map((cmp) => {
+          cmp.html = highlightCodeBlock(this.renderer, cmp.html);
+          cmp.ts = highlightCodeBlock(this.renderer, fixTSModuleImport(cmp.ts));
           cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);
-          cmp.ts = this.fixTSModuleImport(cmp.ts);
+          const dataJson = cmp.data ? JSON.stringify(cmp.data, null, 2) : '';
+          cmp.data = highlightCodeBlock(this.renderer, dataJson);
           return cmp;
         });
     });
 
 
   }
-
-  private highlightBlock(code) {
-    const elm = this.renderer.createElement('div');
-    this.renderer.setProperty(elm,'innerHTML',code);
-    hljs.highlightBlock(html.last.nativeElement);
-  }
-
-  private fixTSModuleImport(code): string {
-    return (code || '').replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
-  }
-
-
 }
