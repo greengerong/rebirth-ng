@@ -1,12 +1,4 @@
-import {
-  Component,
-  Input,
-  AfterViewInit,
-  ElementRef,
-  ViewChildren,
-  QueryList, OnInit
-} from '@angular/core';
-import * as hljs from 'highlight.js';
+import { Component, Input, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -14,12 +6,9 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   templateUrl: './doc.component.html',
   styleUrls: ['./doc.component.scss']
 })
-export class DocComponent implements AfterViewInit, OnInit {
+export class DocComponent implements OnInit {
 
 
-  @ViewChildren('html') html: QueryList<ElementRef>;
-  @ViewChildren('typescript') typescript: QueryList<ElementRef>;
-  @ViewChildren('data') data: QueryList<ElementRef>;
   apiHref: string | SafeUrl;
   @Input() component: any;
 
@@ -31,34 +20,4 @@ export class DocComponent implements AfterViewInit, OnInit {
     const url = `/rebirth-ng/compodocs/modules/${this.component.name}Module.html`;
     this.apiHref = this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
-
-  activeTabChange(id) {
-    if (id === 'html') {
-      setTimeout(() => {
-        hljs.highlightBlock(this.html.last.nativeElement);
-      }, 0);
-    }
-  }
-
-  ngAfterViewInit(): void {
-    this.html.changes.subscribe((html) => {
-      if (html.last) {
-        hljs.highlightBlock(html.last.nativeElement);
-      }
-    });
-
-    this.typescript.changes.subscribe((typescript) => {
-      if (typescript.last) {
-        hljs.highlightBlock(typescript.last.nativeElement);
-      }
-    });
-
-
-    this.data.changes.subscribe((data) => {
-      if (data.last) {
-        hljs.highlightBlock(data.last.nativeElement);
-      }
-    });
-  }
-
 }

@@ -10,25 +10,25 @@
   </h2>
   <re-doc-content [component]="component.cmp"></re-doc-content>
   <hr/>
-  <re-tabs class="code-tabs" (activeTabChange)="activeTabChange($event)">
+  <re-tabs class="code-tabs">
     <re-tab id="html" title="HTML">
       <ng-template reTabContent>
         <div class="html" #html>
-          <pre>{{component.html}}</pre>
+          <pre [innerHTML]="component.html"></pre>
         </div>
       </ng-template>
     </re-tab>
     <re-tab id="ts" title="TypeScript">
       <ng-template reTabContent>
         <div class="typescript" #typescript>
-          <pre>{{component.ts}}</pre>
+          <pre [innerHTML]="component.ts"></pre>
         </div>
       </ng-template>
     </re-tab>
     <re-tab id="data" title="Data" *ngIf="component.data">
       <ng-template reTabContent>
         <div class="data" #data>
-          <pre>{{component.data}}</pre>
+          <pre [innerHTML]="component.data"></pre>
         </div>
       </ng-template>
     </re-tab>

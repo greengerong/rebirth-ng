@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { DemoConfigService } from '../shared/demo/demo-config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { DocumentRef } from '../exports';
+import { fixTSModuleImport, highlightCodeBlock } from '../shared/doc/hightlight';
 
 @Component({
   selector: 're-show-case',
@@ -14,7 +15,8 @@ export class ShowcaseComponent implements OnInit {
   constructor(private demoConfigService: DemoConfigService,
               private domSanitizer: DomSanitizer,
               private documentRef: DocumentRef,
-              private activatedRoute: ActivatedRoute) {
+              private activatedRoute: ActivatedRoute,
+              private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -24,19 +26,15 @@ export class ShowcaseComponent implements OnInit {
         return cmp.name === params.name;
       })
         .map((cmp) => {
+          cmp.html = highlightCodeBlock(this.renderer, cmp.html);
+          cmp.ts = highlightCodeBlock(this.renderer, fixTSModuleImport(cmp.ts));
           cmp.readMe = this.domSanitizer.bypassSecurityTrustHtml(cmp.readMe);
-          cmp.ts = this.fixTSModuleImport(cmp.ts);
+          const dataJson = cmp.data ? JSON.stringify(cmp.data, null, 2) : '';
+          cmp.data = highlightCodeBlock(this.renderer, dataJson);
           return cmp;
         });
     });
 
 
   }
-
-
-  private fixTSModuleImport(code): string {
-    return (code || '').replace(/\.\.\/\.\.\/exports(\/.*)?/, 'rebirth-ng');
-  }
-
-
 }
