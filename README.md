@@ -72,11 +72,11 @@
 
 ## Tasks
 
-- Pagination with select for page size
+- [x] Pagination with select for page size
 
-- re-modal-backdrop refactor to common use, not only for modal.
+- [x] re-modal-backdrop refactor to common use, not only for modal.
 
-- refactor dropdown to service
+- [x] refactor dropdown to service
 
 
 
