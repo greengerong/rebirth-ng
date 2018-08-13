@@ -1,0 +1,6 @@
+<div class="tooltip-arrow"></div>
+<div class="tooltip-inner" *ngIf="content">
+  <span *ngIf="!isTemplateRef(content)" [innerHTML]="content"></span>
+  <ng-template *ngIf="isTemplateRef(content)" [ngTemplateOutlet]="content"
+               [ngTemplateOutletContext]="{ $implicit: context }"></ng-template>
+</div>

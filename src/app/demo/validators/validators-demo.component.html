@@ -8,9 +8,9 @@
                [(ngModel)]="model['firstNameWithRequired']" reRequiredWithTrim
                #firstNameWithRequired="ngModel"/>
 
-        <span *ngIf="firstNameWithRequired.errors &&  firstNameWithRequired.touched" type="danger">
+        <re-alert-box *ngIf="firstNameWithRequired.errors &&  firstNameWithRequired.touched" type="danger">
           <div *ngIf="firstNameWithRequired?.errors.requiredWithTrim">First name should be not empty.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -22,9 +22,9 @@
         <input type="text" id="firstName" name="name" class="form-control" [(ngModel)]="model['firstName']"
                [reRangeLength]="[5,10]" #firstName="ngModel"/>
 
-        <span *ngIf="firstName.errors &&  firstName.touched" type="danger">
+        <re-alert-box *ngIf="firstName.errors &&  firstName.touched" type="danger">
           <div *ngIf="firstName?.errors.reRangeLength">Length of first name should range between 5 and 10.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -36,10 +36,10 @@
         <input type="number" id="age" name="age" class="form-control" [(ngModel)]="model['age']"
                [reMin]="18" [reMax]="100" #age="ngModel"/>
 
-        <span *ngIf="age.errors &&  age.touched" type="danger">
+        <re-alert-box *ngIf="age.errors &&  age.touched" type="danger">
           <div *ngIf="age?.errors.reMin">Age should greater than 18.</div>
           <div *ngIf="age?.errors.reMax">Age should less than 100.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -52,9 +52,9 @@
         <input type="number" id="age2" name="age2" class="form-control" [(ngModel)]="model['age2']"
                [reRange]="[18,100]" #age2="ngModel"/>
 
-        <span *ngIf="age2.errors &&  age2.touched" type="danger">
+        <re-alert-box *ngIf="age2.errors &&  age2.touched" type="danger">
           <div *ngIf="age2.errors.reRange">Age should between 18 and 100.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -67,9 +67,9 @@
         <input type="text" id="orderNumber" name="orderNumber" class="form-control" [(ngModel)]="model['orderNumber']"
                reDigits #orderNumber="ngModel"/>
 
-        <span *ngIf="orderNumber.errors &&  orderNumber.touched" type="danger">
+        <re-alert-box *ngIf="orderNumber.errors &&  orderNumber.touched" type="danger">
           <div *ngIf="orderNumber.errors.reDigits">Order number should be digits.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -82,9 +82,9 @@
         <input type="text" id="amount" name="amount" class="form-control" [(ngModel)]="model['amount']"
                reNumber #amount="ngModel"/>
 
-        <span *ngIf="amount.errors &&  amount.touched" type="danger">
+        <re-alert-box *ngIf="amount.errors &&  amount.touched" type="danger">
           <div *ngIf="amount.errors.reNumber">Amount should be number.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -97,9 +97,9 @@
         <input type="text" id="url" name="url" class="form-control" [(ngModel)]="model['url']"
                reUrl #url="ngModel"/>
 
-        <span *ngIf="url.errors &&  url.touched" type="danger">
+        <re-alert-box *ngIf="url.errors &&  url.touched" type="danger">
           <div *ngIf="url?.errors.reUrl">It is a invalid url.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -112,9 +112,9 @@
         <input type="text" id="email" name="email" class="form-control" [(ngModel)]="model['email']"
                reEmail #email="ngModel"/>
 
-        <span *ngIf="email.errors &&  email.touched" type="danger">
+        <re-alert-box *ngIf="email.errors &&  email.touched" type="danger">
           <div *ngIf="email?.errors.reEmail">It is a invalid email.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -127,9 +127,9 @@
         <input type="text" id="Date" name="Date" class="form-control" [(ngModel)]="model['date']"
                reDate #date="ngModel"/>
 
-        <span *ngIf="date.errors &&  date.touched" type="danger">
+        <re-alert-box *ngIf="date.errors &&  date.touched" type="danger">
           <div *ngIf="date?.errors.reDate">It is a invalid date.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -142,9 +142,9 @@
         <input type="text" id="isoDate" name="isoDate" class="form-control" [(ngModel)]="model['isoDate']"
                reDateISO #isoDate="ngModel"/>
 
-        <span *ngIf="isoDate.errors &&  isoDate.touched" type="danger">
+        <re-alert-box *ngIf="isoDate.errors &&  isoDate.touched" type="danger">
           <div *ngIf="isoDate?.errors.reDateISO">It is a invalid ISO date.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -157,9 +157,9 @@
         <textarea id="json" name="json" class="form-control" [(ngModel)]="model['json']"
                   reJson #json="ngModel"></textarea>
 
-        <span *ngIf="json.errors &&  json.touched" type="danger">
+        <re-alert-box *ngIf="json.errors &&  json.touched" type="danger">
           <div *ngIf="json?.errors.reJson">It is a invalid json.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -173,9 +173,9 @@
         <textarea id="base64" name="base64" class="form-control" [(ngModel)]="model['base64']"
                   reBase64 #base64="ngModel"></textarea>
 
-        <span *ngIf="base64.errors &&  base64.touched" type="danger">
+        <re-alert-box *ngIf="base64.errors &&  base64.touched" type="danger">
           <div *ngIf="base64?.errors.reBase64">It is a invalid base64 encoding.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -188,9 +188,9 @@
         <input id="phone" type="tel" name="phone" class="form-control" [(ngModel)]="model['phone']"
                rePhone="zh-CN" #phone="ngModel"/>
 
-        <span *ngIf="phone.errors &&  phone.touched" type="danger">
+        <re-alert-box *ngIf="phone.errors &&  phone.touched" type="danger">
           <div *ngIf="phone?.errors.rePhone">It is a invalid phone number.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -203,9 +203,9 @@
         <input id="uuid" type="text" name="uuid" class="form-control" [(ngModel)]="model['uuid']"
                reUUID #uuid="ngModel"/>
 
-        <span *ngIf="uuid.errors &&  uuid.touched" type="danger">
+        <re-alert-box *ngIf="uuid.errors &&  uuid.touched" type="danger">
           <div *ngIf="uuid?.errors.reUUID">It is a invalid uuid.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -218,9 +218,9 @@
         <input id="equal10" type="text" name="equal10" class="form-control" [(ngModel)]="model['equal10']"
                reEqual="10" #equal10="ngModel"/>
 
-        <span *ngIf="equal10.errors &&  equal10.touched" type="danger">
+        <re-alert-box *ngIf="equal10.errors &&  equal10.touched" type="danger">
           <div *ngIf="equal10?.errors.reEqual">The number should equal 10.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -233,9 +233,9 @@
         <input id="includes" type="text" name="includes" class="form-control" [(ngModel)]="model['includes']"
                [reIncludes]="['greengerong', 'polang']" #includes="ngModel"/>
 
-        <span *ngIf="includes.errors &&  includes.touched" type="danger">
+        <re-alert-box *ngIf="includes.errors &&  includes.touched" type="danger">
           <div *ngIf="includes?.errors.reIncludes">The name should includes in ['greengerong', 'polang'].</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -252,9 +252,9 @@
         <input id="confirm" type="password" name="confirm" class="form-control" [(ngModel)]="model['confirm']"
                reEqualTo="pwd" #confirm="ngModel"/>
 
-        <span *ngIf="confirm.errors &&  confirm.touched" type="danger">
+        <re-alert-box *ngIf="confirm.errors &&  confirm.touched" type="danger">
           <div *ngIf="confirm?.errors.reEqualTo">It should equal to password.</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -267,9 +267,9 @@
         <input id="beforeToday" type="date" name="beforeToday" class="form-control" [(ngModel)]="model['beforeToday']"
                reBeforeDate="" #reBeforeDate="ngModel"/>
 
-        <span *ngIf="reBeforeDate.errors && reBeforeDate.touched" type="danger">
+        <re-alert-box *ngIf="reBeforeDate.errors && reBeforeDate.touched" type="danger">
           <div *ngIf="reBeforeDate?.errors.reBeforeDate">It should before today.</div>
-        </span>
+        </re-alert-box>
       </div>
 
       <div class="form-group">
@@ -277,9 +277,9 @@
         <input id="beforeDate" type="date" name="beforeDate" class="form-control" [(ngModel)]="model['beforeDate']"
                reBeforeDate="2017-05-01" #beforeDate="ngModel"/>
 
-        <span *ngIf="beforeDate.errors && beforeDate.touched" type="danger">
+        <re-alert-box *ngIf="beforeDate.errors && beforeDate.touched" type="danger">
           <div *ngIf="beforeDate?.errors.reBeforeDate">It should before 2017-05-01</div>
-        </span>
+        </re-alert-box>
       </div>
 
       <div class="form-group">
@@ -287,9 +287,9 @@
         <input type="date" name="beforeDate1" class="form-control" [(ngModel)]="model['beforeDate1']"
                [reBeforeDate]="model['date']" #beforeDate1="ngModel"/>
 
-        <span *ngIf="beforeDate1.errors && beforeDate1.touched" type="danger">
+        <re-alert-box *ngIf="beforeDate1.errors && beforeDate1.touched" type="danger">
           <div *ngIf="beforeDate1?.errors.reBeforeDate">It should before {{model['date']| date}}</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>
@@ -302,9 +302,9 @@
         <input id="afterToday" type="date" name="afterToday" class="form-control" [(ngModel)]="model['afterToday']"
                [reAfterDate]="today" #reAfterDate="ngModel"/>
 
-        <span *ngIf="reAfterDate.errors &&  reAfterDate.touched" type="danger">
+        <re-alert-box *ngIf="reAfterDate.errors &&  reAfterDate.touched" type="danger">
           <div *ngIf="reAfterDate?.errors.reAfterDate">It should after today.</div>
-        </span>
+        </re-alert-box>
       </div>
 
       <div class="form-group">
@@ -312,9 +312,9 @@
         <input id="afterDate" type="date" name="afterDate" class="form-control" [(ngModel)]="model['afterDate']"
                reAfterDate="2017-05-01" #afterDate="ngModel"/>
 
-        <span *ngIf="afterDate.errors &&  afterDate.touched" type="danger">
+        <re-alert-box *ngIf="afterDate.errors &&  afterDate.touched" type="danger">
           <div *ngIf="afterDate?.errors.reAfterDate">It should after 2017-05-01</div>
-        </span>
+        </re-alert-box>
       </div>
 
       <div class="form-group">
@@ -322,9 +322,9 @@
         <input type="date" name="afterDate1" class="form-control" [(ngModel)]="model['afterDate1']"
                [reAfterDate]="model['date']" #afterDate1="ngModel"/>
 
-        <span *ngIf="afterDate1.errors &&  afterDate1.touched" type="danger">
+        <re-alert-box *ngIf="afterDate1.errors &&  afterDate1.touched" type="danger">
           <div *ngIf="afterDate1?.errors.reAfterDate">It should after {{model['date']| date}}</div>
-        </span>
+        </re-alert-box>
       </div>
     </form>
   </section>

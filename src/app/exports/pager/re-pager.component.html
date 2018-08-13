@@ -1,0 +1,8 @@
+<nav aria-label="pager" class="{{cssClass}}">
+  <ul class="pager">
+    <li [ngClass]="{'previous': aligned, 'disabled': disable && !hasPrev()}" *ngIf="disable || hasPrev()">
+      <a (click)="prev()">{{ previousText}}</a></li>
+    <li [ngClass]="{'next': aligned, 'disabled': disable && !hasNext()}" *ngIf="disable || hasNext()">
+      <a (click)="next()">{{ nextText}}</a></li>
+  </ul>
+</nav>

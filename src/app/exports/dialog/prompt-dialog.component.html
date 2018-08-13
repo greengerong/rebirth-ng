@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="no()">
+    <span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">{{context.title}}</h4>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" novalidate>
+    <div class="form-group"
+         [class.has-error]="form.controls.promptValue.touched && form.controls.promptValue.invalid">
+      <label for="promptValue" class="control-label">{{content?.label}}</label>
+      <ng-template [ngTemplateOutlet]="content.template || defaultTemplate"
+                   [ngTemplateOutletContext]="{ $implicit: this, option: context, formGroup:form }"></ng-template>
+
+      <ng-container *ngIf="form.controls.promptValue.touched">
+        <div class="help-block" *ngFor="let key of getFieldErrors(form.controls.promptValue)">
+          {{validators[key]?.message}}
+        </div>
+      </ng-container>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="form.untouched || form.invalid" class="btn btn-{{btnYesType}}" (click)="yes()">
+    {{context.yes ||btnYes}}
+  </button>
+  <button type="button" class="btn btn-{{btnNoType}}" (click)="no()">{{context.no || btnNo}}</button>
+</div>
+<ng-template #defaultTemplate let-option="option" let-formGroup="formGroup">
+  <input type="text" class="form-control" id="promptValue" name="promptValue"
+         [formControl]="formGroup.controls.promptValue"
+         [placeholder]="option.content?.placeholder">
+</ng-template>

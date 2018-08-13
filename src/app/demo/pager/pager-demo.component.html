@@ -1,0 +1,19 @@
+<div class="pager-demo">
+  <section>
+    <h4>aligned pager:</h4>
+    <re-pager [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex"
+              (pageIndexChange)="pageChange($event)"></re-pager>
+
+  </section>
+
+  <section>
+    <h4>No aligned pager:</h4>
+    <re-pager [total]="pager.total" [pageSize]="pager.pageSize" [(pageIndex)]="pager.pageIndex" [aligned]="false"
+              [disable]="true" previousText="&larr; Older" nextText="Newer &rarr;"></re-pager>
+
+  </section>
+
+  <div>
+    <pre>{{pager | json}}</pre>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="checkbox-group-demo">
+
+  <section>
+    <h4>Checkbox</h4>
+    <re-checkbox [(ngModel)]="checked" label="Agree"></re-checkbox>
+    <pre>{{checked | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Checkbox with customise value</h4>
+    <re-checkbox [(ngModel)]="yesno" label="Agree" checkedValue="YES" unCheckedValue="NO"></re-checkbox>
+    <pre>{{yesno | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Season string:</h4>
+    <re-checkbox-group [options]="seasonLabelOptions" [(ngModel)]="seasonLabel"></re-checkbox-group>
+    <pre>{{seasonLabel | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Season Object:</h4>
+    <re-checkbox-group [disabledItems]="[seasonOptions[0]]" [options]="seasonOptions"
+                       [(ngModel)]="season"></re-checkbox-group>
+    <pre>{{season | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Season value:</h4>
+
+
+    <re-checkbox-group #checkboxgroup [options]="seasonOptions" [(ngModel)]="seasonValue" [inline]="true"
+                       [valueParser]="valueParser"></re-checkbox-group>
+    <div class="button-panel">
+      <button class="btn btn-primary" (click)="selectAll(checkboxgroup, true)">Select All</button>
+      <button class="btn btn-info" (click)="selectAll(checkboxgroup, false)">Unselect All</button>
+      <button class="btn btn-success" (click)="invertAll(checkboxgroup)">Invert Select</button>
+    </div>
+
+    <hr>
+    <pre>{{seasonValue | json}}</pre>
+  </section>
+
+</div>

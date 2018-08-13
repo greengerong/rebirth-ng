@@ -1,0 +1,73 @@
+<div class="tooltip-demo">
+  <section>
+    <h4>Hover tooltip:</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip on left</button>
+      <button class="btn btn-success" reTooltip="I am a rebirth tooltip!">Tooltip on top</button>
+      <button class="btn btn-warning" reTooltip="I am a rebirth tooltip!" placement="bottom">Tooltip on bottom</button>
+      <button class="btn btn-danger" reTooltip="I am a rebirth tooltip!" placement="right">Tooltip on right</button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Click tooltip:</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="left">Tooltip
+        on left
+      </button>
+      <button class="btn btn-success" [trigger]="'click'" reTooltip="I am a rebirth tooltip!">Tooltip on top</button>
+      <button class="btn btn-warning" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="bottom">Tooltip
+        on bottom
+      </button>
+      <button class="btn btn-danger" [trigger]="'click'" reTooltip="I am a rebirth tooltip!" placement="right">Tooltip
+        on right
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Append to body tooltip:</h4>
+    <div class="button-panel">
+      <button class="btn btn-danger" [appendBody]="true" [trigger]="'click'" reTooltip="I am a rebirth tooltip!"
+              placement="right">Tooltip
+        on right
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Manual tooltip:</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" #tooltip="tooltip" [trigger]="'manual'"
+              [reTooltip]="'I am a rebirth tooltip! <a href='+github+'>' + github +'</a>.'">
+        Tooltip on top
+      </button>
+      <button class="btn btn-success" (click)="tooltip.show()">Show tooltip</button>
+      <button class="btn btn-warning" (click)="tooltip.hide()">Hide tooltip</button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Customise tooltip:</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" [reTooltip]="tipContent" [context]="'button1'">
+        Tooltip on top
+      </button>
+
+      <button class="btn btn-success" [reTooltip]="tipContent" [context]="'button2'">
+        Tooltip on top
+      </button>
+
+      <ng-template #tipContent let-context>
+        <h4>Setting</h4>
+        <div>
+          <p><strong>name</strong>: {{setting.name}}</p>
+          <p><strong>trigger</strong>: {{setting.trigger}}</p>
+          <p><strong>placement</strong>: {{setting.placement}}</p>
+          <p><strong>target</strong>: {{context}}</p>
+        </div>
+      </ng-template>
+    </div>
+  </section>
+
+</div>

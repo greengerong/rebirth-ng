@@ -1,0 +1,10 @@
+.preview-image {
+  width: 100%;
+}
+
+.modal-title .title-text{
+  max-width: 20em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

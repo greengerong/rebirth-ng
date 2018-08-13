@@ -1,0 +1,5 @@
+<div class="btn-group" role="group" *ngFor="let item of items">
+  <button type="button" class="btn btn-{{type}}" [ngClass]="{active: isSelected(item)}" [disabled]="disabled"
+          (click)="selectedItem(item)">{{item.text}}
+  </button>
+</div>

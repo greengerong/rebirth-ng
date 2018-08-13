@@ -1,0 +1,82 @@
+<div class="tree-view-demo">
+
+  <section>
+    <h4>Normal:</h4>
+    <re-tree-view [treeData]="treeData1" textField="name" valueFeild="id" [allowMutipleSelected]="false"></re-tree-view>
+  </section>
+
+  <section>
+    <h4>Checked:</h4>
+    <div class="button-panel">
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendAllNodes()">Expend All</button>
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByLevel(2)">Expend 2 level
+      </button>
+      <button type="button" class="btn btn-primary" (click)="checkedTreeView.expendNodesByValue('4')">Expend node(大家电)
+      </button>
+      <button type="button" class="btn btn-info" (click)="checkedTreeView.collapseAllNodes()">Collapse All</button>
+      <button type="button" class="btn btn-warning" (click)="checkedTreeView.checkAllNodes()">Chceck All</button>
+      <button type="button" class="btn btn-danger" (click)="checkedTreeView.unCheckAllNodes()">UnChceck All</button>
+    </div>
+    <hr>
+    <re-tree-view #checkedTreeView [checkable]="true" [treeData]="treeData2" textField="name" valueFeild="id"
+                  #treeView="treeView" [allowMutipleSelected]="true"></re-tree-view>
+  </section>
+
+  <section>
+    <h4>Toolbar:</h4>
+    <ng-template #toolbar let-node="">
+      <i class="glyphicon glyphicon-plus"></i> <i class="glyphicon glyphicon-remove"></i>
+    </ng-template>
+    <re-tree-view [treeData]="treeData3" textField="name" valueFeild="id" iconField="icon"
+                  [nodeItemToolbarTemplate]="toolbar"></re-tree-view>
+  </section>
+
+
+  <section>
+    <h4>Customise template:</h4>
+    <ng-template #nodeItemTemplate let-node="" let-parentNode="parentNode">
+      <span class="node-text">{{node.id}}: {{node.name}}</span>
+      <i class="glyphicon glyphicon-plus" (click)="addNode(node,parentNode)"></i>
+      <i class="glyphicon glyphicon-remove" (click)="removeNode(node,parentNode)"></i>
+    </ng-template>
+    <re-tree-view [treeData]="treeData4" textField="name" valueFeild="id"
+                  [nodeItemTemplate]="nodeItemTemplate"></re-tree-view>
+  </section>
+
+  <section>
+    <h4>Draggable:</h4>
+    <re-tree-view [treeData]="treeData5" textField="name" valueFeild="id" [allowDraggable]="true"></re-tree-view>
+  </section>
+
+  <section>
+    <h4>Lazyload:</h4>
+
+    <re-tree-view [treeData]="lazyLoadTreeData" textField="name" valueFeild="id" [lazyLoad]="true"
+                  [loadChildren]="loadChildren"
+                  leafIcon="glyphicon glyphicon-file" collapseIcon="glyphicon glyphicon-folder-close"
+                  expendIcon="glyphicon glyphicon-folder-open"></re-tree-view>
+  </section>
+
+
+  <section>
+    <h4>Big data:</h4>
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" id="amount" name="amount" [(ngModel)]="treeNodeCount">
+      </div>
+      <div class="form-group">
+        <re-checkbox name="largeTreeCheckable" [(ngModel)]="largeTreeCheckable" label="Checkable"></re-checkbox>
+      </div>
+      <div class="button-panel">
+        <button type="button" class="btn btn-primary" (click)="generateTreeData()">Generate</button>
+        <button type="button" class="btn btn-warning" (click)="clearGenerateTreeData()">Clear</button>
+      </div>
+    </form>
+    <hr>
+
+    <re-tree-view [treeData]="largeNodes" textField="name" valueFeild="id"
+                  [checkable]="largeTreeCheckable"></re-tree-view>
+  </section>
+
+</div>

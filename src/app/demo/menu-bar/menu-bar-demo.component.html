@@ -12,8 +12,9 @@
       <button class="btn btn-info" (click)="messages= messages + 1">New message coming!</button>
       <hr>
       <ng-template #volumeTemplate let-menu="menu">
-        <a>
-          <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}
+        <a> <i *ngIf="menu.icon" class="menu-icon {{menu.icon}}"></i>&nbsp;{{menu.text}}
+          <re-badge [ngStyle]="{'margin-top': '-1rem', 'margin-left':'-2px', 'background':'#E85656'}"
+                    [text]="messages"></re-badge>
         </a>
       </ng-template>
       <re-menu-bar #menu="menuBar" [menuOptions]="menus" [type]="type"></re-menu-bar>

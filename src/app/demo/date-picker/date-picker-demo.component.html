@@ -1,0 +1,48 @@
+<div class="date-picker-demo">
+  <section>
+    <h4>Date picker popup</h4>
+    <re-date-picker-popup [(ngModel)]="selectedDate1" [showTimePicker]="true">
+    </re-date-picker-popup>
+    <pre>{{(selectedDate1 | date : 'yyyy-MM-dd HH:mm') || 'No date select!'}}</pre>
+  </section>
+
+  <section>
+    <h4>Date picker with input</h4>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" placeholder="yyyy-MM-dd"
+                 name="dp" [(ngModel)]="selectedDate2" reDatePicker #datePicker1="datePicker">
+          <div class="input-group-addon" (click)="datePicker1.toggle($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </div>
+        </div>
+      </div>
+      <pre>{{(selectedDate2 | date : 'yyyy-MM-dd HH:mm') || 'No date select!'}}</pre>
+    </form>
+  </section>
+
+  <section>
+    <h4>Date picker with input with time picker </h4>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label>Date format</label>
+        <select name="dateFormat" class="form-control" [(ngModel)]="dateFormat">
+          <option *ngFor="let item of dateFormatOptions" [ngValue]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <input class="form-control" [placeholder]="dateFormat" [dateFormat]="dateFormat"
+                 name="dp" [(ngModel)]="selectedDate3" [showTimePicker]="true" reDatePicker #datePicker2="datePicker"
+                 placement="top-left" [minDate]="'2016-12-30'" [maxDate]="'2017-12-27'">
+          <div class="input-group-addon" (click)="datePicker2.toggle($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </div>
+        </div>
+      </div>
+      <pre>{{selectedDate3 | date : 'yyyy-MM-dd HH:mm'}}</pre>
+    </form>
+  </section>
+
+</div>

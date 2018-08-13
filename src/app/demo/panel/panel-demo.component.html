@@ -1,0 +1,71 @@
+<div class="panel-demo">
+  <re-panel [closable]="true" (close)="close('info')" [collapsable]="true">
+    <re-panel-header>
+      Panel <strong>default header</strong> with close button!
+    </re-panel-header>
+    <re-panel-body>
+      Panel <strong>default content</strong>.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="primary" #panel="panel" [collapsable]="true">
+    <re-panel-header>
+      Panel primary header!
+      <i class="glyphicon pull-right"
+         [ngClass]="{'glyphicon-chevron-up': panel.isCollapsed,'glyphicon-chevron-down': !panel.isCollapsed}"></i>
+    </re-panel-header>
+    <re-panel-body>
+      Panel primary content.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="info">
+    <re-panel-header>
+      Panel info header!
+    </re-panel-header>
+    <re-panel-body>
+      Panel info content.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="success">
+    <re-panel-header>
+      Panel success header!
+    </re-panel-header>
+    <re-panel-body>
+      Panel success content.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="warning">
+    <re-panel-header>
+      Panel warning header!
+    </re-panel-header>
+    <re-panel-body>
+      Panel warning content.
+    </re-panel-body>
+  </re-panel>
+
+  <re-panel type="danger">
+    <re-panel-header>
+      Panel danger header!
+    </re-panel-header>
+    <re-panel-body>
+      Panel danger content.
+    </re-panel-body>
+  </re-panel>
+
+  <h4>Without panel header:</h4>
+
+  <re-panel type="danger" [collapsable]="true">
+    <re-panel-header>
+      Panel header
+    </re-panel-header>
+    <re-panel-body>
+      This panel has <strong>panel footer</strong>.
+    </re-panel-body>
+    <re-panel-footer>
+      Panel footer
+    </re-panel-footer>
+  </re-panel>
+</div>

@@ -1,0 +1,33 @@
+<div class="file-upload-demo">
+
+  <section>
+    <h4>Basic:</h4>
+    <re-file-upload [multiple]="true" (removeFiles)="onRemoveDone($event)" uploadParamName="files"
+                    [(ngModel)]="uploadFiles"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
+
+    <pre>{{uploadFiles | json}}</pre>
+  </section>
+
+  <section>
+    <h4>Image preview:</h4>
+    <re-file-upload [multiple]="true" [autoUpload]="true" [accept]="'image/*'" [imgPreview]="true"
+                    [previewWidth]="'50px'" uploadParamName="files"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
+  </section>
+
+  <section>
+    <h4>With customise toolbar:</h4>
+    <re-file-upload [autoUpload]="true" [accept]="'image/*'" uploadParamName="files" [multiple]="false"
+                    [toolbarTemplate]="toolbarTemplate"
+                    uploadUrl="http://localhost:3000/upload"></re-file-upload>
+    <ng-template #toolbarTemplate let-toolbar="">
+      <button class="btn btn-primary" (click)="toolbar.addNewFile($event)"
+              [disabled]="toolbar.isMoreThanMaxItems()">
+        <i class="glyphicon glyphicon-plus"></i> {{toolbar.chooseButton}}
+      </button>
+    </ng-template>
+  </section>
+
+
+</div>

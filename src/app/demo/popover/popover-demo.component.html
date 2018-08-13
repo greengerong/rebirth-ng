@@ -1,0 +1,71 @@
+<div class="popover-demo">
+  <section>
+    <h4>Default popover(click):</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" reTitle="Rebirth popover" rePopover="I am a rebirth tooltip!" placement="left">
+        Popover on left
+      </button>
+      <button class="btn btn-success" reTitle="Rebirth popover" rePopover="I am a rebirth tooltip!">Tooltip on top
+      </button>
+      <button class="btn btn-warning" reTitle="Rebirth popover" rePopover="I am a rebirth tooltip!" placement="bottom">
+        Popover on bottom
+      </button>
+      <button class="btn btn-danger" reTitle="Rebirth popover" rePopover="I am a rebirth tooltip!" placement="right">
+        Popover on right
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Hover popover:</h4>
+    <div class="button-panel">
+      <button class="btn btn-primary" reTitle="Rebirth popover" trigger="hover" rePopover="I am a rebirth tooltip!"
+              placement="left">Popover on
+        left
+      </button>
+      <button class="btn btn-success" reTitle="Rebirth popover" trigger="hover" rePopover="I am a rebirth tooltip!">
+        Tooltip on top
+      </button>
+      <button class="btn btn-warning" reTitle="Rebirth popover" trigger="hover" rePopover="I am a rebirth tooltip!"
+              placement="bottom">Popover on
+        bottom
+      </button>
+      <button class="btn btn-danger" reTitle="Rebirth popover" trigger="hover" rePopover="I am a rebirth tooltip!"
+              placement="right">Popover on
+        right
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <h4>Customise popover:</h4>
+    Variable name: {{name}}.
+
+    <div class="button-panel">
+      <button class="btn btn-primary" [reTitle]="popTitle" [rePopover]="popContent" [context]="{target:'button1'}">
+        Popover on top
+      </button>
+
+      <button class="btn btn-primary" placement='right' [reTitle]="popTitle" [rePopover]="popContent2"
+              [context]="{target:'button2'}">
+        Popover on top
+      </button>
+      <div>
+      </div>
+    </div>
+
+    <ng-template #popTitle let-context>
+      From {{context.target}}!
+    </ng-template>
+
+    <ng-template #popContent let-context>
+      Hello {{name}}.
+    </ng-template>
+
+    <ng-template #popContent2 let-context>
+      <input type="text" [(ngModel)]="name"/>
+    </ng-template>
+
+  </section>
+
+</div>

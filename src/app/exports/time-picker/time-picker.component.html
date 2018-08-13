@@ -1,0 +1,48 @@
+<form class="form-inline time-picker">
+  <div class="form-group">
+    <input type="text"
+           #hours
+           [disabled]="disabled"
+           name="hours"
+           class="form-control"
+           maxlength="2"
+           max="23"
+           min="0"
+           autocomplete="off"
+           [(ngModel)]="hour"
+           (keydown)="handleKeyEvent($event, timeUnit.HOUR)"
+           (blur)="onTimeChange(timeUnit.HOUR)">
+  </div>
+  <span>:</span>
+  <div class="form-group">
+    <input type="text"
+           #minutes
+           [disabled]="disabled"
+           name="minutes"
+           class="form-control"
+           maxlength="2"
+           max="59"
+           min="0"
+           autocomplete="off"
+           [(ngModel)]="minute"
+           (keydown)="handleKeyEvent($event, timeUnit.MINUTE)"
+           (blur)="onTimeChange(timeUnit.MINUTE)">
+  </div>
+  <ng-container *ngIf="showSeconds">
+    <span>:</span>
+    <div class="form-group">
+      <input type="text"
+             #seconds
+             [disabled]="disabled"
+             name="seconds"
+             class="form-control"
+             max="59"
+             min="0"
+             maxlength="2"
+             autocomplete="off"
+             [(ngModel)]="second"
+             (keydown)="handleKeyEvent($event, timeUnit.SECOND)"
+             (blur)="onTimeChange(timeUnit.SECOND)">
+    </div>
+  </ng-container>
+</form>
