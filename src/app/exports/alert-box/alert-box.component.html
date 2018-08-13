@@ -1,6 +1,0 @@
-<div class="alert alert-{{type}} {{cssClass}}" [ngClass]="{'alert-dismissible': closable}" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close" *ngIf="closable" (click)="closeBox()">
-    <span aria-hidden="true" class="alert-remove-icon {{removeIcon}}"></span>
-  </button>
-  <ng-content></ng-content>
-</div>

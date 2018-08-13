@@ -1,5 +1,0 @@
-<div #overlayBody class="overlay-body" style="z-index: 1050;top:300px;left: 200px;">
-  <div *ngIf="overlayOptions?.html" [innerHTML]="overlayOptions.html"></div>
-  <re-overlay-content #overlayContent style="display: none;"></re-overlay-content>
-</div>
-<re-modal-backdrop [isOpen]="true" [modalOptions]="overlayOptions"></re-modal-backdrop>

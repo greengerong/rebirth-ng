@@ -1,9 +1,0 @@
-<re-modal-window [instanceCount]="instanceCount" [isOpen]="isOpen" role="dialog"
-                 class="modal fade {{modalOptions.modalClass? modalOptions.modalClass : ''}}"
-                 [ngClass]="{'in': isOpen}"
-                 [ngStyle]="{'display': isOpen ? 'block': 'none','z-index': 1050 + instanceCount *10}" tabindex="-1">
-
-</re-modal-window>
-<re-modal-backdrop [instanceCount]="instanceCount" [modalOptions]="modalOptions" [isOpen]="isOpen"
-                   *ngIf="modalOptions.backdrop !== false"></re-modal-backdrop>
-

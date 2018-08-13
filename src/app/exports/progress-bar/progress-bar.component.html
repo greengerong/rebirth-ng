@@ -1,8 +1,0 @@
-<div class="progress {{cssClass}}" [ngClass]="{'thin': thin}">
-  <div class="progress-bar  {{ type? 'progress-bar-' + type : ''}}"
-       [ngClass]="{active: animate, 'progress-bar-striped' : striped}"
-       role="progressbar"
-       [attr.aria-valuenow]="value" aria-valuemin="0"
-       [attr.aria-valuemax]="max" style="min-width: 2em;" [style.min-width.%]="value * 100 / max">{{text}}
-  </div>
-</div>

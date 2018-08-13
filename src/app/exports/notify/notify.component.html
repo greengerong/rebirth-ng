@@ -1,8 +1,0 @@
-<re-alert-box *ngFor="let item of notifies" [type]="item.type" [closable]="true" (close)="close(item)">
-
-  <div *ngIf="!item.template" [innerHTML]="item.html"></div>
-
-  <ng-template *ngIf="item.template" [ngTemplateOutlet]="item.template"
-               [ngTemplateOutletContext]="{ $implicit: item }"></ng-template>
-
-</re-alert-box>
