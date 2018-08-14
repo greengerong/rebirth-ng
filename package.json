@@ -11,7 +11,7 @@
     "server:run": "nodemon  ./build/mock.server.js",
     "build": "ng build",
     "build:lib": "ng build --prod rebirth-ng",
-    "test": "npm run lint &&  npm run npm:publish && rm -rf ./lib",
+    "test": "npm run lint && ng test rebirth-ng --watch=false && npm run npm:publish && rm -rf ./lib",
     "ut": "ng test --browsers Chrome",
     "lint": "ng lint",
     "lint-fix": "tslint -c tslint.json src/**/*.ts --fix",
