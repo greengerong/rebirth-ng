@@ -55,14 +55,14 @@ gulp.task('new:config:exports-api', function () {
 export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module';
 `
     }))
-    .pipe(gulp.dest('./app/exports', {overwrite: true}));
+    .pipe(gulp.dest('./projects/rebirth-ng/src', {overwrite: true}));
 });
 
 gulp.task('new:config:rebirth-module', function () {
   return gulp.src('./projects/rebirth-ng/src/lib/rebirth-ng.module.ts')
     .pipe(insertLines({
       'before': /\/\/\smodule\simport/gi,
-      'lineBefore': `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}.module';`
+      'lineBefore': `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module';`
     }))
     .pipe(insertLines({
       'before': /\/\/\smodule\sdeclare/i,
