@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   components: any[];
   menus: MenuBar;
+  pkg = require('../../projects/rebirth-ng/package.json');
 
   constructor(private rebirthConfig: RebirthNGConfig,
               private viewContainerRef: ViewContainerRef,
@@ -58,7 +59,7 @@ export class AppComponent implements OnInit {
       home: ['/gettingStarted'],
       menus: [
         {
-          text: '@Rebirth/NG',
+          text: '@Rebirth/NG ' + this.pkg.version,
           router: ['/gettingStarted'],
           icon: 'glyphicon glyphicon-home'
         },
