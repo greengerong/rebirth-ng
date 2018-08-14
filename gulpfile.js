@@ -1,20 +1,8 @@
 var gulp = require('gulp');
-var os = require('os');
-var path = require('path');
-var sass = require('gulp-sass');
 var rename = require("gulp-rename");
-var inlineNg2Template = require('gulp-inline-ng2-template');
 var runSequence = require('run-sequence').use(gulp);
-var exec = require('child_process').exec;
-var del = require('del');
-var gulpif = require('gulp-if');
-var swPrecache = require('sw-precache');
-var clean = require('gulp-clean');
 var ejs = require('gulp-ejs');
 var insertLines = require('gulp-insert-lines');
-var optimizejs = require('gulp-optimize-js');
-var cleanCSS = require('gulp-clean-css');
-var htmlmin = require('gulp-html-minifier');
 
 var cmpGenConfig = {
   componentSelector: '',
@@ -30,56 +18,6 @@ var config = {
   newCmpTmpl: './build/new-cmp-template'
 };
 
-function platformPath(path) {
-  return /^win/.test(os.platform()) ? path + '.cmd' : path;
-}
-
-gulp.task('clean:dist', function () {
-  return del.sync(config.dest, config.aot, config.lib);
-});
-
-gulp.task('copy:exports', ['clean:dist'], function () {
-  return gulp.src([config.src + '/**/*.*'])
-    .pipe(gulpif(/.+\.scss/g, sass({outputStyle: 'compressed'}).on('error', sass.logError)))
-    .pipe(gulpif(/.+\.css/g, cleanCSS({compatibility: 'ie9'})))
-    .pipe(gulpif(/.+\.html/g, htmlmin({
-      collapseWhitespace: true,
-      caseSensitive: true,
-      removeComments: true,
-      removeRedundantAttributes: true
-    })))
-    .pipe(rename(function (path) {
-      if (path.extname === '.css') {
-        path.extname = '.scss';
-      }
-    }))
-    .pipe(gulp.dest(config.dest));
-});
-
-gulp.task('ng2:inline', ['copy:exports'], function () {
-  return gulp.src([config.dest + '/**/*.ts'])
-    .pipe(inlineNg2Template({useRelativePaths: true, target: 'es5'}))
-    .pipe(gulp.dest(config.dest + '/'));
-});
-
-gulp.task('ng2:aot', ['ng2:inline'], function (cb) {
-  var executable = path.join(__dirname, platformPath('/node_modules/.bin/ngc'));
-  exec(executable + ' -p ./dist/tsconfig-es2015.json', function (e) {
-    if (e) {
-      console.error(e);
-    }
-    del([config.aot, config.dest]);
-    cb(e);
-  }).stdout.on('data', function (data) {
-    console.log(data);
-  });
-});
-
-gulp.task('prenpm', ['ng2:aot'], function () {
-  return gulp.src(['README.md', 'package.json', 'src/app/exports/**/*.d.ts'], {read: true})
-    .pipe(gulp.dest(config.lib));
-});
-
 gulp.task('new:config:demo-service', function () {
   gulp.src('./src/app/shared/demo/demo-config.service.ts')
     .pipe(insertLines({
@@ -92,7 +30,7 @@ gulp.task('new:config:demo-service', function () {
       name: '${cmpGenConfig.componentName}',
       directory: '${cmpGenConfig.componentSelector}',
       cmp: ${cmpGenConfig.componentName}DemoComponent,
-      readMe: require('!html-loader!markdown-loader!../../exports/${cmpGenConfig.componentSelector}/README.md'),
+      readMe: require('!html-loader!markdown-loader!../../demo/${cmpGenConfig.componentSelector}/README.md'),
       html: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.html'),
       ts: require('!raw-loader!../../demo/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}-demo.component.ts'),
     },`
@@ -110,25 +48,27 @@ gulp.task('new:config:demo-index', function () {
 });
 
 gulp.task('new:config:exports-index', function () {
-  gulp.src('./src/app/exports/index.ts')
+  gulp.src('./src/projects/rebirth-ng/src/public_api.ts')
     .pipe(insertLines({
       'before': /\/\/\scomponent\sexport/i,
-      'lineBefore': `export * from './${cmpGenConfig.componentSelector}';`
+      'lineBefore': `export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.component;
+      export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module;
+      ';`
     }))
     .pipe(gulp.dest('./src/app/exports', {overwrite: true}));
 });
 
 gulp.task('new:config:rebirth-module', function () {
-  gulp.src('./src/app/exports/rebirth-ng.module.ts')
+  gulp.src('./src/projects/rebirth-ng/src/lib/rebirth-ng.module.ts')
     .pipe(insertLines({
       'before': /\/\/\smodule\simport/gi,
-      'lineBefore': `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}';`
+      'lineBefore': `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}.module';`
     }))
     .pipe(insertLines({
       'before': /\/\/\smodule\sdeclare/i,
       'lineBefore': `    ${cmpGenConfig.componentName}Module,`
     }))
-    .pipe(gulp.dest('./src/app/exports', {overwrite: true}));
+    .pipe(gulp.dest('./src/projects/rebirth-ng/src/lib/', {overwrite: true}));
 });
 
 gulp.task('new:config:app-module', function () {
@@ -168,7 +108,7 @@ gulp.task('new:lib', ['new:demo', 'new:config'], function () {
       }
     }))
     .pipe(ejs(cmpGenConfig))
-    .pipe(gulp.dest(`./src/app/exports/${cmpGenConfig.componentSelector}`));
+    .pipe(gulp.dest(`./src/projects/rebirth-ng/src/lib/${cmpGenConfig.componentSelector}`));
 });
 
 gulp.task('new:cmp', function (cb) {
@@ -176,26 +116,4 @@ gulp.task('new:cmp', function (cb) {
   cmpGenConfig.componentName = process.argv.slice(2)[1].replace(/^(-+)/, '');
   cmpGenConfig.componentSelector = cmpGenConfig.componentName.replace(/([A-Z])/g, '-$1').replace(/^(-+)/, '').toLowerCase();
   runSequence(['new:demo', 'new:config', 'new:lib'], cb);
-});
-
-
-gulp.task('prepublish', function (cb) {
-  runSequence(['clean:dist', 'copy:exports', 'ng2:inline', 'ng2:aot', 'prenpm'], cb);
-});
-
-gulp.task('sw:gen', function (callback) {
-  const stripPrefixMulti = {};
-  stripPrefixMulti[config.dest] = 'https://greengerong.github.io/rebirth-ng';
-  swPrecache.write(`${config.dest}/service-worker.js`, {
-    staticFileGlobs: [config.dest + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff}'],
-    stripPrefixMulti: stripPrefixMulti
-  }, callback);
-});
-
-gulp.task('optimize', function () {
-  gulp.src(`${config.dest}/**.js`)
-    .pipe(optimizejs({
-      sourceMap: false
-    }))
-    .pipe(gulp.dest(`${config.dest}`))
 });
