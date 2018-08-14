@@ -52,7 +52,8 @@ gulp.task('new:config:exports-api', function () {
     .pipe(insertLines({
       'before': /\/\/\scomponent\sexport/i,
       'lineBefore': `export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.component';
-export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module';`
+export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module';
+`
     }))
     .pipe(gulp.dest('./app/exports', {overwrite: true}));
 });
