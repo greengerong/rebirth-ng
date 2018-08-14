@@ -104,7 +104,7 @@ gulp.task('new:demo', function () {
     .pipe(gulp.dest(`./src/app/demo/${cmpGenConfig.componentSelector}`));
 });
 
-gulp.task('new:lib', gulp.series('new:demo', 'new:config', function () {
+gulp.task('new:lib', function () {
   return gulp.src(`${config.newCmpTmpl}/exports/*.*`)
     .pipe(rename(function (path) {
       if (path.basename.indexOf('$template$') !== -1) {
@@ -113,6 +113,6 @@ gulp.task('new:lib', gulp.series('new:demo', 'new:config', function () {
     }))
     .pipe(ejs(cmpGenConfig))
     .pipe(gulp.dest(`./projects/rebirth-ng/src/lib/${cmpGenConfig.componentSelector}`));
-}));
+});
 
 gulp.task('new:cmp', gulp.series('new:demo', 'new:config', 'new:lib'));
