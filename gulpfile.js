@@ -19,7 +19,7 @@ var config = {
 };
 
 gulp.task('new:config:demo-service', function () {
-  gulp.src('./src/app/shared/demo/demo-config.service.ts')
+  return gulp.src('./src/app/shared/demo/demo-config.service.ts')
     .pipe(insertLines({
       'before': /\/\/\scomponent\simport/i,
       'lineBefore': `  ${cmpGenConfig.componentName}DemoComponent,`
@@ -39,7 +39,7 @@ gulp.task('new:config:demo-service', function () {
 });
 
 gulp.task('new:config:demo-index', function () {
-  gulp.src('./src/app/demo/index.ts')
+  return gulp.src('./src/app/demo/index.ts')
     .pipe(insertLines({
       'before': /\/\/\scomponent\sexport/i,
       'lineBefore': `export * from './${cmpGenConfig.componentSelector}';`
@@ -47,19 +47,18 @@ gulp.task('new:config:demo-index', function () {
     .pipe(gulp.dest('./src/app/demo', {overwrite: true}));
 });
 
-gulp.task('new:config:exports-index', function () {
-  gulp.src('./src/projects/rebirth-ng/src/public_api.ts')
+gulp.task('new:config:exports-api', function () {
+  return gulp.src('./projects/rebirth-ng/src/public_api.ts')
     .pipe(insertLines({
       'before': /\/\/\scomponent\sexport/i,
-      'lineBefore': `export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.component;
-      export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module;
-      ';`
+      'lineBefore': `export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.component';
+export * from './lib/${cmpGenConfig.componentSelector}/${cmpGenConfig.componentSelector}.module';`
     }))
-    .pipe(gulp.dest('./src/app/exports', {overwrite: true}));
+    .pipe(gulp.dest('./app/exports', {overwrite: true}));
 });
 
 gulp.task('new:config:rebirth-module', function () {
-  gulp.src('./src/projects/rebirth-ng/src/lib/rebirth-ng.module.ts')
+  return gulp.src('./projects/rebirth-ng/src/lib/rebirth-ng.module.ts')
     .pipe(insertLines({
       'before': /\/\/\smodule\simport/gi,
       'lineBefore': `import { ${cmpGenConfig.componentName}Module } from './${cmpGenConfig.componentSelector}.module';`
@@ -68,11 +67,11 @@ gulp.task('new:config:rebirth-module', function () {
       'before': /\/\/\smodule\sdeclare/i,
       'lineBefore': `    ${cmpGenConfig.componentName}Module,`
     }))
-    .pipe(gulp.dest('./src/projects/rebirth-ng/src/lib/', {overwrite: true}));
+    .pipe(gulp.dest('./projects/rebirth-ng/src/lib/', {overwrite: true}));
 });
 
 gulp.task('new:config:app-module', function () {
-  gulp.src('./src/app/app.module.ts')
+  return gulp.src('./src/app/app.module.ts')
     .pipe(insertLines({
       'before': /\/\/\smodule\sdeclare/i,
       'lineBefore': `    ${cmpGenConfig.componentName}DemoModule,`
@@ -81,16 +80,20 @@ gulp.task('new:config:app-module', function () {
 });
 
 
-gulp.task('new:config', [
+gulp.task('new:config', gulp.series([
   'new:config:demo-service',
   'new:config:demo-index',
-  'new:config:exports-index',
+  'new:config:exports-api',
   'new:config:rebirth-module',
   'new:config:app-module',
-]);
+]));
 
 gulp.task('new:demo', function () {
-  gulp.src(`${config.newCmpTmpl}/demo/*.*`)
+  // gulp new:cmp --ComponentName
+  cmpGenConfig.componentName = process.argv.slice(2)[1].replace(/^(-+)/, '');
+  cmpGenConfig.componentSelector = cmpGenConfig.componentName.replace(/([A-Z])/g, '-$1').replace(/^(-+)/, '').toLowerCase();
+
+  return gulp.src(`${config.newCmpTmpl}/demo/*.*`)
     .pipe(rename(function (path) {
       if (path.basename.indexOf('$template$') !== -1) {
         path.basename = path.basename.replace('$template$', cmpGenConfig.componentSelector);
@@ -100,20 +103,15 @@ gulp.task('new:demo', function () {
     .pipe(gulp.dest(`./src/app/demo/${cmpGenConfig.componentSelector}`));
 });
 
-gulp.task('new:lib', ['new:demo', 'new:config'], function () {
-  gulp.src(`${config.newCmpTmpl}/exports/*.*`)
+gulp.task('new:lib', gulp.series('new:demo', 'new:config', function () {
+  return gulp.src(`${config.newCmpTmpl}/exports/*.*`)
     .pipe(rename(function (path) {
       if (path.basename.indexOf('$template$') !== -1) {
         path.basename = path.basename.replace('$template$', cmpGenConfig.componentSelector);
       }
     }))
     .pipe(ejs(cmpGenConfig))
-    .pipe(gulp.dest(`./src/projects/rebirth-ng/src/lib/${cmpGenConfig.componentSelector}`));
-});
+    .pipe(gulp.dest(`./projects/rebirth-ng/src/lib/${cmpGenConfig.componentSelector}`));
+}));
 
-gulp.task('new:cmp', function (cb) {
-  // gulp new:cmp --ComponentName
-  cmpGenConfig.componentName = process.argv.slice(2)[1].replace(/^(-+)/, '');
-  cmpGenConfig.componentSelector = cmpGenConfig.componentName.replace(/([A-Z])/g, '-$1').replace(/^(-+)/, '').toLowerCase();
-  runSequence(['new:demo', 'new:config', 'new:lib'], cb);
-});
+gulp.task('new:cmp', gulp.series('new:demo', 'new:config', 'new:lib'));
