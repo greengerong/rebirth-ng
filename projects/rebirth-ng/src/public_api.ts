@@ -194,6 +194,7 @@ export * from './lib/validators/rebirth-validators.module';
 
 export * from './lib/window-ref/document-ref.service';
 export * from './lib/window-ref/window-ref.service';
+
 // component export
 
 export * from './lib/rebirth-ng.config';
