@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MenuBarComponent } from './menu-bar.component';
 import { RouterModule } from '@angular/router';
 import { NavItemComponent } from './nav-item.component';
-import { RebirthCommonModule } from '../common/index';
+import { RebirthCommonModule } from '../common/common.module';
 
 @NgModule({
   imports: [CommonModule, RouterModule, RebirthCommonModule],

@@ -1,7 +1,9 @@
 import { Inject, Injectable } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-@Injectable()
+@Injectable(
+  { providedIn: 'root' }
+)
 export class DocumentRef {
 
   constructor(@Inject(DOCUMENT) public document: any) {

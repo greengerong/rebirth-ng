@@ -8,7 +8,7 @@ export interface ComponentDeactivate {
                   nextState?: RouterStateSnapshot) => Observable<boolean> | Promise<boolean> | boolean;
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ComponentDeactivateGuard implements CanDeactivate<ComponentDeactivate> {
 
   canDeactivate(component: ComponentDeactivate,

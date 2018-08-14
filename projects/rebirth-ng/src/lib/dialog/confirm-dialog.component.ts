@@ -1,7 +1,8 @@
 import { Component, EventEmitter } from '@angular/core';
-import { Modal, ModalDismissReasons } from '../modal/index';
 import { DialogOptions } from './dialog-options.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { Modal } from '../modal/modal.model';
+import { ModalDismissReasons } from '../modal/modal-dismiss-reasons.model';
 
 @Component({
   selector: 're-confirm-dialog',

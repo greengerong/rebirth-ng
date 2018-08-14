@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlertDialogComponent } from './alert-dialog.component';
 import { CommonModule } from '@angular/common';
 import { ConfirmDialogComponent } from './confirm-dialog.component';
-import { RebirthCommonModule } from '../common/index';
+import { RebirthCommonModule } from '../common/common.module';
 import { PromptDialogComponent } from './prompt-dialog.component';
 
 

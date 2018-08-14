@@ -5,7 +5,7 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 import { tap, catchError } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ModalService {
 
   private instances = [];

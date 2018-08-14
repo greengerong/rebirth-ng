@@ -1,9 +1,9 @@
 import { Component, Input, ViewChild, EventEmitter, Output, Renderer2 } from '@angular/core';
 import { ModalOptions } from './modal-options.model';
 import { ModalWindowComponent } from './modal-window.component';
-import { DocumentRef } from '../window-ref/index';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { DocumentRef } from '../window-ref/document-ref.service';
 
 @Component({
   selector: 're-modal',

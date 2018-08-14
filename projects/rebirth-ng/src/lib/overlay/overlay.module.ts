@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { OverlayComponent } from './overlay.component';
 import { OverlayContentComponent } from './overlay-content.component';
-import { ModalModule } from '../modal/index';
+import { ModalModule } from '../modal/modal.module';
 
 @NgModule({
   imports: [CommonModule, ModalModule],

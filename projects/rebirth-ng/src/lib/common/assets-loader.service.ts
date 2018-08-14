@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DocumentRef } from '../window-ref/document-ref.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AssetsLoader {
 
   private resources: { [key: string]: Promise<any> } = {};

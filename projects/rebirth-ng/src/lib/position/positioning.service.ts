@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { WindowRef } from '../window-ref/window-ref.service';
 import { DocumentRef } from '../window-ref/document-ref.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PositionService {
 
   constructor(private windowRef: WindowRef, private documentRef: DocumentRef) {

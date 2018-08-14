@@ -11,12 +11,11 @@ import {
 } from '@angular/core';
 import { SelectFileModel } from './file-upload.model';
 import { readFileAsDataURL } from '../utils/dom-utils';
-import { formatFileSize, formatString } from '../utils/lange-utils';
+import { formatFileSize, formatString, noop } from '../utils/lange-utils';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { HttpClient } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { Observable, of, forkJoin } from 'rxjs';
-import { noop } from '../utils/index';
 import { ControlValueAccessor } from '@angular/forms';
 
 export class FileUpload implements AfterViewInit, ControlValueAccessor {

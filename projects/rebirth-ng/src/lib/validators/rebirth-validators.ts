@@ -1,5 +1,5 @@
 import { ValidatorFn, AbstractControl, Validators, ValidationErrors } from '@angular/forms';
-import { parseDate } from '../utils/index';
+import { parseDate } from '../utils/date-utils';
 
 export function isPresent(obj: any): boolean {
   return obj !== undefined && obj !== null;

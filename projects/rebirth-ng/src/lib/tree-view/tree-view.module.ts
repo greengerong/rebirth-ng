@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TreeViewComponent } from './tree-view.component';
 import { TreeNodeComponent } from './tree-node.component';
-import { CheckboxGroupModule } from '../checkbox-group/index';
 import { FormsModule } from '@angular/forms';
-import { DraggableModule } from '../draggable/index';
 import { TreePanelComponent } from './tree-panel.component';
+import { CheckboxGroupModule } from '../checkbox-group/checkbox-group.module';
+import { DraggableModule } from '../draggable/draggable.module';
 
 @NgModule({
   imports: [

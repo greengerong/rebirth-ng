@@ -1,6 +1,6 @@
 import { ElementRef, Renderer2 } from '@angular/core';
-import { WindowRef } from '../window-ref/index';
 import { DocumentRef } from '../window-ref/document-ref.service';
+import { WindowRef } from '../window-ref/window-ref.service';
 
 export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRef): { top?: number, left?: number } {
   if (!elementRef.nativeElement || !elementRef.nativeElement.getBoundingClientRect) {
@@ -14,8 +14,8 @@ export function centerWindowPosition(elementRef: ElementRef, windowRef: WindowRe
   const winWidth = windowRef.innerWidth;
 
   return {
-    left: ( winWidth - elmWidth) / 2,
-    top: ( winHeight - elmHeight) / 2
+    left: (winWidth - elmWidth) / 2,
+    top: (winHeight - elmHeight) / 2
   };
 }
 

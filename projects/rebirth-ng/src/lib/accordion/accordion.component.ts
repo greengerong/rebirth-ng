@@ -1,5 +1,6 @@
 import { Component, Input, forwardRef, Output, EventEmitter } from '@angular/core';
-import { PanelComponent, PanelGroup } from '../panel';
+import { PanelComponent } from '../panel/panel.component';
+import { PanelGroup } from '../panel/panel-group.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 
 @Component({

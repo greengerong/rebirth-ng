@@ -1,8 +1,9 @@
 import { Component, EventEmitter, OnInit, TemplateRef, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { FormBuilder, FormGroup, ValidatorFn, FormControl, AbstractControl } from '@angular/forms';
-import { Modal, ModalDismissReasons } from '../modal/index';
+import { FormBuilder, FormGroup, ValidatorFn, AbstractControl } from '@angular/forms';
 import { DialogOptions, PromptContent } from './dialog-options.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { Modal } from '../modal/modal.model';
+import { ModalDismissReasons } from '../modal/modal-dismiss-reasons.model';
 
 @Component({
   selector: 're-prompt',

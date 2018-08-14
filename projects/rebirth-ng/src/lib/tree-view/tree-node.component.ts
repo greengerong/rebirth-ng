@@ -1,9 +1,9 @@
 import { Component, Input, TemplateRef, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { TreeViewComponent } from './tree-view.component';
-import { DraggableDirective } from '../draggable';
 import { TreePanelComponent } from './tree-panel.component';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { DraggableDirective } from '../draggable/draggable.directive';
 
 @Component({
   selector: 're-tree-node,[reTreeNode]',

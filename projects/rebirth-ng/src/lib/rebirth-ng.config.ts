@@ -1,6 +1,6 @@
 import { Inject, Injectable, Input, LOCALE_ID, ViewContainerRef } from '@angular/core';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class RebirthNGConfig {
 
   rootContainer: ViewContainerRef;

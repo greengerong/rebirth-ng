@@ -3,18 +3,18 @@ import { RebirthNGConfig } from '../rebirth-ng.config';
 import { NotifyComponent } from './notify.component';
 import { NotifyModel } from './notify.model';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class NotifyService {
 
   private panelRef: ComponentRef<NotifyComponent>;
-  private _placement: 'top' | 'top-right' | 'bottom' | 'bottom-right'| 'center';
+  private _placement: 'top' | 'top-right' | 'bottom' | 'bottom-right' | 'center';
 
   constructor(private rebirthNGConfig: RebirthNGConfig,
               private componentFactoryResolver: ComponentFactoryResolver) {
 
   }
 
-  placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right'| 'center') {
+  placement(placement: 'top' | 'top-right' | 'bottom' | 'bottom-right' | 'center') {
     if (this.panelRef) {
       this.panelRef.instance.placement = placement || 'top-right';
     }
@@ -25,7 +25,7 @@ export class NotifyService {
     if (!this.panelRef) {
       const rootContainer = this.rebirthNGConfig.rootContainer;
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(NotifyComponent);
-      this.panelRef = rootContainer .createComponent(componentFactory, rootContainer.length);
+      this.panelRef = rootContainer.createComponent(componentFactory, rootContainer.length);
       if (this.placement) {
         this.panelRef.instance.placement = this._placement;
       }

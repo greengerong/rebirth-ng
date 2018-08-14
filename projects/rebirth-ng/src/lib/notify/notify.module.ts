@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { NotifyComponent } from './notify.component';
 import { CommonModule } from '@angular/common';
-import { AlertBoxModule } from '../alert-box/index';
+import { AlertBoxModule } from '../alert-box/alert-box.module';
 
 @NgModule({
   imports: [

@@ -18,7 +18,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subject, fromEvent } from 'rxjs';
 import { switchMap, take, takeUntil } from 'rxjs/operators';
 import { RebirthNGConfig } from '../rebirth-ng.config';
-import { DocumentRef, WindowRef } from '../window-ref/index';
+import { DocumentRef } from '../window-ref/document-ref.service';
+import { WindowRef } from '../window-ref/window-ref.service';
 
 @Component({
   selector: 're-slider',

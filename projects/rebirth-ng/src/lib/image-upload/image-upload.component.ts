@@ -4,11 +4,11 @@ import {
 import { FileUpload } from '../file-upload/file-upload';
 import { RebirthNGConfig } from '../rebirth-ng.config';
 import { HttpClient } from '@angular/common/http';
-import { ModalService } from '../modal/index';
 import { SelectFileModel } from '../file-upload/file-upload.model';
-import { noop } from '../utils/index';
 import { ViewImageModalComponent } from './view-image-modal.component';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ModalService } from '../modal/modal.service';
+import { noop } from '../utils/lange-utils';
 
 @Component({
   selector: 're-image-upload',

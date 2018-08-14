@@ -1,7 +1,7 @@
 import { Injectable, ElementRef } from '@angular/core';
 import { DocumentRef } from './document-ref.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class WindowRef {
 
   constructor(private  documentRef: DocumentRef) {

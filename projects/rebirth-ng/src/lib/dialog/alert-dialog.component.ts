@@ -1,7 +1,8 @@
 import { Component, EventEmitter } from '@angular/core';
-import { Modal, ModalDismissReasons } from '../modal/index';
+import { Modal } from '../modal/modal.model';
 import { DialogOptions } from './dialog-options.model';
 import { RebirthNGConfig } from '../rebirth-ng.config';
+import { ModalDismissReasons } from '../modal/modal-dismiss-reasons.model';
 
 @Component({
   selector: 're-alert-dialog',

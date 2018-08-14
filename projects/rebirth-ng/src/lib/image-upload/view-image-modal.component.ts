@@ -1,5 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
-import { Modal } from '../modal/index';
+import { Modal } from '../modal/modal.model';
 
 @Component({
   selector: './re-view-image-modal',

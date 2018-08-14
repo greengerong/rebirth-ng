@@ -7,7 +7,7 @@ import { ConfirmDialogComponent } from './confirm-dialog.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { PromptDialogComponent } from './prompt-dialog.component';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DialogService {
 
   constructor(private  modalService: ModalService,

@@ -1,5 +1,5 @@
 {
-  "name": "rebirth-ng",
+  "name": "rebirth-ng-app",
   "version": "6.0.3",
   "license": "MIT",
   "angular-cli": {},
@@ -10,7 +10,7 @@
     "client:run": "ng serve -o",
     "server:run": "nodemon  ./build/mock.server.js",
     "build": "ng build",
-    "build-lib": "ng build --prod rebirth-ng",
+    "build:lib": "ng build --prod rebirth-ng",
     "test": "npm run lint &&  npm run npm:publish && rm -rf ./lib",
     "ut": "ng test --browsers Chrome",
     "lint": "ng lint",
@@ -18,10 +18,12 @@
     "e2e": "ng e2e",
     "compodocs:serve": "compodoc ./src/app/exports/ -p ./src/tsconfig.app.json -b / -d ./compodocs/ --hideGenerator -s",
     "compodocs:gen": "compodoc ./projects/rebirth-ng -t -p ./src/tsconfig.app.json -b /rebirth-ng/compodocs/ -d ./dist/compodocs/ --hideGenerator",
-    "demo:gen": "npm run build-lib && ng build --prod --base-href=/rebirth-ng/",
+    "demo:gen": "ng build rebirth-ng && ng build --prod --base-href=/rebirth-ng/",
     "github-pages:push": "ngh --message \"rebirth ng demo deploy\"",
-    "docs:deploy": "npm run demo:gen && npm run compodocs:gen && npm run github-pages:push && rm -rf ./dist",
-    "npm:publish": "rm -rf ./dist && npm run build-lib"
+    "docs:deploy": "npm run demo:gen && npm run compodocs:gen",
+    "npm:publish": "rm -rf ./dist && npm run build:lib",
+    "npm:pack": "cd dist/rebirth-ng && npm pack",
+    "package": "npm run build:lib && npm run npm:pack"
   },
   "private": false,
   "repository": {

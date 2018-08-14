@@ -69,7 +69,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HttpClientJsonpModule,
     RouterModule.forRoot(ROUTER_CONFIG),
     SharedModule.forRoot(),
-    RebirthNGModule.forRoot(),
+    RebirthNGModule,
     BrowserAnimationsModule,
     ModalDemoModule,
     DialogDemoModule,

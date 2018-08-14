@@ -4,7 +4,7 @@ import { OverlayComponent } from './overlay.component';
 import { OverlayOptions } from './overlay-options.model';
 import { DomSanitizer } from '@angular/platform-browser';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class OverlayService {
 
   private overlayRef: ComponentRef<OverlayComponent>;
