@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { ActionButtonDemoComponent } from './action-button-demo.component';
 import { CommonModule } from '@angular/common';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [

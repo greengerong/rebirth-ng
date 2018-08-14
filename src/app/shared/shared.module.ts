@@ -5,7 +5,7 @@ import { DocComponent } from './doc';
 import { DocContentComponent } from './doc/doc-content.component';
 import { DemoConfigService } from './demo/demo-config.service';
 import { ThemeService } from './theme';
-import { RebirthNGModule } from '../exports/rebirth-ng.module';
+import { RebirthNGModule } from 'rebirth-ng';
 import { RouterModule } from '@angular/router';
 
 @NgModule({

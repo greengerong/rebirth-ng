@@ -2,10 +2,10 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/spec",
-    "baseUrl": "./",
-    "module": "es2015",
+    "module": "commonjs",
     "types": [
-      "jasmine"
+      "jasmine",
+      "node"
     ]
   },
   "files": [

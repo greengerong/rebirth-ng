@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from '@angular/core';
-import { MenuBar } from '../../exports';
+import { MenuBar } from 'rebirth-ng';
 
 @Component({
   selector: 're-menu-bar-demo',

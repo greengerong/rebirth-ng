@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadioGroupDemoComponent } from './radio-group-demo.component';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 import { FormsModule, Validators } from '@angular/forms';
 
 

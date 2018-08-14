@@ -40,18 +40,18 @@ import {
   EllipsisDemoModule,
   TagsDemoModule,
   ImageUploadDemoModule,
-    SelectDemoModule,
-    SliderDemoModule,
+  SelectDemoModule,
+  SliderDemoModule,
   // module declare
 } from './demo';
-import { RebirthNGModule } from './exports';
+import { RebirthNGModule } from 'rebirth-ng';
 import { RouteReuseStrategy, RouterModule } from '@angular/router';
 // NoopAnimationsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ROUTER_CONFIG } from './app.route';
 import { GettingStartedComponent, ShowcaseComponent } from './feature';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { RebirthRouterReuseStrategy } from './exports';
+import { RebirthRouterReuseStrategy } from 'rebirth-ng';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';

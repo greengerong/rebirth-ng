@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EllipsisDemoComponent } from './ellipsis-demo.component';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 
 @NgModule({

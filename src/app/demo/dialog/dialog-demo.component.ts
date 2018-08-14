@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, ViewChild, TemplateRef } from '@angular/core';
-import { DialogService } from '../../exports';
+import { DialogService } from 'rebirth-ng';
 import { Validators } from '@angular/forms';
 
 @Component({

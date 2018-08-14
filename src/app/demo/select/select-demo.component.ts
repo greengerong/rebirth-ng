@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GroupOption } from '../../exports/select';
+import { GroupOption } from 'rebirth-ng';
 
 @Component({
   selector: 're-select-demo',

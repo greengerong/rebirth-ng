@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionItem } from '../../exports';
+import { ActionItem } from 'rebirth-ng';
 
 @Component({
   selector: 're-action-button-demo',

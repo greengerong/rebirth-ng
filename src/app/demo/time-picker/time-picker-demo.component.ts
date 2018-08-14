@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TimePickerModel } from '../../exports';
+import { TimePickerModel } from 'rebirth-ng';
 
 @Component({
   selector: 're-time-picker-demo',

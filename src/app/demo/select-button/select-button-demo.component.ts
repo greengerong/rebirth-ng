@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { SelectButtonItem } from '../../exports';
+import { SelectButtonItem } from 'rebirth-ng';
 
 @Component({
   selector: 're-select-button-demo',

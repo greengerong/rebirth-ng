@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PagerDemoComponent } from './pager-demo.component';
-import { PagerModule } from '../../exports';
+import { PagerModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [

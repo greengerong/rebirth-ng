@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DraggableDirective } from '../../exports';
+import { DraggableDirective } from 'rebirth-ng';
 
 @Component({
   selector: 're-draggable-demo',

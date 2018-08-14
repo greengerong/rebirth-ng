@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Breadcrumb } from '../../exports';
+import { Breadcrumb } from 'rebirth-ng';
 import * as Immutable from 'immutable';
 
 @Component({

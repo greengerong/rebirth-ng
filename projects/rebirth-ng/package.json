@@ -1,0 +1,26 @@
+{
+  "name": "rebirth-ng",
+  "version": "6.0.3",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greengerong/rebirth-ng.git"
+  },
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "date-fns": "^1.29.0",
+    "@angular/animations": "^6.1.0-beta.1",
+    "@angular/common": "^6.1.0-beta.1",
+    "@angular/core": "^6.1.0-beta.1",
+    "@angular/forms": "^6.1.0-beta.1",
+    "@angular/router": "^6.1.0-beta.1"
+  },
+  "description": "> Angular UI plugin with bootstrap;",
+  "bugs": {
+    "url": "https://github.com/greengerong/rebirth-ng/issues"
+  },
+  "homepage": "https://github.com/greengerong/rebirth-ng#readme",
+  "author": ""
+}

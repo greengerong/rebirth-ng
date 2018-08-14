@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PanelComponent } from '../../exports';
+import { PanelComponent } from 'rebirth-ng';
 
 @Component({
   selector: 're-accordion-demo',

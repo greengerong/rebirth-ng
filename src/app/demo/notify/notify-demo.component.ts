@@ -1,5 +1,5 @@
 import { Component, ViewChild, TemplateRef, OnInit } from '@angular/core';
-import { NotifyModel, NotifyService } from '../../exports';
+import { NotifyModel, NotifyService } from 'rebirth-ng';
 
 @Component({
   selector: 're-notify-demo',

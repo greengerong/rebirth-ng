@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CarouselDemoComponent } from './carousel-demo.component';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [CommonModule, RebirthNGModule],

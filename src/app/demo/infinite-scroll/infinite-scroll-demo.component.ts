@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { InfiniteScrollComponent } from '../../exports';
+import { InfiniteScrollComponent } from 'rebirth-ng';
 import * as Immutable from 'immutable';
 
 @Component({

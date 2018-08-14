@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { OverlayService } from '../../exports';
+import { OverlayService } from 'rebirth-ng';
 
 @Component({
   selector: 're-overlay-body-demo',

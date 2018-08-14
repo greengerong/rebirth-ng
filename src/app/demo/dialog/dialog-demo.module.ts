@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { DialogDemoComponent } from './dialog-demo.component';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [

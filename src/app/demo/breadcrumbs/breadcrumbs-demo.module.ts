@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { BreadcrumbsDemoComponent } from './breadcrumbs-demo.component';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [CommonModule, RebirthNGModule],

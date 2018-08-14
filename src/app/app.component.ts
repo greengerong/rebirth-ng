@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewContainerRef, Renderer2, ElementRef } from '@angular/core';
-import { RebirthNGConfig } from './exports/rebirth-ng.config';
+import { RebirthNGConfig, MenuBar } from 'rebirth-ng';
 import { DemoConfigService } from './shared/demo/demo-config.service';
-import { MenuBar } from './exports/menu-bar/menu-bar.model';
 import { ThemeService } from './shared';
 import { DomSanitizer } from '@angular/platform-browser';
+
 // import { REBIRTH_NG_I18N_ZHCN } from './exports';
 
 @Component({

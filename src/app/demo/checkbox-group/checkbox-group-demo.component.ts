@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CheckboxGroupComponent } from '../../exports';
+import { CheckboxGroupComponent } from 'rebirth-ng';
 
 @Component({
   selector: 're-checkbox-group-demo',

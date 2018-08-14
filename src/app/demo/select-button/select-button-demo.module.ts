@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SelectButtonDemoComponent } from './select-button-demo.component';
 import { FormsModule } from '@angular/forms';
-import { RebirthNGModule } from '../../exports';
+import { RebirthNGModule } from 'rebirth-ng';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RebirthNGModule],

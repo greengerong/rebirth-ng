@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DialogService } from '../../exports';
+import { DialogService } from 'rebirth-ng';
 
 @Component({
   selector: 're-tabs-demo',

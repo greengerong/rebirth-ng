@@ -2,7 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { DemoConfigService } from '../shared/demo/demo-config.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
-import { DocumentRef } from '../exports';
+import { DocumentRef } from 'rebirth-ng';
 import { fixTSModuleImport, highlightCodeBlock } from '../shared/doc/hightlight';
 
 @Component({
