@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var rename = require("gulp-rename");
-var runSequence = require('run-sequence').use(gulp);
 var ejs = require('gulp-ejs');
 var insertLines = require('gulp-insert-lines');
 
