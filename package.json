@@ -90,7 +90,6 @@
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.1.1",
     "protractor": "^5.4.0",
-    "run-sequence": "^2.1.0",
     "rxjs": "^6.1.0",
     "ts-helpers": "^1.1.2",
     "ts-node": "~5.0.1",
