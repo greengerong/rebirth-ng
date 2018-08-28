@@ -97,7 +97,7 @@
     <form class="form-horizontal">
       <div class="form-group">
         <re-mutiple-auto-complete id="languageTags" [(ngModel)]="mutipleItems" name="languageTags"
-                                  [minLength]="0"
+                                  [minLength]="0" placeholder="请输入tag"
                                   [onSearch]="searchWiki" [appendBody]="true"></re-mutiple-auto-complete>
 
         <pre>{{mutipleItems | json}}</pre>
