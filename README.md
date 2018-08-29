@@ -82,7 +82,7 @@
 
 ## Build
 
-* Run serve: `npm start`
+* Run serve: Run `npm run build:lib` then `npm start`
 
 * Docs deploy: `npm run docs:deploy`
 
