@@ -1,6 +1,7 @@
 <div [ngClass]="{'radio-inline': inline, 'radio': !inline}" *ngFor="let item of options">
   <label>
     <input type="radio" [name]="name" [value]="valueParser(item)" [checked]="isChecked(item)" [disabled]="isDisabled(item)"
-           (change)="onRadioChange(item)">{{formatter(item)}}
+           (change)="onRadioChange(item)">
+    <span>{{formatter(item)}}</span>
   </label>
 </div>

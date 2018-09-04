@@ -1,14 +1,14 @@
 .mutiple-label-auto-complete {
   padding: 0px;
   font-weight: normal;
+
+  .form-control {
+    height: auto;
+  }
+
   ul {
-    display: block;
-    list-style: none;
-    width: 100%;
-    padding: 2px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0;
+    margin: 0;
 
     &:focus {
       border-color: #66afe9;
@@ -20,9 +20,13 @@
       background-color: transparent;
     }
 
-    li {
+    li{
       display: inline-block;
-      margin: 5px;
+
+      &:not(:nth-last-of-type(1)) {
+        margin-right: 8px;
+      }
+
       .label-close {
         cursor: pointer;
         margin-right: 5px;
